@@ -1,0 +1,350 @@
+{
+  "job_name": "batches/14ugdhu3x2azoapm5q0k182ocjureksnmgqw",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:19.387917",
+  "validations": [
+    {
+      "extension_id": "lggplclnocekhieeegbifpiofggloaph",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension code is clean, well-commented, and strictly follows the functionality described in the manifest. The static analysis findings for STORAGE and SET_INTERVAL are standard implementation patterns for this type of utility. There are no network requests (fetch/XHR) observed in the code, meaning no data is being exfiltrated. The permissions requested (storage, notifications) are appropriate for the features provided.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Automatically clicks 'Continue generating' on ChatGPT and alerts the user with a sound or notification when generation is completed.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatgpt.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "clients2.google.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE/CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used in popup.js and content.js to save and retrieve user preferences for audio alerts and auto-click behavior."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Used in monitorMessageCompletion() to poll for the visibility of the streaming indicator and send button to determine when a message is finished."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to monitor the DOM for changes (specifically new buttons appearing) to trigger the auto-click logic immediately when the 'Continue generating' button is rendered."
+        },
+        {
+          "pattern": "DOM",
+          "usage": "LEGITIMATE",
+          "justification": "Used to select specific ChatGPT UI elements like the send button, stop button, and the 'Continue' SVG icon."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3868,
+        "candidates": 614,
+        "total": 5184
+      }
+    },
+    {
+      "extension_id": "dfhaeonjlcgpgoienfbafnnpdommhblh",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The analysis confirms the extension is legitimate and functions as described. It injects a UI into the ChatGPT 'Custom Instructions' modal, allowing users to save multiple instruction sets to their browser's local storage. There is no evidence of data exfiltration; all prompt data is kept within the user's own browser environment via localStorage. The code uses Object.defineProperty to correctly interface with ChatGPT's React-based input fields, which is a standard technical solution for this type of extension. The only external link is a donation URL (Buy Me a Coffee), which is clearly labeled as a support link and only opens upon a manual click.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Store and manage ChatGPT custom instructions",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatgpt.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://www.buymeacoffee.com/automatemyl"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses localStorage to save the user's custom prompt templates locally on the device."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Used to poll for the existence of the ChatGPT Custom Instructions modal in the DOM, which is necessary since ChatGPT is a Single Page Application (SPA)."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The BuyMeACoffee link is a donation link triggered only by an explicit user click on a support GIF."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to inject the UI for the prompt storage form. The HTML is static and does not unsafely execute user-provided code."
+        },
+        {
+          "pattern": "FORM_SUBMIT",
+          "usage": "LEGITIMATE",
+          "justification": "Used to capture the event when a user saves a new prompt to their local storage."
+        }
+      ],
+      "token_usage": {
+        "prompt": 4331,
+        "candidates": 693,
+        "total": 5944
+      }
+    },
+    {
+      "extension_id": "gejpagcjdocpgpnblmknkfpbdjkeocpd",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose. It injects a button into chatgpt.com, which, when clicked, fetches the current conversation via OpenAI's official API endpoints and offers it as a JSON download. All network traffic is confined to chatgpt.com. There is no evidence of data exfiltration to external servers, and the permissions requested (host permissions for chatgpt.com) are the minimum required for the extension to function. The 'encryption' logic is a local security measure for the temporary session object and does not exhibit malicious intent.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Export ChatGPT conversation JSON logs.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatgpt.com",
+          "clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "github.com/Deskuma"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses fetch to call internal OpenAI APIs (/api/auth/session and /backend-api/conversation) to retrieve the conversation data the user intends to export."
+        },
+        {
+          "pattern": "BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "Used in the downloadThreadId function to create a local download link for the generated JSON file."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Used to monitor the URL for changes in the conversation ID to determine when to show or hide the export button."
+        },
+        {
+          "pattern": "ENCRYPTION (XOR)",
+          "usage": "LEGITIMATE",
+          "justification": "The author implemented a basic XOR encryption/decryption for the accessToken stored in the script's memory (gptSession.data). While simple, it is used here to avoid storing the raw token in cleartext within the variable, not for hiding malicious payloads."
+        }
+      ],
+      "token_usage": {
+        "prompt": 5222,
+        "candidates": 665,
+        "total": 6662
+      }
+    },
+    {
+      "extension_id": "agciioechifjhhkcaaejddhibamepgnb",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "After a thorough review of the source code, the extension appears entirely legitimate. It fulfills its stated purpose of providing voice-to-text functionality for ChatGPT. It uses the standard Web Speech API (window.SpeechRecognition) to process voice, and injects the resulting text directly into the ChatGPT prompt textarea (#prompt-textarea). There is no code that transmits data to external servers; communication is limited to the browser's interaction with ChatGPT and the built-in browser speech recognition service. User preferences (language selections) are stored locally using the localStorage API. The static analysis findings are all related to standard UI manipulation and script injection techniques.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Voice for ChatGPT",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chat.openai.com/",
+          "https://*.openai.com/*"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "cs.js injects nj.js into the main document context. This is a common and necessary pattern for extensions that need to access the page's JavaScript environment or specific Web APIs (like SpeechRecognition) that behave differently in content script sandboxes."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in nj.js to render the UI components for the microphone button, language selection popup, and CSS styles. The content being injected is static template strings defined within the extension's own code."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to detect when ChatGPT's UI updates (specifically the prompt textarea container) so the extension can inject its microphone button into the correct position in the DOM."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The URL https://chat.openai.com/ in bg.js is used solely to open a new tab when the user clicks the extension icon."
+        }
+      ],
+      "token_usage": {
+        "prompt": 14149,
+        "candidates": 690,
+        "total": 15886
+      }
+    },
+    {
+      "extension_id": "cfmdjeobbmgdenmhnofoibcflllcpbdc",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose. It collects conversation data from the DOM, formats it into a standalone HTML structure, and triggers a local download using a Blob URL. There are no network requests (fetch/XHR) observed, meaning data never leaves the user's machine. The permissions requested (activeTab, scripting) are the minimum required for this functionality.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Export ChatGPT conversation as an HTML file.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "w3.org"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "DOM",
+          "usage": "LEGITIMATE",
+          "justification": "Used to select conversation elements from the ChatGPT interface and to create a temporary anchor element for initiating the file download."
+        },
+        {
+          "pattern": "BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "Used to convert the generated HTML string into a downloadable file via URL.createObjectURL(blob)."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Static analysis flagged storage but the code actually uses chrome.tabs for context, which is necessary for the extension to interact with the current page."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Required to identify the active ChatGPT tab and inject the content script for data extraction."
+        }
+      ],
+      "token_usage": {
+        "prompt": 4053,
+        "candidates": 563,
+        "total": 5382
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 0,
+    "SUSPICIOUS": 0,
+    "SAFE": 5,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 0,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 5,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 1.0,
+    "true_positive_rate": 0.0,
+    "malicious_detection_rate": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 31623,
+    "candidate_tokens": 3225,
+    "total_tokens": 39058
+  }
+}

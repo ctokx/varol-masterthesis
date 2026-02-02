@@ -1,0 +1,18 @@
+{
+  "job_name": "batches/7gbkadk287t71zvnk2uufwx17wnxk03zlisc",
+  "dataset": "candidates",
+  "input_file": "experiments\\chatgpt\\candidates.json",
+  "extension_ids": [
+    "maojnknofbadmhfkbllhpddhophjhblo",
+    "effkgioceefcfaegehhfafjneeiabdjg",
+    "mcecffeookkllgkbflcdlbicolmfgifj",
+    "fomfocnplogomlaoodijfgoajblacpol",
+    "gfecljmddkaiphnmhgaeekgkadnooafb"
+  ],
+  "extension_count": 5,
+  "batch_part": 16,
+  "total_batches": 25,
+  "created_at": "2026-01-30T19:10:44.846584",
+  "log_file": "C:\\Users\\varol\\cws_clone_detector\\output\\validation_logs\\candidates_validation_log_20260130_191016.json",
+  "model": "models/gemini-3-flash-preview"
+}

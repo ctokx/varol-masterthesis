@@ -1,0 +1,99 @@
+{
+  "job_name": "batches/iv6ex1722ensrz2w4mnjrx3asda3ofw4gctf",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:24.674319",
+  "validations": [
+    {
+      "extension_id": "becfinhbfclcgokjlobojlnldbfillpf",
+      "verdict": "MALICIOUS",
+      "confidence": 0.9,
+      "reasoning": "The extension is ostensibly an AI assistant, but it includes a file ('d2529e2597d9bc7ddd6939248765982a.js') containing logic for 'CaptainA', a tool related to Amazon marketplaces. This code defines a class that automatically instantiates, sets up listeners for extension installation, and configures a list of Amazon domains and a crawling API endpoint ('https://_crawl.captaina.co'). This functionality is completely unrelated to the extension's description, is not disclosed to the user, and represents a classic 'Dual-Purpose' malicious pattern where an extension performs its stated duty while secretly running affiliate or scraping modules in the background.",
+      "recommendation": "BLOCK",
+      "key_concerns": [
+        "Undisclosed Amazon marketplace crawling/tracking functionality",
+        "Presence of code for a completely different product ('CaptainA') within the bundle",
+        "Use of <all_urls> permission which enables the hidden crawling logic to function on Amazon sites"
+      ],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Potentially Amazon browsing data or marketplace information (implied by the 'crawl' endpoint and Amazon domain lists)",
+          "processing_method": "The code initializes a manager class 'U' that sets up listeners and configurations for specific Amazon regional domains.",
+          "destination_domain": "https://_crawl.captaina.co",
+          "code_evidence": "class U { ... api_url = \"https://_crawl.captaina.co\"; ... market_urls = { \"amazon.fr\": \"...\", \"amazon.com\": \"...\" }; ... constructor() { this.setKey(); ... } } new U;"
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant for chatting with models like Gemini, Claude, etc.",
+          "hidden_functionality": "Undisclosed Amazon marketplace tracking/crawling functionality associated with 'CaptainA' (likely an Amazon seller or affiliate tool).",
+          "code_evidence": "File 'd2529e2597d9bc7ddd6939248765982a.js' contains a complete class 'U' that auto-instantiates ('new U'), configures Amazon market IDs, and targets 'https://_crawl.captaina.co'. It registers 'browser.runtime.onInstalled' listeners, indicating it runs in the background unrelated to AI chat."
+        },
+        "credential_theft": null
+      },
+      "domains": {
+        "legitimate": [
+          "chatgptextension.ai",
+          "aitopia.ai",
+          "chromewebstore.google.com"
+        ],
+        "requires_investigation": [
+          "captaina.co",
+          "_crawl.captaina.co",
+          "mystickynotes.net"
+        ],
+        "informational_only": [
+          "www.w3.org",
+          "schemas.openxmlformats.org"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "MALICIOUS",
+          "justification": "The endpoint 'https://_crawl.captaina.co' found in 'd2529...js' is related to crawling/scraping functionality that is completely undisclosed and unrelated to the extension's stated purpose."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used for saving user preferences, chat history, and extension settings in the AI assistant context."
+        },
+        {
+          "pattern": "CREDENTIAL_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "The extension handles authentication for its own service (AITOPIA) and potentially Google Auth for user accounts. The code snippets show standard form handling."
+        }
+      ],
+      "token_usage": {
+        "prompt": 337171,
+        "candidates": 947,
+        "total": 344614
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 1,
+    "SUSPICIOUS": 0,
+    "SAFE": 0,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 1,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 0,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 0.0,
+    "true_positive_rate": 1.0,
+    "malicious_detection_rate": 1.0
+  },
+  "token_usage": {
+    "prompt_tokens": 337171,
+    "candidate_tokens": 947,
+    "total_tokens": 344614
+  }
+}

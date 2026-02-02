@@ -1,0 +1,3040 @@
+{
+  "labeled": 378,
+  "timestamp": "2026-02-01T20:49:45.690Z",
+  "labels": [
+    {
+      "extension_id": "okjdmabpbfooidgboikogjpfajndiafp",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "ndeejgokieklaealoikgdmbmjdkmaoco",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "iimdmhmbedafhnjdccafpegfkadhkpoj",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "gogjdkpnnlnckhenijamkacidklkhgkk",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "oopjmodaipafblnphackpcbodmgoggdo",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "jehfklpmjdbjojimhlindcgocbjiflek",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "ddiekgckphlbgafaaiajjpmkcngoldib",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "khnkcffkddpblpjfefjalndfpgbbjfpc",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "klelmbmfmighbombgilogfengbkajjie",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "lcoleoeabojfeokcbfgaafmdgnnjpmpo",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "ocbklpkcikpidkleacbohkobinlilgbd",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "pelmadpbepelidfneidllbkmepmdpckd",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "mepfaoknmcmelkcbhjmobgldhebiphll",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "bghdlfnkbghekhdadaokecnhkcodfcna",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "fcblgiphlneejkokhnaagmjombnfdnog",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "majboohgjfdnegkhadaialohhlimolcc",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:47:33.813Z"
+    },
+    {
+      "extension_id": "jodkdpfcocdnnfklfhojobblljbdkckl",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "kpfjgpajjeadhkmchkhfpejnhkpeapei",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "aodeelojpoccdclhkjflkjgbbjhkjoie",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "ppclhllhmpgnkhmcolinggcbjchmaodo",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "ajnofpkfojgkfmcniokfhodfoedkameh",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "blfjijcafmiginiijkabpigfpcegkglc",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "cbapcdnkcgiajboppakkhjmdolbkinge",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "moaingchjlhocjigdifdkloicdopeeom",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "kfjlbdhonplbiikgogomppidenoaichc",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "llojfncgbabajmdglnkbhmiebiinohek",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "dfbbmnaicfnpnlpefbechbahdlblgigc",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "jiibmnjnbfakfcdogafmdcmfjndglbkd",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "jlbpahgopcmomkgegpbmopfodolajhbl",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "mikcekmbahpbehdpakenaknkkedeonhf",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "fgagbllklmhnocbjiijfhjdecgjahaag",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "dikfamiegodmdamfmhecejnlahclddom",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "kagjkiiecagemklhmhkabbalfpbianbe",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "mimbihfbpnglcblklikcjmibobgmlknf",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "imhdjfbabgefdmambpckmgcbainaipmm",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "dloobgjjpoohngalnjepgdggjeempdec",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "gcfiiebelieioilonnjgjjmdlolapmgp",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "bkanngdinjghfcfgpcbdjckpajacpnbb",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "balponhijlgeahiohaohbdljikpdlaff",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "jkgmppnpgldlaabcjlokgmfhfhljphhc",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "oolafmdjgpehpjaiedkcoejndedkaleg",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "lbdcfmlpnienahldeimdphjajfaddaek",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "ifofkleafhmamganjnoaaipdmffifcgc",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:47:49.718Z"
+    },
+    {
+      "extension_id": "pcpjdbnjhgofgjgegodlnebdnmiddmaa",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "pdhffbiflfhdajkigmahlehebnjaoikj",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "becfinhbfclcgokjlobojlnldbfillpf",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "cnhikhicflgjbfnllpmbbdpjcfmfnkii",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "khoggafmiibmeihpkpbkllkkdfhmokoj",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "fhchfanincnnfjednblmkgkdglpfloja",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "afmnhehfpjmkajjglfakmgmjcclhjane",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "obplenbbmddhmiagjgcgghbceiijognc",
+      "human_label": "CLONE",
+      "system_prediction": "CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "jaadjbgpijajmhponmgggflfgmboknge",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "ppjhahkjaabkjgaoelbokpgleaoeeboa",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "molpfdakehebpkaecfdpndakphebjjpp",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "pmhdgibbdbddiahcfmhhhbljgeiechpp",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "caicahkimjnhcepnhnipgbcbigdpeifi",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "indcipieilphhkjlepfgnldhjejiichk",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "kjdfnlgjmcabagegbofipgfifamecneb",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "iapjmmepmeidbibbpkcbpejcjojjppmd",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "gpaapejfeeglombnfcjadmepalhaflmh",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "gpbnhdjoknjmghjfljgcankdldimokmk",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "fnmihdojmnkclgjpcoonokmkhjpjechg",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "danplamegmfnfobbhkandimjpepjlcoc",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "inhiciabodleebpfchicllicbijcefhg",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.523Z"
+    },
+    {
+      "extension_id": "hhclmnigoigikdgiflfihpkglefbaaoa",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "cfmdjeobbmgdenmhnofoibcflllcpbdc",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "jjghfaljgailnbndlmdccfbofdkhenap",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "nlompoojekdpdjnjledbbahkdhdhjlae",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "hogiifbepjnfjaikjfifaacppefnjblg",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ehigecokdaejpecogfefhmoemlapfjko",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "dfhfeifekpgapdlhfakecbbinnnfoohh",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:45:25.899Z"
+    },
+    {
+      "extension_id": "nohdababhjlafcabhgehiigdbaaddafh",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "bfcoofacbpockpcfeeckliogafkkjkpk",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "oeamjflagfpbajcdahjgfbgalcfmijic",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "hiiildgldbpfbegcfgemoliikibfhaeh",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "bpmjglijpclggdnlpdbpglnadibmlaek",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kpbjkfajjjhpcponilijmmhpdifapcmd",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "mmfngilfgodiakmcmjhgpmimaebkcffc",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "aglfigeheodccgeodjbimolajpjfaoge",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:44:12.997Z"
+    },
+    {
+      "extension_id": "ndbiekgckmjfcdmekbkdmoioohdjfhmg",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kpbihpkcpnfnjddplngmbljcfofjgejh",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "jkfkhkobbahllilejfidknldjhgelcog",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:45:51.833Z"
+    },
+    {
+      "extension_id": "apjhekoaogdimcgiihoncakocdddhmlk",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ikchmmahaaoklkcgmommpeencfnjnknd",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ncjafpbbndpggfhfgjngkcimeaciahpo",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "oihfhipjjdpilmmejmbeoiggngmaaeko",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "gidnologjgdhkgkigkhfloooobeibmhj",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "gadbpecoinogdkljjbjffmiijpebooce",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "lgpdceoebipofiijjgpiedpfcdenkndi",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "nafdjcnfmdcdnebjhehhohfaaffdlkon",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:45:22.070Z"
+    },
+    {
+      "extension_id": "mehpokgiebgcnelgnlfkeldlfnpdhdha",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "dbegpdaninkikfcfodenceojbpdgdoaa",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "fomfocnplogomlaoodijfgoajblacpol",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "egddooecigfdpecpkdpklmejabiionep",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "flgapcfldlacnlocnjlocofheicmonme",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "mcbhhiafbiafmggccdcpgfldcaeipopg",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "nalmfjagfhledhgdgddflklpnbagdpcf",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "mkdlpckejjdnmfmhemggjpjajpafonif",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "oabcdeaffkombpeackohpopkcefgifbm",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "mhlecapiniomlbllfaochicnafbjmmbg",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "hbndmagecjddiollpfbjcinbfnkgpcnk",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "hodneljnifpbcnhmlommhmmpoknlioil",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ebolpbgeaeammpddffibagpobicfnhoc",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "nooodggkdkkjehknoieajlklnjagmlof",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "aenhnilgllhccbjchbikooghldemomgn",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kldepdcdedfibmjnggmolhffdddbphjg",
+      "human_label": "CLONE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "glkfhecdpcmaclfkhkibmoijipnnjkbf",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "glhhgglpalmjjkoiigojligncepccdei",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ejhkkbilnpifailgngpkgmiofhioacjd",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "jbnpeappgiginkolmdkjioijjeafehcd",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "inllflnokfkadlfjmdimlngdniccmodp",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "njggknpmkjapgklcfhaiigafiiebpchm",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "opbmiilmogkpallllgollkihjpofjhff",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kpdeinalphndoobebbkdjhokedpgalad",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "nkalaahhnoopcmopdlinibokjmjjacfa",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "naokkoogmjjhnehoadkmpicliffbjllc",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "baahncfnjojaofhdmdfkpeadigoemkif",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "oadjojadiagcpbcbecpgfkgfmflgelnf",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "didmdeafjnnkgjkfalkkdhmgoajjnpom",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ofpnmcalabcbjgholdjcjblkibolbppb",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "mognjodfeldknhobgbnkoomipkmlnnhk",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "pblpjemjhgflddhdajfkieakdmmellmh",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "iihamopomflffiecicbgelncanmfionp",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "phopfdcpfiokcjlilklknbmnipggmgbl",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "dekfpeakgpiphjaenokijfpefmebceof",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "bdaeliiodeiajcologbahjalpoadlgeg",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ochleehcckobncbecepoccjhpjfgepae",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ifdkmjhpllkcmondppdpeblimhfeegij",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "bpanegeigcjabmofichmidnfmfhomkgo",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "gpaojnfkcmokjkmaeflkooabeiofhlbk",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "lkopcjdmfmffphbomfhecalbojiaeape",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "gfkgggcjdhgiccpbjhppblpnmniepcca",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "agjkjablkiapmpbeglmdcmhnihlofija",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "mngeddjcngpcdakdhfcbaefeonmmeomg",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "dpnmdnjbddokjekfihifibdoombofdnl",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "dfnhlnnmcjnmlihpjbkdefpnfdpgedbn",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ajnhebfhendphbllebbijfdfnnakcgll",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "beeeddjbfpphkocenbboddgkgoflhajd",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "clgficggccelgifppbcaepjdkklfcefd",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "egceibdablpidpknngecoomlmipkeiim",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "lknmjhcajhfbbglglccadlfdjbaiifig",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "fjeaiokjbnimgnjmdgkoafippjanblij",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "giiemjoccofnggceldeendokfcehnobc",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "fmnbpdmndaabkihejhgdpdpjihokbhlb",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kjmilhjddfcglldchbplpcjaiipngdbf",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "aboegngdamkgaolhddiblkllbldjhlai",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "hgmbogoneaidjknimjmnpgjgeppgckfj",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ichiiknkackionkhdadajbffjmfhkhmn",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "aibfeemadfncnhephomomdicckopkgoe",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "acggjgbigppjfeigdhalemoapjinbado",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "jgojgjlkjbjllniaeomafkjmcbmofbid",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "mcooieiakpekmoicpgfjheoijfggdhng",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "deefgjdaijlleajdlcllgbkpikaiohjn",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "gfckpfgipkbjhaofhfijkdmgopcoinhe",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "iokmjpkdnkhnihbahocbjohhdnkkiphh",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "aodbopgpdbbeeifnpefojenoaffmpoba",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "iglccibigockbiaeoamjeojjfngbcnnl",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "fldaklkfolpnnlgoejcgcgjmklmheaim",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "iinhdoboeeojoagbiegcdbkphoklegle",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "jhnldhepfailmlmaekooaeincnhenchi",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "dpghcnfkfdfcfgiiohfjnajfbncldkng",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "opclalenfeejbgjnfjfdgccieghhflkp",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ficpochbmmbeebbfkdhboojbdpgglkhl",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "clcgnkjofbkgkdejbdilaakiigmfbcgg",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "nnkcnhbioochcaoeofflcljhhpceoknl",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "blejaoebdfcgjhcaolklggpjnafelnbd",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "mpmpckegfbodchnolfjfabphdlhedpfe",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "bafbmnboaegcmjpjcolahbhabdlncljp",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "fjhcbdccgkekaflpomnjjcfcfpmgjijf",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "amikeononomkhphopbflomhnmdijjpmb",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "jijhgfapogfphcccjlpoiphpjgedblpo",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "aidjbcadkohfjgbikjiechlafmiifpfm",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "concnmjiafnmilakbhbomhfmgdmpgcgc",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "baecjmoceaobpnffgnlkloccenkoibbb",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ihingkhbfackkgnpjokalanjmoiihiok",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "nobfenidifcdghhkifkcnlhmnlfnmhek",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "oejmmcncchjoimdjpopkpeeecmaagooj",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ioohfnlbpolaalcbppaggpgcgpldohfg",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "eollffkcakegifhacjnlnegohfdlidhn",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "fejabnggkpabpiidogafkakidocellai",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ibamlakmcmfbgepecpbglcmfpeipibdj",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "jhllfdbccclcdiafljibcabipbmkfoem",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ckbkgkpdiidddiahomkdebijgnoeejdh",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "bdaanmhmamgpeppfdajedeliilghopol",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "afcodckncacgaggagndhcnmbmeofppok",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "eingnnibpgfojcfcgfddmhklbpialldi",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "adghjpdmpbcmppeafpodcjpagmegdpci",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "dckiecimdabcgncadkggmhfopcdgohlg",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "iapioliapockkkikccgbiaalfhoieano",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "pijgmodkggpgabcdeaklempbofngmfnf",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kaahpeglhmgploibkkdjgeeklfohpchg",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "iiceiegkpphpmbodonndapmgcefekojc",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:48:28.563Z"
+    },
+    {
+      "extension_id": "eipafnglebabfokbklohnjpamebcongh",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "hmmihfgkpbkkgkajgocbldhjhliajjin",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kgenlgjkglpmbiocphbgnmknalmfacei",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "deodiblcnhagjcmflmbmcgdoklfinlnf",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ejlkdnjeljojepglcdjifkedjbfdakbb",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "cancnnlepmbfaegpklfklajlfglbdcan",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "fbjnnjochaopepfjpngghafgnafebkjh",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ginkafippbpcohlfjnejfpfihacompfe",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "nhddlbkakdlmkogdnmbadepphblklknl",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "njkkmgnoknkknfelokcjldjlnkgnedcm",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ippbcoedanbeiikhiabcloiapimacecc",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "llogfbeeebfjkbmajodnjpljpfnaaplm",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "cdhbhenafofcgljodakoeglmlnboeijf",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "jmopckjbmdangdeegjacnmbkiiacaedm",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "bflfcabbbjicocpgfifkhmckkmgpmcdl",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "jkghfpjmliifaghcjcnjpgbmfnbcpnac",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "legmkjenpjbcgmmifpdhehgbmbkofmmc",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "fkbcidfnkgjpdmeichmhmkdbclkgcbfk",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "baijpfnkbidghhlmjaklfpffnbodhemk",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "akadceddkkjpncchmgoojfpfaeelekha",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "pbgiljgknpehngkimlhaemngkgglnden",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "jjcnonlcckpgjdmgdbnbciaghjkepnad",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "bkbkakcdolgpfecbdoniemalpghmgpii",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "apkacmgmebcbmncioocjeinopndhkpob",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ocmlpnlnmlopipoalenahomcagccjgeb",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "jbhaabmnfflbnbmlojheinkmepojjkag",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ehekffhhobjogdcdafcfhkfpcpaeagnd",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "obljmfemfmmhlcodmcenihjoahemllnl",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ajkhfmboplejbfhaflgmbihjmnbippdn",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "hdlfdolioaaifebpamkadbfgakologmg",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "pgeigkofbkkkepdckbjeedmnnikepmbk",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "iaakpnchhognanibcahlpcplchdfmgma",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "fkodheimkfkbomekjjpbblgmikniblmb",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kjialockidkcckpcepkabgjjonlcnpae",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "mocaafpbhgdpchpheajnkojdengdmbcg",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "lilckelmopbcffmglfmfhelaajhjpcff",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "aacfibelemnkkbkelbhdbfhokeemfaho",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "oeekolihnpojdigebjbhnkhbepjdoidi",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "mepflplnjbngmgakdefimlgbfpmhonoj",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kbagmbnacemgilnkkejfblmlkcmjkpbo",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "jconiffjkpncigjlmjpfkffdfginlneh",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ppifghbfjllplimhdmkoldolkoppihnk",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "moeoibheadkkkgclhclmglepnhplanpl",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kbbmcmknfbahpbgbjlpjaedbcbhcoodh",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "jnejgogaflifpdgecjfhpgdiabbeipag",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ajcnpllmohcdhdbnemhdhjagphbkdelf",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "galbkjnfajmcnghcpaibbdepiebbhcag",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "dgoglcakombnlehdkdoekncmcganjjid",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "pnimajblfapnpjoaflgocogajeepfijb",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kkhpnmhogcfeboepoempiimfbonppocg",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "bmhcbmnbenmcecpmpepghooflbehcack",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "eoabjnjdfdcgbebgmhphnjfekdnacief",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "oemehpipfokijnpilnnmbnjonngpimhb",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "fbelngafemdmddffkcjlnkappimdajji",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "clglplmhjdibddcnnhdljjpnoaomjgnc",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "fonmlhkjnkpmocmkpicafkbnfkpmignh",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ampbkjcmmefhmillnhoedcaonipplcbi",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "bffpkfinnlpehlnjidmkkjcgioljngdb",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "dkidadkemijikjckcmilhkijmhghjlcm",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "nemamljopkdmaonoflmocofkpoeliifh",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "pcollgbgdjbfmjkgkooifpbakhiaedmn",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "biamdbghcfnhfomoeoofijhgbaconohn",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "oobeglhlmnjdphopekibpbeoipimbkkk",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "bjfgambnhccakkhmkepdoekmckoijdlc",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "labihkcmhekblajdihbblcgcapbkckie",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "gfjblggkimebjolmnfokhmjlfgghbmje",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ilmdofdhpnhffldihboadndccenlnfll",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "opnbnifjjeelblpikodmdefcjjcpmcmn",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "jjpmfdjghngpncajeffgdpfcedlpkdmg",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "mefflogaeeohhcbioojohbckpheliamf",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "gmckkjioaelolodmmfnmcjdadimnhacn",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "emgmamganhngommnajhjihbpknommgjc",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "jdkhpfnaghhfabipdgdopfmklhbfponm",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "oaljfolckhcnijgnnbhgahcdjhpfpjfp",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ilcndgnlkiodbcpcgjkfihjponbenmem",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "dkhpgbbhlnmjbkihoeniojpkggkabbbl",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "jpcffejadencmkphckmkhcfcpimdacko",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ecnknpjoomhilbhjipoipllgdgaldhll",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ekkdjklblbjpmdgjckcdielhfhgbdlbf",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kllpplefcmdgkdgpflcdfnconipelfeg",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "cbgecfllfhmmnknmamkejadjmnmpfjmp",
+      "human_label": "CLONE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:48:17.447Z"
+    },
+    {
+      "extension_id": "difoiogjjojoaoomphldepapgpbgkhkb",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "bglgkmdbcgjgdjbadmhjaepodkinklnh",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "nkbjlpjfcjkmmkmmfaapaphfnkahgmjm",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "hlkbmbkcepacdcimcanmbofgcibjiepm",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "agbenidaknnnodgaellgnknnghpmcobc",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "biohjdkjclhempinkjfnjenpldjnkcfn",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kapoabaoamgiilmlanmfejgfomlnccph",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "gbncgdhklmnckojlibfhdadpfbcdbnch",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "hmdbcpkmaohbpahnedjmeklkkihddjgg",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "jojgmnkcojhiajdkjjdgehhoemadgmgf",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:47:21.907Z"
+    },
+    {
+      "extension_id": "pldfgenlpkgogacjjiapbkiecedbcojh",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:42:20.463Z"
+    },
+    {
+      "extension_id": "effkgioceefcfaegehhfafjneeiabdjg",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:45:16.818Z"
+    },
+    {
+      "extension_id": "ljfnhokapbmbchbfpgdkedekmfeodoie",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "jgpggmhmhogiianihdlofmgcaifklehl",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "mkdbpdaffmcbjmeeoieafacnbllimlfe",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "gfecljmddkaiphnmhgaeekgkadnooafb",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "llkgpihjneoghmffllamjfhabmmcddfh",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kjcolgolkgpcoodoemfgphbdijhpaoen",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ifckaoegkgefgnicdfmnkfafaeiingmp",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "mcbbkppinglngggemoflhaajipkapgml",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "hbnhkfkblpgjlfonnikijlofeiabolmi",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ambcheakfbokmebglefpbbphbccekhhl",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ceddkenhchmiajgmnlelcnackpeihohk",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "fchbhcjlkcdchcaklpkdofllfoimelgb",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "bhdfllifdfodbkihgmahlfmddlmfdjak",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ppnfnillfndkellpbphafglnljdefjph",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ppgckoockdlekoeidjbkllnoggacdgab",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "LEGITIMATE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "eklmiefkbieejjjhmpjdllphmcjdndin",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "flpilgddmpnebaiedbkofhofmplgiiil",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "niccnmfnkokileojoalgiinemlekmfoa",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "okanoajihjohgmbifnkiebaobfkgenfa",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "pjaiffleeblodclagbgflpnmighceibl",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "iaclcidolgjnpblhdalmildokfdmidlj",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ighcgnijpnfppnggmjcpgbphjmlomcpo",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "gejpagcjdocpgpnblmknkfpbdjkeocpd",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "pchkljckekioepjocghikghmocnkbgcm",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kolkklpaoobmfblcifkmnbgoohklkejk",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "hkkpmmlecfhkohfnhpeodccidmnelkif",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "nkcidahnffiaecnchjkjkhkdbpppchgm",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "nkkkaendbndanjjndfpebmekhgdjlhkh",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "npphdmcakmfhllhblkealgkeefamebih",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kcepcpjejkfgmmfgeaemdnlepbkcmmif",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "dnehihimnemcbplmpjfcmbpgllfnhdam",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ckidgdoajhljibcnfnkgdhhieebafafj",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:44:24.933Z"
+    },
+    {
+      "extension_id": "jlalnhjkfiogoeonamcnngdndjbneina",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "pkcoogcpeheamgkhfhelaifnpmehdgmp",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "bccnghnbganmehniefnhcmnmphoflhem",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:42:16.451Z"
+    },
+    {
+      "extension_id": "jkejomfcjdnkcgfgjnpgecnaelohmfpn",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "gciegekcjpkmepcogapddinippmjiehd",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "dcbcnpnaccfjoikaofjgcipcfbmfkpmj",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "aaibfgjceomfbogoicgjjlabohghmelm",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "knemcdpkggnbhpoaaagmjiigenifejfo",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "doalefhfhoencpklgkmabcakndkniddl",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "feleicfaofghndblnohgcngefckkohdl",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "fbbjijdngocdplimineplmdllhjkaece",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ddihmlagdkjhjolfdjcehlphmhkpmabb",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:42:37.307Z"
+    },
+    {
+      "extension_id": "fefjfmepiiklhfpekbljnagapioabnnd",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "dacbcjjmegpiooanamonipdjhplejfml",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "npchaaconkaeabodpfagndjbepmnkckk",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:46:55.187Z"
+    },
+    {
+      "extension_id": "ibfbnkghpleabhadhjmajihfanbpijkh",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "maojnknofbadmhfkbllhpddhophjhblo",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "madhogacekcffodccklcahghccobigof",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:47:11.345Z"
+    },
+    {
+      "extension_id": "gllophmfnbdpgfnbmbndlihdlcgohcpn",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "eenilhbheldklhbmjeigcibmklghflao",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "hcjmcpfahioghphbgfokmijhkccofkci",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "pkdcpohhilpdgdooafpjnenmnhgbmdmh",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "nflpppciongpooakaahfdjgioideblkd",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:44:39.015Z"
+    },
+    {
+      "extension_id": "eigfegoidflaaabndmlbjhndflfjeapb",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:44:20.942Z"
+    },
+    {
+      "extension_id": "epadnmckjchpoedgecdghpmaicnklagd",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "djmjoepmfiooddjlmnagnnanhbjpdjkp",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "boajagckinfhakcopfbcjiedepfhmcjg",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "lggplclnocekhieeegbifpiofggloaph",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ogakgacjkoojmdahpelppalilhhplnbe",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "hnamfnhmoenghcblamdakplfekopbmjp",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "niicpkfpebcmikhdmmjnlamoljlabkni",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "dkdnancajokhfclpjpplkhlkbhaeejob",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ngaaknjchkenekfcfbepbjdbgfjcopob",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "inehfleiieafdkoidehlpkaccjbfgojk",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "nklidonmgcienceaijlpnffbgeiecbcd",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:42:32.279Z"
+    },
+    {
+      "extension_id": "baagbnbocpdlgifpillkgicofdgamajp",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "bldiolhaloogkkbpgojpbjbcalnldlpb",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "fadieaaojhhonpnjmhjbhhndplkhnnom",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kdjfhglijhebcchcfkknicfaedhhfpmo",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "iimjloenddcpaddfdigacfegicopfdkg",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "fmijcafgekkphdijpclfgnjhchmiokgp",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "dfhaeonjlcgpgoienfbafnnpdommhblh",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "agciioechifjhhkcaaejddhibamepgnb",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:43:02.828Z"
+    },
+    {
+      "extension_id": "iinnhbfjbahmddefhdgelochopnanmcg",
+      "human_label": "LEGITIMATE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:44:33.842Z"
+    },
+    {
+      "extension_id": "hiamcdfoigjkjihfmobahmmhmnnegplp",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ihlmencnomgfbmeoddhdpgpieahimmmk",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ndmldohefgmnciihihioeeoiobchcmgi",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ajoickdlofadbaooambnlnlbcpdnkkck",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "pijagnpcnegcogimkghghdihobbeaicn",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kclbocgneecjbmllchofndpkmcfeaile",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "ngibihdmmmebipdlhbfhlebhlhiifmfe",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "hpigokfijemjehgbboonfannjnfaokpl",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:46:17.035Z"
+    },
+    {
+      "extension_id": "cfoamnjiopdfebnkighclndegcklbihf",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "iaanbmgemoggkbigfkpblobfdajkkmfo",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "kgcjggkpnjfohofdpbiicichaafhnmlp",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "lmgdhjilfapmkedonjbieldoclfidddf",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "lnkmillkgdmehjkifhmbdjmihlocpijc",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:42:24.916Z"
+    },
+    {
+      "extension_id": "djapokkdpogmnakdhenpejogeidnfjmi",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "loofpfbihldapeahnbepgaomfokcnlgb",
+      "human_label": "CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": false,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "mpckgomcnfaogmjamhdkaajbmfokmhli",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    },
+    {
+      "extension_id": "mcecffeookkllgkbflcdlbicolmfgifj",
+      "human_label": "MALICIOUS_CLONE",
+      "system_prediction": "MALICIOUS_CLONE",
+      "is_correct": true,
+      "notes": "",
+      "timestamp": "2026-02-01T20:41:53.524Z"
+    }
+  ],
+  "metrics": {
+    "total": 378,
+    "tp": 140,
+    "fp": 8,
+    "tn": 183,
+    "fn": 4,
+    "precision": "0.946",
+    "recall": "0.972",
+    "f1": "0.959"
+  }
+}

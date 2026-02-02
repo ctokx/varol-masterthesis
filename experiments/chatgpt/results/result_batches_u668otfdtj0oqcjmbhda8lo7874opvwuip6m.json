@@ -1,0 +1,349 @@
+{
+  "job_name": "batches/u668otfdtj0oqcjmbhda8lo7874opvwuip6m",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:40.127573",
+  "validations": [
+    {
+      "extension_id": "mcbhhiafbiafmggccdcpgfldcaeipopg",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension performs exactly as described. The static analysis flags for fetch hijacking and script injection are technical necessities for the extension's core features (modifying outgoing prompt requests and interacting with the page's JS context). The code analysis confirms that the hijacked fetch function only modifies the request body to insert templates and sends the data to the original OpenAI endpoint. The only external network call is a GET request to GitHub to retrieve the list of templates. The chat export feature operates entirely client-side using Blob URLs. There is no evidence of data exfiltration, tracking, or malicious behavior.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Adds chat export and prompt templates to ChatGPT",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chat.openai.com",
+          "https://raw.githubusercontent.com",
+          "https://prompts.chat",
+          "https://clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH_HIJACK",
+          "usage": "LEGITIMATE",
+          "justification": "The extension intercepts window.fetch solely to inject the selected prompt template into the request body before it is sent to OpenAI. The modified request is sent to the original destination (t[0]), not an external server."
+        },
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content_script.js to inject 'inject.js' into the page context. This is necessary because Content Scripts cannot directly modify the main page's window.fetch object due to isolation contexts."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (GitHub)",
+          "usage": "LEGITIMATE",
+          "justification": "The extension fetches a CSV file of prompt templates from a public GitHub repository (mohalobaidi/awesome-chatgpt-prompts) to populate the UI."
+        },
+        {
+          "pattern": "BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "Used in the 'exportCurrentChat' function to create a downloadable Markdown file of the chat history locally within the browser. No data leaves the device."
+        }
+      ],
+      "token_usage": {
+        "prompt": 8727,
+        "candidates": 714,
+        "total": 11099
+      }
+    },
+    {
+      "extension_id": "iimdmhmbedafhnjdccafpegfkadhkpoj",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is SAFE and appears to be a low-quality or unfinished project based on a tutorial. \n\n1. **Unused/Dead Code**: The manifest does not define a 'default_popup' in the 'action' key, nor does it list 'content_scripts'. Therefore, 'popup.js' (where the static analysis flagged suspicious patterns) is never loaded or executed by the browser. The only active code is 'background.js', which simply opens 'https://chat.openai.com'.\n\n2. **Broken Template Code**: The code in 'popup.js' contains placeholders like 'YOUR_SERVER_URL' and 'YOUR_CLIENT_ID'. These are syntactically valid strings but functional dead-ends. Even if the code were executed, it would fail DNS resolution or API authentication immediately. This confirms the code is copy-pasted from a development tutorial rather than being malicious malware.\n\n3. **No Malicious Capability**: There is no obfuscation, no external script loading, and the only 'exfiltration' target is a placeholder string. The extension poses no security threat.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Access OpenAI ChatGPT in a mini window",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chat.openai.com",
+          "api.openai.com",
+          "clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "YOUR_SERVER_URL"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT (YOUR_SERVER_URL)",
+          "usage": "LEGITIMATE",
+          "justification": "The presence of 'YOUR_SERVER_URL' and 'YOUR_CLIENT_ID' indicates this is unfinished template code copied from a tutorial. It is non-functional and cannot exfiltrate data."
+        },
+        {
+          "pattern": "FETCH (OpenAI)",
+          "usage": "LEGITIMATE",
+          "justification": "Direct API calls to OpenAI align with the extension's stated purpose."
+        },
+        {
+          "pattern": "BACKGROUND_SERVICE_WORKER",
+          "usage": "LEGITIMATE",
+          "justification": "The background script simply opens a legitimate URL (https://chat.openai.com) in a new window."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3073,
+        "candidates": 719,
+        "total": 6514
+      }
+    },
+    {
+      "extension_id": "llkgpihjneoghmffllamjfhabmmcddfh",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension functions exactly as described. It uses the Mozilla Readability library to extract article content and sends it to OpenAI (via API key or web session) for summarization. \n\nTelemetry: The extension contains a logging module that sends usage data to `aliyuncs.com`. The collected data is strictly metadata (extension version, action ID, timestamp, User-Agent, language, and the URL where the action was triggered). There is NO evidence that article content, API keys, or access tokens are sent to this logging server.\n\nOpenAI Session Access: The extension accesses `https://chat.openai.com/api/auth/session` to retrieve an access token. This is a functional requirement for the 'Login with ChatGPT' feature (allowing users to use the extension without a paid API key) and the token is only sent to OpenAI endpoints.\n\nNo malicious dual-purpose or hidden surveillance code was identified.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": null,
+        "dual_purpose": null,
+        "credential_theft": null
+      },
+      "domains": {
+        "legitimate": [
+          "https://chat.openai.com",
+          "https://api.openai.com",
+          "https://clients2.google.com",
+          "https://nc-dn-us.us-west-1.log.aliyuncs.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "Endpoints match the stated purpose: OpenAI for summarization and Alibaba Cloud (aliyuncs.com) for basic usage analytics."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used to send article text to OpenAI and usage statistics to the developer's log server. No unexpected data transmission found."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in script.js to inject the extension's UI (Shadow DOM) into the current page. The content injected is locally generated HTML templates."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to persist user settings (prompts) and the OpenAI API key/access token locally."
+        }
+      ],
+      "token_usage": {
+        "prompt": 69094,
+        "candidates": 624,
+        "total": 73556
+      }
+    },
+    {
+      "extension_id": "ighcgnijpnfppnggmjcpgbphjmlomcpo",
+      "verdict": "SAFE",
+      "confidence": 0.9,
+      "reasoning": "The extension behaves consistently with its stated purpose as a ChatGPT assistant tool. While it includes robust telemetry (sending data to Aliyun Log Service) and cross-promotion for the developer's other products (LinkedRadar/ZingFront), these are not malicious actions in the context of security threats. \n\n1. **Data Collection**: It logs usage events, including the text of questions/answers when the specific 'Copy' button provided by the extension is used. This is privacy-invasive but tied to user interaction, not passive surveillance.\n2. **Remote Config**: It fetches configuration parameters from 'linkedradar.com', which is typical for managing feature flags.\n3. **Cross-Promotion**: It injects buttons linking to other LinkedRadar tools, which is a monetization strategy, not malware.\n4. **No Malicious Payloads**: There is no evidence of credential theft, keylogging (beyond UI shortcuts), or arbitrary code execution.\n\nThe 'Static Analysis' findings regarding network requests and storage are fully explained by the telemetry and configuration logic. The domains belong to the vendor or standard cloud infrastructure.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "User Prompt and ChatGPT Response (text)",
+          "processing_method": "JSON serialization, optional lz4 compression",
+          "destination_domain": "us-west-1.log.aliyuncs.com",
+          "code_evidence": "chatgpt-script.js: Object(b[\"f\"])(\"\".concat(o[\"f\"].LOG_TYPE, \"0245\"), \"\", { question: y, response: e }) calls background.js logging function which fetches to aliyuncs.com"
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant for TikTok",
+          "hidden_functionality": "Cross-promotion of 'LinkedRadar' tools via injected 'Drainage' buttons in ChatGPT UI",
+          "code_evidence": "chatgpt-script.js: function T() injects '.zing-gpt-drainage-button' linked to linkedradar.com"
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "tiktok.com",
+          "openai.com",
+          "chat.openai.com"
+        ],
+        "requires_investigation": [
+          "linkedradar.com",
+          "us-west-1.log.aliyuncs.com",
+          "gptplus.io",
+          "static-global.zingfront.com"
+        ],
+        "informational_only": [
+          "chrome.google.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "linkedradar.com is used for remote configuration and cross-promotion assets, consistent with the vendor's identity."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store configuration (fetched from remote), analytics UUIDs, and install timestamps."
+        },
+        {
+          "pattern": "DOM_MUTATION",
+          "usage": "LEGITIMATE",
+          "justification": "Injects a 'Copy To' button and cross-promotion links into the ChatGPT interface, which is the extension's intended UI modification."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used for telemetry logging (Aliyun) and fetching configuration (LinkedRadar). No evidence of malicious payload downloading."
+        }
+      ],
+      "token_usage": {
+        "prompt": 131026,
+        "candidates": 931,
+        "total": 136670
+      }
+    },
+    {
+      "extension_id": "fmijcafgekkphdijpclfgnjhchmiokgp",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension strictly performs the functions described: automating prompt insertion, handling image pasting via clipboard simulation, and rendering mindmaps using the Markmap library. The static analysis findings are benign contexts: 'innerHTML' is used to manipulate the chat UI, 'fetch/network' flags in libraries point to XML namespaces or documentation URLs, and 'keyboard' events are used to simulate user input for compatibility with modern web frameworks. There is no code for data exfiltration, remote code execution, or credential theft.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "groq.com",
+          "www.perplexity.ai",
+          "www.phind.com",
+          "claude.ai",
+          "gemini.google.com",
+          "chat.openai.com",
+          "chatgpt.com",
+          "http://www.w3.org/2000/svg",
+          "http://www.w3.org/1999/xhtml",
+          "http://www.w3.org/1999/xlink",
+          "https://clients2.google.com/service/update2/crx"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://chrismaloney.org",
+          "https://github.com/klortho/d3-flextree"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "DOM / INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content.js to insert prompt text into chat input fields (contenteditable divs) and to render UI buttons and mindmaps."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER / DISPATCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content.js (typePromptCommand) to simulate typing events (KeyDown, KeyUp) required to trigger React/framework change listeners on AI chat sites."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to save and retrieve user-customized prompt buttons ('chatgpttoolkit.customPrompts')."
+        },
+        {
+          "pattern": "INTERCEPTION / URL Parsing",
+          "usage": "LEGITIMATE",
+          "justification": "The extension parses URL hash parameters to receive prompts from external sources (e.g., extension popup) and autofill them into the chat."
+        }
+      ],
+      "token_usage": {
+        "prompt": 105930,
+        "candidates": 778,
+        "total": 108321
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 0,
+    "SUSPICIOUS": 0,
+    "SAFE": 5,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 0,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 5,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 1.0,
+    "true_positive_rate": 0.0,
+    "malicious_detection_rate": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 317850,
+    "candidate_tokens": 3766,
+    "total_tokens": 336160
+  }
+}

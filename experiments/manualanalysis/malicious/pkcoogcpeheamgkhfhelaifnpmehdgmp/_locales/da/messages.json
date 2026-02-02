@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT til Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Udvidelse til at oprette en genvej til den officielle ChatGPT i Google Chrome-browseren"
+    },
+    "ext_command_description": {
+        "message": "Genvej til at åbne ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT i Eco Mode?"
+    },
+    "request_perms_popup_description": {
+        "message": "Hjælp med bæredygtige formål blot ved at surfe på nettet. Denne tilstand vil ikke afbryde din browsing."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Lær mere"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Tillad"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Afvis"
+    },
+    "perms_granted_popup_title": {
+        "message": "Tillykke!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Du vil nu drage fordel af alle vores funktioner!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Fortsæt"
+    },
+    "perms_denied_popup_title": {
+        "message": "Det er en skam..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Måske næste gang."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Luk denne besked"
+    },
+    "welcome_title": {
+        "message": "ChatGPT til Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Udvidelse installeret med succes"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT til Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Udvidelse installeret med succes"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Følg trinene nedenfor for at fastgøre din udvidelse, og klik derefter på Næste trin"
+    },
+    "welcome_next_step": {
+        "message": "Næste trin"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "For at få adgang til alle udvidelsens funktioner skal du aktivere Eco Mode."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Klik på Tillad for at fortsætte"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Brugsbetingelser"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Fortrolighedspolitik"
+    },
+    "how_to_use_html_title": {
+        "message": "Sådan bruges udvidelsen"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Eller tryk på Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Eco Mode"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Tillykke! Dette websted er en partner af vores Eco Mode."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Hvad betyder det?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Ved at fortsætte med at browse vil du hjælpe planeten 🌍, plante træer og kompensere for CO2-udledninger uden omkostninger."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Ved hvert besøg hos en partner åbnes en ny fane kort for at muliggøre beregning af CO2-kompensation."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Forresten, mange tak for at støtte denne utrolige sag med os! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Lær mere"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Luk"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Vis ikke igen"
+    }
+}

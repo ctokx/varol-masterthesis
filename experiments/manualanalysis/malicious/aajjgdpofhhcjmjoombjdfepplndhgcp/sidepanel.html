@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta http-equiv="Cache-control" content="public">
+    <meta charset="UTF-8">
+    <title>Gemini™ AI</title>
+    <style>
+      body, html
+      {
+        margin: 0;
+        border: 0;
+        outline: 0;
+      }
+      html 
+      {
+        position: relative;
+      }
+      body
+      {
+        height: 100vh;
+      }
+      #gemini
+      {
+        background-color: white;
+        width: -webkit-fill-available;
+        width: 100%;   
+        min-width: 320px;
+        height: 100vh;
+        position: fixed;
+        left: 0;     
+        right: 0;
+        bottom: 0;
+        top: 0;
+        bottom: 0;
+        z-index: 1000;
+      }
+      #adcont > iframe{
+        width: 1536px;
+        height: 746px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+      }
+      #adcont
+      { 
+        display: none;
+        position: relative;
+        top:0;
+        left: 0;
+        height: 60px;
+        background: #292a2d;
+        width: -webkit-fill-available;
+        width: 100%;
+        overflow: hidden !important;
+        z-index: 1;
+        /*
+        background-repeat: no-repeat;
+        background-size: 468px 60px;
+        background-position: left;*/
+      }
+      .gettingready > #adcont
+      {
+        -webkit-transform: translateY(-61px);
+            -ms-transform: translateY(-61px);
+                transform: translateY(-61px);
+      }
+      .adon > #adcont,
+      .gettingready > #adcont
+      {
+        display: block;
+      }
+      /*
+      .adon > #adcont 
+      {
+        transition: transform 0.4s ease;
+      }
+      */
+      .adon > #gemini
+      {
+        height: calc(100vh - 60px);
+        /*transition: height 0.4s ease;*/
+      }
+      *
+        {
+          border: 0;
+          padding: 0;
+          margin: 0;
+          outline: 0;
+          overflow: hidden !important;
+        }
+        .none
+        {
+          display: none !important;
+          pointer-events: none;
+          -webkit-user-select: none;
+             -moz-user-select: none;
+              -ms-user-select: none;
+                  user-select: none;
+        }
+        .show
+        {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+        }
+      #overlay  
+      {
+    z-index: 99999999999;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: calc(100% - 30px);
+    height: 100%;
+    /*background: #00000022;*/
+    background: #101010bb;
+    -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    color: white;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -ms-flex-line-pack: center;
+        align-content: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 400;
+    padding-left: 15px;
+    padding-right: 15px;
+        }
+        #overlay > span > span
+        {
+          display: -webkit-inline-box;
+          display: -ms-inline-flexbox;
+          display: inline-flex;
+        }
+        #trck
+        {
+          position: fixed;
+          right: -100%;
+          bottom: -100%;
+          width: 0.2px;
+          height: 0.2px;
+          -webkit-user-select: none;
+             -moz-user-select: none;
+              -ms-user-select: none;
+                  user-select: none;
+          pointer-events: none;
+          opacity: 0;
+          z-index: -1000;
+          visibility: hidden;
+        }
+        #displayC
+        {
+          display: contents;
+          overflow: hidden;
+        }
+        #displayC > iframe
+        {
+          width: 0.1px;
+          height: 0.1px;
+          opacity: 0;
+          pointer-events: none;
+          -webkit-user-select: none;
+             -moz-user-select: none;
+              -ms-user-select: none;
+                  user-select: none;
+          z-index: -100000000000;
+          position: fixed;
+          top:0;
+          left: 0;
+        }
+        body
+        {
+          background: #343541;
+        }
+        body::before {
+    content: "";
+    position: fixed;
+    background: url(images/snipp6.svg);
+    width: 75px;
+    height: 75px;
+    background-size: 75%;
+    background-repeat: no-repeat no-repeat;
+    background-position: center;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0);
+        }
+    </style>
+  </head>
+  <body>
+    <!--<script src="js/sidepanel.js" async></script>-->
+    <div id="adcont"></div>
+    <iframe src="https://gemini.google.com/" frameborder="0" noresize="noresize" crossorigin="anonymous" id="gemini" allow="clipboard-read; clipboard-write; fullscreen; geolocation; web-share; picture-in-picture; publickey-credentials-get; autoplay; encrypted-media; identity-credentials-get;">
+    </iframe> 
+    <div id="overlay" class="none">
+      <span>Please log-in to your account in your Browser window & then <span>re-open</span> the SidePanel.</span>
+    </div>  
+    <script src="sidepanel_nu.js" async></script>
+  </body>
+</html>

@@ -1,0 +1,88 @@
+body[eurekaa_sidepanel="true"] *
+.gmat-caption
+{
+content: "" !important;
+visibility: hidden !important;
+height: 0px !important;
+margin: 5px !important;
+overflow: hidden !important;
+}
+body[eurekaa_sidepanel="true"] *
+.chat-container::-webkit-scrollbar 
+{
+    display: none !important;
+    width: 0px !important;
+}
+body[eurekaa_sidepanel="true"] *
+.gmat-caption
+{
+    visibility: hidden !important;
+    padding-top: 0 !important;
+    height: 0 !important;
+    margin-top: 0 !important; 
+}
+body[eurekaa_sidepanel="true"] *
+chat-window > div.chat-container
+{
+    overflow-y: hidden !important;
+}
+body[eurekaa_sidepanel="true"] *
+::-webkit-scrollbar, ::-webkit-scrollbar-corner
+{
+    height: 0 !important;
+    width: 7px !important;
+}
+body[eurekaa_sidepanel="true"] *
+.text-input-field.ng-star-inserted
+{
+    border-radius: 12px !important;
+    margin-bottom: 5px !important;
+}
+
+
+
+/*
+body[eurekaa_sidepanel="true"] *
+user-query:first-child
+{
+    margin-top: 48px;
+}
+*/
+
+@media screen and (max-width: 400px) 
+{
+
+body[eurekaa_sidepanel="true"] *
+.buttons-container-v2.ng-star-inserted::before
+{
+    display: none !important;
+}
+body[eurekaa_sidepanel="true"] *
+.buttons-container-v2.ng-star-inserted > button:first-child
+{
+    margin-left: 10px !important;
+}
+body[eurekaa_sidepanel="true"] *
+infinite-scroller.chat-history
+{
+    padding: 0 !important;
+}
+body[eurekaa_sidepanel="true"] *
+a[title="Google Bard"] > img.gb_Kc
+{
+    width: 100% !important;
+}
+
+/*.presented-response-container:not(:has(message-content)) * .logo-gutter.ng-star-inserted*/
+body[eurekaa_sidepanel="true"] *
+.presented-response-container:has(message-content) > .logo-gutter.ng-star-inserted,
+body[eurekaa_sidepanel="true"] *
+.presented-response-container:has(message-content) * .logo-gutter.ng-star-inserted
+{
+    width: 12px !important;
+    visibility: hidden !important;
+}
+
+}
+
+

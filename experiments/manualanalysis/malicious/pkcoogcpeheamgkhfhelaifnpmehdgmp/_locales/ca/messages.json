@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT per a Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Extensió per crear una drecera per al ChatGPT oficial al navegador Google Chrome"
+    },
+    "ext_command_description": {
+        "message": "Drecera per obrir ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT en mode Eco?"
+    },
+    "request_perms_popup_description": {
+        "message": "Ajuda amb causes sostenibles només navegant per la web. Aquest mode no interromprà la teva navegació."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Més informació"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Permet"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Denega"
+    },
+    "perms_granted_popup_title": {
+        "message": "Felicitats!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Ara et beneficiaràs de totes les nostres funcions!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Continua"
+    },
+    "perms_denied_popup_title": {
+        "message": "Quina llàstima..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Potser la propera vegada."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Tanca aquest missatge"
+    },
+    "welcome_title": {
+        "message": "ChatGPT per a Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Extensió instal·lada amb èxit"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT per a Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Extensió instal·lada amb èxit"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Segueix els passos a continuació per fixar la teva extensió, després fes clic a Següent pas"
+    },
+    "welcome_next_step": {
+        "message": "Següent pas"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "Per accedir a totes les funcions de l'extensió, activa el mode Eco."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Fes clic a Permet per continuar"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Condicions d'ús"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Política de privacitat"
+    },
+    "how_to_use_html_title": {
+        "message": "Com utilitzar l'extensió"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "O prem Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Mode Eco"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Felicitats! Aquest lloc és un soci del nostre mode eco."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Què significa això?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "En continuar navegant, estaràs ajudant el planeta 🌍, plantant arbres i compensant les emissions de carboni sense cap cost."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Amb cada visita a un soci, s'obrirà breument una nova pestanya per permetre el càlcul de la compensació de carboni."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Per cert, moltes gràcies per donar suport a aquesta increïble causa amb nosaltres! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Més informació"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Tanca"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "No mostris de nou"
+    }
+}

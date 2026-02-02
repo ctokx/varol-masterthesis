@@ -1,0 +1,485 @@
+{
+    "you_need_to_approve_the_permissions_to_open_the_extension_in_the_side_panel_": {
+        "message": "Engedélyeket kell jóváhagynod a kiegészítő megnyitásához a oldalsávban."
+    },
+    "dropblock_head": {
+        "message": "dropBlock_head"
+    },
+    "open_the_extension_in_a_sidepanel": {
+        "message": "Nyisd meg a kiegészítőt az oldalsávban"
+    },
+    "link_was_copied_": {
+        "message": "A linket másoltuk!"
+    },
+    "drag_and_drop_your_files_here": {
+        "message": "Húzd ide a fájlokat"
+    },
+    "only_text_content_will_be_processed__up_to_5_files__each_up_to_5mb_": {
+        "message": "Csak szövegtartalom kerül feldolgozásra. Legfeljebb 5 fájl, mindegyik legfeljebb 5MB."
+    },
+    "you_can_upload_a_maximum_of_5_files_per_dialog__please_upload_files_in_smaller_batches_": {
+        "message": "Maximum 5 fájlt tölthetsz fel párbeszédenként. Kérjük, tölts fel kisebb csomagokat."
+    },
+    "invalid_file_format_or_file_size_exceeds_5_mb__please_select_smaller_files_": {
+        "message": "Érvénytelen fájlformátum vagy a fájl mérete meghaladja az 5 MB-ot. Kérjük, válassz kisebb fájlokat."
+    },
+    "permissions_are_missing__please_grant_the_extension_access_to_web_pages_": {
+        "message": "Hiányzó jogosultságok. Kérjük, engedélyezd a kiegészítőnek a weboldalakhoz való hozzáférést."
+    },
+    "error__please_try_again_later_": {
+        "message": "Hiba történt, kérjük, próbáld meg később."
+    },
+    "summarization_does_not_work_on_system_pages__please_copy_the_page_content_into_the_chat_manually_": {
+        "message": "Az összegzés nem működik rendszeroldalakon. Kérjük, másold be a lap tartalmát a chatbe manuálisan."
+    },
+    "delete": {
+        "message": "Törlés"
+    },
+    "delete_chat_": {
+        "message": "Biztosan törölni akarod a beszélgetést?"
+    },
+    "are_you_sure_you_want_to_delete_this_chat_": {
+        "message": "Biztos vagy benne, hogy törölni akarod ezt a beszélgetést?"
+    },
+    "cancel": {
+        "message": "Mégse"
+    },
+    "the_chat_was_deleted": {
+        "message": "A beszélgetést töröltük"
+    },
+    "`_text_`": {
+        "message": "ʼ+text+ʼ"
+    },
+    "`_lang___(text)_`": {
+        "message": "ʼ+Lang.__(text)+ʼ"
+    },
+    "${deletetext}": {
+        "message": "${deleteText}"
+    },
+    "`_lang___(_delete_chat__)_`": {
+        "message": "ʼ+Lang.__('Biztosan törlöd a beszélgetést?')+ʼ"
+    },
+    "`_lang___(_are_you_sure_you_want_to_delete_this_chat__)_`": {
+        "message": "ʼ+Lang.__('Biztos vagy benne, hogy törölni akarod ezt a beszélgetést?')+ʼ"
+    },
+    "`_lang___(_cancel_)_`": {
+        "message": "ʼ+Lang.__('Mégse')+ʼ"
+    },
+    "`_lang___(_delete_)_`": {
+        "message": "ʼ+Lang.__('Törlés')+ʼ"
+    },
+    "file": {
+        "message": "Fájl"
+    },
+    "thinking": {
+        "message": "Gondolkodik"
+    },
+    "copy_response": {
+        "message": "Válasz másolása"
+    },
+    "good_response": {
+        "message": "Jó válasz"
+    },
+    "bad_response": {
+        "message": "Rossz válasz"
+    },
+    "uploading___": {
+        "message": "Feltöltés..."
+    },
+    "`_lang___(_thinking_)_`": {
+        "message": "ʼ+Lang.__('Gondolkodik')+ʼ"
+    },
+    "feedback": {
+        "message": "Visszacsatolás"
+    },
+    "share": {
+        "message": "Megosztás"
+    },
+    "rate_us": {
+        "message": "Értékelj minket"
+    },
+    "💀": {
+        "message": "💀"
+    },
+    "😞": {
+        "message": "😞"
+    },
+    "😐": {
+        "message": "😐"
+    },
+    "🙂": {
+        "message": "🙂"
+    },
+    "😍": {
+        "message": "😍"
+    },
+    "grok_3_is_here_": {
+        "message": "Itt a Grok 3."
+    },
+    "what_do_you_want_to_know_": {
+        "message": "Mit szeretnél tudni?"
+    },
+    "how_can_grok_help_you_": {
+        "message": "Hogyan segíthet neked a Grok?"
+    },
+    "attach_file": {
+        "message": "Fájl csatolása"
+    },
+    "select_a_model": {
+        "message": "Válassz modellt"
+    },
+    "sent_message": {
+        "message": "Elküldött üzenet"
+    },
+    "hey_": {
+        "message": "Szia,"
+    },
+    "welcome_": {
+        "message": "üdvözlünk!"
+    },
+    "how_can_i_help_you_": {
+        "message": "Hogyan segíthetek?"
+    },
+    "message_deepseek": {
+        "message": "DeepSeek üzenet"
+    },
+    "summarize_the_current_page": {
+        "message": "Összegzés a jelenlegi oldalról"
+    },
+    "upload_a_file": {
+        "message": "Fájl feltöltése"
+    },
+    "start_a_chat": {
+        "message": "Beszélgetés indítása"
+    },
+    "set_personalization": {
+        "message": "Személyre szabás beállítása"
+    },
+    "new_chat": {
+        "message": "Új beszélgetés"
+    },
+    "switch_to_light_mode": {
+        "message": "Váltás világos módra"
+    },
+    "switch_to_dark_mode": {
+        "message": "Váltás sötét módra"
+    },
+    "open_the_extension_in_a_separate_tab": {
+        "message": "Nyisd meg a kiegészítőt külön lapban"
+    },
+    "{{_item_}}": {
+        "message": "{{ item }}"
+    },
+    "start_now": {
+        "message": "Kezdd most"
+    },
+    "get_ideas": {
+        "message": "Ötletek gyűjtése"
+    },
+    "ask": {
+        "message": "Kérdezz"
+    },
+    "code": {
+        "message": "Kód"
+    },
+    "translate": {
+        "message": "Fordítás"
+    },
+    "cooking_tips": {
+        "message": "Főzési tippek"
+    },
+    "how_deepseek_ai_helps_you_": {
+        "message": "Hogyan segít neked a DeepSeek AI?"
+    },
+    "✨_get_spot_on_answers_10x_faster": {
+        "message": "✨ Gyorsabb, pontos válaszok 10x"
+    },
+    "no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Nincs Google, nincs tabulációs káosz, nincs időpazarlás"
+    },
+    "📚_save_hours_on_studying": {
+        "message": "📚 Órákat spórolhatsz a tanulással"
+    },
+    "generate_essays__auto_complete_tests__and_summarize_any_page_in_minutes_": {
+        "message": "Esszéket ír, automatikusan kitölti a teszteket, és összegzi bármilyen oldalt percek alatt."
+    },
+    "🌍_real_time_translation_on_the_page": {
+        "message": "🌍 Valós idejű fordítás az oldalon"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments": {
+        "message": "Írj úgy, mint egy anyanyelvi, hibák vagy kínos pillanatok nélkül, közvetlenül az oldalon."
+    },
+    "💻_your_ai_copilot_for_coding": {
+        "message": "💻 A te AI társaid a kódolásban"
+    },
+    "fix_bugs__decode_legacy_and_write_code_3x_faster__enjoy_your_work_and_earn_more_": {
+        "message": "Hibák javítása, örökség dekódolása és kódírás 3x gyorsabban. Élvezd a munkádat és keress többet."
+    },
+    "where_do_we_start_": {
+        "message": "Hol kezdjük?"
+    },
+    "get_10_post_ideas_for_my_cooking_blog": {
+        "message": "Szerezd meg 10 ötletet a főzőblogomhoz"
+    },
+    "find_a_billion_dollar_no_code_startup_idea": {
+        "message": "Találj egy milliárd dolláros no-code startup ötletet"
+    },
+    "give_me_fun_game_ideas_to_play_with_my_kids_at_home": {
+        "message": "Adj mókás játékötleteket, amiket játszhatok a gyerekeimmel otthon"
+    },
+    "write_3_viral_tiktok_post_ideas_about_personal_finance": {
+        "message": "Írj 3 virális TikTok posztötletet a személyes pénzügyekről"
+    },
+    "recommend_5_books_that_will_change_the_way_i_think": {
+        "message": "Ajánlj 5 könyvet, amelyek megváltoztatják a gondolkodásmódomat"
+    },
+    "what_daily_habits_can_boost_my_creativity_": {
+        "message": "Milyen napi szokások növelhetik a kreativitásomat?"
+    },
+    "help_me_set_3_achievable_goals_for_the_next_30_days": {
+        "message": "Segíts megfogalmazni 3 elérhető célt a következő 30 napra"
+    },
+    "how_can_i_make_my_facebook_profile_more_attractive_": {
+        "message": "Hogyan tehetem vonzóbbá Facebook profilomat?"
+    },
+    "generate_a_basic_react_component_for_a_to_do_list": {
+        "message": "Generálj egy alap React komponenst a teendőlistához"
+    },
+    "can_you_explain_javascript_promises_in_a_simple_way_": {
+        "message": "Elmagyaráznád egyszerűen a JavaScript ígéreteket?"
+    },
+    "how_do_i_build_a_rest_api_endpoint_using_fastapi_in_python_": {
+        "message": "Hogyan építek REST API végpontot FastAPI használatával Pythonban?"
+    },
+    "how_can_i_add_social_login_(google_facebook)_to_my_app_": {
+        "message": "Hogyan adhatok hozzá társadalmi bejelentkezést (Google/Facebook) az alkalmazásomhoz?"
+    },
+    "how_do_you_say_“love”_in_french_": {
+        "message": "Hogy mondod „szeretet” franciául?"
+    },
+    "how_do_you_say_“delicious_food”_in_italian_": {
+        "message": "Hogy mondod „finom étel” olaszul?"
+    },
+    "what_s_the_korean_translation_of_“i_miss_you”_": {
+        "message": "Mi a „Hiányzol” koreai fordítása?"
+    },
+    "what_s_the_arabic_word_for_“peace”_": {
+        "message": "Mi az „béke” arab szóval?"
+    },
+    "quick_breakfast_ideas_kids_will_actually_love": {
+        "message": "Gyors reggeli ötletek, amiket a gyerekek tényleg szeretni fognak"
+    },
+    "what_are_5_no_sugar_snacks_i_can_make_at_home_": {
+        "message": "Milyen 5 cukormentes nasi készíthető otthon?"
+    },
+    "give_me_an_easy_3_ingredient_dessert_recipe": {
+        "message": "Adj egy könnyű 3 összetevős desszert receptet"
+    },
+    "easy_dessert_tips": {
+        "message": "Egyszerű desszert tippek"
+    },
+    "click": {
+        "message": "Kattintás"
+    },
+    "add_deepseek_ai_to_the_toolbar_for_quick_access": {
+        "message": "Adj DeepSeek AI-t a gyorseléréshez a eszköztárhoz"
+    },
+    "file_download_has_started": {
+        "message": "A fájl letöltése megkezdődött"
+    },
+    "to_get_this_file_again_": {
+        "message": "Hogy ismét megszerezd ezt a fájlt,"
+    },
+    "click_here": {
+        "message": "kattints ide"
+    },
+    "show_downloaded_file": {
+        "message": "Mutasd a letöltött fájlt"
+    },
+    "files_on_the_computer_can_only_be_opened_in_the_google_chrome_extension": {
+        "message": "A számítógépen lévő fájlokat kizárólag a Google Chrome kiegészítőben lehet megnyitni"
+    },
+    "enjoy_the_conversion_": {
+        "message": "Élvezed az átalakítást?"
+    },
+    "please_rate_your_experience_with_our_extension": {
+        "message": "Kérjük, értékeld a tapasztalatodat a kiegészítőnkkel"
+    },
+    "try_again": {
+        "message": "Próbáld újra"
+    },
+    "help_us_be_better": {
+        "message": "Segíts, hogy jobbak legyünk"
+    },
+    "your_feedback_matters__what_can_we_improve_": {
+        "message": "A visszajelzésed számít. Mit tudnánk fejleszteni?"
+    },
+    "send": {
+        "message": "Küldés"
+    },
+    "write_your_feedback_here": {
+        "message": "Írd ide a visszajelzésed"
+    },
+    "support_us_in_10_seconds": {
+        "message": "Támogass minket 10 másodperc alatt"
+    },
+    "1__click": {
+        "message": "1. Kattints"
+    },
+    "_write_a_review_": {
+        "message": "\\\"Írj értékelést\\\""
+    },
+    "2__rate_and_post_your_feedback": {
+        "message": "2. Értékeld és tedd közzé a visszajelzésed"
+    },
+    "thanks_for_helping_us_grow_": {
+        "message": "Köszönjük, hogy segítettél fejlődni!"
+    },
+    "select_your_language": {
+        "message": "Válaszd ki a nyelvet"
+    },
+    "type_to_filter_languages___": {
+        "message": "Írj be, hogy szűrd a nyelveket..."
+    },
+    "create_public_link": {
+        "message": "Nyilvános link létrehozása"
+    },
+    "this_file_will_be_available_to_anyone__public_links_are_temporary_and_will_be_removed_after_24_hours_": {
+        "message": "Ez a fájl bárki számára elérhető lesz. A nyilvános linkek ideiglenesek és 24 óra múlva törlődnek."
+    },
+    "create": {
+        "message": "Létrehozás"
+    },
+    "save_hours_on_studying": {
+        "message": "[textgradientEl]Órákat spórolhatsz meg a tanulással[\/textgradientEl]"
+    },
+    "auto_complete_tests__generate_essays__and_summarize_any_page_in_minutes_": {
+        "message": "Automatikusan kitölti a teszteket, esszéket ír, és összegzi bármilyen oldalt percek alatt."
+    },
+    "step": {
+        "message": "Lépés"
+    },
+    "of": {
+        "message": "a"
+    },
+    "continue": {
+        "message": "Folytatás"
+    },
+    "use_ai_translation_magic": {
+        "message": "Használd az AI Fordítási [textgradientEl]Varázslatát[\/textgradientEl]"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments__right_on_the_page_": {
+        "message": "Írj úgy, mint egy anyanyelvi, hibák vagy kínos pillanatok nélkül, közvetlenül az oldalon."
+    },
+    "get_your_ai_copilot_for_coding": {
+        "message": "Szerezd meg az [textgradientEl]AI Társaidat[\/textgradientEl] a kódoláshoz"
+    },
+    "try_now": {
+        "message": "Próbáld most"
+    },
+    "did_this_tool_help_you_": {
+        "message": "Segített ez az eszköz?"
+    },
+    "share_it_with_friends_who_work_with_images_": {
+        "message": "Oszd meg olyan barátokkal, akik képekkel dolgoznak."
+    },
+    "who_would_find_it_useful_": {
+        "message": "Ki találhatja hasznosnak?"
+    },
+    "copy_link": {
+        "message": "Másold a linket"
+    },
+    "facebook": {
+        "message": "Facebook"
+    },
+    "x": {
+        "message": "X"
+    },
+    "telegram": {
+        "message": "Telegram"
+    },
+    "i_found_a_super_useful_chrome_extension__": {
+        "message": "Nagyon hasznos Chrome-bővítményt találtam —"
+    },
+    "it_can_save_any_website_as_a_pdf__you_should_try_it_out___it_s_great_": {
+        "message": "Bármely weboldalt PDF-ként elmentheted. Ki kell próbálnod — nagyszerű!"
+    },
+    "hooray__greate_job_": {
+        "message": "Hurrá, nagyszerű munka!"
+    },
+    "please__can_you_rate_us_": {
+        "message": "Kérjük, értékeld minket!"
+    },
+    "deepseek_ai_has_been_installed_": {
+        "message": "A DeepSeek AI telepítve lett!"
+    },
+    "get_answers_10x_faster___no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Válaszokat 10x gyorsabban szerezhetsz — nincs Google, nincs tabulációs káosz, nincs időpazarlás"
+    },
+    "open_deepseek_ai": {
+        "message": "Nyisd meg a DeepSeek AI-t"
+    },
+    "deepseek_app": {
+        "message": "DeepSeek alkalmazás"
+    },
+    "love_deepseek_": {
+        "message": "Szereted a DeepSeeket?"
+    },
+    "could_you_please_rate_our_extension_": {
+        "message": "Kérjük, értékeld a kiegészítőt!"
+    },
+    "share_this_extension_with_your_friends": {
+        "message": "Oszd meg ezt a kiegészítőt a barátaiddal"
+    },
+    "share_us_with_your_friends": {
+        "message": "Oszd meg velük minket"
+    },
+    "and_unlock_all_ai_assistant_features": {
+        "message": "És oldj fel minden AI Segéd funkciót"
+    },
+    "vk_com": {
+        "message": "Vk.com"
+    },
+    "reddit": {
+        "message": "Reddit"
+    },
+    "whatsapp": {
+        "message": "Whatsapp"
+    },
+    "weibo": {
+        "message": "Weibo"
+    },
+    "post_preview": {
+        "message": "Poszt előnézet"
+    },
+    "hey__i_m_your_ai_assistant_": {
+        "message": "Szia, én vagyok a AI Segéded!"
+    },
+    "what_can_i_help_with_": {
+        "message": "Miben segíthetek?"
+    },
+    "history": {
+        "message": "Előzmények"
+    },
+    "settings": {
+        "message": "Beállítások"
+    },
+    "subscription": {
+        "message": "Előfizetés"
+    },
+    "add_personal_info_or_instructions_to_the_ai_assistant__this_will_help_improve_responses_for_you_": {
+        "message": "Adj személyes adatokat vagy utasításokat az AI Segédnek. Ez segít javítani a válaszokat."
+    },
+    "save": {
+        "message": "Mentés"
+    },
+    "and_you_ll_unlock_all_ai_assistant_features": {
+        "message": "És feloldod az összes AI Segéd funkciót"
+    },
+    "e_g___always_reply_in_french": {
+        "message": "pl. mindig franciául válaszoljon"
+    },
+    "_p_you_can_try_the_ai_assistant_to_play_a_role__e_g____p__ul__li_act_as_an_english_teacher_and_correct_my_mistakes__li__li_respond_like_a_professional_business_consultant__li___ul__p_or_input_your_data_for_the_ai_assistant_to_generate_responses__e_g____p__ul__li_23_y_o___58_kg__height_165_cm__female__li__li_programmer__php___laravel__js___react___li___ul_": {
+        "message": "<p>Próbáld ki az AI Segédet, hogy szerepet játsszon, pl.:<\/p><ul><li>Viselkedj angoltanárként és javítsd ki a hibáimat<\/li><li>Válaszolj mint egy profi üzleti tanácsadó<\/li><\/ul><p>Vagy add meg az adataidat, hogy az AI Segéd válaszokat generáljon, pl.:<\/p><ul><li>23 éves, 58 kg, 165 cm magas, nő<\/li><li>Programozó. PHP – Laravel, JS – React.<\/li><\/ul>"
+    }
+}

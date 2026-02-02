@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "ChatGPT for YouTube",
+    "description": "The description of the extension, displayed in the web store."
+  },
+  "appDesc": {
+    "message": "Получите краткое содержание YouTube с ChatGPT за секунды и быстро узнайте содержание видео, сэкономьте время и учите быстрее.",
+    "description": "The description of the extension, displayed in the web store."
+  }
+}

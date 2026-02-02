@@ -1,0 +1,67 @@
+{
+  "hello": {
+    "message": "Hei!"
+  },
+  "ask_anything": {
+    "message": "Spør om hva som helst"
+  },
+  "ask_about_this_page": {
+    "message": "Spør om denne siden"
+  },
+  "summarize_this_page": {
+    "message": "Oppsummer denne siden"
+  },
+  "add_photos_and_files": {
+    "message": "Legg til bilder og filer"
+  },
+  "create_image": {
+    "message": "Lag bilde"
+  },
+  "web_search": {
+    "message": "Nettsøk"
+  },
+  "teacher_mode": {
+    "message": "Lærermodus"
+  },
+  "voice_input": {
+    "message": "Stemmeinndata"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "Rask hverdagsassistent"
+  },
+  "model_deep_reasoning": {
+    "message": "Dyp resonnementmodell"
+  },
+  "model_quick_multimodal": {
+    "message": "Raske multimodale svar"
+  },
+  "model_advanced_google_ai": {
+    "message": "Avansert Google AI"
+  },
+  "model_complex_problem_solving": {
+    "message": "Kompleks problemløsning"
+  },
+  "model_powerful_opensource": {
+    "message": "Kraftig åpen kildekode-modell"
+  },
+  "model_reasoning_specialist": {
+    "message": "Resonnementsspesialist"
+  },
+  "model_balanced_reliable": {
+    "message": "Balansert og pålitelig"
+  },
+  "model_most_capable": {
+    "message": "Mest dyktige Claude"
+  },
+  "model_label_fastest": {
+    "message": "Raskest"
+  }
+}
+
+
+
+
+
+
+
+

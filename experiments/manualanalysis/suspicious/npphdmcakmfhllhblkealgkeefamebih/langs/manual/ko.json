@@ -1,0 +1,67 @@
+{
+  "hello": {
+    "message": "안녕하세요!"
+  },
+  "ask_anything": {
+    "message": "무엇이든 물어보세요"
+  },
+  "ask_about_this_page": {
+    "message": "이 페이지에 대해 질문하기"
+  },
+  "summarize_this_page": {
+    "message": "이 페이지 요약"
+  },
+  "add_photos_and_files": {
+    "message": "사진 및 파일 추가"
+  },
+  "create_image": {
+    "message": "이미지 만들기"
+  },
+  "web_search": {
+    "message": "웹 검색"
+  },
+  "teacher_mode": {
+    "message": "선생님 모드"
+  },
+  "voice_input": {
+    "message": "음성 입력"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "빠른 일상 어시스턴트"
+  },
+  "model_deep_reasoning": {
+    "message": "심층 추론 모델"
+  },
+  "model_quick_multimodal": {
+    "message": "빠른 멀티모달 응답"
+  },
+  "model_advanced_google_ai": {
+    "message": "고급 Google AI"
+  },
+  "model_complex_problem_solving": {
+    "message": "복잡한 문제 해결"
+  },
+  "model_powerful_opensource": {
+    "message": "강력한 오픈소스 모델"
+  },
+  "model_reasoning_specialist": {
+    "message": "추론 전문가"
+  },
+  "model_balanced_reliable": {
+    "message": "균형 잡힌 신뢰성"
+  },
+  "model_most_capable": {
+    "message": "가장 유능한 Claude"
+  },
+  "model_label_fastest": {
+    "message": "가장 빠름"
+  }
+}
+
+
+
+
+
+
+
+

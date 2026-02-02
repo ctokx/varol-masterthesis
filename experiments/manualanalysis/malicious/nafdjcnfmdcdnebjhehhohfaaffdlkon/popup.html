@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TwitterGPT</title>
+
+    <script src="popup.js"></script>
+</head>
+
+
+
+<style type="text/css">
+    .write-style {
+        display: block;
+        float: left;
+        /*background-color: #e5edf0;*/
+        padding: 4px;
+        border-radius: 5px;
+        border: 1px solid #d7dfe3;
+        margin-right: 6px;
+        margin-bottom: 5px;
+        cursor: pointer;
+        color: #4e4e4e;
+    }
+
+    #enter-api-key {
+        display: none;
+    }
+
+    #tweet-interface {
+        display: block;
+    }
+
+    #api-key-input {
+        padding: 5px;
+        border-radius: 3px;
+        border: 1px solid gray;
+        width: 250px;
+        font-family: monospace;
+    }
+
+    .primary-button {
+        background-color: #03a9f4;
+        padding: 10px;
+        color: white;
+        border: none;
+        border-radius: 21px;
+        font-weight: bold;
+        padding-left: 15px;
+        padding-right: 15px;
+        cursor: pointer;
+    }
+
+    #change-api-key {
+        background-color: #f2f2f2;
+        border: 0px;
+        color: #727272;
+        cursor: pointer;
+        border-radius: 4px;
+        /* position: absolute; */
+        float: right;
+        margin-top: 8px;
+    }
+</style>
+<body>
+    <div style="width: 400px; padding: 20px;padding-top: 10px;">
+        <div id="enter-api-key">
+            <h1 style="color: #4e4e4e; ">Welcome to TwitterGPT!</h1>
+            <p>Please enter your OpenAI API key to get started. Don't have an API key? Go to <a href="https://openai.com/api/" target="_blank">OpenAI</a> to create your key.</p>
+
+            <p>Enter your API key:</p>
+            <input type="text" placeholder="sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxx" id="api-key-input" /> <br /><br />
+            <button id="api-button" class="primary-button">Save key</button>
+        </div>
+        <div id="tweet-interface">
+
+            <button id="change-api-key">Change API Key</button>
+
+            <h1 style="color: #4e4e4e; ">Reply to tweets using ChatGPT</h1>
+            <div id="tweet">
+            </div>
+            <div id="loader" style="display: none;">
+                <img src="loader.gif" style="    width: 100px;margin-left: -35px;display: inline-block;
+    float: left;" />
+            </div>
+            <p id="responses" style="margin-bottom: 60px;
+    font-size: 16px;color:#4e4e4e;"></p>
+            Select your writing style:
+            <div style="margin-top: 7px;padding-bottom: 39px;position: relative;">
+                <div id="ws-0" class="write-style">
+                    Short and funny
+                </div>
+                <div id="ws-1" class="write-style">
+                    Cool
+                </div>
+                <div id="ws-2" class="write-style">
+                    Value / Insight
+                </div>
+            </div>
+
+
+            <button id="button" class="primary-button">Get tweet & generate responses</button>
+
+
+        </div>
+    </div>
+</body>
+
+
+
+
+</html>
+

@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT para sa Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Extension para lumikha ng isang shortcut para sa opisyal na ChatGPT sa Google Chrome browser"
+    },
+    "ext_command_description": {
+        "message": "Shortcut para buksan ang ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT sa Eco Mode?"
+    },
+    "request_perms_popup_description": {
+        "message": "Tumulong sa mga layuning pangkalikasan sa pamamagitan lang ng pag-browse sa web. Hindi nito maaabala ang iyong pag-browse."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Alamin pa"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Payagan"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Tanggihan"
+    },
+    "perms_granted_popup_title": {
+        "message": "Binabati kita!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Makikinabang ka na ngayon sa lahat ng aming mga tampok!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Magpatuloy"
+    },
+    "perms_denied_popup_title": {
+        "message": "Nakakalungkot..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Baka sa susunod na pagkakataon."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Isara ang mensaheng ito"
+    },
+    "welcome_title": {
+        "message": "ChatGPT para sa Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Extension na matagumpay na na-install"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT para sa Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Extension na matagumpay na na-install"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Sundin ang mga hakbang sa ibaba upang i-pin ang iyong extension, pagkatapos ay i-click ang Susunod na Hakbang"
+    },
+    "welcome_next_step": {
+        "message": "Susunod na Hakbang"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "Upang ma-access ang lahat ng mga tampok ng extension, i-activate ang Eco Mode."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "I-click ang Payagan upang magpatuloy"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Mga Tuntunin ng Paggamit"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Patakaran sa Pagkapribado"
+    },
+    "how_to_use_html_title": {
+        "message": "Paano Gamitin ang Extension"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "O pindutin ang Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Eco Mode"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Binabati kita! Ang site na ito ay kasosyo ng aming Eco Mode."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Ano ang ibig sabihin nito?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Sa patuloy na pag-browse, matutulungan mo ang planeta 🌍, magtatanim ng mga puno at mag-offset ng carbon emissions nang walang bayad."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Sa bawat pagbisita sa isang kasosyo, isang bagong tab ang panandaliang magbubukas upang payagan ang pagkalkula ng carbon offset."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Sa pamamagitan ng paraan, maraming salamat sa pagsuporta sa kamangha-manghang layunin na ito kasama namin! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Alamin pa"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Isara"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Huwag nang ipakita ulit"
+    }
+}

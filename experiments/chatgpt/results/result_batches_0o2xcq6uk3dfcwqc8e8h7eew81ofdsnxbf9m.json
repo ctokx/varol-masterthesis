@@ -1,0 +1,352 @@
+{
+  "job_name": "batches/0o2xcq6uk3dfcwqc8e8h7eew81ofdsnxbf9m",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:19.372256",
+  "validations": [
+    {
+      "extension_id": "bpmjglijpclggdnlpdbpglnadibmlaek",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension functions as a bridge between ChatGPT and a PDF generation service hosted at gptaha.com. It extracts chat history from the browser's IndexedDB (where ChatGPT stores messages locally) and transmits a specific conversation to the developer's server only when the user explicitly requests a PDF export. While the extension harvests the local chat database into its own local storage upon loading ChatGPT, there is no evidence that this data is exfiltrated without user interaction. The security patterns flagged by static analysis (such as SVG namespaces and React error URLs) are benign framework artifacts.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "ChatGPT conversation history (messages and titles)",
+          "processing_method": "The content script 'hello.39ff2549.js' extracts the entire ChatGPT local database from IndexedDB and caches it in 'chrome.storage.local'.",
+          "destination_domain": "https://www.gptaha.com",
+          "code_evidence": "In index.js (background), the 'EXPORT_TO_PDF' message triggers a POST request to 'https://www.gptaha.com/api/pdf/create' containing the stringified conversation data (line 266)."
+        },
+        "dual_purpose": {
+          "stated_purpose": "Save ChatGPT conversation (export to PDF/Clipboard)",
+          "hidden_functionality": "None. All features identified (PDF generation, clipboard copying, and user authentication) align with the stated purpose.",
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": "The extension captures an authentication token ('gptaha_token') from its own domain (gptaha.com) to identify the user for its own service. It does not attempt to capture OpenAI credentials."
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chat.openai.com",
+          "https://chatgpt.com",
+          "https://www.gptaha.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://www.w3.org/2000/svg",
+          "http://www.w3.org/1999/xhtml",
+          "https://reactjs.org/docs/error-decoder.html"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CREDENTIAL_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "The extension reads its own service token from 'localStorage' on 'gptaha.com' to sync login status between the website and the extension."
+        },
+        {
+          "pattern": "STORAGE / CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to cache chat data scraped from ChatGPT's IndexedDB and to store the user's 'auth_token'."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (SVG/MathML/XHTML)",
+          "usage": "LEGITIMATE",
+          "justification": "These are standard XML namespace URIs used by the React framework and SVG icons; they are not active network endpoints."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Standard DOM manipulation used by the React library for rendering the UI components."
+        },
+        {
+          "pattern": "INDEXEDDB_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "The extension reads ChatGPT's local 'ConversationsDatabase' to retrieve chat history for the user-requested export feature."
+        }
+      ],
+      "token_usage": {
+        "prompt": 118961,
+        "candidates": 925,
+        "total": 122099
+      }
+    },
+    {
+      "extension_id": "hhclmnigoigikdgiflfihpkglefbaaoa",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "After reviewing the background.js file, it is clear that the extension is a standard implementation of a ChatGPT wrapper. The 'suspicious' patterns identified by static analysis are actually standard components of a modern web application build. Specifically, the extension includes industry-standard libraries for handling Markdown (remark/mdast) and Server-Sent Events (SSE) which are necessary for streaming AI responses. The network requests are exclusively directed at chatgpt.com (for core functionality) and Google Analytics (for telemetry). There is no evidence of data exfiltration to third-party servers, nor any hidden functionality such as ad-injection or credential harvesting. The usage of broad permissions like <all_urls> is consistent with assistants that provide a side-bar or overlay across different web pages.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant",
+          "hidden_functionality": null,
+          "code_evidence": "The code focuses exclusively on handling Server-Sent Events (SSE), parsing Markdown, and interacting with chatgpt.com endpoints (conversation, models, auth/session)."
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chatgpt.com/",
+          "https://www.google-analytics.com/mp/collect",
+          "https://clients2.google.com/service/update2/crx"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://www.w3.org/1999/xhtml",
+          "https://reactjs.org/link/controlled-components",
+          "https://github.com/facebook/react/issues/3236"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT (chatgpt.com)",
+          "usage": "LEGITIMATE",
+          "justification": "The extension is a ChatGPT assistant; it requires access to the official ChatGPT backend APIs to function."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used to send user prompts and receive responses from the ChatGPT backend api."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store user settings, extension state, and potentially cache ChatGPT session metadata."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "The markdown parsing libraries (mdast-util-from-markdown) used in the code require DOM manipulation to render formatted AI responses in the UI."
+        }
+      ],
+      "token_usage": {
+        "prompt": 63536,
+        "candidates": 764,
+        "total": 65555
+      }
+    },
+    {
+      "extension_id": "gllophmfnbdpgfnbmbndlihdlcgohcpn",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension appears to be a standard implementation of a client-side diagramming tool. The large size of 'content.js' (2.7MB) and the specific NETWORK_ENDPOINT findings (Eclipse ELK, EMF, SVG namespaces) strongly indicate the inclusion of a heavy graph-layout library like the Eclipse Layout Kernel (ELK). The permissions are minimal (only 'storage'), and the 'options.js' code is a standard, benign implementation of user preference management. Static analysis hits on 'NETWORK_ENDPOINT' are false positives triggered by XML namespace strings. No evidence of data exfiltration or dual-purpose code was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Render diagrams directly in ChatGPT",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chat.openai.com/*",
+          "http://localhost/*",
+          "http://www.w3.org/2000/svg",
+          "http://www.w3.org/1999/xhtml"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://www.w3.org/2001/XMLSchema",
+          "http://www.eclipse.org/elk/ElkGraph",
+          "http://www.w3.org/1998/Math/MathML",
+          "http://www.eclipse.org/emf/2002/Ecore"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The endpoints listed (W3C, Eclipse EMF, ELK) are standard XML namespaces and metadata URIs used by graphing and layout libraries like Eclipse Layout Kernel (ELK). They are used for SVG serialization and schema definitions, not network communication."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Standard practice for ChatGPT extensions to monitor the DOM for new message blocks to trigger content rendering (in this case, diagrams)."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to inject the generated SVG or HTML code for the diagrams into the ChatGPT interface."
+        },
+        {
+          "pattern": "POST_MESSAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Likely used for communication between the extension context and the diagram rendering engine, which often runs in a sandboxed or separate execution context."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3803,
+        "candidates": 778,
+        "total": 5426
+      }
+    },
+    {
+      "extension_id": "dacbcjjmegpiooanamonipdjhplejfml",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a simple utility that performs exactly as advertised. It scrapes the text content of the current ChatGPT session, formats it into a CSV structure, and triggers a browser download using a Blob and a temporary link element. There are no network requests (fetch/XHR) present in the code, meaning no data is being sent to external servers. All operations are local to the user's browser.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Save ChatGPT conversation threads.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chat.openai.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "DOM",
+          "usage": "LEGITIMATE",
+          "justification": "The code creates a temporary 'a' element to trigger a local file download of the CSV data. This is a standard and safe practice for client-side file generation."
+        },
+        {
+          "pattern": "BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "The code uses URL.createObjectURL to create a reference to the CSV data blob so the user can download it. This is the correct API usage for the stated purpose of saving history."
+        }
+      ],
+      "token_usage": {
+        "prompt": 2834,
+        "candidates": 480,
+        "total": 3950
+      }
+    },
+    {
+      "extension_id": "dbegpdaninkikfcfodenceojbpdgdoaa",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The analysis of the source code confirms that all flagged behaviors are benign and directly support the extension's core features. The 'CREDENTIAL_ACCESS' refers to the user's own OpenAI API key, which is stored locally/in sync storage and sent only to OpenAI's official API. Network calls are limited to the official OpenAI domains and a donation link (buymeacoffee). The code follows standard patterns for an AI assistant wrapper, and there is no evidence of data exfiltration, credential theft, or hidden dual-purpose functionality.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Create text completions/edits, and generate images easily with a prompt.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "api.openai.com",
+          "beta.openai.com",
+          "www.buymeacoffee.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CREDENTIAL_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "The extension requires a user-provided OpenAI API key (token) to function. It retrieves this token from chrome.storage to include in the 'Authorization' header of fetch requests to OpenAI."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used for UI convenience, specifically to trigger the 'sendRequest' function when the user presses the 'Enter' key in the prompt input field."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to persist user settings such as the API token, preferred AI creativity levels, image sizes, and the last used UI page."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used to send user prompts to the official OpenAI API endpoints (completions, edits, and image generations) as per the extension's stated purpose."
+        }
+      ],
+      "token_usage": {
+        "prompt": 8760,
+        "candidates": 665,
+        "total": 10415
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 0,
+    "SUSPICIOUS": 0,
+    "SAFE": 5,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 0,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 5,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 1.0,
+    "true_positive_rate": 0.0,
+    "malicious_detection_rate": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 197894,
+    "candidate_tokens": 3612,
+    "total_tokens": 207445
+  }
+}

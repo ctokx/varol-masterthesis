@@ -1,0 +1,174 @@
+/* AITOPIA Sidebar Launcher Close Button Visibility Fix */
+/* Only fix visibility - keep original design intact */
+
+/* Target any close button on the AITOPIA sidebar launcher */
+#aifnmjmchg-sidebar *[class*="close"],
+#aifnmjmchg-sidebar *[class*="Close"],
+#aifnmjmchg-sidebar *[id*="close"],
+#aifnmjmchg-sidebar *[id*="Close"],
+#aifnmjmchg-sidebar button[aria-label*="close"],
+#aifnmjmchg-sidebar button[aria-label*="Close"],
+#aifnmjmchg-sidebar button[title*="close"],
+#aifnmjmchg-sidebar button[title*="Close"],
+#aifnmjmchg-sidebar .aifnmjmchg-close,
+#aifnmjmchg-sidebar .aifnmjmchg-close-btn,
+#aifnmjmchg-sidebar .aifnmjmchg-sidebar-close,
+#aifnmjmchg-sidebar [data-action="close"],
+#aifnmjmchg-sidebar [data-close],
+#aifnmjmchg *[class*="close"],
+#aifnmjmchg *[class*="Close"],
+#aifnmjmchg *[id*="close"],
+#aifnmjmchg *[id*="Close"],
+#aifnmjmchg button[aria-label*="close"],
+#aifnmjmchg button[aria-label*="Close"],
+#aifnmjmchg button[title*="close"],
+#aifnmjmchg button[title*="Close"],
+#aifnmjmchg .aifnmjmchg-close,
+#aifnmjmchg .aifnmjmchg-close-btn,
+#aifnmjmchg .aifnmjmchg-sidebar-close,
+#aifnmjmchg [data-action="close"],
+#aifnmjmchg [data-close] {
+    /* Only fix visibility - keep original styling */
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+/* Make close button more visible on hover over the sidebar launcher */
+#aifnmjmchg-sidebar:hover *[class*="close"],
+#aifnmjmchg-sidebar:hover *[class*="Close"],
+#aifnmjmchg-sidebar:hover *[id*="close"],
+#aifnmjmchg-sidebar:hover *[id*="Close"],
+#aifnmjmchg-sidebar:hover button[aria-label*="close"],
+#aifnmjmchg-sidebar:hover button[aria-label*="Close"],
+#aifnmjmchg-sidebar:hover button[title*="close"],
+#aifnmjmchg-sidebar:hover button[title*="Close"],
+#aifnmjmchg-sidebar:hover .aifnmjmchg-close,
+#aifnmjmchg-sidebar:hover .aifnmjmchg-close-btn,
+#aifnmjmchg-sidebar:hover .aifnmjmchg-sidebar-close,
+#aifnmjmchg-sidebar:hover [data-action="close"],
+#aifnmjmchg-sidebar:hover [data-close],
+#aifnmjmchg:hover *[class*="close"],
+#aifnmjmchg:hover *[class*="Close"],
+#aifnmjmchg:hover *[id*="close"],
+#aifnmjmchg:hover *[id*="Close"],
+#aifnmjmchg:hover button[aria-label*="close"],
+#aifnmjmchg:hover button[aria-label*="Close"],
+#aifnmjmchg:hover button[title*="close"],
+#aifnmjmchg:hover button[title*="Close"],
+#aifnmjmchg:hover .aifnmjmchg-close,
+#aifnmjmchg:hover .aifnmjmchg-close-btn,
+#aifnmjmchg:hover .aifnmjmchg-sidebar-close,
+#aifnmjmchg:hover [data-action="close"],
+#aifnmjmchg:hover [data-close] {
+    /* Make highly visible on sidebar hover */
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    color: #FFFFFF !important;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+    border-radius: 50% !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5) !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Force visibility ONLY on close button elements that are hidden */
+#aifnmjmchg-sidebar *[class*="close"][style*="visibility: hidden"],
+#aifnmjmchg-sidebar *[class*="Close"][style*="visibility: hidden"],
+#aifnmjmchg-sidebar *[id*="close"][style*="visibility: hidden"],
+#aifnmjmchg-sidebar *[id*="Close"][style*="visibility: hidden"],
+#aifnmjmchg-sidebar button[aria-label*="close"][style*="visibility: hidden"],
+#aifnmjmchg-sidebar button[aria-label*="Close"][style*="visibility: hidden"],
+#aifnmjmchg-sidebar *[class*="close"][style*="display: none"],
+#aifnmjmchg-sidebar *[class*="Close"][style*="display: none"],
+#aifnmjmchg-sidebar *[id*="close"][style*="display: none"],
+#aifnmjmchg-sidebar *[id*="Close"][style*="display: none"],
+#aifnmjmchg-sidebar button[aria-label*="close"][style*="display: none"],
+#aifnmjmchg-sidebar button[aria-label*="Close"][style*="display: none"],
+#aifnmjmchg *[class*="close"][style*="visibility: hidden"],
+#aifnmjmchg *[class*="Close"][style*="visibility: hidden"],
+#aifnmjmchg *[id*="close"][style*="visibility: hidden"],
+#aifnmjmchg *[id*="Close"][style*="visibility: hidden"],
+#aifnmjmchg button[aria-label*="close"][style*="visibility: hidden"],
+#aifnmjmchg button[aria-label*="Close"][style*="visibility: hidden"],
+#aifnmjmchg *[class*="close"][style*="display: none"],
+#aifnmjmchg *[class*="Close"][style*="display: none"],
+#aifnmjmchg *[id*="close"][style*="display: none"],
+#aifnmjmchg *[id*="Close"][style*="display: none"],
+#aifnmjmchg button[aria-label*="close"][style*="display: none"],
+#aifnmjmchg button[aria-label*="Close"][style*="display: none"] {
+    visibility: visible !important;
+    display: block !important;
+    opacity: 1 !important;
+}
+
+/* Target ONLY close button elements with low opacity */
+#aifnmjmchg-sidebar *[class*="close"][style*="opacity: 0"],
+#aifnmjmchg-sidebar *[class*="Close"][style*="opacity: 0"],
+#aifnmjmchg-sidebar *[id*="close"][style*="opacity: 0"],
+#aifnmjmchg-sidebar *[id*="Close"][style*="opacity: 0"],
+#aifnmjmchg-sidebar button[aria-label*="close"][style*="opacity: 0"],
+#aifnmjmchg-sidebar button[aria-label*="Close"][style*="opacity: 0"],
+#aifnmjmchg *[class*="close"][style*="opacity: 0"],
+#aifnmjmchg *[class*="Close"][style*="opacity: 0"],
+#aifnmjmchg *[id*="close"][style*="opacity: 0"],
+#aifnmjmchg *[id*="Close"][style*="opacity: 0"],
+#aifnmjmchg button[aria-label*="close"][style*="opacity: 0"],
+#aifnmjmchg button[aria-label*="Close"][style*="opacity: 0"] {
+    opacity: 0.6 !important;
+    transition: opacity 0.2s ease !important;
+}
+
+/* Make ONLY close button elements more visible on hover */
+#aifnmjmchg-sidebar:hover *[class*="close"][style*="opacity: 0"],
+#aifnmjmchg-sidebar:hover *[class*="Close"][style*="opacity: 0"],
+#aifnmjmchg-sidebar:hover *[id*="close"][style*="opacity: 0"],
+#aifnmjmchg-sidebar:hover *[id*="Close"][style*="opacity: 0"],
+#aifnmjmchg-sidebar:hover button[aria-label*="close"][style*="opacity: 0"],
+#aifnmjmchg-sidebar:hover button[aria-label*="Close"][style*="opacity: 0"],
+#aifnmjmchg:hover *[class*="close"][style*="opacity: 0"],
+#aifnmjmchg:hover *[class*="Close"][style*="opacity: 0"],
+#aifnmjmchg:hover *[id*="close"][style*="opacity: 0"],
+#aifnmjmchg:hover *[id*="Close"][style*="opacity: 0"],
+#aifnmjmchg:hover button[aria-label*="close"][style*="opacity: 0"],
+#aifnmjmchg:hover button[aria-label*="Close"][style*="opacity: 0"] {
+    opacity: 1 !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    color: #FFFFFF !important;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+    border-radius: 50% !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5) !important;
+    z-index: 999999 !important;
+}
+
+/* Specific targeting for circular sidebar launcher - ONLY close buttons */
+#aifnmjmchg-container:hover *[class*="close"],
+#aifnmjmchg-container:hover *[class*="Close"],
+#aifnmjmchg-container:hover *[id*="close"],
+#aifnmjmchg-container:hover *[id*="Close"],
+#aifnmjmchg-container:hover button[aria-label*="close"],
+#aifnmjmchg-container:hover button[aria-label*="Close"],
+#aifnmjmchg-sidebar:hover *[class*="close"],
+#aifnmjmchg-sidebar:hover *[class*="Close"],
+#aifnmjmchg-sidebar:hover *[id*="close"],
+#aifnmjmchg-sidebar:hover *[id*="Close"],
+#aifnmjmchg-sidebar:hover button[aria-label*="close"],
+#aifnmjmchg-sidebar:hover button[aria-label*="Close"],
+[class*="aifnmjmchg"]:hover *[class*="close"][style*="position: absolute"],
+[class*="aifnmjmchg"]:hover *[class*="Close"][style*="position: absolute"],
+[class*="aifnmjmchg"]:hover *[id*="close"][style*="position: absolute"],
+[class*="aifnmjmchg"]:hover *[id*="Close"][style*="position: absolute"],
+[id*="aifnmjmchg"]:hover *[class*="close"][style*="position: absolute"],
+[id*="aifnmjmchg"]:hover *[class*="Close"][style*="position: absolute"],
+[id*="aifnmjmchg"]:hover *[id*="close"][style*="position: absolute"],
+[id*="aifnmjmchg"]:hover *[id*="Close"][style*="position: absolute"] {
+    opacity: 1 !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    color: #FFFFFF !important;
+    border: 1px solid rgba(255, 255, 255, 0.8) !important;
+    border-radius: 50% !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5) !important;
+    z-index: 999999 !important;
+    transition: all 0.2s ease !important;
+}

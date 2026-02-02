@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",(()=>{document.querySelectorAll("[data-i18n]").forEach((e=>{const t=e.getAttribute("data-i18n"),n=chrome.i18n.getMessage(t);n&&"innerText"in e&&(e.innerText=n)}))}));

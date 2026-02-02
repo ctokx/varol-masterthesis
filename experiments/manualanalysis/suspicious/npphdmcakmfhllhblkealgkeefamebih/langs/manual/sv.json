@@ -1,0 +1,67 @@
+{
+  "hello": {
+    "message": "Hej!"
+  },
+  "ask_anything": {
+    "message": "Fråga vad som helst"
+  },
+  "ask_about_this_page": {
+    "message": "Fråga om denna sida"
+  },
+  "summarize_this_page": {
+    "message": "Sammanfatta denna sida"
+  },
+  "add_photos_and_files": {
+    "message": "Lägg till foton och filer"
+  },
+  "create_image": {
+    "message": "Skapa bild"
+  },
+  "web_search": {
+    "message": "Webbsökning"
+  },
+  "teacher_mode": {
+    "message": "Lärarläge"
+  },
+  "voice_input": {
+    "message": "Röstinmatning"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "Snabb vardagsassistent"
+  },
+  "model_deep_reasoning": {
+    "message": "Djup resonemangsmodell"
+  },
+  "model_quick_multimodal": {
+    "message": "Snabba multimodala svar"
+  },
+  "model_advanced_google_ai": {
+    "message": "Avancerad Google AI"
+  },
+  "model_complex_problem_solving": {
+    "message": "Komplex problemlösning"
+  },
+  "model_powerful_opensource": {
+    "message": "Kraftfull modell med öppen källkod"
+  },
+  "model_reasoning_specialist": {
+    "message": "Resonemangsspecialist"
+  },
+  "model_balanced_reliable": {
+    "message": "Balanserad och pålitlig"
+  },
+  "model_most_capable": {
+    "message": "Mest kapabla Claude"
+  },
+  "model_label_fastest": {
+    "message": "Snabbast"
+  }
+}
+
+
+
+
+
+
+
+

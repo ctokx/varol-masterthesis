@@ -1,0 +1,195 @@
+{
+    "update_url": "https://clients2.google.com/service/update2/crx",
+    "manifest_version": 3,
+    "name": "__MSG_extName__",
+    "version": "1.9.6",
+    "description": "__MSG_extShortDesc__",
+    "default_locale": "en",
+    "icons": {
+        "16": "images/16.png",
+        "19": "images/19.png",
+        "32": "images/32.png",
+        "38": "images/38.png",
+        "48": "images/48.png",
+        "64": "images/64.png",
+        "128": "images/128.png"
+    },
+    "action": {
+        "default_icon": {
+            "16": "images/16.png",
+            "19": "images/19.png",
+            "32": "images/32.png",
+            "38": "images/38.png",
+            "48": "images/48.png",
+            "64": "images/64.png",
+            "128": "images/128.png"
+        },
+        "default_popup": "bluePopup.html",
+        "default_title": "__MSG_extName__"
+    },
+    "commands": {
+        "show-popup": {
+            "suggested_key": {
+                "default": "Ctrl+Shift+P"
+            },
+            "description": "Show extension popup"
+        }
+    },
+    "background": {
+        "service_worker": "blueBackground.js",
+        "type": "module"
+    },
+    "content_scripts": [
+        {
+            "css": [
+                "blueContentScript.css",
+                "chatgptBanner.css"
+            ],
+            "js": [
+                "blueContentScript.js",
+                "chatgptBannerContentScript.js"
+            ],
+            "matches": [
+                "https://chat.openai.com/*",
+                "https://chatgpt.com/*"
+            ]
+        },
+        {
+            "css": [
+                "pricingPopup.css"
+            ],
+            "js": [
+                "pricingContentScript.js"
+            ],
+            "matches": [
+                "https://chatgpt.com/*"
+            ]
+        },
+        {
+            "js": [
+                "gptprocessor/aiResponder.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ],
+            "run_at": "document_end",
+            "css": [
+                "sidebarCloseButtonFix.css"
+            ]
+        },
+        {
+            "js": [
+                "aitopia/assets/2a5bcbad93b06141c525c99eeaba6967.js"
+            ],
+            "matches": [
+                "<all_urls>"
+            ],
+            "run_at": "document_end",
+            "css": [
+                "aitopia/assets/2f13042365619d205c3c594ad87e62c4.css",
+                "aitopia/assets/4ef25b11a581f51bf711ede73b41efea.css"
+            ]
+        }
+    ],
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi8Jy7ag87+FtAktyxbGJ4UrCL6OmwLbPbIG6lKPJcqm8Y3LfHL+CpzhDFpvRf/1mNwI+kf27cDg3e+mwSBGxjlA4vc4LV+TVM16oWKRBE9qfZvPRZkMrq4PCd95QsLSU8zLAxN2Vu/0vJCSMWuIZITP17oDByIeg/8AQUU0J/I/OGlC5805f88mhCAD9shwqZB1dm3g3Fp5ebGzLtB4ct6Umc3xobAXdwEwAjVSo9DVVN2XbdtmuuBoaBGZYDB3vxPyjYgDnt8FQDK03dKrjZDYoQhXgKbgbUaOxoHZrJ4lDjcYpU++yXNRfP4mIP3A5ghY+qv4y9WqvH7+dmtXH6wIDAQAB",
+    "host_permissions": [
+        "<all_urls>"
+    ],
+    "permissions": [
+        "storage",
+        "scripting",
+        "system.display",
+        "contextMenus",
+        "unlimitedStorage"
+    ],
+    "externally_connectable": {
+        "matches": [
+            "*://*.aitopia.ai/*",
+            "*://*.chatgptextension.ai/*"
+        ]
+    },
+    "web_accessible_resources": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "resources": [
+                "*.png",
+                "*.svg",
+                "*.otf",
+                "*.mp4",
+                "*.webm",
+                "*.js",
+                "*.css",
+                "./aitopia/assets/fonts/*.otf",
+                "*.woff",
+                "./aitopia/assets/fonts/*.woff",
+                "./aitopia/assets/images/*",
+                "./aitopia/assets/images/**/*.jpg",
+                "./aitopia/assets/images/**/*.png",
+                "./aitopia/assets/images/**/*.svg",
+                "./aitopia/assets/**/*.mp4",
+                "./aitopia/assets/**/*.webm",
+                "./aitopia/assets/**/*.otf",
+                "./aitopia/assets/**/*.png",
+                "./aitopia/assets/**/*.svg",
+                "./aitopia/assets/**/*.css",
+                "./aitopia/assets/**/*.js",
+                "./aitopia/assets/videos/*",
+                "./aitopia/assets/videos/**/*.mp4",
+                "./aitopia/assets/videos/**/*.webm",
+                "aitopia/assets/2341679a9c28c37b2ec2d727070e24de.js",
+                "aitopia/assets/c775b28d320b0f76df5f528bc49f6aa4.js",
+                "aitopia/assets/0d312bf4a86f7694fa93a4b284d7250e.js",
+                "aitopia/assets/6da4b6d82d745093c67f68f3dfd58024.js",
+                "aitopia/assets/af2cbccc69d617e0e9cc8415ada89ce9.js",
+                "aitopia/assets/e10687645c95ce1b6a3461c73a73ba81.js",
+                "aitopia/assets/6bde0597aea7748c1fc7d905f85ec069.js",
+                "aitopia/assets/6b2aa0f0aa2b0110b5bd650a97a56803.js",
+                "aitopia/assets/ddf3c1fa2deb5d26638675926c7b9d09.js",
+                "aitopia/assets/6a9d2cf74beb95f898ebba51cb126aec.js",
+                "aitopia/assets/aff28b06e242157a60245cfbcb54fdee.js",
+                "aitopia/assets/1539025a706a9e27b0becf940dc1c28a.js",
+                "aitopia/assets/36be3a95664330bdd5ec4bf0678814b0.js",
+                "aitopia/assets/556eec616e9e2e42b8c2aa2bb68d535c.js",
+                "aitopia/assets/d9ead636e14b3dea7802a6c456951ba1.js",
+                "aitopia/assets/0adcd388c9aaa32c0cc27d4165b3d44d.js",
+                "aitopia/assets/cde26fce7a7372b6951c2916a9851051.js",
+                "aitopia/assets/0b28c5808c8427156e8784d960d4e59e.js",
+                "aitopia/assets/af99b7f1a072a4003eb9ccc27570713e.js",
+                "aitopia/assets/7e175aa4d215965863ad94e5816e68dc.js",
+                "aitopia/assets/b89c276e0b74378882f480951f4bde2a.js",
+                "aitopia/assets/f40af6e9496ae6e6e39e8fe1c143aa85.js",
+                "aitopia/assets/1343aedc4180a91956bf1ecf1fac242a.js",
+                "aitopia/assets/5ae9c9acb1c829f4ab2c50786720e5cf.js",
+                "aitopia/assets/6d1994eb1dc6c7b66d71c8cf9501e5ea.js",
+                "aitopia/assets/a0c4928e138c271c0a4ffa7387169967.js",
+                "aitopia/assets/a284a60fa67a17f88f7ec49cd2e14d13.js",
+                "aitopia/assets/153f558d7d25f9316436c23acae25c23.js",
+                "aitopia/assets/505fa308d2bad83a0d0f7db4aad799e6.js",
+                "aitopia/assets/db2d9de47c2cd9f7c89e9f65becb64bc.js",
+                "aitopia/assets/d2d811bcbf8f364c09354b3094d627ac.js",
+                "aitopia/assets/3a52cdb9a73d8582fc76a67c93707d2d.js",
+                "aitopia/assets/1b14d4146f0939dc840d5b2134463ed7.js",
+                "aitopia/assets/597982f5e7ea616818fbc2ceedb386b7.js",
+                "aitopia/assets/9f5a820a7a10de0699f93f20575efc5e.js",
+                "aitopia/assets/2b9dd6c04c32a40b8a9fce6d879a445d.js",
+                "aitopia/assets/f37f6b6bbb5f63bf0bfafb8a112416af.js",
+                "aitopia/assets/152fe5418b14a2dacb069c86b6fade15.js",
+                "aitopia/assets/e19892cc69af37d0ed63f93ba3ce63a3.js",
+                "aitopia/assets/7e819cd5e0fcd6ebf5950224b361b421.js",
+                "aitopia/assets/fcb632058ec5a26831181cf03980c901.js",
+                "aitopia/assets/5ca27486b59e7a6b5a810760e5e4ccdd.js",
+                "aitopia/assets/dcca9ab7beb97daa84a527ada828479c.js",
+                "aitopia/assets/cddabfa1a4067ad69d1a537cc65cc856.js",
+                "aitopia/assets/0bbcb4338ad8725b851bf7a028577f52.js",
+                "aitopia/assets/243ca25fa3baad18a4e4465f6cce7500.js",
+                "aitopia/assets/179edbb842960d528c2466976ec84ac8.js",
+                "aitopia/assets/f150cf8e0ab8b5808c32d4ef959e089c.js",
+                "aitopia/assets/6685940d446436d2bef0f530de94c051.js",
+                "aitopia/assets/ba8a98d7afc73bb348ec9313f2952319.js"
+            ],
+            "use_dynamic_url": false
+        }
+    ]
+}

@@ -1,0 +1,351 @@
+{
+  "job_name": "batches/nanl5iqmfde5lx5yp7ne37pjopb2htxr8m6k",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:29.752138",
+  "validations": [
+    {
+      "extension_id": "bfcoofacbpockpcfeeckliogafkkjkpk",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The analysis of chromegpt.js reveals no malicious behavior. The extension's logic is entirely focused on its stated purpose: identifying math formulas (LaTeX/MathML) in the DOM and providing a UI to copy them in different formats. There are no fetch(), XHR, or background network calls to external domains. User data (Saved Prompts) is stored locally using Chrome's storage API. The static analysis flags for DOM mutations and keyboard listeners are verified as legitimate UI/UX handlers for a browser enhancement tool.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Copy formulas from ChatGPT into Word, Excel or LaTeX format via right click.",
+          "hidden_functionality": "The extension includes a 'Saved Prompts' manager, which is a common utility for AI extensions and is implemented locally using chrome.storage.",
+          "code_evidence": "function initializePrompts() { ... loadSavedPrompts(); createPromptsButton(); ... }"
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chatgpt.com/*",
+          "https://*.wikipedia.org/*"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://www.w3.org/1998/Math/MathML"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in observeChatMutation() to detect when ChatGPT generates new messages so the extension can automatically inject 'Copy' buttons into the UI."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to persist user-defined 'Saved Prompts' across sessions via chrome.storage.sync."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used only to dismiss the custom context menu when any key is pressed, which is standard UI behavior."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to generate the HTML for the custom context menu and the prompts panel. While risky for XSS, it is used here for internal UI construction without external data sources."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The 'http://www.w3.org/1998/Math/MathML' is a XML namespace URI used to identify MathML elements, not an active network call."
+        }
+      ],
+      "token_usage": {
+        "prompt": 13556,
+        "candidates": 777,
+        "total": 15177
+      }
+    },
+    {
+      "extension_id": "apjhekoaogdimcgiihoncakocdddhmlk",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose. Analysis of background.js shows a standard implementation of a proxy between StackOverflow and OpenAI. It handles session authentication via 'https://chat.openai.com/api/auth/session' (Line 1013) and sends user questions to the 'backend-api/conversation' endpoint (Line 1088). The use of Server-Sent Events (SSE) parsing (Line 861-914) is necessary for streaming ChatGPT's responses. The content script findings (Mixpanel and highlight.js) represent standard telemetry and UI rendering libraries. There is no evidence of data exfiltration to non-OpenAI/Mixpanel domains, nor any capture of sensitive credentials.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "ChatGPT's response to every StackOverflow question",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chat.openai.com",
+          "https://api-js.mixpanel.com",
+          "https://stackoverflow.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://github.com/highlightjs/highlight.js/wiki/security"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT (openai.com)",
+          "usage": "LEGITIMATE",
+          "justification": "Required to authenticate and communicate with the ChatGPT backend as per the extension's primary function."
+        },
+        {
+          "pattern": "FETCH/POST_MESSAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to relay scraped questions from the content script to the background service worker, and to stream the AI response back to the UI."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used by the highlight.js library (referenced in contentScript strings) to render formatted code blocks within the StackOverflow interface."
+        },
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "Typically used for loading analytics (Mixpanel) or syntax highlighting libraries dynamically."
+        }
+      ],
+      "token_usage": {
+        "prompt": 15981,
+        "candidates": 693,
+        "total": 17801
+      }
+    },
+    {
+      "extension_id": "mcbbkppinglngggemoflhaajipkapgml",
+      "verdict": "SAFE",
+      "confidence": 0.9,
+      "reasoning": "The extension is a functional VPN/Proxy service specifically targeting users needing access to ChatGPT. It uses a PAC (Proxy Auto-Config) script to split traffic, only routing relevant domains (OpenAI, Google, LinkedIn) through the proxy. It contains a monetization layer ('VIP' servers) which communicates with 'api.hhos.ru' to manage subscriptions and unique extension IDs. While it uses a Caesar cipher (showx) and Base64 (atob) to obfuscate its proxy list fetched from Telegram/Telegraph, this is a common practice in anti-censorship tools to prevent automated blocking of their nodes. No evidence was found of exfiltrating user browsing history, cookies, or credentials.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "VPN/Proxy for ChatGPT access",
+          "hidden_functionality": "Commercial 'VIP' subscription model for premium proxy servers.",
+          "code_evidence": "Found in main.js and checkout.js, implementing a payment/VIP system via api.hhos.ru."
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatgpt.com",
+          "openai.com",
+          "google.com",
+          "t.me",
+          "telegra.ph"
+        ],
+        "requires_investigation": [
+          "api.hhos.ru"
+        ],
+        "informational_only": [
+          "haringinsuranc.website",
+          "jjs-bbq.space",
+          "marjifx.club",
+          "freeruproxy.ink"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CREDENTIAL_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses onAuthRequired to provide credentials (username/password) to its own proxy servers, not to steal user credentials."
+        },
+        {
+          "pattern": "INTERCEPTION",
+          "usage": "LEGITIMATE",
+          "justification": "Required for VPN/Proxy functionality. It uses a PAC script to route specific AI-related domains through its proxy network."
+        },
+        {
+          "pattern": "SECURITY_RISK",
+          "usage": "LEGITIMATE",
+          "justification": "Static analysis flag for the 'proxy' permission, which is essential for the extension's stated purpose."
+        }
+      ],
+      "token_usage": {
+        "prompt": 22963,
+        "candidates": 707,
+        "total": 25783
+      }
+    },
+    {
+      "extension_id": "lmgdhjilfapmkedonjbieldoclfidddf",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "After reviewing the source code, the extension is benign and performs exactly as described in the manifest. The content.js script identifies the chat domain and adds a keyboard listener to handle the Enter key behavior. There are no network requests (fetch/XHR) used for data exfiltration, no credential harvesting, and no dual-purpose logic. The permissions are limited to the specific AI chat domains mentioned in the description.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Fix Enter Key not working for ChatGPT, Support both Ctrl or Command + Enter or Enter button to send message.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chatgpt.com/*",
+          "https://claude.ai/chat/*"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://chrome.google.com/webstore/detail/enter-key-for-chatgpt/lmgdhjilfapmkedonjbieldoclfidddf"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses a keydown listener to detect when the user presses 'Enter' vs 'Ctrl+Enter' to programmatically trigger the send button on ChatGPT, which is the core functionality described."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The URL found in popup.js is a hardcoded link to the extension's own Chrome Web Store page, used when the user clicks a 'rate' button."
+        }
+      ],
+      "token_usage": {
+        "prompt": 2873,
+        "candidates": 563,
+        "total": 4037
+      }
+    },
+    {
+      "extension_id": "ihlmencnomgfbmeoddhdpgpieahimmmk",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "After reviewing the source code, the extension appears to be a legitimate implementation of a ChatGPT integration for WordPress. The background script correctly manages OpenAI sessions and handles streaming responses from the OpenAI 'conversation' endpoint. The content script is targeted specifically at 'wp-admin' pages as stated. The static analysis findings for network endpoints correctly identify the OpenAI API and the developer's own licensing server (chatgptforwp.com). There is no evidence of data exfiltration, credential theft, or unauthorized tracking. The permissions requested in the manifest are appropriate for the extension's functionality.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant for WordPress blogging.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chat.openai.com",
+          "openaicookbook.com",
+          "chatgptforwp.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "w3.org",
+          "github.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used to communicate with OpenAI APIs (conversation and session) and a license validation endpoint on the developer's domain."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to render Markdown-formatted text and syntax-highlighted code blocks returned by ChatGPT into the WordPress admin interface."
+        },
+        {
+          "pattern": "POST_MESSAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Standard communication between the content script (running in the WP-Admin tab) and the background service worker to process AI prompts."
+        },
+        {
+          "pattern": "EVAL",
+          "usage": "LEGITIMATE",
+          "justification": "The 'eval' label appears to be a result of the bundled highlight.js library or React-based UI framework components, not used for malicious runtime code execution."
+        }
+      ],
+      "token_usage": {
+        "prompt": 116609,
+        "candidates": 654,
+        "total": 118326
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 0,
+    "SUSPICIOUS": 0,
+    "SAFE": 5,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 0,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 5,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 1.0,
+    "true_positive_rate": 0.0,
+    "malicious_detection_rate": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 171982,
+    "candidate_tokens": 3394,
+    "total_tokens": 181124
+  }
+}

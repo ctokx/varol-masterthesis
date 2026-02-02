@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "Google Chrome™용 ChatGPT"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Google Chrome 브라우저에서 공식 ChatGPT의 바로가기를 생성하는 확장 프로그램"
+    },
+    "ext_command_description": {
+        "message": "ChatGPT를 여는 바로가기"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT 에코 모드로 전환하시겠습니까?"
+    },
+    "request_perms_popup_description": {
+        "message": "웹을 탐색하는 것만으로도 지속 가능한 원인에 기여할 수 있습니다. 이 모드는 탐색을 방해하지 않습니다."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "자세히 알아보기"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "허용"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "거부"
+    },
+    "perms_granted_popup_title": {
+        "message": "축하합니다!"
+    },
+    "perms_granted_popup_description": {
+        "message": "이제 모든 기능을 사용할 수 있습니다!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "계속하기"
+    },
+    "perms_denied_popup_title": {
+        "message": "안타깝네요..."
+    },
+    "perms_denied_popup_description": {
+        "message": "다음번에 다시 시도해 주세요."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "이 메시지 닫기"
+    },
+    "welcome_title": {
+        "message": "Chrome용 ChatGPT"
+    },
+    "welcome_sub_title": {
+        "message": "확장 프로그램이 성공적으로 설치되었습니다"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "Chrome용 ChatGPT"
+    },
+    "welcome_sub_title_granted": {
+        "message": "확장 프로그램이 성공적으로 설치되었습니다"
+    },
+    "welcome_tip_title_granted": {
+        "message": "아래 단계를 따라 확장 프로그램을 고정한 후 '다음 단계'를 클릭하세요"
+    },
+    "welcome_next_step": {
+        "message": "다음 단계"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "확장 프로그램의 모든 기능에 액세스하려면 에코 모드를 활성화하세요."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "계속하려면 허용을 클릭하세요"
+    },
+    "html_footer_terms_of_use": {
+        "message": "이용 약관"
+    },
+    "html_footer_privacy_policy": {
+        "message": "개인정보 처리방침"
+    },
+    "how_to_use_html_title": {
+        "message": "확장 프로그램 사용 방법"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "또는 Ctrl + B를 누르세요"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 에코 모드"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "축하합니다! 이 사이트는 에코 모드의 파트너입니다."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "이것이 의미하는 바는 무엇입니까?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "계속해서 탐색함으로써, 🌍 지구를 돕고, 나무를 심고, 비용 없이 탄소 배출을 상쇄할 수 있습니다."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "파트너 사이트를 방문할 때마다 새로운 탭이 잠시 열리며 탄소 상쇄 계산이 수행됩니다."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "이 놀라운 활동을 우리와 함께 지원해 주셔서 감사합니다! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "자세히 알아보기"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "닫기"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "다시 표시하지 않기"
+    }
+}

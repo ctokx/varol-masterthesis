@@ -1,0 +1,81 @@
+{
+  "extension_id": "mikcekmbahpbehdpakenaknkkedeonhf",
+  "extension_name": "ChatGPT Summary - summarize assistant",
+  "version": "1.0.7",
+  "user_count": 90000,
+  "dataset": "chatgpt",
+  "verdict": "SAFE",
+  "confidence": 1.0,
+  "recommendation": "ALLOW",
+  "reasoning": "The extension functions exactly as described. The content script (script.js) includes Mozilla's Readability.js library to parse article text and injects a clean Shadow DOM UI. It communicates with the background worker to send this text to OpenAI for summarization. The static analysis flagged a large number of URLs in worker.js, but inspection reveals these are string literals referring to model documentation, GitHub repositories, and API endpoints found within a bundled AI library (likely `transformers.js` or a generic AI client SDK), rather than malicious network calls. There is no evidence of data exfiltration, hidden functionality, or credential theft.",
+  "full_validation": {
+    "extension_id": "mikcekmbahpbehdpakenaknkkedeonhf",
+    "verdict": "SAFE",
+    "confidence": 1.0,
+    "reasoning": "The extension functions exactly as described. The content script (script.js) includes Mozilla's Readability.js library to parse article text and injects a clean Shadow DOM UI. It communicates with the background worker to send this text to OpenAI for summarization. The static analysis flagged a large number of URLs in worker.js, but inspection reveals these are string literals referring to model documentation, GitHub repositories, and API endpoints found within a bundled AI library (likely `transformers.js` or a generic AI client SDK), rather than malicious network calls. There is no evidence of data exfiltration, hidden functionality, or credential theft.",
+    "recommendation": "ALLOW",
+    "key_concerns": [],
+    "evidence": {
+      "exfiltration_chain": {
+        "data_collected": null,
+        "processing_method": null,
+        "destination_domain": null,
+        "code_evidence": null
+      },
+      "dual_purpose": {
+        "stated_purpose": "Summarize articles using ChatGPT",
+        "hidden_functionality": null,
+        "code_evidence": null
+      },
+      "credential_theft": {
+        "capture_mechanism": null,
+        "transmission_target": null,
+        "code_evidence": null
+      }
+    },
+    "domains": {
+      "legitimate": [
+        "chat.openai.com",
+        "api.openai.com",
+        "clients2.google.com"
+      ],
+      "requires_investigation": [],
+      "informational_only": [
+        "github.com",
+        "huggingface.co",
+        "cdn.britannica.com",
+        "fal.run",
+        "replicate.com",
+        "groq.com",
+        "api.fireworks.ai"
+      ]
+    },
+    "pattern_assessment": [
+      {
+        "pattern": "INNERHTML",
+        "usage": "LEGITIMATE",
+        "justification": "Used in script.js to render the extension's UI (Shadow DOM) and display the summary result."
+      },
+      {
+        "pattern": "NETWORK_ENDPOINT",
+        "usage": "LEGITIMATE",
+        "justification": "The massive list of URLs in worker.js corresponds to documentation and model references inside a bundled AI library (likely transformers.js or similar), not active C2 connections."
+      },
+      {
+        "pattern": "STORAGE",
+        "usage": "LEGITIMATE",
+        "justification": "Used in setting.js to store user preferences and the OpenAI API key locally."
+      },
+      {
+        "pattern": "POST_MESSAGE",
+        "usage": "LEGITIMATE",
+        "justification": "Used for communication between the content script (UI) and the background worker (API handler)."
+      }
+    ],
+    "token_usage": {
+      "prompt": 28219,
+      "candidates": 698,
+      "total": 30696
+    }
+  }
+}

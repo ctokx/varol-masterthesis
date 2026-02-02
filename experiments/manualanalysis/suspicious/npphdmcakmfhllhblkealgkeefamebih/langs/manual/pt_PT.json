@@ -1,0 +1,67 @@
+{
+  "hello": {
+    "message": "Olá!"
+  },
+  "ask_anything": {
+    "message": "Pergunte qualquer coisa"
+  },
+  "ask_about_this_page": {
+    "message": "Perguntar sobre esta página"
+  },
+  "summarize_this_page": {
+    "message": "Resumir esta página"
+  },
+  "add_photos_and_files": {
+    "message": "Adicionar fotos e ficheiros"
+  },
+  "create_image": {
+    "message": "Criar imagem"
+  },
+  "web_search": {
+    "message": "Pesquisa na web"
+  },
+  "teacher_mode": {
+    "message": "Modo professor"
+  },
+  "voice_input": {
+    "message": "Entrada de voz"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "Assistente rápido do dia-a-dia"
+  },
+  "model_deep_reasoning": {
+    "message": "Modelo de raciocínio profundo"
+  },
+  "model_quick_multimodal": {
+    "message": "Respostas multimodais rápidas"
+  },
+  "model_advanced_google_ai": {
+    "message": "IA avançada da Google"
+  },
+  "model_complex_problem_solving": {
+    "message": "Resolução de problemas complexos"
+  },
+  "model_powerful_opensource": {
+    "message": "Modelo de código aberto poderoso"
+  },
+  "model_reasoning_specialist": {
+    "message": "Especialista em raciocínio"
+  },
+  "model_balanced_reliable": {
+    "message": "Equilibrado e fiável"
+  },
+  "model_most_capable": {
+    "message": "O Claude mais capaz"
+  },
+  "model_label_fastest": {
+    "message": "Mais rápido"
+  }
+}
+
+
+
+
+
+
+
+

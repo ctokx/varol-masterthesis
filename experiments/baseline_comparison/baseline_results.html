@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Baseline Comparison (Optimal Thresholds) - chatgpt</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; background: #1a1a2e; color: #e0e0e0; padding: 40px; }
+        h1 { color: #667eea; text-align: center; }
+        .subtitle { text-align: center; color: #888; margin-bottom: 40px; }
+        table { width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.05); border-radius: 12px; overflow: hidden; margin-bottom: 30px; }
+        th { background: rgba(102, 126, 234, 0.2); color: #667eea; padding: 15px; text-align: left; }
+        td { padding: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        tr:last-child td { border-bottom: none; }
+        .best { background: rgba(45, 206, 137, 0.1); }
+        .metric { font-weight: bold; font-size: 1.1em; }
+        .metric.good { color: #2dce89; }
+        .metric.medium { color: #fb6340; }
+        .metric.low { color: #f5365c; }
+        .method-name { font-weight: bold; }
+        .method-name.vlm { color: #2dce89; }
+        .note { background: rgba(102, 126, 234, 0.1); padding: 20px; border-radius: 8px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>📊 Baseline Comparison (Optimal Thresholds)</h1>
+    <p class="subtitle">Dataset: CHATGPT | Thresholds selected via grid search (maximize F1)</p>
+    
+    <table>
+        <tr>
+            <th>Method</th>
+            <th>Optimal Threshold</th>
+            <th>Precision</th>
+            <th>Recall</th>
+            <th>F1 Score</th>
+            <th>TP/FP/TN/FN</th>
+        </tr>
+
+        <tr class="best">
+            <td class="method-name vlm">Vlm Gemini</td>
+            <td>N/A</td>
+            <td><span class="metric good">95.8%</span></td>
+            <td><span class="metric good">97.9%</span></td>
+            <td><span class="metric good">96.8%</span></td>
+            <td>183/8/183/4</td>
+        </tr>
+
+        <tr class="">
+            <td class="method-name ">Clip</td>
+            <td>0.65</td>
+            <td><span class="metric good">86.1%</span></td>
+            <td><span class="metric medium">66.3%</span></td>
+            <td><span class="metric medium">74.9%</span></td>
+            <td>124/20/171/63</td>
+        </tr>
+
+        <tr class="">
+            <td class="method-name ">Text Embedding</td>
+            <td>0.45</td>
+            <td><span class="metric medium">56.1%</span></td>
+            <td><span class="metric good">91.4%</span></td>
+            <td><span class="metric medium">69.5%</span></td>
+            <td>171/134/57/16</td>
+        </tr>
+
+        <tr class="">
+            <td class="method-name ">Keyword</td>
+            <td>0.50</td>
+            <td><span class="metric medium">53.6%</span></td>
+            <td><span class="metric good">94.7%</span></td>
+            <td><span class="metric medium">68.5%</span></td>
+            <td>177/153/38/10</td>
+        </tr>
+
+        <tr class="">
+            <td class="method-name ">Levenshtein</td>
+            <td>0.20</td>
+            <td><span class="metric medium">56.2%</span></td>
+            <td><span class="metric good">86.6%</span></td>
+            <td><span class="metric medium">68.2%</span></td>
+            <td>162/126/65/25</td>
+        </tr>
+
+        <tr class="">
+            <td class="method-name ">Phash</td>
+            <td>0.05</td>
+            <td><span class="metric low">49.5%</span></td>
+            <td><span class="metric good">100.0%</span></td>
+            <td><span class="metric medium">66.2%</span></td>
+            <td>187/191/0/0</td>
+        </tr>
+
+    </table>
+    
+    <div class="note">
+        <strong>Threshold Selection Methodology:</strong><br>
+        Thresholds were selected via grid search over [0.05, 0.10, ..., 0.95] to maximize F1 score on the ground truth dataset.
+        This ensures fair comparison where each baseline operates at its optimal operating point.
+    </div>
+</body>
+</html>

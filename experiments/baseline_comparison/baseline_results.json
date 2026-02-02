@@ -1,0 +1,85 @@
+{
+  "keyword": "chatgpt",
+  "timestamp": "2026-02-01T21:55:42.997849",
+  "methodology": "Grid search over thresholds [0.05, 0.10, ..., 0.95] to maximize F1",
+  "results": {
+    "levenshtein": {
+      "optimal_threshold": 0.2,
+      "metrics": {
+        "tp": 162,
+        "fp": 126,
+        "tn": 65,
+        "fn": 25,
+        "precision": 0.5625,
+        "recall": 0.8663,
+        "f1": 0.6821,
+        "accuracy": 0.6005
+      }
+    },
+    "text_embedding": {
+      "optimal_threshold": 0.45,
+      "metrics": {
+        "tp": 171,
+        "fp": 134,
+        "tn": 57,
+        "fn": 16,
+        "precision": 0.5607,
+        "recall": 0.9144,
+        "f1": 0.6951,
+        "accuracy": 0.6032
+      }
+    },
+    "phash": {
+      "optimal_threshold": 0.05,
+      "metrics": {
+        "tp": 187,
+        "fp": 191,
+        "tn": 0,
+        "fn": 0,
+        "precision": 0.4947,
+        "recall": 1.0,
+        "f1": 0.6619,
+        "accuracy": 0.4947
+      }
+    },
+    "clip": {
+      "optimal_threshold": 0.65,
+      "metrics": {
+        "tp": 124,
+        "fp": 20,
+        "tn": 171,
+        "fn": 63,
+        "precision": 0.8611,
+        "recall": 0.6631,
+        "f1": 0.7492,
+        "accuracy": 0.7804
+      }
+    },
+    "keyword": {
+      "optimal_threshold": 0.5,
+      "metrics": {
+        "tp": 177,
+        "fp": 153,
+        "tn": 38,
+        "fn": 10,
+        "precision": 0.5364,
+        "recall": 0.9465,
+        "f1": 0.6847,
+        "accuracy": 0.5688
+      }
+    },
+    "vlm_gemini": {
+      "optimal_threshold": "N/A",
+      "metrics": {
+        "tp": 183,
+        "fp": 8,
+        "tn": 183,
+        "fn": 4,
+        "precision": 0.9581,
+        "recall": 0.9786,
+        "f1": 0.9683,
+        "accuracy": 0.9683
+      }
+    }
+  }
+}

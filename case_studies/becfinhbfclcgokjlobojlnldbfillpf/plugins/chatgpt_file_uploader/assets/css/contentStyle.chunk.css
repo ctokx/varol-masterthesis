@@ -1,0 +1,1 @@
+.aitopia .progressbar-container{position:fixed;z-index:1000;width:400px;top:60px;left:calc(50% + 130px);transform:translate(-50%);background-color:#00000080;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-radius:8px;padding:16px}@media (max-width: 768px){.aitopia .progressbar-container{left:50%}}

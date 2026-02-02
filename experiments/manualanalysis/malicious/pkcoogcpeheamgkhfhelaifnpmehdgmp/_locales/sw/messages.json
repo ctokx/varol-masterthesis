@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT kwa Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Ugani wa kuunda njia ya mkato kwa ChatGPT rasmi kwenye kivinjari cha Google Chrome"
+    },
+    "ext_command_description": {
+        "message": "Njia ya mkato ya kufungua ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT katika Hali ya Eco?"
+    },
+    "request_perms_popup_description": {
+        "message": "Saidia kwa sababu za kudumu kwa kutumia tu wavuti. Hali hii haitakatisha utaftaji wako."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Jifunze zaidi"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Ruhusu"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Kataa"
+    },
+    "perms_granted_popup_title": {
+        "message": "Hongera!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Sasa utafaidika na vipengele vyetu vyote!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Endelea"
+    },
+    "perms_denied_popup_title": {
+        "message": "Ni hasara..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Labda wakati mwingine."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Funga ujumbe huu"
+    },
+    "welcome_title": {
+        "message": "ChatGPT kwa Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Ugani Umewekwa kwa Mafanikio"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT kwa Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Ugani Umewekwa kwa Mafanikio"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Fuata hatua zilizo hapa chini ili kuunganisha ugani wako, kisha bofya Hatua Inayofuata"
+    },
+    "welcome_next_step": {
+        "message": "Hatua Inayofuata"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "Ili kufikia vipengele vyote vya ugani, wezesha Hali ya Eco."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Bofya Ruhusu ili kuendelea"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Masharti ya Matumizi"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Sera ya Faragha"
+    },
+    "how_to_use_html_title": {
+        "message": "Jinsi ya Kutumia Ugani"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Au bonyeza Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Hali ya Eco"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Hongera! Tovuti hii ni mshirika wa hali yetu ya eco."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Hii inamaanisha nini?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Kwa kuendelea kuvinjari, utakuwa unasaidia sayari 🌍, kupanda miti na kupunguza uzalishaji wa kaboni bila gharama yoyote."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Kwa kila ziara kwa mshirika, kichupo kipya kitafunguliwa kwa muda mfupi ili kuruhusu hesabu ya upunguzaji wa kaboni."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Kwa njia, asante sana kwa kuunga mkono sababu hii ya ajabu pamoja nasi! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Jifunze zaidi"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Funga"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Usionyeshe tena"
+    }
+}

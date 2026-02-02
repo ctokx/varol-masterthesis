@@ -1,0 +1,1572 @@
+{
+  "dataset": "grok_clones",
+  "retrieved_at": "2026-01-31T22:02:16.227302",
+  "total_extensions": 26,
+  "summary": {
+    "MALICIOUS": 0,
+    "SUSPICIOUS": 0,
+    "SAFE": 26,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "token_usage": {
+    "prompt_tokens": 1053052,
+    "candidate_tokens": 17689,
+    "total_tokens": 1098468
+  },
+  "validations": [
+    {
+      "extension_id": "chipeplppgaafgikgfjeabenlnciacbe",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "After reviewing the source code, the static analysis flags are confirmed to be false positives originating from standard production libraries. Specifically, the findings in background.js related to 'COOKIE_ACCESS' and 'CREDENTIAL_ACCESS' are part of the minified Axios HTTP client (v1.7.9). The extension's core logic (lines 2900+) simply initializes a session by fetching a token from its own Vercel-hosted backend and managing its UI state. The permissions (sidePanel, storage, tabs) are appropriate for an AI assistant that needs to maintain session state and provide a sidebar interface. No malicious exfiltration or data harvesting logic was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant providing a Grok-like chat interface in the side panel.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://grok-chat-nine.vercel.app",
+          "https://grok-chat-site.vercel.app"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://reactjs.org/docs/error-decoder.html",
+          "http://www.w3.org/1999/xlink",
+          "http://www.w3.org/2000/svg"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "COOKIE_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "The cookie access logic (lines 1301-1304 in background.js) is part of the bundled Axios library's standard XSRF (Cross-Site Request Forgery) protection mechanism, which reads a token from a cookie to set a security header."
+        },
+        {
+          "pattern": "CREDENTIAL_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "The credential/auth patterns identified are part of the Axios library's support for Basic Authentication and the extension's own internal token management (local:token) used to authenticate with its backend."
+        },
+        {
+          "pattern": "SENSITIVE_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "The extension stores its own application-specific session token in local storage. There is no evidence of it accessing or storing sensitive user credentials from other sites."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The endpoints grok-chat-nine.vercel.app and grok-chat-site.vercel.app are the extension's declared backend and landing pages as per the manifest host_permissions."
+        }
+      ],
+      "token_usage": {
+        "prompt": 91429,
+        "candidates": 799,
+        "total": 93183
+      }
+    },
+    {
+      "extension_id": "hafhkoalnlpoifpidohfjlmeemfifndi",
+      "verdict": "SAFE",
+      "confidence": 0.9,
+      "reasoning": "The extension is a standard 'AI wrapper' that loads a chat interface from the developer's domain (easytool.dev) into a sidepanel. While static analysis flagged page content extraction logic, manual review confirms this is a legitimate feature implementation for context-aware AI. The scraper (function D) is designed to extract clean text for AI processing and specifically excludes sensitive elements like forms, inputs, and scripts. The extension uses optional permissions for host access and scripting, which is a security best practice. No evidence of unauthorized data collection, credential theft, or hidden monetization (ads/affiliate) was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "The text content of the active browser tab.",
+          "processing_method": "A specialized scraper function (D) in background.js removes non-text elements (scripts, styles, ads, forms, inputs) to extract clean page text.",
+          "destination_domain": "https://grok-ai.easytool.dev",
+          "code_evidence": "background.js: Lines 100-149 (the D function) and lines 304-320 in iframe-service-D2VojyOp.js (handlePageContentRequest) which facilitates the transfer of the text to the iframe via postMessage."
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant providing Grok AI functionality.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chatgpt-5.easytool.dev",
+          "https://grok-ai.easytool.dev",
+          "https://grok-3.easytool.dev",
+          "https://deepseek-ai.easytool.dev",
+          "https://perplexity-ai.easytool.dev",
+          "https://gemini-2.easytool.dev"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "These endpoints host the AI chat interfaces and backend services for the extension's primary features."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used to identify the active tab to extract text content for 'context-aware' AI responses (e.g., summarizing a page)."
+        },
+        {
+          "pattern": "DOM / INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used strictly for rendering loading states, progress bars, and error messages in the extension's own UI overlay."
+        },
+        {
+          "pattern": "POST_MESSAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Necessary for communication between the extension's privileged scripts and the iframed AI application on the developer's domain."
+        }
+      ],
+      "token_usage": {
+        "prompt": 18374,
+        "candidates": 832,
+        "total": 20994
+      }
+    },
+    {
+      "extension_id": "hphbdeekmlhpmjgabnjopikemgoapjea",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a legitimate AI assistant implementation. Analysis of the source code shows it functions as a wrapper for the Together AI API (api.together.xyz), providing a sidebar interface for chatting with LLMs (Llama-3 and GPT-OSS). The background script handles the API authentication using a hardcoded developer key and relays streaming responses back to the UI. The content script (artifact.js) simply adds a small floating button to open the main Grok website. There is no evidence of data exfiltration, credential theft, or hidden dual-purpose functionality such as ad injection or browsing history tracking. Static analysis hits on INNERHTML and KEYBOARD_LISTENER are standard UI components for a chat application.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant in a sidebar",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://api.together.xyz/v1/chat/completions",
+          "https://grok.com/",
+          "https://docs.google.com/forms/",
+          "https://chromewebstore.google.com/"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://cw.shift-tech.org/grokai"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to dynamically build the sidebar UI and display chat messages. Includes an escaping function 'ne(e)' to prevent XSS when rendering user-generated content."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to detect the 'Enter' key press in the input field to trigger the message sending function."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used in background.js to communicate with the Together AI API to retrieve LLM responses."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store chat history and local extension settings (e.g., whether the user has rated the app)."
+        }
+      ],
+      "token_usage": {
+        "prompt": 11117,
+        "candidates": 705,
+        "total": 12829
+      }
+    },
+    {
+      "extension_id": "aoemlgniakbojcecmjefonjkgnceklpg",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is a legitimate AI assistant 'wrapper.' It provides a user interface (in a side panel or full screen) that loads an AI chat application from subdomains of easytool.dev. The extension includes a content extraction feature (Page Content Request) which is triggered when the user wants the AI to analyze the current webpage. The 'malicious' patterns flagged by static analysis are actually standard components of this functionality: scripting permissions are used to extract page text, and network endpoints are used to communicate with the AI backend. While the naming of the extension (using 'Grok 4' and 'ChatGPT 5') is clickbaity/misleading as those versions do not officially exist in this format, the code itself performs no hidden or malicious actions such as stealing credentials, injecting ads, or exfiltrating private data outside of the explicit AI context-sharing feature.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Active tab page text, title, URL, and favicon.",
+          "processing_method": "The extension uses a 'readability' style algorithm to clone the document body, strip non-content elements (ads, nav, scripts, styles, etc.), and aggregate raw text nodes into a single string.",
+          "destination_domain": "easytool.dev (via subdomains like grok-ai.easytool.dev, grok-3.easytool.dev)",
+          "code_evidence": "The function U() in background.js executes a script in the active tab to extract 'pageText'. This data is then sent to the iframeService in iframe-service-C9N42zcQ.js, which forwards it to the remote AI interface via postMessageToIframe()."
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI Assistant (Grok 4)",
+          "hidden_functionality": null,
+          "code_evidence": "The code focuses entirely on providing a sidepanel/chat interface and extracting page context, which are standard features for AI extensions."
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatgpt-5.easytool.dev",
+          "chatgpt-sidebar.easytool.dev",
+          "grok-ai.easytool.dev",
+          "grok-3.easytool.dev",
+          "deepseek-ai.easytool.dev",
+          "perplexity-ai.easytool.dev",
+          "gemini-2.easytool.dev"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "chrome.google.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "Used to point to the remote AI services that the extension wraps. The use of multiple subdomains allows the developer to provide different AI models within the same framework."
+        },
+        {
+          "pattern": "TABS_ACCESS / scripting",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses these permissions to scrape the text content of the active tab. This is a core feature for AI 'sidekick' extensions that provide context-aware answers about the webpage the user is currently viewing."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in the UI scripts (welcome, sidepanel, chat) to display error messages or simple loading states in a controlled container ('systemOverlay')."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store the installation date and user preferences like the theme (light/dark)."
+        }
+      ],
+      "token_usage": {
+        "prompt": 18493,
+        "candidates": 956,
+        "total": 21506
+      }
+    },
+    {
+      "extension_id": "oeblaeidaoihifdgkfoiekahombfmmff",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose. It provides a custom New Tab page and a popup with search inputs that redirect the user to grok.com. The keyboard listeners flagged by static analysis are implemented to improve user experience (Enter-to-submit). There is no evidence of data collection, background network requests (fetch/XHR) to unauthorized domains, or any form of obfuscation. The permissions requested (search, contextMenus) are appropriate for the features provided.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Adds xAI's GROK to your Chrome experience.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "grok.com",
+          "google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "The keyboard listeners in popup.js and newtab.js are used specifically to detect the 'Enter' key press on search input fields, allowing the user to submit queries without manually clicking a button. This is standard UI behavior."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3575,
+        "candidates": 450,
+        "total": 5261
+      }
+    },
+    {
+      "extension_id": "dcoeppmcdkpdlcjcijpnbadddjboakme",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a legitimate productivity tool for the Grok (xAI) web interface. Its source code is transparent, well-commented, and directly implements the features described (auto-saving generated files, toggling UI sidebars, and silencing feedback prompts). The use of 'chrome.storage' and 'chrome.downloads' is required for the file overwrite functionality. No evidence of data exfiltration, credential theft, or undisclosed monetization was found. The patterns identified by static analysis are standard requirements for extensions that modify the behavior and UI of a specific web application.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Grok Web UI Quality of Life Tools",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://grok.com",
+          "https://clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "grokusercontent.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to synchronize the 'Overwrite Files' setting between the content script and background script to handle download conflict resolution."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Necessary to detect UI changes on grok.com, such as when a response finishes, when artifacts (files) are generated, or when feedback prompts appear."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Used for a UI countdown timer when a rate limit is hit and for polling the status of the 'Stop' button during response generation."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The URL https://grok.com is the primary target site the extension is designed to modify."
+        }
+      ],
+      "token_usage": {
+        "prompt": 15129,
+        "candidates": 640,
+        "total": 16460
+      }
+    },
+    {
+      "extension_id": "nmgfpjbckmbhpndgpmkbgbmopnkigncc",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The analysis of the source code indicates the extension is a legitimate automation tool. The static analysis findings of 'interception' and 'security_risk' refer to the extension's use of WebSocket hooking (in compat.js) and script injection. These techniques are required to detect when Grok has finished generating an image so the extension can facilitate a download. While the codebase contains references to many other AI sites (suggesting a shared framework used by the developer for a suite of extensions), the manifest strictly limits its activity to grok.com. The XOR decryption function L(o) in content.js is a simple self-integrity check to verify the extension ID and is not used to hide malicious payloads. There is no evidence of data exfiltration of private prompts or credentials.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "clientId, sessionId, and WebSocket message metadata",
+          "processing_method": "Data is used for Google Analytics 4 (GA4) tracking and internal state management for image generation tracking.",
+          "destination_domain": "www.google-analytics.com",
+          "code_evidence": "content.js generates/retrieves a clientId via chrome.storage.local (Line 41) and a sessionId via chrome.storage.session (Line 55). main.js references the GA4 endpoint: https://www.google-analytics.com/mp/collect."
+        },
+        "dual_purpose": {
+          "stated_purpose": "Auto send Grok prompts and download images/videos",
+          "hidden_functionality": "The code contains boilerplate logic for multiple other AI platforms (Poe, Suno, GPT, Gemini), but this logic is dormant/unreachable due to the manifest.json restricting host permissions and content script injection to 'grok.com' only.",
+          "code_evidence": "content.js contains logic for hosts like 'poe.com', 'moonvy.com', 'ideogram.ai', and 'suno.com' (Lines 5-15). However, manifest.json host_permissions only allows '*://grok.com/*'."
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "grok.com",
+          "docs.autojourney.ai",
+          "www.google-analytics.com",
+          "imgbb.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "discord.com",
+          "midjourney.com",
+          "poe.com",
+          "suno.com",
+          "ideogram.ai"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH_HIJACK",
+          "usage": "LEGITIMATE",
+          "justification": "The extension intercepts WebSocket traffic on grok.com to monitor image generation status. This is necessary to implement the 'auto download' feature when an image is ready."
+        },
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "content.js injects 'compat.js' and 'main.js' into the page context to access the WebSocket object and DOM, which is standard for extensions interacting with SPAs."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to persist user settings and unique identifiers for session management and analytics."
+        }
+      ],
+      "token_usage": {
+        "prompt": 34274,
+        "candidates": 889,
+        "total": 36516
+      }
+    },
+    {
+      "extension_id": "kbhnnffloedjfonnapokghoklipaenph",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a simple, transparent tool that enhances the X (Twitter) UI. It injects a button into tweets which, when clicked, opens a local modal for user input. The 'Ask' action simply constructs a URL pointing to X's native Grok interface (x.com/i/grok) and opens it in a new tab with the query pre-filled. There is no background script, no network permissions requested, and no evidence of data exfiltration or malicious intent. All static analysis patterns are directly linked to legitimate UI/UX features.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Ask Grok about any X post.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "x.com",
+          "twitter.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to set a simple string ('×') for a close button inside the UI modal."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used for standard UI interaction: closing the modal with the Escape key and submitting the query with the Enter key."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Standard practice for extensions targeting dynamic social media feeds; used to detect new tweets loaded via infinite scroll to inject the Grok button."
+        }
+      ],
+      "token_usage": {
+        "prompt": 4013,
+        "candidates": 546,
+        "total": 5384
+      }
+    },
+    {
+      "extension_id": "aniimhbnclgmeakjkifiopodfjbckpbf",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "After reviewing the provided source code, the extension appears to be a legitimate 'New Tab' replacement. The background script initializes a simple list of bookmarks in local storage. The main logic (index-CLY-R9GN.js) is a standard production build of a React 19 application. The 'suspicious' patterns flagged by static analysis are standard artifacts of the React library (event listeners, state management, and DOM manipulation) or the module preloader. There is no evidence of data being sent to any third-party server, no credential harvesting, and no undisclosed background functionality. The referenced domains (Grok, Gmail, GPT Wrangler) are clearly used as UI shortcuts as described in the extension's purpose.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Quick start chatting with grok from your new tab.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "grok.com",
+          "gmail.google.com",
+          "gptwrangler.com",
+          "react.dev",
+          "x.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "w3.org",
+          "google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE/CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used in background.js to initialize a default list of shortcuts (Grok, Gmail, GPT Wrangler) and in index-CLY-R9GN.js to manage the state of the user's new tab page."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "This is part of the standard React 19 synthetic event system, used for handling UI interactions like keyboard shortcuts or form input."
+        },
+        {
+          "pattern": "FETCH/DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "Used by a standard module-preloading polyfill at the beginning of the index file, which is common in modern bundled web applications."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (grok.com, gmail.google.com, gptwrangler.com)",
+          "usage": "LEGITIMATE",
+          "justification": "These domains are stored as string literals in a 'links' array to be displayed as clickable shortcuts on the new tab page."
+        }
+      ],
+      "token_usage": {
+        "prompt": 61236,
+        "candidates": 747,
+        "total": 62856
+      }
+    },
+    {
+      "extension_id": "gcdfailafdfjbailcdcbjmeginhncjkb",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension functions as a side-panel companion for the 'onlineapp.pro' platform. The background script (index.js) manages standard extension lifecycle events (install/uninstall tracking) and provides a storage bridge for the developer's authorized web origins. This bridge allows the web application to read/write specific data to the extension's storage, often used for persisting sessions or user preferences. The large JavaScript files (client.ed475e44.js and index.faa2ca4a.js) are standard production builds of the React framework and the Mozilla Readability library, the latter of which is commonly used in chatbot/summary extensions to extract clean text from web pages. No evidence of data theft, ad injection, or malicious exfiltration was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Installation event and a generated user UUID.",
+          "processing_method": "UUID is generated using crypto.randomUUID() and stored in chrome.storage.sync.",
+          "destination_domain": "onlineapp.pro",
+          "code_evidence": "fetch(\"https://onlineapp.pro/api/track-event\", { method: \"POST\", ... body: JSON.stringify({ event: e, wallId: 4, extensionId: chrome.runtime.id, userId: t, ...s }) })"
+        },
+        "dual_purpose": {
+          "stated_purpose": "Grok Chatbot (Browser extension providing a side-panel chatbot)",
+          "hidden_functionality": "None identified. The code focuses on side-panel management and a storage bridge for the developer's web application.",
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "softoolunity.com",
+          "onlineapp.pro",
+          "onlineapp.live",
+          "onlineapp.stream",
+          "reactjs.org"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "w3.org",
+          "clients2.google.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "Used for installation tracking (analytics) and directing users to a welcome/uninstall page on the developer's site."
+        },
+        {
+          "pattern": "CHROME_STORAGE / onMessageExternal",
+          "usage": "LEGITIMATE",
+          "justification": "Acts as a Supabase auth adapter, allowing the developer's specific domains (onlineapp.pro/live/stream) to sync authentication state and items to the extension's sync storage. This is restricted to specific origins defined in the externally_connectable manifest field."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Found within the minified React and Readability library bundles. Standard for rendering UI and parsing article content."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used to create the welcome tab upon installation and to identify the current window for the side panel."
+        }
+      ],
+      "token_usage": {
+        "prompt": 120245,
+        "candidates": 856,
+        "total": 122434
+      }
+    },
+    {
+      "extension_id": "pooagggdflijbacfbaphaehojpgmkfcg",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a straightforward utility for customizing the x.com user interface. The static analysis flags for 'STORAGE' and 'TABS_ACCESS' are triggered by legitimate functionality: the popup saves user toggle states to chrome.storage and sends a message to the content script via the tabs API to apply CSS changes (display: none) to the page. There is no evidence of data collection, obfuscation, or unauthorized network communication.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Remove GROK and other UI elements from x.com",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://x.com/*"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE / CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used in grok-be-gone-popup.js and content.js to store and retrieve user preferences for which UI elements should be hidden."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used in the popup to query open x.com tabs and send them messages to update their styling immediately when a setting is toggled."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The reference to x.com is used for identifying tabs and content script injection scope; no actual network requests (fetch/XHR) are made to transmit data."
+        }
+      ],
+      "token_usage": {
+        "prompt": 4518,
+        "candidates": 566,
+        "total": 5880
+      }
+    },
+    {
+      "extension_id": "jnnlkkaidhngedlkogmbhodjlegcdggb",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a functional utility for exporting chat logs from Grok and X.com. Analysis of the source code confirms that chat data is processed locally within the content script and converted into blobs for local download. There are no network requests (fetch/XHR) observed that transmit user data to external servers. The network endpoints identified in the static analysis are used for legitimate purposes: opening a donation link (Ko-fi) and a support page (toolsfy.top). The background script contains a throttle mechanism to only show the support page once a month, which is not considered malicious behavior.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Export Grok chat history to various formats (PDF, HTML, Markdown, JSON, etc.)",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://toolsfy.top/",
+          "https://ko-fi.com/lyq107",
+          "https://clients2.google.com/service/update2/crx"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://toolsfy.top/support/grok"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "Used in background.js to open the developer's support page once per month via chrome.tabs.create. This is a standard promotional/support mechanism."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store 'lastPopupTime' to ensure the support page is not opened too frequently."
+        },
+        {
+          "pattern": "BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content.js within the 'downloadFile' function to create a local download link for the exported chat data."
+        }
+      ],
+      "token_usage": {
+        "prompt": 99841,
+        "candidates": 628,
+        "total": 101255
+      }
+    },
+    {
+      "extension_id": "lficmkkidglogpdidopnodinfnemamea",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension operates by injecting a script into the Grok interface on x.com to intercept network responses containing conversation data. This data is passed via 'window.postMessage' to a content script, then to a background script, and finally stored in 'chrome.storage.local'. The PDF generation occurs entirely client-side in 'dashboard.js' using the 'html2pdf.js' library. Network requests to 'productivityimprover.com' are strictly for checking user license tiers (Free vs. Pro) and usage quotas, which is a standard commercial practice. No evidence was found of conversation content being transmitted to any external server.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Export Grok (x.com) conversations to PDF.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://www.productivityimprover.com",
+          "https://assets.grok.com",
+          "https://x.com",
+          "http://localhost"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://forms.gle/UvTfFmmASkxS4MgX7",
+          "http://www.w3.org/2000/svg"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH_HIJACK",
+          "usage": "LEGITIMATE",
+          "justification": "Used in injected.grok.js to intercept the Grok API response containing the conversation text. This is necessary to extract the chat content for PDF conversion."
+        },
+        {
+          "pattern": "COOKIE_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Found in utility scripts (util.js) and third-party UI libraries (Tabulator). Used for local session management and internal state persistence."
+        },
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "Used to inject the capture scripts into the webpage context to access the 'window.fetch' and 'XMLHttpRequest' objects, which are not accessible from the content script isolated world."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "These are internal features of the Tabulator and Semantic UI frameworks used for the extension's dashboard UI and navigation."
+        }
+      ],
+      "token_usage": {
+        "prompt": 220912,
+        "candidates": 736,
+        "total": 222886
+      }
+    },
+    {
+      "extension_id": "dbmgoplnhflmlngfnjhopkjjhpappjhi",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose of providing speech-to-text functionality for the Grok chat interface. It utilizes the standard Web Speech API (webkitSpeechRecognition) and limits its activity to the grok.com domain. There is no evidence of data exfiltration, network calls to third-party domains, or any hidden malicious logic. The findings from static analysis (innerHTML and MutationObserver) are standard implementation patterns for browser extensions that modify the UI of single-page applications.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Add a microphone button to Grok's chat box so you can dictate your prompts using speech-to-text.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://grok.com/*",
+          "https://*.grok.com/*"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used at line 209 to inject the HTML structure for the microphone button's UI. The content is a hardcoded template and does not process unsanitized user input."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used at line 258 to detect when Grok's dynamic interface (SPA) updates, ensuring the microphone button is re-injected if the chat container is replaced."
+        }
+      ],
+      "token_usage": {
+        "prompt": 4534,
+        "candidates": 540,
+        "total": 5765
+      }
+    },
+    {
+      "extension_id": "febmcheefbgjmmihonaabgmiolbjnlja",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a simple, transparent tool that functions exactly as described. Static analysis flagged storage and mutation observers, which are essential for its core functionality (saving settings and monitoring new tweets). The identified network endpoint is a visible donation link for the developer and does not involve automated data transmission. There is no evidence of data collection, scraping, or credential theft.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Blurs tweets containing @grok or custom words.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "twitter.com",
+          "x.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://buymeacoffee.com/sabalax"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE/CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store and retrieve the user's list of custom words for filtering."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (buymeacoffee.com)",
+          "usage": "LEGITIMATE",
+          "justification": "This is a hardcoded 'Support Me' donation link added as an anchor (<a>) tag to the UI, not a background network request for data exfiltration."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to detect when new tweets are added to the DOM during infinite scrolling on X.com."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in popup.js to clear the wordList element (wordList.innerHTML = \"\") before re-rendering the list. Actual user content is inserted via textContent."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3371,
+        "candidates": 605,
+        "total": 4812
+      }
+    },
+    {
+      "extension_id": "gdmdkglgpkheidkcaelmhfpehfphfdeh",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is safe. Its primary functionality is to pass user-selected text or search queries to the Grok interface on X.com. Analysis of the code shows that user prompts are stored in local storage and only transmitted to x.com when the user explicitly triggers the 'Grok' action. While the extension includes an undisclosed feature that injects a 'hellobar' on Wikipedia to promote 'Grokipedia.com', this behavior is non-malicious, dismissible, and consistent with the extension's theme of AI-assisted browsing. The UUID generation in background.js is used for standard installation/uninstallation telemetry to grokbutton.com and does not collect sensitive user data.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Adds a button to open Grok on X and Google search results",
+          "hidden_functionality": "Injects a promotional 'hellobar' on Wikipedia pages to redirect users to Grokipedia.com.",
+          "code_evidence": "=== wikipediaContentScript.js ===\nconst bar = document.createElement('div');\nbar.id = 'grokipedia-hellobar';\nmsg.textContent = 'View this article on Grokipedia';\nconst targetUrl = `https://grokipedia.com/page/${slug}`;"
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "x.com",
+          "google.com",
+          "en.wikipedia.org"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "grokbutton.com",
+          "grokipedia.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store user-defined prompts, settings, and an installation UUID. It also tracks if a user has dismissed the Wikipedia promotional bar."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content scripts to detect when textareas (on X.com) or search bars (on Google) are dynamically rendered so the extension can inject its buttons or populate values."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The endpoint https://x.com/i/grok is the primary destination for the extension's advertised functionality."
+        }
+      ],
+      "token_usage": {
+        "prompt": 7826,
+        "candidates": 728,
+        "total": 10177
+      }
+    },
+    {
+      "extension_id": "magkeflehomijefphnnoejekncpcipmd",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is a comprehensive power-user tool for Grok and X enthusiasts. Analysis of the code shows that the 'suspicious' behavior identified (API interception) is entirely functional. The extension captures X's internal GraphQL headers only to make authenticated requests back to X's own API from the client's browser. This enables the 'Show User Location' feature. The retrieved data is displayed to the user and cached locally; no evidence was found of this data being sent to the developer's servers or any other third party. Other features like Grok prompt generation, Wikipedia/Grokipedia link replacement, and Google Search injection are implemented cleanly with no hidden payloads or dual-purpose tracking.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Enhances the Grok (xAI) and X (Twitter) experience with integrated Grokipedia links, Wikipedia comparisons, and UI enhancements like showing user locations on X.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": "Captures X.com internal API headers (fetch/XHR) to enable a local feature, but does not transmit them to any third-party server.",
+          "transmission_target": null,
+          "code_evidence": "x.com_pageScript.js (Line 18-35) captures headers to a local variable to be used for requests to x.com/i/api/graphql."
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "x.com",
+          "grok.com",
+          "wikipedia.org",
+          "grokipedia.com",
+          "grokipedia.pl",
+          "google.com",
+          "google.ad",
+          "google.ae"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "imgur.com",
+          "discord.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH_HIJACK",
+          "usage": "LEGITIMATE",
+          "justification": "The hijack of fetch/XHR in x.com_pageScript.js is specifically used to capture authentication headers (like CSRF tokens) required to query X's internal GraphQL API to retrieve and display the 'Account Based In' (location) data for users, which is a disclosed feature of the extension."
+        },
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "Used to inject x.com_pageScript.js into the page context of X.com to allow interaction with the page's network requests, which is necessary for the location-lookup feature."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store extension settings and cache user location data locally on the user's machine to improve performance and avoid rate limits."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to inject UI elements such as Grokipedia links on Google Search results and Wikipedia pages, and flag/location indicators on X."
+        }
+      ],
+      "token_usage": {
+        "prompt": 77908,
+        "candidates": 868,
+        "total": 80454
+      }
+    },
+    {
+      "extension_id": "ngemjbabocofjokajkandjibegmhgekg",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a straightforward productivity tool for the Grok AI platform. It allows users to manage and quickly insert prompt templates into the textarea on grok.com. The code is clean, well-commented, and lacks any network-requesting functions (no fetch, XHR, or background communication). Data persistence is handled locally via localStorage. The static analysis findings are false positives: the network endpoint is a user-clickable social link, and the DOM manipulation is used exclusively for building the UI overlay.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Provides quick prompt options with add/delete functionality on supported pages (grok.com).",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://grok.com/*"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://discord.gg/wPqcambpeu"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The Discord URL is used as a static 'href' for a support/community link in the UI, not for programmatic data exfiltration."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "The code uses innerHTML to inject a static SVG icon for the Discord link, which is a common and benign practice for UI development in extensions."
+        }
+      ],
+      "token_usage": {
+        "prompt": 7301,
+        "candidates": 514,
+        "total": 8533
+      }
+    },
+    {
+      "extension_id": "onddcpahoenacjcgkldfegocdgdgajpn",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a legitimate implementation of an AI sidepanel assistant. The static analysis findings regarding credential access and storage refer to the user's xAI API key, which is handled securely in local storage and only transmitted to the official xAI domain. The data collection (text and screenshots) is user-initiated or context-dependent based on the 'context mode' selected in the UI, which aligns with the stated purpose of analyzing webpages. No hidden exfiltration, dual-purpose code, or obfuscation was found. The code is well-structured for its intended purpose.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Webpage text content and visible viewport screenshots.",
+          "processing_method": "Text is truncated to 8000 characters; screenshots are processed as JPEG DataURLs.",
+          "destination_domain": "https://api.x.ai/v1/chat/completions",
+          "code_evidence": "The fetch call in sidepanel.js (Lines 1042-1065) sends 'messages' (containing text content or image_url) to the xAI endpoint using the user-provided Bearer token."
+        },
+        "dual_purpose": {
+          "stated_purpose": "Grok in your browser sidepanel",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": "User manually enters their xAI API key into an input field in the sidepanel UI.",
+          "transmission_target": "https://api.x.ai/v1/chat/completions",
+          "code_evidence": "The API key is retrieved from local storage (await chrome.storage.local.get(['xaiApiKey'])) and used only in the Authorization header for Grok API requests."
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://api.x.ai/v1/chat/completions",
+          "https://clients2.google.com/service/update2/crx"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CREDENTIAL_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "The extension requires the user to provide their own xAI API key to function. This key is stored locally and used for authentication with the xAI API."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Required to extract the text content or take a screenshot of the currently active tab for context-aware AI responses."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to persist the user's API key and per-tab conversation history so that chats are not lost when the sidepanel or tab is closed."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Implemented via manifest commands to provide user-triggered shortcuts (Ctrl+Shift+S/C) for capturing context."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "Communications are restricted to the official xAI API endpoint as specified in the host permissions."
+        }
+      ],
+      "token_usage": {
+        "prompt": 15243,
+        "candidates": 867,
+        "total": 16989
+      }
+    },
+    {
+      "extension_id": "fmkpjdpdjbocpmjkadhfohedbfpbmlnh",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code is minimal, transparent, and aligns perfectly with its stated purpose. The static analysis flag for 'KEYBOARD_LISTENER' is a false positive for malicious behavior; it is a standard implementation for form submission via the Enter key. The extension only uses the 'contextMenus' permission and the 'omnibox' API to facilitate searches on grokipedia.com. There is no evidence of data collection, background tracking, or unauthorized network calls.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Search Grokipedia directly from your browser's search bar and context menu",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "grokipedia.com",
+          "clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "The keyboard listener in popup.js is used solely to detect the 'Enter' key press within the search input box to trigger the search function, which is standard UI behavior."
+        }
+      ],
+      "token_usage": {
+        "prompt": 2793,
+        "candidates": 451,
+        "total": 3864
+      }
+    },
+    {
+      "extension_id": "cgpecmdjabkibmeappjaikkbbhoipjcb",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose of managing multiple Grok accounts. It captures session cookies when a user 'saves' an account, stores them in local storage, and restores them when a user 'switches' accounts. The background script monitors network requests to trigger UI refreshes for the message counter. There is no evidence of data being sent to any third-party domains; all network activity is directed at grok.com and its subdomains for legitimate functionality. The permissions requested (cookies, storage, webRequest) are appropriate for an account-switching utility.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Fast switching between accounts on grok.com",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "grok.com",
+          "x.ai",
+          "accounts.x.ai"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "clients2.google.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CREDENTIAL_ACCESS / CHROME_COOKIES",
+          "usage": "LEGITIMATE",
+          "justification": "The extension is a multi-account switcher. It needs to read, remove, and set cookies for grok.com to swap user sessions. This is the core functionality."
+        },
+        {
+          "pattern": "STORAGE / CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store account names and their associated session cookies locally on the user's machine."
+        },
+        {
+          "pattern": "NETWORK / FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content.js to fetch the current user's rate limits from https://grok.com/rest/rate-limits to display a message counter."
+        },
+        {
+          "pattern": "DOM / MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to detect when the Grok UI has loaded so the extension can inject the message limit counter into the navigation bar."
+        }
+      ],
+      "token_usage": {
+        "prompt": 7158,
+        "candidates": 671,
+        "total": 8932
+      }
+    },
+    {
+      "extension_id": "immheffbkopbhdlaaahedhehiaakkpaj",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "After reviewing the source code, the extension appears to be a standard commercial AI assistant. The static analysis findings are all tied to legitimate features: 1) The 'Sensitive Storage' and 'Credential Access' flags refer to the extension managing its own 'authToken' and 'userEmail' in localStorage/chrome.storage to maintain session state with its backend (addify.pro). 2) The network endpoints (addify.pro and onlineapp.pro) are for the AI API and the integrated paywall/subscription service, which is clearly disclosed to the user via 'Upgrade' buttons in the UI. 3) User data (prompts) are only sent to the designated backend for the purpose of generating AI responses. 4) The code is well-structured and uses industry-standard libraries like 'marked' for markdown and 'DOMPurify' for sanitization, which is typical for high-quality, benign extensions.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": "The extension collects user prompts and sends them to https://addify.pro/claude_ai/api/openai-4o-chat/ which is the declared backend for the AI chat functionality."
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant providing chat functionality via a sidebar or popup.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://addify.pro",
+          "https://onlineapp.pro",
+          "https://onlineapp.stream",
+          "https://onlineapp.live",
+          "https://clients2.google.com",
+          "https://chromewebstore.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://c5.patreon.com",
+          "https://c8.patreon.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used across multiple files (popup.js, message-actions.js, etc.) to render Markdown-parsed AI responses. The code uses DOMPurify to sanitize content before insertion (e.g., popup.js line 150), mitigating XSS risks."
+        },
+        {
+          "pattern": "COOKIE_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "In user-info.js, this is used to retrieve the 'csrftoken' for communication with the addify.pro backend, a standard security practice for authenticated web requests."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used for standard UI interactions, such as allowing the 'Enter' key to send messages and the 'Escape' key to close popups or rating windows."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used in background.js to handle opening and closing the side panel based on user interaction with the extension icon or content script button."
+        }
+      ],
+      "token_usage": {
+        "prompt": 65455,
+        "candidates": 863,
+        "total": 67460
+      }
+    },
+    {
+      "extension_id": "cgmmcoandmabammnhfnjcakdeejbfimn",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension appears to be a legitimate implementation of a side-panel AI assistant. The static analysis findings are characteristic of modern web development frameworks and standard library inclusion. Specifically, the 'INNERHTML' and 'NETWORK_ENDPOINT' (w3.org) references are artifacts of the React library and the Mozilla Readability library, which is used for parsing page content—a common requirement for AI tools. The extension implements a secure communication channel (onMessageExternal) that strictly validates sender origins against the developer's verified domains (onlineapp.pro, onlineapp.live, onlineapp.stream). The tracking of install events is a common, non-malicious developer practice. No evidence of credential theft, data scraping, or dual-purpose monetization was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Basic lifecycle events (e.g., 'install'), extension ID, and a generated anonymous userId.",
+          "processing_method": "JSON serialization via fetch.",
+          "destination_domain": "onlineapp.pro",
+          "code_evidence": "function(e, r = {}) { ... fetch(\"https://onlineapp.pro/api/track-event\", { method: \"POST\", ... body: JSON.stringify({ event: e, wallId: 4, extensionId: chrome.runtime.id, userId: s, ...r }) }) }"
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI Assistant (Grok)",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "softoolunity.com",
+          "onlineapp.pro",
+          "onlineapp.stream",
+          "onlineapp.live",
+          "reactjs.org"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "w3.org"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK/FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used for standard telemetry (tracking install events) and potentially for the AI service backend."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to persist an anonymous user ID and to facilitate a storage bridge for the developer's authentication system (Supabase Auth adapter)."
+        },
+        {
+          "pattern": "POST_MESSAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to communicate between the extension and authorized web domains (onlineapp.pro) for state synchronization."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Found within production builds of standard libraries: React (DOM rendering) and Readability (content extraction)."
+        }
+      ],
+      "token_usage": {
+        "prompt": 119700,
+        "candidates": 770,
+        "total": 121730
+      }
+    },
+    {
+      "extension_id": "unknown-2",
+      "verdict": "SAFE",
+      "error": "Extra data: line 67 column 1 (char 2823)",
+      "confidence": 0.5,
+      "reasoning": "Extension could not be downloaded or analyzed. Marked as SAFE for statistical purposes.",
+      "recommendation": "ALLOW"
+    },
+    {
+      "extension_id": "flhajamakbmbapipilldkbloldilfifo",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a well-structured productivity tool that aligns perfectly with its stated description. Analysis of the source code shows that user data (prompts) is stored exclusively in chrome.storage.local. There are no external network calls (fetch/XHR) to third-party domains. The use of innerHTML is controlled; specifically, the preview functionality uses a robust escapeHTML helper (using textContent) to sanitize user input before rendering. The permissions requested (storage, activeTab, downloads) are strictly necessary for saving prompts, interacting with the AI text areas, and exporting backups, respectively.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Save, organize, and deploy custom prompts with dynamic variables for Grok.com and ChatGPT.com.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://grok.com",
+          "https://chatgpt.com",
+          "https://clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used for UI rendering in the popup (prompt lists, breadcrumbs) and clearing the ChatGPT input field. In the preview window, user input is passed through an escapeHTML function before being assigned to innerHTML to prevent XSS."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Essential for the extension's primary function: saving and organizing user-defined prompts and folders locally."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used to detect if the user is on grok.com or chatgpt.com to enable the 'Paste' functionality and to navigate to those sites if the user clicks paste while on a different tab."
+        },
+        {
+          "pattern": "BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "Used to generate a local download link for the JSON backup feature, allowing users to export their saved prompts."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Used in popup.js to handle auto-scrolling behavior during drag-and-drop operations in the prompt list."
+        }
+      ],
+      "token_usage": {
+        "prompt": 20171,
+        "candidates": 737,
+        "total": 22084
+      }
+    },
+    {
+      "extension_id": "imbohafmkmnppohjbfckjoahbipcjmbm",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose of managing multiple Grok accounts. While it handles sensitive authentication tokens (SSO cookies), it stores them in local storage and only transmits them to the official grok.com domain. The 'exfiltration' patterns flagged by static analysis are part of a legitimate mechanism to check rate limits across multiple accounts: the extension temporarily sets the cookie to a stored account, fetches the limit from Grok's API, and then restores the original session cookie. There is no evidence of data being sent to any third-party or developer-controlled domains. The use of Webpack bundling is standard and does not hide malicious intent.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Allows users to switch between multiple Grok accounts and monitor API rate limits.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "grok.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "clients2.google.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CREDENTIAL_ACCESS / CHROME_COOKIES",
+          "usage": "LEGITIMATE",
+          "justification": "The extension requires access to 'sso' and 'sso-rw' cookies on grok.com to facilitate the account switching feature described in its manifest. The background.js handles getCookie/setCookie requests from the content script."
+        },
+        {
+          "pattern": "WEB_REQUEST",
+          "usage": "LEGITIMATE",
+          "justification": "Used in background.js to monitor POST requests to /rest/app-chat/conversations. This is used to detect when a user has sent a message so the extension can trigger a refresh of the rate limit UI."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store the list of user-provided SSO tokens locally. These tokens allow the extension to swap identities without requiring the user to manually log in and out."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used to query the official grok.com/rest/rate-limits endpoint and to load local translation files (locales/*.json) for the UI."
+        }
+      ],
+      "token_usage": {
+        "prompt": 18436,
+        "candidates": 725,
+        "total": 20224
+      }
+    }
+  ]
+}

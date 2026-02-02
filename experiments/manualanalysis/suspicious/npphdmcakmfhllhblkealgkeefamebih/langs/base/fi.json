@@ -1,0 +1,323 @@
+{
+    "you_need_to_approve_the_permissions_to_open_the_extension_in_the_side_panel_": {
+        "message": "Sinun täytyy hyväksyä käyttöoikeudet avataksesi laajennuksen sivupaneelissa."
+    },
+    "dropblock_head": {
+        "message": "dropBlock_head"
+    },
+    "open_the_extension_in_a_sidepanel": {
+        "message": "Avaa laajennus sivupaneelissa"
+    },
+    "link_was_copied_": {
+        "message": "Linkki kopioitu!"
+    },
+    "drag_and_drop_your_files_here": {
+        "message": "Vedä ja pudota tiedostosi tähän"
+    },
+    "only_text_content_will_be_processed__up_to_5_files__each_up_to_5mb_": {
+        "message": "Vain tekstisisältöä käsitellään. Enintään 5 tiedostoa, jokainen enintään 5MB."
+    },
+    "you_can_upload_a_maximum_of_5_files_per_dialog__please_upload_files_in_smaller_batches_": {
+        "message": "Voit ladata enintään 5 tiedostoa per dialogi. Lataa tiedostot pienemmissä erissä."
+    },
+    "invalid_file_format_or_file_size_exceeds_5_mb__please_select_smaller_files_": {
+        "message": "Virheellinen tiedostomuoto tai tiedoston koko ylittää 5 MB. Valitse pienempiä tiedostoja."
+    },
+    "permissions_are_missing__please_grant_the_extension_access_to_web_pages_": {
+        "message": "Oikeudet puuttuvat. Myönnä laajennukselle pääsy verkkosivuihin."
+    },
+    "error__please_try_again_later_": {
+        "message": "Virhe, yritä uudelleen myöhemmin."
+    },
+    "summarization_does_not_work_on_system_pages__please_copy_the_page_content_into_the_chat_manually_": {
+        "message": "Yhteenveto ei toimi järjestelmäsivuilla. Kopioi sivun sisältö manuaalisesti keskusteluun."
+    },
+    "delete": {
+        "message": "Poista"
+    },
+    "delete_chat_": {
+        "message": "Poistetaanko keskustelu?"
+    },
+    "are_you_sure_you_want_to_delete_this_chat_": {
+        "message": "Oletko varma, että haluat poistaa tämän keskustelun?"
+    },
+    "cancel": {
+        "message": "Peruuta"
+    },
+    "the_chat_was_deleted": {
+        "message": "Keskustelu poistettiin"
+    },
+    "`_text_`": {
+        "message": "ʼ+text+ʼ"
+    },
+    "`_lang___(text)_`": {
+        "message": "ʼ+Lang.__(text)+ʼ"
+    },
+    "${deletetext}": {
+        "message": "${deleteText}"
+    },
+    "`_lang___(_delete_chat__)_`": {
+        "message": "ʼ+Lang.__('Poista keskustelu?')+ʼ"
+    },
+    "`_lang___(_are_you_sure_you_want_to_delete_this_chat__)_`": {
+        "message": "ʼ+Lang.__('Oletko varma, että haluat poistaa tämän keskustelun?')+ʼ"
+    },
+    "`_lang___(_cancel_)_`": {
+        "message": "ʼ+Lang.__('Peruuta')+ʼ"
+    },
+    "`_lang___(_delete_)_`": {
+        "message": "ʼ+Lang.__('Poista')+ʼ"
+    },
+    "file": {
+        "message": "Tiedosto"
+    },
+    "thinking": {
+        "message": "Ajattelee"
+    },
+    "copy_response": {
+        "message": "Kopioi vastaus"
+    },
+    "good_response": {
+        "message": "Hyvä vastaus"
+    },
+    "bad_response": {
+        "message": "Huono vastaus"
+    },
+    "uploading___": {
+        "message": "Ladataan..."
+    },
+    "`_lang___(_thinking_)_`": {
+        "message": "ʼ+Lang.__('Ajattelee')+ʼ"
+    },
+    "feedback": {
+        "message": "Palaute"
+    },
+    "share": {
+        "message": "Jaa"
+    },
+    "rate_us": {
+        "message": "Arvosta meitä"
+    },
+    "💀": {
+        "message": "💀"
+    },
+    "😞": {
+        "message": "😞"
+    },
+    "😐": {
+        "message": "😐"
+    },
+    "🙂": {
+        "message": "🙂"
+    },
+    "😍": {
+        "message": "😍"
+    },
+    "grok_3_is_here_": {
+        "message": "Grok 3 on täällä."
+    },
+    "what_do_you_want_to_know_": {
+        "message": "Mitä haluat tietää?"
+    },
+    "how_can_grok_help_you_": {
+        "message": "Miten Grok voi auttaa sinua?"
+    },
+    "attach_file": {
+        "message": "Liitä tiedosto"
+    },
+    "select_a_model": {
+        "message": "Valitse malli"
+    },
+    "sent_message": {
+        "message": "Lähetetty viesti"
+    },
+    "hey_": {
+        "message": "Hei,"
+    },
+    "welcome_": {
+        "message": "tervetuloa!"
+    },
+    "how_can_i_help_you_": {
+        "message": "Kuinka voin auttaa sinua?"
+    },
+    "message_deepseek": {
+        "message": "DeepSeek-viesti"
+    },
+    "summarize_the_current_page": {
+        "message": "Yhteenveto nykyisestä sivusta"
+    },
+    "upload_a_file": {
+        "message": "Lataa tiedosto"
+    },
+    "start_a_chat": {
+        "message": "Aloita keskustelu"
+    },
+    "set_personalization": {
+        "message": "Aseta personointi"
+    },
+    "new_chat": {
+        "message": "Uusi keskustelu"
+    },
+    "switch_to_light_mode": {
+        "message": "Vaihda valkoiseen tilaan"
+    },
+    "switch_to_dark_mode": {
+        "message": "Vaihda pimeään tilaan"
+    },
+    "open_the_extension_in_a_separate_tab": {
+        "message": "Avaa laajennus erillisessä välilehdessä"
+    },
+    "{{_item_}}": {
+        "message": "{{ item }}"
+    },
+    "start_now": {
+        "message": "Aloita nyt"
+    },
+    "get_ideas": {
+        "message": "Hanki ideoita"
+    },
+    "ask": {
+        "message": "Kysy"
+    },
+    "code": {
+        "message": "Koodi"
+    },
+    "translate": {
+        "message": "Käännä"
+    },
+    "cooking_tips": {
+        "message": "Kokkausvinkkejä"
+    },
+    "how_deepseek_ai_helps_you_": {
+        "message": "Miten DeepSeek AI auttaa sinua?"
+    },
+    "✨_get_spot_on_answers_10x_faster": {
+        "message": "✨ Saat täsmälliset vastaukset 10x nopeammin"
+    },
+    "no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Ei Googlea, ei välilehtien kaaosta, ei hukattua aikaa"
+    },
+    "📚_save_hours_on_studying": {
+        "message": "📚 Säästä tunteja opiskelussa"
+    },
+    "generate_essays__auto_complete_tests__and_summarize_any_page_in_minutes_": {
+        "message": "Luo esseitä, täydennä kokeita automaattisesti ja tiivistä mikä tahansa sivu minuuteissa."
+    },
+    "🌍_real_time_translation_on_the_page": {
+        "message": "🌍 Reaaliaikainen käännös sivulla"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments__right_on_the_page_": {
+        "message": "Kirjoita kuin natiivi, ilman virheitä tai noloja hetkiä. Suoraan sivulla."
+    },
+    "get_your_ai_copilot_for_coding": {
+        "message": "Hanki AI-koodikaverisi"
+    },
+    "try_now": {
+        "message": "Kokeile nyt"
+    },
+    "did_this_tool_help_you_": {
+        "message": "Auttoiko tämä työkalu sinua?"
+    },
+    "share_it_with_friends_who_work_with_images_": {
+        "message": "Jaa se ystävillesi, jotka työskentelevät kuvien kanssa."
+    },
+    "who_would_find_it_useful_": {
+        "message": "Kuka löytää siitä hyötyä?"
+    },
+    "copy_link": {
+        "message": "Kopioi linkki"
+    },
+    "facebook": {
+        "message": "Facebook"
+    },
+    "x": {
+        "message": "X"
+    },
+    "telegram": {
+        "message": "Telegram"
+    },
+    "i_found_a_super_useful_chrome_extension__": {
+        "message": "Löysin erittäin hyödyllisen Chrome-laajennuksen —"
+    },
+    "it_can_save_any_website_as_a_pdf__you_should_try_it_out___it_s_great_": {
+        "message": "Se voi tallentaa minkä tahansa verkkosivun PDF-muotoon. Kannattaa kokeilla — se on mahtavaa!"
+    },
+    "hooray__greate_job_": {
+        "message": "Hurrá, hyvä työ!"
+    },
+    "please__can_you_rate_us_": {
+        "message": "Ole hyvä, arvostaisitko meitä?"
+    },
+    "deepseek_ai_has_been_installed_": {
+        "message": "DeepSeek AI on asennettu!"
+    },
+    "get_answers_10x_faster___no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Hanki vastaukset 10x nopeammin — ei Googlea, ei välilehtien kaaosta, ei hukattua aikaa"
+    },
+    "open_deepseek_ai": {
+        "message": "Avaa DeepSeek AI"
+    },
+    "deepseek_app": {
+        "message": "DeepSeek-sovellus"
+    },
+    "love_deepseek_": {
+        "message": "Rakastatko DeepSeekiä?"
+    },
+    "could_you_please_rate_our_extension_": {
+        "message": "Voisitko arvostaa laajennustamme?"
+    },
+    "share_this_extension_with_your_friends": {
+        "message": "Jaa tämä laajennus ystävillesi"
+    },
+    "share_us_with_your_friends": {
+        "message": "Jaa meidät ystävillesi"
+    },
+    "and_unlock_all_ai_assistant_features": {
+        "message": "Ja avaa kaikki AI-avustajan ominaisuudet"
+    },
+    "vk_com": {
+        "message": "Vk.com"
+    },
+    "reddit": {
+        "message": "Reddit"
+    },
+    "whatsapp": {
+        "message": "WhatsApp"
+    },
+    "weibo": {
+        "message": "Weibo"
+    },
+    "post_preview": {
+        "message": "Julkaisun esikatselu"
+    },
+    "hey__i_m_your_ai_assistant_": {
+        "message": "Hei, olen AI-avustajasi!"
+    },
+    "what_can_i_help_with_": {
+        "message": "Miten voin auttaa?"
+    },
+    "history": {
+        "message": "Historia"
+    },
+    "settings": {
+        "message": "Asetukset"
+    },
+    "subscription": {
+        "message": "Tilaukset"
+    },
+    "add_personal_info_or_instructions_to_the_ai_assistant__this_will_help_improve_responses_for_you_": {
+        "message": "Lisää henkilökohtaisia tietoja tai ohjeita AI-avustajalle. Tämä auttaa parantamaan vastauksia sinulle."
+    },
+    "save": {
+        "message": "Tallenna"
+    },
+    "and_you_ll_unlock_all_ai_assistant_features": {
+        "message": "Ja avaat kaikki AI-avustajan ominaisuudet"
+    },
+    "e_g___always_reply_in_french": {
+        "message": "esim., vastaa aina ranskaksi"
+    },
+    "_p_you_can_try_the_ai_assistant_to_play_a_role__e_g____p__ul__li_act_as_an_english_teacher_and_correct_my_mistakes__li__li_respond_like_a_professional_business_consultant__li___ul__p_or_input_your_data_for_the_ai_assistant_to_generate_responses__e_g____p__ul__li_23_y_o___58_kg__height_165_cm__female__li__li_programmer__php___laravel__js___react___li___ul_": {
+        "message": "<p>Voit kokeilla AI-avustajaa näyttelemään roolia, esim.:<\/p><ul><li>Toimi englannin opettajana ja korjaa virheeni<\/li><li>Vastaa kuin ammattimainen liiketoimintakonsultti<\/li><\/ul><p>Tai syötä tietosi, jotta AI-avustaja voi generoida vastauksia, esim.:<\/p><ul><li>23-vuotias, 58 kg, pituus 165 cm, nainen<\/li><li>Ohjelmoija. PHP – Laravel, JS – React.<\/li><\/ul>"
+    }
+}

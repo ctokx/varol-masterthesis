@@ -1,0 +1,68 @@
+{
+  "feedback": {
+    "message": "Μήνυμα"
+  },
+  "share": {
+    "message": "Share"
+  },
+  "rate_us": {
+    "message": "Βαθμολογία"
+  },
+  "hello": {
+    "message": "Γεια σου!"
+  },
+  "ask_anything": {
+    "message": "Ρώτησε ό,τι θέλεις"
+  },
+  "ask_about_this_page": {
+    "message": "Ρώτησε για αυτή τη σελίδα"
+  },
+  "summarize_this_page": {
+    "message": "Σύνοψη αυτής της σελίδας"
+  },
+  "add_photos_and_files": {
+    "message": "Προσθήκη φωτογραφιών και αρχείων"
+  },
+  "create_image": {
+    "message": "Δημιουργία εικόνας"
+  },
+  "web_search": {
+    "message": "Αναζήτηση στο διαδίκτυο"
+  },
+  "teacher_mode": {
+    "message": "Λειτουργία δασκάλου"
+  },
+  "voice_input": {
+    "message": "Φωνητική εισαγωγή"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "Γρήγορος καθημερινός βοηθός"
+  },
+  "model_deep_reasoning": {
+    "message": "Μοντέλο βαθιάς σκέψης"
+  },
+  "model_quick_multimodal": {
+    "message": "Γρήγορες πολυτροπικές απαντήσεις"
+  },
+  "model_advanced_google_ai": {
+    "message": "Προηγμένη AI της Google"
+  },
+  "model_complex_problem_solving": {
+    "message": "Επίλυση σύνθετων προβλημάτων"
+  },
+  "model_powerful_opensource": {
+    "message": "Ισχυρό μοντέλο ανοιχτού κώδικα"
+  },
+  "model_reasoning_specialist": {
+    "message": "Ειδικός συλλογισμού"
+  },
+  "model_balanced_reliable": {
+    "message": "Ισορροπημένο και αξιόπιστο"
+  },
+  "model_most_capable": {
+    "message": "Το πιο ικανό Claude"
+  },
+  "model_label_fastest": {
+    "message": "Ταχύτερο"
+  }
+}

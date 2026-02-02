@@ -1,0 +1,331 @@
+{
+  "job_name": "batches/mlsxqvzkwopptg8zhugh7hjk30ou1xdnlbxd",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:29.863496",
+  "validations": [
+    {
+      "extension_id": "ibfbnkghpleabhadhjmajihfanbpijkh",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension performs exactly as described in the manifest and description. The background script listens for omnibox input, appends it to a URL fragment, and redirects the tab. The content script then reads that fragment, waits for the ChatGPT input field to appear, and simulates a user typing and clicking 'submit'. There are no external network calls (fetch/XHR), no data collection, and no obfuscated code. The patterns flagged by static analysis are either false positives or legitimate uses of the Chrome API for the stated purpose.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Open new chats with ChatGPT from the address bar using a keyword.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chat.openai.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "clients2.google.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Static analysis flagged storage, but no calls to chrome.storage or localStorage exist in the provided source code. This is likely a false positive."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses chrome.tabs.query and chrome.tabs.update to redirect the current active tab to ChatGPT with a URL fragment containing the user's prompt. This is the core functionality."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content_script.js to poll for the existence of the ChatGPT prompt textarea (which loads dynamically) before injecting the text."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3173,
+        "candidates": 574,
+        "total": 5008
+      }
+    },
+    {
+      "extension_id": "pchkljckekioepjocghikghmocnkbgcm",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a simple UI utility. Analysis of contentScript.js shows it creates two navigation buttons, identifies chat messages via the '<article>' tag (standard for ChatGPT), and implements smooth scrolling between them. There are no fetch/XHR calls, no data collection, no storage access, and no obfuscation. The static analysis flags for DOM and MutationObserver are standard for any extension that interacts with a dynamic web page's UI.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Use arrows to jump through ChatGPT messages quickly.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatgpt.com",
+          "chat.openai.com",
+          "google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "DOM",
+          "usage": "LEGITIMATE",
+          "justification": "The code uses DOM manipulation to inject UI buttons (up/down arrows) and to scroll specific elements into view, which is the core functionality of the extension."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "The MutationObserver is used to watch for changes in the chat container. This allows the extension to update its message count and navigation indices as new messages appear in the dynamic ChatGPT interface."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3663,
+        "candidates": 508,
+        "total": 4656
+      }
+    },
+    {
+      "extension_id": "mkdbpdaffmcbjmeeoieafacnbllimlfe",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension functions exactly as described in its manifest. It serves as a bridge between a local application (via WebSocket on localhost:1956) and the user's ChatGPT account. It retrieves the user's session token from OpenAI and uses it to proxy requests from the local server to ChatGPT. There is no evidence of data being sent to any remote third-party domain; all traffic is either directed to the user's own local machine or the official OpenAI API. The use of minified code is consistent with a production build and does not show signs of malicious obfuscation.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Allows users to chat with ChatGPT from everywhere through a local websocket server.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chat.openai.com",
+          "ws://localhost:1956"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The extension connects to official OpenAI endpoints (api/auth/session and backend-api/conversation) to facilitate the ChatGPT interaction it promises."
+        },
+        {
+          "pattern": "WEBSOCKET",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses a WebSocket to connect to 'ws://localhost:1956'. This matches the stated purpose of providing a local bridge to ChatGPT."
+        },
+        {
+          "pattern": "offscreen",
+          "usage": "LEGITIMATE",
+          "justification": "Used to maintain a keep-alive for the service worker, which is a standard requirement for persistent WebSocket connections in Manifest V3."
+        }
+      ],
+      "token_usage": {
+        "prompt": 17500,
+        "candidates": 619,
+        "total": 19257
+      }
+    },
+    {
+      "extension_id": "gciegekcjpkmepcogapddinippmjiehd",
+      "verdict": "SAFE",
+      "confidence": 0.9,
+      "reasoning": "The analysis of the source code reveals that the extension is a legitimate implementation of its stated purpose. The large content.js file contains a bundled version of the 'html2canvas' library (evidenced by the character code constants, color tables like 'pe', and CSS parsing logic starting around line 120). This library is essential for the 'Save as Image' feature. The static analysis findings for XHR and Blob URLs are standard artifacts of this rendering library. The background script is minimal and only serves to trigger the UI panel. There is no evidence of data exfiltration, credential theft, or undisclosed secondary functionality. The broad '<all_urls>' permission, while technically over-privileged for a ChatGPT-specific tool, is a common developer shortcut for ensuring content scripts load correctly across potential OpenAI domain variants.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Save and Share ChatGPT conversations in Markdown and Image formats.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "w3.org",
+          "clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "w3.org"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to construct the extension's UI panel ('gptSaver-panel') and inject styles/elements for the user interface overlay."
+        },
+        {
+          "pattern": "XHR/NETWORK",
+          "usage": "LEGITIMATE",
+          "justification": "The extension includes functionality to 'share' content, which requires network access. Additionally, the bundled rendering libraries (html2canvas) often use XHR to load external styles or assets for rendering."
+        },
+        {
+          "pattern": "BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "Used for generating downloadable image files (PNG/JPG) from the canvas rendering of the chat conversation."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Standard practice in ChatGPT extensions to poll for new chat messages or changes in the DOM to update the UI button or panel content."
+        }
+      ],
+      "token_usage": {
+        "prompt": 62252,
+        "candidates": 698,
+        "total": 64185
+      }
+    },
+    {
+      "extension_id": "bccnghnbganmehniefnhcmnmphoflhem",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "Analysis of the source code confirms that the extension is a standard React-based application. The 'malicious' patterns flagged by static analysis are artifacts of the production build (Vite/React) or legitimate features. Specifically: 1. The code in chunk-849f593f.js includes a client-side search engine that indexes ChatGPT conversation titles locally. 2. The 'crawling' logic in the 'To' module is designed to extract conversation IDs and names from the ChatGPT sidebar to populate this local search index. 3. There is no evidence of data being transmitted to external servers; search data is stored in 'chrome.storage'. 4. The keyboard listener is used solely for the search hotkey. The extension behaves exactly as described in its manifest.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Search Conversations and GPTs inside ChatGPT",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chat.openai.com",
+          "chatgpt.com",
+          "awesomegpts.co",
+          "chromewebstore.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "w3.org",
+          "reactjs.org"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "The extension implements a 'Spotlight' search feature which requires a global keyboard shortcut (Cmd/Ctrl + S) to toggle the search interface."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used by the Vite/React build system for module preloading and monitoring DOM changes related to the UI injection."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "The fetch calls in chunk-e8e4ffb0.js are part of the 'modulepreload' polyfill generated by the Vite bundler to load code chunks."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The flagged w3.org URLs are standard XML/SVG namespaces. The 'awesomegpts.co' domain is the developer's website/FAQ page."
+        }
+      ],
+      "token_usage": {
+        "prompt": 127820,
+        "candidates": 732,
+        "total": 129798
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 0,
+    "SUSPICIOUS": 0,
+    "SAFE": 5,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 0,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 5,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 1.0,
+    "true_positive_rate": 0.0,
+    "malicious_detection_rate": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 214408,
+    "candidate_tokens": 3131,
+    "total_tokens": 222904
+  }
+}

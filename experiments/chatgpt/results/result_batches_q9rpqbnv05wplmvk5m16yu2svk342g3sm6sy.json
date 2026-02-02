@@ -1,0 +1,379 @@
+{
+  "job_name": "batches/q9rpqbnv05wplmvk5m16yu2svk342g3sm6sy",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:34.915906",
+  "validations": [
+    {
+      "extension_id": "oihfhipjjdpilmmejmbeoiggngmaaeko",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is a legitimate productivity tool for summarizing Vimeo videos. The analysis of the source code shows that the static analysis flags are primarily results of (1) the inclusion of large, standard libraries like Vue.js, Element-UI, and core-js, and (2) legitimate functionality such as scraping transcripts from Vimeo and interacting with OpenAI's web session. The network communication is transparent: usage telemetry is sent to Alibaba Cloud, and video sharing data is sent to the developer's domain (notegpt.io). The 'credential access' flagged is the standard method for retrieving a web session token for ChatGPT. No evidence of malicious exfiltration or hidden dual-purpose logic was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Usage telemetry and video metadata for sharing.",
+          "processing_method": "Aggregated via a tracking class (je) and sent via sendBeacon or Fetch.",
+          "destination_domain": "us-west-1.log.aliyuncs.com",
+          "code_evidence": "ma().send(Object.assign(t, e)) in background.js where t contains product_mark, anonymous_user_id, and ext_version."
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant for summarizing Vimeo videos.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "vimeo.com",
+          "openai.com",
+          "notegpt.io",
+          "aliyuncs.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "w3.org",
+          "github.com",
+          "forms.gle",
+          "discord.gg",
+          "linkedin.com",
+          "twitter.com",
+          "facebook.com",
+          "reddit.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in OpenAiCopy.js and content-script.js to detect when ChatGPT or Vimeo has loaded new content to inject UI buttons or copy text."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used for UI rendering of the summary panels and buttons. While technically a risk for XSS if inputs aren't sanitized, it is used here for static extension UI elements."
+        },
+        {
+          "pattern": "CREDENTIAL_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "The extension accesses the OpenAI session token (accessToken) via chat.openai.com/api/auth/session to facilitate 'free' ChatGPT access without an API key. This is standard for this category of extension."
+        },
+        {
+          "pattern": "SEND_BEACON",
+          "usage": "LEGITIMATE",
+          "justification": "Used for telemetry (log tracking) via Alibaba Cloud (aliyuncs.com) to monitor extension performance and user actions."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Found within element-ui.js and other UI libraries for handling accessibility, keyboard navigation, and shortcuts in the extension's popup and options pages."
+        }
+      ],
+      "token_usage": {
+        "prompt": 35066,
+        "candidates": 897,
+        "total": 37462
+      }
+    },
+    {
+      "extension_id": "ifckaoegkgefgnicdfmnkfafaeiingmp",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension's code and manifest align perfectly with its stated purpose of enhancing the ChatGPT user experience. The permissions are limited to 'storage' and 'notifications', and host permissions are restricted to the relevant domain (openai.com). Background.js handles extension lifecycle events (install/update notifications), and popup.js manages user settings. While content.js is large, this is expected for extensions implementing tokenization (which requires large libraries/lookup tables) and complex DOM observation for auto-clicking buttons. No evidence of data exfiltration or dual-purpose functionality was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Auto-Continue and Token Counter for ChatGPT",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chat.openai.com/*"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE / CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used in popup.js and content.js to save and retrieve user preferences like 'autoFullMode' and 'showTokens'."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used in background.js and popup.js to identify OpenAI tabs and reload them to apply extension updates/settings."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Necessary for detecting when ChatGPT finishes generating text or when the 'Continue' button appears in the DOM."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Likely used to inject the token counter UI elements into the ChatGPT interface."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Used to periodically check the state of the chat UI for the auto-continue feature based on user-defined intervals."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3782,
+        "candidates": 688,
+        "total": 5418
+      }
+    },
+    {
+      "extension_id": "aaibfgjceomfbogoicgjjlabohghmelm",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is a transparent implementation of its stated goal: preventing ChatGPT's moderation flags from appearing in the user interface. It works by overriding the global fetch and WebSocket objects to strip 'moderation' related data from the incoming stream of data from OpenAI's servers. My analysis shows no evidence of data exfiltration; all captured data is processed locally and then passed back to the browser's original request handlers. There are no external C2 (Command and Control) domains or tracking scripts present in the provided code.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Block text content from getting flagged or blocked by the moderation filter.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chat.openai.com",
+          "https://api.openai.com",
+          "https://chatgpt.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH_HIJACK",
+          "usage": "LEGITIMATE",
+          "justification": "The extension replaces window.fetch to intercept responses from the ChatGPT backend. This is necessary to strip out 'moderation' metadata before the web application processes the response, which is the core functionality of the tool."
+        },
+        {
+          "pattern": "INTERCEPTION",
+          "usage": "LEGITIMATE",
+          "justification": "The code intercepts both Fetch and WebSocket traffic. This is used specifically to filter out JSON fields like 'moderation_results' or 'moderation_response' to prevent the UI from flagging content."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The endpoint https://chatgpt.com/backend-api/conversation is the official ChatGPT API endpoint. The extension interacts with it to perform its stated purpose."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3981,
+        "candidates": 628,
+        "total": 5602
+      }
+    },
+    {
+      "extension_id": "dcbcnpnaccfjoikaofjgcipcfbmfkpmj",
+      "verdict": "MALICIOUS",
+      "confidence": 1.0,
+      "reasoning": "The extension is a Trojanized variant of an AI assistant. While it contains functional code for translation and ChatGPT interaction, it includes a hardcoded Telegram Bot API credential. This token allows the extension to silently send data (stolen via the excessive Google Drive and Identity permissions) to the attacker's Telegram account. The presence of 'readaloud.app' code suggests the attacker repackaged a legitimate open-source extension and injected this malicious exfiltration logic into the large bundled files (options.js and popup.js).",
+      "recommendation": "BLOCK",
+      "key_concerns": [
+        "Hardcoded Telegram Bot token for silent data exfiltration.",
+        "Excessive permissions to read Google Drive files and user identity info.",
+        "Cookie access patterns targeted at stealing session credentials.",
+        "Unauthorized data transmission to ImgBB and Telegram."
+      ],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "User profile information, Google Drive file metadata/content, and potential session data.",
+          "processing_method": "Data is retrieved via the Google Identity and Drive APIs and then transmitted using the Telegram Bot API.",
+          "destination_domain": "api.telegram.org",
+          "code_evidence": "options.js Line 56038: NETWORK_ENDPOINT → https://api.telegram.org/bot7174333740:AAEUreblNEkBT6Xr9YCCgg-Xgn6nFpLZm9I/sendM"
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant for Google Chrome.",
+          "hidden_functionality": "Secret data exfiltration to a developer-controlled Telegram channel and image uploading to ImgBB.",
+          "code_evidence": "options.js Line 31699: NETWORK_ENDPOINT → https://api.imgbb.com/1/upload; Line 56038: Telegram Bot API exfiltration channel."
+        },
+        "credential_theft": {
+          "capture_mechanism": "Accesses user cookies and profile data via Google Identity scopes (oauth2 in manifest).",
+          "transmission_target": "api.telegram.org",
+          "code_evidence": "manifest.json: permissions including 'identity' and 'host_permissions' for all URLs; options.js Line 30027: COOKIE_ACCESS."
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "api.openai.com",
+          "www.googleapis.com",
+          "translate.google.com"
+        ],
+        "requires_investigation": [
+          "api.telegram.org",
+          "api.imgbb.com"
+        ],
+        "informational_only": [
+          "readaloud.app",
+          "support.readaloud.app",
+          "assets.lsdsoftware.com",
+          "ko-fi.com",
+          "github.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT (Telegram)",
+          "usage": "MALICIOUS",
+          "justification": "The inclusion of a hardcoded Telegram Bot token (7174333740:AAEUreblNEkBT6Xr9YCCgg-Xgn6nFpLZm9I) is definitive proof of an unauthorized Command & Control (C2) or exfiltration channel."
+        },
+        {
+          "pattern": "COOKIE_ACCESS / CREDENTIAL_ACCESS",
+          "usage": "MALICIOUS",
+          "justification": "Used in conjunction with the Telegram exfiltration channel to steal session identifiers or user identity tokens."
+        },
+        {
+          "pattern": "oauth2 (Google Drive Scope)",
+          "usage": "SUSPICIOUS",
+          "justification": "Requesting full access to a user's Google Drive files is highly excessive for a ChatGPT assistant and enables large-scale data theft."
+        }
+      ],
+      "token_usage": {
+        "prompt": 133052,
+        "candidates": 961,
+        "total": 136171
+      }
+    },
+    {
+      "extension_id": "hiiildgldbpfbegcfgemoliikibfhaeh",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is a standard commercial implementation of a ChatGPT utility. The presence of 'onlineapp.pro' and 'PostHog' indicates professional monetization and analytics. The use of a Railway app endpoint for PDF generation is a functional requirement for high-quality HTML-to-PDF conversion that client-side libraries often struggle with. There is no evidence of data exfiltration beyond the specific chat content the user explicitly requests to convert, nor is there any credential theft or hidden malicious behavior. The code in 'wall.js' is a standard payment integration script.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "HTML content of the active ChatGPT conversation.",
+          "processing_method": "The content script extracts the chat DOM and sends it to a backend for PDF rendering.",
+          "destination_domain": "chatgpt-to-pdf-nodejs-production.up.railway.app",
+          "code_evidence": "Line 16626: FETCH -> https://chatgpt-to-pdf-nodejs-production.up.railway.app/generate-pdf-from-html"
+        },
+        "dual_purpose": {
+          "stated_purpose": "Convert ChatGPT conversations to PDF.",
+          "hidden_functionality": "None. The extension includes a monetization/paywall layer (onlineapp.pro) which is standard for premium browser tools.",
+          "code_evidence": "wall.js defines window.paywall, handling subscription status and iframe-based payment UI."
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatgpt.com",
+          "sentry.io",
+          "app.posthog.com",
+          "onlineapp.pro",
+          "onlineapp.live",
+          "onlineapp.stream",
+          "up.railway.app"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "yandex.com/bots",
+          "reactjs.org",
+          "w3.org"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to inject the 'Download PDF' button and UI elements into the ChatGPT interface."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store user settings, local state, and subscription status (via the paywall module)."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Necessary to detect when ChatGPT finishes generating a response so the 'Download' button can be updated or re-injected."
+        },
+        {
+          "pattern": "FETCH/XHR",
+          "usage": "LEGITIMATE",
+          "justification": "Used to communicate with the PDF generation backend and the licensing/paywall API."
+        }
+      ],
+      "token_usage": {
+        "prompt": 57381,
+        "candidates": 788,
+        "total": 59461
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 1,
+    "SUSPICIOUS": 0,
+    "SAFE": 4,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 1,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 4,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 0.8,
+    "true_positive_rate": 0.2,
+    "malicious_detection_rate": 0.2
+  },
+  "token_usage": {
+    "prompt_tokens": 233262,
+    "candidate_tokens": 3962,
+    "total_tokens": 244114
+  }
+}

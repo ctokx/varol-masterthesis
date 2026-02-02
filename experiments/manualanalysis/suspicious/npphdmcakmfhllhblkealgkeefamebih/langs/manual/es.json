@@ -1,0 +1,71 @@
+{
+  "feedback": {
+    "message": "Contacto"
+  },
+  "share": {
+    "message": "Share"
+  },
+  "rate_us": {
+    "message": "Opinión"
+  },
+  "settings": {
+    "message": "Ajustes"
+  },
+  "hello": {
+    "message": "¡Hola!"
+  },
+  "ask_anything": {
+    "message": "Pregunta lo que quieras"
+  },
+  "ask_about_this_page": {
+    "message": "Preguntar sobre esta página"
+  },
+  "summarize_this_page": {
+    "message": "Resumir esta página"
+  },
+  "add_photos_and_files": {
+    "message": "Añadir fotos y archivos"
+  },
+  "create_image": {
+    "message": "Crear imagen"
+  },
+  "web_search": {
+    "message": "Búsqueda web"
+  },
+  "teacher_mode": {
+    "message": "Modo profesor"
+  },
+  "voice_input": {
+    "message": "Entrada de voz"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "Asistente rápido para el día a día"
+  },
+  "model_deep_reasoning": {
+    "message": "Modelo de razonamiento profundo"
+  },
+  "model_quick_multimodal": {
+    "message": "Respuestas multimodales rápidas"
+  },
+  "model_advanced_google_ai": {
+    "message": "IA avanzada de Google"
+  },
+  "model_complex_problem_solving": {
+    "message": "Resolución de problemas complejos"
+  },
+  "model_powerful_opensource": {
+    "message": "Potente modelo de código abierto"
+  },
+  "model_reasoning_specialist": {
+    "message": "Especialista en razonamiento"
+  },
+  "model_balanced_reliable": {
+    "message": "Equilibrado y confiable"
+  },
+  "model_most_capable": {
+    "message": "El Claude más capaz"
+  },
+  "model_label_fastest": {
+    "message": "Más rápido"
+  }
+}

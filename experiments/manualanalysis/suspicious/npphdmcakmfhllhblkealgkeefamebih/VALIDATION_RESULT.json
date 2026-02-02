@@ -1,0 +1,81 @@
+{
+  "extension_id": "npphdmcakmfhllhblkealgkeefamebih",
+  "extension_name": "Chat GPT 5",
+  "version": "1.35",
+  "user_count": 100000,
+  "dataset": "chatgpt",
+  "verdict": "SUSPICIOUS",
+  "confidence": 0.85,
+  "recommendation": "REVIEW",
+  "reasoning": "The extension is classified as SUSPICIOUS primarily due to deceptive branding (claiming to be 'Chat GPT 5' to exploit OpenAI's brand) and its complex tracking/monetization infrastructure. It generates a persistent unique ID for the user and reports geolocation and versioning data to a custom backend (hub.malson.eu). While it performs its advertised tasks (AI chat/summarization), the inclusion of paywall management and financial 'withdraw-balances' endpoints in a utility extension suggests it may be part of a larger 'fleeceware' or tracking operation. The use of 'DeepSeek AI' in internal code vs 'Chat GPT 5' in public metadata further indicates white-labeling or repackaging of other services under a deceptive name.",
+  "full_validation": {
+    "extension_id": "npphdmcakmfhllhblkealgkeefamebih",
+    "verdict": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "The extension is classified as SUSPICIOUS primarily due to deceptive branding (claiming to be 'Chat GPT 5' to exploit OpenAI's brand) and its complex tracking/monetization infrastructure. It generates a persistent unique ID for the user and reports geolocation and versioning data to a custom backend (hub.malson.eu). While it performs its advertised tasks (AI chat/summarization), the inclusion of paywall management and financial 'withdraw-balances' endpoints in a utility extension suggests it may be part of a larger 'fleeceware' or tracking operation. The use of 'DeepSeek AI' in internal code vs 'Chat GPT 5' in public metadata further indicates white-labeling or repackaging of other services under a deceptive name.",
+    "recommendation": "REVIEW",
+    "key_concerns": [
+      "Deceptive branding (Name-squatting on OpenAI/ChatGPT).",
+      "User tracking and geolocation exfiltration to hub.malson.eu.",
+      "Hidden paywall and balance withdrawal logic found in production scripts.",
+      "Broad host permissions used to extract full page text content."
+    ],
+    "evidence": {
+      "exfiltration_chain": {
+        "data_collected": "User ID, Geolocation (Country), Browser Version, Page Title, and full Page Text Content.",
+        "processing_method": "Unique device ID generation (device_back_...) and IP-based country lookup via Cloudflare.",
+        "destination_domain": "hub.malson.eu",
+        "code_evidence": "In background.js: function createDeviceIdFromBackground() fetches country from cloudflare.com/cdn-cgi/trace and POSTs to https://hub.malson.eu/api/users/update along with the generated user_id."
+      },
+      "dual_purpose": {
+        "stated_purpose": "AI/ChatGPT assistant",
+        "hidden_functionality": "Deceptive branding and hidden monetization infrastructure. The extension uses the name 'Chat GPT 5' (which does not exist) to impersonate OpenAI. It contains integrated paywall logic and suspicious financial endpoints.",
+        "code_evidence": "Static analysis of the large library file reveals endpoints like 'https://onlineapp.pro/api/v1/test/withdraw-balances' and paywall impression tracking at 'https://hub.malson.eu/api/users/paywall/impression'."
+      },
+      "credential_theft": {
+        "capture_mechanism": null,
+        "transmission_target": null,
+        "code_evidence": null
+      }
+    },
+    "domains": {
+      "legitimate": [
+        "chromewebstore.google.com",
+        "cloudflare.com"
+      ],
+      "requires_investigation": [
+        "hub.malson.eu",
+        "onlineapp.pro",
+        "onlineapp.live",
+        "onlineapp.stream"
+      ],
+      "informational_only": [
+        "aiagent.gallery",
+        "vimeo.com",
+        "amplitude.com"
+      ]
+    },
+    "pattern_assessment": [
+      {
+        "pattern": "CHROME_COOKIES",
+        "usage": "SUSPICIOUS",
+        "justification": "The extension accesses Chrome cookies (likely for session management or cross-site tracking) while the core functionality of a side-panel AI chat should not require broad cookie access."
+      },
+      {
+        "pattern": "TABS_ACCESS / DYNAMIC_SCRIPT",
+        "usage": "LEGITIMATE",
+        "justification": "Used to extract text content from the current tab for the 'Summarize' feature."
+      },
+      {
+        "pattern": "NETWORK_ENDPOINT (hub.malson.eu)",
+        "usage": "SUSPICIOUS",
+        "justification": "All user metadata and 'DeepSeek AI' sessions are routed to this non-standard backend rather than OpenAI or a known service provider."
+      }
+    ],
+    "token_usage": {
+      "prompt": 75333,
+      "candidates": 948,
+      "total": 78308
+    }
+  }
+}

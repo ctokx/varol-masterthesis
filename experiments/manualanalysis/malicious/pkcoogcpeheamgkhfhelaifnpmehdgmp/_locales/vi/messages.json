@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT cho Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Tiện ích mở rộng để tạo phím tắt cho ChatGPT chính thức trong trình duyệt Google Chrome"
+    },
+    "ext_command_description": {
+        "message": "Phím tắt để mở ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT ở Chế độ Sinh thái?"
+    },
+    "request_perms_popup_description": {
+        "message": "Giúp đỡ các mục tiêu bền vững chỉ bằng cách duyệt web. Chế độ này sẽ không làm gián đoạn trải nghiệm duyệt web của bạn."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Tìm hiểu thêm"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Cho phép"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Từ chối"
+    },
+    "perms_granted_popup_title": {
+        "message": "Chúc mừng!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Bây giờ bạn sẽ được hưởng lợi từ tất cả các tính năng của chúng tôi!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Tiếp tục"
+    },
+    "perms_denied_popup_title": {
+        "message": "Thật tiếc..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Có lẽ lần sau."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Đóng tin nhắn này"
+    },
+    "welcome_title": {
+        "message": "ChatGPT cho Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Tiện ích mở rộng đã được cài đặt thành công"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT cho Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Tiện ích mở rộng đã được cài đặt thành công"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Thực hiện các bước dưới đây để ghim tiện ích của bạn, sau đó nhấp vào Bước tiếp theo"
+    },
+    "welcome_next_step": {
+        "message": "Bước tiếp theo"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "Để truy cập tất cả các tính năng của tiện ích mở rộng, hãy kích hoạt Chế độ Sinh thái."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Nhấp vào Cho phép để tiếp tục"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Điều khoản Sử dụng"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Chính sách Bảo mật"
+    },
+    "how_to_use_html_title": {
+        "message": "Cách sử dụng Tiện ích"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Hoặc nhấn Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Chế độ Sinh thái"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Chúc mừng! Trang web này là đối tác của chế độ sinh thái của chúng tôi."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Điều này có nghĩa là gì?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Bằng cách tiếp tục duyệt, bạn sẽ giúp đỡ hành tinh 🌍, trồng cây và bù đắp lượng khí thải carbon mà không mất chi phí nào."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Với mỗi lần ghé thăm đối tác, một tab mới sẽ mở ra trong thời gian ngắn để cho phép tính toán bù đắp carbon."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Cảm ơn bạn rất nhiều vì đã ủng hộ mục tiêu tuyệt vời này với chúng tôi! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Tìm hiểu thêm"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Đóng"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Đừng hiển thị lại"
+    }
+}

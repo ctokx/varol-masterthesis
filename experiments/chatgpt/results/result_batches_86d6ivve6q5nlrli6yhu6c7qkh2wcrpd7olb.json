@@ -1,0 +1,330 @@
+{
+  "job_name": "batches/86d6ivve6q5nlrli6yhu6c7qkh2wcrpd7olb",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:24.936720",
+  "validations": [
+    {
+      "extension_id": "afmnhehfpjmkajjglfakmgmjcclhjane",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension contains no malicious code. The network activity observed in background.js aligns perfectly with the stated purpose: it communicates with OpenAI to generate summaries and with notegpt.io to save/share notes. The telemetry (Aliyun) collects standard usage metrics (Action IDs like 'INSTALL', 'SUMMARY_CLICK') and does not exfiltrate sensitive user data. The 'credential access' flagged by static analysis refers to obtaining the OpenAI session token, which is kept local/used only with OpenAI APIs to perform the requested summarization. The large files are standard minified UI libraries (Element UI).",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Summarize Coursera videos using ChatGPT and take notes.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "coursera.org",
+          "openai.com",
+          "chat.openai.com",
+          "notegpt.io",
+          "forms.gle"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "us-west-1.log.aliyuncs.com",
+          "github.com",
+          "w3.org",
+          "facebook.com",
+          "twitter.com",
+          "reddit.com",
+          "linkedin.com",
+          "youtube.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT → https://chat.openai.com/api/auth/session",
+          "usage": "LEGITIMATE",
+          "justification": "Extension fetches the user's OpenAI session token to allow the 'ChatGPT Summary' feature to function without a separate API key. This is standard behavior for 'ChatGPT for X' extensions."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT → https://notegpt.io/api/v1/share",
+          "usage": "LEGITIMATE",
+          "justification": "Used for the 'Take Notes' and sharing functionality explicitly described in the extension title and description."
+        },
+        {
+          "pattern": "SEND_BEACON / FETCH to aliyuncs.com",
+          "usage": "LEGITIMATE",
+          "justification": "Standard usage analytics (action_id, basic metadata) sent to Alibaba Cloud Log Service. No sensitive user data or PII is included in the payload constructed in the 'Ke' class."
+        },
+        {
+          "pattern": "DOM / INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used by the included Element UI and Vue.js libraries to render the overlay interface on the Coursera page."
+        },
+        {
+          "pattern": "INTERCEPTION / DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "The extension injects a script (inject.js) to access the video player's caption tracks API on Coursera to retrieve the transcript for summarization."
+        }
+      ],
+      "token_usage": {
+        "prompt": 35426,
+        "candidates": 850,
+        "total": 38409
+      }
+    },
+    {
+      "extension_id": "kfjlbdhonplbiikgogomppidenoaichc",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension code is clean and transparent. The majority of the file (approx 95%) is the bundled 'Zod' validation library, which is a standard open-source dependency. The actual extension logic involves listening for input in the Chrome Omnibox ('gpt keyword'), checking if the user is logged into OpenAI via a fetch request (relying on browser cookies), opening a tab to ChatGPT, and using `chrome.scripting.executeScript` to fill the textarea with the user's query. There is no data exfiltration, no communication with third-party servers, and no obfuscation.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Allows to ask ChatGPT right from your Chrome OmniBar",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chat.openai.com",
+          "clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used in `chrome.omnibox.onInputStarted` to ping `https://chat.openai.com/chat`. This checks if the user is currently logged in (via cookies) to provide appropriate UI feedback (status 200 vs redirect to login)."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Required to open the ChatGPT tab (`chrome.tabs.create`/`update`) and inject the user's query into the page using `chrome.scripting.executeScript`."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "The static analysis likely flagged the Map `Ze` or `ue` variable usage as storage-like behavior, but it is effectively in-memory state management for tracking tab loading status."
+        }
+      ],
+      "token_usage": {
+        "prompt": 31603,
+        "candidates": 628,
+        "total": 33385
+      }
+    },
+    {
+      "extension_id": "dfbbmnaicfnpnlpefbechbahdlblgigc",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension functions as a 'companion' tool for ChatGPT, adding features like prompt libraries and folders. The static analysis flagged numerous patterns (DOM manipulation, keyboard listeners) that are standard requirements for such a complex UI overlay. \n\nThe authentication flow in 'service_worker.js' legitimately uses 'chrome.identity' to fetch a Google user profile and sends it to the extension's own backend ('https://promptmatic.wit.works') to establish a session. 'contentscript_local.js' creates a legitimate bridge between the extension and the developer's website to sync settings and clone prompts.\n\nThe large file 'contentscript_remote.js' appears to be a bundle containing application logic and libraries (Quill, Bootstrap), explaining the high volume of DOM/Input findings. The reference to Stripe is likely a link for subscription management. There is no evidence of obfuscation, data exfiltration to third parties, or malicious behavior.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": null,
+        "dual_purpose": null,
+        "credential_theft": null
+      },
+      "domains": {
+        "legitimate": [
+          "https://promptmatic.wit.works",
+          "https://www.googleapis.com",
+          "https://chat.openai.com",
+          "https://chatgpt.com",
+          "https://stripe.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "PASSWORD_SELECTOR",
+          "usage": "LEGITIMATE",
+          "justification": "Likely part of the large bundled libraries (Bootstrap/Quill) or login detection logic; no corresponding code transmits credentials."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used for shortcuts and UI interaction within the prompt library overlay and rich text editor (Quill)."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Required for rendering the complex UI overlay (prompt folders, bookmarks) injected into the ChatGPT page."
+        },
+        {
+          "pattern": "NETWORK/XHR",
+          "usage": "LEGITIMATE",
+          "justification": "Communications are restricted to the extension's own backend (promptmatic.wit.works) and Google OAuth services."
+        }
+      ],
+      "token_usage": {
+        "prompt": 75515,
+        "candidates": 625,
+        "total": 79863
+      }
+    },
+    {
+      "extension_id": "fcblgiphlneejkokhnaagmjombnfdnog",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is a legitimate integration tool that bridges Gmail and ChatGPT. The suspicious patterns flagged by static analysis are functional requirements for this specific type of application. \n\n1. 'tcr9i.js' and 'chatgpt.js' intercept network requests to extract session tokens (accessToken, bda, DeviceId) from 'chatgpt.com'. This allows the extension to make authenticated requests to ChatGPT acting as the user, which is how 'free' ChatGPT wrappers function without an API key.\n\n2. 'pageWorld.js' contains the InboxSDK library, a standard framework for Gmail extensions. The network interception and DOM manipulation found here are used to detect email opens, read email content for the AI to summarize/reply to, and inject UI elements.\n\n3. Communication with 'cloudhq.net' is consistent with the vendor's backend services. The 'websitescraper' endpoint mentioned in static analysis is likely used to bypass CORS when the AI needs to read the content of a URL mentioned in an email.\n\nNo evidence of malicious data exfiltration, unrelated dual-purpose functionality, or credential theft for malicious gain was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "ChatGPT for Gmail - AI assistant integration",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://mail.google.com",
+          "https://chatgpt.com",
+          "https://chat.openai.com",
+          "https://www.cloudhq.net"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://websitescraper.cloudhq.workers.dev"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH_HIJACK / INTERCEPTION",
+          "usage": "LEGITIMATE",
+          "justification": "Used in tcr9i.js to capture 'bda' (Browser Data) tokens from ChatGPT's anti-bot challenge to maintain a valid session for the extension's functionality. Also used in pageWorld.js (InboxSDK) to interact with Gmail's internal API."
+        },
+        {
+          "pattern": "DEVICE_ID Extraction",
+          "usage": "LEGITIMATE",
+          "justification": "Found in chatgpt.js. Extracts the 'DeviceId' from the DOM to mimic the user's browser session when making API calls to ChatGPT on their behalf."
+        },
+        {
+          "pattern": "DYNAMIC_SCRIPT / DOM MANIPULATION",
+          "usage": "LEGITIMATE",
+          "justification": "Found in pageWorld.js. This file contains the InboxSDK library, which injects scripts and elements into the Gmail DOM to render the extension's UI (buttons, sidebars) and interact with the mail store."
+        }
+      ],
+      "token_usage": {
+        "prompt": 108499,
+        "candidates": 809,
+        "total": 113773
+      }
+    },
+    {
+      "extension_id": "ocbklpkcikpidkleacbohkobinlilgbd",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension functions exactly as described. The 'suspicious' patterns are standard implementation details for a YouTube extension. The dynamic script injection is required to read YouTube's video metadata global variable (`ytInitialPlayerResponse`) from the main world context. The network requests send this metadata and transcripts to the developer's backend for AI summarization. There is no evidence of data exfiltration unrelated to the core functionality, no hidden advertising or affiliate code, and no credential theft mechanisms.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": null,
+        "dual_purpose": null,
+        "credential_theft": null
+      },
+      "domains": {
+        "legitimate": [
+          "https://chatgpt4youtube.com",
+          "https://api.wenanxia.com",
+          "https://www.youtube.com",
+          "http://www.w3.org"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "The extension creates and injects a script (`ytInitialPlayerResponse.js`) into the page DOM. This is a standard and necessary technique for YouTube extensions to access the `window.ytInitialPlayerResponse` global variable, which contains video metadata unavailable to content scripts running in the isolated world."
+        },
+        {
+          "pattern": "NETWORK/FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Network calls are directed to the extension's own backend (`chatgpt4youtube.com` and `api.wenanxia.com`) to send video transcripts for summarization and manage user authentication/preferences. This aligns exactly with the stated purpose."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to detect when the YouTube DOM (specifically `#secondary.style-scope.ytd-watch-flexy`) has loaded so the extension can inject its summary UI panel. Also used within the UI library (MUI) for component resizing."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Found within the Material UI (MUI) library code in `options.html-703166c3.js`. Used for accessibility navigation (e.g., arrow keys in menus) and form interactions, not keylogging."
+        }
+      ],
+      "token_usage": {
+        "prompt": 94302,
+        "candidates": 644,
+        "total": 96864
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 0,
+    "SUSPICIOUS": 0,
+    "SAFE": 5,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 0,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 5,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 1.0,
+    "true_positive_rate": 0.0,
+    "malicious_detection_rate": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 345345,
+    "candidate_tokens": 3556,
+    "total_tokens": 362294
+  }
+}

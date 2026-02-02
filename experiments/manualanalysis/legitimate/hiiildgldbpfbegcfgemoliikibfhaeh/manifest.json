@@ -1,0 +1,60 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 3,
+  "version": "1.3.11",
+  "name": "__MSG_appName__",
+  "description": "__MSG_appDesc__",
+  "default_locale": "en",
+  "homepage_url": "https://www.chatgpt2pdf.app",
+  "action": {
+    "default_title": "ChatGPT to PDF",
+    "default_icon": {
+      "16": "assets/logo16.png",
+      "48": "assets/logo48.png",
+      "64": "assets/logo64.png",
+      "96": "assets/logo96.png",
+      "128": "assets/logo128.png",
+      "512": "assets/logo512.png"
+    }
+  },
+  "icons": {
+    "16": "assets/logo16.png",
+    "48": "assets/logo48.png",
+    "64": "assets/logo64.png",
+    "96": "assets/logo96.png",
+    "128": "assets/logo128.png",
+    "512": "assets/logo512.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "activeTab",
+    "downloads",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://chatgpt.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://chatgpt.com/*"],
+      "js": ["contentScript.js", "wall.js"]
+    }
+  ],
+  "externally_connectable": {
+    "matches": [
+      "https://onlineapp.pro/*",
+      "https://onlineapp.stream/*",
+      "https://onlineapp.live/*"
+    ]
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["assets/download_instruction.mp4"],
+      "matches": ["*://chatgpt.com/*"]
+    }
+  ],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5habv1ZMh4UyDUJMBMhUwbymaqquS59lm5gSAwgr62QcPhUxCj+Kc8jBWpDDtWVKx8AFhlz/dq0LUaThijC94Fg5cUGo5urfJWWi9jZ87jT1lyo+G6SZoeDNWPb4VUmpx09nw7QOmFC0OHUnYF6WavOhXTtN4peIzt3g81NUSRHNdEEtMdavD2tzUOfpzkuTpcuGjrNzVzSZHi1+EdQF4Mi6hLMRrSRjVAsuIrCzp1MYpawelkYi6q05wW3hPF6y3PxFwX/XnTs7Cr2M/Wv9jec4toIsC+gjydm9cpMpNAp9GvAHJJpgSPzrrNF2aKK9JvBIdkjiOn3ed5KQKeFwxwIDAQAB"
+}

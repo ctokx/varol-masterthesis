@@ -1,0 +1,67 @@
+{
+  "hello": {
+    "message": "你好！"
+  },
+  "ask_anything": {
+    "message": "问任何问题"
+  },
+  "ask_about_this_page": {
+    "message": "询问此页面"
+  },
+  "summarize_this_page": {
+    "message": "总结此页面"
+  },
+  "add_photos_and_files": {
+    "message": "添加照片和文件"
+  },
+  "create_image": {
+    "message": "创建图像"
+  },
+  "web_search": {
+    "message": "网页搜索"
+  },
+  "teacher_mode": {
+    "message": "教师模式"
+  },
+  "voice_input": {
+    "message": "语音输入"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "快速日常助手"
+  },
+  "model_deep_reasoning": {
+    "message": "深度推理模型"
+  },
+  "model_quick_multimodal": {
+    "message": "快速多模态响应"
+  },
+  "model_advanced_google_ai": {
+    "message": "高级谷歌AI"
+  },
+  "model_complex_problem_solving": {
+    "message": "复杂问题解决"
+  },
+  "model_powerful_opensource": {
+    "message": "强大的开源模型"
+  },
+  "model_reasoning_specialist": {
+    "message": "推理专家"
+  },
+  "model_balanced_reliable": {
+    "message": "平衡且可靠"
+  },
+  "model_most_capable": {
+    "message": "最强大的Claude"
+  },
+  "model_label_fastest": {
+    "message": "最快"
+  }
+}
+
+
+
+
+
+
+
+

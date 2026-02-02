@@ -1,0 +1,1 @@
+window.ytInitialPlayerResponse&&window.postMessage({from:"ytInitialPlayerResponse",data:window.ytInitialPlayerResponse});setTimeout(()=>{window.postMessage({from:"ytInitialPlayerResponse",data:window.ytInitialPlayerResponse??{videoDetails:{videoId:""}}})},2e3);

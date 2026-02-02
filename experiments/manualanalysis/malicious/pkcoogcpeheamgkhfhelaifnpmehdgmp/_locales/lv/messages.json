@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT for Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Paplašinājums, lai izveidotu saīsni uz oficiālo ChatGPT Google Chrome pārlūkprogrammā"
+    },
+    "ext_command_description": {
+        "message": "Saīsne, lai atvērtu ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT eko režīmā?"
+    },
+    "request_perms_popup_description": {
+        "message": "Palīdziet atbalstīt ilgtspējīgas iniciatīvas, vienkārši pārlūkojot tīmekli. Šis režīms netraucēs jūsu pārlūkošanu."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Uzzināt vairāk"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Atļaut"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Noraidīt"
+    },
+    "perms_granted_popup_title": {
+        "message": "Apsveicam!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Tagad jūs varēsiet izmantot visas mūsu funkcijas!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Turpināt"
+    },
+    "perms_denied_popup_title": {
+        "message": "Diemžēl..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Varbūt nākamreiz."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Aizvērt šo ziņojumu"
+    },
+    "welcome_title": {
+        "message": "ChatGPT for Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Paplašinājums veiksmīgi instalēts"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT for Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Paplašinājums veiksmīgi instalēts"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Izpildiet zemāk minētos soļus, lai piespraustu paplašinājumu, un pēc tam noklikšķiniet uz „Nākamais solis”"
+    },
+    "welcome_next_step": {
+        "message": "Nākamais solis"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "Lai piekļūtu visām paplašinājuma funkcijām, aktivizējiet eko režīmu."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Noklikšķiniet uz „Atļaut”, lai turpinātu"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Lietošanas noteikumi"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Privātuma politika"
+    },
+    "how_to_use_html_title": {
+        "message": "Kā izmantot paplašinājumu"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Vai nospiediet Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Eko režīms"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Apsveicam! Šī vietne ir mūsu eko režīma partneris."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Ko tas nozīmē?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Turpinot pārlūkot, jūs palīdzēsiet 🌍 planētai, stādot kokus un kompensējot oglekļa emisijas bez maksas."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Katru reizi apmeklējot partneri, uz īsu brīdi atvērsies jauna cilne, lai aprēķinātu oglekļa emisiju kompensāciju."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Starp citu, ļoti pateicamies, ka atbalstāt šo lielisko iniciatīvu kopā ar mums! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Uzzināt vairāk"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Aizvērt"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Nerādīt vairs"
+    }
+}

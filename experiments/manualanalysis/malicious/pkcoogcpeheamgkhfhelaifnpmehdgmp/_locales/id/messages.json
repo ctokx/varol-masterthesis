@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT untuk Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Ekstensi untuk membuat pintasan ke ChatGPT resmi di browser Google Chrome"
+    },
+    "ext_command_description": {
+        "message": "Pintasan untuk membuka ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT dalam Mode Eco?"
+    },
+    "request_perms_popup_description": {
+        "message": "Bantu tujuan berkelanjutan hanya dengan menjelajahi web. Mode ini tidak akan mengganggu penjelajahan Anda."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Pelajari lebih lanjut"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Izinkan"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Tolak"
+    },
+    "perms_granted_popup_title": {
+        "message": "Selamat!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Sekarang Anda akan mendapatkan manfaat dari semua fitur kami!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Lanjutkan"
+    },
+    "perms_denied_popup_title": {
+        "message": "Sayang sekali..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Mungkin lain kali."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Tutup pesan ini"
+    },
+    "welcome_title": {
+        "message": "ChatGPT untuk Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Ekstensi Berhasil Dipasang"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT untuk Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Ekstensi Berhasil Dipasang"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Ikuti langkah-langkah di bawah ini untuk menyematkan ekstensi Anda, lalu klik Langkah Berikutnya"
+    },
+    "welcome_next_step": {
+        "message": "Langkah Berikutnya"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "Untuk mengakses semua fitur ekstensi, aktifkan Mode Eco."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Klik Izinkan untuk melanjutkan"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Syarat Penggunaan"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Kebijakan Privasi"
+    },
+    "how_to_use_html_title": {
+        "message": "Cara Menggunakan Ekstensi"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Atau tekan Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Mode Eco"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Selamat! Situs ini adalah mitra dari mode eco kami."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Apa artinya?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Dengan terus menjelajah, Anda akan membantu planet 🌍, menanam pohon, dan mengimbangi emisi karbon tanpa biaya."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Dengan setiap kunjungan ke mitra, tab baru akan dibuka sebentar untuk memungkinkan perhitungan pengimbangan karbon."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Ngomong-ngomong, terima kasih banyak telah mendukung tujuan luar biasa ini bersama kami! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Pelajari lebih lanjut"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Tutup"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Jangan tampilkan lagi"
+    }
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test Banner Reset</title>
+</head>
+<body>
+    <h1>Banner State Reset Tool</h1>
+    <button onclick="resetBanner()">Reset Banner State</button>
+    <button onclick="checkState()">Check Current State</button>
+    <div id="output"></div>
+
+    <script>
+        function resetBanner() {
+            localStorage.removeItem('aitopia-session-data');
+            sessionStorage.removeItem('aitopia-banner-dismissed');
+            sessionStorage.removeItem('aitopia-session-initialized');
+            document.getElementById('output').innerHTML = '<p style="color: green;">Banner state has been reset! The banner should now appear on ChatGPT.</p>';
+        }
+
+        function checkState() {
+            const sessionData = localStorage.getItem('aitopia-session-data');
+            const sessionDismissed = sessionStorage.getItem('aitopia-banner-dismissed');
+            const sessionInitialized = sessionStorage.getItem('aitopia-session-initialized');
+
+            let output = '<h3>Current Banner State:</h3>';
+            output += '<p>Session Data: ' + (sessionData ? JSON.stringify(JSON.parse(sessionData), null, 2) : 'None') + '</p>';
+            output += '<p>Session Dismissed: ' + (sessionDismissed || 'false') + '</p>';
+            output += '<p>Session Initialized: ' + (sessionInitialized || 'false') + '</p>';
+
+            if (sessionData) {
+                const data = JSON.parse(sessionData);
+                if (data.permanentlyDismissed) {
+                    output += '<p style="color: red;">Banner is permanently dismissed!</p>';
+                } else if (data.closeDismissalSessionCount) {
+                    output += '<p style="color: orange;">Banner was closed and will reappear after more sessions.</p>';
+                }
+            }
+
+            document.getElementById('output').innerHTML = output;
+        }
+    </script>
+</body>
+</html>

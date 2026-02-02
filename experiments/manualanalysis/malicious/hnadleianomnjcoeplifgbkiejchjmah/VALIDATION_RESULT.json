@@ -1,0 +1,76 @@
+{
+  "extension_id": "hnadleianomnjcoeplifgbkiejchjmah",
+  "extension_name": "Search Everywhere with Google Bard/Gemini",
+  "version": "Unknown",
+  "user_count": 60000,
+  "dataset": "gemini",
+  "verdict": "MALICIOUS",
+  "confidence": 1.0,
+  "recommendation": "BLOCK",
+  "reasoning": "The extension performs undisclosed browsing surveillance. It generates a unique ID for each installation and contacts a non-standard backend (be.chatgptbygoogle.com) to retrieve a list of target hostnames. When a user visits any of these targets, the extension exfiltrates the complete URI to the backend. This behavior is entirely unrelated to the stated purpose of being an AI assistant and constitutes a significant privacy violation and malicious tracking.",
+  "full_validation": {
+    "extension_id": "hnadleianomnjcoeplifgbkiejchjmah",
+    "verdict": "MALICIOUS",
+    "confidence": 1.0,
+    "reasoning": "The extension performs undisclosed browsing surveillance. It generates a unique ID for each installation and contacts a non-standard backend (be.chatgptbygoogle.com) to retrieve a list of target hostnames. When a user visits any of these targets, the extension exfiltrates the complete URI to the backend. This behavior is entirely unrelated to the stated purpose of being an AI assistant and constitutes a significant privacy violation and malicious tracking.",
+    "recommendation": "BLOCK",
+    "key_concerns": [
+      "Exfiltration of full browsing URIs to an unauthorized third-party domain.",
+      "Remote-controlled watch-list allows the developer to dynamically change which sites they track.",
+      "Session hijacking of Google Gemini tokens via DOM scraping."
+    ],
+    "evidence": {
+      "exfiltration_chain": {
+        "data_collected": "User browsing history (Full URIs) and unique extension identifier.",
+        "processing_method": "The extension fetches a list of 'modal' hostnames from a remote server. If the user visits a matching site, the full URL is transmitted to the backend.",
+        "destination_domain": "https://be.chatgptbygoogle.com",
+        "code_evidence": "In background.js: chrome.tabs.onUpdated monitors all URLs. If a URL's hostname is in the stored 'modal' list, it sends the full 'uri' to `${BASE_URL}/chatlong/gettoken` via POST. The 'modal' list itself is populated from `${BASE_URL}/chatlong/inittoken` using a persistent UUID."
+      },
+      "dual_purpose": {
+        "stated_purpose": "AI/ChatGPT assistant providing responses alongside Google search results.",
+        "hidden_functionality": "Disclosed browsing surveillance. The extension tracks when users visit specific, remotely-defined hostnames and exfiltrates the full path/URI to a third-party server unrelated to OpenAI or Google.",
+        "code_evidence": "background.js lines 431-480: Logic to check tab URLs against a remote-controlled list ('modal') and reporting matches to the 'chatlong' API endpoints."
+      },
+      "credential_theft": {
+        "capture_mechanism": "Session token hijacking.",
+        "transmission_target": "https://be.chatgptbygoogle.com/chat/init",
+        "code_evidence": "In content.js (lines 72-88), the script scrapes the 'SNlM0e' token (Google Bard's session token) from the global WIZ_global_data on the Gemini app page and stores it in local storage, which is then accessible by the background script to facilitate requests to the C2 backend."
+      }
+    },
+    "domains": {
+      "legitimate": [
+        "https://gemini.google.com",
+        "https://chat.openai.com",
+        "https://www.google.com"
+      ],
+      "requires_investigation": [
+        "https://be.chatgptbygoogle.com"
+      ],
+      "informational_only": [
+        "https://clients2.google.com"
+      ]
+    },
+    "pattern_assessment": [
+      {
+        "pattern": "NETWORK_ENDPOINT",
+        "usage": "MALICIOUS",
+        "justification": "The domain 'be.chatgptbygoogle.com' is used as a Command and Control (C2) server to sync tracking targets and exfiltrate user browsing data."
+      },
+      {
+        "pattern": "TABS_ACCESS",
+        "usage": "MALICIOUS",
+        "justification": "Used to monitor every URL a user visits in order to compare them against a watch-list for data exfiltration."
+      },
+      {
+        "pattern": "CREDENTIAL_ACCESS",
+        "usage": "SUSPICIOUS",
+        "justification": "The extension extracts internal session tokens from Gemini/OpenAI pages. While used for the stated AI integration, the presence of exfiltration logic makes this session hijacking dangerous."
+      }
+    ],
+    "token_usage": {
+      "prompt": 106227,
+      "candidates": 963,
+      "total": 108223
+    }
+  }
+}

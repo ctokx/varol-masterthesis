@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT voor Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Extensie om een snelkoppeling te maken voor de officiële ChatGPT in de Google Chrome-browser"
+    },
+    "ext_command_description": {
+        "message": "Snelkoppeling om ChatGPT te openen"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT in Eco-modus?"
+    },
+    "request_perms_popup_description": {
+        "message": "Help duurzame doelen gewoon door op het web te surfen. Deze modus zal uw browsen niet onderbreken."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Meer informatie"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Toestaan"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Weigeren"
+    },
+    "perms_granted_popup_title": {
+        "message": "Gefeliciteerd!"
+    },
+    "perms_granted_popup_description": {
+        "message": "U profiteert nu van al onze functies!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Doorgaan"
+    },
+    "perms_denied_popup_title": {
+        "message": "Dat is jammer..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Misschien de volgende keer."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Dit bericht sluiten"
+    },
+    "welcome_title": {
+        "message": "ChatGPT voor Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Extensie succesvol geïnstalleerd"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT voor Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Extensie succesvol geïnstalleerd"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Volg de onderstaande stappen om uw extensie vast te pinnen en klik vervolgens op Volgende stap"
+    },
+    "welcome_next_step": {
+        "message": "Volgende stap"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "Om toegang te krijgen tot alle functies van de extensie, activeert u de Eco-modus."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Klik op Toestaan om door te gaan"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Gebruiksvoorwaarden"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Privacybeleid"
+    },
+    "how_to_use_html_title": {
+        "message": "Hoe de extensie te gebruiken"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Of druk op Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Eco-modus"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Gefeliciteerd! Deze site is een partner van onze eco-modus."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Wat betekent dit?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Door door te blijven surfen, helpt u de 🌍 planeet, plant u bomen en compenseert u de CO2-uitstoot zonder kosten."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Bij elk bezoek aan een partner wordt er kort een nieuw tabblad geopend om de CO2-compensatie te berekenen."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Overigens, heel erg bedankt voor het ondersteunen van deze geweldige zaak met ons! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Meer informatie"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Sluiten"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Niet meer tonen"
+    }
+}

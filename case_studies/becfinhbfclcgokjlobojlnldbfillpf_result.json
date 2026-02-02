@@ -1,0 +1,107 @@
+{
+  "job_name": "batches/z5ifksidwhhh72aesbulkpspn5zpzhz725lb",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T15:34:53.528783",
+  "validations": [
+    {
+      "extension_id": "becfinhbfclcgokjlobojlnldbfillpf",
+      "verdict": "MALICIOUS",
+      "confidence": 0.95,
+      "reasoning": "The extension is a Trojan. While it provides the advertised AI chat functionality, it contains a significant, undisclosed payload in 'd2529e2597d9bc7ddd6939248765982a.js' dedicated to crawling and monitoring Amazon Merchant accounts under the brand 'Captain A'. This code maps dozens of Amazon marketplace domains and transmits data to '_crawl.captaina.co'. This behavior is entirely unrelated to the stated purpose of the extension and constitutes malicious dual-purpose behavior and data exfiltration.",
+      "recommendation": "BLOCK",
+      "key_concerns": [
+        "Undisclosed e-commerce monitoring and crawling (Amazon).",
+        "Presence of a secondary application ('Captain A') hidden within the AI extension.",
+        "Background viewport capture capabilities stored to local storage.",
+        "Communicates with unlisted 'captaina.co' domains for merchant tracking."
+      ],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Amazon Marketplace merchant data, tokens, and potentially captured viewport images.",
+          "processing_method": "Aggregation of Amazon marketplace IDs, country codes, and currency details; storage of viewport captures as DataURLs.",
+          "destination_domain": "_crawl.captaina.co",
+          "code_evidence": "class U { captaina_version = '1.1.0'; api_url = 'https://_crawl.captaina.co'; market_urls = { 'amazon.fr': 'A13V1IB3VIYZZH', ... }; } (d2529e2597d9bc7ddd6939248765982a.js)"
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant providing access to multiple models like Gemini and Claude.",
+          "hidden_functionality": "E-commerce marketplace crawling and merchant management system ('Captain A') targeting Amazon seller accounts.",
+          "code_evidence": "The entire file 'd2529e2597d9bc7ddd6939248765982a.js' is dedicated to e-commerce tracking/crawling logic that is completely unrelated to the AI chat functionality."
+        },
+        "credential_theft": {
+          "capture_mechanism": "Monitoring of Amazon marketplace tokens and merchant IDs; logic to capture the current viewport as an image.",
+          "transmission_target": "https://_crawl.captaina.co and https://captaina.co",
+          "code_evidence": "t.captureCurrentViewport().then((e => { fetch(e).then((e => e.blob())).then((e => { ... t.Browser().storage.local.set({ ai_image_url: e }) ... })) })) in d2529e2597d9bc7ddd6939248765982a.js"
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "aitopia.ai",
+          "chatgptextension.ai",
+          "smith.langchain.com",
+          "google-analytics.com",
+          "googleapis.com"
+        ],
+        "requires_investigation": [
+          "_crawl.captaina.co",
+          "captaina.co"
+        ],
+        "informational_only": [
+          "github.com/zloirock/core-js",
+          "highlightjs.org",
+          "w3.org",
+          "schemas.openxmlformats.org"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "PASSWORD_SELECTOR",
+          "usage": "LEGITIMATE",
+          "justification": "Likely part of a bundled UI or form-handling library (like Vue/React) used to determine input types for the chat interface."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "MALICIOUS",
+          "justification": "The endpoints for 'captaina.co' and '_crawl.captaina.co' are used for undisclosed e-commerce crawling/tracking logic embedded in an AI extension."
+        },
+        {
+          "pattern": "INTERCEPTION",
+          "usage": "SUSPICIOUS",
+          "justification": "Used in the background script to capture viewports, which is excessive for a simple chat assistant."
+        }
+      ],
+      "token_usage": {
+        "prompt": 337171,
+        "candidates": 1066,
+        "total": 340417
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 1,
+    "SUSPICIOUS": 0,
+    "SAFE": 0,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 1,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 0,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 33,
+    "total_high_findings": 70,
+    "extensions_with_suspicious_domains": 1
+  },
+  "thesis_stats": {
+    "false_positive_rate": 0.0,
+    "true_positive_rate": 1.0,
+    "malicious_detection_rate": 1.0
+  },
+  "token_usage": {
+    "prompt_tokens": 337171,
+    "candidate_tokens": 1066,
+    "total_tokens": 340417
+  }
+}

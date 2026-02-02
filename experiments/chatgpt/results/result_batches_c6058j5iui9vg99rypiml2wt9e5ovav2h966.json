@@ -1,0 +1,379 @@
+{
+  "job_name": "batches/c6058j5iui9vg99rypiml2wt9e5ovav2h966",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:24.641824",
+  "validations": [
+    {
+      "extension_id": "cfoamnjiopdfebnkighclndegcklbihf",
+      "verdict": "SAFE",
+      "confidence": 0.9,
+      "reasoning": "The analysis indicates that the extension is a legitimate AI tool. While the static analysis flagged numerous keyboard listeners and DOM observers, these are technical requirements for any extension that interacts with Twitter's dynamic user interface to provide AI-generated text. The references to 'linkedradar.com' and other Chrome extensions appear to be part of a shared developer framework used for cross-promotion and support links, rather than evidence of malicious dual-purpose behavior or data exfiltration. No code was found that captures credentials or exfiltrates private user data to an unauthorized third party.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant for Twitter",
+          "hidden_functionality": "None. The extension contains cross-promotional links to the developer's other products (LinkedRadar), but these are informational links rather than hidden background tasks.",
+          "code_evidence": "Line 4929: NETWORK_ENDPOINT → https://chrome.google.com/webstore/detail/linkedradar-auto-connect/kgpckhbdfdhbk"
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "twitter.com",
+          "chat.openai.com",
+          "chrome.google.com",
+          "w3.org",
+          "api.whatsapp.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "linkedradar.com",
+          "static-global.zingfront.com",
+          "google.com/webstore"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Necessary for an AI assistant to detect when a user is typing in a Twitter reply box to offer suggestions or trigger AI generation."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to detect when new tweets or reply modals are added to the DOM in Twitter's single-page application (SPA) architecture."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Standard practice for saving user preferences, API keys, or session state for the ChatGPT integration."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used to communicate with the OpenAI/ChatGPT API and the developer's support/informational endpoints."
+        }
+      ],
+      "token_usage": {
+        "prompt": 6128,
+        "candidates": 737,
+        "total": 8182
+      }
+    },
+    {
+      "extension_id": "indcipieilphhkjlepfgnldhjejiichk",
+      "verdict": "SAFE",
+      "confidence": 0.9,
+      "reasoning": "The extension's code aligns with its stated purpose of providing summaries and note-taking for Udemy. It extracts transcripts from the Udemy player (using React Fiber properties in `inject.js`), sends them to ChatGPT/Claude for processing, and allows the user to save and sync notes to the NoteGPT cloud service. While it does collect data (notes and video metadata) and send it to `notegpt.io` and Alibaba Cloud logging, this behavior is typical for an AI-assistant service that offers cross-device synchronization and telemetry. No evidence of credential theft, affiliate hijacking, or malicious data scraping was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "User-generated notes, video transcripts, and Udemy course metadata (titles/covers).",
+          "processing_method": "JSON stringification of note objects.",
+          "destination_domain": "notegpt.io",
+          "code_evidence": "The function `Pa()` in `background.js` collects items from `chrome.storage.local.get('notes')` and sends them via POST to `https://notegpt.io/api/v1/notes`. This is a standard 'Sync to Cloud' feature for note-taking apps."
+        },
+        "dual_purpose": {
+          "stated_purpose": "Udemy Summary with ChatGPT & Claude",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": "Accesses OpenAI session tokens to facilitate AI requests.",
+          "transmission_target": "https://chat.openai.com/backend-api/conversation",
+          "code_evidence": "Function `Te()` in `background.js` fetches `https://chat.openai.com/api/auth/session` to retrieve the `accessToken` required to proxy requests to the ChatGPT web backend."
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "udemy.com",
+          "openai.com",
+          "chatgpt.com",
+          "claude.ai",
+          "notegpt.io"
+        ],
+        "requires_investigation": [
+          "us-west-1.log.aliyuncs.com"
+        ],
+        "informational_only": [
+          "w3.org",
+          "discord.gg",
+          "forms.gle",
+          "github.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in `OpenAiCopy.js` to inject a 'Copy to Clipboard' button and in the background script to manage UI components for the summary sidebar."
+        },
+        {
+          "pattern": "COOKIE_ACCESS / CREDENTIAL_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "The extension requests the OpenAI session token to allow users to use their existing ChatGPT login for summaries without requiring an API key (Web UI proxy method)."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Found primarily in `element-ui.js` (a common UI framework) for handling accessibility, modal closures, and input field interactions."
+        },
+        {
+          "pattern": "SEND_BEACON",
+          "usage": "LEGITIMATE",
+          "justification": "Used in `background.js` to send telemetry/logs to an Alibaba Cloud (Aliyun) endpoint for developer debugging/analytics."
+        }
+      ],
+      "token_usage": {
+        "prompt": 43898,
+        "candidates": 887,
+        "total": 46092
+      }
+    },
+    {
+      "extension_id": "pijagnpcnegcogimkghghdihobbeaicn",
+      "verdict": "SAFE",
+      "confidence": 0.9,
+      "reasoning": "Analysis of the manifest and provided source code indicates a standard ChatGPT integration extension. The permissions are appropriately scoped to OpenAI and common search engines. The code uses modern bundling (Webpack/Rollup) and includes standard libraries like Lodash, Day.js, and React. The background script and content scripts are focused on intercepting search queries to provide parallel AI results, which matches the stated purpose. No evidence of data exfiltration beyond user-initiated queries to OpenAI or the developer's proxy was found. The mention of the 'Monica' extension appears to be a competitive check or cross-promotion link rather than malicious code.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant for search engines",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://*.openai.com/",
+          "https://webapp.chatgpt4google.com",
+          "https://api.openai.com",
+          "https://chat.openai.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://reactjs.org/docs/error-decoder.html",
+          "http://www.w3.org/2000/svg",
+          "https://github.com/highlightjs/highlight.js",
+          "https://chrome.google.com/webstore/detail/monica-%E2%80%94-your-chatgpt-cop/ofpn"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The endpoints for openai.com and the developer's backend (chatgpt4google.com) are necessary for the extension to fetch AI responses and manage user settings."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used for implementing keyboard shortcuts (e.g., triggering the AI chat) within the browser interface."
+        },
+        {
+          "pattern": "POST_MESSAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used in pdf-injected-script.js to communicate between the extension and PDF embed elements to allow 'Summarize PDF' features."
+        },
+        {
+          "pattern": "EVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Typically a false positive in large bundles or used by syntax highlighting libraries like highlight.js (referenced in the code) for parsing code blocks in chat responses."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Necessary to detect when search engine results (Google, Bing) have loaded so the extension can inject its UI into the page."
+        }
+      ],
+      "token_usage": {
+        "prompt": 111404,
+        "candidates": 828,
+        "total": 113785
+      }
+    },
+    {
+      "extension_id": "okanoajihjohgmbifnkiebaobfkgenfa",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension appears to be a standard, legitimate production build of a React-based application. The static analysis findings for 'STORAGE', 'FETCH', and 'NETWORK_ENDPOINT' are entirely consistent with its purpose as a ChatGPT enhancer. Detailed code review reveals the inclusion of several well-known, high-quality open-source libraries: 'micromark' and 'mdast-util-from-markdown' for parsing Markdown responses from the AI, and 'event-source-parser' for handling the Server-Sent Events (SSE) stream from the ChatGPT API. All identified domains are either the primary service provider (chatgpt.com), standard namespaces (w3.org), or common telemetry (google-analytics.com). No code for data aggregation or exfiltration to third-party servers was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant providing toolkit features for ChatGPT users.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chatgpt.com/",
+          "https://www.google-analytics.com/mp/collect",
+          "https://reactjs.org/"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://www.w3.org/1999/xhtml",
+          "http://www.w3.org/2000/svg",
+          "https://github.com/facebook/react/issues/3236"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT → https://chatgpt.com/backend-api",
+          "usage": "LEGITIMATE",
+          "justification": "Required for interacting with the primary service (ChatGPT) to fetch models and conversations."
+        },
+        {
+          "pattern": "DOM / INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses standard Markdown parsing libraries (micromark/mdast) and React, which utilize innerHTML for rendering processed text and UI components."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Standard usage for persisting user preferences, extension settings, and session cache."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used to interact with and inject content into active ChatGPT tabs for the 'toolkit' functionality."
+        }
+      ],
+      "token_usage": {
+        "prompt": 63199,
+        "candidates": 739,
+        "total": 65126
+      }
+    },
+    {
+      "extension_id": "bldiolhaloogkkbpgojpbjbcalnldlpb",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose of providing a searchable history for ChatGPT. It crawls the user's own API history, stores it in a local database (IndexedDB), and provides a UI for searching that data. The use of 'identity' and the serverless endpoint is justified by the integrated licensing system (LemonSqueezy). There is no evidence of conversation data being sent to the developer's servers; only the user's email is sent to verify subscription status.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": "The code crawls ChatGPT conversation history using the OpenAI backend-api (Line 121) and stores it locally in an IndexedDB called 'ChatDB' (Line 290) for local searching."
+        },
+        "dual_purpose": {
+          "stated_purpose": "Search GPT conversation history",
+          "hidden_functionality": null,
+          "code_evidence": "The extension implements a monetization model using LemonSqueezy (Line 105). It checks the user's license status (tariff) by sending the user's email to a serverless API (Line 1606) but does not appear to exfiltrate conversation data."
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": "The extension uses webRequest to capture the OpenAI Authorization token (Bearer token) so it can fetch the user's history on their behalf; this token is used locally by the content script to call https://chatgpt.com/backend-api/."
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatgpt.com",
+          "extensionstore.lemonsqueezy.com"
+        ],
+        "requires_investigation": [
+          "faas-nyc1-2ef2e6cc.doserverless.co"
+        ],
+        "informational_only": [
+          "myextension.store",
+          "forms.gle"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "WEB_REQUEST",
+          "usage": "LEGITIMATE",
+          "justification": "Used to extract the active session token from chatgpt.com to allow the background/content script to fetch conversation history for indexing."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Uses IndexedDB (ChatDB) to store conversation history locally so it can be searched offline/quickly without re-fetching from OpenAI."
+        },
+        {
+          "pattern": "IDENTITY_EMAIL",
+          "usage": "LEGITIMATE",
+          "justification": "Required for checking the user's subscription/license status via the developer's serverless backend."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to inject the search modal and render conversation search results directly into the ChatGPT UI."
+        }
+      ],
+      "token_usage": {
+        "prompt": 91669,
+        "candidates": 796,
+        "total": 94161
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 0,
+    "SUSPICIOUS": 0,
+    "SAFE": 5,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 0,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 5,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 1.0,
+    "true_positive_rate": 0.0,
+    "malicious_detection_rate": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 316298,
+    "candidate_tokens": 3987,
+    "total_tokens": 327346
+  }
+}

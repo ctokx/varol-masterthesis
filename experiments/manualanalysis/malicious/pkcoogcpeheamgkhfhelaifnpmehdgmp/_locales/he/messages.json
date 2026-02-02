@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT עבור Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "הרחבה ליצירת קיצור דרך ל-ChatGPT הרשמי בדפדפן Google Chrome"
+    },
+    "ext_command_description": {
+        "message": "קיצור דרך לפתיחת ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT במצב אקו?"
+    },
+    "request_perms_popup_description": {
+        "message": "עזרו למטרות ברות-קיימא פשוט על ידי גלישה באינטרנט. המצב הזה לא יפריע לגלישה שלכם."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "למד עוד"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "אפשר"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "דחה"
+    },
+    "perms_granted_popup_title": {
+        "message": "מזל טוב!"
+    },
+    "perms_granted_popup_description": {
+        "message": "כעת תהנו מכל התכונות שלנו!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "המשך"
+    },
+    "perms_denied_popup_title": {
+        "message": "איזה פספוס..."
+    },
+    "perms_denied_popup_description": {
+        "message": "אולי בפעם הבאה."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "סגור הודעה זו"
+    },
+    "welcome_title": {
+        "message": "ChatGPT עבור Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "ההרחבה הותקנה בהצלחה"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT עבור Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "ההרחבה הותקנה בהצלחה"
+    },
+    "welcome_tip_title_granted": {
+        "message": "בצע את השלבים הבאים כדי לנעוץ את ההרחבה שלך ולאחר מכן לחץ על השלב הבא"
+    },
+    "welcome_next_step": {
+        "message": "השלב הבא"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "כדי לגשת לכל התכונות של ההרחבה, הפעל את מצב אקו."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "לחץ על 'אפשר' כדי להמשיך"
+    },
+    "html_footer_terms_of_use": {
+        "message": "תנאי שימוש"
+    },
+    "html_footer_privacy_policy": {
+        "message": "מדיניות פרטיות"
+    },
+    "how_to_use_html_title": {
+        "message": "כיצד להשתמש בהרחבה"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "או לחץ על Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 מצב אקו"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "מזל טוב! האתר הזה הוא שותף של מצב אקו שלנו."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "מה זה אומר?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "בהמשך הגלישה, תעזור לכדור הארץ 🌍, תשתול עצים ותפצה על פליטת פחמן ללא עלות."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "בכל ביקור אצל שותף, ייפתח כרטיסייה חדשה לזמן קצר כדי לאפשר חישוב של פיצוי פחמן."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "אגב, תודה רבה על תמיכתך במטרה המדהימה הזו איתנו! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "למד עוד"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "סגור"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "אל תציג שוב"
+    }
+}

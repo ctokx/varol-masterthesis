@@ -1,0 +1,485 @@
+{
+    "you_need_to_approve_the_permissions_to_open_the_extension_in_the_side_panel_": {
+        "message": "Você precisa aprovar as permissões para abrir a extensão no painel lateral."
+    },
+    "dropblock_head": {
+        "message": "dropBlock_head"
+    },
+    "open_the_extension_in_a_sidepanel": {
+        "message": "Abrir a extensão em um painel lateral"
+    },
+    "link_was_copied_": {
+        "message": "Link foi copiado!"
+    },
+    "drag_and_drop_your_files_here": {
+        "message": "Arraste e solte seus arquivos aqui"
+    },
+    "only_text_content_will_be_processed__up_to_5_files__each_up_to_5mb_": {
+        "message": "Somente o conteúdo de texto será processado. Até 5 arquivos, cada um com até 5MB."
+    },
+    "you_can_upload_a_maximum_of_5_files_per_dialog__please_upload_files_in_smaller_batches_": {
+        "message": "Você pode fazer upload de no máximo 5 arquivos por diálogo. Por favor, envie os arquivos em lotes menores."
+    },
+    "invalid_file_format_or_file_size_exceeds_5_mb__please_select_smaller_files_": {
+        "message": "Formato de arquivo inválido ou tamanho do arquivo excede 5 MB. Por favor, selecione arquivos menores."
+    },
+    "permissions_are_missing__please_grant_the_extension_access_to_web_pages_": {
+        "message": "Permissões ausentes. Por favor, conceda acesso à extensão às páginas da web."
+    },
+    "error__please_try_again_later_": {
+        "message": "Erro, por favor, tente novamente mais tarde."
+    },
+    "summarization_does_not_work_on_system_pages__please_copy_the_page_content_into_the_chat_manually_": {
+        "message": "A sumarização não funciona em páginas do sistema. Por favor, copie o conteúdo da página manualmente para o chat."
+    },
+    "delete": {
+        "message": "Excluir"
+    },
+    "delete_chat_": {
+        "message": "Excluir chat?"
+    },
+    "are_you_sure_you_want_to_delete_this_chat_": {
+        "message": "Tem certeza de que deseja excluir este chat?"
+    },
+    "cancel": {
+        "message": "Cancelar"
+    },
+    "the_chat_was_deleted": {
+        "message": "O chat foi excluído"
+    },
+    "`_text_`": {
+        "message": "ʼ+text+ʼ"
+    },
+    "`_lang___(text)_`": {
+        "message": "ʼ+Lang.__(text)+ʼ"
+    },
+    "${deletetext}": {
+        "message": "${deleteText}"
+    },
+    "`_lang___(_delete_chat__)_`": {
+        "message": "ʼ+Lang.__('Excluir chat?')+ʼ"
+    },
+    "`_lang___(_are_you_sure_you_want_to_delete_this_chat__)_`": {
+        "message": "ʼ+Lang.__('Tem certeza de que deseja excluir este chat?')+ʼ"
+    },
+    "`_lang___(_cancel_)_`": {
+        "message": "ʼ+Lang.__('Cancelar')+ʼ"
+    },
+    "`_lang___(_delete_)_`": {
+        "message": "ʼ+Lang.__('Excluir')+ʼ"
+    },
+    "file": {
+        "message": "Arquivo"
+    },
+    "thinking": {
+        "message": "Pensando"
+    },
+    "copy_response": {
+        "message": "Copiar resposta"
+    },
+    "good_response": {
+        "message": "Boa resposta"
+    },
+    "bad_response": {
+        "message": "Resposta ruim"
+    },
+    "uploading___": {
+        "message": "Enviando..."
+    },
+    "`_lang___(_thinking_)_`": {
+        "message": "ʼ+Lang.__('Pensando')+ʼ"
+    },
+    "feedback": {
+        "message": "Feedback"
+    },
+    "share": {
+        "message": "Compartilhar"
+    },
+    "rate_us": {
+        "message": "Avalie-nos"
+    },
+    "💀": {
+        "message": "💀"
+    },
+    "😞": {
+        "message": "😞"
+    },
+    "😐": {
+        "message": "😐"
+    },
+    "🙂": {
+        "message": "🙂"
+    },
+    "😍": {
+        "message": "😍"
+    },
+    "grok_3_is_here_": {
+        "message": "Grok 3 está aqui."
+    },
+    "what_do_you_want_to_know_": {
+        "message": "O que você quer saber?"
+    },
+    "how_can_grok_help_you_": {
+        "message": "Como o Grok pode ajudar você?"
+    },
+    "attach_file": {
+        "message": "Anexar arquivo"
+    },
+    "select_a_model": {
+        "message": "Selecionar um modelo"
+    },
+    "sent_message": {
+        "message": "Mensagem enviada"
+    },
+    "hey_": {
+        "message": "Ei,"
+    },
+    "welcome_": {
+        "message": "bem-vindo!"
+    },
+    "how_can_i_help_you_": {
+        "message": "Como posso ajudar você?"
+    },
+    "message_deepseek": {
+        "message": "Mensagem DeepSeek"
+    },
+    "summarize_the_current_page": {
+        "message": "Resumir a página atual"
+    },
+    "upload_a_file": {
+        "message": "Enviar um arquivo"
+    },
+    "start_a_chat": {
+        "message": "Iniciar um chat"
+    },
+    "set_personalization": {
+        "message": "Definir Personalização"
+    },
+    "new_chat": {
+        "message": "Novo chat"
+    },
+    "switch_to_light_mode": {
+        "message": "Alternar para Modo Claro"
+    },
+    "switch_to_dark_mode": {
+        "message": "Alternar para Modo Escuro"
+    },
+    "open_the_extension_in_a_separate_tab": {
+        "message": "Abrir a extensão em uma aba separada"
+    },
+    "{{_item_}}": {
+        "message": "{{ item }}"
+    },
+    "start_now": {
+        "message": "Comece agora"
+    },
+    "get_ideas": {
+        "message": "Obter ideias"
+    },
+    "ask": {
+        "message": "Perguntar"
+    },
+    "code": {
+        "message": "Código"
+    },
+    "translate": {
+        "message": "Traduzir"
+    },
+    "cooking_tips": {
+        "message": "Dicas de culinária"
+    },
+    "how_deepseek_ai_helps_you_": {
+        "message": "Como o DeepSeek AI ajuda você?"
+    },
+    "✨_get_spot_on_answers_10x_faster": {
+        "message": "✨ Obtenha respostas precisas 10x mais rápido"
+    },
+    "no_google__no_tab_chaos__no_time_wasted": {
+        "message": "sem Google, sem caos de abas, sem tempo perdido"
+    },
+    "📚_save_hours_on_studying": {
+        "message": "📚 Economize horas nos estudos"
+    },
+    "generate_essays__auto_complete_tests__and_summarize_any_page_in_minutes_": {
+        "message": "gere ensaios, complete testes automaticamente e resuma qualquer página em minutos."
+    },
+    "🌍_real_time_translation_on_the_page": {
+        "message": "🌍 Tradução em tempo real na página"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments": {
+        "message": "escreva como um nativo, sem erros ou momentos constrangedores"
+    },
+    "💻_your_ai_copilot_for_coding": {
+        "message": "💻 Seu copiloto de IA para codificação"
+    },
+    "fix_bugs__decode_legacy_and_write_code_3x_faster__enjoy_your_work_and_earn_more_": {
+        "message": "corrija bugs, decode legado e escreva código 3x mais rápido. Aproveite seu trabalho e ganhe mais."
+    },
+    "where_do_we_start_": {
+        "message": "Por onde começamos?"
+    },
+    "get_10_post_ideas_for_my_cooking_blog": {
+        "message": "Obtenha 10 ideias de posts para meu blog de culinária"
+    },
+    "find_a_billion_dollar_no_code_startup_idea": {
+        "message": "Encontre uma ideia de startup de bilhões de dólares sem código"
+    },
+    "give_me_fun_game_ideas_to_play_with_my_kids_at_home": {
+        "message": "Me dê ideias divertidas de jogos para brincar com meus filhos em casa"
+    },
+    "write_3_viral_tiktok_post_ideas_about_personal_finance": {
+        "message": "Escreva 3 ideias de posts virais no TikTok sobre finanças pessoais"
+    },
+    "recommend_5_books_that_will_change_the_way_i_think": {
+        "message": "Recomende 5 livros que irão mudar minha forma de pensar"
+    },
+    "what_daily_habits_can_boost_my_creativity_": {
+        "message": "Quais hábitos diários podem impulsionar minha criatividade?"
+    },
+    "help_me_set_3_achievable_goals_for_the_next_30_days": {
+        "message": "Ajude-me a definir 3 metas alcançáveis para os próximos 30 dias"
+    },
+    "how_can_i_make_my_facebook_profile_more_attractive_": {
+        "message": "Como posso tornar meu perfil do Facebook mais atraente?"
+    },
+    "generate_a_basic_react_component_for_a_to_do_list": {
+        "message": "Gerar um componente React básico para uma lista de tarefas"
+    },
+    "can_you_explain_javascript_promises_in_a_simple_way_": {
+        "message": "Você pode explicar Promessas do JavaScript de forma simples?"
+    },
+    "how_do_i_build_a_rest_api_endpoint_using_fastapi_in_python_": {
+        "message": "Como construir um endpoint de API REST usando FastAPI em Python?"
+    },
+    "how_can_i_add_social_login_(google_facebook)_to_my_app_": {
+        "message": "Como posso adicionar login social (Google/Facebook) ao meu aplicativo?"
+    },
+    "how_do_you_say_“love”_in_french_": {
+        "message": "Como se diz “amor” em francês?"
+    },
+    "how_do_you_say_“delicious_food”_in_italian_": {
+        "message": "Como se diz “comida deliciosa” em italiano?"
+    },
+    "what_s_the_korean_translation_of_“i_miss_you”_": {
+        "message": "Qual é a tradução em coreano de “Sinto sua falta”?"
+    },
+    "what_s_the_arabic_word_for_“peace”_": {
+        "message": "Qual é a palavra árabe para “paz”?"
+    },
+    "quick_breakfast_ideas_kids_will_actually_love": {
+        "message": "Ideias rápidas de café da manhã que as crianças vão realmente adorar"
+    },
+    "what_are_5_no_sugar_snacks_i_can_make_at_home_": {
+        "message": "Quais são 5 lanches sem açúcar que posso fazer em casa?"
+    },
+    "give_me_an_easy_3_ingredient_dessert_recipe": {
+        "message": "Me dê uma receita fácil de sobremesa com 3 ingredientes"
+    },
+    "easy_dessert_tips": {
+        "message": "Dicas fáceis de sobremesas"
+    },
+    "click": {
+        "message": "Clique"
+    },
+    "add_deepseek_ai_to_the_toolbar_for_quick_access": {
+        "message": "Adicionar DeepSeek AI à barra de ferramentas para acesso rápido"
+    },
+    "file_download_has_started": {
+        "message": "O download do arquivo começou"
+    },
+    "to_get_this_file_again_": {
+        "message": "Para obter este arquivo novamente,"
+    },
+    "click_here": {
+        "message": "clique aqui"
+    },
+    "show_downloaded_file": {
+        "message": "Mostrar arquivo baixado"
+    },
+    "files_on_the_computer_can_only_be_opened_in_the_google_chrome_extension": {
+        "message": "Arquivos no computador só podem ser abertos na extensão do Google Chrome"
+    },
+    "enjoy_the_conversion_": {
+        "message": "Aproveite a conversão?"
+    },
+    "please_rate_your_experience_with_our_extension": {
+        "message": "Por favor, avalie sua experiência com nossa extensão"
+    },
+    "try_again": {
+        "message": "Tentar novamente"
+    },
+    "help_us_be_better": {
+        "message": "Ajude-nos a melhorar"
+    },
+    "your_feedback_matters__what_can_we_improve_": {
+        "message": "Seu feedback é importante. O que podemos melhorar?"
+    },
+    "send": {
+        "message": "Enviar"
+    },
+    "write_your_feedback_here": {
+        "message": "Escreva seu feedback aqui"
+    },
+    "support_us_in_10_seconds": {
+        "message": " Apoie-nos em 10 segundos"
+    },
+    "1__click": {
+        "message": "1. Clique"
+    },
+    "_write_a_review_": {
+        "message": "\\\"Escreva uma avaliação\\\""
+    },
+    "2__rate_and_post_your_feedback": {
+        "message": "2. Avalie e envie seu feedback"
+    },
+    "thanks_for_helping_us_grow_": {
+        "message": "Obrigado por nos ajudar a crescer!"
+    },
+    "select_your_language": {
+        "message": "Selecione seu idioma"
+    },
+    "type_to_filter_languages___": {
+        "message": "Digite para filtrar idiomas..."
+    },
+    "create_public_link": {
+        "message": "Criar Link Público"
+    },
+    "this_file_will_be_available_to_anyone__public_links_are_temporary_and_will_be_removed_after_24_hours_": {
+        "message": "Este arquivo estará disponível para qualquer pessoa. Links públicos são temporários e serão removidos após 24 horas."
+    },
+    "create": {
+        "message": "Criar"
+    },
+    "save_hours_on_studying": {
+        "message": "[textgradientEl]Economize Horas[\/textgradientEl] nos Estudos"
+    },
+    "auto_complete_tests__generate_essays__and_summarize_any_page_in_minutes_": {
+        "message": "Complete automaticamente testes, gere ensaios e resuma qualquer página em minutos."
+    },
+    "step": {
+        "message": "Passo"
+    },
+    "of": {
+        "message": "de"
+    },
+    "continue": {
+        "message": "Continuar"
+    },
+    "use_ai_translation_magic": {
+        "message": "Use a Magia de Tradução por IA [textgradientEl]"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments__right_on_the_page_": {
+        "message": "Escreva como um nativo, sem erros ou momentos constrangedores. Diretamente na página."
+    },
+    "get_your_ai_copilot_for_coding": {
+        "message": "Obtenha seu [textgradientEl]Copiloto de IA[\/textgradientEl] para Codificação"
+    },
+    "try_now": {
+        "message": "Experimentar Agora"
+    },
+    "did_this_tool_help_you_": {
+        "message": "Esta ferramenta ajudou você?"
+    },
+    "share_it_with_friends_who_work_with_images_": {
+        "message": "Compartilhe com amigos que trabalham com imagens."
+    },
+    "who_would_find_it_useful_": {
+        "message": "Quem acharia útil?"
+    },
+    "copy_link": {
+        "message": "Copiar link"
+    },
+    "facebook": {
+        "message": "Facebook"
+    },
+    "x": {
+        "message": "X"
+    },
+    "telegram": {
+        "message": "Telegram"
+    },
+    "i_found_a_super_useful_chrome_extension__": {
+        "message": "Encontrei uma extensão do Chrome super útil —"
+    },
+    "it_can_save_any_website_as_a_pdf__you_should_try_it_out___it_s_great_": {
+        "message": "Ela pode salvar qualquer site como PDF. Você deve experimentar — é ótimo!"
+    },
+    "hooray__greate_job_": {
+        "message": "Viva, ótimo trabalho!"
+    },
+    "please__can_you_rate_us_": {
+        "message": "Por favor, você pode nos avaliar?"
+    },
+    "deepseek_ai_has_been_installed_": {
+        "message": "DeepSeek AI foi instalado!"
+    },
+    "get_answers_10x_faster___no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Obtenha respostas 10x mais rápidas — sem Google, sem caos de abas, sem tempo perdido"
+    },
+    "open_deepseek_ai": {
+        "message": "Abrir DeepSeek AI"
+    },
+    "deepseek_app": {
+        "message": "Aplicativo DeepSeek"
+    },
+    "love_deepseek_": {
+        "message": "Ama o DeepSeek?"
+    },
+    "could_you_please_rate_our_extension_": {
+        "message": "Você poderia avaliar nossa extensão?"
+    },
+    "share_this_extension_with_your_friends": {
+        "message": "Compartilhe esta extensão com seus amigos"
+    },
+    "share_us_with_your_friends": {
+        "message": "Compartilhe-nos com seus amigos"
+    },
+    "and_unlock_all_ai_assistant_features": {
+        "message": "e desbloqueie todos os recursos do Assistente de IA"
+    },
+    "vk_com": {
+        "message": "Vk.com"
+    },
+    "reddit": {
+        "message": "Reddit"
+    },
+    "whatsapp": {
+        "message": "Whatsapp"
+    },
+    "weibo": {
+        "message": "Weibo"
+    },
+    "post_preview": {
+        "message": "Prévia do Post"
+    },
+    "hey__i_m_your_ai_assistant_": {
+        "message": "Ei, eu sou seu Assistente de IA!"
+    },
+    "what_can_i_help_with_": {
+        "message": "Com o que posso ajudar?"
+    },
+    "history": {
+        "message": "Histórico"
+    },
+    "settings": {
+        "message": "Configurações"
+    },
+    "subscription": {
+        "message": "Assinatura"
+    },
+    "add_personal_info_or_instructions_to_the_ai_assistant__this_will_help_improve_responses_for_you_": {
+        "message": "Adicione informações pessoais ou instruções ao Assistente de IA. Isso ajudará a melhorar as respostas para você."
+    },
+    "save": {
+        "message": "Salvar"
+    },
+    "and_you_ll_unlock_all_ai_assistant_features": {
+        "message": "E você desbloqueará todos os recursos do Assistente de IA"
+    },
+    "e_g___always_reply_in_french": {
+        "message": "ex., sempre responder em francês"
+    },
+    "_p_you_can_try_the_ai_assistant_to_play_a_role__e_g____p__ul__li_act_as_an_english_teacher_and_correct_my_mistakes__li__li_respond_like_a_professional_business_consultant__li___ul__p_or_input_your_data_for_the_ai_assistant_to_generate_responses__e_g____p__ul__li_23_y_o___58_kg__height_165_cm__female__li__li_programmer__php___laravel__js___react___li___ul_": {
+        "message": "<p>Você pode experimentar o Assistente de IA para desempenhar um papel, por exemplo:</p><ul><li>Atuar como um professor de inglês e corrigir meus erros</li><li>Responder como um consultor de negócios profissional</li></ul><p>Ou inserir seus dados para que o Assistente de IA gere respostas, por exemplo:</p><ul><li>23 anos, 58 kg, altura 165 cm, mulher</li><li>Programador. PHP – Laravel, JS – React.</li></ul>"
+    }
+}

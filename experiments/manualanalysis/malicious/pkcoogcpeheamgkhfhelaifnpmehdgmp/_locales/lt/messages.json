@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT for Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Plėtinys, sukuriantis nuorodą į oficialų ChatGPT Google Chrome naršyklėje"
+    },
+    "ext_command_description": {
+        "message": "Nuoroda atidaryti ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT ekologiniu režimu?"
+    },
+    "request_perms_popup_description": {
+        "message": "Padėkite palaikyti tvarias iniciatyvas tiesiog naršydami internete. Šis režimas netrukdys jūsų naršymui."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Sužinokite daugiau"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Leisti"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Atmesti"
+    },
+    "perms_granted_popup_title": {
+        "message": "Sveikiname!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Dabar galėsite naudotis visomis mūsų funkcijomis!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Tęsti"
+    },
+    "perms_denied_popup_title": {
+        "message": "Deja..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Gal kitą kartą."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Uždaryti šį pranešimą"
+    },
+    "welcome_title": {
+        "message": "ChatGPT for Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Plėtinys sėkmingai įdiegtas"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT for Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Plėtinys sėkmingai įdiegtas"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Atlikite šiuos veiksmus, kad prisegtumėte plėtinį, tada spustelėkite „Kitas žingsnis“"
+    },
+    "welcome_next_step": {
+        "message": "Kitas žingsnis"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "Norėdami naudotis visomis plėtinio funkcijomis, įjunkite ekologinį režimą."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Spustelėkite „Leisti“ norėdami tęsti"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Naudojimo sąlygos"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Privatumo politika"
+    },
+    "how_to_use_html_title": {
+        "message": "Kaip naudoti plėtinį"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Arba paspauskite Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Ekologinis režimas"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Sveikiname! Ši svetainė yra mūsų ekologinio režimo partnerė."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Ką tai reiškia?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Toliau naršydami, jūs padėsite 🌍 planetai, sodinsite medžius ir kompensuosite anglies dvideginio emisijas be jokių išlaidų."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Kiekvieną kartą lankydamiesi pas partnerį, trumpam atsivers naujas skirtukas, leidžiantis apskaičiuoti anglies dvideginio kompensaciją."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Beje, labai dėkojame už tai, kad kartu su mumis remiate šią nuostabią iniciatyvą! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Sužinokite daugiau"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Uždaryti"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Daugiau nerodyti"
+    }
+}

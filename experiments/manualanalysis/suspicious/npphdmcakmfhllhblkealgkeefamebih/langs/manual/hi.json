@@ -1,0 +1,67 @@
+{
+  "hello": {
+    "message": "नमस्ते!"
+  },
+  "ask_anything": {
+    "message": "कुछ भी पूछें"
+  },
+  "ask_about_this_page": {
+    "message": "इस पेज के बारे में पूछें"
+  },
+  "summarize_this_page": {
+    "message": "इस पेज का सारांश"
+  },
+  "add_photos_and_files": {
+    "message": "फ़ोटो और फ़ाइलें जोड़ें"
+  },
+  "create_image": {
+    "message": "छवि बनाएं"
+  },
+  "web_search": {
+    "message": "वेब खोज"
+  },
+  "teacher_mode": {
+    "message": "शिक्षक मोड"
+  },
+  "voice_input": {
+    "message": "आवाज़ इनपुट"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "तेज़ दैनिक सहायक"
+  },
+  "model_deep_reasoning": {
+    "message": "गहन तर्क मॉडल"
+  },
+  "model_quick_multimodal": {
+    "message": "तेज़ मल्टीमॉडल प्रतिक्रियाएं"
+  },
+  "model_advanced_google_ai": {
+    "message": "उन्नत Google AI"
+  },
+  "model_complex_problem_solving": {
+    "message": "जटिल समस्या समाधान"
+  },
+  "model_powerful_opensource": {
+    "message": "शक्तिशाली ओपन-सोर्स मॉडल"
+  },
+  "model_reasoning_specialist": {
+    "message": "तर्क विशेषज्ञ"
+  },
+  "model_balanced_reliable": {
+    "message": "संतुलित और विश्वसनीय"
+  },
+  "model_most_capable": {
+    "message": "सबसे सक्षम Claude"
+  },
+  "model_label_fastest": {
+    "message": "सबसे तेज़"
+  }
+}
+
+
+
+
+
+
+
+

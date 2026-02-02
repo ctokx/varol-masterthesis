@@ -1,0 +1,323 @@
+{
+    "you_need_to_approve_the_permissions_to_open_the_extension_in_the_side_panel_": {
+        "message": "Eklentiyi yan panelde açmak için izinleri onaylamanız gerekiyor."
+    },
+    "dropblock_head": {
+        "message": "dropBlock_head"
+    },
+    "open_the_extension_in_a_sidepanel": {
+        "message": "Eklentiyi yan panelde aç"
+    },
+    "link_was_copied_": {
+        "message": "Bağlantı kopyalandı!"
+    },
+    "drag_and_drop_your_files_here": {
+        "message": "Dosyalarınızı buraya sürükleyip bırakın"
+    },
+    "only_text_content_will_be_processed__up_to_5_files__each_up_to_5mb_": {
+        "message": "Sadece metin içeriği işlenecek. En fazla 5 dosya, her biri 5MB'ye kadar."
+    },
+    "you_can_upload_a_maximum_of_5_files_per_dialog__please_upload_files_in_smaller_batches_": {
+        "message": "Her diyalogda en fazla 5 dosya yükleyebilirsiniz. Lütfen dosyaları daha küçük partiler halinde yükleyin."
+    },
+    "invalid_file_format_or_file_size_exceeds_5_mb__please_select_smaller_files_": {
+        "message": "Geçersiz dosya formatı veya dosya boyutu 5 MB'yi aşıyor. Lütfen daha küçük dosyalar seçin."
+    },
+    "permissions_are_missing__please_grant_the_extension_access_to_web_pages_": {
+        "message": "İzinler eksik. Lütfen eklentinin web sayfalarına erişmesine izin verin."
+    },
+    "error__please_try_again_later_": {
+        "message": "Hata, lütfen daha sonra tekrar deneyin."
+    },
+    "summarization_does_not_work_on_system_pages__please_copy_the_page_content_into_the_chat_manually_": {
+        "message": "Özetleme sistem sayfalarında çalışmıyor. Lütfen sayfa içeriğini manuel olarak sohbete yapıştırın."
+    },
+    "delete": {
+        "message": "Sil"
+    },
+    "delete_chat_": {
+        "message": "Sohbeti silmek istiyor musunuz?"
+    },
+    "are_you_sure_you_want_to_delete_this_chat_": {
+        "message": "Bu sohbeti silmek istediğinizden emin misiniz?"
+    },
+    "cancel": {
+        "message": "İptal"
+    },
+    "the_chat_was_deleted": {
+        "message": "Sohbet silindi"
+    },
+    "`_text_`": {
+        "message": "`+text+`"
+    },
+    "`_lang___(text)_`": {
+        "message": "`+Lang.__(text)+`"
+    },
+    "${deletetext}": {
+        "message": "${deleteText}"
+    },
+    "`_lang___(_delete_chat__)_`": {
+        "message": "`+Lang.__('Delete chat?')+`"
+    },
+    "`_lang___(_are_you_sure_you_want_to_delete_this_chat__)_`": {
+        "message": "`+Lang.__('Are you sure you want to delete this chat?')+`"
+    },
+    "`_lang___(_cancel_)_`": {
+        "message": "`+Lang.__('Cancel')+`"
+    },
+    "`_lang___(_delete_)_`": {
+        "message": "`+Lang.__('Delete')+`"
+    },
+    "file": {
+        "message": "Dosya"
+    },
+    "thinking": {
+        "message": "Düşünüyor"
+    },
+    "copy_response": {
+        "message": "Yanıtı kopyala"
+    },
+    "good_response": {
+        "message": "İyi yanıt"
+    },
+    "bad_response": {
+        "message": "Kötü yanıt"
+    },
+    "uploading___": {
+        "message": "Yükleniyor..."
+    },
+    "`_lang___(_thinking_)_`": {
+        "message": "`+Lang.__('Thinking')+`"
+    },
+    "feedback": {
+        "message": "Geri bildirim"
+    },
+    "share": {
+        "message": "Paylaş"
+    },
+    "rate_us": {
+        "message": "Bize oy ver"
+    },
+    "💀": {
+        "message": "💀"
+    },
+    "😞": {
+        "message": "😞"
+    },
+    "😐": {
+        "message": "😐"
+    },
+    "🙂": {
+        "message": "🙂"
+    },
+    "😍": {
+        "message": "😍"
+    },
+    "grok_3_is_here_": {
+        "message": "Grok 3 burada."
+    },
+    "what_do_you_want_to_know_": {
+        "message": "Ne bilmek istiyorsun?"
+    },
+    "how_can_grok_help_you_": {
+        "message": "Grok size nasıl yardımcı olabilir?"
+    },
+    "attach_file": {
+        "message": "Dosya ekle"
+    },
+    "select_a_model": {
+        "message": "Bir model seç"
+    },
+    "sent_message": {
+        "message": "Gönderilen mesaj"
+    },
+    "hey_": {
+        "message": "Hey,"
+    },
+    "welcome_": {
+        "message": "hoşgeldiniz!"
+    },
+    "how_can_i_help_you_": {
+        "message": "Size nasıl yardımcı olabilirim?"
+    },
+    "message_deepseek": {
+        "message": "DeepSeek Mesajı"
+    },
+    "summarize_the_current_page": {
+        "message": "Mevcut sayfayı özetle"
+    },
+    "upload_a_file": {
+        "message": "Bir dosya yükle"
+    },
+    "start_a_chat": {
+        "message": "Bir sohbet başlat"
+    },
+    "set_personalization": {
+        "message": "Kişiselleştirmeyi ayarla"
+    },
+    "new_chat": {
+        "message": "Yeni sohbet"
+    },
+    "switch_to_light_mode": {
+        "message": "Açık moda geç"
+    },
+    "switch_to_dark_mode": {
+        "message": "Karanlık moda geç"
+    },
+    "open_the_extension_in_a_separate_tab": {
+        "message": "Eklentiyi ayrı bir sekmede aç"
+    },
+    "{{_item_}}": {
+        "message": "{{ öğe }}"
+    },
+    "start_now": {
+        "message": "Hemen başla"
+    },
+    "get_ideas": {
+        "message": "Fikirler al"
+    },
+    "ask": {
+        "message": "Sor"
+    },
+    "code": {
+        "message": "Kod"
+    },
+    "translate": {
+        "message": "Çevir"
+    },
+    "cooking_tips": {
+        "message": "Yemek tarifleri"
+    },
+    "how_deepseek_ai_helps_you_": {
+        "message": "DeepSeek AI size nasıl yardımcı olur?"
+    },
+    "✨_get_spot_on_answers_10x_faster": {
+        "message": "✨ Doğru cevapları 10 kat daha hızlı alın"
+    },
+    "no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Google yok, sekme karmaşası yok, zaman kaybı yok"
+    },
+    "📚_save_hours_on_studying": {
+        "message": "📚 Çalışmaya saatler kazanın"
+    },
+    "generate_essays__auto_complete_tests__and_summarize_any_page_in_minutes_": {
+        "message": "Makale oluştur, testleri otomatik tamamla ve herhangi bir sayfayı dakikalar içinde özetle."
+    },
+    "🌍_real_time_translation_on_the_page": {
+        "message": "🌍 Sayfada gerçek zamanlı çeviri"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments__right_on_the_page_": {
+        "message": "Ana dili gibi yaz, hata veya garip anlar olmadan. Doğru şekilde sayfada yaz."
+    },
+    "get_your_ai_copilot_for_coding": {
+        "message": "Kodu yazmak için AI yardımcı pilotunu al"
+    },
+    "try_now": {
+        "message": "Hemen dene"
+    },
+    "did_this_tool_help_you_": {
+        "message": "Bu araç size yardımcı oldu mu?"
+    },
+    "share_it_with_friends_who_work_with_images_": {
+        "message": "Görüntülerle çalışan arkadaşlarınızla paylaşın."
+    },
+    "who_would_find_it_useful_": {
+        "message": "Kim faydalı bulur?"
+    },
+    "copy_link": {
+        "message": "Bağlantıyı kopyala"
+    },
+    "facebook": {
+        "message": "Facebook"
+    },
+    "x": {
+        "message": "X"
+    },
+    "telegram": {
+        "message": "Telegram"
+    },
+    "i_found_a_super_useful_chrome_extension__": {
+        "message": "Çok kullanışlı bir Chrome uzantısı buldum —"
+    },
+    "it_can_save_any_website_as_a_pdf__you_should_try_it_out___it_s_great_": {
+        "message": "Herhangi bir web sitesini PDF olarak kaydedebilir. Denemelisiniz — harika!"
+    },
+    "hooray__greate_job_": {
+        "message": "Hooray, harika iş!"
+    },
+    "please__can_you_rate_us_": {
+        "message": "Lütfen, bize oy verir misiniz?"
+    },
+    "deepseek_ai_has_been_installed_": {
+        "message": "DeepSeek AI yüklendi!"
+    },
+    "get_answers_10x_faster___no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Cevapları 10 kat daha hızlı alın — Google yok, sekme karmaşası yok, zaman kaybı yok"
+    },
+    "open_deepseek_ai": {
+        "message": "DeepSeek AI'yi aç"
+    },
+    "deepseek_app": {
+        "message": "DeepSeek Uygulaması"
+    },
+    "love_deepseek_": {
+        "message": "DeepSeek'i seviyor musun?"
+    },
+    "could_you_please_rate_our_extension_": {
+        "message": "Lütfen, eklentimizi puanlar mısınız?"
+    },
+    "share_this_extension_with_your_friends": {
+        "message": "Bu eklentiyi arkadaşlarınızla paylaşın"
+    },
+    "share_us_with_your_friends": {
+        "message": "Bizimle arkadaşlarınızla paylaşın"
+    },
+    "and_unlock_all_ai_assistant_features": {
+        "message": "Ve tüm AI Asistan özelliklerini açın"
+    },
+    "vk_com": {
+        "message": "Vk.com"
+    },
+    "reddit": {
+        "message": "Reddit"
+    },
+    "whatsapp": {
+        "message": "Whatsapp"
+    },
+    "weibo": {
+        "message": "Weibo"
+    },
+    "post_preview": {
+        "message": "Gönderi Önizlemesi"
+    },
+    "hey__i_m_your_ai_assistant_": {
+        "message": "Hey, ben senin AI Asistanın!"
+    },
+    "what_can_i_help_with_": {
+        "message": "Size nasıl yardımcı olabilirim?"
+    },
+    "history": {
+        "message": "Tarihçe"
+    },
+    "settings": {
+        "message": "Ayarlar"
+    },
+    "subscription": {
+        "message": "Abonelik"
+    },
+    "add_personal_info_or_instructions_to_the_ai_assistant__this_will_help_improve_responses_for_you_": {
+        "message": "AI Asistanına kişisel bilgiler veya talimatlar ekleyin. Bu, yanıtların sizin için daha iyi olmasına yardımcı olur."
+    },
+    "save": {
+        "message": "Kaydet"
+    },
+    "and_you_ll_unlock_all_ai_assistant_features": {
+        "message": "Ve tüm AI Asistan özelliklerini açacaksınız"
+    },
+    "e_g___always_reply_in_french": {
+        "message": "Örneğin, her zaman Fransızca yanıt ver"
+    },
+    "_p_you_can_try_the_ai_assistant_to_play_a_role__e_g____p__ul__li_act_as_an_english_teacher_and_correct_my_mistakes__li__li_respond_like_a_professional_business_consultant__li___ul__p_or_input_your_data_for_the_ai_assistant_to_generate_responses__e_g____p__ul__li_23_y_o___58_kg__height_165_cm__female__li__li_programmer__php___laravel__js___react___li___ul_": {
+        "message": "<p>AI Asistanını rol yapması için deneyebilirsiniz, örn.:<\/p><ul><li>İngilizce öğretmeni gibi davranın ve hatalarımı düzeltin<\/li><li>Profesyonel bir iş danışmanı gibi cevap verin<\/li><\/ul><p>Veya yanıtlar üretmesi için verilerinizi girin, örn.:<\/p><ul><li>23 yaşında, 58 kg, 165 cm boyunda, kadın<\/li><li>Programcı. PHP – Laravel, JS – React.<\/li><\/ul>"
+    }
+}

@@ -1,0 +1,64 @@
+{
+  "extension_id": "ndmldohefgmnciihihioeeoiobchcmgi",
+  "verdict": "MALICIOUS",
+  "confidence": 0.95,
+  "reasoning": "The extension exhibits classic 'grayware' and malicious 'dual-purpose' behavior. While it provides the promised ChatGPT sidebar, it contains a significant hidden component for monetization through ad injection. This behavior is intentionally obscured by an 8-day execution delay (found in async.js), a technique commonly used to bypass automated security reviews in the Chrome Web Store. Once the 8-day window passes, the extension injects iframes from browsebetter.io, an entity associated with search hijacking and unauthorized ad delivery. The sidepanel.js file even updates the UI state to 'adon' (Ad On) once the frame loads successfully. This functionality is not disclosed in the manifest or description and serves the developer's financial interests at the cost of user privacy and browser performance.",
+  "recommendation": "BLOCK",
+  "key_concerns": [
+    "Undisclosed delayed ad-injection mechanism.",
+    "Use of time-delay (8 days) to evade initial security detection.",
+    "Interaction with browsebetter.io, a domain flagged for search/ad interference.",
+    "Global content script (all.js) running on every website to inject UI elements, which then facilitate the ad-laden side panel."
+  ],
+  "evidence": {
+    "exfiltration_chain": null,
+    "dual_purpose": {
+      "stated_purpose": "AI/ChatGPT assistant providing a sidebar for productivity.",
+      "hidden_functionality": "Delayed ad-injection platform. The extension waits exactly 8 days after installation to activate an ad-delivery iframe from browsebetter.io, a known adware-related domain.",
+      "code_evidence": "In async.js: 'if (ms > (insdate + 691200000)) { ... injifr(); }'. This calculates 8 days (691,200,000 ms) since installation. sidepanel.js defines injifr(): 'ifr.setAttribute(\"src\", \"https://s3.browsebetter.io/adfrnu2.html\");' which injects the ad frame into the side panel."
+    },
+    "credential_theft": null
+  },
+  "domains": {
+    "legitimate": [
+      "openai.com",
+      "chat.openai.com",
+      "sentry.io",
+      "app.posthog.com"
+    ],
+    "requires_investigation": [
+      "s3.browsebetter.io",
+      "s2.browsebetter.io"
+    ],
+    "informational_only": [
+      "bit.ly/3MRfWlN"
+    ]
+  },
+  "pattern_assessment": [
+    {
+      "pattern": "SET_INTERVAL",
+      "usage": "LEGITIMATE",
+      "justification": "Used within the PostHog analytics library (array.js) for buffer management and session tracking."
+    },
+    {
+      "pattern": "DYNAMIC_SCRIPT",
+      "usage": "SUSPICIOUS",
+      "justification": "In sidepanel.js, it dynamically loads async.js which contains the logic to trigger the ad-injection iframe after an 8-day delay."
+    },
+    {
+      "pattern": "KEYBOARD_LISTENER",
+      "usage": "LEGITIMATE",
+      "justification": "Used in content_script.js to handle 'Enter' key presses within the ChatGPT iframe to ensure messages are sent correctly."
+    },
+    {
+      "pattern": "INNERHTML",
+      "usage": "SUSPICIOUS",
+      "justification": "Used in async.js to inject a tracking iframe (ana.html) and in content_script.js to modify the ChatGPT UI styles."
+    }
+  ],
+  "token_usage": {
+    "prompt": 63453,
+    "candidates": 886,
+    "total": 66900
+  }
+}

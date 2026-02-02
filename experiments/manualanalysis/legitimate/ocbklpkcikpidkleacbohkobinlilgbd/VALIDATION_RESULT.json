@@ -1,0 +1,61 @@
+{
+  "extension_id": "ocbklpkcikpidkleacbohkobinlilgbd",
+  "extension_name": "ChatGPT for YouTube",
+  "version": "2.1.0",
+  "user_count": 100000,
+  "dataset": "chatgpt",
+  "verdict": "SAFE",
+  "confidence": 1.0,
+  "recommendation": "ALLOW",
+  "reasoning": "The extension functions exactly as described. The 'suspicious' patterns are standard implementation details for a YouTube extension. The dynamic script injection is required to read YouTube's video metadata global variable (`ytInitialPlayerResponse`) from the main world context. The network requests send this metadata and transcripts to the developer's backend for AI summarization. There is no evidence of data exfiltration unrelated to the core functionality, no hidden advertising or affiliate code, and no credential theft mechanisms.",
+  "full_validation": {
+    "extension_id": "ocbklpkcikpidkleacbohkobinlilgbd",
+    "verdict": "SAFE",
+    "confidence": 1.0,
+    "reasoning": "The extension functions exactly as described. The 'suspicious' patterns are standard implementation details for a YouTube extension. The dynamic script injection is required to read YouTube's video metadata global variable (`ytInitialPlayerResponse`) from the main world context. The network requests send this metadata and transcripts to the developer's backend for AI summarization. There is no evidence of data exfiltration unrelated to the core functionality, no hidden advertising or affiliate code, and no credential theft mechanisms.",
+    "recommendation": "ALLOW",
+    "key_concerns": [],
+    "evidence": {
+      "exfiltration_chain": null,
+      "dual_purpose": null,
+      "credential_theft": null
+    },
+    "domains": {
+      "legitimate": [
+        "https://chatgpt4youtube.com",
+        "https://api.wenanxia.com",
+        "https://www.youtube.com",
+        "http://www.w3.org"
+      ],
+      "requires_investigation": [],
+      "informational_only": []
+    },
+    "pattern_assessment": [
+      {
+        "pattern": "DYNAMIC_SCRIPT",
+        "usage": "LEGITIMATE",
+        "justification": "The extension creates and injects a script (`ytInitialPlayerResponse.js`) into the page DOM. This is a standard and necessary technique for YouTube extensions to access the `window.ytInitialPlayerResponse` global variable, which contains video metadata unavailable to content scripts running in the isolated world."
+      },
+      {
+        "pattern": "NETWORK/FETCH",
+        "usage": "LEGITIMATE",
+        "justification": "Network calls are directed to the extension's own backend (`chatgpt4youtube.com` and `api.wenanxia.com`) to send video transcripts for summarization and manage user authentication/preferences. This aligns exactly with the stated purpose."
+      },
+      {
+        "pattern": "MUTATION_OBSERVER",
+        "usage": "LEGITIMATE",
+        "justification": "Used to detect when the YouTube DOM (specifically `#secondary.style-scope.ytd-watch-flexy`) has loaded so the extension can inject its summary UI panel. Also used within the UI library (MUI) for component resizing."
+      },
+      {
+        "pattern": "KEYBOARD_LISTENER",
+        "usage": "LEGITIMATE",
+        "justification": "Found within the Material UI (MUI) library code in `options.html-703166c3.js`. Used for accessibility navigation (e.g., arrow keys in menus) and form interactions, not keylogging."
+      }
+    ],
+    "token_usage": {
+      "prompt": 94302,
+      "candidates": 644,
+      "total": 96864
+    }
+  }
+}

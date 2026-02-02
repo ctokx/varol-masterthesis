@@ -1,0 +1,65 @@
+{
+  "convert_to": {
+    "message": "Định dạng"
+  },
+  "rate_us": {
+    "message": "Đánh giá"
+  },
+  "hello": {
+    "message": "Xin chào!"
+  },
+  "ask_anything": {
+    "message": "Hỏi bất cứ điều gì"
+  },
+  "ask_about_this_page": {
+    "message": "Hỏi về trang này"
+  },
+  "summarize_this_page": {
+    "message": "Tóm tắt trang này"
+  },
+  "add_photos_and_files": {
+    "message": "Thêm ảnh và tệp"
+  },
+  "create_image": {
+    "message": "Tạo hình ảnh"
+  },
+  "web_search": {
+    "message": "Tìm kiếm web"
+  },
+  "teacher_mode": {
+    "message": "Chế độ giáo viên"
+  },
+  "voice_input": {
+    "message": "Nhập giọng nói"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "Trợ lý nhanh hàng ngày"
+  },
+  "model_deep_reasoning": {
+    "message": "Mô hình suy luận sâu"
+  },
+  "model_quick_multimodal": {
+    "message": "Phản hồi đa phương thức nhanh"
+  },
+  "model_advanced_google_ai": {
+    "message": "AI tiên tiến của Google"
+  },
+  "model_complex_problem_solving": {
+    "message": "Giải quyết vấn đề phức tạp"
+  },
+  "model_powerful_opensource": {
+    "message": "Mô hình mã nguồn mở mạnh mẽ"
+  },
+  "model_reasoning_specialist": {
+    "message": "Chuyên gia suy luận"
+  },
+  "model_balanced_reliable": {
+    "message": "Cân bằng và đáng tin cậy"
+  },
+  "model_most_capable": {
+    "message": "Claude có khả năng nhất"
+  },
+  "model_label_fastest": {
+    "message": "Nhanh nhất"
+  }
+}

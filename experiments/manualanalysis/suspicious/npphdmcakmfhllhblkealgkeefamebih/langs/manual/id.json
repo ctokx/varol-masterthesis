@@ -1,0 +1,62 @@
+{
+  "rate_us": {
+    "message": "Nilai Kami"
+  },
+  "hello": {
+    "message": "Halo!"
+  },
+  "ask_anything": {
+    "message": "Tanyakan apa saja"
+  },
+  "ask_about_this_page": {
+    "message": "Tanyakan tentang halaman ini"
+  },
+  "summarize_this_page": {
+    "message": "Rangkum halaman ini"
+  },
+  "add_photos_and_files": {
+    "message": "Tambah foto dan file"
+  },
+  "create_image": {
+    "message": "Buat gambar"
+  },
+  "web_search": {
+    "message": "Pencarian web"
+  },
+  "teacher_mode": {
+    "message": "Mode guru"
+  },
+  "voice_input": {
+    "message": "Input suara"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "Asisten cepat sehari-hari"
+  },
+  "model_deep_reasoning": {
+    "message": "Model penalaran mendalam"
+  },
+  "model_quick_multimodal": {
+    "message": "Respons multimodal cepat"
+  },
+  "model_advanced_google_ai": {
+    "message": "AI canggih dari Google"
+  },
+  "model_complex_problem_solving": {
+    "message": "Pemecahan masalah kompleks"
+  },
+  "model_powerful_opensource": {
+    "message": "Model sumber terbuka yang kuat"
+  },
+  "model_reasoning_specialist": {
+    "message": "Spesialis penalaran"
+  },
+  "model_balanced_reliable": {
+    "message": "Seimbang dan andal"
+  },
+  "model_most_capable": {
+    "message": "Claude paling mampu"
+  },
+  "model_label_fastest": {
+    "message": "Tercepat"
+  }
+}

@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT för Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Tillägg för att skapa en genväg till officiella ChatGPT i webbläsaren Google Chrome"
+    },
+    "ext_command_description": {
+        "message": "Genväg för att öppna ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT i Eco-läge?"
+    },
+    "request_perms_popup_description": {
+        "message": "Hjälp till med hållbara ändamål bara genom att surfa på webben. Detta läge kommer inte att avbryta din surfning."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Läs mer"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Tillåt"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Neka"
+    },
+    "perms_granted_popup_title": {
+        "message": "Grattis!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Nu kommer du att dra nytta av alla våra funktioner!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Fortsätt"
+    },
+    "perms_denied_popup_title": {
+        "message": "Det var synd..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Kanske nästa gång."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Stäng detta meddelande"
+    },
+    "welcome_title": {
+        "message": "ChatGPT för Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Tillägget installerades framgångsrikt"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT för Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Tillägget installerades framgångsrikt"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Följ stegen nedan för att fästa tillägget och klicka sedan på Nästa steg"
+    },
+    "welcome_next_step": {
+        "message": "Nästa steg"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "För att få tillgång till alla tilläggets funktioner, aktivera Eco-läge."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Klicka på Tillåt för att fortsätta"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Användarvillkor"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Integritetspolicy"
+    },
+    "how_to_use_html_title": {
+        "message": "Hur man använder tillägget"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Eller tryck på Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Eco-läge"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Grattis! Denna webbplats är en partner till vårt Eco-läge."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Vad betyder detta?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Genom att fortsätta att surfa hjälper du 🌍 planeten, planterar träd och kompenserar koldioxidutsläpp utan kostnad."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Vid varje besök hos en partner öppnas en ny flik kort för att möjliggöra beräkningen av koldioxidkompensation."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Förresten, stort tack för att du stöttar denna otroliga sak med oss! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Läs mer"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Stäng"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Visa inte igen"
+    }
+}

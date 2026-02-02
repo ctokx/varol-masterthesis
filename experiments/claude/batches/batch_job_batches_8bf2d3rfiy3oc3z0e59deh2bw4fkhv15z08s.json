@@ -1,0 +1,18 @@
+{
+  "job_name": "batches/8bf2d3rfiy3oc3z0e59deh2bw4fkhv15z08s",
+  "dataset": "candidates",
+  "input_file": "experiments\\claude\\candidates.json",
+  "extension_ids": [
+    "dnehihimnemcbplmpjfcmbpgllfnhdam",
+    "hpigokfijemjehgbboonfannjnfaokpl",
+    "kcepcpjejkfgmmfgeaemdnlepbkcmmif",
+    "kclbocgneecjbmllchofndpkmcfeaile",
+    "mpckgomcnfaogmjamhdkaajbmfokmhli"
+  ],
+  "extension_count": 5,
+  "batch_part": 2,
+  "total_batches": 12,
+  "created_at": "2026-01-31T03:48:09.454171",
+  "log_file": "C:\\Users\\varol\\cws_clone_detector\\output\\validation_logs\\candidates_validation_log_20260131_034805.json",
+  "model": "models/gemini-3-flash-preview"
+}

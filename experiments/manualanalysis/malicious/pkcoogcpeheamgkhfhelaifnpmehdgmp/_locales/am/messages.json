@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "Google Chrome™ ለ ChatGPT"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "በ Google Chrome አሳሽ ላይ ለ ChatGPT እርምጃ አሳድሮ ማፍጠር የሚያስችል ቅንብር"
+    },
+    "ext_command_description": {
+        "message": "ChatGPT እንዲከፈት የሚያስችል እርምጃ"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT በኢኮ ሞድ ነው?"
+    },
+    "request_perms_popup_description": {
+        "message": "በመስመር ላይ በማሰሳት ብቻ ተጠቃሚ ለሆነ ምክንያቶች ይህን እንደምትረዳው። እንደዚህ ሞድ ወደቦታ ማሳደራት አይከለክልም።"
+    },
+    "request_perms_popup_learn_more": {
+        "message": "ተጨማሪ ተረድተው"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "ፍቀድ"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "ክድ"
+    },
+    "perms_granted_popup_title": {
+        "message": "እንኳን ደስ አለዎት!"
+    },
+    "perms_granted_popup_description": {
+        "message": "እንዲሁም አገልጋዮቻችንን በመጠቀም እንደምትችሉ ትሆናላችሁ!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "ቀጥል"
+    },
+    "perms_denied_popup_title": {
+        "message": "እናመነኛለን..."
+    },
+    "perms_denied_popup_description": {
+        "message": "ምናልባት በሚቀጥለው ጊዜ።"
+    },
+    "perms_denied_popup_close_button": {
+        "message": "ይህን መልዕክት ዝጋ"
+    },
+    "welcome_title": {
+        "message": "ለ Chrome የ ChatGPT"
+    },
+    "welcome_sub_title": {
+        "message": "ቅንብሩ በተሳካ ሁኔታ ተጠርጎል"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ለ Chrome የ ChatGPT"
+    },
+    "welcome_sub_title_granted": {
+        "message": "ቅንብሩ በተሳካ ሁኔታ ተጠርጎል"
+    },
+    "welcome_tip_title_granted": {
+        "message": "ቅንብሩን ለማስቀመጥ ከታች ያሉትን እርምጃዎች ይከተሉ ከዚያም ቀጣይን እርምጃ ጠቅ ያድርጉ"
+    },
+    "welcome_next_step": {
+        "message": "ቀጣይ እርምጃ"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "የቅንብሩን ሁሉንም ማስተማር ለማግኘት ኢኮ ሞድ ያጠናቀቁ።"
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "ቀጥሎ ለመቀጠል እባክህ ፍቀድ"
+    },
+    "html_footer_terms_of_use": {
+        "message": "የአጠቃቀም ውሎች"
+    },
+    "html_footer_privacy_policy": {
+        "message": "የግላዊነት ፖሊሲ"
+    },
+    "how_to_use_html_title": {
+        "message": "ቅንብሩን እንዴት ማጠቀም እንደሚችሉ"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "ወይም የ Ctrl + B ይጫኑ"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 ኢኮ ሞድ"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "እንኳን ደስ አላችሁ! ይህ ጣቢያ የኢኮ ሞድ አጋር ነው።"
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "ይህ ምን ማለት ነው?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "በመቀጠል በመስመር ላይ በማሰሳት ብቻ እንደምትረዱ እንደዚህ ሞድ ወደቦታ ማሳደራት አይከለክልም።"
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "ከአንድ ባለጋር ጋር በተደጋጋሚ እየተጎላለፈ ሳይገላገል አዲስ ባለጋር እንዲረዳ ትችላላችሁ።"
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "በስተቀር ስለዚህ ሚስተኛችንን እናመሰግናለን! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "ተጨማሪ ተረድተው"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "ዝጋ"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "እንደገና አታሳይ"
+    }
+}

@@ -1,0 +1,76 @@
+{
+  "extension_id": "nflpppciongpooakaahfdjgioideblkd",
+  "extension_name": "AI Search Fan-out Tracker",
+  "version": "1.2.0",
+  "user_count": 945,
+  "dataset": "chatgpt",
+  "verdict": "SUSPICIOUS",
+  "confidence": 0.85,
+  "recommendation": "REVIEW",
+  "reasoning": "The extension is classified as SUSPICIOUS because it employs highly invasive techniques to collect data beyond its core stated purpose. While it claims to track 'fan-out' queries (AI-generated searches), it also extracts and exfiltrates the user's original prompts and full conversation metadata to an unverified Vercel backend. It uses session-token hijacking to scrape conversation data that may not be visible in the immediate DOM. Although it provides a functional UI for the user to view this data (lowering the likelihood of pure malware), the lack of transparency regarding the exfiltration of sensitive user prompts to a third-party server poses a significant privacy and security risk.",
+  "full_validation": {
+    "extension_id": "nflpppciongpooakaahfdjgioideblkd",
+    "verdict": "SUSPICIOUS",
+    "confidence": 0.85,
+    "reasoning": "The extension is classified as SUSPICIOUS because it employs highly invasive techniques to collect data beyond its core stated purpose. While it claims to track 'fan-out' queries (AI-generated searches), it also extracts and exfiltrates the user's original prompts and full conversation metadata to an unverified Vercel backend. It uses session-token hijacking to scrape conversation data that may not be visible in the immediate DOM. Although it provides a functional UI for the user to view this data (lowering the likelihood of pure malware), the lack of transparency regarding the exfiltration of sensitive user prompts to a third-party server poses a significant privacy and security risk.",
+    "recommendation": "REVIEW",
+    "key_concerns": [
+      "Exfiltration of original user chat prompts to an external server.",
+      "Use of session tokens to scrape conversation history.",
+      "Network interception (hijacking) of browser-level fetch and XHR calls.",
+      "Collection of conversation IDs which can be used to map user identities if the server is compromised."
+    ],
+    "evidence": {
+      "exfiltration_chain": {
+        "data_collected": "User chat prompts, AI-generated internal search queries (fan-outs), conversation IDs, and model metadata.",
+        "processing_method": "Intercepts internal API responses via fetch/XHR hijacking (Gemini) and uses active session tokens to scrape conversation endpoints (ChatGPT).",
+        "destination_domain": "https://server-theta-nine-63.vercel.app",
+        "code_evidence": "The function 'sendQueriesToServer' in content.js transmits an object containing 'queries', 'conversationId', and 'userPrompt' to the Vercel endpoint using a POST request."
+      },
+      "dual_purpose": {
+        "stated_purpose": "Tracks and stores search queries (fan-outs) from ChatGPT and Gemini for analysis and optimization.",
+        "hidden_functionality": "In addition to tracking AI-generated queries, the extension aggressively collects and exfiltrates the user's original prompts and conversation IDs to a third-party server, which is not explicitly disclosed as primary data collection in the manifest description.",
+        "code_evidence": "In content.js, 'extractChatGPTQueries' explicitly captures 'messageContext.userPrompt' from the chat history and 'extractGeminiUserPrompt' scrapes the DOM for user input fields to include in the exfiltration payload."
+      },
+      "credential_theft": {
+        "capture_mechanism": "Uses the user's active ChatGPT session to fetch sensitive conversation data.",
+        "transmission_target": "https://server-theta-nine-63.vercel.app/api/search-queries",
+        "code_evidence": "Line 59 in content.js: 'const sess = await fetch(\"/api/auth/session\").then(r => r.json());' followed by using that session's accessToken to scrape '/backend-api/conversation/'."
+      }
+    },
+    "domains": {
+      "legitimate": [
+        "chatgpt.com",
+        "gemini.google.com"
+      ],
+      "requires_investigation": [
+        "https://server-theta-nine-63.vercel.app"
+      ],
+      "informational_only": [
+        "google.com/search"
+      ]
+    },
+    "pattern_assessment": [
+      {
+        "pattern": "FETCH_HIJACK",
+        "usage": "SUSPICIOUS",
+        "justification": "Hijacks global fetch and XMLHttpRequest to intercept Gemini's internal 'batchexecute' calls to extract search data."
+      },
+      {
+        "pattern": "CREDENTIAL_ACCESS",
+        "usage": "SUSPICIOUS",
+        "justification": "Accesses the ChatGPT internal session token to perform authenticated scraping of conversation history."
+      },
+      {
+        "pattern": "MUTATION_OBSERVER",
+        "usage": "LEGITIMATE",
+        "justification": "Used to detect when the AI model generates new content on the page to trigger extraction."
+      }
+    ],
+    "token_usage": {
+      "prompt": 19089,
+      "candidates": 963,
+      "total": 23171
+    }
+  }
+}

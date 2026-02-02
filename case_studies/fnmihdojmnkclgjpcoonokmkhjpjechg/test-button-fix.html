@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test More Models Button Fix</title>
+    <link rel="stylesheet" href="pricingPopup.css">
+    <style>
+        body {
+            background: #1a1a2e;
+            color: white;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            padding: 50px;
+        }
+        .test-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            padding: 30px;
+            border-radius: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Test: + 10 More Models Button Fix</h1>
+        <p>This test simulates the popup structure to verify the button is clickable:</p>
+        
+        <div class="aitopia-models-showcase">
+            <h3>🤖 Access Premium AI Models:</h3>
+            <div class="aitopia-models-grid">
+                <div class="aitopia-model-item gpt aitopia-model-featured">
+                    <div class="aitopia-model-icon">🌟</div>
+                    <span>GPT-5 <span class="aitopia-new-badge">NEW</span></span>
+                </div>
+                <div class="aitopia-model-item claude">
+                    <div class="aitopia-model-icon">⚫</div>
+                    <span>Claude 4 Sonnet</span>
+                </div>
+                <div class="aitopia-model-item gemini">
+                    <div class="aitopia-model-icon">🔷</div>
+                    <span>Gemini 2.5 Flash</span>
+                </div>
+            </div>
+            <div class="aitopia-more-models">
+                <button class="aitopia-more-btn" id="aitopia-more-models-btn">
+                    + 10 More Models
+                </button>
+            </div>
+        </div>
+        
+        <div id="test-result" style="margin-top: 20px; padding: 15px; background: rgba(0,0,0,0.3); border-radius: 8px;">
+            <h4>Test Results:</h4>
+            <p id="click-status">Button not clicked yet</p>
+            <p id="css-status">Checking CSS properties...</p>
+        </div>
+    </div>
+
+    <script>
+        // Test the button functionality
+        const button = document.getElementById('aitopia-more-models-btn');
+        const clickStatus = document.getElementById('click-status');
+        const cssStatus = document.getElementById('css-status');
+        
+        // Check CSS properties
+        const computedStyle = window.getComputedStyle(button);
+        const pointerEvents = computedStyle.getPropertyValue('pointer-events');
+        const cursor = computedStyle.getPropertyValue('cursor');
+        const zIndex = computedStyle.getPropertyValue('z-index');
+        
+        cssStatus.innerHTML = `
+            pointer-events: ${pointerEvents}<br>
+            cursor: ${cursor}<br>
+            z-index: ${zIndex}<br>
+            <strong>${pointerEvents === 'auto' && cursor === 'pointer' ? '✅ CSS OK' : '❌ CSS Issues'}</strong>
+        `;
+        
+        // Test click functionality
+        let clickCount = 0;
+        button.addEventListener('click', function(e) {
+            clickCount++;
+            clickStatus.innerHTML = `✅ Button clicked ${clickCount} time(s) - WORKING!`;
+            clickStatus.style.color = '#00ff88';
+            console.log('More Models button clicked successfully!');
+        });
+        
+        // Ensure button properties are set (mimic the fix)
+        button.style.pointerEvents = 'auto';
+        button.style.position = 'relative';
+        button.style.zIndex = '2147483647';
+        button.style.cursor = 'pointer';
+    </script>
+</body>
+</html>

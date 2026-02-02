@@ -1,0 +1,79 @@
+{
+  "extension_id": "aajjgdpofhhcjmjoombjdfepplndhgcp",
+  "extension_name": "Gemini™ for Chrome",
+  "version": "Unknown",
+  "user_count": 100000,
+  "dataset": "gemini",
+  "verdict": "MALICIOUS",
+  "confidence": 0.95,
+  "recommendation": "BLOCK",
+  "reasoning": "The extension is a classic search hijacker disguised as a legitimate AI tool (Gemini/ChatGPT companion). While it does provide the AI interface in a side panel, it also injects a floating icon and a custom search bar onto every website the user visits (via all.js). User input in this injected search bar is redirected to 'srch.ing', a third-party domain used to monetize traffic. Furthermore, welcome.js silently loads a tracking pixel/iframe from 'eurekaa.app'. The use of Gemini branding is a lure to get users to install a tool that monitors browsing and hijacks search intent.",
+  "full_validation": {
+    "extension_id": "aajjgdpofhhcjmjoombjdfepplndhgcp",
+    "verdict": "MALICIOUS",
+    "confidence": 0.95,
+    "reasoning": "The extension is a classic search hijacker disguised as a legitimate AI tool (Gemini/ChatGPT companion). While it does provide the AI interface in a side panel, it also injects a floating icon and a custom search bar onto every website the user visits (via all.js). User input in this injected search bar is redirected to 'srch.ing', a third-party domain used to monetize traffic. Furthermore, welcome.js silently loads a tracking pixel/iframe from 'eurekaa.app'. The use of Gemini branding is a lure to get users to install a tool that monitors browsing and hijacks search intent.",
+    "recommendation": "BLOCK",
+    "key_concerns": [
+      "Unsolicited injection of UI elements on all websites (*://*/*).",
+      "Redirection of user search queries to a third-party search aggregator (srch.ing).",
+      "Hidden tracking via eurekaa.app.",
+      "Dual-purpose behavior where search hijacking is not disclosed in the description."
+    ],
+    "evidence": {
+      "exfiltration_chain": {
+        "data_collected": "User search queries",
+        "processing_method": "Captured via an injected overlay search bar on every page.",
+        "destination_domain": "srch.ing",
+        "code_evidence": "In iframe.js: function googlevisit() { var valo = \"https://srch.ing/?q=\" + encodeURIComponent(lastvalue); ... chrome.runtime.sendMessage({ type: 'bing_in_nt', u_r_l: valo }, ...); }"
+      },
+      "dual_purpose": {
+        "stated_purpose": "AI companion for Gemini Chatbot",
+        "hidden_functionality": "Search hijacking and UI injection on every website visited.",
+        "code_evidence": "In all.js: if(document.getElementById(\"eurekaa_chatgpt_bard_sidebar\") === null ...) { ... moveahead(img); } which injects a floating icon onto every page (matches: [\"*://*/*\"]). This triggers a search overlay that redirects user searches to srch.ing."
+      },
+      "credential_theft": {
+        "capture_mechanism": null,
+        "transmission_target": null,
+        "code_evidence": null
+      }
+    },
+    "domains": {
+      "legitimate": [
+        "gemini.google.com",
+        "chat.openai.com",
+        "suggestqueries.google.com",
+        "chrome.google.com"
+      ],
+      "requires_investigation": [
+        "srch.ing",
+        "eurekaa.app"
+      ],
+      "informational_only": [
+        "clients2.google.com"
+      ]
+    },
+    "pattern_assessment": [
+      {
+        "pattern": "NETWORK_ENDPOINT → https://srch.ing?q=",
+        "usage": "MALICIOUS",
+        "justification": "This domain is a known search redirector. The extension injects a custom search bar into every page and redirects the user's queries to this domain, which is a hallmark of search-hijacking malware."
+      },
+      {
+        "pattern": "DOM → INNERHTML",
+        "usage": "SUSPICIOUS",
+        "justification": "Used to dynamically build and inject the 'Eurekaa' search overlay into the host page's DOM, bypassing standard extension UI boundaries like the side panel or popup."
+      },
+      {
+        "pattern": "KEYBOARD_LISTENER",
+        "usage": "LEGITIMATE",
+        "justification": "While potentially a keylogger, in this context it is used for navigation and 'Enter' key detection within the extension's own search/prompt bar UI."
+      }
+    ],
+    "token_usage": {
+      "prompt": 33946,
+      "candidates": 909,
+      "total": 36248
+    }
+  }
+}

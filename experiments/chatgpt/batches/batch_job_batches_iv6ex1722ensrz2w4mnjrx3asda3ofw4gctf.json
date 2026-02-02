@@ -1,0 +1,14 @@
+{
+  "job_name": "batches/iv6ex1722ensrz2w4mnjrx3asda3ofw4gctf",
+  "dataset": "candidates",
+  "input_file": "experiments\\chatgpt\\candidates.json",
+  "extension_ids": [
+    "becfinhbfclcgokjlobojlnldbfillpf"
+  ],
+  "extension_count": 1,
+  "batch_part": 25,
+  "total_batches": 25,
+  "created_at": "2026-01-30T19:11:02.884572",
+  "log_file": "C:\\Users\\varol\\cws_clone_detector\\output\\validation_logs\\candidates_validation_log_20260130_191016.json",
+  "model": "models/gemini-3-pro-preview"
+}

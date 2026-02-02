@@ -1,0 +1,276 @@
+{
+  "job_name": "batches/cgkrm7pqykexeplcbl5vh64qagfkdqekmwpb",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T10:38:59.295611",
+  "validations": [
+    {
+      "extension_id": "mkdbpdaffmcbjmeeoieafacnbllimlfe",
+      "verdict": "SAFE",
+      "confidence": 0.9,
+      "reasoning": "The extension is assessed as safe based on several key factors. First, its manifest requests the 'activeTab' permission, which is the most minimal and secure permission for this type of functionality. It ensures the extension can only execute on the current page after explicit user interaction (clicking the extension icon). Second, the static analysis findings are consistent with its stated purpose; for instance, the use of Blob URLs directly supports the 'Save as Markdown & Image' feature. The only identified network endpoint is a benign W3C schema URL. While there are generic XHR calls, the lack of any discovered suspicious domains and the restrictive permissions model suggest these are for legitimate purposes. The content script's match pattern of '<all_urls>' is overly broad, but its potential for harm is significantly mitigated by the 'activeTab' permission.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "domain_assessment": {},
+      "pattern_severity": {},
+      "token_usage": {
+        "prompt": 61252,
+        "candidates": 1312,
+        "total": 65894
+      }
+    },
+    {
+      "extension_id": "gciegekcjpkmepcogapddinippmjiehd",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is deemed safe. All static analysis findings correspond to benign and expected functionality. The keyboard listeners are for the primary feature, a spotlight search activated by a user-configurable shortcut. Network endpoints are limited to standard web schemas, React error reporting, and promotional links to the developer's website and the Chrome Web Store. The code that accesses tab information does so in a safe, non-permissioned way to get the current tab's URL. The extension's behavior is fully aligned with its stated purpose of searching conversations within ChatGPT, and there is no evidence of data exfiltration or hidden malicious features.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "domain_assessment": {},
+      "pattern_severity": {},
+      "token_usage": {
+        "prompt": 126820,
+        "candidates": 1159,
+        "total": 131622
+      }
+    },
+    {
+      "extension_id": "bccnghnbganmehniefnhcmnmphoflhem",
+      "verdict": "SUSPICIOUS",
+      "confidence": 0.7,
+      "reasoning": "The extension's core functionality aligns with its description: it scrapes chat history from chat.openai.com and saves it to local storage. The use of DOM manipulation, Mutation Observers, and chrome.storage is consistent with this purpose. No data exfiltration was observed. However, the extension is flagged as 'Suspicious' for two primary reasons. First, it uses the domain 'chatopenai.pro' for its homepage and opens this page on install. This domain name is deceptive and misleadingly suggests an official affiliation with OpenAI, creating a potential phishing risk and demonstrating poor security practices by the author. Second, a link to another unexplained domain, 'lwebapp.com', was found in the popup script. While the functionality appears safe, the deceptive branding makes the extension untrustworthy.",
+      "recommendation": "REVIEW",
+      "key_concerns": [
+        "Uses a deceptive domain name 'chatopenai.pro' which impersonates the official OpenAI service, posing a trust and potential phishing risk.",
+        "Contains a link to an unknown and unexplained domain 'lwebapp.com' in its popup."
+      ],
+      "domain_assessment": {},
+      "pattern_severity": {},
+      "token_usage": {
+        "prompt": 111254,
+        "candidates": 968,
+        "total": 115893
+      }
+    },
+    {
+      "extension_id": "pldfgenlpkgogacjjiapbkiecedbcojh",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension operates as a client for the official ChatGPT website. All network requests identified by the static analysis are directed to legitimate and expected `chat.openai.com` endpoints for authentication and conversation. The broad permissions (`host_permissions` on `https://*/*` and `content_scripts` on all pages) are necessary for its core feature of being an assistant on any webpage and do not appear to be abused. The code analysis confirms that the extension's behavior aligns with its stated purpose. There is no evidence of data exfiltration, tracking, or other malicious activities.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "domain_assessment": {},
+      "pattern_severity": {},
+      "token_usage": {
+        "prompt": 59177,
+        "candidates": 976,
+        "total": 62496
+      }
+    },
+    {
+      "extension_id": "lnkmillkgdmehjkifhmbdjmihlocpijc",
+      "verdict": "SUSPICIOUS",
+      "confidence": 0.7,
+      "reasoning": "The extension's code aligns with its stated purpose of bookmarking ChatGPT conversations. The use of `chrome.storage` in `background.js` and the content script `inject_test.js` running on OpenAI domains are consistent with this functionality. The network endpoints identified are either for standard libraries (React, W3C) or for developer support/donation links, which are considered benign. The primary concern arises from the `manifest.json`, which requests the `<all_urls>` host permission. This permission is overly broad and is not justified by the visible code, as the content script is narrowly scoped to OpenAI's domain and the background script only performs local storage operations. While this could be developer oversight, requesting unnecessary, powerful permissions is a significant security risk that makes the extension suspicious.",
+      "recommendation": "REVIEW",
+      "key_concerns": [
+        "Overly broad host_permissions ('<all_urls>') that are not justified by the extension's visible functionality."
+      ],
+      "domain_assessment": {},
+      "pattern_severity": {},
+      "token_usage": {
+        "prompt": 101888,
+        "candidates": 980,
+        "total": 105079
+      }
+    },
+    {
+      "extension_id": "nklidonmgcienceaijlpnffbgeiecbcd",
+      "verdict": "MALICIOUS",
+      "confidence": 1.0,
+      "reasoning": "The extension is malicious because it employs a time-bomb mechanism to inject undisclosed advertisements. The code in 'async.js' checks the extension's installation date from local storage. After an 8-day period has elapsed, it calls a function ('injifr' in 'sidepanel.js') that creates an iframe loading content from 's3.browsebetter.io/adfrnu2.html'. The function names ('injifr'), iframe ID ('gadsfr'), and a related DOM class change ('adon') confirm this is for advertising. This behavior is intentionally delayed to evade detection during the Chrome Web Store review process. Furthermore, on installation, the extension loads a 1x1 tracking pixel from a related domain, 's2.browsebetter.io', to track new users. This ad injection and tracking functionality is unrelated to its stated purpose as a ChatGPT assistant and is not disclosed to the user.",
+      "recommendation": "BLOCK",
+      "key_concerns": [
+        "Time-delayed injection of undisclosed third-party advertisements.",
+        "Loads a 1x1 tracking pixel from an ad network on installation.",
+        "Use of an undisclosed ad/tracking domain (browsebetter.io)."
+      ],
+      "domain_assessment": {},
+      "pattern_severity": {},
+      "token_usage": {
+        "prompt": 62453,
+        "candidates": 1190,
+        "total": 67637
+      }
+    },
+    {
+      "extension_id": "ddihmlagdkjhjolfdjcehlphmhkpmabb",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose of providing a sound notification when a ChatGPT generation is finished. The content script (`chunk-048d5bf0.js`) is narrowly scoped to only execute on 'chat.openai.com', despite the manifest's broad host permissions. It uses a MutationObserver to detect the completion of a response and plays a sound. The use of `chrome.storage` is for retrieving a user-defined volume setting. The larger JavaScript file (`chunk-174735cb.js`) is a standard, unobfuscated build of the React and React-DOM libraries, used for the extension's popup UI. All static analysis findings are explained by either the core functionality or the use of this standard library. There is no evidence of data exfiltration, tracking, or any malicious activity.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "domain_assessment": {},
+      "pattern_severity": {},
+      "token_usage": {
+        "prompt": 61729,
+        "candidates": 1205,
+        "total": 65895
+      }
+    },
+    {
+      "extension_id": "flgapcfldlacnlocnjlocofheicmonme",
+      "verdict": "SUSPICIOUS",
+      "confidence": 0.9,
+      "reasoning": "The extension is classified as SUSPICIOUS due to critical static analysis findings in `background.js` that indicate network interception. An AI assistant's functionality does not justify using APIs like `chrome.webRequest` to monitor all user network traffic. This capability could be used to exfiltrate browsing history, credentials, or other sensitive data. While the code for `background.js` was not provided for manual review, the severity and nature of the 'INTERCEPTION' and 'SECURITY_RISK' findings from CodeQL are a significant red flag. This risk is amplified by overly broad permissions in `manifest.json`, specifically `web_accessible_resources` which allows any website to access the extension's files. While other findings, such as keyboard listeners in `content.js`, appear benign and necessary for the extension's stated features, the unexplained potential for network monitoring in the background script makes the extension untrustworthy.",
+      "recommendation": "BLOCK",
+      "key_concerns": [
+        "Potential for undisclosed network traffic interception in `background.js`, which is not justified by the extension's stated purpose.",
+        "Overly permissive `web_accessible_resources` in the manifest, which is a poor security practice and increases the extension's attack surface."
+      ],
+      "domain_assessment": {},
+      "pattern_severity": {},
+      "token_usage": {
+        "prompt": 187169,
+        "candidates": 928,
+        "total": 192150
+      }
+    },
+    {
+      "extension_id": "ehigecokdaejpecogfefhmoemlapfjko",
+      "verdict": "SAFE",
+      "confidence": 0.9,
+      "reasoning": "The extension appears to be safe and functions as described. The manifest requests minimal permissions (`storage`) and restricts its activity to OpenAI's domains. The primary external network communication is to fetch a prompt list from a well-known public GitHub repository, which aligns with its purpose. Static analysis findings that could be concerning, such as cookie access and interception, are plausibly explained by the extension's features. Cookie access is limited to the OpenAI domain for session management, and interception is likely related to the legitimate screenshotting functionality suggested by the filenames. There is no evidence of malicious data exfiltration, tracking, or other undisclosed activities.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "domain_assessment": {},
+      "pattern_severity": {},
+      "token_usage": {
+        "prompt": 165124,
+        "candidates": 718,
+        "total": 169377
+      }
+    },
+    {
+      "extension_id": "mhlecapiniomlbllfaochicnafbjmmbg",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code is fully consistent with its stated purpose in the manifest: to connect to a local websocket server (`ws://localhost:1956`) and act as a bridge to the official ChatGPT API. All external network requests are directed to `chat.openai.com` for authentication and conversation handling, which is expected. The use of an `offscreen` document to maintain the service worker's lifespan is a standard practice for Manifest V3 extensions that require persistent connections. There is no evidence of data exfiltration, tracking, or any functionality beyond what is described.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "domain_assessment": {},
+      "pattern_severity": {},
+      "token_usage": {
+        "prompt": 16500,
+        "candidates": 849,
+        "total": 19589
+      }
+    },
+    {
+      "extension_id": "ndmldohefgmnciihihioeeoiobchcmgi",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is deemed safe. Its code directly corresponds to its stated purpose: allowing users to customize and save visual themes for chatgpt.com. The permissions requested in the manifest (`activeTab`, `storage`, `scripting`, `tabs`) are all necessary and appropriately used for this functionality. All instances of `chrome.storage` access are related to saving and loading theme settings locally. The use of a `MutationObserver` is a standard practice to ensure styles persist on a dynamic single-page application. The `innerHTML` properties are used safely to clear UI elements. There are no network requests to external or suspicious domains. The code contains no obfuscation or hidden features.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "domain_assessment": {},
+      "pattern_severity": {},
+      "token_usage": {
+        "prompt": 7309,
+        "candidates": 787,
+        "total": 10327
+      }
+    },
+    {
+      "extension_id": "eklmiefkbieejjjhmpjdllphmcjdndin",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension operates as a legitimate wrapper for the ChatGPT API. All static analysis findings correspond directly to the extension's stated purpose. The network endpoints identified are either the official OpenAI API or links to help documentation and feedback forms hosted on Feishu, a legitimate business collaboration platform. The use of `chrome.storage` is for storing the user's OpenAI API key, which is standard practice. The permissions requested, including access to `<all_urls>`, are necessary for the extension to function on any webpage as intended. There is no evidence of data exfiltration, tracking, or other malicious behavior.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "domain_assessment": {},
+      "pattern_severity": {},
+      "token_usage": {
+        "prompt": 3884,
+        "candidates": 990,
+        "total": 7147
+      }
+    },
+    {
+      "extension_id": "nkcidahnffiaecnchjkjkhkdbpppchgm",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is safe. Its manifest.json requests no permissions, which severely limits its potential for malicious activity. The code is straightforward and directly implements the advertised feature: adding customizable buttons to the ChatGPT interface. All static analysis findings are benign. Network calls are limited to loading a standard CSS file from a trusted CDN and providing a credit link to the developer's website. The use of localStorage is for storing user-configured button labels, and setInterval is a common technique to maintain UI modifications on a dynamic web page. There is no evidence of data exfiltration, tracking, or any other hidden functionality.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "domain_assessment": {},
+      "pattern_severity": {},
+      "token_usage": {
+        "prompt": 3704,
+        "candidates": 1212,
+        "total": 6503
+      }
+    },
+    {
+      "extension_id": "hbndmagecjddiollpfbjcinbfnkgpcnk",
+      "verdict": "MALICIOUS",
+      "confidence": 1.0,
+      "reasoning": "The extension's primary features, 'Download' and 'Share', are implemented by exfiltrating the user's entire conversation history to a third-party domain, `api.gptez.xyz`. The code in `download.js` and `share.js` explicitly gathers the chat title and content and sends it via a POST request to this external server. While this may be to provide functionality like server-side file conversion or hosting for shareable links, it represents a severe, undisclosed privacy risk. Users are not informed that their potentially sensitive conversations are being transmitted to and likely stored on an unknown server. This data exfiltration is malicious by definition.",
+      "recommendation": "BLOCK",
+      "key_concerns": [
+        "Exfiltration of full user conversation content to a third-party server (api.gptez.xyz).",
+        "The download and share features both send the entire chat history to this external server.",
+        "Severe and undisclosed user privacy violation."
+      ],
+      "domain_assessment": {},
+      "pattern_severity": {},
+      "token_usage": {
+        "prompt": 25806,
+        "candidates": 1111,
+        "total": 29207
+      }
+    },
+    {
+      "extension_id": "djmjoepmfiooddjlmnagnnanhbjpdjkp",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code is simple and aligns perfectly with its stated purpose of counting ChatGPT prompts. It uses the `webRequest` permission to monitor POST requests to the official ChatGPT API endpoint. All data, such as prompt timestamps and counts, is stored locally using `chrome.storage`. There are no network requests to any third-party or unexpected domains. The permissions requested in the manifest (`webRequest`, `storage`, and `host_permissions` for `chatgpt.com`) are the minimum required for the extension to function. The code is clean and contains no hidden or malicious functionality.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "domain_assessment": {},
+      "pattern_severity": {},
+      "token_usage": {
+        "prompt": 2159,
+        "candidates": 879,
+        "total": 4430
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 2,
+    "SUSPICIOUS": 3,
+    "SAFE": 10,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 2,
+    "high_risk_validated_suspicious": 3,
+    "high_risk_validated_safe": 10,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 91
+  },
+  "thesis_stats": {
+    "false_positive_rate": 0.6666666666666666,
+    "true_positive_rate": 0.3333333333333333,
+    "malicious_detection_rate": 0.13333333333333333
+  },
+  "token_usage": {
+    "prompt_tokens": 996228,
+    "candidate_tokens": 15264,
+    "total_tokens": 1053246
+  }
+}

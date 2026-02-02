@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "Google Chrome™ 的 ChatGPT"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "扩展程序，用于在 Google Chrome 浏览器中创建官方 ChatGPT 的快捷方式"
+    },
+    "ext_command_description": {
+        "message": "打开 ChatGPT 的快捷方式"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT 生态模式？"
+    },
+    "request_perms_popup_description": {
+        "message": "只需浏览网页即可帮助可持续发展目标。此模式不会打断您的浏览。"
+    },
+    "request_perms_popup_learn_more": {
+        "message": "了解更多"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "允许"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "拒绝"
+    },
+    "perms_granted_popup_title": {
+        "message": "恭喜！"
+    },
+    "perms_granted_popup_description": {
+        "message": "您现在可以享受我们所有的功能了！"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "继续"
+    },
+    "perms_denied_popup_title": {
+        "message": "真遗憾..."
+    },
+    "perms_denied_popup_description": {
+        "message": "也许下次吧。"
+    },
+    "perms_denied_popup_close_button": {
+        "message": "关闭此消息"
+    },
+    "welcome_title": {
+        "message": "Chrome 的 ChatGPT"
+    },
+    "welcome_sub_title": {
+        "message": "扩展程序安装成功"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "Chrome 的 ChatGPT"
+    },
+    "welcome_sub_title_granted": {
+        "message": "扩展程序安装成功"
+    },
+    "welcome_tip_title_granted": {
+        "message": "按照以下步骤将扩展程序固定，然后点击下一步"
+    },
+    "welcome_next_step": {
+        "message": "下一步"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "要访问扩展程序的所有功能，请启用生态模式。"
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "点击允许以继续"
+    },
+    "html_footer_terms_of_use": {
+        "message": "使用条款"
+    },
+    "html_footer_privacy_policy": {
+        "message": "隐私政策"
+    },
+    "how_to_use_html_title": {
+        "message": "如何使用扩展程序"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "或按 Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 生态模式"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "恭喜！此网站是我们的生态模式合作伙伴。"
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "这意味着什么？"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "通过继续浏览，您将帮助🌍地球，种植树木并补偿碳排放，且无需支付任何费用。"
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "每次访问合作伙伴时，都会短暂打开一个新标签页，以允许计算碳补偿。"
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "顺便说一句，非常感谢您与我们一起支持这一令人难以置信的事业！🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "了解更多"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "关闭"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "不再显示"
+    }
+}

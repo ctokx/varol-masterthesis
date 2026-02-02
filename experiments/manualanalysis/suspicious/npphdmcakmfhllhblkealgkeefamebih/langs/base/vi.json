@@ -1,0 +1,323 @@
+{
+    "you_need_to_approve_the_permissions_to_open_the_extension_in_the_side_panel_": {
+        "message": "Bạn cần phê duyệt quyền truy cập để mở tiện ích trong bảng bên."
+    },
+    "dropblock_head": {
+        "message": "dropBlock_head"
+    },
+    "open_the_extension_in_a_sidepanel": {
+        "message": "Mở tiện ích trong bảng bên"
+    },
+    "link_was_copied_": {
+        "message": "Liên kết đã được sao chép!"
+    },
+    "drag_and_drop_your_files_here": {
+        "message": "Kéo và thả tệp của bạn vào đây"
+    },
+    "only_text_content_will_be_processed__up_to_5_files__each_up_to_5mb_": {
+        "message": "Chỉ xử lý nội dung văn bản. Tối đa 5 tệp, mỗi tệp tối đa 5MB."
+    },
+    "you_can_upload_a_maximum_of_5_files_per_dialog__please_upload_files_in_smaller_batches_": {
+        "message": "Bạn có thể tải lên tối đa 5 tệp mỗi hộp thoại. Vui lòng tải lên theo từng nhóm nhỏ hơn."
+    },
+    "invalid_file_format_or_file_size_exceeds_5_mb__please_select_smaller_files_": {
+        "message": "Định dạng tệp không hợp lệ hoặc dung lượng vượt quá 5MB. Vui lòng chọn tệp nhỏ hơn."
+    },
+    "permissions_are_missing__please_grant_the_extension_access_to_web_pages_": {
+        "message": "Thiếu quyền truy cập. Vui lòng cấp quyền cho tiện ích truy cập các trang web."
+    },
+    "error__please_try_again_later_": {
+        "message": "Lỗi, vui lòng thử lại sau."
+    },
+    "summarization_does_not_work_on_system_pages__please_copy_the_page_content_into_the_chat_manually_": {
+        "message": "Tóm tắt không hoạt động trên các trang hệ thống. Vui lòng sao chép nội dung trang vào chat thủ công."
+    },
+    "delete": {
+        "message": "Xóa"
+    },
+    "delete_chat_": {
+        "message": "Xóa cuộc trò chuyện?"
+    },
+    "are_you_sure_you_want_to_delete_this_chat_": {
+        "message": "Bạn có chắc muốn xóa cuộc trò chuyện này?"
+    },
+    "cancel": {
+        "message": "Hủy"
+    },
+    "the_chat_was_deleted": {
+        "message": "Cuộc trò chuyện đã bị xóa"
+    },
+    "`_text_`": {
+        "message": "ʼ+text+ʼ"
+    },
+    "`_lang___(text)_`": {
+        "message": "ʼ+Lang.__(text)+ʼ"
+    },
+    "${deletetext}": {
+        "message": "${deleteText}"
+    },
+    "`_lang___(_delete_chat__)_`": {
+        "message": "ʼ+Lang.__('Xóa cuộc trò chuyện?')+ʼ"
+    },
+    "`_lang___(_are_you_sure_you_want_to_delete_this_chat__)_`": {
+        "message": "ʼ+Lang.__('Bạn có chắc muốn xóa cuộc trò chuyện này?')+ʼ"
+    },
+    "`_lang___(_cancel_)_`": {
+        "message": "ʼ+Lang.__('Hủy')+ʼ"
+    },
+    "`_lang___(_delete_)_`": {
+        "message": "ʼ+Lang.__('Xóa')+ʼ"
+    },
+    "file": {
+        "message": "Tệp"
+    },
+    "thinking": {
+        "message": "Đang suy nghĩ"
+    },
+    "copy_response": {
+        "message": "Sao chép phản hồi"
+    },
+    "good_response": {
+        "message": "Phản hồi tốt"
+    },
+    "bad_response": {
+        "message": "Phản hồi xấu"
+    },
+    "uploading___": {
+        "message": "Đang tải lên..."
+    },
+    "`_lang___(_thinking_)_`": {
+        "message": "ʼ+Lang.__('Đang suy nghĩ')+ʼ"
+    },
+    "feedback": {
+        "message": "Phản hồi"
+    },
+    "share": {
+        "message": "Chia sẻ"
+    },
+    "rate_us": {
+        "message": "Đánh giá chúng tôi"
+    },
+    "💀": {
+        "message": "💀"
+    },
+    "😞": {
+        "message": "😞"
+    },
+    "😐": {
+        "message": "😐"
+    },
+    "🙂": {
+        "message": "🙂"
+    },
+    "😍": {
+        "message": "😍"
+    },
+    "grok_3_is_here_": {
+        "message": "Grok 3 đã có mặt."
+    },
+    "what_do_you_want_to_know_": {
+        "message": "Bạn muốn biết gì?"
+    },
+    "how_can_grok_help_you_": {
+        "message": "Grok có thể giúp bạn như thế nào?"
+    },
+    "attach_file": {
+        "message": "Đính kèm tệp"
+    },
+    "select_a_model": {
+        "message": "Chọn mô hình"
+    },
+    "sent_message": {
+        "message": "Đã gửi tin nhắn"
+    },
+    "hey_": {
+        "message": "Chào,"
+    },
+    "welcome_": {
+        "message": "chào mừng!"
+    },
+    "how_can_i_help_you_": {
+        "message": "Tôi có thể giúp gì cho bạn?"
+    },
+    "message_deepseek": {
+        "message": "Tin nhắn DeepSeek"
+    },
+    "summarize_the_current_page": {
+        "message": "Tóm tắt trang hiện tại"
+    },
+    "upload_a_file": {
+        "message": "Tải lên tệp"
+    },
+    "start_a_chat": {
+        "message": "Bắt đầu trò chuyện"
+    },
+    "set_personalization": {
+        "message": "Thiết lập cá nhân hóa"
+    },
+    "new_chat": {
+        "message": "Trò chuyện mới"
+    },
+    "switch_to_light_mode": {
+        "message": "Chuyển sang Chế độ sáng"
+    },
+    "switch_to_dark_mode": {
+        "message": "Chuyển sang Chế độ tối"
+    },
+    "open_the_extension_in_a_separate_tab": {
+        "message": "Mở tiện ích trong tab riêng biệt"
+    },
+    "{{_item_}}": {
+        "message": "{{ mục }}"
+    },
+    "start_now": {
+        "message": "Bắt đầu ngay"
+    },
+    "get_ideas": {
+        "message": "Lấy ý tưởng"
+    },
+    "ask": {
+        "message": "Hỏi"
+    },
+    "code": {
+        "message": "Mã"
+    },
+    "translate": {
+        "message": "Dịch"
+    },
+    "cooking_tips": {
+        "message": "Mẹo nấu ăn"
+    },
+    "how_deepseek_ai_helps_you_": {
+        "message": "DeepSeek AI giúp bạn như thế nào?"
+    },
+    "✨_get_spot_on_answers_10x_faster": {
+        "message": "✨ Nhận câu trả lời chính xác gấp 10 lần nhanh hơn"
+    },
+    "no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Không Google, không rối loạn tab, không lãng phí thời gian"
+    },
+    "📚_save_hours_on_studying": {
+        "message": "📚 Tiết kiệm hàng giờ học tập"
+    },
+    "generate_essays__auto_complete_tests__and_summarize_any_page_in_minutes_": {
+        "message": "Tạo bài luận, hoàn thành tự động bài kiểm tra và tóm tắt bất kỳ trang nào trong phút chốc."
+    },
+    "🌍_real_time_translation_on_the_page": {
+        "message": "🌍 Dịch thuật thời gian thực trên trang"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments__right_on_the_page_": {
+        "message": "Viết như người bản xứ, không lỗi chính tả hay khoảnh khắc ngượng ngùng. Ngay trên trang."
+    },
+    "get_your_ai_copilot_for_coding": {
+        "message": "Nhận [textgradientEl]AI Copilot[\/textgradientEl] cho lập trình"
+    },
+    "try_now": {
+        "message": "Thử ngay"
+    },
+    "did_this_tool_help_you_": {
+        "message": "Công cụ này có giúp bạn không?"
+    },
+    "share_it_with_friends_who_work_with_images_": {
+        "message": "Chia sẻ với bạn bè làm việc với hình ảnh."
+    },
+    "who_would_find_it_useful_": {
+        "message": "Ai sẽ thấy hữu ích?"
+    },
+    "copy_link": {
+        "message": "Sao chép liên kết"
+    },
+    "facebook": {
+        "message": "Facebook"
+    },
+    "x": {
+        "message": "X"
+    },
+    "telegram": {
+        "message": "Telegram"
+    },
+    "i_found_a_super_useful_chrome_extension__": {
+        "message": "Tôi đã tìm thấy một tiện ích Chrome cực kỳ hữu ích —"
+    },
+    "it_can_save_any_website_as_a_pdf__you_should_try_it_out___it_s_great_": {
+        "message": "Nó có thể lưu bất kỳ trang web nào dưới dạng PDF. Bạn nên thử — thật tuyệt vời!"
+    },
+    "hooray__greate_job_": {
+        "message": "Hoan hô, làm tốt lắm!"
+    },
+    "please__can_you_rate_us_": {
+        "message": "Vui lòng, bạn có thể đánh giá chúng tôi không?"
+    },
+    "deepseek_ai_has_been_installed_": {
+        "message": "DeepSeek AI đã được cài đặt!"
+    },
+    "get_answers_10x_faster___no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Nhận câu trả lời nhanh gấp 10 lần — không Google, không rối loạn tab, không lãng phí thời gian"
+    },
+    "open_deepseek_ai": {
+        "message": "Mở DeepSeek AI"
+    },
+    "deepseek_app": {
+        "message": "Ứng dụng DeepSeek"
+    },
+    "love_deepseek_": {
+        "message": "Yêu thích DeepSeek?"
+    },
+    "could_you_please_rate_our_extension_": {
+        "message": "Bạn có thể đánh giá tiện ích của chúng tôi không?"
+    },
+    "share_this_extension_with_your_friends": {
+        "message": "Chia sẻ tiện ích này với bạn bè của bạn"
+    },
+    "share_us_with_your_friends": {
+        "message": "Chia sẻ chúng tôi với bạn bè của bạn"
+    },
+    "and_unlock_all_ai_assistant_features": {
+        "message": "Và mở khóa tất cả các tính năng của Trợ lý AI"
+    },
+    "vk_com": {
+        "message": "Vk.com"
+    },
+    "reddit": {
+        "message": "Reddit"
+    },
+    "whatsapp": {
+        "message": "WhatsApp"
+    },
+    "weibo": {
+        "message": "Weibo"
+    },
+    "post_preview": {
+        "message": "Xem trước bài đăng"
+    },
+    "hey__i_m_your_ai_assistant_": {
+        "message": "Chào, tôi là Trợ lý AI của bạn!"
+    },
+    "what_can_i_help_with_": {
+        "message": "Tôi có thể giúp gì cho bạn?"
+    },
+    "history": {
+        "message": "Lịch sử"
+    },
+    "settings": {
+        "message": "Cài đặt"
+    },
+    "subscription": {
+        "message": "Gói đăng ký"
+    },
+    "add_personal_info_or_instructions_to_the_ai_assistant__this_will_help_improve_responses_for_you_": {
+        "message": "Thêm thông tin cá nhân hoặc hướng dẫn cho Trợ lý AI. Điều này sẽ giúp cải thiện phản hồi cho bạn."
+    },
+    "save": {
+        "message": "Lưu"
+    },
+    "and_you_ll_unlock_all_ai_assistant_features": {
+        "message": "Và bạn sẽ mở khóa tất cả các tính năng của Trợ lý AI"
+    },
+    "e_g___always_reply_in_french": {
+        "message": "ví dụ: luôn trả lời bằng tiếng Pháp"
+    },
+    "_p_you_can_try_the_ai_assistant_to_play_a_role__e_g____p__ul__li_act_as_an_english_teacher_and_correct_my_mistakes__li__li_respond_like_a_professional_business_consultant__li___ul__p_or_input_your_data_for_the_ai_assistant_to_generate_responses__e_g____p__ul__li_23_y_o___58_kg__height_165_cm__female__li__li_programmer__php___laravel__js___react___li___ul_": {
+        "message": "<p>Bạn có thể thử Trợ lý AI để đóng vai, ví dụ: </p><ul><li>Đóng vai một giáo viên tiếng Anh và sửa lỗi của tôi</li><li>Phản hồi như một chuyên gia tư vấn kinh doanh chuyên nghiệp</li></ul><p>Hoặc nhập dữ liệu của bạn để Trợ lý AI tạo phản hồi, ví dụ:</p><ul><li>23 tuổi, 58 kg, cao 165 cm, nữ</li><li>Lập trình viên. PHP – Laravel, JS – React.</li></ul>"
+    }
+}

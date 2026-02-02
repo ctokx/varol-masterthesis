@@ -1,0 +1,1474 @@
+/* AITOPIA Pricing Page Popup Styles */
+
+/* Comprehensive scroll prevention when popup is active */
+body.aitopia-popup-active {
+    overflow: hidden !important;
+    position: fixed !important;
+    width: 100% !important;
+    height: 100% !important;
+    overscroll-behavior: none !important;
+}
+
+/* Also prevent scrolling on document root */
+html.aitopia-popup-active {
+    overflow: hidden !important;
+    overscroll-behavior: none !important;
+}
+
+.aitopia-popup-container {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    backdrop-filter: blur(5px) !important;
+    z-index: 2147483647 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    overflow: hidden !important; /* Don't let container scroll */
+    /* Prevent any scroll chaining on the popup container itself */
+    overscroll-behavior: none !important;
+    overscroll-behavior-y: none !important;
+    overscroll-behavior-x: none !important;
+    /* Comprehensive click isolation */
+    pointer-events: auto !important;
+    isolation: isolate !important;
+    /* Create new stacking context */
+    will-change: opacity, visibility !important;
+    /* Prevent selection outside modal */
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+}
+
+.aitopia-popup-container.aitopia-popup-visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.aitopia-popup-content {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0) !important;
+    border-radius: 16px !important;
+    padding: 0 !important;
+    max-width: 580px !important;
+    width: 95% !important;
+    max-height: 90vh !important;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2) !important;
+    border: 1px solid rgba(100, 116, 139, 0.2) !important;
+    position: relative !important;
+    transform: scale(0.9);
+    transition: transform 0.3s ease !important;
+    user-select: text !important; /* Allow text selection */
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    /* Ensure content receives pointer events */
+    pointer-events: auto !important;
+    /* Create isolated stacking context */
+    isolation: isolate !important;
+    z-index: 1 !important;
+}
+
+.aitopia-popup-visible .aitopia-popup-content {
+    transform: scale(1);
+}
+
+/* Allow text selection in popup */
+.aitopia-popup-content * {
+    user-select: text !important;
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+}
+
+/* Main Popup Disclaimer Styling - Now positioned at bottom */
+.aitopia-disclaimer {
+    background: rgba(225, 231, 239, 0.8) !important;
+    border: 1px solid rgba(100, 116, 139, 0.3) !important;
+    border-radius: 6px !important;
+    padding: 8px 12px !important;
+    margin-top: 16px !important;
+    margin-bottom: 0 !important;
+    text-align: center !important;
+}
+
+.aitopia-disclaimer p {
+    color: #475569 !important;
+    font-size: 11px !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+    line-height: 1.3 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.3px !important;
+}
+
+/* Scrollable Content Area - Enhanced Scroll Containment */
+.aitopia-popup-scrollable {
+    padding: 48px 28px 28px 28px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    max-height: calc(90vh - 40px) !important;
+    flex: 1 !important;
+    -webkit-overflow-scrolling: touch !important; /* Smooth scrolling on iOS */
+    overscroll-behavior: contain !important; /* Prevent scroll chaining */
+    overscroll-behavior-y: contain !important; /* Explicit Y-axis containment */
+    overscroll-behavior-x: none !important; /* No X-axis overscroll */
+    scroll-behavior: smooth !important;
+    /* Force hardware acceleration for smoother scrolling */
+    transform: translateZ(0) !important;
+    will-change: scroll-position !important;
+    /* Create new stacking context to isolate scrolling */
+    isolation: isolate !important;
+}
+
+/* Modern Sleek Scrollbar Styles for Popup Content */
+.aitopia-popup-scrollable::-webkit-scrollbar {
+    width: 8px !important;
+}
+
+.aitopia-popup-scrollable::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border-radius: 4px !important;
+    margin: 4px !important;
+}
+
+.aitopia-popup-scrollable::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #1e40af, #0f766e) !important;
+    border-radius: 4px !important;
+    transition: all 0.2s ease !important;
+}
+
+.aitopia-popup-scrollable::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #1d4ed8, #0d9488) !important;
+    box-shadow: 0 0 8px rgba(30, 64, 175, 0.3) !important;
+}
+
+.aitopia-popup-scrollable::-webkit-scrollbar-thumb:active {
+    background: linear-gradient(135deg, #1e3a8a, #0f766e) !important;
+}
+
+/* Firefox Scrollbar Styles for Popup */
+.aitopia-popup-scrollable {
+    scrollbar-width: thin !important;
+    scrollbar-color: #1e40af rgba(148, 163, 184, 0.1) !important;
+}
+
+.aitopia-close-btn {
+    background: rgba(15, 23, 42, 0.9) !important;
+    border: 1px solid rgba(100, 116, 139, 0.3) !important;
+    border-radius: 50% !important;
+    width: 20px !important;
+    height: 20px !important;
+    color: #f8fafc !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+    pointer-events: auto !important;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5) !important;
+    font-family: Arial, sans-serif !important;
+    padding: 0 !important;
+    opacity: 1 !important;
+    flex-shrink: 0 !important;
+    position: relative !important;
+}
+
+.aitopia-close-btn:hover {
+    background: rgba(0, 0, 0, 0.9) !important;
+    border-color: rgba(255, 255, 255, 1) !important;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.6) !important;
+}
+
+.aitopia-close-btn:active {
+    transform: scale(0.95) !important;
+    background: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Popup Header Bar for proper alignment */
+.aitopia-popup-header-bar {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    height: 40px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 10px 14px !important;
+    z-index: 2147483647 !important;
+    pointer-events: none !important;
+    box-sizing: border-box !important;
+}
+
+.aitopia-ad-notice {
+    font-size: 9px !important;
+    color: rgba(100, 116, 139, 0.8) !important;
+    background: rgba(226, 232, 240, 0.9) !important;
+    padding: 3px 8px !important;
+    border-radius: 4px !important;
+    border: 1px solid rgba(148, 163, 184, 0.4) !important;
+    font-weight: 500 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    font-family: Arial, sans-serif !important;
+    pointer-events: none !important;
+    height: 20px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-shrink: 0 !important;
+}
+
+
+
+.aitopia-header {
+    text-align: center !important;
+    margin-bottom: 20px !important;
+}
+
+.aitopia-header h2 {
+    color: #1e293b !important;
+    font-size: 24px !important;
+    font-weight: 700 !important;
+    margin: 0 0 8px 0 !important;
+    background: linear-gradient(45deg, #1e40af, #0f766e) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.aitopia-header p {
+    color: #475569 !important;
+    font-size: 14px !important;
+    margin: 0 !important;
+    line-height: 1.4 !important;
+}
+
+.aitopia-models-showcase {
+    margin-bottom: 20px !important;
+    /* Prevent any interaction events */
+    user-select: none !important;
+}
+
+/* Allow hover for tooltips but prevent clicks */
+.aitopia-models-showcase * {
+    user-select: none !important;
+}
+
+/* Exception: Ensure buttons in the showcase remain clickable */
+.aitopia-models-showcase button {
+    pointer-events: auto !important;
+    user-select: none !important;
+    cursor: pointer !important;
+}
+
+.aitopia-models-showcase h3 {
+    color: #1e293b !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    margin: 0 0 12px 0 !important;
+    text-align: center !important;
+}
+
+.aitopia-models-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 12px !important;
+    padding: 14px !important;
+    background: rgba(241, 245, 249, 0.8) !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(148, 163, 184, 0.2) !important;
+    margin: 20px 0 0 0 !important;
+    min-height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    transition: all 0.3s ease !important;
+}
+
+.aitopia-more-models {
+    text-align: center !important;
+    margin: 12px 0 20px 0 !important;
+}
+
+.aitopia-more-btn {
+    background: rgba(148, 163, 184, 0.1) !important;
+    border: 1px solid rgba(30, 64, 175, 0.4) !important;
+    border-radius: 6px !important;
+    color: #1e40af !important;
+    font-size: 12px !important;
+    font-weight: 500 !important;
+    padding: 8px 16px !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    font-family: inherit !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 2147483647 !important;
+}
+
+.aitopia-more-btn:hover,
+.aitopia-more-btn:focus {
+    background: rgba(30, 64, 175, 0.1) !important;
+    border-color: rgba(30, 64, 175, 0.6) !important;
+    transform: translateY(-1px) !important;
+    outline: 2px solid rgba(30, 64, 175, 0.3) !important;
+    outline-offset: 2px !important;
+}
+
+.aitopia-more-btn:active {
+    transform: translateY(0) !important;
+    background: rgba(30, 64, 175, 0.15) !important;
+}
+
+/* Ensure expanded grid shows all models properly */
+.aitopia-models-grid.expanded {
+    grid-template-columns: repeat(3, 1fr) !important;
+    grid-template-rows: repeat(5, auto) !important;
+    max-height: none !important;
+    height: auto !important;
+    animation: expandGrid 0.3s ease-out !important;
+}
+
+@keyframes expandGrid {
+    from {
+        opacity: 0.8;
+        transform: scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Removed old popup content scrollbar styling - now using scrollable content area */
+
+.aitopia-model-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 6px 8px !important;
+    background: rgba(248, 250, 252, 0.9) !important;
+    border-radius: 6px !important;
+    font-size: 12px !important;
+    color: #1e293b !important;
+    transition: all 0.2s ease !important;
+    position: relative !important;
+    cursor: pointer !important;
+    pointer-events: auto !important;
+    user-select: none !important;
+    border: 1px solid transparent !important;
+}
+
+.aitopia-model-item:hover {
+    background: rgba(241, 245, 249, 1) !important;
+    border-color: rgba(30, 64, 175, 0.4) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2) !important;
+}
+
+.aitopia-model-item:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 2px 6px rgba(30, 64, 175, 0.15) !important;
+}
+
+
+
+.aitopia-model-icon {
+    font-size: 14px !important;
+    flex-shrink: 0 !important;
+}
+
+
+
+.aitopia-comparison {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 16px !important;
+    margin: 24px 0 20px 0 !important;
+}
+
+.aitopia-comparison-item {
+    padding: 18px !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(148, 163, 184, 0.2) !important;
+    background: rgba(248, 250, 252, 0.6) !important;
+}
+
+.aitopia-comparison-item.aitopia-highlight {
+    border: 2px solid #1e40af !important;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(15, 118, 110, 0.1)) !important;
+    box-shadow: 0 0 20px rgba(30, 64, 175, 0.2) !important;
+}
+
+.aitopia-label {
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    margin-bottom: 4px !important;
+}
+
+.aitopia-label.chatgpt {
+    color: #dc2626 !important;
+}
+
+.aitopia-label.aitopia {
+    color: #1e40af !important;
+}
+
+.aitopia-price {
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    margin-bottom: 8px !important;
+}
+
+.aitopia-features {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+}
+
+.aitopia-feature {
+    font-size: 11px !important;
+    color: #64748b !important;
+    line-height: 1.4 !important;
+    margin-bottom: 3px !important;
+}
+
+.aitopia-cta {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 12px !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: 20px !important;
+}
+
+.aitopia-popup-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.aitopia-logo {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 12px;
+}
+
+.aitopia-popup-header h3 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+    background: linear-gradient(45deg, #00d4ff, #00ff88);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.aitopia-popup-body {
+    margin-bottom: 24px;
+}
+
+.aitopia-popup-body p {
+    color: #e0e0e0;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0 0 16px 0;
+    text-align: center;
+}
+
+.aitopia-benefits {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.benefit-item {
+    color: #fff;
+    font-size: 14px;
+    padding: 8px 12px;
+    background: rgba(0, 212, 255, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid #00d4ff;
+}
+
+.aitopia-popup-footer {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+}
+
+.aitopia-cta-btn {
+    background: linear-gradient(135deg, #1e40af, #0f766e) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 12px 24px !important;
+    font-size: 16px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 2147483647 !important;
+}
+
+.aitopia-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(30, 64, 175, 0.3);
+}
+
+.aitopia-dismiss-btn {
+    background: transparent !important;
+    color: #64748b !important;
+    border: 1px solid rgba(148, 163, 184, 0.3) !important;
+    border-radius: 8px !important;
+    padding: 12px 20px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 2147483647 !important;
+    min-width: 120px !important;
+}
+
+.aitopia-dismiss-btn:hover {
+    color: #1e293b;
+    border-color: rgba(100, 116, 139, 0.5);
+    background: rgba(241, 245, 249, 0.3);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .aitopia-popup-content {
+        max-height: 95vh !important;
+        width: 98% !important;
+    }
+    
+    .aitopia-popup-scrollable {
+        padding: 40px 20px 20px 20px !important;
+        max-height: calc(95vh - 40px) !important;
+    }
+    
+    .aitopia-popup-header-bar {
+        padding: 8px 12px !important;
+        height: 36px !important;
+    }
+    
+    .aitopia-close-btn {
+        width: 18px !important;
+        height: 18px !important;
+        font-size: 12px !important;
+    }
+    
+    .aitopia-ad-notice {
+        font-size: 8px !important;
+        padding: 2px 6px !important;
+        height: 18px !important;
+    }
+    
+    .aitopia-header h2 {
+        font-size: 20px !important;
+    }
+    
+    .aitopia-header p {
+        font-size: 13px !important;
+    }
+    
+    .aitopia-models-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 8px !important;
+        padding: 12px !important;
+    }
+    
+    .aitopia-models-grid.expanded {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    .aitopia-model-item {
+        font-size: 11px !important;
+        padding: 5px 6px !important;
+    }
+    
+    .aitopia-comparison {
+        grid-template-columns: 1fr !important;
+        gap: 12px !important;
+    }
+    
+    .aitopia-comparison-item {
+        padding: 14px !important;
+    }
+    
+    /* Mobile styles for model modals */
+    .aitopia-modal-content {
+        max-width: 95vw !important;
+        width: 95% !important;
+        max-height: 90vh !important;
+    }
+    
+    .aitopia-modal-header {
+        padding: 12px 16px 10px 16px !important;
+        gap: 8px !important;
+    }
+    
+    .aitopia-modal-header h3 {
+        font-size: 16px !important;
+    }
+    
+    .aitopia-modal-icon {
+        font-size: 20px !important;
+    }
+    
+    .aitopia-modal-close {
+        width: 28px !important;
+        height: 28px !important;
+        font-size: 16px !important;
+    }
+    
+    .aitopia-modal-body {
+        padding: 12px 16px !important;
+    }
+    
+    .aitopia-modal-section {
+        margin-bottom: 12px !important;
+    }
+    
+    .aitopia-modal-section h4 {
+        font-size: 12px !important;
+        margin: 0 0 4px 0 !important;
+    }
+    
+    .aitopia-modal-section p {
+        font-size: 12px !important;
+        line-height: 1.3 !important;
+    }
+    
+    .aitopia-modal-list li {
+        font-size: 11px !important;
+        line-height: 1.2 !important;
+        padding: 1px 0 1px 14px !important;
+    }
+    
+    .aitopia-modal-strengths {
+        padding: 8px 12px !important;
+    }
+    
+    .aitopia-modal-pricing {
+        padding: 10px !important;
+    }
+    
+    .aitopia-modal-footer {
+        padding: 10px 16px 12px 16px !important;
+    }
+    
+    .aitopia-modal-cta {
+        padding: 10px 20px !important;
+        font-size: 13px !important;
+    }
+    
+    /* Mobile styles for disclaimers */
+    .aitopia-disclaimer {
+        margin-bottom: 12px !important;
+        padding: 6px 10px !important;
+    }
+    
+    .aitopia-disclaimer p {
+        font-size: 10px !important;
+        letter-spacing: 0.2px !important;
+    }
+    
+    .aitopia-modal-disclaimer p,
+    .aitopia-more-models-disclaimer p {
+        font-size: 9px !important;
+        letter-spacing: 0.1px !important;
+    }
+}
+
+/* Animation for popup entrance */
+@keyframes aitopiaSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.aitopia-popup-visible .aitopia-popup-content {
+    animation: aitopiaSlideIn 0.4s ease-out;
+}
+
+/* Model Information Modal Styles */
+.aitopia-model-modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    backdrop-filter: blur(4px) !important;
+    z-index: 2147483648 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s ease !important;
+    /* Enhanced modal isolation */
+    pointer-events: auto !important;
+    isolation: isolate !important;
+    will-change: opacity, visibility !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    /* Prevent any interaction bleeding */
+    overscroll-behavior: none !important;
+}
+
+.aitopia-model-modal.aitopia-modal-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.aitopia-modal-content {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0) !important;
+    border-radius: 12px !important;
+    padding: 0 !important;
+    max-width: 560px !important;
+    width: 95% !important;
+    max-height: 95vh !important;
+    overflow: visible !important;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15) !important;
+    border: 1px solid rgba(148, 163, 184, 0.2) !important;
+    position: relative !important;
+    transform: scale(0.9) translateY(20px) !important;
+    transition: transform 0.3s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+    /* Content isolation */
+    pointer-events: auto !important;
+    isolation: isolate !important;
+    z-index: 1 !important;
+    user-select: text !important;
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+}
+
+.aitopia-modal-visible .aitopia-modal-content {
+    transform: scale(1) translateY(0) !important;
+}
+
+/* Model Modal Disclaimer Styling - Now positioned at bottom */
+.aitopia-modal-disclaimer {
+    background: rgba(225, 231, 239, 0.6) !important;
+    border-left: 3px solid #64748b !important;
+    padding: 6px 12px !important;
+    margin: 0 !important;
+    border-top: 1px solid rgba(148, 163, 184, 0.2) !important;
+    border-bottom: none !important;
+}
+
+.aitopia-modal-disclaimer p {
+    color: #475569 !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.2px !important;
+}
+
+.aitopia-modal-header {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+    padding: 16px 20px 12px 20px !important;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2) !important;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(15, 118, 110, 0.1)) !important;
+    flex-shrink: 0 !important;
+    border-radius: 12px 12px 0 0 !important;
+}
+
+.aitopia-modal-icon {
+    font-size: 24px !important;
+    flex-shrink: 0 !important;
+}
+
+.aitopia-modal-header h3 {
+    color: #1e293b !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+    flex-grow: 1 !important;
+    background: linear-gradient(45deg, #1e40af, #0f766e) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.aitopia-modal-close {
+    background: rgba(148, 163, 184, 0.15) !important;
+    border: 1px solid rgba(100, 116, 139, 0.3) !important;
+    border-radius: 50% !important;
+    width: 32px !important;
+    height: 32px !important;
+    color: #1e293b !important;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+    flex-shrink: 0 !important;
+    pointer-events: auto !important;
+    z-index: 2147483649 !important;
+    position: relative !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    outline: none !important;
+}
+
+.aitopia-modal-close:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    transform: scale(1.1) !important;
+}
+
+.aitopia-modal-close:active {
+    transform: scale(0.95) !important;
+    background: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* Increase click area for better UX */
+.aitopia-modal-close::before {
+    content: '' !important;
+    position: absolute !important;
+    top: -8px !important;
+    left: -8px !important;
+    right: -8px !important;
+    bottom: -8px !important;
+    border-radius: 50% !important;
+    z-index: -1 !important;
+}
+
+.aitopia-modal-body {
+    padding: 16px 20px !important;
+    flex: 1 1 auto !important;
+    overflow: visible !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    height: auto !important;
+    outline: none !important;
+    position: relative !important;
+}
+
+.aitopia-modal-body:focus {
+    outline: none !important;
+}
+
+/* No scrollbar styles needed - modals now fit without scrolling */
+
+.aitopia-modal-section {
+    margin-bottom: 14px !important;
+}
+
+.aitopia-modal-section:last-child {
+    margin-bottom: 0 !important;
+}
+
+.aitopia-modal-section h4 {
+    color: #1e40af !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    margin: 0 0 6px 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+}
+
+.aitopia-modal-section p {
+    color: #475569 !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+}
+
+.aitopia-modal-list {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.aitopia-modal-list li {
+    color: #64748b !important;
+    font-size: 12px !important;
+    line-height: 1.3 !important;
+    padding: 2px 0 2px 16px !important;
+    position: relative !important;
+}
+
+.aitopia-modal-list li::before {
+    content: '•' !important;
+    color: #0f766e !important;
+    position: absolute !important;
+    left: 0 !important;
+    font-weight: bold !important;
+}
+
+.aitopia-modal-examples li::before {
+    content: '→' !important;
+    color: #1e40af !important;
+}
+
+.aitopia-modal-strengths {
+    background: rgba(15, 118, 110, 0.1) !important;
+    border-left: 3px solid #0f766e !important;
+    padding: 10px 14px !important;
+    border-radius: 0 6px 6px 0 !important;
+    font-style: italic !important;
+}
+
+.aitopia-modal-pricing {
+    background: rgba(30, 64, 175, 0.1) !important;
+    border-radius: 6px !important;
+    padding: 12px !important;
+    border: 1px solid rgba(30, 64, 175, 0.2) !important;
+}
+
+.aitopia-modal-footer {
+    padding: 12px 20px 16px 20px !important;
+    border-top: 1px solid rgba(148, 163, 184, 0.2) !important;
+    background: rgba(226, 232, 240, 0.3) !important;
+    flex-shrink: 0 !important;
+    border-radius: 0 0 12px 12px !important;
+}
+
+.aitopia-modal-cta {
+    width: 100% !important;
+    background: linear-gradient(135deg, #1e40af, #0f766e) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 12px 24px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 2147483649 !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    outline: none !important;
+}
+
+.aitopia-modal-cta:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(30, 64, 175, 0.3) !important;
+}
+
+.aitopia-modal-cta:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2) !important;
+}
+
+/* More Models Modal Styles */
+.aitopia-more-models-modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.75) !important;
+    backdrop-filter: blur(6px) !important;
+    z-index: 2147483648 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transition: all 0.3s ease !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+    /* Enhanced modal isolation */
+    pointer-events: auto !important;
+    isolation: isolate !important;
+    will-change: opacity, visibility !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    overscroll-behavior: none !important;
+}
+
+.aitopia-more-models-modal.aitopia-more-models-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+.aitopia-more-models-content {
+    background: linear-gradient(135deg, #f8fafc, #e2e8f0) !important;
+    border-radius: 16px !important;
+    padding: 0 !important;
+    max-width: 720px !important;
+    width: 95% !important;
+    max-height: 95vh !important;
+    overflow: hidden !important;
+    box-shadow: 0 25px 50px rgba(15, 23, 42, 0.15) !important;
+    border: 1px solid rgba(148, 163, 184, 0.2) !important;
+    position: relative !important;
+    transform: scale(0.9) translateY(30px) !important;
+    transition: transform 0.3s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+    /* Content isolation */
+    pointer-events: auto !important;
+    isolation: isolate !important;
+    z-index: 1 !important;
+    user-select: text !important;
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+}
+
+.aitopia-more-models-visible .aitopia-more-models-content {
+    transform: scale(1) translateY(0) !important;
+}
+
+/* More Models Modal Disclaimer Styling - Now positioned at bottom */
+.aitopia-more-models-disclaimer {
+    background: rgba(225, 231, 239, 0.6) !important;
+    border-left: 3px solid #64748b !important;
+    padding: 6px 12px !important;
+    margin: 0 !important;
+    border-top: 1px solid rgba(148, 163, 184, 0.2) !important;
+    border-bottom: none !important;
+}
+
+.aitopia-more-models-disclaimer p {
+    color: #475569 !important;
+    font-size: 10px !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.2px !important;
+}
+
+.aitopia-more-models-header {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 20px 24px 16px 24px !important;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2) !important;
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.1), rgba(15, 118, 110, 0.1)) !important;
+    flex-shrink: 0 !important;
+    border-radius: 16px 16px 0 0 !important;
+}
+
+.aitopia-more-models-title {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.aitopia-more-models-icon {
+    font-size: 28px !important;
+    flex-shrink: 0 !important;
+}
+
+.aitopia-more-models-title h3 {
+    color: #1e293b !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    margin: 0 !important;
+    background: linear-gradient(45deg, #1e40af, #0f766e) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+.aitopia-more-models-close {
+    background: rgba(148, 163, 184, 0.15) !important;
+    border: 1px solid rgba(100, 116, 139, 0.3) !important;
+    border-radius: 50% !important;
+    width: 36px !important;
+    height: 36px !important;
+    color: #1e293b !important;
+    font-size: 20px !important;
+    font-weight: bold !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: all 0.2s ease !important;
+    flex-shrink: 0 !important;
+    pointer-events: auto !important;
+    z-index: 2147483650 !important;
+    position: relative !important;
+    user-select: none !important;
+}
+
+.aitopia-more-models-close:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+    transform: scale(1.1) !important;
+}
+
+.aitopia-more-models-close:active {
+    transform: scale(0.95) !important;
+    background: rgba(255, 255, 255, 0.3) !important;
+}
+
+.aitopia-more-models-body {
+    padding: 24px !important;
+    flex: 1 !important;
+    overflow: visible !important;
+}
+
+.aitopia-more-models-subtitle {
+    color: #64748b !important;
+    font-size: 14px !important;
+    text-align: center !important;
+    margin: 0 0 24px 0 !important;
+    line-height: 1.4 !important;
+}
+
+.aitopia-more-models-grid {
+    display: grid !important;
+    grid-template-columns: repeat(5, 1fr) !important;
+    gap: 16px !important;
+    margin-bottom: 20px !important;
+}
+
+.aitopia-more-model-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 16px 12px !important;
+    background: rgba(248, 250, 252, 0.8) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(148, 163, 184, 0.2) !important;
+    transition: all 0.2s ease !important;
+    cursor: pointer !important;
+    position: relative !important;
+    text-align: center !important;
+    min-height: 100px !important;
+}
+
+.aitopia-more-model-item:hover {
+    background: rgba(241, 245, 249, 1) !important;
+    border-color: rgba(30, 64, 175, 0.4) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 6px 16px rgba(30, 64, 175, 0.2) !important;
+}
+
+.aitopia-more-model-item:active {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2) !important;
+}
+
+.aitopia-more-model-icon {
+    font-size: 24px !important;
+    margin-bottom: 4px !important;
+}
+
+.aitopia-more-model-name {
+    color: #1e293b !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    text-align: center !important;
+    line-height: 1.2 !important;
+}
+
+.aitopia-more-model-click-hint {
+    color: #64748b !important;
+    font-size: 9px !important;
+    text-align: center !important;
+    opacity: 0 !important;
+    transition: opacity 0.2s ease !important;
+    position: absolute !important;
+    bottom: 4px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    white-space: nowrap !important;
+}
+
+.aitopia-more-model-item:hover .aitopia-more-model-click-hint {
+    opacity: 1 !important;
+}
+
+.aitopia-more-models-footer-text {
+    text-align: center !important;
+    margin: 20px 0 0 0 !important;
+}
+
+.aitopia-more-models-footer-text p {
+    color: #64748b !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    margin: 0 !important;
+}
+
+.aitopia-more-models-footer {
+    padding: 16px 24px 20px 24px !important;
+    border-top: 1px solid rgba(148, 163, 184, 0.2) !important;
+    background: rgba(226, 232, 240, 0.3) !important;
+    flex-shrink: 0 !important;
+    border-radius: 0 0 16px 16px !important;
+}
+
+.aitopia-more-models-cta {
+    width: 100% !important;
+    background: linear-gradient(135deg, #1e40af, #0f766e) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 14px 24px !important;
+    font-size: 15px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    pointer-events: auto !important;
+    position: relative !important;
+    z-index: 2147483650 !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    outline: none !important;
+}
+
+.aitopia-more-models-cta:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 24px rgba(30, 64, 175, 0.3) !important;
+}
+
+.aitopia-more-models-cta:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2) !important;
+}
+
+/* Color coding for different model categories in More Models modal */
+.aitopia-more-model-item.gpt {
+    border-left: 3px solid #1e40af !important;
+}
+
+.aitopia-more-model-item.claude {
+    border-left: 3px solid #dc2626 !important;
+}
+
+.aitopia-more-model-item.gemini {
+    border-left: 3px solid #2563eb !important;
+}
+
+.aitopia-more-model-item.openai {
+    border-left: 3px solid #0f766e !important;
+}
+
+.aitopia-more-model-item.llama {
+    border-left: 3px solid #7c3aed !important;
+}
+
+.aitopia-more-model-item.deepseek {
+    border-left: 3px solid #d97706 !important;
+}
+
+/* Comprehensive Modal Isolation Rules */
+/* Ensure modal overlays capture all events */
+.aitopia-popup-container::before,
+.aitopia-model-modal::before,
+.aitopia-more-models-modal::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    z-index: -1 !important;
+    pointer-events: auto !important;
+    background: transparent !important;
+}
+
+/* Prevent any interaction with elements behind modals when active */
+body.aitopia-popup-active * {
+    pointer-events: none !important;
+}
+
+/* Re-enable pointer events for modal elements only */
+body.aitopia-popup-active .aitopia-popup-container,
+body.aitopia-popup-active .aitopia-popup-container *,
+body.aitopia-popup-active .aitopia-model-modal,
+body.aitopia-popup-active .aitopia-model-modal *,
+body.aitopia-popup-active .aitopia-more-models-modal,
+body.aitopia-popup-active .aitopia-more-models-modal * {
+    pointer-events: auto !important;
+}
+
+/* Ensure interactive elements within modals remain clickable */
+.aitopia-popup-content button,
+.aitopia-popup-content .aitopia-model-item,
+.aitopia-modal-content button,
+.aitopia-modal-content .aitopia-model-item,
+.aitopia-modal-cta,
+.aitopia-more-models-content button,
+.aitopia-more-models-content .aitopia-more-model-item,
+.aitopia-more-models-cta {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 10 !important;
+}
+
+/* Ensure modal close buttons are always accessible */
+.aitopia-close-btn,
+.aitopia-modal-close,
+.aitopia-more-models-close {
+    pointer-events: auto !important;
+    z-index: 2147483649 !important;
+    position: relative !important;
+    cursor: pointer !important;
+}
+
+/* Force proper layering */
+.aitopia-popup-container.aitopia-popup-visible {
+    z-index: 2147483647 !important;
+}
+
+.aitopia-model-modal.aitopia-modal-visible {
+    z-index: 2147483648 !important;
+}
+
+.aitopia-more-models-modal.aitopia-more-models-visible {
+    z-index: 2147483648 !important;
+}
+
+/* Ensure all Try buttons with dynamic IDs are clickable */
+button[id^="aitopia-modal-try-btn-"],
+button[id="aitopia-more-models-try-btn"] {
+    pointer-events: auto !important;
+    cursor: pointer !important;
+    position: relative !important;
+    z-index: 2147483649 !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    outline: none !important;
+}
+
+/* Hover states for Try buttons */
+button[id^="aitopia-modal-try-btn-"]:hover,
+button[id="aitopia-more-models-try-btn"]:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 20px rgba(0, 212, 255, 0.4) !important;
+}
+
+/* Active states for Try buttons */
+button[id^="aitopia-modal-try-btn-"]:active,
+button[id="aitopia-more-models-try-btn"]:active {
+    transform: translateY(0) !important;
+    box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3) !important;
+}
+
+/* Mobile responsiveness for More Models modal */
+@media (max-width: 768px) {
+    .aitopia-more-models-content {
+        max-width: 95vw !important;
+        width: 95% !important;
+    }
+    
+    .aitopia-more-models-header {
+        padding: 16px 20px 12px 20px !important;
+    }
+    
+    .aitopia-more-models-title h3 {
+        font-size: 18px !important;
+    }
+    
+    .aitopia-more-models-icon {
+        font-size: 24px !important;
+    }
+    
+    .aitopia-more-models-body {
+        padding: 20px !important;
+    }
+    
+    .aitopia-more-models-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 12px !important;
+    }
+    
+    .aitopia-more-model-item {
+        padding: 12px 8px !important;
+        min-height: 80px !important;
+    }
+    
+    .aitopia-more-model-icon {
+        font-size: 20px !important;
+    }
+    
+    .aitopia-more-model-name {
+        font-size: 11px !important;
+    }
+    
+    .aitopia-more-model-click-hint {
+        font-size: 8px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .aitopia-more-models-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 10px !important;
+    }
+    
+    .aitopia-more-model-item {
+        padding: 10px 6px !important;
+        min-height: 70px !important;
+    }
+    
+    .aitopia-more-model-icon {
+        font-size: 18px !important;
+    }
+    
+    .aitopia-more-model-name {
+        font-size: 10px !important;
+    }
+}

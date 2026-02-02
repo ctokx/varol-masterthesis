@@ -1,0 +1,67 @@
+{
+  "hello": {
+    "message": "Kumusta!"
+  },
+  "ask_anything": {
+    "message": "Magtanong ng kahit ano"
+  },
+  "ask_about_this_page": {
+    "message": "Magtanong tungkol sa pahinang ito"
+  },
+  "summarize_this_page": {
+    "message": "I-summarize ang pahinang ito"
+  },
+  "add_photos_and_files": {
+    "message": "Magdagdag ng mga larawan at file"
+  },
+  "create_image": {
+    "message": "Lumikha ng larawan"
+  },
+  "web_search": {
+    "message": "Paghahanap sa web"
+  },
+  "teacher_mode": {
+    "message": "Mode ng guro"
+  },
+  "voice_input": {
+    "message": "Voice input"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "Mabilis na pang-araw-araw na katulong"
+  },
+  "model_deep_reasoning": {
+    "message": "Malalim na pag-iisip na modelo"
+  },
+  "model_quick_multimodal": {
+    "message": "Mabilis na multimodal na tugon"
+  },
+  "model_advanced_google_ai": {
+    "message": "Advanced na Google AI"
+  },
+  "model_complex_problem_solving": {
+    "message": "Paglutas ng komplikadong problema"
+  },
+  "model_powerful_opensource": {
+    "message": "Malakas na open-source na modelo"
+  },
+  "model_reasoning_specialist": {
+    "message": "Espesyalista sa pangangatwiran"
+  },
+  "model_balanced_reliable": {
+    "message": "Balanse at maaasahan"
+  },
+  "model_most_capable": {
+    "message": "Pinakamagaling na Claude"
+  },
+  "model_label_fastest": {
+    "message": "Pinakamabilis"
+  }
+}
+
+
+
+
+
+
+
+

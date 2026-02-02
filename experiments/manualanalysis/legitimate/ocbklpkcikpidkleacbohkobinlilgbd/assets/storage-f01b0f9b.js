@@ -1,0 +1,6 @@
+const o=["Summarize the video as a single paragraph.","Summarize the above content highlights.","Summarize the above in 5 bullet points.",`Your output should use the following template:
+#### Summary
+#### Highlights
+- [Emoji] Bulletpoint
+
+Your task is to summarize the text I have given you in up to five concise bullet points, starting with a short highlight. Choose an appropriate emoji for each bullet point. Use the text above: {{Title}} {{Transcript}}.`];var e=(t=>(t.Auto="auto",t.English="en-US",t["中文（简体）"]="zh-Hans",t["中文（繁体）"]="zh-Hant",t.Spanish="es-ES",t.French="fr-FR",t.Korean="ko-KR",t.Japanese="ja-JP",t.German="de-DE",t.Portuguese="pt-PT",t.Russian="ru-RU",t.Ukrainian="uk",t.Turkish="tr",t.Romanian="ro",t.Norwegian="no",t.Malay="ms",t.Lithuanian="lt",t.Italian="it",t.Indonesian="id",t.Icelandic="is",t))(e||{});const s=async t=>{await chrome.storage.local.set({language:t})},a=async()=>{const{language:t}=await chrome.storage.local.get("language");return t||"auto"},r=async t=>{await chrome.storage.local.set({prompt:t})},i=async()=>{const{prompt:t}=await chrome.storage.local.get("prompt");return t||o[3]},n=async t=>{await chrome.storage.local.set({theme:t})},h=async()=>{const{theme:t}=await chrome.storage.local.get("theme");return t||"auto"};export{e as L,a,h as b,s as c,r as d,i as g,o as p,n as s};

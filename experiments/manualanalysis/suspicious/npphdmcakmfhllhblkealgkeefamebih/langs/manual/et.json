@@ -1,0 +1,67 @@
+{
+  "hello": {
+    "message": "Tere!"
+  },
+  "ask_anything": {
+    "message": "Küsi mida iganes"
+  },
+  "ask_about_this_page": {
+    "message": "Küsi selle lehe kohta"
+  },
+  "summarize_this_page": {
+    "message": "Tee sellest lehest kokkuvõte"
+  },
+  "add_photos_and_files": {
+    "message": "Lisa fotosid ja faile"
+  },
+  "create_image": {
+    "message": "Loo pilt"
+  },
+  "web_search": {
+    "message": "Veebiotsing"
+  },
+  "teacher_mode": {
+    "message": "Õpetaja režiim"
+  },
+  "voice_input": {
+    "message": "Häälsisend"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "Kiire igapäevane abiline"
+  },
+  "model_deep_reasoning": {
+    "message": "Sügava mõtlemise mudel"
+  },
+  "model_quick_multimodal": {
+    "message": "Kiired multimodaalsed vastused"
+  },
+  "model_advanced_google_ai": {
+    "message": "Täiustatud Google'i tehisintellekt"
+  },
+  "model_complex_problem_solving": {
+    "message": "Keerukate probleemide lahendamine"
+  },
+  "model_powerful_opensource": {
+    "message": "Võimas avatud lähtekoodiga mudel"
+  },
+  "model_reasoning_specialist": {
+    "message": "Arutlusspetsialist"
+  },
+  "model_balanced_reliable": {
+    "message": "Tasakaalustatud ja usaldusväärne"
+  },
+  "model_most_capable": {
+    "message": "Võimekaim Claude"
+  },
+  "model_label_fastest": {
+    "message": "Kiireim"
+  }
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,81 @@
+{
+  "extension_id": "nlompoojekdpdjnjledbbahkdhdhjlae",
+  "extension_name": "Claude Chat Search & Assistant",
+  "version": "Unknown",
+  "user_count": 40,
+  "dataset": "claude",
+  "verdict": "SUSPICIOUS",
+  "confidence": 0.9,
+  "recommendation": "REVIEW",
+  "reasoning": "The extension is marked as SUSPICIOUS due to high-risk data handling and invasive behavior. First, it performs automated scraping of the user's entire Claude chat history by iteratively loading every chat URL in a background tab. While this supports the 'Search' feature, this level of automation is highly aggressive and indistinguishable from data harvesting. Second, the 'AI Assistant' feature exfiltrates user prompts and emails to a non-standard backend (a personal WordPress installation at test.mick.co.ke). This destination is not disclosed, and the use of 'admin-ajax.php' for processing sensitive AI prompts is a significant security and privacy risk. Third, there is a mismatch in permissions; the extension requests access to api.openai.com but actually routes data through the aforementioned third-party site. The code also contains developer comments ('REPLACE WITH YOUR DOMAIN') suggesting it may be a repurposed or poorly configured template.",
+  "full_validation": {
+    "extension_id": "nlompoojekdpdjnjledbbahkdhdhjlae",
+    "verdict": "SUSPICIOUS",
+    "confidence": 0.9,
+    "reasoning": "The extension is marked as SUSPICIOUS due to high-risk data handling and invasive behavior. First, it performs automated scraping of the user's entire Claude chat history by iteratively loading every chat URL in a background tab. While this supports the 'Search' feature, this level of automation is highly aggressive and indistinguishable from data harvesting. Second, the 'AI Assistant' feature exfiltrates user prompts and emails to a non-standard backend (a personal WordPress installation at test.mick.co.ke). This destination is not disclosed, and the use of 'admin-ajax.php' for processing sensitive AI prompts is a significant security and privacy risk. Third, there is a mismatch in permissions; the extension requests access to api.openai.com but actually routes data through the aforementioned third-party site. The code also contains developer comments ('REPLACE WITH YOUR DOMAIN') suggesting it may be a repurposed or poorly configured template.",
+    "recommendation": "REVIEW",
+    "key_concerns": [
+      "Automated mass-scraping of user chat history in background tabs.",
+      "Exfiltration of user-provided prompts and emails to an unverified private WordPress domain.",
+      "Requesting high-privilege host permissions (api.openai.com) that are not utilized by the assistant logic.",
+      "Potential for rate-limiting or account flags on Claude.ai due to aggressive background navigation."
+    ],
+    "evidence": {
+      "exfiltration_chain": {
+        "data_collected": "User email and user-inputted chat prompts/messages.",
+        "processing_method": "The extension captures text from textareas on claude.ai and sends it to a third-party backend for 'AI processing'.",
+        "destination_domain": "https://test.mick.co.ke/wp-admin/admin-ajax.php",
+        "code_evidence": "In prompt-assistant.js: this.apiBaseUrl = 'https://test.mick.co.ke/wp-admin/admin-ajax.php'; ... const response = await fetch(this.apiBaseUrl, { method: 'POST', ... body: `action=ai_grammar&token=${this.userToken}&text=${encodeURIComponent(text)}` });"
+      },
+      "dual_purpose": {
+        "stated_purpose": "Search within Claude chat conversations, check grammar, and refine prompts with AI assistance.",
+        "hidden_functionality": "Invasive automated chat history scraping; Monetization via a credit-based system using a personal WordPress installation as a backend.",
+        "code_evidence": "background.js: Function searchAcrossAllChats() iteratively updates a background tab to every chat URL found in the user's history and executes scraping scripts. prompt-assistant.js: Implements a payment funnel using Gumroad links and WordPress AJAX actions."
+      },
+      "credential_theft": {
+        "capture_mechanism": "Checks for OpenAI API keys in storage, although no direct exfiltration of this key is visible in the provided snippets.",
+        "transmission_target": null,
+        "code_evidence": "popup.js: const result = await chrome.storage.sync.get(['openaiKey']); if (result.openaiKey && result.openaiKey.startsWith('sk-')) { ... }"
+      }
+    },
+    "domains": {
+      "legitimate": [
+        "https://claude.ai",
+        "https://api.openai.com"
+      ],
+      "requires_investigation": [
+        "https://test.mick.co.ke"
+      ],
+      "informational_only": [
+        "https://michaelmick.gumroad.com"
+      ]
+    },
+    "pattern_assessment": [
+      {
+        "pattern": "NETWORK_ENDPOINT",
+        "usage": "SUSPICIOUS",
+        "justification": "Sends user prompts and emails to a private WordPress site (test.mick.co.ke) which is not disclosed as an AI processing provider."
+      },
+      {
+        "pattern": "TABS_ACCESS",
+        "usage": "SUSPICIOUS",
+        "justification": "Used to programmatically navigate and scrape the user's entire Claude chat history in a background tab."
+      },
+      {
+        "pattern": "KEYBOARD_LISTENER",
+        "usage": "LEGITIMATE",
+        "justification": "Used for standard UI shortcuts (opening the search panel)."
+      },
+      {
+        "pattern": "INNERHTML",
+        "usage": "LEGITIMATE",
+        "justification": "Used for rendering the search results and assistant UI panels."
+      }
+    ],
+    "token_usage": {
+      "prompt": 26840,
+      "candidates": 1087,
+      "total": 31802
+    }
+  }
+}

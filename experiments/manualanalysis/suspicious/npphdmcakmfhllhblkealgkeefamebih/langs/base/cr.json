@@ -1,0 +1,485 @@
+{
+    "you_need_to_approve_the_permissions_to_open_the_extension_in_the_side_panel_": {
+        "message": "Ou bezwen akòde pèmisyon yo pou louvri ekstansyon an nan panèl bò a."
+    },
+    "dropblock_head": {
+        "message": "dropBlock_head"
+    },
+    "open_the_extension_in_a_sidepanel": {
+        "message": "Ouvri ekstansyon an nan yon panèl bò"
+    },
+    "link_was_copied_": {
+        "message": "Lyen te kopi!"
+    },
+    "drag_and_drop_your_files_here": {
+        "message": "Trennen epi lage fichye ou isit la"
+    },
+    "only_text_content_will_be_processed__up_to_5_files__each_up_to_5mb_": {
+        "message": "Se sèlman kontni tèks ki pral trete. Jiska 5 fichye, chak jiska 5MB."
+    },
+    "you_can_upload_a_maximum_of_5_files_per_dialog__please_upload_files_in_smaller_batches_": {
+        "message": "Ou kapab telechaje yon maksimòm de 5 fichye pa dyalòg. Tanpri, telechaje fichye yo nan ti pakèt."
+    },
+    "invalid_file_format_or_file_size_exceeds_5_mb__please_select_smaller_files_": {
+        "message": "Fòma fichye a pa valab oswa gwosè fichye a depase 5MB. Tanpri, chwazi fichye ki pi piti."
+    },
+    "permissions_are_missing__please_grant_the_extension_access_to_web_pages_": {
+        "message": "Pèmisyon manke. Tanpri, bay ekstansyon an aksè a paj wèb yo."
+    },
+    "error__please_try_again_later_": {
+        "message": "Erè, tanpri eseye ankò pita."
+    },
+    "summarization_does_not_work_on_system_pages__please_copy_the_page_content_into_the_chat_manually_": {
+        "message": "Rezime pa mache sou paj sistèm yo. Tanpri, kopie kontni paj la nan chat la manyèlman."
+    },
+    "delete": {
+        "message": "Efase"
+    },
+    "delete_chat_": {
+        "message": "Efase chat?"
+    },
+    "are_you_sure_you_want_to_delete_this_chat_": {
+        "message": "Eske ou asire ou vle efase chat sa a?"
+    },
+    "cancel": {
+        "message": "Anile"
+    },
+    "the_chat_was_deleted": {
+        "message": "Chat la te efase"
+    },
+    "`_text_`": {
+        "message": "ʼ+text+ʼ"
+    },
+    "`_lang___(text)_`": {
+        "message": "ʼ+Lang.__(text)+ʼ"
+    },
+    "${deletetext}": {
+        "message": "${deleteText}"
+    },
+    "`_lang___(_delete_chat__)_`": {
+        "message": "ʼ+Lang.__('Efase chat?')+ʼ"
+    },
+    "`_lang___(_are_you_sure_you_want_to_delete_this_chat__)_`": {
+        "message": "ʼ+Lang.__('Eske ou asire ou vle efase chat sa a?')+ʼ"
+    },
+    "`_lang___(_cancel_)_`": {
+        "message": "ʼ+Lang.__('Anile')+ʼ"
+    },
+    "`_lang___(_delete_)_`": {
+        "message": "ʼ+Lang.__('Efase')+ʼ"
+    },
+    "file": {
+        "message": "Fichye"
+    },
+    "thinking": {
+        "message": "Ap panse"
+    },
+    "copy_response": {
+        "message": "Kopi repons lan"
+    },
+    "good_response": {
+        "message": "Bon repons"
+    },
+    "bad_response": {
+        "message": "Move repons"
+    },
+    "uploading___": {
+        "message": "Ap telechaje..."
+    },
+    "`_lang___(_thinking_)_`": {
+        "message": "ʼ+Lang.__('Ap panse')+ʼ"
+    },
+    "feedback": {
+        "message": "Kòmantè"
+    },
+    "share": {
+        "message": "Pataje"
+    },
+    "rate_us": {
+        "message": "Evalye nou"
+    },
+    "💀": {
+        "message": "💀"
+    },
+    "😞": {
+        "message": "😞"
+    },
+    "😐": {
+        "message": "😐"
+    },
+    "🙂": {
+        "message": "🙂"
+    },
+    "😍": {
+        "message": "😍"
+    },
+    "grok_3_is_here_": {
+        "message": "Grok 3 la isit."
+    },
+    "what_do_you_want_to_know_": {
+        "message": "Kisa ou vle konnen?"
+    },
+    "how_can_grok_help_you_": {
+        "message": "Kijan Grok kapab ede ou?"
+    },
+    "attach_file": {
+        "message": "Atache fichye"
+    },
+    "select_a_model": {
+        "message": "Chwazi yon modèl"
+    },
+    "sent_message": {
+        "message": "Voye mesaj"
+    },
+    "hey_": {
+        "message": "Hey,"
+    },
+    "welcome_": {
+        "message": "byenveni!"
+    },
+    "how_can_i_help_you_": {
+        "message": "Kijan m ka ede ou?"
+    },
+    "message_deepseek": {
+        "message": "Mesaj DeepSeek"
+    },
+    "summarize_the_current_page": {
+        "message": "Rezime paj aktyèl la"
+    },
+    "upload_a_file": {
+        "message": "Telechaje yon fichye"
+    },
+    "start_a_chat": {
+        "message": "Kòmanse yon chat"
+    },
+    "set_personalization": {
+        "message": "Mete Pèsonalizasyon"
+    },
+    "new_chat": {
+        "message": "Nouvo chat"
+    },
+    "switch_to_light_mode": {
+        "message": "Chanje pou mòd limyè"
+    },
+    "switch_to_dark_mode": {
+        "message": "Chanje pou mòd fènwa"
+    },
+    "open_the_extension_in_a_separate_tab": {
+        "message": "Ouvri ekstansyon an nan yon lòt onglet"
+    },
+    "{{_item_}}": {
+        "message": "{{ item }}"
+    },
+    "start_now": {
+        "message": "Kòmanse kounye a"
+    },
+    "get_ideas": {
+        "message": "Jwenn ide"
+    },
+    "ask": {
+        "message": "Poze kesyon"
+    },
+    "code": {
+        "message": "Kòd"
+    },
+    "translate": {
+        "message": "Tradui"
+    },
+    "cooking_tips": {
+        "message": "Konsèy pou kwit manje"
+    },
+    "how_deepseek_ai_helps_you_": {
+        "message": "Kijan DeepSeek AI ede ou?"
+    },
+    "✨_get_spot_on_answers_10x_faster": {
+        "message": "✨ Jwenn repons presi 10 fwa pi vit"
+    },
+    "no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Pa Google, pa dezòd onglet, pa gaspi tan"
+    },
+    "📚_save_hours_on_studying": {
+        "message": "📚 Ekonomize èdtan sou etid"
+    },
+    "generate_essays__auto_complete_tests__and_summarize_any_page_in_minutes_": {
+        "message": "Jenere redaksyon, konplete tès otomatikman, epi rezime nenpòt paj nan kèk minit."
+    },
+    "🌍_real_time_translation_on_the_page": {
+        "message": "🌍 Tradiksyon an tan reyèl sou paj la"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments": {
+        "message": "Ekri tankou yon natif natal, san erè oswa moman komik. Dirèkteman sou paj la."
+    },
+    "💻_your_ai_copilot_for_coding": {
+        "message": "💻 Ko-pilòt AI ou pou kodaj"
+    },
+    "fix_bugs__decode_legacy_and_write_code_3x_faster__enjoy_your_work_and_earn_more_": {
+        "message": " Koreksyon erè, dechifre kòd ansyen, epi ekri kòd 3 fwa pi vit. Jwi travay ou epi fè plis lajan."
+    },
+    "where_do_we_start_": {
+        "message": "Kote nou kòmanse?"
+    },
+    "get_10_post_ideas_for_my_cooking_blog": {
+        "message": "Jwenn 10 ide pou blog kwizin mwen"
+    },
+    "find_a_billion_dollar_no_code_startup_idea": {
+        "message": "Jwenn yon ide startup san kòd ki vo yon milya dola"
+    },
+    "give_me_fun_game_ideas_to_play_with_my_kids_at_home": {
+        "message": "Bay m ide jwèt amizan pou jwe ak timoun mwen lakay"
+    },
+    "write_3_viral_tiktok_post_ideas_about_personal_finance": {
+        "message": "Ekri 3 ide pòs TikTok ki vin viral sou finans pèsonèl"
+    },
+    "recommend_5_books_that_will_change_the_way_i_think": {
+        "message": "Rekòmande 5 liv ki pral chanje fason m panse"
+    },
+    "what_daily_habits_can_boost_my_creativity_": {
+        "message": "Kisa abitid chak jou ki ka ogmante kreyativite mwen?"
+    },
+    "help_me_set_3_achievable_goals_for_the_next_30_days": {
+        "message": "Ede m fikse 3 objektif ki reyalizab pou pwochen 30 jou yo"
+    },
+    "how_can_i_make_my_facebook_profile_more_attractive_": {
+        "message": "Kijan m ka fè pwofil Facebook mwen plis atiran?"
+    },
+    "generate_a_basic_react_component_for_a_to_do_list": {
+        "message": "Jenere yon konpozan React debaz pou yon lis pou fè"
+    },
+    "can_you_explain_javascript_promises_in_a_simple_way_": {
+        "message": "Èske ou ka eksplike pwomès JavaScript yo nan yon fason senp?"
+    },
+    "how_do_i_build_a_rest_api_endpoint_using_fastapi_in_python_": {
+        "message": "Kijan pou m konstwi yon pwen aksè API REST avèk FastAPI nan Python?"
+    },
+    "how_can_i_add_social_login_(google_facebook)_to_my_app_": {
+        "message": "Kijan m ka ajoute koneksyon sosyal (Google/Facebook) nan aplikasyon mwen?"
+    },
+    "how_do_you_say_“love”_in_french_": {
+        "message": "Kijan ou di “lamou” an Franse?"
+    },
+    "how_do_you_say_“delicious_food”_in_italian_": {
+        "message": "Kijan ou di “bon manje” an Italyen?"
+    },
+    "what_s_the_korean_translation_of_“i_miss_you”_": {
+        "message": "Kisa tradiksyon koreyen pou “M manke ou”?"
+    },
+    "what_s_the_arabic_word_for_“peace”_": {
+        "message": "Kisa mo Arab pou “lapè”?"
+    },
+    "quick_breakfast_ideas_kids_will_actually_love": {
+        "message": "Ide dejene rapid ke timoun yo ap vrèman renmen"
+    },
+    "what_are_5_no_sugar_snacks_i_can_make_at_home_": {
+        "message": "Kisa 5 goute san sik mwen ka fè lakay?"
+    },
+    "give_me_an_easy_3_ingredient_dessert_recipe": {
+        "message": "Bay m yon resèt desè fasil ak 3 engredyan"
+    },
+    "easy_dessert_tips": {
+        "message": "Konsèy fasil pou desè"
+    },
+    "click": {
+        "message": "Klike"
+    },
+    "add_deepseek_ai_to_the_toolbar_for_quick_access": {
+        "message": "Ajoute DeepSeek AI nan ba zouti pou aksè rapid"
+    },
+    "file_download_has_started": {
+        "message": "Telechajman fichye a kòmanse"
+    },
+    "to_get_this_file_again_": {
+        "message": "Pou jwenn fichye sa ankò,"
+    },
+    "click_here": {
+        "message": "klike isit la"
+    },
+    "show_downloaded_file": {
+        "message": "Montre fichye ki telechaje a"
+    },
+    "files_on_the_computer_can_only_be_opened_in_the_google_chrome_extension": {
+        "message": "Fichye sou òdinatè a ka sèlman louvri nan ekstansyon Google Chrome"
+    },
+    "enjoy_the_conversion_": {
+        "message": "Jwi konvèsyon an?"
+    },
+    "please_rate_your_experience_with_our_extension": {
+        "message": "Tanpri, evalye eksperyans ou avèk ekstansyon nou an"
+    },
+    "try_again": {
+        "message": "Eseye ankò"
+    },
+    "help_us_be_better": {
+        "message": "Ede nou vin pi bon"
+    },
+    "your_feedback_matters__what_can_we_improve_": {
+        "message": "Kòmantè ou enpòtan. Kisa nou ka amelyore?"
+    },
+    "send": {
+        "message": "Voye"
+    },
+    "write_your_feedback_here": {
+        "message": "Ekri kòmantè ou isit la"
+    },
+    "support_us_in_10_seconds": {
+        "message": "Sipòte nou nan 10 segonn"
+    },
+    "1__click": {
+        "message": "1. Klike"
+    },
+    "_write_a_review_": {
+        "message": "\\\"Ekri yon revizyon\\\""
+    },
+    "2__rate_and_post_your_feedback": {
+        "message": "2. Evalye epi poste kòmantè ou"
+    },
+    "thanks_for_helping_us_grow_": {
+        "message": "Mèsi paske ou ede nou grandi!"
+    },
+    "select_your_language": {
+        "message": "Chwazi lang ou"
+    },
+    "type_to_filter_languages___": {
+        "message": "Tape pou filtre lang..."
+    },
+    "create_public_link": {
+        "message": "Kreye Lyen Piblik"
+    },
+    "this_file_will_be_available_to_anyone__public_links_are_temporary_and_will_be_removed_after_24_hours_": {
+        "message": "Fichye sa a ap disponib pou nenpòt moun. Lyen piblik yo tanporèl epi yo pral retire apre 24 èdtan."
+    },
+    "create": {
+        "message": "Kreye"
+    },
+    "save_hours_on_studying": {
+        "message": "[textgradientEl]Ekonomize Lè[\/textgradientEl] sou Etid"
+    },
+    "auto_complete_tests__generate_essays__and_summarize_any_page_in_minutes_": {
+        "message": "Konplete tès otomatikman, jenere redaksyon, epi rezime nenpòt paj nan kèk minit."
+    },
+    "step": {
+        "message": "Etap"
+    },
+    "of": {
+        "message": "nan"
+    },
+    "continue": {
+        "message": "Kontinye"
+    },
+    "use_ai_translation_magic": {
+        "message": "Sèvi ak Magi Tradiksyon AI [textgradientEl]"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments__right_on_the_page_": {
+        "message": "Ekri tankou yon natif natal, san erè oswa moman komik. Dirèkteman sou paj la."
+    },
+    "get_your_ai_copilot_for_coding": {
+        "message": "Jwenn Ko-pilòt AI ou pou kodaj"
+    },
+    "try_now": {
+        "message": "Eseye Kounye a"
+    },
+    "did_this_tool_help_you_": {
+        "message": "Èske zouti sa a te ede ou?"
+    },
+    "share_it_with_friends_who_work_with_images_": {
+        "message": "Pataje li ak zanmi ou ki travay ak imaj."
+    },
+    "who_would_find_it_useful_": {
+        "message": "Kiyès ki ta jwenn li itil?"
+    },
+    "copy_link": {
+        "message": "Kopi lyen"
+    },
+    "facebook": {
+        "message": "Facebook"
+    },
+    "x": {
+        "message": "X"
+    },
+    "telegram": {
+        "message": "Telegram"
+    },
+    "i_found_a_super_useful_chrome_extension__": {
+        "message": "Mwen jwenn yon ekstansyon Chrome trè itil —"
+    },
+    "it_can_save_any_website_as_a_pdf__you_should_try_it_out___it_s_great_": {
+        "message": "Li kapab sove nenpòt sit entènèt kòm yon PDF. Ou ta dwe eseye li — li gwo!"
+    },
+    "hooray__greate_job_": {
+        "message": "Bravo, bon travay!"
+    },
+    "please__can_you_rate_us_": {
+        "message": "Tanpri, èske ou kapab evalye nou?"
+    },
+    "deepseek_ai_has_been_installed_": {
+        "message": "DeepSeek AI enstale!"
+    },
+    "get_answers_10x_faster___no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Jwenn repons 10 fwa pi vit — san Google, san dezòd onglet, san gaspi tan"
+    },
+    "open_deepseek_ai": {
+        "message": "Ouvri DeepSeek AI"
+    },
+    "deepseek_app": {
+        "message": "Aplikasyon DeepSeek"
+    },
+    "love_deepseek_": {
+        "message": "Renmen DeepSeek?"
+    },
+    "could_you_please_rate_our_extension_": {
+        "message": "Èske ou ta ka evalye ekstansyon nou an?"
+    },
+    "share_this_extension_with_your_friends": {
+        "message": "Pataje ekstansyon sa a ak zanmi ou"
+    },
+    "share_us_with_your_friends": {
+        "message": "Pataje nou ak zanmi ou"
+    },
+    "and_unlock_all_ai_assistant_features": {
+        "message": "Epi debloke tout karakteristik Asistan AI yo"
+    },
+    "vk_com": {
+        "message": "Vk.com"
+    },
+    "reddit": {
+        "message": "Reddit"
+    },
+    "whatsapp": {
+        "message": "WhatsApp"
+    },
+    "weibo": {
+        "message": "Weibo"
+    },
+    "post_preview": {
+        "message": "Preview Pòs"
+    },
+    "hey__i_m_your_ai_assistant_": {
+        "message": "Hey, mwen se Asistan AI ou!"
+    },
+    "what_can_i_help_with_": {
+        "message": "Kisa m ka ede ou avèk?"
+    },
+    "history": {
+        "message": "Istwa"
+    },
+    "settings": {
+        "message": "Anviwònman"
+    },
+    "subscription": {
+        "message": "Abònman"
+    },
+    "add_personal_info_or_instructions_to_the_ai_assistant__this_will_help_improve_responses_for_you_": {
+        "message": "Ajoute enfòmasyon pèsonèl oswa enstriksyon pou Asistan AI a. Sa ap ede amelyore repons pou ou."
+    },
+    "save": {
+        "message": "Sove"
+    },
+    "and_you_ll_unlock_all_ai_assistant_features": {
+        "message": "Epi ou pral debloke tout karakteristik Asistan AI yo"
+    },
+    "e_g___always_reply_in_french": {
+        "message": "pa egzanp, toujou reponn an Franse"
+    },
+    "_p_you_can_try_the_ai_assistant_to_play_a_role__e_g____p__ul__li_act_as_an_english_teacher_and_correct_my_mistakes__li__li_respond_like_a_professional_business_consultant__li___ul__p_or_input_your_data_for_the_ai_assistant_to_generate_responses__e_g____p__ul__li_23_y_o___58_kg__height_165_cm__female__li__li_programmer__php___laravel__js___react___li___ul_": {
+        "message": "<p>Ou kapab eseye Asistan AI a pou jwe yon wòl, eg.:<\/p><ul><li>Aji kòm yon pwofesè angle epi korije erè mwen yo<\/li><li>Reponn tankou yon konsiltan biznis pwofesyonèl<\/li><\/ul><p>Oswa antre done ou pou Asistan AI a jenere repons, eg.:<\/p><ul><li>23 an, 58 kg, wot 165 cm, fi<\/li><li>Pwofesyonèl. PHP – Laravel, JS – React.<\/li><\/ul>"
+    }
+}

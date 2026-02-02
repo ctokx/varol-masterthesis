@@ -1,0 +1,323 @@
+{
+    "you_need_to_approve_the_permissions_to_open_the_extension_in_the_side_panel_": {
+        "message": "Sa pead loa permissions, et avada laiendus külgpaneelil."
+    },
+    "dropblock_head": {
+        "message": "dropBlock_pealkiri"
+    },
+    "open_the_extension_in_a_sidepanel": {
+        "message": "Ava laiendus külgpaneelil"
+    },
+    "link_was_copied_": {
+        "message": "Link on kopeeritud!"
+    },
+    "drag_and_drop_your_files_here": {
+        "message": "Lohista ja lase oma failid siia"
+    },
+    "only_text_content_will_be_processed__up_to_5_files__each_up_to_5mb_": {
+        "message": "Ainult tekstisisu töödeldakse. Kuni 5 faili, igaüks kuni 5MB."
+    },
+    "you_can_upload_a_maximum_of_5_files_per_dialog__please_upload_files_in_smaller_batches_": {
+        "message": "Saad üles laadida maksimaalselt 5 faili iga dialoogi kohta. Palun laadi üles failid väiksemates osades."
+    },
+    "invalid_file_format_or_file_size_exceeds_5_mb__please_select_smaller_files_": {
+        "message": "Sobimatu failivorming või failimaht ületab 5 MB. Palun vali väiksemad failid."
+    },
+    "permissions_are_missing__please_grant_the_extension_access_to_web_pages_": {
+        "message": "Luba puudub. Palun anna laiendusele juurdepääs veebilehtedele."
+    },
+    "error__please_try_again_later_": {
+        "message": "Viga, palun proovi hiljem uuesti."
+    },
+    "summarization_does_not_work_on_system_pages__please_copy_the_page_content_into_the_chat_manually_": {
+        "message": "Kokkuvõtte tegemine ei tööta süsteemilehtedel. Palun kopeeri lehe sisu käsitsi vestlusesse."
+    },
+    "delete": {
+        "message": "Kustuta"
+    },
+    "delete_chat_": {
+        "message": "Kas kustutada vestlus?"
+    },
+    "are_you_sure_you_want_to_delete_this_chat_": {
+        "message": "Oled kindel, et soovid selle vestluse kustutada?"
+    },
+    "cancel": {
+        "message": "Tühista"
+    },
+    "the_chat_was_deleted": {
+        "message": "Vestlus kustutatud"
+    },
+    "`_text_`": {
+        "message": "ʼ+text+ʼ"
+    },
+    "`_lang___(text)_`": {
+        "message": "ʼ+Lang.__(text)+ʼ"
+    },
+    "${deletetext}": {
+        "message": "${deleteText}"
+    },
+    "`_lang___(_delete_chat__)_`": {
+        "message": "ʼ+Lang.__('Kustuta vestlus?')+ʼ"
+    },
+    "`_lang___(_are_you_sure_you_want_to_delete_this_chat__)_`": {
+        "message": "ʼ+Lang.__('Oled kindel, et soovid selle vestluse kustutada?')+ʼ"
+    },
+    "`_lang___(_cancel_)_`": {
+        "message": "ʼ+Lang.__('Tühista')+ʼ"
+    },
+    "`_lang___(_delete_)_`": {
+        "message": "ʼ+Lang.__('Kustuta')+ʼ"
+    },
+    "file": {
+        "message": "Fail"
+    },
+    "thinking": {
+        "message": "Mõtlen"
+    },
+    "copy_response": {
+        "message": "Kopeeri vastus"
+    },
+    "good_response": {
+        "message": "Hea vastus"
+    },
+    "bad_response": {
+        "message": "Halb vastus"
+    },
+    "uploading___": {
+        "message": "Laen..."
+    },
+    "`_lang___(_thinking_)_`": {
+        "message": "ʼ+Lang.__('Mõtlen')+ʼ"
+    },
+    "feedback": {
+        "message": "Tagasiside"
+    },
+    "share": {
+        "message": "Jaga"
+    },
+    "rate_us": {
+        "message": "Hinda meid"
+    },
+    "💀": {
+        "message": "💀"
+    },
+    "😞": {
+        "message": "😞"
+    },
+    "😐": {
+        "message": "😐"
+    },
+    "🙂": {
+        "message": "🙂"
+    },
+    "😍": {
+        "message": "😍"
+    },
+    "grok_3_is_here_": {
+        "message": "Grok 3 on kohal."
+    },
+    "what_do_you_want_to_know_": {
+        "message": "Mida soovid teada?"
+    },
+    "how_can_grok_help_you_": {
+        "message": "Kuidas saab Grok sind aidata?"
+    },
+    "attach_file": {
+        "message": "Lisa fail"
+    },
+    "select_a_model": {
+        "message": "Vali mudel"
+    },
+    "sent_message": {
+        "message": "Saadetud sõnum"
+    },
+    "hey_": {
+        "message": "Tere,"
+    },
+    "welcome_": {
+        "message": "tulemast!"
+    },
+    "how_can_i_help_you_": {
+        "message": "Kuidas saan sind aidata?"
+    },
+    "message_deepseek": {
+        "message": "DeepSeek sõnum"
+    },
+    "summarize_the_current_page": {
+        "message": "Kokkuvõte käesolevast leheküljest"
+    },
+    "upload_a_file": {
+        "message": "Laadi fail üles"
+    },
+    "start_a_chat": {
+        "message": "Alusta vestlust"
+    },
+    "set_personalization": {
+        "message": "Määra isikupärastus"
+    },
+    "new_chat": {
+        "message": "Uus vestlus"
+    },
+    "switch_to_light_mode": {
+        "message": "Lülitu heledale režiimile"
+    },
+    "switch_to_dark_mode": {
+        "message": "Lülitu tume režiim"
+    },
+    "open_the_extension_in_a_separate_tab": {
+        "message": "Ava laiendus eraldi vahekaardil"
+    },
+    "{{_item_}}": {
+        "message": "{{ item }}"
+    },
+    "start_now": {
+        "message": "Alusta kohe"
+    },
+    "get_ideas": {
+        "message": "Saada ideid"
+    },
+    "ask": {
+        "message": "Küsi"
+    },
+    "code": {
+        "message": "Kood"
+    },
+    "translate": {
+        "message": "Tõlgi"
+    },
+    "cooking_tips": {
+        "message": "Kokkamisnõuanded"
+    },
+    "how_deepseek_ai_helps_you_": {
+        "message": "Kuidas DeepSeek AI sind aitab?"
+    },
+    "✨_get_spot_on_answers_10x_faster": {
+        "message": "✨ Saavuta täpsed vastused 10x kiiremini"
+    },
+    "no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Ilma Google'i, ilma kaootiliste vahelehtedeta, ilma ajaraiskamiseta"
+    },
+    "📚_save_hours_on_studying": {
+        "message": "📚 Säästa tunde õppes"
+    },
+    "generate_essays__auto_complete_tests__and_summarize_any_page_in_minutes_": {
+        "message": "Loo esseesid, auto-täida teste ja kokkuvõte mistahes leheküljest minutitega."
+    },
+    "🌍_real_time_translation_on_the_page": {
+        "message": "🌍 Reaalajas tõlge lehel"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments__right_on_the_page_": {
+        "message": "Kirjuta nagu emakeelne, ilma vigade või piinlike hetkedeta. Otse lehel."
+    },
+    "get_your_ai_copilot_for_coding": {
+        "message": "Hangi oma AI-koodilineit (copilot)"
+    },
+    "try_now": {
+        "message": "Proovi kohe"
+    },
+    "did_this_tool_help_you_": {
+        "message": "Kas see tööriist aitas sind?"
+    },
+    "share_it_with_friends_who_work_with_images_": {
+        "message": "Jaga sõpradega, kes tegelevad piltidega."
+    },
+    "who_would_find_it_useful_": {
+        "message": "Kes leiaks selle kasulikuks?"
+    },
+    "copy_link": {
+        "message": "Kopeeri link"
+    },
+    "facebook": {
+        "message": "Facebook"
+    },
+    "x": {
+        "message": "X"
+    },
+    "telegram": {
+        "message": "Telegram"
+    },
+    "i_found_a_super_useful_chrome_extension__": {
+        "message": "Leidsin väga kasuliku Chrome'i laienduse —"
+    },
+    "it_can_save_any_website_as_a_pdf__you_should_try_it_out___it_s_great_": {
+        "message": "See võib salvestada mis tahes veebilehe PDF-ina. Proovi seda — see on suurepärane!"
+    },
+    "hooray__greate_job_": {
+        "message": "Hüüd, suurepärane töö!"
+    },
+    "please__can_you_rate_us_": {
+        "message": "Palun, hinda meid?"
+    },
+    "deepseek_ai_has_been_installed_": {
+        "message": "DeepSeek AI on installitud!"
+    },
+    "get_answers_10x_faster___no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Saavuta vastused 10x kiiremini — ilma Google'i, ilma kaootiliste vahelehtedeta, ilma ajaraiskamiseta"
+    },
+    "open_deepseek_ai": {
+        "message": "Ava DeepSeek AI"
+    },
+    "deepseek_app": {
+        "message": "DeepSeek rakendus"
+    },
+    "love_deepseek_": {
+        "message": "Armastad DeepSeeki?"
+    },
+    "could_you_please_rate_our_extension_": {
+        "message": "Kas saaksite hinnata meie laiendust?"
+    },
+    "share_this_extension_with_your_friends": {
+        "message": "Jaga seda laiendust oma sõpradega"
+    },
+    "share_us_with_your_friends": {
+        "message": "Jaga meid oma sõpradega"
+    },
+    "and_unlock_all_ai_assistant_features": {
+        "message": "Ja avad kõik AI-assistendi funktsioonid"
+    },
+    "vk_com": {
+        "message": "Vk.com"
+    },
+    "reddit": {
+        "message": "Reddit"
+    },
+    "whatsapp": {
+        "message": "WhatsApp"
+    },
+    "weibo": {
+        "message": "Weibo"
+    },
+    "post_preview": {
+        "message": "Postituse eelvaade"
+    },
+    "hey__i_m_your_ai_assistant_": {
+        "message": "Hei, ma olen sinu AI-assistent!"
+    },
+    "what_can_i_help_with_": {
+        "message": "Millega saan aidata?"
+    },
+    "history": {
+        "message": "Ajalugu"
+    },
+    "settings": {
+        "message": "Seaded"
+    },
+    "subscription": {
+        "message": "Tellimus"
+    },
+    "add_personal_info_or_instructions_to_the_ai_assistant__this_will_help_improve_responses_for_you_": {
+        "message": "Lisa isiklikud andmed või juhised AI-assistendile. See aitab parandada vastuseid sinu jaoks."
+    },
+    "save": {
+        "message": "Salvesta"
+    },
+    "and_you_ll_unlock_all_ai_assistant_features": {
+        "message": "Ja avad kõik AI-assistendi funktsioonid"
+    },
+    "e_g___always_reply_in_french": {
+        "message": "nt. vasta alati prantsuse keeles"
+    },
+    "_p_you_can_try_the_ai_assistant_to_play_a_role__e_g____p__ul__li_act_as_an_english_teacher_and_correct_my_mistakes__li__li_respond_like_a_professional_business_consultant__li___ul__p_or_input_your_data_for_the_ai_assistant_to_generate_responses__e_g____p__ul__li_23_y_o___58_kg__height_165_cm__female__li__li_programmer__php___laravel__js___react___li___ul_": {
+        "message": "<p>Saad proovida AI-assistenti rollimängus, näiteks:<\/p><ul><li>Toimi inglise keele õpetajana ja paranda minu vigu<\/li><li>Vasta nagu professionaalne ärikonsultant<\/li><\/ul><p>Või sisesta oma andmed, et AI-assistent saaks genereerida vastuseid, näiteks:<\/p><ul><li>23-aastane, 58 kg, pikkus 165 cm, naine<\/li><li>Programmeerija. PHP – Laravel, JS – React.<\/li><\/ul>"
+    }
+}

@@ -1,0 +1,357 @@
+{
+  "job_name": "batches/zxua2purmvstddo5u12f8uewfg351d9sjtis",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:40.316350",
+  "validations": [
+    {
+      "extension_id": "hcjmcpfahioghphbgfokmijhkccofkci",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is a legitimate productivity tool. Its functionality (UI sidebar for ChatGPT, floating text selection menu, and screenshot utility) matches its description. The static analysis findings for keyboard listeners, innerHTML, and network endpoints are all tied to core features: shortcuts, UI rendering, feedback collection, and the premium license system via Stripe. There is no evidence of data exfiltration; text is only sent to ChatGPT when a user explicitly chooses an action from the menu. The 'license' system uses a hardcoded string in the background script, which is a naive implementation but not malicious. The 'all_urls' permission is required for the content-menu.js script to offer AI assistance on any page the user visits.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant providing a sidebar and selection menu for summarizing and translating text.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chatgpt.com",
+          "https://chat.openai.com",
+          "https://buy.stripe.com",
+          "https://formspree.io",
+          "https://cdnjs.cloudflare.com",
+          "https://chromewebstore.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://chatgptchromeextension.com/",
+          "https://twitter.com/intent/tweet",
+          "https://www.facebook.com/sharer/sharer.php",
+          "https://t.me/share/url"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used for accessibility and productivity shortcuts (e.g., Ctrl+Q to 'Ask AI' or Ctrl+Enter to send prompts) within the extension's UI components."
+        },
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "Used to inject the screenshot-capture.js module into active tabs when the user triggers the screenshot feature, which is a standard use of the scripting API."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Extensively used for rendering the floating selection menu and the upgrade modal. While a potential XSS vector if data is untrusted, here it is used for static UI elements."
+        },
+        {
+          "pattern": "NETWORK",
+          "usage": "LEGITIMATE",
+          "justification": "Network calls are mapped to expected destinations: feedback submissions (Formspree), payments (Stripe), and interaction with the ChatGPT backend API."
+        }
+      ],
+      "token_usage": {
+        "prompt": 163294,
+        "candidates": 805,
+        "total": 165523
+      }
+    },
+    {
+      "extension_id": "pkdcpohhilpdgdooafpjnenmnhgbmdmh",
+      "verdict": "SAFE",
+      "confidence": 0.9,
+      "reasoning": "The extension is a legitimate ChatGPT productivity tool. It uses a common architectural pattern for such tools: a background script manages the data state while a content script acts as a proxy to fetch data from OpenAI using the user's authenticated web session. The static analysis findings for network endpoints, DOM manipulation, and storage are consistent with a Vue.js/Element Plus application that interacts with a specific web service. The 'Avatar' modification code in 'content.ts' is a benign helper that links users to their Google/Gravatar profiles to change pictures. No evidence of data exfiltration or credential theft was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": "All network requests observed in 'server.ts-975a0a3a.js' and 'content.ts-293e4619.js' are directed to 'chat.openai.com' to facilitate the extension's core functionality. No third-party data transmission was found."
+        },
+        "dual_purpose": {
+          "stated_purpose": "ChatGPT Plus is a plugin designed to enhance the conversational experience with AI.",
+          "hidden_functionality": null,
+          "code_evidence": "The code implements conversation history management, context-menu shortcuts for AI prompts, and a markdown-enabled chat UI, all of which align with the stated purpose."
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": "The extension retrieves the OpenAI 'accessToken' via 'https://chat.openai.com/api/auth/session' to authenticate its local API calls. This token is stored in 'chrome.storage.local' and is never transmitted to non-OpenAI domains."
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chat.openai.com",
+          "https://myaccount.google.com",
+          "https://en.gravatar.com",
+          "https://element-plus.org"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://www.w3.org/1999/xlink",
+          "http://www.w3.org/2000/svg"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used in 'server.ts' to locate an open ChatGPT tab to 'proxy' API requests, ensuring the user's web session cookies are included to bypass Cloudflare/CORS."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Found in the minified 'defaults' library, which is a standard UI framework (Element Plus) used for building the extension's popup and options pages."
+        },
+        {
+          "pattern": "WEB_REQUEST",
+          "usage": "LEGITIMATE",
+          "justification": "Used to monitor the completion of OpenAI's 'gen_title' endpoint to trigger a local sync of new conversations into the extension's history view."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used within 'content.ts' specifically to render Markdown-parsed AI responses into the shadow DOM 'ChatCard'."
+        }
+      ],
+      "token_usage": {
+        "prompt": 44511,
+        "candidates": 890,
+        "total": 47474
+      }
+    },
+    {
+      "extension_id": "lgpdceoebipofiijjgpiedpfcdenkndi",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code directly implements its stated purpose. It injects a UI element into ChatGPT's sidebar and an iframe from its own platform (snackprompt.com). When a user selects a prompt from the iframe, the extension uses standard DOM events to populate ChatGPT's textarea and simulate an 'Enter' key press. The 'NETWORK' and 'POST_MESSAGE' findings are part of 'webext-bridge', a common and legitimate library for extension communication. There is no evidence of data exfiltration, credential harvesting, or hidden background tasks. The 'storage' permission is used solely to save the user's preference for whether the extension is enabled or disabled.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Discover the best AI prompts right inside ChatGPT",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chatgpt.com/",
+          "https://snackprompt.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://twitter.com/SnackPrompt",
+          "https://www.facebook.com/SnackPrompt/",
+          "https://www.instagram.com/snackprompt/"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK",
+          "usage": "LEGITIMATE",
+          "justification": "Used by the webext-bridge library to coordinate messaging between the extension parts and the snackprompt.com iframe."
+        },
+        {
+          "pattern": "POST_MESSAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used for cross-context communication between the ChatGPT page and the embedded Snack Prompt platform iframe to pass selected prompts into the chat box."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to detect when ChatGPT's dynamic UI re-renders so the extension can re-inject the 'Snack Prompt' button and sidebar integration."
+        }
+      ],
+      "token_usage": {
+        "prompt": 22875,
+        "candidates": 640,
+        "total": 24471
+      }
+    },
+    {
+      "extension_id": "caicahkimjnhcepnhnipgbcbigdpeifi",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose. It provides a context menu for selected text, opens the chosen AI service (ChatGPT or Gemini) in a new tab, and uses content scripts to automate the input of the summarization prompt. The use of 'chrome.management' is limited to checking if a sister extension ('PI Prompts') is installed to adjust context menu options, which is a standard cross-promotion technique. There is no evidence of data exfiltration, credential harvesting, or hidden malicious payloads. The code is transparent and follows standard development practices for productivity tools.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Adds context menu options to summarize selected text using ChatGPT or Gemini.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatgpt.com",
+          "gemini.google.com",
+          "chrome.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://www.joelbooks.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "Endpoints for ChatGPT and Gemini are necessary for the extension to navigate the user to the AI tools to perform the summarization."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store user preferences such as the desired summary length and which LLM services to show in the context menu."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used within the injected script to check for existing text and to populate the contenteditable input area of the Gemini interface."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Used to poll the DOM for the existence of the AI chat input field after the page has navigated, ensuring the script interacts with a fully loaded UI."
+        }
+      ],
+      "token_usage": {
+        "prompt": 5606,
+        "candidates": 656,
+        "total": 7315
+      }
+    },
+    {
+      "extension_id": "kdjfhglijhebcchcfkknicfaedhhfpmo",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a utility that enhances the ChatGPT UI. It retrieves message metadata (create_time) by accessing the internal React Fiber properties of the message DOM elements. This is a common and legitimate technique for browser extensions to access data not directly exposed in the HTML text. My analysis confirms that there are zero network calls (no fetch, XHR, or beacons) and no external domains contacted. All data processing (date formatting) and DOM manipulation (injecting the timestamp span) occurs locally within the browser tab. The requested permissions ('scripting' and 'activeTab') are appropriate for its functionality.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Displays timestamps for ChatGPT messages",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chat.openai.com",
+          "chatgpt.com",
+          "clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "DOM / MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses MutationObserver to detect when new message containers are added to the ChatGPT chat interface so it can inject the timestamp span immediately."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store and retrieve user preferences (24-hour format vs 12-hour format) via localStorage on the chat page."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Used as a secondary polling mechanism to ensure timestamps are applied to messages that might have been missed by the MutationObserver."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used in the popup to verify the user is on a valid ChatGPT URL before attempting to inject settings-management scripts."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3807,
+        "candidates": 633,
+        "total": 5220
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 0,
+    "SUSPICIOUS": 0,
+    "SAFE": 5,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 0,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 5,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 1.0,
+    "true_positive_rate": 0.0,
+    "malicious_detection_rate": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 240093,
+    "candidate_tokens": 3624,
+    "total_tokens": 250003
+  }
+}

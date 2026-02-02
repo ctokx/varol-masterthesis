@@ -1,0 +1,81 @@
+{
+  "extension_id": "hiiildgldbpfbegcfgemoliikibfhaeh",
+  "extension_name": "ChatGPT to PDF",
+  "version": "1.3.11",
+  "user_count": 100000,
+  "dataset": "chatgpt",
+  "verdict": "SAFE",
+  "confidence": 0.95,
+  "recommendation": "ALLOW",
+  "reasoning": "The extension is a standard commercial implementation of a ChatGPT utility. The presence of 'onlineapp.pro' and 'PostHog' indicates professional monetization and analytics. The use of a Railway app endpoint for PDF generation is a functional requirement for high-quality HTML-to-PDF conversion that client-side libraries often struggle with. There is no evidence of data exfiltration beyond the specific chat content the user explicitly requests to convert, nor is there any credential theft or hidden malicious behavior. The code in 'wall.js' is a standard payment integration script.",
+  "full_validation": {
+    "extension_id": "hiiildgldbpfbegcfgemoliikibfhaeh",
+    "verdict": "SAFE",
+    "confidence": 0.95,
+    "reasoning": "The extension is a standard commercial implementation of a ChatGPT utility. The presence of 'onlineapp.pro' and 'PostHog' indicates professional monetization and analytics. The use of a Railway app endpoint for PDF generation is a functional requirement for high-quality HTML-to-PDF conversion that client-side libraries often struggle with. There is no evidence of data exfiltration beyond the specific chat content the user explicitly requests to convert, nor is there any credential theft or hidden malicious behavior. The code in 'wall.js' is a standard payment integration script.",
+    "recommendation": "ALLOW",
+    "key_concerns": [],
+    "evidence": {
+      "exfiltration_chain": {
+        "data_collected": "HTML content of the active ChatGPT conversation.",
+        "processing_method": "The content script extracts the chat DOM and sends it to a backend for PDF rendering.",
+        "destination_domain": "chatgpt-to-pdf-nodejs-production.up.railway.app",
+        "code_evidence": "Line 16626: FETCH -> https://chatgpt-to-pdf-nodejs-production.up.railway.app/generate-pdf-from-html"
+      },
+      "dual_purpose": {
+        "stated_purpose": "Convert ChatGPT conversations to PDF.",
+        "hidden_functionality": "None. The extension includes a monetization/paywall layer (onlineapp.pro) which is standard for premium browser tools.",
+        "code_evidence": "wall.js defines window.paywall, handling subscription status and iframe-based payment UI."
+      },
+      "credential_theft": {
+        "capture_mechanism": null,
+        "transmission_target": null,
+        "code_evidence": null
+      }
+    },
+    "domains": {
+      "legitimate": [
+        "chatgpt.com",
+        "sentry.io",
+        "app.posthog.com",
+        "onlineapp.pro",
+        "onlineapp.live",
+        "onlineapp.stream",
+        "up.railway.app"
+      ],
+      "requires_investigation": [],
+      "informational_only": [
+        "yandex.com/bots",
+        "reactjs.org",
+        "w3.org"
+      ]
+    },
+    "pattern_assessment": [
+      {
+        "pattern": "INNERHTML",
+        "usage": "LEGITIMATE",
+        "justification": "Used to inject the 'Download PDF' button and UI elements into the ChatGPT interface."
+      },
+      {
+        "pattern": "STORAGE",
+        "usage": "LEGITIMATE",
+        "justification": "Used to store user settings, local state, and subscription status (via the paywall module)."
+      },
+      {
+        "pattern": "MUTATION_OBSERVER",
+        "usage": "LEGITIMATE",
+        "justification": "Necessary to detect when ChatGPT finishes generating a response so the 'Download' button can be updated or re-injected."
+      },
+      {
+        "pattern": "FETCH/XHR",
+        "usage": "LEGITIMATE",
+        "justification": "Used to communicate with the PDF generation backend and the licensing/paywall API."
+      }
+    ],
+    "token_usage": {
+      "prompt": 57381,
+      "candidates": 788,
+      "total": 59461
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT a Google Chrome™-hoz"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Kiterjesztés a hivatalos ChatGPT gyorsindítójának létrehozásához a Google Chrome böngészőben"
+    },
+    "ext_command_description": {
+        "message": "Gyorsindító a ChatGPT megnyitásához"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT Eco Módban?"
+    },
+    "request_perms_popup_description": {
+        "message": "Segítsen fenntartható ügyekben egyszerűen az internet böngészésével. Ez a mód nem zavarja a böngészést."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Tudjon meg többet"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Engedélyezés"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Elutasítás"
+    },
+    "perms_granted_popup_title": {
+        "message": "Gratulálunk!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Mostantól élvezheti az összes funkciónkat!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Folytatás"
+    },
+    "perms_denied_popup_title": {
+        "message": "Ez kár..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Talán legközelebb."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Üzenet bezárása"
+    },
+    "welcome_title": {
+        "message": "ChatGPT a Chrome-hoz"
+    },
+    "welcome_sub_title": {
+        "message": "A kiterjesztés sikeresen telepítve"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT a Chrome-hoz"
+    },
+    "welcome_sub_title_granted": {
+        "message": "A kiterjesztés sikeresen telepítve"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Kövesse az alábbi lépéseket a kiterjesztés rögzítéséhez, majd kattintson a Következő lépés gombra"
+    },
+    "welcome_next_step": {
+        "message": "Következő lépés"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "A kiterjesztés összes funkciójának eléréséhez aktiválja az Eco Módot."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Kattintson az Engedélyezésre a folytatáshoz"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Felhasználási feltételek"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Adatvédelmi irányelvek"
+    },
+    "how_to_use_html_title": {
+        "message": "A kiterjesztés használata"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Vagy nyomja meg a Ctrl + B billentyűket"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Eco Mód"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Gratulálunk! Ez az oldal partnerünk az Eco Módban."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Mit jelent ez?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Ha tovább böngész, segít a bolygónak 🌍, fákat ültet, és költség nélkül kompenzálja a szén-dioxid-kibocsátást."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Minden partner meglátogatásakor egy új fül rövid időre megnyílik, hogy lehetővé tegye a szén-dioxid-kibocsátás kompenzációjának kiszámítását."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Egyébként nagyon köszönjük, hogy támogatja ezt a hihetetlen ügyet velünk! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Tudjon meg többet"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Bezárás"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Ne jelenjen meg újra"
+    }
+}

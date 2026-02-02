@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "Google Chrome™ için ChatGPT"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Google Chrome tarayıcısında resmi ChatGPT için bir kısayol oluşturmak için uzantı"
+    },
+    "ext_command_description": {
+        "message": "ChatGPT'yi açmak için kısayol"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT Eco Modunda mı?"
+    },
+    "request_perms_popup_description": {
+        "message": "Web'de gezinerek sürdürülebilir amaçlara yardım edin. Bu mod gezinmenizi kesintiye uğratmaz."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Daha fazla bilgi edinin"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "İzin ver"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Reddet"
+    },
+    "perms_granted_popup_title": {
+        "message": "Tebrikler!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Artık tüm özelliklerimizden faydalanacaksınız!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Devam et"
+    },
+    "perms_denied_popup_title": {
+        "message": "Ne yazık ki..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Belki bir dahaki sefere."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Bu mesajı kapat"
+    },
+    "welcome_title": {
+        "message": "Chrome için ChatGPT"
+    },
+    "welcome_sub_title": {
+        "message": "Uzantı başarıyla yüklendi"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "Chrome için ChatGPT"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Uzantı başarıyla yüklendi"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Uzantınızı sabitlemek için aşağıdaki adımları izleyin, ardından Sonraki Adım'a tıklayın"
+    },
+    "welcome_next_step": {
+        "message": "Sonraki Adım"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "Uzantının tüm özelliklerine erişmek için Eco Modu'nu etkinleştirin."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Devam etmek için İzin Ver'e tıklayın"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Kullanım Koşulları"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Gizlilik Politikası"
+    },
+    "how_to_use_html_title": {
+        "message": "Uzantı Nasıl Kullanılır"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Ya da Ctrl + B tuşlarına basın"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Eco Modu"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Tebrikler! Bu site, eco modu ortağımız."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Bu ne anlama geliyor?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Gezinmeye devam ederek 🌍 gezegene yardımcı olacak, ağaçlar dikecek ve karbon emisyonlarını telafi edeceksiniz, üstelik hiçbir maliyet olmadan."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Her bir ortak ziyaretinde, karbon telafisinin hesaplanmasına izin vermek için yeni bir sekme kısa bir süre açılacaktır."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Bu inanılmaz amacı bizimle desteklediğiniz için çok teşekkür ederiz! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Daha fazla bilgi edinin"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Kapat"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Bir daha gösterme"
+    }
+}

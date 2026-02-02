@@ -1,0 +1,485 @@
+{
+    "you_need_to_approve_the_permissions_to_open_the_extension_in_the_side_panel_": {
+        "message": "您需要授权权限，以便在侧边栏中打开扩展程序。"
+    },
+    "dropblock_head": {
+        "message": "dropBlock_head"
+    },
+    "open_the_extension_in_a_sidepanel": {
+        "message": "在侧边栏中打开扩展程序"
+    },
+    "link_was_copied_": {
+        "message": "链接已复制！"
+    },
+    "drag_and_drop_your_files_here": {
+        "message": "将您的文件拖放到这里"
+    },
+    "only_text_content_will_be_processed__up_to_5_files__each_up_to_5mb_": {
+        "message": "仅处理文本内容。最多5个文件，每个文件不超过5MB。"
+    },
+    "you_can_upload_a_maximum_of_5_files_per_dialog__please_upload_files_in_smaller_batches_": {
+        "message": "每次对话最多上传5个文件。请分批上传较小的文件。"
+    },
+    "invalid_file_format_or_file_size_exceeds_5_mb__please_select_smaller_files_": {
+        "message": "文件格式无效或文件大小超过5MB。请选用较小的文件。"
+    },
+    "permissions_are_missing__please_grant_the_extension_access_to_web_pages_": {
+        "message": "权限缺失。请授予扩展程序访问网页的权限。"
+    },
+    "error__please_try_again_later_": {
+        "message": "出错了，请稍后重试。"
+    },
+    "summarization_does_not_work_on_system_pages__please_copy_the_page_content_into_the_chat_manually_": {
+        "message": "系统页面无法进行总结。请手动将页面内容复制到聊天中。"
+    },
+    "delete": {
+        "message": "删除"
+    },
+    "delete_chat_": {
+        "message": "是否删除此聊天？"
+    },
+    "are_you_sure_you_want_to_delete_this_chat_": {
+        "message": "您确定要删除此聊天吗？"
+    },
+    "cancel": {
+        "message": "取消"
+    },
+    "the_chat_was_deleted": {
+        "message": "聊天已删除"
+    },
+    "`_text_`": {
+        "message": "ʼ+text+ʼ"
+    },
+    "`_lang___(text)_`": {
+        "message": "ʼ+Lang.__(text)+ʼ"
+    },
+    "${deletetext}": {
+        "message": "${deleteText}"
+    },
+    "`_lang___(_delete_chat__)_`": {
+        "message": "ʼ+Lang.__('删除聊天？')+ʼ"
+    },
+    "`_lang___(_are_you_sure_you_want_to_delete_this_chat__)_`": {
+        "message": "ʼ+Lang.__('您确定要删除此聊天吗？')+ʼ"
+    },
+    "`_lang___(_cancel_)_`": {
+        "message": "ʼ+Lang.__('取消')+ʼ"
+    },
+    "`_lang___(_delete_)_`": {
+        "message": "ʼ+Lang.__('删除')+ʼ"
+    },
+    "file": {
+        "message": "文件"
+    },
+    "thinking": {
+        "message": "思考中"
+    },
+    "copy_response": {
+        "message": "复制回复"
+    },
+    "good_response": {
+        "message": "优秀的回复"
+    },
+    "bad_response": {
+        "message": "不佳的回复"
+    },
+    "uploading___": {
+        "message": "上传中..."
+    },
+    "`_lang___(_thinking_)_`": {
+        "message": "ʼ+Lang.__('思考中')+ʼ"
+    },
+    "feedback": {
+        "message": "反馈"
+    },
+    "share": {
+        "message": "分享"
+    },
+    "rate_us": {
+        "message": "给我们评分"
+    },
+    "💀": {
+        "message": "💀"
+    },
+    "😞": {
+        "message": "😞"
+    },
+    "😐": {
+        "message": "😐"
+    },
+    "🙂": {
+        "message": "🙂"
+    },
+    "😍": {
+        "message": "😍"
+    },
+    "grok_3_is_here_": {
+        "message": "Grok 3 已到来。"
+    },
+    "what_do_you_want_to_know_": {
+        "message": "你想知道什么？"
+    },
+    "how_can_grok_help_you_": {
+        "message": "Grok 如何帮助你？"
+    },
+    "attach_file": {
+        "message": "附加文件"
+    },
+    "select_a_model": {
+        "message": "选择模型"
+    },
+    "sent_message": {
+        "message": "已发送消息"
+    },
+    "hey_": {
+        "message": "嘿，"
+    },
+    "welcome_": {
+        "message": "欢迎！"
+    },
+    "how_can_i_help_you_": {
+        "message": "我能帮你什么？"
+    },
+    "message_deepseek": {
+        "message": "DeepSeek 消息"
+    },
+    "summarize_the_current_page": {
+        "message": "总结当前页面"
+    },
+    "upload_a_file": {
+        "message": "上传文件"
+    },
+    "start_a_chat": {
+        "message": "开始聊天"
+    },
+    "set_personalization": {
+        "message": "设置个性化"
+    },
+    "new_chat": {
+        "message": "新建聊天"
+    },
+    "switch_to_light_mode": {
+        "message": "切换到明亮模式"
+    },
+    "switch_to_dark_mode": {
+        "message": "切换到暗黑模式"
+    },
+    "open_the_extension_in_a_separate_tab": {
+        "message": "在新标签页中打开扩展程序"
+    },
+    "{{_item_}}": {
+        "message": "{{ item }}"
+    },
+    "start_now": {
+        "message": "立即开始"
+    },
+    "get_ideas": {
+        "message": "获取创意"
+    },
+    "ask": {
+        "message": "提问"
+    },
+    "code": {
+        "message": "代码"
+    },
+    "translate": {
+        "message": "翻译"
+    },
+    "cooking_tips": {
+        "message": "烹饪技巧"
+    },
+    "how_deepseek_ai_helps_you_": {
+        "message": "DeepSeek AI 如何帮助你？"
+    },
+    "✨_get_spot_on_answers_10x_faster": {
+        "message": "✨ 以十倍速度获得准确答案"
+    },
+    "no_google__no_tab_chaos__no_time_wasted": {
+        "message": "无需谷歌，无标签混乱，无时间浪费"
+    },
+    "📚_save_hours_on_studying": {
+        "message": "📚 节省学习时间"
+    },
+    "generate_essays__auto_complete_tests__and_summarize_any_page_in_minutes_": {
+        "message": "生成论文、自动完成测试、并在几分钟内总结任何页面。"
+    },
+    "🌍_real_time_translation_on_the_page": {
+        "message": "🌍 实时翻译网页内容"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments": {
+        "message": "写作如母语者，无错误，无尴尬。"
+    },
+    "💻_your_ai_copilot_for_coding": {
+        "message": "💻 您的AI编码助手"
+    },
+    "fix_bugs__decode_legacy_and_write_code_3x_faster__enjoy_your_work_and_earn_more_": {
+        "message": "修复漏洞、解码遗留代码、提高三倍编码速度。享受工作，赚取更多。"
+    },
+    "where_do_we_start_": {
+        "message": "我们从哪里开始？"
+    },
+    "get_10_post_ideas_for_my_cooking_blog": {
+        "message": "为我的烹饪博客获取10个文章创意"
+    },
+    "find_a_billion_dollar_no_code_startup_idea": {
+        "message": "找到一个价值十亿美元的无代码创业点子"
+    },
+    "give_me_fun_game_ideas_to_play_with_my_kids_at_home": {
+        "message": "给我一些在家和孩子们玩的有趣游戏点子"
+    },
+    "write_3_viral_tiktok_post_ideas_about_personal_finance": {
+        "message": "写3个关于个人理财的爆火TikTok帖子创意"
+    },
+    "recommend_5_books_that_will_change_the_way_i_think": {
+        "message": "推荐5本会改变我思维方式的书"
+    },
+    "what_daily_habits_can_boost_my_creativity_": {
+        "message": "哪些日常习惯可以提升我的创造力？"
+    },
+    "help_me_set_3_achievable_goals_for_the_next_30_days": {
+        "message": "帮我制定未来30天内可实现的3个目标"
+    },
+    "how_can_i_make_my_facebook_profile_more_attractive_": {
+        "message": "我如何让我的Facebook个人资料更具吸引力？"
+    },
+    "generate_a_basic_react_component_for_a_to_do_list": {
+        "message": "生成一个基本的React待办事项组件"
+    },
+    "can_you_explain_javascript_promises_in_a_simple_way_": {
+        "message": "你能用简单的方式解释JavaScript中的Promise吗？"
+    },
+    "how_do_i_build_a_rest_api_endpoint_using_fastapi_in_python_": {
+        "message": "我如何用FastAPI在Python中构建REST API端点？"
+    },
+    "how_can_i_add_social_login_(google_facebook)_to_my_app_": {
+        "message": "我如何在应用中添加社交登录（Google／Facebook）？"
+    },
+    "how_do_you_say_“love”_in_french_": {
+        "message": "“爱”用法语怎么说？"
+    },
+    "how_do_you_say_“delicious_food”_in_italian_": {
+        "message": "“美味佳肴”用意大利语怎么说？"
+    },
+    "what_s_the_korean_translation_of_“i_miss_you”_": {
+        "message": "“我想你”用韩语怎么说？"
+    },
+    "what_s_the_arabic_word_for_“peace”_": {
+        "message": "“和平”用阿拉伯语怎么说？"
+    },
+    "quick_breakfast_ideas_kids_will_actually_love": {
+        "message": "孩子们真正喜欢的快速早餐点子"
+    },
+    "what_are_5_no_sugar_snacks_i_can_make_at_home_": {
+        "message": "我可以在家做的5种无糖零食是什么？"
+    },
+    "give_me_an_easy_3_ingredient_dessert_recipe": {
+        "message": "给我一个简单的三料甜点食谱"
+    },
+    "easy_dessert_tips": {
+        "message": "简单的甜点技巧"
+    },
+    "click": {
+        "message": "点击"
+    },
+    "add_deepseek_ai_to_the_toolbar_for_quick_access": {
+        "message": "将DeepSeek AI添加到工具栏以便快速访问"
+    },
+    "file_download_has_started": {
+        "message": "文件下载已开始"
+    },
+    "to_get_this_file_again_": {
+        "message": "若要再次获取此文件，"
+    },
+    "click_here": {
+        "message": "点击这里"
+    },
+    "show_downloaded_file": {
+        "message": "显示已下载的文件"
+    },
+    "files_on_the_computer_can_only_be_opened_in_the_google_chrome_extension": {
+        "message": "电脑上的文件只能在Google Chrome扩展程序中打开"
+    },
+    "enjoy_the_conversion_": {
+        "message": "享受转换过程？"
+    },
+    "please_rate_your_experience_with_our_extension": {
+        "message": "请评价您使用我们的扩展的体验"
+    },
+    "try_again": {
+        "message": "重试"
+    },
+    "help_us_be_better": {
+        "message": "帮助我们做得更好"
+    },
+    "your_feedback_matters__what_can_we_improve_": {
+        "message": "您的反馈很重要。我们可以改进什么？"
+    },
+    "send": {
+        "message": "发送"
+    },
+    "write_your_feedback_here": {
+        "message": "在此处写下您的反馈"
+    },
+    "support_us_in_10_seconds": {
+        "message": "用10秒支持我们"
+    },
+    "1__click": {
+        "message": "1. 点击"
+    },
+    "_write_a_review_": {
+        "message": "“写评论”"
+    },
+    "2__rate_and_post_your_feedback": {
+        "message": "2. 评分并发布您的反馈"
+    },
+    "thanks_for_helping_us_grow_": {
+        "message": "感谢您的帮助，让我们不断成长！"
+    },
+    "select_your_language": {
+        "message": "选择您的语言"
+    },
+    "type_to_filter_languages___": {
+        "message": "输入以筛选语言..."
+    },
+    "create_public_link": {
+        "message": "创建公开链接"
+    },
+    "this_file_will_be_available_to_anyone__public_links_are_temporary_and_will_be_removed_after_24_hours_": {
+        "message": "此文件将对任何人可用。公开链接为临时链接，24小时后将被删除。"
+    },
+    "create": {
+        "message": "创建"
+    },
+    "save_hours_on_studying": {
+        "message": "[textgradientEl]节省学习时间[/textgradientEl]"
+    },
+    "auto_complete_tests__generate_essays__and_summarize_any_page_in_minutes_": {
+        "message": "自动完成测试、生成论文、并在几分钟内总结任何页面。"
+    },
+    "step": {
+        "message": "步骤"
+    },
+    "of": {
+        "message": "共"
+    },
+    "continue": {
+        "message": "继续"
+    },
+    "use_ai_translation_magic": {
+        "message": "使用AI翻译[textgradientEl]魔法[/textgradientEl]"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments__right_on_the_page_": {
+        "message": "写作如母语者，无错误，无尴尬，直接在页面上。"
+    },
+    "get_your_ai_copilot_for_coding": {
+        "message": "获取您的[textgradientEl]AI副驾驶[/textgradientEl]进行编码"
+    },
+    "try_now": {
+        "message": "立即试用"
+    },
+    "did_this_tool_help_you_": {
+        "message": "这个工具帮到你了吗？"
+    },
+    "share_it_with_friends_who_work_with_images_": {
+        "message": "与使用图片的朋友分享。"
+    },
+    "who_would_find_it_useful_": {
+        "message": "谁会觉得它有用？"
+    },
+    "copy_link": {
+        "message": "复制链接"
+    },
+    "facebook": {
+        "message": "Facebook"
+    },
+    "x": {
+        "message": "X"
+    },
+    "telegram": {
+        "message": "Telegram"
+    },
+    "i_found_a_super_useful_chrome_extension__": {
+        "message": "我发现一个非常实用的Chrome扩展——"
+    },
+    "it_can_save_any_website_as_a_pdf__you_should_try_it_out___it_s_great_": {
+        "message": "它可以将任何网站保存为PDF。你应该试试——非常棒！"
+    },
+    "hooray__greate_job_": {
+        "message": "万岁，干得漂亮！"
+    },
+    "please__can_you_rate_us_": {
+        "message": "请问你能给我们评分吗？"
+    },
+    "deepseek_ai_has_been_installed_": {
+        "message": "DeepSeek AI已安装！"
+    },
+    "get_answers_10x_faster___no_google__no_tab_chaos__no_time_wasted": {
+        "message": "以十倍速度获取答案——无需谷歌，无标签混乱，无时间浪费"
+    },
+    "open_deepseek_ai": {
+        "message": "打开DeepSeek AI"
+    },
+    "deepseek_app": {
+        "message": "DeepSeek应用"
+    },
+    "love_deepseek_": {
+        "message": "喜欢DeepSeek？"
+    },
+    "could_you_please_rate_our_extension_": {
+        "message": "您能否为我们的扩展打个分？"
+    },
+    "share_this_extension_with_your_friends": {
+        "message": "与您的朋友分享此扩展"
+    },
+    "share_us_with_your_friends": {
+        "message": "与朋友分享我们"
+    },
+    "and_unlock_all_ai_assistant_features": {
+        "message": "并解锁所有AI助手功能"
+    },
+    "vk_com": {
+        "message": "VK.com"
+    },
+    "reddit": {
+        "message": "Reddit"
+    },
+    "whatsapp": {
+        "message": "WhatsApp"
+    },
+    "weibo": {
+        "message": "微博"
+    },
+    "post_preview": {
+        "message": "帖子预览"
+    },
+    "hey__i_m_your_ai_assistant_": {
+        "message": "嘿，我是你的AI助手！"
+    },
+    "what_can_i_help_with_": {
+        "message": "我能帮你做什么？"
+    },
+    "history": {
+        "message": "历史"
+    },
+    "settings": {
+        "message": "设置"
+    },
+    "subscription": {
+        "message": "订阅"
+    },
+    "add_personal_info_or_instructions_to_the_ai_assistant__this_will_help_improve_responses_for_you_": {
+        "message": "向AI助手添加个人信息或指令，这将帮助改善您的回复。"
+    },
+    "save": {
+        "message": "保存"
+    },
+    "and_you_ll_unlock_all_ai_assistant_features": {
+        "message": "你将解锁所有AI助手功能"
+    },
+    "e_g___always_reply_in_french": {
+        "message": "例如：始终用法语回复"
+    },
+    "_p_you_can_try_the_ai_assistant_to_play_a_role__e_g____p__ul__li_act_as_an_english_teacher_and_correct_my_mistakes__li__li_respond_like_a_professional_business_consultant__li___ul__p_or_input_your_data_for_the_ai_assistant_to_generate_responses__e_g____p__ul__li_23_y_o___58_kg__height_165_cm__female__li__li_programmer__php___laravel__js___react___li___ul_": {
+        "message": "<p>你可以尝试让AI助手扮演角色，例如：</p><ul><li>扮演英语老师并纠正我的错误</li><li>像专业商务顾问一样回应</li></ul><p>或者输入你的数据，让AI助手生成回复，例如：</p><ul><li>23岁，58公斤，身高165厘米，女性</li><li>程序员。PHP——Laravel，JS——React。</li></ul>"
+    }
+}

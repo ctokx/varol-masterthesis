@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT Google Chrome™ jaoks"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Laiendus, mis loob otsetee ametlikule ChatGPT-le Google Chrome brauseris"
+    },
+    "ext_command_description": {
+        "message": "Otsetee ChatGPT avamiseks"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT Eco-režiimis?"
+    },
+    "request_perms_popup_description": {
+        "message": "Aita jätkusuutlikke eesmärke lihtsalt veebis sirvides. See režiim ei katkesta sinu sirvimist."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Lisateave"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Luba"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Keeldu"
+    },
+    "perms_granted_popup_title": {
+        "message": "Palju õnne!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Nüüd saad kasu kõigist meie funktsioonidest!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Jätka"
+    },
+    "perms_denied_popup_title": {
+        "message": "Kahju..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Võib-olla järgmine kord."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Sule see teade"
+    },
+    "welcome_title": {
+        "message": "ChatGPT Chrome jaoks"
+    },
+    "welcome_sub_title": {
+        "message": "Laiendus edukalt installitud"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT Chrome jaoks"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Laiendus edukalt installitud"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Kinnita oma laiendus järgides allolevaid samme ja klõpsa siis Järgmine samm"
+    },
+    "welcome_next_step": {
+        "message": "Järgmine samm"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "Kõigile laienduse funktsioonidele juurdepääsuks aktiveeri Eco-režiim."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Jätkamiseks klõpsa Luba"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Kasutustingimused"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Privaatsuspoliitika"
+    },
+    "how_to_use_html_title": {
+        "message": "Kuidas laiendust kasutada"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Või vajuta Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Eco-režiim"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Palju õnne! See sait on meie Eco-režiimi partner."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Mida see tähendab?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Sirvimist jätkates aitad sa planeeti 🌍, istutad puid ja kompenseerid süsinikuheidet ilma kuludeta."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Iga partneri külastusega avaneb korraks uus vahekaart, et võimaldada süsiniku kompenseerimise arvutamist."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Muide, suur tänu, et toetad seda uskumatut asja koos meiega! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Lisateave"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Sule"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Ära näita enam"
+    }
+}

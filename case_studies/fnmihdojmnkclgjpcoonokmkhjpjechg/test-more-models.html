@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test More Models Button</title>
+    <link rel="stylesheet" href="pricingPopup.css">
+</head>
+<body style="background-color: #1a1a1a; color: white; font-family: Arial, sans-serif; padding: 20px;">
+    <h1>Test More Models Button</h1>
+    
+    <!-- Create a test popup with the + 10 More Models button -->
+    <div class="aitopia-popup" id="test-popup" style="position: relative; display: block;">
+        <div class="aitopia-popup-content">
+            <h2>Test Pricing Popup</h2>
+            <button class="aitopia-more-btn" id="aitopia-more-models-btn">
+                + 10 More Models
+            </button>
+        </div>
+    </div>
+
+    <script src="pricingContentScript.js"></script>
+    <script>
+        // Test the more models functionality
+        console.log('Test page loaded');
+        
+        // Wait for DOM to be ready
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM ready');
+            
+            // Simulate the popup being created to initialize the event listeners
+            const popup = document.getElementById('test-popup');
+            if (popup) {
+                console.log('Test popup found');
+                
+                // Try to manually trigger the setup
+                try {
+                    // Look for the more models button
+                    const moreBtn = document.getElementById('aitopia-more-models-btn');
+                    if (moreBtn) {
+                        console.log('More models button found');
+                        
+                        // Add test click handler
+                        moreBtn.addEventListener('click', function(e) {
+                            console.log('More models button clicked in test!');
+                            e.preventDefault();
+                            
+                            // Try to call the function from window (global scope)
+                            if (typeof window.showMoreModelsModal === 'function') {
+                                console.log('showMoreModelsModal function exists in global scope');
+                                window.showMoreModelsModal();
+                            } else if (typeof showMoreModelsModal === 'function') {
+                                console.log('showMoreModelsModal function exists locally');
+                                showMoreModelsModal();
+                            } else {
+                                console.error('showMoreModelsModal function not found in any scope');
+                                console.log('Available functions:', Object.keys(window).filter(k => k.includes('Modal')));
+                            }
+                        });
+                    } else {
+                        console.error('More models button not found');
+                    }
+                } catch (error) {
+                    console.error('Error setting up test:', error);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

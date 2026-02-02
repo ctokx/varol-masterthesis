@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT pentru Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Extensie pentru a crea un scurtătură către ChatGPT oficial în browserul Google Chrome"
+    },
+    "ext_command_description": {
+        "message": "Scurtătură pentru a deschide ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT în modul Eco?"
+    },
+    "request_perms_popup_description": {
+        "message": "Ajută cauzele durabile doar navigând pe web. Acest mod nu va întrerupe navigarea."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Află mai multe"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Permite"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Refuză"
+    },
+    "perms_granted_popup_title": {
+        "message": "Felicitări!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Acum vei beneficia de toate funcționalitățile noastre!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Continuă"
+    },
+    "perms_denied_popup_title": {
+        "message": "Păcat..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Poate data viitoare."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Închide acest mesaj"
+    },
+    "welcome_title": {
+        "message": "ChatGPT pentru Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Extensie instalată cu succes"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT pentru Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Extensie instalată cu succes"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Urmează pașii de mai jos pentru a fixa extensia, apoi fă clic pe Următorul Pas"
+    },
+    "welcome_next_step": {
+        "message": "Următorul Pas"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "Pentru a accesa toate funcțiile extensiei, activează modul Eco."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Fă clic pe Permite pentru a continua"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Termeni de utilizare"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Politica de confidențialitate"
+    },
+    "how_to_use_html_title": {
+        "message": "Cum să folosești extensia"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Sau apasă Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Modul Eco"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Felicitări! Acest site este un partener al modului nostru eco."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Ce înseamnă asta?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Continuând să navighezi, vei ajuta planeta 🌍, plantând copaci și compensând emisiile de carbon fără niciun cost."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Cu fiecare vizită la un partener, se va deschide pe scurt o filă nouă pentru a permite calcularea compensării carbonului."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "De altfel, îți mulțumim foarte mult pentru că susții această cauză incredibilă împreună cu noi! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Află mai multe"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Închide"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Nu mai afișa din nou"
+    }
+}

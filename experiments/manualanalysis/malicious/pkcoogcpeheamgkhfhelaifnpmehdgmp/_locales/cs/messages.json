@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT pro Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Rozšíření pro vytvoření zkratky pro oficiální ChatGPT v prohlížeči Google Chrome"
+    },
+    "ext_command_description": {
+        "message": "Zkratka pro otevření ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT v Eco režimu?"
+    },
+    "request_perms_popup_description": {
+        "message": "Podpořte udržitelné cíle pouze procházením webu. Tento režim nenaruší vaše procházení."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Zjistit více"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Povolit"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Odmítnout"
+    },
+    "perms_granted_popup_title": {
+        "message": "Gratulujeme!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Nyní budete mít přístup ke všem našim funkcím!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Pokračovat"
+    },
+    "perms_denied_popup_title": {
+        "message": "To je škoda..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Možná příště."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Zavřít tuto zprávu"
+    },
+    "welcome_title": {
+        "message": "ChatGPT pro Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Rozšíření bylo úspěšně nainstalováno"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT pro Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Rozšíření bylo úspěšně nainstalováno"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Následujte níže uvedené kroky pro připnutí rozšíření a poté klikněte na Další krok"
+    },
+    "welcome_next_step": {
+        "message": "Další krok"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "Pro přístup ke všem funkcím rozšíření aktivujte Eco režim."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Pokračujte kliknutím na Povolit"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Podmínky použití"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Zásady ochrany osobních údajů"
+    },
+    "how_to_use_html_title": {
+        "message": "Jak používat rozšíření"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Nebo stiskněte Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Eco režim"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Gratulujeme! Tento web je partnerem našeho Eco režimu."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Co to znamená?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Pokračováním v procházení pomůžete planetě 🌍, vysadíte stromy a vyrovnáte uhlíkové emise zdarma."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Při každé návštěvě partnera se krátce otevře nová karta, která umožní výpočet kompenzace uhlíku."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Mimochodem, moc vám děkujeme za podporu této úžasné iniciativy! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Zjistit více"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Zavřít"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Nezobrazovat znovu"
+    }
+}

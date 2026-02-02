@@ -1,0 +1,62 @@
+{
+  "clean_all": {
+    "message": "Wyczyść"
+  },
+  "hello": {
+    "message": "Cześć!"
+  },
+  "ask_anything": {
+    "message": "Zapytaj o cokolwiek"
+  },
+  "ask_about_this_page": {
+    "message": "Zapytaj o tę stronę"
+  },
+  "summarize_this_page": {
+    "message": "Podsumuj tę stronę"
+  },
+  "add_photos_and_files": {
+    "message": "Dodaj zdjęcia i pliki"
+  },
+  "create_image": {
+    "message": "Utwórz obraz"
+  },
+  "web_search": {
+    "message": "Szukaj w sieci"
+  },
+  "teacher_mode": {
+    "message": "Tryb nauczyciela"
+  },
+  "voice_input": {
+    "message": "Wprowadzanie głosowe"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "Szybki codzienny asystent"
+  },
+  "model_deep_reasoning": {
+    "message": "Model głębokiego rozumowania"
+  },
+  "model_quick_multimodal": {
+    "message": "Szybkie odpowiedzi multimodalne"
+  },
+  "model_advanced_google_ai": {
+    "message": "Zaawansowana AI Google"
+  },
+  "model_complex_problem_solving": {
+    "message": "Rozwiązywanie złożonych problemów"
+  },
+  "model_powerful_opensource": {
+    "message": "Potężny model open-source"
+  },
+  "model_reasoning_specialist": {
+    "message": "Specjalista od rozumowania"
+  },
+  "model_balanced_reliable": {
+    "message": "Zrównoważony i niezawodny"
+  },
+  "model_most_capable": {
+    "message": "Najbardziej zdolny Claude"
+  },
+  "model_label_fastest": {
+    "message": "Najszybszy"
+  }
+}

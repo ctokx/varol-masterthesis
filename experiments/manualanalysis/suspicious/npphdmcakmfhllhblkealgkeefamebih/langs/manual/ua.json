@@ -1,0 +1,65 @@
+{
+  "feedback": {
+    "message": "Зв'язок"
+  },
+  "clean_all": {
+    "message": "Очистити"
+  },
+  "hello": {
+    "message": "Привіт!"
+  },
+  "ask_anything": {
+    "message": "Запитайте що завгодно"
+  },
+  "ask_about_this_page": {
+    "message": "Запитати про цю сторінку"
+  },
+  "summarize_this_page": {
+    "message": "Підсумувати цю сторінку"
+  },
+  "add_photos_and_files": {
+    "message": "Додати фото та файли"
+  },
+  "create_image": {
+    "message": "Створити зображення"
+  },
+  "web_search": {
+    "message": "Пошук в інтернеті"
+  },
+  "teacher_mode": {
+    "message": "Режим вчителя"
+  },
+  "voice_input": {
+    "message": "Голосовий ввід"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "Швидкий щоденний помічник"
+  },
+  "model_deep_reasoning": {
+    "message": "Модель глибокого аналізу"
+  },
+  "model_quick_multimodal": {
+    "message": "Швидкі мультимодальні відповіді"
+  },
+  "model_advanced_google_ai": {
+    "message": "Просунутий ШІ від Google"
+  },
+  "model_complex_problem_solving": {
+    "message": "Розв'язання складних задач"
+  },
+  "model_powerful_opensource": {
+    "message": "Потужна модель з відкритим кодом"
+  },
+  "model_reasoning_specialist": {
+    "message": "Спеціаліст з міркувань"
+  },
+  "model_balanced_reliable": {
+    "message": "Збалансований і надійний"
+  },
+  "model_most_capable": {
+    "message": "Найздібніший Claude"
+  },
+  "model_label_fastest": {
+    "message": "Найшвидший"
+  }
+}

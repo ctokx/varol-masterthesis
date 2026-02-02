@@ -1,0 +1,62 @@
+{
+  "rate_us": {
+    "message": "Puanla"
+  },
+  "hello": {
+    "message": "Merhaba!"
+  },
+  "ask_anything": {
+    "message": "Her şeyi sor"
+  },
+  "ask_about_this_page": {
+    "message": "Bu sayfa hakkında sor"
+  },
+  "summarize_this_page": {
+    "message": "Bu sayfayı özetle"
+  },
+  "add_photos_and_files": {
+    "message": "Fotoğraf ve dosya ekle"
+  },
+  "create_image": {
+    "message": "Görsel oluştur"
+  },
+  "web_search": {
+    "message": "Web araması"
+  },
+  "teacher_mode": {
+    "message": "Öğretmen modu"
+  },
+  "voice_input": {
+    "message": "Sesli giriş"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "Günlük hızlı asistan"
+  },
+  "model_deep_reasoning": {
+    "message": "Derin muhakeme modeli"
+  },
+  "model_quick_multimodal": {
+    "message": "Hızlı çok modlu yanıtlar"
+  },
+  "model_advanced_google_ai": {
+    "message": "Gelişmiş Google yapay zekası"
+  },
+  "model_complex_problem_solving": {
+    "message": "Karmaşık problem çözme"
+  },
+  "model_powerful_opensource": {
+    "message": "Güçlü açık kaynak model"
+  },
+  "model_reasoning_specialist": {
+    "message": "Muhakeme uzmanı"
+  },
+  "model_balanced_reliable": {
+    "message": "Dengeli ve güvenilir"
+  },
+  "model_most_capable": {
+    "message": "En yetenekli Claude"
+  },
+  "model_label_fastest": {
+    "message": "En hızlı"
+  }
+}

@@ -1,0 +1,323 @@
+{
+    "you_need_to_approve_the_permissions_to_open_the_extension_in_the_side_panel_": {
+        "message": "Devi approvare le autorizzazioni per aprire l'estensione nel pannello laterale."
+    },
+    "dropblock_head": {
+        "message": "dropBlock_head"
+    },
+    "open_the_extension_in_a_sidepanel": {
+        "message": "Apri l'estensione in un pannello laterale"
+    },
+    "link_was_copied_": {
+        "message": "Link copiato!"
+    },
+    "drag_and_drop_your_files_here": {
+        "message": "Trascina e rilascia i tuoi file qui"
+    },
+    "only_text_content_will_be_processed__up_to_5_files__each_up_to_5mb_": {
+        "message": "Verrà elaborato solo il contenuto testuale. Fino a 5 file, ciascuno fino a 5MB."
+    },
+    "you_can_upload_a_maximum_of_5_files_per_dialog__please_upload_files_in_smaller_batches_": {
+        "message": "Puoi caricare un massimo di 5 file per finestra di dialogo. Per favore, carica i file in batch più piccoli."
+    },
+    "invalid_file_format_or_file_size_exceeds_5_mb__please_select_smaller_files_": {
+        "message": "Formato file non valido o dimensione del file superiore a 5 MB. Per favore, seleziona file più piccoli."
+    },
+    "permissions_are_missing__please_grant_the_extension_access_to_web_pages_": {
+        "message": "Autorizzazioni mancanti. Per favore, concedi all'estensione l'accesso alle pagine web."
+    },
+    "error__please_try_again_later_": {
+        "message": "Errore, riprova più tardi."
+    },
+    "summarization_does_not_work_on_system_pages__please_copy_the_page_content_into_the_chat_manually_": {
+        "message": "La sintesi non funziona sulle pagine di sistema. Per favore, copia manualmente il contenuto della pagina nella chat."
+    },
+    "delete": {
+        "message": "Elimina"
+    },
+    "delete_chat_": {
+        "message": "Eliminare la chat?"
+    },
+    "are_you_sure_you_want_to_delete_this_chat_": {
+        "message": "Sei sicuro di voler eliminare questa chat?"
+    },
+    "cancel": {
+        "message": "Annulla"
+    },
+    "the_chat_was_deleted": {
+        "message": "La chat è stata eliminata"
+    },
+    "`_text_`": {
+        "message": "ʼ+text+ʼ"
+    },
+    "`_lang___(text)_`": {
+        "message": "ʼ+Lang.__(text)+ʼ"
+    },
+    "${deletetext}": {
+        "message": "${deleteText}"
+    },
+    "`_lang___(_delete_chat__)_`": {
+        "message": "ʼ+Lang.__('Elimina chat?')+ʼ"
+    },
+    "`_lang___(_are_you_sure_you_want_to_delete_this_chat__)_`": {
+        "message": "ʼ+Lang.__('Sei sicuro di voler eliminare questa chat?')+ʼ"
+    },
+    "`_lang___(_cancel_)_`": {
+        "message": "ʼ+Lang.__('Annulla')+ʼ"
+    },
+    "`_lang___(_delete_)_`": {
+        "message": "ʼ+Lang.__('Elimina')+ʼ"
+    },
+    "file": {
+        "message": "File"
+    },
+    "thinking": {
+        "message": "Pensando"
+    },
+    "copy_response": {
+        "message": "Copia risposta"
+    },
+    "good_response": {
+        "message": "Buona risposta"
+    },
+    "bad_response": {
+        "message": "Risposta negativa"
+    },
+    "uploading___": {
+        "message": "Caricamento..."
+    },
+    "`_lang___(_thinking_)_`": {
+        "message": "ʼ+Lang.__('Pensando')+ʼ"
+    },
+    "feedback": {
+        "message": "Feedback"
+    },
+    "share": {
+        "message": "Condividi"
+    },
+    "rate_us": {
+        "message": "Valutaci"
+    },
+    "💀": {
+        "message": "💀"
+    },
+    "😞": {
+        "message": "😞"
+    },
+    "😐": {
+        "message": "😐"
+    },
+    "🙂": {
+        "message": "🙂"
+    },
+    "😍": {
+        "message": "😍"
+    },
+    "grok_3_is_here_": {
+        "message": "Grok 3 è arrivato."
+    },
+    "what_do_you_want_to_know_": {
+        "message": "Cosa vuoi sapere?"
+    },
+    "how_can_grok_help_you_": {
+        "message": "Come può aiutarti Grok?"
+    },
+    "attach_file": {
+        "message": "Allega file"
+    },
+    "select_a_model": {
+        "message": "Seleziona un modello"
+    },
+    "sent_message": {
+        "message": "Messaggio inviato"
+    },
+    "hey_": {
+        "message": "Ehi,"
+    },
+    "welcome_": {
+        "message": "benvenuto!"
+    },
+    "how_can_i_help_you_": {
+        "message": "Come posso aiutarti?"
+    },
+    "message_deepseek": {
+        "message": "Messaggio DeepSeek"
+    },
+    "summarize_the_current_page": {
+        "message": "Riassumi la pagina corrente"
+    },
+    "upload_a_file": {
+        "message": "Carica un file"
+    },
+    "start_a_chat": {
+        "message": "Inizia una chat"
+    },
+    "set_personalization": {
+        "message": "Imposta Personalizzazione"
+    },
+    "new_chat": {
+        "message": "Nuova chat"
+    },
+    "switch_to_light_mode": {
+        "message": "Passa alla Modalità Chiara"
+    },
+    "switch_to_dark_mode": {
+        "message": "Passa alla Modalità Scura"
+    },
+    "open_the_extension_in_a_separate_tab": {
+        "message": "Apri l'estensione in una scheda separata"
+    },
+    "{{_item_}}": {
+        "message": "{{ item }}"
+    },
+    "start_now": {
+        "message": "Inizia Ora"
+    },
+    "get_ideas": {
+        "message": "Ottieni Idee"
+    },
+    "ask": {
+        "message": "Chiedi"
+    },
+    "code": {
+        "message": "Codice"
+    },
+    "translate": {
+        "message": "Traduci"
+    },
+    "cooking_tips": {
+        "message": "Consigli di cucina"
+    },
+    "how_deepseek_ai_helps_you_": {
+        "message": "Come ti aiuta DeepSeek AI?"
+    },
+    "✨_get_spot_on_answers_10x_faster": {
+        "message": "✨ Ottieni risposte precise 10 volte più velocemente"
+    },
+    "no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Niente Google, niente caos tra le schede, niente tempo sprecato"
+    },
+    "📚_save_hours_on_studying": {
+        "message": "📚 Risparmia ore di studio"
+    },
+    "generate_essays__auto_complete_tests__and_summarize_any_page_in_minutes_": {
+        "message": "Genera saggi, completa automaticamente test e riassumi qualsiasi pagina in minuti."
+    },
+    "🌍_real_time_translation_on_the_page": {
+        "message": "🌍 Traduzione in tempo reale sulla pagina"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments__right_on_the_page_": {
+        "message": "Scrivi come un madrelingua, senza errori o momenti imbarazzanti. Diretto sulla pagina."
+    },
+    "get_your_ai_copilot_for_coding": {
+        "message": "Ottieni il tuo [textgradientEl]AI Copilot[\/textgradientEl] per la programmazione"
+    },
+    "try_now": {
+        "message": "Prova Ora"
+    },
+    "did_this_tool_help_you_": {
+        "message": "Questo strumento ti ha aiutato?"
+    },
+    "share_it_with_friends_who_work_with_images_": {
+        "message": "Condividilo con amici che lavorano con le immagini."
+    },
+    "who_would_find_it_useful_": {
+        "message": "Chi lo troverebbe utile?"
+    },
+    "copy_link": {
+        "message": "Copia link"
+    },
+    "facebook": {
+        "message": "Facebook"
+    },
+    "x": {
+        "message": "X"
+    },
+    "telegram": {
+        "message": "Telegram"
+    },
+    "i_found_a_super_useful_chrome_extension__": {
+        "message": "Ho trovato un'estensione Chrome super utile —"
+    },
+    "it_can_save_any_website_as_a_pdf__you_should_try_it_out___it_s_great_": {
+        "message": "Può salvare qualsiasi sito web come PDF. Dovresti provarlo — è fantastico!"
+    },
+    "hooray__greate_job_": {
+        "message": "Evviva, ottimo lavoro!"
+    },
+    "please__can_you_rate_us_": {
+        "message": "Per favore, puoi valutarci?"
+    },
+    "deepseek_ai_has_been_installed_": {
+        "message": "DeepSeek AI è stato installato!"
+    },
+    "get_answers_10x_faster___no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Ottieni risposte 10 volte più velocemente — niente Google, niente caos tra le schede, niente tempo sprecato"
+    },
+    "open_deepseek_ai": {
+        "message": "Apri DeepSeek AI"
+    },
+    "deepseek_app": {
+        "message": "App DeepSeek"
+    },
+    "love_deepseek_": {
+        "message": "Ti piace DeepSeek?"
+    },
+    "could_you_please_rate_our_extension_": {
+        "message": "Potresti valutare la nostra estensione?"
+    },
+    "share_this_extension_with_your_friends": {
+        "message": "Condividi questa estensione con i tuoi amici"
+    },
+    "share_us_with_your_friends": {
+        "message": "Condividici con i tuoi amici"
+    },
+    "and_unlock_all_ai_assistant_features": {
+        "message": "E sblocca tutte le funzioni dell'Assistente AI"
+    },
+    "vk_com": {
+        "message": "Vk.com"
+    },
+    "reddit": {
+        "message": "Reddit"
+    },
+    "whatsapp": {
+        "message": "Whatsapp"
+    },
+    "weibo": {
+        "message": "Weibo"
+    },
+    "post_preview": {
+        "message": "Anteprima post"
+    },
+    "hey__i_m_your_ai_assistant_": {
+        "message": "Ehi, sono il tuo Assistente AI!"
+    },
+    "what_can_i_help_with_": {
+        "message": "Come posso aiutarti?"
+    },
+    "history": {
+        "message": "Cronologia"
+    },
+    "settings": {
+        "message": "Impostazioni"
+    },
+    "subscription": {
+        "message": "Abbonamento"
+    },
+    "add_personal_info_or_instructions_to_the_ai_assistant__this_will_help_improve_responses_for_you_": {
+        "message": "Aggiungi informazioni personali o istruzioni all'Assistente AI. Questo aiuterà a migliorare le risposte per te."
+    },
+    "save": {
+        "message": "Salva"
+    },
+    "and_you_ll_unlock_all_ai_assistant_features": {
+        "message": "E sbloccherai tutte le funzioni dell'Assistente AI"
+    },
+    "e_g___always_reply_in_french": {
+        "message": "ad esempio, rispondi sempre in francese"
+    },
+    "_p_you_can_try_the_ai_assistant_to_play_a_role__e_g____p__ul__li_act_as_an_english_teacher_and_correct_my_mistakes__li__li_respond_like_a_professional_business_consultant__li___ul__p_or_input_your_data_for_the_ai_assistant_to_generate_responses__e_g____p__ul__li_23_y_o___58_kg__height_165_cm__female__li__li_programmer__php___laravel__js___react___li___ul_": {
+        "message": "<p>Puoi provare l'Assistente AI per interpretare un ruolo, ad esempio:</p><ul><li>Comportati da insegnante di inglese e correggi i miei errori</li><li>Rispondi come un consulente aziendale professionista</li></ul><p>Oppure inserisci i tuoi dati affinché l'Assistente AI generi risposte, ad esempio:</p><ul><li>23 anni, 58 kg, altezza 165 cm, femmina</li><li>Programmatore. PHP – Laravel, JS – React.</li></ul>"
+    }
+}

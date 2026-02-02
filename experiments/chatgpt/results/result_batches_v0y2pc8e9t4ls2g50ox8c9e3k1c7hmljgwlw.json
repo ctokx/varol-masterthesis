@@ -1,0 +1,355 @@
+{
+  "job_name": "batches/v0y2pc8e9t4ls2g50ox8c9e3k1c7hmljgwlw",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:40.316350",
+  "validations": [
+    {
+      "extension_id": "ehigecokdaejpecogfefhmoemlapfjko",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is a standard implementation of a ChatGPT wrapper. Analysis of background.js confirms that network activity is confined to chat.openai.com for session management and prompt handling. The content_script.js is a large bundle containing the Svelte UI framework and the Showdown.js Markdown library, which explains the flags for innerHTML and keyboard listeners. No suspicious third-party domains or data exfiltration chains were found. The 'github.com' reference is part of Showdown's standard configuration for GitHub-flavored markdown mentions and is not an active data exfiltration point.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "User-provided chat prompts and OpenAI session tokens.",
+          "processing_method": "JSON encapsulation for transmission to OpenAI APIs.",
+          "destination_domain": "chat.openai.com",
+          "code_evidence": "background.js: Line 210 (fetch session) and Line 228 (post conversation)."
+        },
+        "dual_purpose": {
+          "stated_purpose": "Allows users to access ChatGPT within the current tab.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chat.openai.com",
+          "github.com",
+          "w3.org"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "github.com/{u}"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used in background.js to communicate with the official OpenAI API endpoints (session and conversation) to fulfill the extension's primary purpose."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Utilized by the included Showdown.js library to convert Markdown responses from ChatGPT into HTML for display in the UI."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to capture input within the chat interface, specifically for handling the Enter key to send messages."
+        },
+        {
+          "pattern": "POST_MESSAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Standard Chrome extension communication between the content script (UI) and the background service worker (API handler)."
+        }
+      ],
+      "token_usage": {
+        "prompt": 60177,
+        "candidates": 679,
+        "total": 61705
+      }
+    },
+    {
+      "extension_id": "mhlecapiniomlbllfaochicnafbjmmbg",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "Analysis of the source code reveals that 'ChatGPT Bookmark' is a standard utility built using the React framework and Tailwind CSS. The static analysis findings for NETWORK_ENDPOINT are predominantly false positives involving W3C XML namespaces and React's error decoder. The actual logic in background.js manages user bookmarks by saving them to local storage (chrome.storage.local) and retrieving them upon request. No code was found that aggregates sensitive user data or transmits it to a third-party server. The external links discovered (PayPal, BuyMeACoffee, and sajan.dev) are transparently used for developer support and donations, which is common in open-source or free utilities. The broad host_permission ('<all_urls>') is the only slightly aggressive setting, but it is likely used to handle cross-origin constraints or broad URL checking, as the primary content script is correctly scoped specifically to chat.openai.com.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "ChatGPT Bookmark is a simple extension that enables users to bookmark and easily access their conversations with ChatGPT",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "reactjs.org",
+          "www.w3.org",
+          "www.youtube.com",
+          "www.paypal.com",
+          "www.buymeacoffee.com",
+          "sajan.dev"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://reactjs.org/docs/error-decoder.html",
+          "http://www.w3.org/1999/xlink",
+          "https://www.youtube.com/embed/hQyiP5LTsYQ",
+          "https://www.paypal.com/paypalme/sajanthomas01",
+          "https://www.buymeacoffee.com/sajanthomas01",
+          "https://sajan.dev/support"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT (w3.org/reactjs.org)",
+          "usage": "LEGITIMATE",
+          "justification": "These are standard boilerplate namespaces for SVG/XHTML and React minification error links found in almost all React production bundles."
+        },
+        {
+          "pattern": "INNERHTML / DOM",
+          "usage": "LEGITIMATE",
+          "justification": "Standard React framework operations for rendering the UI elements of the extension."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used in background.js to save and retrieve ChatGPT bookmarks locally under the key 'cgptbmrk', which directly aligns with the extension's stated purpose."
+        },
+        {
+          "pattern": "POST_MESSAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Standard communication between the content script (inject_test.js) and the extension components."
+        }
+      ],
+      "token_usage": {
+        "prompt": 102888,
+        "candidates": 863,
+        "total": 104658
+      }
+    },
+    {
+      "extension_id": "ndmldohefgmnciihihioeeoiobchcmgi",
+      "verdict": "MALICIOUS",
+      "confidence": 0.95,
+      "reasoning": "The extension exhibits classic 'grayware' and malicious 'dual-purpose' behavior. While it provides the promised ChatGPT sidebar, it contains a significant hidden component for monetization through ad injection. This behavior is intentionally obscured by an 8-day execution delay (found in async.js), a technique commonly used to bypass automated security reviews in the Chrome Web Store. Once the 8-day window passes, the extension injects iframes from browsebetter.io, an entity associated with search hijacking and unauthorized ad delivery. The sidepanel.js file even updates the UI state to 'adon' (Ad On) once the frame loads successfully. This functionality is not disclosed in the manifest or description and serves the developer's financial interests at the cost of user privacy and browser performance.",
+      "recommendation": "BLOCK",
+      "key_concerns": [
+        "Undisclosed delayed ad-injection mechanism.",
+        "Use of time-delay (8 days) to evade initial security detection.",
+        "Interaction with browsebetter.io, a domain flagged for search/ad interference.",
+        "Global content script (all.js) running on every website to inject UI elements, which then facilitate the ad-laden side panel."
+      ],
+      "evidence": {
+        "exfiltration_chain": null,
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant providing a sidebar for productivity.",
+          "hidden_functionality": "Delayed ad-injection platform. The extension waits exactly 8 days after installation to activate an ad-delivery iframe from browsebetter.io, a known adware-related domain.",
+          "code_evidence": "In async.js: 'if (ms > (insdate + 691200000)) { ... injifr(); }'. This calculates 8 days (691,200,000 ms) since installation. sidepanel.js defines injifr(): 'ifr.setAttribute(\"src\", \"https://s3.browsebetter.io/adfrnu2.html\");' which injects the ad frame into the side panel."
+        },
+        "credential_theft": null
+      },
+      "domains": {
+        "legitimate": [
+          "openai.com",
+          "chat.openai.com",
+          "sentry.io",
+          "app.posthog.com"
+        ],
+        "requires_investigation": [
+          "s3.browsebetter.io",
+          "s2.browsebetter.io"
+        ],
+        "informational_only": [
+          "bit.ly/3MRfWlN"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Used within the PostHog analytics library (array.js) for buffer management and session tracking."
+        },
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "SUSPICIOUS",
+          "justification": "In sidepanel.js, it dynamically loads async.js which contains the logic to trigger the ad-injection iframe after an 8-day delay."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content_script.js to handle 'Enter' key presses within the ChatGPT iframe to ensure messages are sent correctly."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "SUSPICIOUS",
+          "justification": "Used in async.js to inject a tracking iframe (ana.html) and in content_script.js to modify the ChatGPT UI styles."
+        }
+      ],
+      "token_usage": {
+        "prompt": 63453,
+        "candidates": 886,
+        "total": 66900
+      }
+    },
+    {
+      "extension_id": "eklmiefkbieejjjhmpjdllphmcjdndin",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code directly aligns with its stated purpose. In 'chunk-048d5bf0.js', the script checks if the current URL is chat.openai.com, sets up a MutationObserver to watch for the UI change indicating a completed generation, and plays a local mp3 file using the 'Audio' API. The large 'chunk-174735cb.js' file is a standard production build of the React.js framework. While the manifest.json uses a broad match pattern ('http://*/*', 'https://*/*'), the actual logic is gated by a URL check and no data exfiltration or suspicious network activity was found. The static analysis flags are all attributable to standard library functions or the core feature set (monitoring the DOM for changes).",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Get a sound notification when a chatGPT generation is done",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "reactjs.org",
+          "w3.org"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in chunk-048d5bf0.js to monitor the ChatGPT UI for the 'Stop generating' button to determine when a response is finished."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to retrieve the user's preferred notification volume level."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "All flagged endpoints in chunk-174735cb.js are standard XML/SVG namespaces or React error documentation links within a production build of the React library."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "The fetch call is part of a standard 'modulepreload' polyfill for preloading JavaScript modules."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to check the text content of the body for specific strings ('Stop generating') and is part of the React framework's rendering engine."
+        }
+      ],
+      "token_usage": {
+        "prompt": 62729,
+        "candidates": 749,
+        "total": 64321
+      }
+    },
+    {
+      "extension_id": "kpbjkfajjjhpcponilijmmhpdifapcmd",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code strictly aligns with its stated purpose of capturing web content to a PNG file. The content.js script identifies ChatGPT message containers ('.text-base'), renders them to a canvas using the reputable third-party library html2canvas, and facilitates a local download using a data URI. There are no network calls (fetch/XHR) observed in the code that would indicate data exfiltration. The permissions are appropriate for an extension that needs to interact with the active page's DOM to capture screenshots.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Capture ChatGPT conversations as a single long vertical image.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "html2canvas.hertzen.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used in popup.js (lines 11, 23) to query the active tab and send messages to the content script for triggering the capture functionality. Also used in content.js to handle zoom levels."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "The static analysis findings for STORAGE appear to be false positives; the actual source code does not utilize chrome.storage. It relies on runtime messages."
+        }
+      ],
+      "token_usage": {
+        "prompt": 53184,
+        "candidates": 530,
+        "total": 54563
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 1,
+    "SUSPICIOUS": 0,
+    "SAFE": 4,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 1,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 4,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 0.8,
+    "true_positive_rate": 0.2,
+    "malicious_detection_rate": 0.2
+  },
+  "token_usage": {
+    "prompt_tokens": 342431,
+    "candidate_tokens": 3707,
+    "total_tokens": 352147
+  }
+}

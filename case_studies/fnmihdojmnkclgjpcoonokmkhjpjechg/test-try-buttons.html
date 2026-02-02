@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Try Button Functionality Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: #1a1a1a;
+            color: white;
+        }
+        
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .test-section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #333;
+            border-radius: 8px;
+            background: #2a2a2a;
+        }
+        
+        .test-button {
+            background: linear-gradient(45deg, #00d4ff, #00ff88);
+            color: black;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            font-weight: bold;
+        }
+        
+        .test-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.4);
+        }
+        
+        .result {
+            background: #004400;
+            border: 1px solid #00ff88;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            display: none;
+        }
+        
+        .error {
+            background: #440000;
+            border: 1px solid #ff4444;
+        }
+        
+        .log {
+            background: #333;
+            border: 1px solid #666;
+            padding: 10px;
+            border-radius: 5px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🚀 AITOPIA Try Button Functionality Test</h1>
+        
+        <div class="test-section">
+            <h2>Extension Status</h2>
+            <div id="extension-status">Checking extension context...</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Try Button Tests</h2>
+            
+            <!-- Simulate model info modal Try button -->
+            <button class="test-button" id="aitopia-modal-try-btn-gpt-5">
+                Try GPT-5 on AITOPIA (Model Modal)
+            </button>
+            
+            <!-- Simulate more models modal Try button -->
+            <button class="test-button" id="aitopia-more-models-try-btn">
+                Get All Models with AITOPIA (More Models Modal)
+            </button>
+            
+            <!-- Main CTA button -->
+            <button class="test-button" id="aitopia-cta-btn" style="background: linear-gradient(45deg, #ff6b35, #f7931e);">
+                UPGRADE AITOPIA NOW (Main CTA)
+            </button>
+            
+            <div id="button-result" class="result">Button click detected!</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Console Log</h2>
+            <div id="console-log" class="log">Test initialized. Click buttons above to test functionality.\n</div>
+        </div>
+        
+        <div class="test-section">
+            <h2>Instructions</h2>
+            <p>1. Click each "Try" button to verify they respond to clicks</p>
+            <p>2. Check the console log below for detailed event information</p>
+            <p>3. The main CTA button should trigger when Try buttons are clicked</p>
+            <p>4. Extension context status shows if Chrome extension APIs are available</p>
+        </div>
+    </div>
+
+    <script>
+        // Log function to display messages
+        function log(message, isError = false) {
+            const timestamp = new Date().toLocaleTimeString();
+            const logElement = document.getElementById('console-log');
+            const prefix = isError ? '[ERROR]' : '[INFO]';
+            logElement.textContent += `${timestamp} ${prefix} ${message}\n`;
+            logElement.scrollTop = logElement.scrollHeight;
+            console.log(prefix, message);
+        }
+        
+        // Check extension context
+        function checkExtensionContext() {
+            const statusElement = document.getElementById('extension-status');
+            
+            if (typeof chrome !== 'undefined' && chrome.runtime) {
+                statusElement.innerHTML = '✅ Chrome extension context available';
+                statusElement.style.color = '#00ff88';
+                log('Chrome extension APIs available');
+                
+                // Test runtime message sending
+                try {
+                    chrome.runtime.sendMessage({
+                        messageType: "TestMessage",
+                        source: "tryButtonTest"
+                    }).catch(err => {
+                        log(`Runtime message test failed: ${err.message}`, true);
+                    });
+                } catch (err) {
+                    log(`Runtime message setup failed: ${err.message}`, true);
+                }
+            } else {
+                statusElement.innerHTML = '❌ Not running in Chrome extension context';
+                statusElement.style.color = '#ff4444';
+                log('Chrome extension APIs not available', true);
+            }
+        }
+        
+        // Simulate the actual Try button handlers
+        function setupTryButtonHandlers() {
+            // Model Try button handler (simulated)
+            const modelTryBtn = document.getElementById('aitopia-modal-try-btn-gpt-5');
+            if (modelTryBtn) {
+                log('Setting up model Try button handler');
+                
+                function handleModelTryClick(e) {
+                    log('Model Try button clicked!');
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Show result
+                    const result = document.getElementById('button-result');
+                    result.style.display = 'block';
+                    result.textContent = 'Model Try button clicked! Triggering main CTA...';
+                    result.className = 'result';
+                    
+                    // Simulate triggering main CTA
+                    setTimeout(() => {
+                        const mainCtaBtn = document.getElementById('aitopia-cta-btn');
+                        if (mainCtaBtn) {
+                            log('Triggering main CTA button');
+                            mainCtaBtn.click();
+                        }
+                    }, 500);
+                }
+                
+                // Add multiple event listener approaches
+                modelTryBtn.addEventListener('click', handleModelTryClick, true);
+                modelTryBtn.addEventListener('click', handleModelTryClick, false);
+                modelTryBtn.onclick = handleModelTryClick;
+            }
+            
+            // More Models Try button handler (simulated)
+            const moreModelsTryBtn = document.getElementById('aitopia-more-models-try-btn');
+            if (moreModelsTryBtn) {
+                log('Setting up more models Try button handler');
+                
+                function handleMoreModelsTryClick(e) {
+                    log('More Models Try button clicked!');
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Show result
+                    const result = document.getElementById('button-result');
+                    result.style.display = 'block';
+                    result.textContent = 'More Models Try button clicked! Triggering main CTA...';
+                    result.className = 'result';
+                    
+                    // Simulate triggering main CTA
+                    setTimeout(() => {
+                        const mainCtaBtn = document.getElementById('aitopia-cta-btn');
+                        if (mainCtaBtn) {
+                            log('Triggering main CTA button');
+                            mainCtaBtn.click();
+                        }
+                    }, 500);
+                }
+                
+                // Add multiple event listener approaches
+                moreModelsTryBtn.addEventListener('click', handleMoreModelsTryClick, true);
+                moreModelsTryBtn.addEventListener('click', handleMoreModelsTryClick, false);
+                moreModelsTryBtn.onclick = handleMoreModelsTryClick;
+            }
+            
+            // Main CTA button handler
+            const mainCtaBtn = document.getElementById('aitopia-cta-btn');
+            if (mainCtaBtn) {
+                log('Setting up main CTA button handler');
+                
+                function handleMainCtaClick(e) {
+                    log('Main CTA button clicked!');
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Show result
+                    const result = document.getElementById('button-result');
+                    result.style.display = 'block';
+                    result.textContent = '🚀 SUCCESS! Main CTA button activated - would open AITOPIA pricing page';
+                    result.className = 'result';
+                    
+                    // Simulate Chrome extension message
+                    if (typeof chrome !== 'undefined' && chrome.runtime) {
+                        log('Sending Chrome extension message...');
+                        chrome.runtime.sendMessage({
+                            messageType: "OpenAitopiaPricing",
+                            source: "testCTA"
+                        }).catch(err => {
+                            log(`Extension message failed: ${err.message}`, true);
+                        });
+                    } else {
+                        log('Would send Chrome extension message to open AITOPIA pricing page');
+                    }
+                }
+                
+                mainCtaBtn.addEventListener('click', handleMainCtaClick, true);
+                mainCtaBtn.onclick = handleMainCtaClick;
+            }
+        }
+        
+        // Initialize test
+        document.addEventListener('DOMContentLoaded', function() {
+            log('Try button functionality test initialized');
+            checkExtensionContext();
+            setupTryButtonHandlers();
+            
+            // Test button accessibility
+            const buttons = document.querySelectorAll('.test-button');
+            buttons.forEach((button, index) => {
+                log(`Button ${index + 1} (${button.id}): cursor=${getComputedStyle(button).cursor}, pointer-events=${getComputedStyle(button).pointerEvents}`);
+            });
+        });
+        
+        // Monitor for any errors
+        window.addEventListener('error', function(e) {
+            log(`JavaScript Error: ${e.message} at ${e.filename}:${e.lineno}`, true);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,376 @@
+{
+  "job_name": "batches/69no5orkdhy6q4dx4fxsyifnxqof4rnfrh1t",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:19.438064",
+  "validations": [
+    {
+      "extension_id": "gpbnhdjoknjmghjfljgcankdldimokmk",
+      "verdict": "SAFE",
+      "confidence": 0.9,
+      "reasoning": "The extension appears to be a standard wrapper for ChatGPT. While the static analysis flags many patterns, an investigation of the code shows they belong to a generic extension development framework ('chrome.js'). The 'inject.js' file contains logic for blurring the UI and counting unread messages; although the code mentions 'Telegram,' this appears to be benign boilerplate code reused by the developer. The extension only requests the 'storage' permission and is restricted via the manifest to run only on 'chat.openai.com'. No evidence of data exfiltration or malicious intent was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "ChatGPT Assistant",
+          "hidden_functionality": "The content script contains leftover/unused code for a 'Telegram Privacy' feature, including unread message counting and UI blurring logic.",
+          "code_evidence": "inject.js: Line 71: document.documentElement.setAttribute('privacy-for-telegram', ''); Line 88: const unread = [...document.querySelectorAll(\"div[class*='unread']\"), ...document.querySelectorAll(\"span[ng-bind*='.unreadCount']\")];"
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chat.openai.com",
+          "chatgptchat.net",
+          "clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://chatgptchat.net/thank-you",
+          "https://chatgptchat.net/info"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE/CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used for persisting extension settings and local state management within the 'app.storage' and 'app.session' wrappers in chrome.js."
+        },
+        {
+          "pattern": "POST_MESSAGE/NETWORK",
+          "usage": "LEGITIMATE",
+          "justification": "Used for standard cross-script communication (runtime.sendMessage/onMessage) between the content script (inject.js) and the background service worker."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used to query tabs to send UI updates. Without the 'tabs' permission in the manifest, the extension cannot actually access sensitive tab data like URLs or Titles from other sites."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Used in inject.js to periodically check for 'notifications' (unread counts) to update the extension's badge, a common feature for messaging/chat assistants."
+        }
+      ],
+      "token_usage": {
+        "prompt": 7299,
+        "candidates": 783,
+        "total": 10467
+      }
+    },
+    {
+      "extension_id": "nkkkaendbndanjjndfpebmekhgdjlhkh",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose of rendering equations. The static analysis findings are characteristic of a math rendering engine (like KaTeX or MathJax) which utilizes MathML and SVG namespaces. The background script only triggers a tab open on update to the developer's site, which is non-malicious. No data exfiltration or credential harvesting patterns were found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Display equations in ChatGPT using Latex notation",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chat.openai.com",
+          "chatgpt.com",
+          "www.w3.org"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://alejandro-ao.com/gpt-equations-update/",
+          "http://www.w3.org/2000/svg",
+          "http://www.w3.org/1998/Math/MathML"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT (alejandro-ao.com)",
+          "usage": "LEGITIMATE",
+          "justification": "Used in background.js to open a changelog or update page when the extension is updated. Standard developer practice."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (w3.org)",
+          "usage": "LEGITIMATE",
+          "justification": "These are XML namespace URIs for SVG and MathML, required for rendering math equations in the DOM."
+        },
+        {
+          "pattern": "FETCH / INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses these to process LaTeX and inject the rendered MathML/SVG into the ChatGPT interface. Typical for a UI-enhancement extension."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used in popup.js to identify the active tab (ChatGPT) to send the 'PROMPT' action to the content script."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3420,
+        "candidates": 663,
+        "total": 4791
+      }
+    },
+    {
+      "extension_id": "iaclcidolgjnpblhdalmildokfdmidlj",
+      "verdict": "SAFE",
+      "confidence": 0.9,
+      "reasoning": "After reviewing the source code, the extension appears to be a legitimate implementation of a Gmail assistant. The high volume of static analysis flags (particularly in gmail.js and pageWorld.js) is a direct result of including the 'InboxSDK' library, which is a standard industry tool for modifying the Gmail UI. The background script contains a message listener for 'rest' calls, but this is restricted by the manifest's host_permissions to 'core.salesgear.io', which is the developer's infrastructure. There is no evidence of data exfiltration to unauthorized domains, credential harvesting, or hidden dual-purpose logic such as ad injection. The extension is linked to 'Salesgear', a known sales engagement platform, making the domain references and branding consistent with the developer's identity.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Leverage the power of ChatGPT within your Gmail inbox.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://mail.google.com/",
+          "https://core.salesgear.io",
+          "https://www.salesgear.io",
+          "https://www.inboxsdk.com",
+          "https://fonts.googleapis.com",
+          "https://ssl.gstatic.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://docs.google.com/forms/d/e/1FAIpQLSdqkZ61EZtnjJCp8OmldOZFrLEkneDtODokTaRIh3x-GfiExw/viewform",
+          "https://chrome.google.com/webstore/detail/chatgpt-for-gmail/iaclcidolgjnpblhdalmildokfdmidlj",
+          "http://www.w3.org/1999/xhtml"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses chrome.scripting.executeScript to inject 'pageWorld.js' into the MAIN world, which is the standard and required method for InboxSDK-based extensions to interact with Gmail's internal state."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Part of the InboxSDK library used to detect keyboard shortcuts and navigation within the Gmail compose window."
+        },
+        {
+          "pattern": "DOM / INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Required to inject AI-generated text and UI buttons (like 'Generate with ChatGPT') directly into the Gmail interface."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used in background.js to proxy requests to the Salesgear API (core.salesgear.io), which likely handles the communication with ChatGPT's backend."
+        }
+      ],
+      "token_usage": {
+        "prompt": 17917,
+        "candidates": 857,
+        "total": 20013
+      }
+    },
+    {
+      "extension_id": "fbbjijdngocdplimineplmdllhjkaece",
+      "verdict": "SAFE",
+      "confidence": 0.9,
+      "reasoning": "After reviewing the code, the extension appears to be a legitimate ChatGPT wrapper. The suspicious patterns identified by static analysis are benign in context: cookie access is targeted specifically at the service provider (OpenAI/ChatGPT) to manage authentication, and network calls are directed to the extension's own infrastructure for configuration. The implementation of 'webRequest' listeners is used to append authorization headers to requests, which is standard for bridging browser sessions with API endpoints. No evidence of cross-domain data exfiltration or credential harvesting was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant providing search results and summaries.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chatgpt.com",
+          "https://api.openai.com",
+          "https://www.youtube.com",
+          "https://chrome.google.com"
+        ],
+        "requires_investigation": [
+          "https://searchgptchrome.com"
+        ],
+        "informational_only": [
+          "https://reactjs.org/docs/error-decoder.html",
+          "http://www.w3.org/2000/svg",
+          "https://github.com/syntax-tree/hast-util-to-jsx-runtime"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CREDENTIAL_ACCESS / CHROME_COOKIES",
+          "usage": "LEGITIMATE",
+          "justification": "The extension accesses cookies specifically for 'chatgpt.com' (Line 8989 in service_worker.js) to retrieve session tokens. This is a standard requirement for ChatGPT browser extensions to interact with the user's active session without requiring re-authentication."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (searchgptchrome.com)",
+          "usage": "LEGITIMATE",
+          "justification": "The call to 'https://searchgptchrome.com/api/classes/' (Line 9679) appears to be a configuration or telemetry endpoint for the extension's own backend, likely for retrieving UI metadata or premium feature status."
+        },
+        {
+          "pattern": "INNERHTML / DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "These patterns are present throughout the code because the extension is built using modern UI frameworks (likely React) and bundled with libraries like jQuery. They are used for rendering the ChatGPT response sidebar in search engine results."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (http://a)",
+          "usage": "LEGITIMATE",
+          "justification": "This is a false positive commonly found in the 'URI.js' library or similar URL-parsing utilities which use 'http://a' as a dummy base URL for parsing relative paths."
+        }
+      ],
+      "token_usage": {
+        "prompt": 53077,
+        "candidates": 828,
+        "total": 56634
+      }
+    },
+    {
+      "extension_id": "molpfdakehebpkaecfdpndakphebjjpp",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The analysis of the code confirms that PinFlux is a legitimate productivity tool for ChatGPT. The 'Profile ID' logic (searching localStorage for user IDs) is used locally to partition stored pins so multiple users on one computer don't see each other's pinned chats. The network activity is restricted to internal extension preloading and user-initiated navigation to standard developer support pages (GitHub, Ko-fi, Google Forms). No exfiltration chain or hidden background data transmission was discovered. The extensive keyboard and DOM patterns are a direct result of the complex interactive tutorial and the drag-and-drop reordering system implemented in the content script.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant for pinning chats",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatgpt.com",
+          "google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "forms.gle",
+          "github.com",
+          "ko-fi.com",
+          "chromewebstore.google.com",
+          "w3.org"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to implement the Alt+P shortcut for pinning chats and to handle navigation/hotkeys within the interactive tutorial system."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store the list of pinned chat IDs (urlId) and titles in chrome.storage.sync to persist user configuration across devices."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Required to detect changes in ChatGPT's dynamic React-based UI (like the sidebar loading or a new chat being created) to inject Pin/Unpin buttons."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "The fetch call is part of a standard WXT/Vite framework artifact used for module preloading of internal extension assets (modulepreload)."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to inject UI templates for the 'PinFlux Board', the tutorial tooltips, and notification banners. Inputs are generally static strings or sanitizable text from the DOM."
+        }
+      ],
+      "token_usage": {
+        "prompt": 50861,
+        "candidates": 759,
+        "total": 52722
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 0,
+    "SUSPICIOUS": 0,
+    "SAFE": 5,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 0,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 5,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 1.0,
+    "true_positive_rate": 0.0,
+    "malicious_detection_rate": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 132574,
+    "candidate_tokens": 3890,
+    "total_tokens": 144627
+  }
+}

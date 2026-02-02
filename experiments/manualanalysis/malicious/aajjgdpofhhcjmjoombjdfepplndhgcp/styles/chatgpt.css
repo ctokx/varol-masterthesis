@@ -1,0 +1,59 @@
+body[eurekaa_sidepanel="true"] *
+nav > .border-t > a.flex > .flex
+{
+  display: none !important;
+}
+body[eurekaa_sidepanel="true"] *
+nav > .border-t > a.flex
+{
+    padding: 0 !important;
+    display: none;
+}
+body[eurekaa_sidepanel="true"]
+{
+    background-color: white;
+}
+body[eurekaa_sidepanel="true"] *
+div[role="presentation"] > div > 
+form.stretch + .relative.pb-3.pt-2.text-center.text-xs
+{
+    content: "";
+    visibility: hidden;
+    height: 0px;
+    padding: 0px;
+    margin-top: 8px;
+    overflow: hidden !important;
+}
+/*
+body[eurekaa_sidepanel="true"] *
+div[role="presentation"] > div > 
+form.stretch + .relative.pb-3.pt-2.text-center.text-xs > span
+{
+    display: none;
+}*/
+body[eurekaa_sidepanel="true"] *
+main.relative.h-full::-webkit-scrollbar 
+{
+    display: none;
+    width: 0px;
+}
+body[eurekaa_sidepanel="true"] *
+form + div > span
+{
+    display: none !important;
+}
+
+@media screen and (max-width: 400px) 
+{
+body[eurekaa_sidepanel="true"] *
+.text-base > div:first-child > div:first-child > div:first-child:has(img),
+body[eurekaa_sidepanel="true"] * 
+.text-base > div:first-child > div:first-child > div:first-child:has(svg) 
+{
+    /*
+    width: 22px !important;
+    height: 22px !important;*/
+    border-radius: 50% !important;
+    overflow: hidden !important;
+}
+}

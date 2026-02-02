@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT для Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Розширення для створення ярлика для офіційного ChatGPT у браузері Google Chrome"
+    },
+    "ext_command_description": {
+        "message": "Ярлик для відкриття ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT в Еко-режимі?"
+    },
+    "request_perms_popup_description": {
+        "message": "Допомагайте стійким цілям, просто переглядаючи веб-сторінки. Цей режим не перериває ваше переглядання."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Дізнатися більше"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Дозволити"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Відхилити"
+    },
+    "perms_granted_popup_title": {
+        "message": "Вітаємо!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Тепер ви зможете скористатися всіма нашими функціями!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Продовжити"
+    },
+    "perms_denied_popup_title": {
+        "message": "Шкода..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Можливо, наступного разу."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Закрити це повідомлення"
+    },
+    "welcome_title": {
+        "message": "ChatGPT для Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Розширення успішно встановлено"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT для Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Розширення успішно встановлено"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Виконайте наведені нижче дії, щоб закріпити своє розширення, а потім натисніть Далі"
+    },
+    "welcome_next_step": {
+        "message": "Наступний крок"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "Щоб отримати доступ до всіх функцій розширення, активуйте Еко-режим."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Натисніть Дозволити, щоб продовжити"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Умови використання"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Політика конфіденційності"
+    },
+    "how_to_use_html_title": {
+        "message": "Як користуватися розширенням"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Або натисніть Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Еко-режим"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Вітаємо! Цей сайт є партнером нашого еко-режиму."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Що це означає?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Продовжуючи перегляд, ви допомагаєте 🌍 планеті, висаджуючи дерева та компенсуючи викиди вуглецю без жодних витрат."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Під час кожного відвідування партнера нова вкладка буде відкриватися ненадовго для обчислення компенсації вуглецю."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "До речі, дякуємо вам за підтримку цієї чудової справи разом з нами! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Дізнатися більше"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Закрити"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Більше не показувати"
+    }
+}

@@ -1,0 +1,485 @@
+{
+    "you_need_to_approve_the_permissions_to_open_the_extension_in_the_side_panel_": {
+        "message": "사이드 패널에서 확장 프로그램을 열려면 권한 승인이 필요합니다."
+    },
+    "dropblock_head": {
+        "message": "dropBlock_head"
+    },
+    "open_the_extension_in_a_sidepanel": {
+        "message": "확장 프로그램을 사이드패널에서 열기"
+    },
+    "link_was_copied_": {
+        "message": "링크가 복사되었습니다!"
+    },
+    "drag_and_drop_your_files_here": {
+        "message": "여기에 파일을 끌어다 놓으세요"
+    },
+    "only_text_content_will_be_processed__up_to_5_files__each_up_to_5mb_": {
+        "message": "텍스트 내용만 처리됩니다. 최대 5개 파일, 각 5MB 이하."
+    },
+    "you_can_upload_a_maximum_of_5_files_per_dialog__please_upload_files_in_smaller_batches_": {
+        "message": "대화당 최대 5개 파일 업로드 가능하며, 작은 묶음으로 업로드하세요."
+    },
+    "invalid_file_format_or_file_size_exceeds_5_mb__please_select_smaller_files_": {
+        "message": "잘못된 파일 형식 또는 파일 크기가 5MB를 초과합니다. 더 작은 파일을 선택하세요."
+    },
+    "permissions_are_missing__please_grant_the_extension_access_to_web_pages_": {
+        "message": "권한이 없습니다. 확장 프로그램에 웹 페이지 접근 권한을 부여하세요."
+    },
+    "error__please_try_again_later_": {
+        "message": "오류가 발생했습니다. 나중에 다시 시도하세요."
+    },
+    "summarization_does_not_work_on_system_pages__please_copy_the_page_content_into_the_chat_manually_": {
+        "message": "시스템 페이지에서는 요약이 작동하지 않습니다. 페이지 내용을 수동으로 채팅에 복사하세요."
+    },
+    "delete": {
+        "message": "삭제"
+    },
+    "delete_chat_": {
+        "message": "채팅을 삭제하시겠습니까?"
+    },
+    "are_you_sure_you_want_to_delete_this_chat_": {
+        "message": "이 채팅을 삭제하시겠습니까?"
+    },
+    "cancel": {
+        "message": "취소"
+    },
+    "the_chat_was_deleted": {
+        "message": "채팅이 삭제되었습니다."
+    },
+    "`_text_`": {
+        "message": "ʼ+text+ʼ"
+    },
+    "`_lang___(text)_`": {
+        "message": "ʼ+Lang.__(text)+ʼ"
+    },
+    "${deletetext}": {
+        "message": "${deleteText}"
+    },
+    "`_lang___(_delete_chat__)_`": {
+        "message": "ʼ+Lang.__('채팅 삭제?')+ʼ"
+    },
+    "`_lang___(_are_you_sure_you_want_to_delete_this_chat__)_`": {
+        "message": "ʼ+Lang.__('이 채팅을 삭제하시겠습니까?')+ʼ"
+    },
+    "`_lang___(_cancel_)_`": {
+        "message": "ʼ+Lang.__('취소')+ʼ"
+    },
+    "`_lang___(_delete_)_`": {
+        "message": "ʼ+Lang.__('삭제')+ʼ"
+    },
+    "file": {
+        "message": "파일"
+    },
+    "thinking": {
+        "message": "생각 중"
+    },
+    "copy_response": {
+        "message": "응답 복사"
+    },
+    "good_response": {
+        "message": "좋은 응답"
+    },
+    "bad_response": {
+        "message": "나쁜 응답"
+    },
+    "uploading___": {
+        "message": "업로드 중..."
+    },
+    "`_lang___(_thinking_)_`": {
+        "message": "ʼ+Lang.__('생각 중')+ʼ"
+    },
+    "feedback": {
+        "message": "피드백"
+    },
+    "share": {
+        "message": "공유"
+    },
+    "rate_us": {
+        "message": "평가하기"
+    },
+    "💀": {
+        "message": "💀"
+    },
+    "😞": {
+        "message": "😞"
+    },
+    "😐": {
+        "message": "😐"
+    },
+    "🙂": {
+        "message": "🙂"
+    },
+    "😍": {
+        "message": "😍"
+    },
+    "grok_3_is_here_": {
+        "message": "Grok 3가 도착했습니다."
+    },
+    "what_do_you_want_to_know_": {
+        "message": "무엇을 알고 싶으세요?"
+    },
+    "how_can_grok_help_you_": {
+        "message": "Grok이 어떻게 도와드릴까요?"
+    },
+    "attach_file": {
+        "message": "파일 첨부"
+    },
+    "select_a_model": {
+        "message": "모델 선택"
+    },
+    "sent_message": {
+        "message": "전송된 메시지"
+    },
+    "hey_": {
+        "message": "안녕,"
+    },
+    "welcome_": {
+        "message": "환영합니다!"
+    },
+    "how_can_i_help_you_": {
+        "message": "무엇을 도와드릴까요?"
+    },
+    "message_deepseek": {
+        "message": "DeepSeek 메시지"
+    },
+    "summarize_the_current_page": {
+        "message": "현재 페이지 요약"
+    },
+    "upload_a_file": {
+        "message": "파일 업로드"
+    },
+    "start_a_chat": {
+        "message": "채팅 시작"
+    },
+    "set_personalization": {
+        "message": "개인화 설정"
+    },
+    "new_chat": {
+        "message": "새 채팅"
+    },
+    "switch_to_light_mode": {
+        "message": "라이트 모드로 전환"
+    },
+    "switch_to_dark_mode": {
+        "message": "다크 모드로 전환"
+    },
+    "open_the_extension_in_a_separate_tab": {
+        "message": "별도 탭에서 확장 열기"
+    },
+    "{{_item_}}": {
+        "message": "{{ item }}"
+    },
+    "start_now": {
+        "message": "지금 시작"
+    },
+    "get_ideas": {
+        "message": "아이디어 얻기"
+    },
+    "ask": {
+        "message": "질문하기"
+    },
+    "code": {
+        "message": "코드"
+    },
+    "translate": {
+        "message": "번역"
+    },
+    "cooking_tips": {
+        "message": "요리 팁"
+    },
+    "how_deepseek_ai_helps_you_": {
+        "message": "DeepSeek AI가 어떻게 도와드릴까요?"
+    },
+    "✨_get_spot_on_answers_10x_faster": {
+        "message": "✨ 정곡 답변을 10배 빠르게 받기"
+    },
+    "no_google__no_tab_chaos__no_time_wasted": {
+        "message": "구글 없음, 탭 혼란 없음, 시간 낭비 없음"
+    },
+    "📚_save_hours_on_studying": {
+        "message": "📚 공부 시간 절약"
+    },
+    "generate_essays__auto_complete_tests__and_summarize_any_page_in_minutes_": {
+        "message": "에세이 생성, 시험 자동완성, 페이지 요약을 몇 분 만에!"
+    },
+    "🌍_real_time_translation_on_the_page": {
+        "message": "🌍 페이지에서 실시간 번역"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments": {
+        "message": "원어민처럼 자연스럽게, 실수나 어색함 없이 작성하세요."
+    },
+    "💻_your_ai_copilot_for_coding": {
+        "message": "💻 코딩을 위한 AI 조수"
+    },
+    "fix_bugs__decode_legacy_and_write_code_3x_faster__enjoy_your_work_and_earn_more_": {
+        "message": "버그 수정, 레거시 디코딩, 3배 빠른 코드 작성. 일을 즐기고 더 벌세요."
+    },
+    "where_do_we_start_": {
+        "message": "어디서 시작할까요?"
+    },
+    "get_10_post_ideas_for_my_cooking_blog": {
+        "message": "요리 블로그를 위한 10가지 포스트 아이디어 얻기"
+    },
+    "find_a_billion_dollar_no_code_startup_idea": {
+        "message": "10억 달러 가치의 노코드 스타트업 아이디어 찾기"
+    },
+    "give_me_fun_game_ideas_to_play_with_my_kids_at_home": {
+        "message": "집에서 아이들과 놀 수 있는 재미있는 게임 아이디어 주세요"
+    },
+    "write_3_viral_tiktok_post_ideas_about_personal_finance": {
+        "message": "개인 금융 관련 3개의 바이럴 TikTok 포스트 아이디어 작성"
+    },
+    "recommend_5_books_that_will_change_the_way_i_think": {
+        "message": "내 사고방식을 바꿀 5권의 책 추천"
+    },
+    "what_daily_habits_can_boost_my_creativity_": {
+        "message": "일상 습관 중 창의력을 높이는 방법은?"
+    },
+    "help_me_set_3_achievable_goals_for_the_next_30_days": {
+        "message": "앞으로 30일 동안 달성 가능한 목표 3개 설정을 도와주세요"
+    },
+    "how_can_i_make_my_facebook_profile_more_attractive_": {
+        "message": "내 Facebook 프로필을 더 매력적으로 만드는 방법은?"
+    },
+    "generate_a_basic_react_component_for_a_to_do_list": {
+        "message": "할 일 목록용 기본 React 컴포넌트 생성"
+    },
+    "can_you_explain_javascript_promises_in_a_simple_way_": {
+        "message": "자바스크립트 프로미스를 쉽게 설명해줄 수 있나요?"
+    },
+    "how_do_i_build_a_rest_api_endpoint_using_fastapi_in_python_": {
+        "message": "파이썬 FastAPI를 사용하여 REST API 엔드포인트를 어떻게 만드나요?"
+    },
+    "how_can_i_add_social_login_(google_facebook)_to_my_app_": {
+        "message": "내 앱에 소셜 로그인(구글/페이스북) 추가하는 방법은?"
+    },
+    "how_do_you_say_“love”_in_french_": {
+        "message": "프랑스어로 “사랑”은 어떻게 말하나요?"
+    },
+    "how_do_you_say_“delicious_food”_in_italian_": {
+        "message": "이탈리아어로 “맛있는 음식”은 어떻게 말하나요?"
+    },
+    "what_s_the_korean_translation_of_“i_miss_you”_": {
+        "message": "“보고 싶어요”의 한국어 번역은 무엇인가요?"
+    },
+    "what_s_the_arabic_word_for_“peace”_": {
+        "message": "“평화”의 아랍어 단어는 무엇인가요?"
+    },
+    "quick_breakfast_ideas_kids_will_actually_love": {
+        "message": "아이들이 좋아할 빠른 아침 식사 아이디어"
+    },
+    "what_are_5_no_sugar_snacks_i_can_make_at_home_": {
+        "message": "집에서 만들 수 있는 설탕 없는 간식 5가지"
+    },
+    "give_me_an_easy_3_ingredient_dessert_recipe": {
+        "message": "쉽고 간단한 3가지 재료 디저트 레시피를 주세요"
+    },
+    "easy_dessert_tips": {
+        "message": "쉬운 디저트 팁"
+    },
+    "click": {
+        "message": "클릭"
+    },
+    "add_deepseek_ai_to_the_toolbar_for_quick_access": {
+        "message": "빠른 접근을 위해 툴바에 DeepSeek AI 추가"
+    },
+    "file_download_has_started": {
+        "message": "파일 다운로드가 시작되었습니다"
+    },
+    "to_get_this_file_again_": {
+        "message": "이 파일을 다시 받으려면,"
+    },
+    "click_here": {
+        "message": "여기를 클릭하세요"
+    },
+    "show_downloaded_file": {
+        "message": "다운로드한 파일 보기"
+    },
+    "files_on_the_computer_can_only_be_opened_in_the_google_chrome_extension": {
+        "message": "컴퓨터의 파일은 구글 크롬 확장 프로그램에서만 열 수 있습니다."
+    },
+    "enjoy_the_conversion_": {
+        "message": "변환을 즐기시겠습니까?"
+    },
+    "please_rate_your_experience_with_our_extension": {
+        "message": "저희 확장 프로그램 사용 경험을 평가해 주세요"
+    },
+    "try_again": {
+        "message": "다시 시도"
+    },
+    "help_us_be_better": {
+        "message": "더 나은 서비스를 위해 도와주세요"
+    },
+    "your_feedback_matters__what_can_we_improve_": {
+        "message": "여러분의 피드백이 중요합니다. 무엇을 개선할까요?"
+    },
+    "send": {
+        "message": "전송"
+    },
+    "write_your_feedback_here": {
+        "message": "여기에 피드백을 작성하세요"
+    },
+    "support_us_in_10_seconds": {
+        "message": "10초 만에 지원하기"
+    },
+    "1__click": {
+        "message": "1. 클릭"
+    },
+    "_write_a_review_": {
+        "message": "\\\"리뷰 작성\\\""
+    },
+    "2__rate_and_post_your_feedback": {
+        "message": "2. 평가 후 피드백 게시"
+    },
+    "thanks_for_helping_us_grow_": {
+        "message": "성장하는 데 도움을 주셔서 감사합니다!"
+    },
+    "select_your_language": {
+        "message": "언어 선택"
+    },
+    "type_to_filter_languages___": {
+        "message": "언어 필터링을 위해 입력..."
+    },
+    "create_public_link": {
+        "message": "공개 링크 생성"
+    },
+    "this_file_will_be_available_to_anyone__public_links_are_temporary_and_will_be_removed_after_24_hours_": {
+        "message": "이 파일은 누구나 접근 가능하며, 공개 링크는 임시이며 24시간 후에 삭제됩니다."
+    },
+    "create": {
+        "message": "생성"
+    },
+    "save_hours_on_studying": {
+        "message": "[textgradientEl]공부 시간 절약[\/textgradientEl]"
+    },
+    "auto_complete_tests__generate_essays__and_summarize_any_page_in_minutes_": {
+        "message": "시험 자동완성, 에세이 생성, 페이지 요약을 몇 분 만에!"
+    },
+    "step": {
+        "message": "단계"
+    },
+    "of": {
+        "message": "중"
+    },
+    "continue": {
+        "message": "계속"
+    },
+    "use_ai_translation_magic": {
+        "message": "AI 번역 [textgradientEl]매직[\/textgradientEl] 사용"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments__right_on_the_page_": {
+        "message": "원어민처럼 자연스럽게, 실수나 어색함 없이 바로 페이지에서 작성하세요."
+    },
+    "get_your_ai_copilot_for_coding": {
+        "message": "코딩을 위한 [textgradientEl]AI 조수[\/textgradientEl] 받기"
+    },
+    "try_now": {
+        "message": "지금 시도하기"
+    },
+    "did_this_tool_help_you_": {
+        "message": "이 도구가 도움이 되었나요?"
+    },
+    "share_it_with_friends_who_work_with_images_": {
+        "message": "이미지 작업하는 친구들과 공유하세요."
+    },
+    "who_would_find_it_useful_": {
+        "message": "누가 유용하다고 생각하나요?"
+    },
+    "copy_link": {
+        "message": "링크 복사"
+    },
+    "facebook": {
+        "message": "페이스북"
+    },
+    "x": {
+        "message": "X"
+    },
+    "telegram": {
+        "message": "Telegram"
+    },
+    "i_found_a_super_useful_chrome_extension__": {
+        "message": "아주 유용한 Chrome 확장 프로그램을 찾았어요 —"
+    },
+    "it_can_save_any_website_as_a_pdf__you_should_try_it_out___it_s_great_": {
+        "message": "어떤 웹사이트든 PDF로 저장할 수 있어요. 꼭 사용해보세요 — 정말 좋아요!"
+    },
+    "hooray__greate_job_": {
+        "message": "만세, 훌륭한 작업입니다!"
+    },
+    "please__can_you_rate_us_": {
+        "message": "부탁해요, 저희를 평가해 주세요!"
+    },
+    "deepseek_ai_has_been_installed_": {
+        "message": "DeepSeek AI가 설치되었습니다!"
+    },
+    "get_answers_10x_faster___no_google__no_tab_chaos__no_time_wasted": {
+        "message": "답변을 10배 빠르게 받기 — 구글 필요없음, 탭 혼란 없음, 시간 낭비 없음"
+    },
+    "open_deepseek_ai": {
+        "message": "DeepSeek AI 열기"
+    },
+    "deepseek_app": {
+        "message": "DeepSeek 앱"
+    },
+    "love_deepseek_": {
+        "message": "DeepSeek를 좋아하세요?"
+    },
+    "could_you_please_rate_our_extension_": {
+        "message": "저희 확장 프로그램을 평가해 주세요."
+    },
+    "share_this_extension_with_your_friends": {
+        "message": "이 확장 프로그램을 친구들과 공유하세요."
+    },
+    "share_us_with_your_friends": {
+        "message": "저희를 친구들에게 공유하세요."
+    },
+    "and_unlock_all_ai_assistant_features": {
+        "message": "모든 AI 어시스턴트 기능 잠금 해제"
+    },
+    "vk_com": {
+        "message": "VK.com"
+    },
+    "reddit": {
+        "message": "레딧"
+    },
+    "whatsapp": {
+        "message": "WhatsApp"
+    },
+    "weibo": {
+        "message": "웨이보"
+    },
+    "post_preview": {
+        "message": "게시물 미리보기"
+    },
+    "hey__i_m_your_ai_assistant_": {
+        "message": "안녕, 나는 당신의 AI 어시스턴트야!"
+    },
+    "what_can_i_help_with_": {
+        "message": "무엇을 도와드릴까요?"
+    },
+    "history": {
+        "message": "이력"
+    },
+    "settings": {
+        "message": "설정"
+    },
+    "subscription": {
+        "message": "구독"
+    },
+    "add_personal_info_or_instructions_to_the_ai_assistant__this_will_help_improve_responses_for_you_": {
+        "message": "개인 정보 또는 지침을 AI 어시스턴트에 추가하세요. 이렇게 하면 응답이 개선됩니다."
+    },
+    "save": {
+        "message": "저장"
+    },
+    "and_you_ll_unlock_all_ai_assistant_features": {
+        "message": "그러면 모든 AI 어시스턴트 기능이 잠금 해제됩니다."
+    },
+    "e_g___always_reply_in_french": {
+        "message": "예: 항상 프랑스어로 답변하기"
+    },
+    "_p_you_can_try_the_ai_assistant_to_play_a_role__e_g____p__ul__li_act_as_an_english_teacher_and_correct_my_mistakes__li__li_respond_like_a_professional_business_consultant__li___ul__p_or_input_your_data_for_the_ai_assistant_to_generate_responses__e_g____p__ul__li_23_y_o___58_kg__height_165_cm__female__li__li_programmer__php___laravel__js___react___li___ul_": {
+        "message": "<p>AI 어시스턴트를 사용하여 역할을 연기할 수 있습니다, 예:</p><ul><li>영어 교사 역할을 하며 제 실수를 교정하기</li><li>전문 비즈니스 컨설턴트처럼 응답하기</li></ul><p>또는 데이터를 입력하여 AI 어시스턴트가 응답을 생성하게 할 수 있습니다, 예:</p><ul><li>23세, 58kg, 키 165cm, 여성</li><li>프로그래머. PHP – Laravel, JS – React.</li></ul>"
+    }
+}

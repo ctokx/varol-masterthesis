@@ -1,0 +1,62 @@
+{
+  "feedback": {
+    "message": "Kontakt"
+  },
+  "hello": {
+    "message": "Bok!"
+  },
+  "ask_anything": {
+    "message": "Pitaj bilo što"
+  },
+  "ask_about_this_page": {
+    "message": "Pitaj o ovoj stranici"
+  },
+  "summarize_this_page": {
+    "message": "Sažmi ovu stranicu"
+  },
+  "add_photos_and_files": {
+    "message": "Dodaj fotografije i datoteke"
+  },
+  "create_image": {
+    "message": "Stvori sliku"
+  },
+  "web_search": {
+    "message": "Pretraživanje weba"
+  },
+  "teacher_mode": {
+    "message": "Način rada učitelja"
+  },
+  "voice_input": {
+    "message": "Glasovni unos"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "Brzi svakodnevni pomoćnik"
+  },
+  "model_deep_reasoning": {
+    "message": "Model dubokog razmišljanja"
+  },
+  "model_quick_multimodal": {
+    "message": "Brzi multimodalni odgovori"
+  },
+  "model_advanced_google_ai": {
+    "message": "Napredna Google AI"
+  },
+  "model_complex_problem_solving": {
+    "message": "Rješavanje složenih problema"
+  },
+  "model_powerful_opensource": {
+    "message": "Moćan model otvorenog koda"
+  },
+  "model_reasoning_specialist": {
+    "message": "Specijalist za rasuđivanje"
+  },
+  "model_balanced_reliable": {
+    "message": "Uravnotežen i pouzdan"
+  },
+  "model_most_capable": {
+    "message": "Najsposobniji Claude"
+  },
+  "model_label_fastest": {
+    "message": "Najbrži"
+  }
+}

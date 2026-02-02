@@ -1,0 +1,3 @@
+"use strict";(function(){const u="gm",c="AgYPAAMJBR0BCAsFAwQEAw8GCAADAhcDCQ8MDg8JAw4=";function r(){function i(){return Array.from(document.querySelectorAll(".PromptWork")).map(o=>{const a=(o.querySelector("textarea.input")?.value||"").trim(),e=(o.querySelector(".output")?.innerText||"").trim();return!e||e==="\u8F93\u51FA\u4E0E\u8F93\u5165\u76F8\u540C"?a:e}).filter(o=>!!o).join(`
+
+`)}const n=location.ancestorOrigins?.item(0)||"https://discord.com";window.addEventListener("message",t=>{t.origin===n&&t.data?.id&&t.data?.to==="ops"&&t.data?.from==="autojourney"&&window.parent.postMessage({from:"ops",to:"autojourney",id:t.data.id,prompts:i()},n)},!1)}const s=setInterval(()=>{document.body&&(clearInterval(s),document.body.style.userSelect="text",r())},300)})();

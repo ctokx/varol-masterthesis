@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT for Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Laajennus, jolla luodaan pikakuvake viralliselle ChatGPT:lle Google Chrome -selaimessa"
+    },
+    "ext_command_description": {
+        "message": "Pikakuvake ChatGPT:n avaamiseen"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT Eco-tilassa?"
+    },
+    "request_perms_popup_description": {
+        "message": "Auta kestävän kehityksen hankkeita vain selaamalla verkkoa. Tämä tila ei keskeytä selaamista."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Lisätietoja"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Salli"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Hylkää"
+    },
+    "perms_granted_popup_title": {
+        "message": "Onnittelut!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Nyt voit hyödyntää kaikkia ominaisuuksiamme!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Jatka"
+    },
+    "perms_denied_popup_title": {
+        "message": "Harmi..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Ehkä ensi kerralla."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Sulje tämä viesti"
+    },
+    "welcome_title": {
+        "message": "ChatGPT for Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Laajennus asennettu onnistuneesti"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT for Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Laajennus asennettu onnistuneesti"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Seuraa alla olevia ohjeita kiinnittääksesi laajennuksesi ja napsauta sitten Seuraava vaihe"
+    },
+    "welcome_next_step": {
+        "message": "Seuraava vaihe"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "Saadaksesi kaikki laajennuksen ominaisuudet käyttöön, aktivoi Eco-tila."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Jatka napsauttamalla Salli"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Käyttöehdot"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Tietosuojakäytäntö"
+    },
+    "how_to_use_html_title": {
+        "message": "Miten laajennusta käytetään"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Tai paina Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Eco-tila"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Onnittelut! Tämä sivusto on Eco-tilamme kumppani."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Mitä tämä tarkoittaa?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Jatkamalla selaamista autat planeettaa 🌍, istutat puita ja kompensoit hiilidioksidipäästöjä ilman kustannuksia."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Jokaisen kumppanin vierailun yhteydessä uusi välilehti avautuu lyhyesti hiilidioksidikompensaation laskemista varten."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Muuten, kiitos paljon tämän uskomattoman asian tukemisesta kanssamme! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Lisätietoja"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Sulje"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Älä näytä enää"
+    }
+}

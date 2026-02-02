@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="ext_name"></title>
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <header class="container">
+        <img id="image_top" src="./images/image_top_204x60.png" alt="Logo">
+    </header>
+    <main>
+        <h2 id="sub_title" class="green-title pt-10" data-i18n="welcome_sub_title_granted"></h2>
+        <h3 id="tip_title" class="subtitle pt-10" data-i18n="welcome_tip_title_granted"></h3>
+        <img id="tip_img" src="./images/extension_fix.gif" alt="" class="pt-20">
+        <div>
+            <div class="buttons">
+                <a href="how-to-use.html" class="allow" data-i18n="welcome_next_step"></a>
+            </div>
+        </div>
+
+    </main>
+    <footer>
+        <div class="links">
+            <a id="link_terms" href="https://openai.com/policies/terms-of-use/" target="_blank"
+                data-i18n="html_footer_terms_of_use"></a> | <a id="link_privacy"
+                href="https://openai.com/policies/privacy-policy/" target="_blank"
+                data-i18n="html_footer_privacy_policy"></a>
+        </div>
+        <p id="footer_info" data-i18n="welcome_footer_info"></p>
+    </footer>
+
+    <script src="translate.js"></script>
+    <script src="./js/confetti.browser.min.js"></script>
+    <script src="welcome.js"></script>
+</body>
+
+</html>

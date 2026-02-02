@@ -1,0 +1,111 @@
+{
+  "feedback": {
+    "message": "Связь"
+  },
+  "share": {
+    "message": "Поделиться"
+  },
+  "rate_us": {
+    "message": "Оценить"
+  },
+  "show": {
+    "message": "Показывать"
+  },
+  "hide": {
+    "message": "Скрывать"
+  },
+  "copy_link": {
+    "message": "Ссылка"
+  },
+   "convert_to": {
+    "message": "Формат"
+  },
+  "add_images": {
+    "message": "Добавить"
+  },
+   "drop_your_images_here_": {
+    "message": "Перетащите сюда изображения для загрузки"
+  },
+   "unlimited_files__no_file_size_limits__any_images_in_heic__jpg__png__webp__gif_": {
+    "message": "Неограниченное количество файлов. Неограниченный размер. Любые файлы в форматах HEIC, JPG, PNG, WEBP, GIF."
+  },
+  "try_again": {"message": "Еще раз"},
+  "to_get_this_file_again__": {"message": "Чтобы загрузить этот файл снова"},
+  "enjoy_the_conversion_": {"message": "Вам все понравилось?"},
+  "please_rate_your_experience_with_our_extension": {"message": "Пожалуйста, оцените ваш опыт работы с расширением"},
+  "auto_complete_tests__generate_essays__and_summarize_any_page_in_minutes_": {
+  	"message": "Автоматически проходите тесты, пишите эссе за минуты и суммаризируйте любые страницы."
+  },
+  "use_ai_translation_magic": {
+        "message": "Используйте [textgradientEl]магию AI-переводов[/textgradientEl]"
+    },
+     "get_your_ai_copilot_for_coding": {
+        "message": "Получите [textgradientEl]AI-помощника[\/textgradientEl] для кодинга"
+    },
+    "welcome_": {
+        "message": "поехали!"
+    },
+    "click": {
+        "message": "Нажми"
+    },
+    "how_can_i_help_you_": {
+        "message": "Чем я могу вам помочь?"
+    },
+    "ask_about_this_page": {
+        "message": "Спросить об этой странице"
+    },
+    "summarize_this_page": {
+        "message": "Краткое содержание страницы"
+    },
+    "hello": {
+        "message": "Привет!"
+    },
+    "ask_anything": {
+        "message": "Спросите что угодно"
+    },
+    "add_photos_and_files": {
+        "message": "Добавить фото и файлы"
+    },
+    "create_image": {
+        "message": "Создать изображение"
+    },
+    "web_search": {
+        "message": "Поиск в интернете"
+    },
+    "teacher_mode": {
+        "message": "Режим учителя"
+    },
+    "voice_input": {
+        "message": "Голосовой ввод"
+    },
+    "model_fast_everyday_assistant": {
+        "message": "Быстрый помощник на каждый день"
+    },
+    "model_deep_reasoning": {
+        "message": "Модель глубокого анализа"
+    },
+    "model_quick_multimodal": {
+        "message": "Быстрые мультимодальные ответы"
+    },
+    "model_advanced_google_ai": {
+        "message": "Продвинутый ИИ от Google"
+    },
+    "model_complex_problem_solving": {
+        "message": "Решение сложных задач"
+    },
+    "model_powerful_opensource": {
+        "message": "Мощная модель с открытым кодом"
+    },
+    "model_reasoning_specialist": {
+        "message": "Специалист по рассуждениям"
+    },
+    "model_balanced_reliable": {
+        "message": "Сбалансированный и надежный"
+    },
+    "model_most_capable": {
+        "message": "Самый способный Claude"
+    },
+    "model_label_fastest": {
+        "message": "Быстрейший"
+    }
+}

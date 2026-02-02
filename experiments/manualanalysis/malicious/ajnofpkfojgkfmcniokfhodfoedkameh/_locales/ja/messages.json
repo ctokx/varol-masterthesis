@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "知乎用ChatGPT",
+    "description": ""
+  },
+  "extDesc": {
+    "message": "OpenAI ChatGPTを知乎に接続し、より効率的で賢い質問と回答のサービスを提供します。",
+    "description": ""
+  }
+}

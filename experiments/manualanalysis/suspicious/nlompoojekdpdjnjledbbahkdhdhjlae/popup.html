@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 300px;
+      padding: 16px;
+      margin: 0;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #6e56cf 0%, #8a63d2 100%);
+      color: white;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .logo {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+    
+    h1 {
+      font-size: 18px;
+      margin: 0;
+      font-weight: 600;
+    }
+    
+    .subtitle {
+      font-size: 14px;
+      opacity: 0.9;
+      margin: 4px 0 0 0;
+    }
+    
+    .features {
+      margin: 20px 0;
+    }
+    
+    .feature {
+      display: flex;
+      align-items: center;
+      margin: 12px 0;
+      padding: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+    }
+    
+    .feature-icon {
+      font-size: 16px;
+      margin-right: 12px;
+      width: 20px;
+      text-align: center;
+    }
+    
+    .feature-text {
+      font-size: 14px;
+      line-height: 1.3;
+    }
+    
+    .shortcuts {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 16px;
+    }
+    
+    .shortcuts h3 {
+      font-size: 14px;
+      margin: 0 0 8px 0;
+      font-weight: 600;
+    }
+    
+    .shortcut {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      margin: 4px 0;
+      opacity: 0.9;
+    }
+    
+    .shortcut-key {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+    
+    .status {
+      margin-top: 16px;
+      padding: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      font-size: 12px;
+      text-align: center;
+    }
+    
+    .status.ready {
+      background: rgba(40, 167, 69, 0.3);
+    }
+    
+    .status.setup {
+      background: rgba(255, 193, 7, 0.3);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">🔍✨</div>
+    <h1>Claude Search & Assistant</h1>
+    <p class="subtitle">Search, Grammar Check & Refine Prompts</p>
+  </div>
+  
+  <div class="features">
+    <div class="feature">
+      <span class="feature-icon">🔍</span>
+      <span class="feature-text">Search within chat conversations</span>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">✅</span>
+      <span class="feature-text">Grammar checking with AI</span>
+    </div>
+    <div class="feature">
+      <span class="feature-icon">✨</span>
+      <span class="feature-text">Intelligent prompt refinement</span>
+    </div>
+  </div>
+  
+  <div class="shortcuts">
+    <h3>Keyboard Shortcuts</h3>
+    <div class="shortcut">
+      <span>Open Search</span>
+      <span class="shortcut-key">/</span>
+    </div>
+    <div class="shortcut">
+      <span>Close Panel</span>
+      <span class="shortcut-key">Esc</span>
+    </div>
+    <div class="shortcut">
+      <span>Next Result</span>
+      <span class="shortcut-key">F3</span>
+    </div>
+  </div>
+  
+  <div id="status" class="status setup">
+    Configure your OpenAI API key in settings to enable AI features
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

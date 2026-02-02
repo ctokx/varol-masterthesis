@@ -1,0 +1,62 @@
+{
+  "rate_us": {
+    "message": "Értékelés"
+  },
+  "hello": {
+    "message": "Szia!"
+  },
+  "ask_anything": {
+    "message": "Kérdezz bármit"
+  },
+  "ask_about_this_page": {
+    "message": "Kérdezz erről az oldalról"
+  },
+  "summarize_this_page": {
+    "message": "Oldal összefoglalása"
+  },
+  "add_photos_and_files": {
+    "message": "Fotók és fájlok hozzáadása"
+  },
+  "create_image": {
+    "message": "Kép létrehozása"
+  },
+  "web_search": {
+    "message": "Webes keresés"
+  },
+  "teacher_mode": {
+    "message": "Tanár mód"
+  },
+  "voice_input": {
+    "message": "Hangbevitel"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "Gyors mindennapos asszisztens"
+  },
+  "model_deep_reasoning": {
+    "message": "Mély gondolkodási modell"
+  },
+  "model_quick_multimodal": {
+    "message": "Gyors multimodális válaszok"
+  },
+  "model_advanced_google_ai": {
+    "message": "Fejlett Google AI"
+  },
+  "model_complex_problem_solving": {
+    "message": "Összetett problémamegoldás"
+  },
+  "model_powerful_opensource": {
+    "message": "Erőteljes nyílt forráskódú modell"
+  },
+  "model_reasoning_specialist": {
+    "message": "Érvelési szakértő"
+  },
+  "model_balanced_reliable": {
+    "message": "Kiegyensúlyozott és megbízható"
+  },
+  "model_most_capable": {
+    "message": "A legképesebb Claude"
+  },
+  "model_label_fastest": {
+    "message": "Leggyorsabb"
+  }
+}

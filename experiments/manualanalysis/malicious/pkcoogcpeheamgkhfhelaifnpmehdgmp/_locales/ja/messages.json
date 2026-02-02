@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "Google Chrome™ 用 ChatGPT"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Google Chrome ブラウザで公式 ChatGPT のショートカットを作成する拡張機能"
+    },
+    "ext_command_description": {
+        "message": "ChatGPT を開くためのショートカット"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT のエコモード？"
+    },
+    "request_perms_popup_description": {
+        "message": "ウェブを閲覧するだけで持続可能な活動をサポートできます。このモードは閲覧を邪魔しません。"
+    },
+    "request_perms_popup_learn_more": {
+        "message": "詳細を知る"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "許可する"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "拒否する"
+    },
+    "perms_granted_popup_title": {
+        "message": "おめでとうございます！"
+    },
+    "perms_granted_popup_description": {
+        "message": "これで、すべての機能を利用できるようになりました！"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "続行する"
+    },
+    "perms_denied_popup_title": {
+        "message": "残念です..."
+    },
+    "perms_denied_popup_description": {
+        "message": "また次回にお会いしましょう。"
+    },
+    "perms_denied_popup_close_button": {
+        "message": "このメッセージを閉じる"
+    },
+    "welcome_title": {
+        "message": "Chrome 用 ChatGPT"
+    },
+    "welcome_sub_title": {
+        "message": "拡張機能が正常にインストールされました"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "Chrome 用 ChatGPT"
+    },
+    "welcome_sub_title_granted": {
+        "message": "拡張機能が正常にインストールされました"
+    },
+    "welcome_tip_title_granted": {
+        "message": "以下の手順に従って拡張機能を固定し、「次のステップ」をクリックしてください"
+    },
+    "welcome_next_step": {
+        "message": "次のステップ"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "すべての機能にアクセスするには、エコモードを有効にしてください。"
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "続行するには「許可」をクリックしてください"
+    },
+    "html_footer_terms_of_use": {
+        "message": "利用規約"
+    },
+    "html_footer_privacy_policy": {
+        "message": "プライバシーポリシー"
+    },
+    "how_to_use_html_title": {
+        "message": "拡張機能の使い方"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "または Ctrl + B を押してください"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 エコモード"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "おめでとうございます！このサイトはエコモードのパートナーです。"
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "どういう意味ですか？"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "引き続きブラウジングすることで、🌍 地球を支援し、木を植え、無料で炭素排出を相殺できます。"
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "パートナーを訪問するたびに、新しいタブが一時的に開き、炭素排出量の計算が行われます。"
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "ちなみに、この素晴らしい取り組みを私たちと一緒にサポートしていただき、ありがとうございます！ 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "詳細を知る"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "閉じる"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "再表示しない"
+    }
+}

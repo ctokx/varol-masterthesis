@@ -1,0 +1,75 @@
+{
+  "extension_id": "pfdmleklaejjccgfhoeafapbhkjipcnj",
+  "extension_name": "Google AI",
+  "version": "Unknown",
+  "user_count": 2000,
+  "dataset": "gemini",
+  "verdict": "SUSPICIOUS",
+  "confidence": 0.9,
+  "recommendation": "REVIEW",
+  "reasoning": "The extension is classified as SUSPICIOUS because it performs high-risk security modifications that are disproportionate to its stated goal. Specifically, background.js implements a rule that removes 'X-Frame-Options' and 'Content-Security-Policy' headers for all websites the user visits. This is a common technique used by extensions to 'force' third-party websites into iframes or side panels, but it effectively disables critical browser protections against clickjacking and cross-site scripting (XSS) across the entire web. While there is no concrete evidence of data exfiltration or malicious C2 communication in the provided code, the global weakening of security posture is a significant red flag and a dangerous implementation choice. The core logic in injectDeepSeek.js correctly handles DOM manipulation for the intended purpose of automating chat inputs.",
+  "full_validation": {
+    "extension_id": "pfdmleklaejjccgfhoeafapbhkjipcnj",
+    "verdict": "SUSPICIOUS",
+    "confidence": 0.9,
+    "reasoning": "The extension is classified as SUSPICIOUS because it performs high-risk security modifications that are disproportionate to its stated goal. Specifically, background.js implements a rule that removes 'X-Frame-Options' and 'Content-Security-Policy' headers for all websites the user visits. This is a common technique used by extensions to 'force' third-party websites into iframes or side panels, but it effectively disables critical browser protections against clickjacking and cross-site scripting (XSS) across the entire web. While there is no concrete evidence of data exfiltration or malicious C2 communication in the provided code, the global weakening of security posture is a significant red flag and a dangerous implementation choice. The core logic in injectDeepSeek.js correctly handles DOM manipulation for the intended purpose of automating chat inputs.",
+    "recommendation": "REVIEW",
+    "key_concerns": [
+      "Global removal of Content Security Policy (CSP) and X-Frame-Options headers for all web traffic.",
+      "Use of 'declarativeNetRequest' to modify response headers for all frames, which could be abused by other malicious sites or scripts if a user is compromised.",
+      "Excessive 'host_permissions' (<all_urls>) paired with header modification rules."
+    ],
+    "evidence": {
+      "exfiltration_chain": {
+        "data_collected": null,
+        "processing_method": null,
+        "destination_domain": null,
+        "code_evidence": null
+      },
+      "dual_purpose": {
+        "stated_purpose": "AI/ChatGPT assistant providing integration with Gemini and DeepSeek.",
+        "hidden_functionality": "While not 'hidden' in the sense of a different commercial purpose, the extension implements a global bypass of browser security headers (CSP, X-Frame-Options) for all websites visited, which is not disclosed as a core feature.",
+        "code_evidence": "background.js: Line 7-42 uses chrome.declarativeNetRequest to remove 'content-security-policy', 'x-frame-options', 'frame-options', and 'frame-ancestors' for all resourceTypes ['main_frame', 'sub_frame']."
+      },
+      "credential_theft": {
+        "capture_mechanism": null,
+        "transmission_target": null,
+        "code_evidence": null
+      }
+    },
+    "domains": {
+      "legitimate": [
+        "gemini.google.com",
+        "chat.deepseek.com",
+        "clients2.google.com"
+      ],
+      "requires_investigation": [],
+      "informational_only": [
+        "swaponline.notion.site",
+        "forms.gle"
+      ]
+    },
+    "pattern_assessment": [
+      {
+        "pattern": "NETWORK_ENDPOINT",
+        "usage": "LEGITIMATE",
+        "justification": "The endpoints for Notion and Google Forms are used for onboarding (installation guide) and offboarding (uninstall feedback) respectively."
+      },
+      {
+        "pattern": "POST_MESSAGE",
+        "usage": "LEGITIMATE",
+        "justification": "Used in sidepanel.js to send the text to be processed into the Gemini iframe."
+      },
+      {
+        "pattern": "declarativeNetRequest",
+        "usage": "SUSPICIOUS",
+        "justification": "Used to globally strip security headers (X-Frame-Options, CSP) from all websites. While likely intended to allow iframing of AI sites that normally block it, doing this globally is a massive security risk to the user's browsing session."
+      }
+    ],
+    "token_usage": {
+      "prompt": 3991,
+      "candidates": 864,
+      "total": 6198
+    }
+  }
+}

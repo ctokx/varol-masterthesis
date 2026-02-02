@@ -1,0 +1,10 @@
+{
+  "extName": {
+    "message": "ChatGPT for Zhihu",
+    "description": ""
+  },
+  "extDesc": {
+    "message": "Integrate OpenAI ChatGPT into Zhihu to provide more efficient and intelligent Q&A services.",
+    "description": ""
+  }
+}

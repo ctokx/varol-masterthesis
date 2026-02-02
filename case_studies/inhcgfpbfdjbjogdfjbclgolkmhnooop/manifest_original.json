@@ -1,0 +1,35 @@
+{
+   "action": {
+      "default_icon": {
+         "128": "images/128.png",
+         "16": "images/16.png",
+         "19": "images/19.png",
+         "38": "images/38.png",
+         "48": "images/48.png"
+      },
+      "default_popup": "bluePopup.html",
+      "default_title": "__MSG_extName__"
+   },
+   "background": {
+      "service_worker": "blueBackground.js"
+   },
+   "content_scripts": [ {
+      "css": [ "blueContentScript.css" ],
+      "js": [ "blueContentScript.js" ],
+      "matches": [ "https://chat.deepseek.com/*" ]
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_extShortDesc__",
+   "icons": {
+      "128": "images/128.png",
+      "16": "images/16.png",
+      "19": "images/19.png",
+      "38": "images/38.png",
+      "48": "images/48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnTf7dv+5IZ850UaAguFNKSfI9s//yG+xlgdTvt2JD/4GowDck8BmJFJc046onGtVUTjUYe5laYqioLy/GGTrDlPdUXaRfW/1zXAFU5/BBE3vG7pQSjaQW9k+nf8ShrKHbMZmhQ6QQxNwfFvnq+6fn2P16Vbw1g5LUP0wFjeMgPdZa0ezoVA9G/j6vq97Fs2zCJRHZAzdkWTCQgvwh9Y1Bu9zksfSHXFy09eaA0/moCUUoALoVHEowprgNMFgpNlWEVJIJqls0KX69f5E7dC1uCqC7IotoyEN/U9LKIyt5nXJ1pB6kNtvq4qx69dFUMbfFJ7z+cYOL44HNxypRLtqAQIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_extName__",
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.2.5"
+}

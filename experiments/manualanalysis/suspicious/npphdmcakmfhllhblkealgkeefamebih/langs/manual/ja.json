@@ -1,0 +1,62 @@
+{
+  "rate_us": {
+    "message": "評価する"
+  },
+  "hello": {
+    "message": "こんにちは！"
+  },
+  "ask_anything": {
+    "message": "何でも聞いてください"
+  },
+  "ask_about_this_page": {
+    "message": "このページについて質問"
+  },
+  "summarize_this_page": {
+    "message": "このページを要約"
+  },
+  "add_photos_and_files": {
+    "message": "写真とファイルを追加"
+  },
+  "create_image": {
+    "message": "画像を作成"
+  },
+  "web_search": {
+    "message": "ウェブ検索"
+  },
+  "teacher_mode": {
+    "message": "先生モード"
+  },
+  "voice_input": {
+    "message": "音声入力"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "毎日使える高速アシスタント"
+  },
+  "model_deep_reasoning": {
+    "message": "深い推論モデル"
+  },
+  "model_quick_multimodal": {
+    "message": "高速マルチモーダル応答"
+  },
+  "model_advanced_google_ai": {
+    "message": "高度なGoogle AI"
+  },
+  "model_complex_problem_solving": {
+    "message": "複雑な問題解決"
+  },
+  "model_powerful_opensource": {
+    "message": "強力なオープンソースモデル"
+  },
+  "model_reasoning_specialist": {
+    "message": "推論スペシャリスト"
+  },
+  "model_balanced_reliable": {
+    "message": "バランスが取れて信頼性が高い"
+  },
+  "model_most_capable": {
+    "message": "最も高性能なClaude"
+  },
+  "model_label_fastest": {
+    "message": "最速"
+  }
+}

@@ -1,0 +1,66 @@
+{
+"update_url": "https://clients2.google.com/service/update2/crx",
+
+  "manifest_version": 3,
+  "version": "5",
+  "default_locale": "en",
+  "name": "__MSG_appName__",
+  "description": "__MSG_shortDesc__",
+  "icons": {
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "64": "images/icon64.png",
+    "128": "images/icon128.png"
+  },
+  "permissions": [
+    "background",
+    "sidePanel",
+    "scripting",
+    "tabs",
+    "storage",
+    "contextMenus"
+  ],
+  "host_permissions": [
+    "https://*/*",
+    "http://*/*"
+  ],
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  },
+  "action": {
+    "default_title": "__MSG_appName__"
+  },
+  "side_panel": {
+    "default_path": "sidePanel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ],
+      "js": [
+        "sidePanel.js",
+        "sidePanelWrapper.js"
+      ]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "sidePanelWrapper.js",
+        "sidePanelWrapper.css",
+        "sidePanel.html",
+        "sidePanel.js",
+        "sidePanel.css",
+        "images/*"
+      ],
+      "matches": [
+        "https://*/*",
+        "http://*/*"
+      ]
+    }
+  ]
+}

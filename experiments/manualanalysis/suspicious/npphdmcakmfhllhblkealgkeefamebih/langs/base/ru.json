@@ -1,0 +1,584 @@
+{
+    "you_need_to_approve_the_permissions_to_open_the_extension_in_the_side_panel_": {
+        "message": "Вам нужно подтвердить разрешения, чтобы открыть расширение в боковой панели."
+    },
+    "dropblock_head": {
+        "message": "dropBlock_head"
+    },
+    "open_the_extension_in_a_sidepanel": {
+        "message": "Открыть расширение в боковой панели"
+    },
+    "link_was_copied_": {
+        "message": "Ссылка скопирована!"
+    },
+    "drag_and_drop_your_files_here": {
+        "message": "Перетащите сюда ваши файлы"
+    },
+    "only_text_content_will_be_processed__up_to_5_files__each_up_to_5mb_": {
+        "message": "Будет обработано только текстовое содержание. До 5 файлов, каждый до 5 МБ."
+    },
+    "only_text_content_will_be_processed__up_to_5_files__each_up_to_20mb_": {
+        "message": "Будет обработано только текстовое содержание. До 5 файлов, каждый до 20 МБ."
+    },
+    "you_can_upload_a_maximum_of_5_files_per_dialog__please_upload_files_in_smaller_batches_": {
+        "message": "Вы можете загрузить максимум 5 файлов за диалог. Пожалуйста, загружайте файлы меньшими партиями."
+    },
+    "invalid_file_format_or_file_size_exceeds_5_mb__please_select_smaller_files_": {
+        "message": "Недопустимый формат файла или размер файла превышает 5 МБ. Пожалуйста, выберите меньшие файлы."
+    },
+    "invalid_file_format__supported_formats__pdf__word__txt__json__pages__numbers__and_code_files_": {
+        "message": "Неподдерживаемый формат файла. Поддерживаемые форматы: PDF, Word, TXT, JSON, Pages, Numbers и файлы кода."
+    },
+    "file_size_exceeds_20_mb__please_select_a_smaller_file_": {
+        "message": "Размер файла превышает 20 МБ. Пожалуйста, выберите файл меньшего размера."
+    },
+    "permissions_are_missing__please_grant_the_extension_access_to_web_pages_": {
+        "message": "Отсутствуют разрешения. Пожалуйста, предоставьте расширению доступ к веб-страницам."
+    },
+    "error__please_try_again_later_": {
+        "message": "Ошибка, попробуйте позже."
+    },
+    "summarization_does_not_work_on_system_pages__please_copy_the_page_content_into_the_chat_manually_": {
+        "message": "Суммирование не работает на системных страницах. Пожалуйста, скопируйте содержимое страницы в чат вручную."
+    },
+    "delete": {
+        "message": "Удалить"
+    },
+    "delete_chat_": {
+        "message": "Удалить чат?"
+    },
+    "are_you_sure_you_want_to_delete_this_chat_": {
+        "message": "Вы уверены, что хотите удалить этот чат?"
+    },
+    "cancel": {
+        "message": "Отмена"
+    },
+    "the_chat_was_deleted": {
+        "message": "Чат был удалён"
+    },
+    "`_text_`": {
+        "message": "ʼ+text+ʼ"
+    },
+    "`_lang___(text)_`": {
+        "message": "ʼ+Lang.__(text)+ʼ"
+    },
+    "${deletetext}": {
+        "message": "${deleteText}"
+    },
+    "`_lang___(_delete_chat__)_`": {
+        "message": "ʼ+Lang.__('Удалить чат?')+ʼ"
+    },
+    "`_lang___(_are_you_sure_you_want_to_delete_this_chat__)_`": {
+        "message": "ʼ+Lang.__('Вы уверены, что хотите удалить этот чат?')+ʼ"
+    },
+    "`_lang___(_cancel_)_`": {
+        "message": "ʼ+Lang.__('Отмена')+ʼ"
+    },
+    "`_lang___(_delete_)_`": {
+        "message": "ʼ+Lang.__('Удалить')+ʼ"
+    },
+    "file": {
+        "message": "Файл"
+    },
+    "thinking": {
+        "message": "Обдумываю"
+    },
+    "copy_response": {
+        "message": "Копировать ответ"
+    },
+    "good_response": {
+        "message": "Хороший ответ"
+    },
+    "bad_response": {
+        "message": "Плохой ответ"
+    },
+    "uploading___": {
+        "message": "Загрузка..."
+    },
+    "`_lang___(_thinking_)_`": {
+        "message": "ʼ+Lang.__('Обдумываю')+ʼ"
+    },
+    "feedback": {
+        "message": "Обратная связь"
+    },
+    "share": {
+        "message": "Поделиться"
+    },
+    "rate_us": {
+        "message": "Оцените нас"
+    },
+    "💀": {
+        "message": "💀"
+    },
+    "😞": {
+        "message": "😞"
+    },
+    "😐": {
+        "message": "😐"
+    },
+    "🙂": {
+        "message": "🙂"
+    },
+    "😍": {
+        "message": "😍"
+    },
+    "grok_3_is_here_": {
+        "message": "Grok 3 здесь."
+    },
+    "what_do_you_want_to_know_": {
+        "message": "Что вы хотите узнать?"
+    },
+    "how_can_grok_help_you_": {
+        "message": "Чем может помочь Grok?"
+    },
+    "attach_file": {
+        "message": "Прикрепить файл"
+    },
+    "select_a_model": {
+        "message": "Выберите модель"
+    },
+    "sent_message": {
+        "message": "Отправленное сообщение"
+    },
+    "hey_": {
+        "message": "Привет,"
+    },
+    "welcome_": {
+        "message": "добро пожаловать!"
+    },
+    "how_can_i_help_you_": {
+        "message": "Чем я могу помочь вам?"
+    },
+    "message_deepseek": {
+        "message": "Сообщение DeepSeek"
+    },
+    "summarize_the_current_page": {
+        "message": "Подытожить текущую страницу"
+    },
+    "upload_a_file": {
+        "message": "Загрузить файл"
+    },
+    "start_a_chat": {
+        "message": "Начать чат"
+    },
+    "set_personalization": {
+        "message": "Настроить персонализацию"
+    },
+    "new_chat": {
+        "message": "Новый чат"
+    },
+    "switch_to_light_mode": {
+        "message": "Переключиться в светлый режим"
+    },
+    "switch_to_dark_mode": {
+        "message": "Переключиться в тёмный режим"
+    },
+    "open_the_extension_in_a_separate_tab": {
+        "message": "Открыть расширение в отдельной вкладке"
+    },
+    "{{_item_}}": {
+        "message": "{{ item }}"
+    },
+    "start_now": {
+        "message": "Начать сейчас"
+    },
+    "get_ideas": {
+        "message": "Получить идеи"
+    },
+    "ask": {
+        "message": "Спросить"
+    },
+    "code": {
+        "message": "Код"
+    },
+    "translate": {
+        "message": "Перевести"
+    },
+    "cooking_tips": {
+        "message": "Советы по кулинарии"
+    },
+    "how_deepseek_ai_helps_you_": {
+        "message": "Как DeepSeek AI помогает вам?"
+    },
+    "✨_get_spot_on_answers_10x_faster": {
+        "message": "✨ Получайте точные ответы в 10 раз быстрее"
+    },
+    "no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Без Google, без хаоса вкладок, без потери времени"
+    },
+    "📚_save_hours_on_studying": {
+        "message": "📚 Экономьте часы на учёбе"
+    },
+    "generate_essays__auto_complete_tests__and_summarize_any_page_in_minutes_": {
+        "message": "Создавайте эссе, автоматически завершайте тесты и подытоживайте любую страницу за минуты."
+    },
+    "🌍_real_time_translation_on_the_page": {
+        "message": "🌍 Перевод в реальном времени на странице"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments": {
+        "message": "Пишите как носитель, без ошибок и неловких моментов"
+    },
+    "💻_your_ai_copilot_for_coding": {
+        "message": "💻 Ваш AI-ассистент для программирования"
+    },
+    "fix_bugs__decode_legacy_and_write_code_3x_faster__enjoy_your_work_and_earn_more_": {
+        "message": "Исправляйте ошибки, разбирайтесь с наследием и пишите код в 3 раза быстрее. Наслаждайтесь работой и зарабатывайте больше."
+    },
+    "where_do_we_start_": {
+        "message": "С чего начнем?"
+    },
+    "get_10_post_ideas_for_my_cooking_blog": {
+        "message": "Получить 10 идей для постов в мой кулинарный блог"
+    },
+    "find_a_billion_dollar_no_code_startup_idea": {
+        "message": "Найти идею безкодового стартапа на миллиард долларов"
+    },
+    "give_me_fun_game_ideas_to_play_with_my_kids_at_home": {
+        "message": "Подскажи мне забавные идеи игр для игры с детьми дома"
+    },
+    "write_3_viral_tiktok_post_ideas_about_personal_finance": {
+        "message": "Напиши 3 вирусных идеи для TikTok о личных финансах"
+    },
+    "recommend_5_books_that_will_change_the_way_i_think": {
+        "message": "Посоветуйте 5 книг, которые изменят мой взгляд на вещи"
+    },
+    "what_daily_habits_can_boost_my_creativity_": {
+        "message": "Какие ежедневные привычки могут повысить мою креативность?"
+    },
+    "help_me_set_3_achievable_goals_for_the_next_30_days": {
+        "message": "Помогите мне поставить 3 достижимых цели на следующие 30 дней"
+    },
+    "how_can_i_make_my_facebook_profile_more_attractive_": {
+        "message": "Как сделать мой профиль в Facebook более привлекательным?"
+    },
+    "generate_a_basic_react_component_for_a_to_do_list": {
+        "message": "Создайте базовый компонент React для списка задач"
+    },
+    "can_you_explain_javascript_promises_in_a_simple_way_": {
+        "message": "Можете объяснить promises в JavaScript простыми словами?"
+    },
+    "how_do_i_build_a_rest_api_endpoint_using_fastapi_in_python_": {
+        "message": "Как создать REST API с помощью FastAPI на Python?"
+    },
+    "how_can_i_add_social_login_(google_facebook)_to_my_app_": {
+        "message": "Как добавить социальную авторизацию (Google/ Facebook) в мое приложение?"
+    },
+    "how_do_you_say_“love”_in_french_": {
+        "message": "Как сказать “любовь” по-французски?"
+    },
+    "how_do_you_say_“delicious_food”_in_italian_": {
+        "message": "Как сказать “вкусная еда” по-итальянски?"
+    },
+    "what_s_the_korean_translation_of_“i_miss_you”_": {
+        "message": "Как переводится “Я скучаю по тебе” на корейский?"
+    },
+    "what_s_the_arabic_word_for_“peace”_": {
+        "message": "Как слово “мир” по-арабски?"
+    },
+    "quick_breakfast_ideas_kids_will_actually_love": {
+        "message": "Быстрые идеи завтрака, которые реально понравятся детям"
+    },
+    "what_are_5_no_sugar_snacks_i_can_make_at_home_": {
+        "message": "Какие 5 безсахарных закусок я могу приготовить дома?"
+    },
+    "give_me_an_easy_3_ingredient_dessert_recipe": {
+        "message": "Подскажите легкий рецепт десерта из 3 ингредиентов"
+    },
+    "easy_dessert_tips": {
+        "message": "Простые советы по десертам"
+    },
+    "click": {
+        "message": "Клик"
+    },
+    "add_deepseek_ai_to_the_toolbar_for_quick_access": {
+        "message": "Добавить DeepSeek AI на панель инструментов для быстрого доступа"
+    },
+    "file_download_has_started": {
+        "message": "Загрузка файла началась"
+    },
+    "to_get_this_file_again_": {
+        "message": "Чтобы снова получить этот файл,"
+    },
+    "click_here": {
+        "message": "нажмите здесь"
+    },
+    "show_downloaded_file": {
+        "message": "Показать загруженный файл"
+    },
+    "files_on_the_computer_can_only_be_opened_in_the_google_chrome_extension": {
+        "message": "Файлы на компьютере можно открыть только в расширении Google Chrome"
+    },
+    "enjoy_the_conversion_": {
+        "message": "Наслаждайтесь преобразованием?"
+    },
+    "please_rate_your_experience_with_our_extension": {
+        "message": "Пожалуйста, оцените ваш опыт использования нашего расширения"
+    },
+    "try_again": {
+        "message": "Попробуйте снова"
+    },
+    "help_us_be_better": {
+        "message": "Помогите нам стать лучше"
+    },
+    "your_feedback_matters__what_can_we_improve_": {
+        "message": "Ваш отзыв важен. Что мы можем улучшить?"
+    },
+    "send": {
+        "message": "Отправить"
+    },
+    "write_your_feedback_here": {
+        "message": "Напишите ваш отзыв здесь"
+    },
+    "support_us_in_10_seconds": {
+        "message": "Поддержите нас за 10 секунд"
+    },
+    "1__click": {
+        "message": "1. Нажмите"
+    },
+    "_write_a_review_": {
+        "message": "\"Написать отзыв\""
+    },
+    "2__rate_and_post_your_feedback": {
+        "message": "2. Оцените и отправьте отзыв"
+    },
+    "thanks_for_helping_us_grow_": {
+        "message": "Спасибо за помощь в развитии!"
+    },
+    "select_your_language": {
+        "message": "Выберите язык"
+    },
+    "type_to_filter_languages___": {
+        "message": "Введите для фильтрации языков..."
+    },
+    "create_public_link": {
+        "message": "Создать публичную ссылку"
+    },
+    "this_file_will_be_available_to_anyone__public_links_are_temporary_and_will_be_removed_after_24_hours_": {
+        "message": "Этот файл будет доступен любому. Публичные ссылки временные и будут удалены через 24 часа."
+    },
+    "create": {
+        "message": "Создать"
+    },
+    "save_hours_on_studying": {
+        "message": "[textgradientEl]Экономьте часы[\/textgradientEl] на учёбе"
+    },
+    "auto_complete_tests__generate_essays__and_summarize_any_page_in_minutes_": {
+        "message": "Автоматическое завершение тестов, создание эссе и подытоживание любой страницы за минуты."
+    },
+    "step": {
+        "message": "Шаг"
+    },
+    "of": {
+        "message": "из"
+    },
+    "continue": {
+        "message": "Продолжить"
+    },
+    "use_ai_translation_magic": {
+        "message": "Использовать магию AI-перевода [textgradientEl]"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments__right_on_the_page_": {
+        "message": "Пишите как носитель, без ошибок и неловких моментов. Прямо на странице."
+    },
+    "get_your_ai_copilot_for_coding": {
+        "message": "Получите вашего [textgradientEl]AI-спутника[\/textgradientEl] для программирования"
+    },
+    "try_now": {
+        "message": "Попробовать сейчас"
+    },
+    "did_this_tool_help_you_": {
+        "message": "Это средство помогло вам?"
+    },
+    "share_it_with_friends_who_work_with_images_": {
+        "message": "Поделитесь с друзьями, которые работают с изображениями."
+    },
+    "who_would_find_it_useful_": {
+        "message": "Кому это будет полезно?"
+    },
+    "copy_link": {
+        "message": "Копировать ссылку"
+    },
+    "facebook": {
+        "message": "Facebook"
+    },
+    "x": {
+        "message": "X"
+    },
+    "telegram": {
+        "message": "Telegram"
+    },
+    "i_found_a_super_useful_chrome_extension__": {
+        "message": "Я нашёл очень полезное расширение Chrome —"
+    },
+    "it_can_save_any_website_as_a_pdf__you_should_try_it_out___it_s_great_": {
+        "message": "Оно может сохранять любой сайт в PDF. Обязательно попробуйте — это здорово!"
+    },
+    "hooray__greate_job_": {
+        "message": "Ура, отличная работа!"
+    },
+    "please__can_you_rate_us_": {
+        "message": "Пожалуйста, оцените нас?"
+    },
+    "deepseek_ai_has_been_installed_": {
+        "message": "DeepSeek AI установлен!"
+    },
+    "get_answers_10x_faster___no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Получайте ответы в 10 раз быстрее — без Google, без хаоса вкладок, без потери времени"
+    },
+    "open_deepseek_ai": {
+        "message": "Открыть DeepSeek AI"
+    },
+    "deepseek_app": {
+        "message": "Приложение DeepSeek"
+    },
+    "love_deepseek_": {
+        "message": "Любите DeepSeek?"
+    },
+    "could_you_please_rate_our_extension_": {
+        "message": "Пожалуйста, оцените наше расширение"
+    },
+    "share_this_extension_with_your_friends": {
+        "message": "Поделитесь этим расширением с друзьями"
+    },
+    "share_us_with_your_friends": {
+        "message": "Поделитесь нами с друзьями"
+    },
+    "and_unlock_all_ai_assistant_features": {
+        "message": "и разблокируйте все функции AI-ассистента"
+    },
+    "vk_com": {
+        "message": "ВКонтакте"
+    },
+    "reddit": {
+        "message": "Reddit"
+    },
+    "whatsapp": {
+        "message": "WhatsApp"
+    },
+    "weibo": {
+        "message": "Weibo"
+    },
+    "post_preview": {
+        "message": "Предварительный просмотр поста"
+    },
+    "hey__i_m_your_ai_assistant_": {
+        "message": "Привет, я ваш AI-ассистент!"
+    },
+    "what_can_i_help_with_": {
+        "message": "Чем я могу помочь?"
+    },
+    "history": {
+        "message": "История"
+    },
+    "settings": {
+        "message": "Настройки"
+    },
+    "subscription": {
+        "message": "Подписка"
+    },
+    "add_personal_info_or_instructions_to_the_ai_assistant__this_will_help_improve_responses_for_you_": {
+        "message": "Добавьте личную информацию или инструкции для AI-ассистента. Это поможет улучшить ответы для вас."
+    },
+    "save": {
+        "message": "Сохранить"
+    },
+    "and_you_ll_unlock_all_ai_assistant_features": {
+        "message": "И вы разблокируете все функции AI-ассистента"
+    },
+    "e_g___always_reply_in_french": {
+        "message": "например, всегда отвечайте на французском"
+    },
+    "_p_you_can_try_the_ai_assistant_to_play_a_role__e_g____p__ul__li_act_as_an_english_teacher_and_correct_my_mistakes__li__li_respond_like_a_professional_business_consultant__li___ul__p_or_input_your_data_for_the_ai_assistant_to_generate_responses__e_g____p__ul__li_23_y_o___58_kg__height_165_cm__female__li__li_programmer__php___laravel__js___react___li___ul_": {
+        "message": "<p>Вы можете попробовать AI-ассистента, чтобы сыграть роль, например:</p><ul><li>Выступать в роли учителя английского и исправлять мои ошибки</li><li>Отвечать как профессиональный бизнес-консультант</li></ul><p>Или введите свои данные, чтобы AI-ассистент мог генерировать ответы, например:</p><ul><li>23 года, 58 кг, рост 165 см, женский</li><li>Программист. PHP — Laravel, JS — React.</li></ul>"
+    },
+    "ask_about_page": {
+        "message": "Спросить о странице"
+    },
+    "summarize_page": {
+        "message": "Саммаризировать"
+    },
+    "ask_a_question_about_this_page___": {
+        "message": "Задайте вопрос по этой странице..."
+    },
+    "page_content_loaded__type_your_question_and_press_enter_": {
+        "message": "Контент страницы загружен. Введите вопрос и нажмите Enter."
+    },
+    "_ul__li_this_feature_does_not_work_on_system_pages___li__li_copy_the_page_content_into_the_chat_manually___li___ul__blockquote_example__try___a_href__https___en_wikipedia_org_wiki_ai_boom__target___blank__ai_boom__a___on_wikipedia__blockquote_": {
+        "message": "<ul><li>Эта функция не работает на системных страницах.</li><li>Скопируйте контент страницы в чат вручную.</li></ul><blockquote>Пример: Попробуйте \"<a href=\"https://en.wikipedia.org/wiki/AI_boom\" target=\"_blank\">AI boom</a>\" на Википедии</blockquote>"
+    },
+    "summarize_this_page": {
+        "message": "Саммаризировать страницу"
+    },
+    "ask_about_page": {
+        "message": "Задать вопрос по странице"
+    },
+    "add_photos___files": {
+        "message": "Добавить фото и файлы"
+    },
+    "create_image": {
+        "message": "Создать изображение"
+    },
+    "web_search": {
+        "message": "Веб поиск"
+    },
+    "teacher_mode": {
+        "message": "Режим учителя"
+    },
+    "more_options": {
+        "message": "Больше опций"
+    },
+    "create_an_image_of": {
+        "message": "Создай изображение"
+    },
+    "search_the_web_for": {
+        "message": "Найди в интернете"
+    },
+    "explain_like_a_teacher_": {
+        "message": "Объясни как учитель:"
+    },
+    "voice_input": {
+        "message": "Голосовой ввод"
+    },
+    "create_image": {
+        "message": "Создать изображение"
+    },
+    "creating_image": {
+        "message": "Создание изображения"
+    },
+    "describe_what_you_want_to_create__be_specific_for_better_results_": {
+        "message": "Опишите, что вы хотите создать. Будьте конкретны для лучших результатов."
+    },
+    "premium_feature__20_images_per_day_included_": {
+        "message": "Премиум функция. 20 изображений в день включено."
+    },
+    "generate_image": {
+        "message": "Сгенерировать изображение"
+    },
+    "please_enter_a_description_for_the_image": {
+        "message": "Пожалуйста, введите описание изображения"
+    },
+    "images_remaining_today_": {
+        "message": "Изображений осталось сегодня:"
+    },
+    "daily_image_limit_reached__20_day___resets_at": {
+        "message": "Достигнут дневной лимит (20 в день). Сбросится в"
+    },
+    "your_prompt_contains_prohibited_content__please_try_a_different_description_": {
+        "message": "Ваш запрос содержит запрещённый контент. Попробуйте другое описание."
+    },
+    "please_wait_a_moment_before_generating_another_image_": {
+        "message": "Подождите немного перед созданием нового изображения."
+    },
+    "failed_to_generate_image__please_try_again_": {
+        "message": "Не удалось создать изображение. Попробуйте снова."
+    },
+    "failed_to_generate_image__please_check_your_connection_": {
+        "message": "Не удалось создать изображение. Проверьте подключение."
+    },
+    "open_in_new_tab": {
+        "message": "Открыть в новой вкладке"
+    },
+    "download": {
+        "message": "Скачать"
+    }
+}

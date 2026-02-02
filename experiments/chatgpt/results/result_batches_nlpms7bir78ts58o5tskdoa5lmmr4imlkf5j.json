@@ -1,0 +1,353 @@
+{
+  "job_name": "batches/nlpms7bir78ts58o5tskdoa5lmmr4imlkf5j",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:29.706486",
+  "validations": [
+    {
+      "extension_id": "iinnhbfjbahmddefhdgelochopnanmcg",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "After reviewing the source code, the extension's behavior perfectly matches its stated purpose. The background script (bg.js) manages a context menu and a popup window for chatgpt.com. The content script (app.js) contains a bundled version of a file-saving library (likely FileSaver.js) and custom logic to scrape chat messages from the DOM when triggered. The 'data collection' is purely local: it gathers the text of the conversation, creates a Blob, and triggers a browser download to the user's machine. There is no evidence of data being transmitted to any external server or any hidden dual-purpose functionality.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant providing quick access and chat downloading functionality.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chatgpt.com/"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://www.w3.org/1999/xhtml"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT (xhtml)",
+          "usage": "LEGITIMATE",
+          "justification": "This is a standard XML namespace URI used with document.createElementNS to create HTML elements in a way that is compatible with various document types. It is not a network call."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (chatgpt.com)",
+          "usage": "LEGITIMATE",
+          "justification": "The extension is specifically designed for ChatGPT; this domain is used to open the service in a popup window as advertised."
+        },
+        {
+          "pattern": "BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "The extension creates a Blob from the scraped chat text to allow the user to download it as a .txt file locally. This is core functionality."
+        },
+        {
+          "pattern": "POST_MESSAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used for standard communication between the background service worker and the content script to trigger the download action."
+        },
+        {
+          "pattern": "DOM",
+          "usage": "LEGITIMATE",
+          "justification": "Used to query the chat messages on the page to compile the text for the download feature."
+        }
+      ],
+      "token_usage": {
+        "prompt": 4830,
+        "candidates": 709,
+        "total": 6486
+      }
+    },
+    {
+      "extension_id": "ogakgacjkoojmdahpelppalilhhplnbe",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code strictly aligns with its stated purpose. It monitors the ChatGPT UI for new messages, calculates character/word counts, and provides a 'Copy' button that utilizes the standard 'navigator.clipboard.writeText' API. There are no network calls (fetch/XHR), no data exfiltration logic, and no hidden features. The static analysis findings are benign patterns related to DOM interaction and timing in a dynamic web environment.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "ChatGPT CopyIt adds a copy to clipboard button end of each answer. Also it shows word and character counter.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chat.openai.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "clients2.google.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "The static analysis flagged Line 31 and 138 as STORAGE, but the code actually shows SET_INTERVAL calls. Even if storage were used, there is no evidence of sensitive data persistence or retrieval."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Used to poll for DOM changes and wait for specific elements to appear in the ChatGPT interface, which is a standard practice for extensions interacting with Single Page Applications (SPAs)."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to detect when new chat messages are added to the DOM so the 'Copy' button and counters can be injected dynamically."
+        },
+        {
+          "pattern": "DOM",
+          "usage": "LEGITIMATE",
+          "justification": "Standard DOM manipulation to inject UI elements (buttons and text spans) as described in the manifest."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3505,
+        "candidates": 636,
+        "total": 5051
+      }
+    },
+    {
+      "extension_id": "nflpppciongpooakaahfdjgioideblkd",
+      "verdict": "SUSPICIOUS",
+      "confidence": 0.85,
+      "reasoning": "The extension is classified as SUSPICIOUS because it employs highly invasive techniques to collect data beyond its core stated purpose. While it claims to track 'fan-out' queries (AI-generated searches), it also extracts and exfiltrates the user's original prompts and full conversation metadata to an unverified Vercel backend. It uses session-token hijacking to scrape conversation data that may not be visible in the immediate DOM. Although it provides a functional UI for the user to view this data (lowering the likelihood of pure malware), the lack of transparency regarding the exfiltration of sensitive user prompts to a third-party server poses a significant privacy and security risk.",
+      "recommendation": "REVIEW",
+      "key_concerns": [
+        "Exfiltration of original user chat prompts to an external server.",
+        "Use of session tokens to scrape conversation history.",
+        "Network interception (hijacking) of browser-level fetch and XHR calls.",
+        "Collection of conversation IDs which can be used to map user identities if the server is compromised."
+      ],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "User chat prompts, AI-generated internal search queries (fan-outs), conversation IDs, and model metadata.",
+          "processing_method": "Intercepts internal API responses via fetch/XHR hijacking (Gemini) and uses active session tokens to scrape conversation endpoints (ChatGPT).",
+          "destination_domain": "https://server-theta-nine-63.vercel.app",
+          "code_evidence": "The function 'sendQueriesToServer' in content.js transmits an object containing 'queries', 'conversationId', and 'userPrompt' to the Vercel endpoint using a POST request."
+        },
+        "dual_purpose": {
+          "stated_purpose": "Tracks and stores search queries (fan-outs) from ChatGPT and Gemini for analysis and optimization.",
+          "hidden_functionality": "In addition to tracking AI-generated queries, the extension aggressively collects and exfiltrates the user's original prompts and conversation IDs to a third-party server, which is not explicitly disclosed as primary data collection in the manifest description.",
+          "code_evidence": "In content.js, 'extractChatGPTQueries' explicitly captures 'messageContext.userPrompt' from the chat history and 'extractGeminiUserPrompt' scrapes the DOM for user input fields to include in the exfiltration payload."
+        },
+        "credential_theft": {
+          "capture_mechanism": "Uses the user's active ChatGPT session to fetch sensitive conversation data.",
+          "transmission_target": "https://server-theta-nine-63.vercel.app/api/search-queries",
+          "code_evidence": "Line 59 in content.js: 'const sess = await fetch(\"/api/auth/session\").then(r => r.json());' followed by using that session's accessToken to scrape '/backend-api/conversation/'."
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatgpt.com",
+          "gemini.google.com"
+        ],
+        "requires_investigation": [
+          "https://server-theta-nine-63.vercel.app"
+        ],
+        "informational_only": [
+          "google.com/search"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH_HIJACK",
+          "usage": "SUSPICIOUS",
+          "justification": "Hijacks global fetch and XMLHttpRequest to intercept Gemini's internal 'batchexecute' calls to extract search data."
+        },
+        {
+          "pattern": "CREDENTIAL_ACCESS",
+          "usage": "SUSPICIOUS",
+          "justification": "Accesses the ChatGPT internal session token to perform authenticated scraping of conversation history."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to detect when the AI model generates new content on the page to trigger extraction."
+        }
+      ],
+      "token_usage": {
+        "prompt": 19089,
+        "candidates": 963,
+        "total": 23171
+      }
+    },
+    {
+      "extension_id": "pjaiffleeblodclagbgflpnmighceibl",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The analysis of the provided source code shows that 'ChatGPT Helper' is a legitimate productivity tool. It operates by fetching the user's conversation history from the official ChatGPT backend (backend-api/conversations) and allowing the user to organize these conversations into 'Projects' or save 'Prompts' for quick use. All data is stored locally using chrome.storage.local or chrome.storage.session. There is no evidence of data exfiltration to any third-party server; the only network calls made are to chatgpt.com to retrieve the user's own data and to local localization files for translation. The 'export' functionality correctly uses a local Blob URL to allow users to save their data as a JSON file to their own computer.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant - provides organization and templating for ChatGPT conversations.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatgpt.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "www.w3.org"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE/CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used extensively to save user-defined prompt templates, project folder structures, and cached conversation metadata locally."
+        },
+        {
+          "pattern": "NETWORK/FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "The extension fetches session information and conversation lists directly from chatgpt.com to populate its organization UI. No third-party domains are contacted."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Required to detect when a user is on a ChatGPT conversation page and to facilitate navigation/scrolling to specific 'starred' messages."
+        },
+        {
+          "pattern": "DOM/INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used for rendering the project list and prompt management UI within the extension popup and content script."
+        }
+      ],
+      "token_usage": {
+        "prompt": 15144,
+        "candidates": 665,
+        "total": 16742
+      }
+    },
+    {
+      "extension_id": "baagbnbocpdlgifpillkgicofdgamajp",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code matches its stated purpose perfectly. The 'Suspicious' patterns identified by static analysis are standard for this type of tool: 'FETCH' is used to grab images for processing, 'STORAGE' manages user settings, and the base64 conversion utilities in 'helpers' are necessary for passing image data to the ChatGPT interface. There is no evidence of data being sent to any third-party domains; all data is directed exclusively to the user's active ChatGPT session. The broad host permissions (<all_urls>) are required for the context menu to function on images/text across different websites.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Enhances ChatGPT user experience by adding interactive features (context menus for sending text/images).",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chatgpt.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://clients2.google.com/service/update2/crx"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "In index.ts-4ec706de.js, fetch is used to retrieve the binary data of an image the user has right-clicked, allowing it to be converted to base64 and sent to ChatGPT."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Found in popup.html-91105778.js as part of a standard modulepreload polyfill generated by modern build tools (Vite/Rollup) to handle dynamic imports."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store and retrieve user-defined prompts and preferred ChatGPT model URLs (GPT-4, GPT-4o, etc.)."
+        },
+        {
+          "pattern": "INTERCEPTION",
+          "usage": "LEGITIMATE",
+          "justification": "The 'w' (wait) function in helpers-0125a223.js uses requestAnimationFrame to poll for DOM elements, a common technique for extensions to ensure target elements exist before interacting with them."
+        }
+      ],
+      "token_usage": {
+        "prompt": 9111,
+        "candidates": 713,
+        "total": 11193
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 0,
+    "SUSPICIOUS": 1,
+    "SAFE": 4,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 0,
+    "high_risk_validated_suspicious": 1,
+    "high_risk_validated_safe": 4,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 0.8,
+    "true_positive_rate": 0.2,
+    "malicious_detection_rate": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 51679,
+    "candidate_tokens": 3686,
+    "total_tokens": 62643
+  }
+}

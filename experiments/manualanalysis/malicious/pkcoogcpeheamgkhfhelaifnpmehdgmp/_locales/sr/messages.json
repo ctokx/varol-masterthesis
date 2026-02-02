@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT za Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Ekstenzija za kreiranje prečice za zvanični ChatGPT u Google Chrome pregledaču"
+    },
+    "ext_command_description": {
+        "message": "Prečica za otvaranje ChatGPT-a"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT u Eco modu?"
+    },
+    "request_perms_popup_description": {
+        "message": "Pomozite održivim ciljevima samo pretraživanjem interneta. Ovaj mod neće ometati vaše pretraživanje."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Saznaj više"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Dozvoli"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Odbij"
+    },
+    "perms_granted_popup_title": {
+        "message": "Čestitamo!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Sada ćete moći da koristite sve naše funkcije!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Nastavi"
+    },
+    "perms_denied_popup_title": {
+        "message": "Šteta..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Možda sledeći put."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Zatvori ovu poruku"
+    },
+    "welcome_title": {
+        "message": "ChatGPT za Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Ekstenzija je uspešno instalirana"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT za Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Ekstenzija je uspešno instalirana"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Pratite korake ispod da prikačite ekstenziju, zatim kliknite na Sledeći korak"
+    },
+    "welcome_next_step": {
+        "message": "Sledeći korak"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "Da biste pristupili svim funkcijama ekstenzije, aktivirajte Eco mod."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Kliknite na Dozvoli za nastavak"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Uslovi korišćenja"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Politika privatnosti"
+    },
+    "how_to_use_html_title": {
+        "message": "Kako koristiti ekstenziju"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Ili pritisnite Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Eco mod"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Čestitamo! Ovaj sajt je partner našeg Eco moda."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Šta ovo znači?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Nastavljajući sa pretraživanjem, pomoći ćete planeti 🌍, saditi drveće i kompenzovati emisije ugljen-dioksida bez ikakvih troškova."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Pri svakoj poseti partneru, nova kartica će se nakratko otvoriti kako bi omogućila izračunavanje kompenzacije ugljen-dioksida."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Usput, hvala vam puno što podržavate ovu neverovatnu stvar sa nama! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Saznaj više"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Zatvori"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Nemoj ponovo prikazivati"
+    }
+}

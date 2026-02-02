@@ -1,0 +1,14 @@
+a[aria-label="Add it now"]
+{
+    display: none !important;
+}
+a[href^="https://browserdefaults.microsoft.com/extn"]
+{
+    display: none !important;
+}
+
+#b_bnp_bopc:has(a[aria-label="Add it now"]),
+#b_bnp_bopc:has(a[href^="https://browserdefaults.microsoft.com/extn"])
+{
+    display: none !important;
+}

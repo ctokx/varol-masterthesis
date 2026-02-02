@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT dla Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Rozszerzenie do tworzenia skrótu do oficjalnego ChatGPT w przeglądarce Google Chrome"
+    },
+    "ext_command_description": {
+        "message": "Skrót do otwarcia ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT w trybie Eco?"
+    },
+    "request_perms_popup_description": {
+        "message": "Pomagaj w zrównoważonych działaniach, po prostu przeglądając sieć. Ten tryb nie będzie przerywać przeglądania."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Dowiedz się więcej"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Zezwól"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Odmów"
+    },
+    "perms_granted_popup_title": {
+        "message": "Gratulacje!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Teraz skorzystasz ze wszystkich naszych funkcji!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Kontynuuj"
+    },
+    "perms_denied_popup_title": {
+        "message": "Szkoda..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Może następnym razem."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Zamknij tę wiadomość"
+    },
+    "welcome_title": {
+        "message": "ChatGPT dla Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Rozszerzenie zainstalowane pomyślnie"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT dla Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Rozszerzenie zainstalowane pomyślnie"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Wykonaj poniższe kroki, aby przypiąć swoje rozszerzenie, a następnie kliknij Następny krok"
+    },
+    "welcome_next_step": {
+        "message": "Następny krok"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "Aby uzyskać dostęp do wszystkich funkcji rozszerzenia, włącz tryb Eco."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Kliknij Zezwól, aby kontynuować"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Warunki użytkowania"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Polityka prywatności"
+    },
+    "how_to_use_html_title": {
+        "message": "Jak korzystać z rozszerzenia"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Lub naciśnij Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Tryb Eco"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Gratulacje! Ta strona jest partnerem naszego trybu eco."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Co to oznacza?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Kontynuując przeglądanie, pomożesz planecie 🌍, sadząc drzewa i kompensując emisję dwutlenku węgla bez żadnych kosztów."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Przy każdej wizycie u partnera na chwilę otworzy się nowa karta, aby umożliwić obliczenie kompensacji dwutlenku węgla."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Nawiasem mówiąc, bardzo dziękujemy za wsparcie tej niesamowitej sprawy z nami! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Dowiedz się więcej"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Zamknij"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Nie pokazuj ponownie"
+    }
+}

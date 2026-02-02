@@ -1,0 +1,323 @@
+{
+    "you_need_to_approve_the_permissions_to_open_the_extension_in_the_side_panel_": {
+        "message": "Kailangan mong aprubahan ang mga pahintulot upang mabuksan ang extension sa gilid na panel."
+    },
+    "dropblock_head": {
+        "message": "dropBlock_head"
+    },
+    "open_the_extension_in_a_sidepanel": {
+        "message": "Buksan ang extension sa isang gilid na panel"
+    },
+    "link_was_copied_": {
+        "message": "Nakopya ang link!"
+    },
+    "drag_and_drop_your_files_here": {
+        "message": "I-drag at i-drop ang iyong mga file dito"
+    },
+    "only_text_content_will_be_processed__up_to_5_files__each_up_to_5mb_": {
+        "message": "Tanging teksto lang ang ipoproseso. Hanggang sa 5 file, bawat isa hanggang 5MB."
+    },
+    "you_can_upload_a_maximum_of_5_files_per_dialog__please_upload_files_in_smaller_batches_": {
+        "message": "Maaari kang mag-upload ng maximum na 5 file bawat dialog. Mangyaring mag-upload ng mga file sa mas maliliit na batch."
+    },
+    "invalid_file_format_or_file_size_exceeds_5_mb__please_select_smaller_files_": {
+        "message": "Hindi wastong format ng file o lumampas sa 5 MB ang laki ng file. Pumili ng mas maliit na mga file."
+    },
+    "permissions_are_missing__please_grant_the_extension_access_to_web_pages_": {
+        "message": "Nawawala ang mga pahintulot. Mangyaring bigyan ang extension ng access sa mga web page."
+    },
+    "error__please_try_again_later_": {
+        "message": "Error, subukan muli mamaya."
+    },
+    "summarization_does_not_work_on_system_pages__please_copy_the_page_content_into_the_chat_manually_": {
+        "message": "Hindi gumagana ang buod sa mga system page. Mangyaring kopyahin ang nilalaman ng pahina sa chat nang manu-mano."
+    },
+    "delete": {
+        "message": "Burahin"
+    },
+    "delete_chat_": {
+        "message": "Burahin ang usapan?"
+    },
+    "are_you_sure_you_want_to_delete_this_chat_": {
+        "message": "Sigurado ka bang nais mong burahin ang usapang ito?"
+    },
+    "cancel": {
+        "message": "Kanselahin"
+    },
+    "the_chat_was_deleted": {
+        "message": "Na-delete ang usapan"
+    },
+    "`_text_`": {
+        "message": "ʼ+text+ʼ"
+    },
+    "`_lang___(text)_`": {
+        "message": "ʼ+Lang.__(text)+ʼ"
+    },
+    "${deletetext}": {
+        "message": "${deleteText}"
+    },
+    "`_lang___(_delete_chat__)_`": {
+        "message": "ʼ+Lang.__('Delete chat?')+ʼ"
+    },
+    "`_lang___(_are_you_sure_you_want_to_delete_this_chat__)_`": {
+        "message": "ʼ+Lang.__('Are you sure you want to delete this chat?')+ʼ"
+    },
+    "`_lang___(_cancel_)_`": {
+        "message": "ʼ+Lang.__('Cancel')+ʼ"
+    },
+    "`_lang___(_delete_)_`": {
+        "message": "ʼ+Lang.__('Delete')+ʼ"
+    },
+    "file": {
+        "message": "File"
+    },
+    "thinking": {
+        "message": "Nag-iisip"
+    },
+    "copy_response": {
+        "message": "Kopyahin ang sagot"
+    },
+    "good_response": {
+        "message": "Magandang sagot"
+    },
+    "bad_response": {
+        "message": "Masamang sagot"
+    },
+    "uploading___": {
+        "message": "Nag-upload..."
+    },
+    "`_lang___(_thinking_)_`": {
+        "message": "ʼ+Lang.__('Thinking')+ʼ"
+    },
+    "feedback": {
+        "message": "Puna"
+    },
+    "share": {
+        "message": "Ibahagi"
+    },
+    "rate_us": {
+        "message": "Bigyan kami ng rating"
+    },
+    "💀": {
+        "message": "💀"
+    },
+    "😞": {
+        "message": "😞"
+    },
+    "😐": {
+        "message": "😐"
+    },
+    "🙂": {
+        "message": "🙂"
+    },
+    "😍": {
+        "message": "😍"
+    },
+    "grok_3_is_here_": {
+        "message": "Narito na ang Grok 3."
+    },
+    "what_do_you_want_to_know_": {
+        "message": "Ano ang nais mong malaman?"
+    },
+    "how_can_grok_help_you_": {
+        "message": "Paano ka matutulungan ng Grok?"
+    },
+    "attach_file": {
+        "message": "Mag-attach ng file"
+    },
+    "select_a_model": {
+        "message": "Pumili ng modelo"
+    },
+    "sent_message": {
+        "message": "Naipadalang mensahe"
+    },
+    "hey_": {
+        "message": "Hi,"
+    },
+    "welcome_": {
+        "message": "maligayang pagdating!"
+    },
+    "how_can_i_help_you_": {
+        "message": "Paano kita matutulungan?"
+    },
+    "message_deepseek": {
+        "message": "Mensahe DeepSeek"
+    },
+    "summarize_the_current_page": {
+        "message": "Buod ng kasalukuyang pahina"
+    },
+    "upload_a_file": {
+        "message": "Mag-upload ng file"
+    },
+    "start_a_chat": {
+        "message": "Magsimula ng usapan"
+    },
+    "set_personalization": {
+        "message": "Itakda ang Personalization"
+    },
+    "new_chat": {
+        "message": "Bagong usapan"
+    },
+    "switch_to_light_mode": {
+        "message": "Lumipat sa Light Mode"
+    },
+    "switch_to_dark_mode": {
+        "message": "Lumipat sa Dark Mode"
+    },
+    "open_the_extension_in_a_separate_tab": {
+        "message": "Buksan ang extension sa isang hiwalay na tab"
+    },
+    "{{_item_}}": {
+        "message": "{{ item }}"
+    },
+    "start_now": {
+        "message": "Simulan Ngayon"
+    },
+    "get_ideas": {
+        "message": "Kumuha ng mga Ideya"
+    },
+    "ask": {
+        "message": "Magtanong"
+    },
+    "code": {
+        "message": "Kodigo"
+    },
+    "translate": {
+        "message": "Isalin"
+    },
+    "cooking_tips": {
+        "message": "Mga Tip sa Pagluluto"
+    },
+    "how_deepseek_ai_helps_you_": {
+        "message": "Paano ka matutulungan ng DeepSeek AI?"
+    },
+    "✨_get_spot_on_answers_10x_faster": {
+        "message": "✨ Kumuha ng tumpak na sagot nang 10x mas mabilis"
+    },
+    "no_google__no_tab_chaos__no_time_wasted": {
+        "message": "walang Google, walang tab chaos, walang nasasayang na oras"
+    },
+    "📚_save_hours_on_studying": {
+        "message": "📚 Mag-save ng oras sa pag-aaral"
+    },
+    "generate_essays__auto_complete_tests__and_summarize_any_page_in_minutes_": {
+        "message": "Gumawa ng mga sanaysay, awtomatikong tapusin ang mga pagsusulit, at buodin ang anumang pahina sa ilang minuto."
+    },
+    "🌍_real_time_translation_on_the_page": {
+        "message": "🌍 Real-time na pagsasalin sa pahina"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments__right_on_the_page_": {
+        "message": "Sumulat na parang isang katutubong nagsasalita, walang mali o awkward na mga sandali. Diretso sa pahina."
+    },
+    "get_your_ai_copilot_for_coding": {
+        "message": "Kunin ang iyong AI Copilot para sa pag-coding"
+    },
+    "try_now": {
+        "message": "Subukan Ngayon"
+    },
+    "did_this_tool_help_you_": {
+        "message": "Nakakatulong ba ang tool na ito sa iyo?"
+    },
+    "share_it_with_friends_who_work_with_images_": {
+        "message": "Ibahagi ito sa mga kaibigan na nagtatrabaho sa mga larawan."
+    },
+    "who_would_find_it_useful_": {
+        "message": "Sino ang makakakita nito ng kapaki-pakinabang?"
+    },
+    "copy_link": {
+        "message": "Kopyahin ang link"
+    },
+    "facebook": {
+        "message": "Facebook"
+    },
+    "x": {
+        "message": "X"
+    },
+    "telegram": {
+        "message": "Telegram"
+    },
+    "i_found_a_super_useful_chrome_extension__": {
+        "message": "Nakakita ako ng isang sobrang kapaki-pakinabang na Chrome extension —"
+    },
+    "it_can_save_any_website_as_a_pdf__you_should_try_it_out___it_s_great_": {
+        "message": "Maaari nitong i-save ang anumang website bilang PDF. Dapat mong subukan — ang galing!"
+    },
+    "hooray__greate_job_": {
+        "message": "Hooray, mahusay na trabaho!"
+    },
+    "please__can_you_rate_us_": {
+        "message": "Paki-rate kami?"
+    },
+    "deepseek_ai_has_been_installed_": {
+        "message": "Na-install na ang DeepSeek AI!"
+    },
+    "get_answers_10x_faster___no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Kumuha ng sagot nang 10x mas mabilis — walang Google, walang tab chaos, walang nasasayang na oras"
+    },
+    "open_deepseek_ai": {
+        "message": "Buksan ang DeepSeek AI"
+    },
+    "deepseek_app": {
+        "message": "DeepSeek App"
+    },
+    "love_deepseek_": {
+        "message": "Mahilig ka ba sa DeepSeek?"
+    },
+    "could_you_please_rate_our_extension_": {
+        "message": "Maaari mo bang i-rate ang aming extension?"
+    },
+    "share_this_extension_with_your_friends": {
+        "message": "Ibahagi ang extension na ito sa iyong mga kaibigan"
+    },
+    "share_us_with_your_friends": {
+        "message": "Ibahagi kami sa iyong mga kaibigan"
+    },
+    "and_unlock_all_ai_assistant_features": {
+        "message": "At i-unlock ang lahat ng AI Assistant na mga tampok"
+    },
+    "vk_com": {
+        "message": "Vk.com"
+    },
+    "reddit": {
+        "message": "Reddit"
+    },
+    "whatsapp": {
+        "message": "Whatsapp"
+    },
+    "weibo": {
+        "message": "Weibo"
+    },
+    "post_preview": {
+        "message": "Preview ng Post"
+    },
+    "hey__i_m_your_ai_assistant_": {
+        "message": "Hi, ako ang iyong AI Assistant!"
+    },
+    "what_can_i_help_with_": {
+        "message": "Ano ang maitutulong ko?"
+    },
+    "history": {
+        "message": "Kasaysayan"
+    },
+    "settings": {
+        "message": "Mga Setting"
+    },
+    "subscription": {
+        "message": "Subscription"
+    },
+    "add_personal_info_or_instructions_to_the_ai_assistant__this_will_help_improve_responses_for_you_": {
+        "message": "Magdagdag ng personal na impormasyon o mga tagubilin sa AI Assistant. Makakatulong ito upang mapabuti ang mga tugon para sa iyo."
+    },
+    "save": {
+        "message": "I-save"
+    },
+    "and_you_ll_unlock_all_ai_assistant_features": {
+        "message": "At i-unlock mo ang lahat ng mga tampok ng AI Assistant"
+    },
+    "e_g___always_reply_in_french": {
+        "message": "hal., palaging sumagot sa French"
+    },
+    "_p_you_can_try_the_ai_assistant_to_play_a_role__e_g____p__ul__li_act_as_an_english_teacher_and_correct_my_mistakes__li__li_respond_like_a_professional_business_consultant__li___ul__p_or_input_your_data_for_the_ai_assistant_to_generate_responses__e_g____p__ul__li_23_y_o___58_kg__height_165_cm__female__li__li_programmer__php___laravel__js___react___li___ul_": {
+        "message": "<p>Maaaring mong subukan ang AI Assistant upang gumanap ng isang papel, hal.:<\/p><ul><li>Gumanap bilang isang guro sa Ingles at itama ang aking mga mali<\/li><li>Sagutin tulad ng isang propesyonal na business consultant<\/li><\/ul><p>O mag-input ng iyong data upang makabuo ng mga tugon ang AI Assistant, hal.:<\/p><ul><li>23 taong gulang, 58 kg, taas 165 cm, babae<\/li><li>Programmer. PHP – Laravel, JS – React.<\/li><\/ul>"
+    }
+}

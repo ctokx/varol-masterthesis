@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT para Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Extensão para criar um atalho para o ChatGPT oficial no navegador Google Chrome"
+    },
+    "ext_command_description": {
+        "message": "Atalho para abrir o ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT no Modo Eco?"
+    },
+    "request_perms_popup_description": {
+        "message": "Ajude causas sustentáveis apenas navegando na web. Este modo não irá interromper a sua navegação."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Saiba mais"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Permitir"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Negar"
+    },
+    "perms_granted_popup_title": {
+        "message": "Parabéns!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Agora irá beneficiar de todas as nossas funcionalidades!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Continuar"
+    },
+    "perms_denied_popup_title": {
+        "message": "Que pena..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Talvez na próxima vez."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Fechar esta mensagem"
+    },
+    "welcome_title": {
+        "message": "ChatGPT para Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Extensão instalada com sucesso"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT para Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Extensão instalada com sucesso"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Siga os passos abaixo para fixar a sua extensão e clique em Próximo Passo"
+    },
+    "welcome_next_step": {
+        "message": "Próximo Passo"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "Para aceder a todas as funcionalidades da extensão, ative o Modo Eco."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Clique em Permitir para continuar"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Termos de Utilização"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Política de Privacidade"
+    },
+    "how_to_use_html_title": {
+        "message": "Como Utilizar a Extensão"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Ou pressione Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Modo Eco"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Parabéns! Este site é parceiro do nosso modo eco."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "O que significa isto?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Ao continuar a navegar, estará a ajudar o planeta 🌍, plantando árvores e compensando emissões de carbono sem custo algum."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "A cada visita a um parceiro, um novo separador será aberto brevemente para permitir o cálculo da compensação de carbono."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Por falar nisso, muito obrigado por apoiar esta causa incrível connosco! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Saiba mais"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Fechar"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Não mostrar novamente"
+    }
+}

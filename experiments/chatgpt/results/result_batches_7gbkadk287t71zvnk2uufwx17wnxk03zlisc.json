@@ -1,0 +1,370 @@
+{
+  "job_name": "batches/7gbkadk287t71zvnk2uufwx17wnxk03zlisc",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:24.672256",
+  "validations": [
+    {
+      "extension_id": "effkgioceefcfaegehhfafjneeiabdjg",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The analysis shows that the extension is a legitimate productivity tool. While static analysis flagged keyboard listeners and network requests, these are cleanly mapped to the extension's features: the keyboard listener enables shift-select for the deletion UI, and network requests are used for telemetry and a freemium payment model. The data collected (user ID and usage counts) is typical for analytics and license management. No evidence of credential harvesting, session hijacking, or scraping of conversation content was found. The code is modular, well-commented, and lacks obfuscation.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "user_id (from chrome.identity), action count, and timestamp",
+          "processing_method": "Aggregated into a JSON object for analytics and payment verification",
+          "destination_domain": "bulk-delete-chatgpt-worker.qcrao.com",
+          "code_evidence": "APIUtils.sendEvent in utils.js: async sendEvent(action, count) { const userInfo = await ChromeUtils.getUserInfo(); const data = { user_id: userInfo.id || \"unknown\", ... }; await this.makeRequest(API_CONFIG.ENDPOINTS.SEND_EVENT, { method: 'POST', body: JSON.stringify(data) }); }"
+        },
+        "dual_purpose": {
+          "stated_purpose": "Bulk delete ChatGPT conversations",
+          "hidden_functionality": "None. The extension includes a paid 'Bulk Archive' feature which is a common and disclosed monetization strategy for such tools.",
+          "code_evidence": "MembershipManager in popup.js handles payment checks and redirection to a payment URL for the archive feature."
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chat.openai.com",
+          "chatgpt.com",
+          "chromewebstore.google.com"
+        ],
+        "requires_investigation": [
+          "bulk-delete-chatgpt-worker.qcrao.com"
+        ],
+        "informational_only": [
+          "github.com/qcrao/bulk-delete-chatGPT"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in domHandler.js (EventHandler.addKeyboardListeners) specifically to detect the 'Shift' key for multi-selecting checkboxes, which is standard UI behavior."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used in utils.js and popup.js to communicate with the developer's backend for telemetry (usage counts) and checking subscription/payment status for premium features."
+        },
+        {
+          "pattern": "IDENTITY",
+          "usage": "LEGITIMATE",
+          "justification": "Used to retrieve the user's profile ID to link payment status to their account, allowing the 'Bulk Archive' feature to be enabled for paid users."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in popup.js to update the UI button text and progress percentages. Not used for rendering untrusted remote content."
+        }
+      ],
+      "token_usage": {
+        "prompt": 15299,
+        "candidates": 846,
+        "total": 17228
+      }
+    },
+    {
+      "extension_id": "fomfocnplogomlaoodijfgoajblacpol",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose. It collects chat data from ChatGPT message elements (<article>), converts them to Markdown using the legitimate Turndown library, copies the result to the user's clipboard, and then automates the process of opening DeepSeek and pasting the content into the input field. There is no evidence of data being sent to any third-party servers; all operations occur between the two LLM domains specified in the manifest and the user's local browser context.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Export ChatGPT chats to DeepSeek in Markdown format.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chat.openai.com/*",
+          "https://chatgpt.com/*",
+          "https://chat.deepseek.com/*"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "Used to open the destination URL (DeepSeek) as part of the core export functionality."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Used to poll for the availability of the DOM element '#chat-input' on the DeepSeek page to inject the exported text."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Used to load the extension's own local 'styles.css' file to style the injected button."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to ensure the 'Export to DeepSeek' button is re-injected if the ChatGPT SPA (Single Page Application) refreshes its UI components."
+        }
+      ],
+      "token_usage": {
+        "prompt": 8721,
+        "candidates": 617,
+        "total": 10212
+      }
+    },
+    {
+      "extension_id": "maojnknofbadmhfkbllhpddhophjhblo",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "After a thorough review of the source code, the extension is found to be entirely benign. Static analysis flags regarding network endpoints are simply informational links to the developer's social profiles and a donation page. The security flags in 'confetti.js' are standard artifacts of the canvas-confetti library using Web Workers for performance. The core logic in 'content.js' focuses exclusively on identifying KaTeX-rendered equations, converting them into MathML or LaTeX format, and copying the result to the user's clipboard. There is no evidence of data exfiltration, background network activity, or hidden functionality.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Converts equations from AI chats into Word-compatible format.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://www.buymeacoffee.com",
+          "https://twitter.com",
+          "https://www.linkedin.com",
+          "https://github.com",
+          "http://www.w3.org/1998/Math/MathML"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://www.buymeacoffee.com/xmrphede",
+          "https://twitter.com/holygranats",
+          "https://www.linkedin.com/in/federico-granata/",
+          "https://github.com/xMrPhede"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The network endpoints found in content.js are hardcoded social media links (Twitter, LinkedIn, GitHub) and a donation link (BuyMeACoffee) used in an achievement/support popup. There is no code that performs background fetch/XHR to these domains."
+        },
+        {
+          "pattern": "POST_MESSAGE / BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "These patterns appear in confetti.js, which is a minified version of the canvas-confetti library. It uses Web Workers and Blobs for high-performance rendering of animations, which is standard behavior for this library."
+        },
+        {
+          "pattern": "STORAGE / CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store user preferences (LaTeX vs. MathML) and local usage statistics (total equations copied) to trigger milestone celebrations."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "The content script uses a MutationObserver to watch the AI chat interfaces (ChatGPT, Gemini, etc.) for new mathematical equations generated in the DOM, allowing it to inject the 'Click to Copy' functionality in real-time."
+        }
+      ],
+      "token_usage": {
+        "prompt": 86796,
+        "candidates": 828,
+        "total": 88766
+      }
+    },
+    {
+      "extension_id": "mcecffeookkllgkbflcdlbicolmfgifj",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose of providing summaries via AI tools. The 'suspicious' patterns identified by static analysis are standard for this category: DOM manipulation and MutationObservers are used to scrape transcripts from YouTube; scripting is used to paste summary prompts into ChatGPT/Claude; and remote configurations are used to maintain compatibility with shifting website structures. The telemetry (Amplitude/GA4) is transparently implemented for usage tracking. No evidence of data exfiltration beyond stated AI interaction or credential harvesting was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Usage metadata (event counts, extension version, platform info) and anonymized session IDs.",
+          "processing_method": "Aggregated via Amplitude and GA4 managers.",
+          "destination_domain": "api2.amplitude.com, google-analytics.com",
+          "code_evidence": "Found in amplitude-manager.js (Line 67) and analytics.js (Line 99), which collect non-sensitive app telemetry matching standard product analytics practices."
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI-powered YouTube and webpage summarization.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chatgpt.com/",
+          "https://claude.ai/",
+          "https://gemini.google.com/",
+          "https://www.googleapis.com/youtube/v3/",
+          "https://api2.amplitude.com/",
+          "https://www.google-analytics.com/"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://the-moment.us/apps/chatpage/remote-config/",
+          "https://youtubetranscript.com/api/transcript/",
+          "https://transcript-api.vercel.app/api/"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "DOM_MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in youtube-extractor.js to detect when the YouTube transcript panel has successfully loaded or when the DOM has stabilized after clicking 'Show Transcript'."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in reviewPrompt.js and overlay-system.js to dynamically build the user interface for loading overlays and the review feedback prompt."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Required to identify the current URL, determine if the user is on a supported AI provider site, and inject the summarized content into the target chat interface."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (the-moment.us)",
+          "usage": "LEGITIMATE",
+          "justification": "The extension fetches JSON configuration files (ai-providers-config.json, prompt-templates.json) from this domain. This allows the developer to update CSS selectors for AI sites (which change frequently) without requiring a full extension update."
+        }
+      ],
+      "token_usage": {
+        "prompt": 75614,
+        "candidates": 841,
+        "total": 77717
+      }
+    },
+    {
+      "extension_id": "gfecljmddkaiphnmhgaeekgkadnooafb",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension's code aligns with its stated purpose of providing AI-generated summaries. While it includes a telemetry module that sends metadata to an Alibaba Cloud endpoint (SLS), this is a common practice for usage analytics and does not involve the collection of sensitive user data like passwords or financial information. The extension uses the user's existing ChatGPT session (via session cookies and access tokens) to generate results, which is a standard method for such tools. No evidence of ad-injection, affiliate fraud, or malicious code execution was found. The minification and bundling observed are typical for modern production builds using tools like Webpack or Esbuild.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Usage metadata (User-Agent, Language, Extension Version, and specific event triggers).",
+          "processing_method": "Data is bundled into a JSON object and transmitted via the Alibaba Cloud Log Service (SLS) SDK.",
+          "destination_domain": "us-west-1.log.aliyuncs.com",
+          "code_evidence": "background.js: Line 2026 defines 'ta = \"us-west-1.log.aliyuncs.com\"' and Line 2038 'sa().send(Object.assign(t, e))' sends telemetry to this endpoint."
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant for summarizing Google and YouTube content.",
+          "hidden_functionality": "The extension includes basic usage analytics and cross-promotion for other tools by the same developer (e.g., NoteGPT, Udemy Summary), which is common in commercial extensions.",
+          "code_evidence": "background.js: Lines 2004-2010 list event types like 'GOOGLE_SUMMARY_UDEMY_DRAINAGE' used for internal conversion tracking."
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chat.openai.com",
+          "api.openai.com",
+          "platform.openai.com"
+        ],
+        "requires_investigation": [
+          "us-west-1.log.aliyuncs.com"
+        ],
+        "informational_only": [
+          "github.com",
+          "kodecoffee.com",
+          "zingfront.com",
+          "forms.gle"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT (OpenAI)",
+          "usage": "LEGITIMATE",
+          "justification": "Required to interact with ChatGPT for summarization functionality."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used by the UI components and markdown parsers to render AI-generated summaries in the side panel."
+        },
+        {
+          "pattern": "SEND_BEACON",
+          "usage": "LEGITIMATE",
+          "justification": "Used for standard telemetry to Alibaba Cloud Log Service to track extension performance and installation events."
+        },
+        {
+          "pattern": "CLIPBOARD",
+          "usage": "LEGITIMATE",
+          "justification": "Allows users to copy the generated summary to their clipboard."
+        }
+      ],
+      "token_usage": {
+        "prompt": 113089,
+        "candidates": 842,
+        "total": 115523
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 0,
+    "SUSPICIOUS": 0,
+    "SAFE": 5,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 0,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 5,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 1.0,
+    "true_positive_rate": 0.0,
+    "malicious_detection_rate": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 299519,
+    "candidate_tokens": 3974,
+    "total_tokens": 309446
+  }
+}

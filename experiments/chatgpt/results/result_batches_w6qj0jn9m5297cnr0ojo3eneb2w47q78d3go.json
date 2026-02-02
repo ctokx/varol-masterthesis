@@ -1,0 +1,363 @@
+{
+  "job_name": "batches/w6qj0jn9m5297cnr0ojo3eneb2w47q78d3go",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:40.502038",
+  "validations": [
+    {
+      "extension_id": "pkcoogcpeheamgkhfhelaifnpmehdgmp",
+      "verdict": "MALICIOUS",
+      "confidence": 1.0,
+      "reasoning": "The extension is a classic example of dual-purpose malicious behavior. While it provides the advertised ChatGPT wrapper, its primary background activity is a 'Green Mode' feature that performs silent affiliate link injection. It requests broad 'host_permissions' for all URLs (*/*) and uses 'tabs' access to monitor the user's browsing behavior in real-time. When a user visits a site matched in its partner list, it silently opens a hidden tab to the developer's affiliate URL, waits 2 seconds (long enough for the merchant to set a tracking cookie), and then closes the tab. This monetizes the user's browsing without clear disclosure of the affiliate mechanism, effectively performing cookie stuffing.",
+      "recommendation": "BLOCK",
+      "key_concerns": [
+        "Silent background monitoring of all visited URLs.",
+        "Hidden affiliate link injection (cookie stuffing) via background tabs.",
+        "Monetization of user browsing history unrelated to the stated AI assistant purpose.",
+        "The 'Green Mode' framing is deceptive, as it masks a commercial tracking/monetization engine as an environmental or safety feature."
+      ],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "User browsing history (URLs)",
+          "processing_method": "The background script monitors all tab updates via chrome.tabs.onUpdated. It extracts the hostname and compares it against a 'partners' map loaded from partners.json.",
+          "destination_domain": "Variable affiliate domains via affiliate_url",
+          "code_evidence": "t = async (t, n, r) => { if (await s(t) && 'complete' === n.status) { const n = o(r.url); if (await a(n)) { const o = e.get(n); o && o.affiliate_url && (i(o.affiliate_url, n), l(t)) } } }; chrome.tabs.onUpdated.addListener(t)"
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant providing a keyboard-accessible popup window for chat.openai.com",
+          "hidden_functionality": "Affiliate link injection / Cookie stuffing. The extension monitors every website the user visits, checks if the site is a 'partner', and if so, silently opens an affiliate link in a hidden background tab for 2 seconds to set tracking cookies before closing it.",
+          "code_evidence": "function i(e, t) { chrome.storage.local.set({ [t]: Date.now() }); chrome.tabs.create({ url: e, active: !1 }, (e => { ... setTimeout((() => { chrome.tabs.get(o, (() => { ... chrome.tabs.remove(o) })) }), 2e3) })) }"
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chat.openai.com",
+          "clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "scripts.green"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "MALICIOUS",
+          "justification": "Used to monitor the URL of every tab the user visits (via chrome.tabs.onUpdated) to trigger affiliate link injection."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "SUSPICIOUS",
+          "justification": "Used to fetch a local 'partners.json' file which contains the list of target domains for affiliate injection."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "SAFE",
+          "justification": "Used for constructing UI elements for the 'Green Mode' consent popup and notifications."
+        }
+      ],
+      "token_usage": {
+        "prompt": 6544,
+        "candidates": 947,
+        "total": 8494
+      }
+    },
+    {
+      "extension_id": "ppjhahkjaabkjgaoelbokpgleaoeeboa",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose. It uses the Chrome Omnibox API to listen for the 'gpt' keyword, redirects the user to the OpenAI domain, and uses a content script to automate the injection and submission of the user's text. The use of storage is limited to a single boolean setting (GPT-4 toggle). There are no external network calls to third-party domains, no data exfiltration logic, and no attempts to capture sensitive information.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Open ChatGPT from the address bar with a pre-filled prompt.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chat.openai.com/",
+          "https://chatgpt.com/"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store and retrieve the user's preference for whether to automatically select 'GPT-4' mode."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to detect when the ChatGPT web interface has loaded its elements (like the textarea) so the extension can inject the user's prompt."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Required to redirect the current tab to chat.openai.com when the user enters the omnibox keyword."
+        },
+        {
+          "pattern": "DOM",
+          "usage": "LEGITIMATE",
+          "justification": "Used to select the prompt textarea and the submit button to automate the input process as advertised."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3154,
+        "candidates": 596,
+        "total": 4692
+      }
+    },
+    {
+      "extension_id": "epadnmckjchpoedgecdghpmaicnklagd",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension's code aligns strictly with its stated purpose of summarizing Bilibili videos. The static analysis findings of NETWORK_ENDPOINT and FETCH are associated with the OpenAI API (chat.openai.com and api.openai.com) and a telemetry service (Aliyun Log Service). The telemetry collected (anonymous user ID, extension version, and install time) is standard for software maintenance and is not considered malicious exfiltration. The use of CryptoJS/MD5 is for generating an anonymous user ID based on device metadata. No evidence of credential theft, ad injection, or unrelated browsing surveillance was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Standard extension telemetry: version, anonymous user ID, install timestamp, and user agent.",
+          "processing_method": "Aggregated into a JSON payload via an internal logging class.",
+          "destination_domain": "us-west-1.log.aliyuncs.com",
+          "code_evidence": "la().send(Object.assign(t, e)) where t contains product_mark, extension_name, anonymous_user_id, ext_version, etc."
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant for Bilibili video summaries.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://*.openai.com",
+          "https://www.bilibili.com",
+          "https://api.openai.com"
+        ],
+        "requires_investigation": [
+          "us-west-1.log.aliyuncs.com"
+        ],
+        "informational_only": [
+          "https://github.com/highlightjs/highlight.js",
+          "http://www.w3.org/2000/svg",
+          "https://kodecoffee.com",
+          "https://chatgpt4google.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to render ChatGPT's markdown responses and UI components into the Bilibili page."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "LEGITIMATE",
+          "justification": "Necessary for communicating with OpenAI's API endpoints and the telemetry server."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to detect DOM changes on the Bilibili video page to inject the summary UI dynamically."
+        },
+        {
+          "pattern": "SEND_BEACON",
+          "usage": "LEGITIMATE",
+          "justification": "Standard way to send telemetry logs to the Aliyun logging service during extension lifecycle events."
+        }
+      ],
+      "token_usage": {
+        "prompt": 24157,
+        "candidates": 778,
+        "total": 26174
+      }
+    },
+    {
+      "extension_id": "jkfkhkobbahllilejfidknldjhgelcog",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "After reviewing the provided background.js and the static analysis flags, the extension appears to be a legitimate AI assistant. The background script is a large bundle containing standard libraries like UUID generation, Markdown parsing (micromark), and a Google Analytics wrapper. The network calls identified are strictly limited to the ChatGPT backend (to perform AI operations) and Google Analytics (for telemetry). The use of broad host permissions (<all_urls>) is common in Manifest V3 extensions that need to inject scripts or interact with session cookies across subdomains of a specific service. There is no evidence of data exfiltration to unauthorized third-party servers, nor any hidden functionality like ad injection or credential theft.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Extension usage telemetry (page views, errors)",
+          "processing_method": "Aggregated via a standard Google Analytics wrapper class",
+          "destination_domain": "google-analytics.com",
+          "code_evidence": "Line 135: NETWORK_ENDPOINT → https://www.google-analytics.com/mp/collect. The code implements a standard Analytics class 'Us' (Line 139) that fires events using the 'measurement_id' and 'api_secret'."
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": "The extension fetches the ChatGPT session (https://chatgpt.com/api/auth/session) and models list, which is standard behavior for an AI assistant to function within the user's active session."
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chatgpt.com",
+          "https://www.google-analytics.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://www.w3.org",
+          "https://reactjs.org",
+          "https://github.com/facebook/react"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT (Google Analytics)",
+          "usage": "LEGITIMATE",
+          "justification": "Standard implementation of Google Analytics 4 Measurement Protocol for extension telemetry."
+        },
+        {
+          "pattern": "DOM INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "The findings in content-script.js and popup.js are located within the 'micromark' and React library code used for rendering Markdown and UI components."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store the client_id for analytics and cached session data for ChatGPT."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (ChatGPT API)",
+          "usage": "LEGITIMATE",
+          "justification": "Necessary for the extension's core functionality as a ChatGPT power tool."
+        }
+      ],
+      "token_usage": {
+        "prompt": 65882,
+        "candidates": 789,
+        "total": 67701
+      }
+    },
+    {
+      "extension_id": "npphdmcakmfhllhblkealgkeefamebih",
+      "verdict": "SUSPICIOUS",
+      "confidence": 0.85,
+      "reasoning": "The extension is classified as SUSPICIOUS primarily due to deceptive branding (claiming to be 'Chat GPT 5' to exploit OpenAI's brand) and its complex tracking/monetization infrastructure. It generates a persistent unique ID for the user and reports geolocation and versioning data to a custom backend (hub.malson.eu). While it performs its advertised tasks (AI chat/summarization), the inclusion of paywall management and financial 'withdraw-balances' endpoints in a utility extension suggests it may be part of a larger 'fleeceware' or tracking operation. The use of 'DeepSeek AI' in internal code vs 'Chat GPT 5' in public metadata further indicates white-labeling or repackaging of other services under a deceptive name.",
+      "recommendation": "REVIEW",
+      "key_concerns": [
+        "Deceptive branding (Name-squatting on OpenAI/ChatGPT).",
+        "User tracking and geolocation exfiltration to hub.malson.eu.",
+        "Hidden paywall and balance withdrawal logic found in production scripts.",
+        "Broad host permissions used to extract full page text content."
+      ],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "User ID, Geolocation (Country), Browser Version, Page Title, and full Page Text Content.",
+          "processing_method": "Unique device ID generation (device_back_...) and IP-based country lookup via Cloudflare.",
+          "destination_domain": "hub.malson.eu",
+          "code_evidence": "In background.js: function createDeviceIdFromBackground() fetches country from cloudflare.com/cdn-cgi/trace and POSTs to https://hub.malson.eu/api/users/update along with the generated user_id."
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant",
+          "hidden_functionality": "Deceptive branding and hidden monetization infrastructure. The extension uses the name 'Chat GPT 5' (which does not exist) to impersonate OpenAI. It contains integrated paywall logic and suspicious financial endpoints.",
+          "code_evidence": "Static analysis of the large library file reveals endpoints like 'https://onlineapp.pro/api/v1/test/withdraw-balances' and paywall impression tracking at 'https://hub.malson.eu/api/users/paywall/impression'."
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chromewebstore.google.com",
+          "cloudflare.com"
+        ],
+        "requires_investigation": [
+          "hub.malson.eu",
+          "onlineapp.pro",
+          "onlineapp.live",
+          "onlineapp.stream"
+        ],
+        "informational_only": [
+          "aiagent.gallery",
+          "vimeo.com",
+          "amplitude.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CHROME_COOKIES",
+          "usage": "SUSPICIOUS",
+          "justification": "The extension accesses Chrome cookies (likely for session management or cross-site tracking) while the core functionality of a side-panel AI chat should not require broad cookie access."
+        },
+        {
+          "pattern": "TABS_ACCESS / DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "Used to extract text content from the current tab for the 'Summarize' feature."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (hub.malson.eu)",
+          "usage": "SUSPICIOUS",
+          "justification": "All user metadata and 'DeepSeek AI' sessions are routed to this non-standard backend rather than OpenAI or a known service provider."
+        }
+      ],
+      "token_usage": {
+        "prompt": 75333,
+        "candidates": 948,
+        "total": 78308
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 1,
+    "SUSPICIOUS": 1,
+    "SAFE": 3,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 1,
+    "high_risk_validated_suspicious": 1,
+    "high_risk_validated_safe": 3,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 0.6,
+    "true_positive_rate": 0.4,
+    "malicious_detection_rate": 0.2
+  },
+  "token_usage": {
+    "prompt_tokens": 175070,
+    "candidate_tokens": 4058,
+    "total_tokens": 185369
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "extension_id": "ekhmddbpfelhdicnhkomdopnnbkchddc",
+  "extension_name": "AutoGemini - Gemini/AIStudio/Flow auto creator (Nano Banana Pro/Veo 3.1)",
+  "version": "Unknown",
+  "user_count": 975,
+  "dataset": "gemini",
+  "verdict": "MALICIOUS",
+  "confidence": 0.95,
+  "recommendation": "BLOCK",
+  "reasoning": "The extension exhibits clear malicious dual-purpose behavior and unauthorized data collection. While marketed as a Gemini assistant, it contains a massive, 3.7MB automation and scraping framework ('Autojourney') that targets over 10 different AI platforms. It actively scrapes user prompts and AI responses (ops.js, poe.js) and exfiltrates them via cross-origin messaging. Furthermore, it hijacks the fetch API to steal user subscription information and uses XOR-based obfuscation to hide its internal logic and extension ID (content.js).",
+  "full_validation": {
+    "extension_id": "ekhmddbpfelhdicnhkomdopnnbkchddc",
+    "verdict": "MALICIOUS",
+    "confidence": 0.95,
+    "reasoning": "The extension exhibits clear malicious dual-purpose behavior and unauthorized data collection. While marketed as a Gemini assistant, it contains a massive, 3.7MB automation and scraping framework ('Autojourney') that targets over 10 different AI platforms. It actively scrapes user prompts and AI responses (ops.js, poe.js) and exfiltrates them via cross-origin messaging. Furthermore, it hijacks the fetch API to steal user subscription information and uses XOR-based obfuscation to hide its internal logic and extension ID (content.js).",
+    "recommendation": "BLOCK",
+    "key_concerns": [
+      "Exfiltration of private AI prompt/response history.",
+      "Extensive undisclosed functionality for platforms unrelated to Gemini.",
+      "Intentional bypassing of browser security/visibility controls.",
+      "Use of obfuscation (XOR) to hide anti-tampering and identification logic."
+    ],
+    "evidence": {
+      "exfiltration_chain": {
+        "data_collected": "User AI prompts, AI-generated responses, and subscription status (userPaygateTier).",
+        "processing_method": "Scraping DOM elements (.PromptWork, .output, .ChatMessage_messageWrapper) and hijacking fetch calls to capture JSON responses.",
+        "destination_domain": "apijourney.zeabur.app, apijourney.kingback.app, apijourney.autojourney.top",
+        "code_evidence": "In ops.js: i() scrapes 'textarea.input' and '.output'. In poe.js: z() and f.addEventListener('click') capture 'ChatMessage_messageWrapper' text. In compat.js: window.fetch hijack captures 'o?.userPaygateTier'."
+      },
+      "dual_purpose": {
+        "stated_purpose": "AutoGemini - Gemini/AIStudio/Flow auto creator",
+        "hidden_functionality": "Comprehensive scraping and automation suite for Discord, Midjourney, Poe, Suno, Grok, ChatGPT, Ideogram, and Doubao. Includes cross-site data posting and monitoring of unrelated AI platforms.",
+        "code_evidence": "content.js defines s = ['AutoDoubao', 'Autojimeng', 'AutoSuno', 'AutoGPT', 'AutoGemini', 'Autogram', 'AutoGrok', 'AutoLovart', 'AutoQwen', 'Autojourney'] based on the current host, injecting a massive shared automation framework (main.js) regardless of the Gemini-specific branding."
+      },
+      "credential_theft": {
+        "capture_mechanism": "Capturing session/client identifiers and subscription levels.",
+        "transmission_target": "chrome.storage.local and external API endpoints.",
+        "code_evidence": "compat.js: window.fetch hijack for /v(\\d+)\\/credits/ to capture 'userPaygateTier'."
+      }
+    },
+    "domains": {
+      "legitimate": [
+        "gemini.google.com",
+        "aistudio.google.com",
+        "labs.google"
+      ],
+      "requires_investigation": [
+        "apijourney.zeabur.app",
+        "apijourney.kingback.app",
+        "apijourney.autojourney.top",
+        "api.imgbb.com"
+      ],
+      "informational_only": [
+        "discord.com",
+        "midjourney.com",
+        "poe.com",
+        "suno.com",
+        "ideogram.ai"
+      ]
+    },
+    "pattern_assessment": [
+      {
+        "pattern": "FETCH_HIJACK",
+        "usage": "MALICIOUS",
+        "justification": "Hijacks window.fetch in compat.js specifically to extract 'userPaygateTier' from Google AI Studio credit/billing endpoints."
+      },
+      {
+        "pattern": "POST_MESSAGE",
+        "usage": "MALICIOUS",
+        "justification": "Used in poe.js and ops.js to exfiltrate scraped prompt and response data across origins (e.g., from Poe.com to a parent/opener frame on Discord/Autojourney)."
+      },
+      {
+        "pattern": "SECURITY_RISK / DYNAMIC_SCRIPT",
+        "usage": "SUSPICIOUS",
+        "justification": "Dynamically injects several scripts (compat.js, poe.js, main.js) into every page, bypasses standard visibility and focus APIs to prevent the browser from throttling automation scripts."
+      }
+    ],
+    "token_usage": {
+      "prompt": 34103,
+      "candidates": 1094,
+      "total": 37423
+    }
+  }
+}

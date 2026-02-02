@@ -1,0 +1,118 @@
+{
+  "action": {
+    "default_title": "Open Claude"
+  },
+  "background": {
+    "service_worker": "service-worker-loader.js",
+    "type": "module"
+  },
+  "commands": {
+    "toggle-side-panel": {
+      "description": "Toggle Claude side panel",
+      "suggested_key": {
+        "default": "Ctrl+E",
+        "mac": "Command+E"
+      }
+    }
+  },
+  "content_scripts": [
+    {
+      "js": [
+        "assets/content-script.js"
+      ],
+      "matches": [
+        "https://claude.ai/*",
+        "http://localhost:8787/*",
+        "https://cfc.aroic.workers.dev/*",
+        "https://*.claude.ai/*"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "all_frames": true,
+      "js": [
+        "assets/accessibility-tree.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "all_frames": false,
+      "js": [
+        "assets/agent-visual-indicator.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:;"
+  },
+  "description": "Browser-using AI Agent! Compatible with Arc and third-party API Key. More features, fewer limitations, unofficial, community-built.",
+  "externally_connectable": {
+    "matches": [
+      "https://claude.ai/*",
+      "http://localhost:8787/*",
+      "https://cfc.aroic.workers.dev/*",
+      "https://*.claude.ai/*"
+    ]
+  },
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "icons": {
+    "128": "icon-128.png"
+  },
+  "manifest_version": 3,
+  "name": "Claude Agent: Claude 4.5 AI Browser Agent, Let Claude Take Action for You",
+  "options_page": "options.html",
+  "permissions": [
+    "sidePanel",
+    "storage",
+    "activeTab",
+    "scripting",
+    "debugger",
+    "tabGroups",
+    "tabs",
+    "alarms",
+    "notifications",
+    "system.display",
+    "webNavigation",
+    "declarativeNetRequestWithHostAccess",
+    "offscreen",
+    "nativeMessaging",
+    "unlimitedStorage",
+    "downloads"
+  ],
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "version": "1.0.36",
+  "web_accessible_resources": [
+    {
+      "matches": [
+        "https://claude.ai/*",
+        "http://localhost:8787/*",
+        "https://cfc.aroic.workers.dev/*",
+        "https://*.claude.ai/*"
+      ],
+      "resources": [
+        "assets/content-script.js"
+      ],
+      "use_dynamic_url": false
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "resources": [
+        "assets/accessibility-tree.js",
+        "assets/agent-visual-indicator.js"
+      ],
+      "use_dynamic_url": false
+    }
+  ],
+  "short_name": "Claude"
+}

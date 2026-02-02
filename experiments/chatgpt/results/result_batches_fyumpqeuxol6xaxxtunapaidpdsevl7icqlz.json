@@ -1,0 +1,375 @@
+{
+  "job_name": "batches/fyumpqeuxol6xaxxtunapaidpdsevl7icqlz",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:24.755409",
+  "validations": [
+    {
+      "extension_id": "mehpokgiebgcnelgnlfkeldlfnpdhdha",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "After reviewing the code, the extension appears to be a legitimate commercial ChatGPT wrapper. The broad permissions (all URLs) are used to provide the AI assistant functionality on any page the user visits. The connection to 'onlineapp.pro' and 'aismartassistant.store' is related to the extension's backend infrastructure for user authentication (Supabase) and its monetization platform (a paywall SDK). The background script acts as a storage proxy only for validated domains owned by the developer to maintain session persistence. There is no evidence of the extension capturing user credentials, browsing history, or injecting unauthorized ads.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant",
+          "hidden_functionality": "The extension uses a third-party service (onlineapp.pro) for authentication and paywall management, which is consistent with its role as a commercial AI tool.",
+          "code_evidence": "background.js: Line 180 - chrome.runtime.onMessageExternal.addListener validates sender domains (onlineapp.pro/live/stream) and proxies storage access for auth tokens."
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "onlineapp.pro",
+          "onlineapp.stream",
+          "onlineapp.live",
+          "aismartassistant.store",
+          "react.dev",
+          "w3.org"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "docs.google.com/forms",
+          "github.com/syntax-tree/hast-util-to-jsx-runtime",
+          "github.com/remarkjs/react-markdown"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used in background.js to sync Supabase authentication tokens between the extension and the provider's website (onlineapp.pro), allowing for shared login states."
+        },
+        {
+          "pattern": "POST_MESSAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used in wall.2.1.2.js to communicate between the main page and the paywall iframe. This is a standard implementation of a paywall/subscription service."
+        },
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "The references to dynamic scripts in content.js and index-CsrSL6rO.js are typical artifacts of modern JavaScript bundlers (like Vite/Webpack) used for code splitting and loading library chunks."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "The INNERHTML findings are within the React and React-Markdown library code for rendering safe UI components and formatted text."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (http://*/*)",
+          "usage": "LEGITIMATE",
+          "justification": "Required for the extension to inject its content script (the AI assistant FAB and side panel) into all websites as requested in the manifest."
+        }
+      ],
+      "token_usage": {
+        "prompt": 65144,
+        "candidates": 881,
+        "total": 68076
+      }
+    },
+    {
+      "extension_id": "ngibihdmmmebipdlhbfhlebhlhiifmfe",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension's code aligns strictly with its stated purpose of saving and organizing ChatGPT conversations. It operates by injecting UI elements (buttons and icons) into the ChatGPT interface. Data (notes) is stored exclusively in the browser's localStorage and is never exfiltrated to an external server. The static analysis findings for innerHTML, MutationObserver, and Blob URLs are standard for extensions that modify the UI of a dynamic web application and provide data export functionality. There is no evidence of dual-purpose behavior, tracking, or network communication with unknown domains.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Take and organize notes from ChatGPT conversations",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chat.openai.com",
+          "chatgpt.com",
+          "clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "DOM/INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to dynamically build the extension's note-taking UI, folder selection menus, and to display the content of saved notes within the extension's modal."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in initExtension to detect when the ChatGPT interface renders new message turns, allowing the extension to inject 'Save' icons next to new responses."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Uses localStorage ('chatgpt_notes' and 'chatgpt_folders') to persist user-created notes and folder structures locally within the browser."
+        },
+        {
+          "pattern": "SET_INTERVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Used to verify that the 'View Notes' UI button remains visible even if the single-page application (SPA) of ChatGPT re-renders parts of the body."
+        },
+        {
+          "pattern": "BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "Used specifically in the exportToDoc function to generate a downloadable .doc file from the user's saved notes."
+        }
+      ],
+      "token_usage": {
+        "prompt": 15734,
+        "candidates": 712,
+        "total": 17675
+      }
+    },
+    {
+      "extension_id": "eigfegoidflaaabndmlbjhndflfjeapb",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose of exporting ChatGPT data. The 'suspicious' patterns identified are artifacts of standard production web development. For example, the extensive list of Microsoft and OpenXML domains in contentScript.js belongs to the SheetJS library used for generating Excel files. The token extraction in injected.js is a common technique for extensions to authenticate with the host site's internal API to fetch data that isn't readily available in the DOM. Google OAuth is used for user identification as specified in the manifest. No evidence of data exfiltration to unauthorized domains was found.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "ChatGPT session accessToken",
+          "processing_method": "Extracted from React context in injected.js and passed via CustomEvents to the content script.",
+          "destination_domain": "chatgpt.com",
+          "code_evidence": "window.__reactRouterContext.state.loaderData.root.clientBootstrap.session.accessToken ... s = new CustomEvent(\"ChatGPTLibraryExporter_get_auth_result\", { detail: a }); window.dispatchEvent(s);"
+        },
+        "dual_purpose": {
+          "stated_purpose": "Download Chat Image Data / ChatGPT Library Exporter",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatgpt.com",
+          "accounts.google.com",
+          "www.googleapis.com",
+          "chatgptlibraryexporter.extensionsbox.com",
+          "buy.extensionsbox.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "sheetjs.com",
+          "github.com/zloirock/core-js",
+          "www.w3.org",
+          "schemas.openxmlformats.org",
+          "purl.org"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT (extensionsbox.com)",
+          "usage": "LEGITIMATE",
+          "justification": "This is the developer's official domain for the extension's backend, support (FAQs), and monetization (Stripe/Paddle integration)."
+        },
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "Commonly generated by bundlers like Webpack for code splitting and dynamic loading of library chunks."
+        },
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in popup.js for UI interactions, accessibility, and potential hotkey support within the extension interface."
+        },
+        {
+          "pattern": "BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "Used to create download links for the exported chat data (Excel/CSV/Images)."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used to monitor the ChatGPT interface for new messages to facilitate the export functionality."
+        }
+      ],
+      "token_usage": {
+        "prompt": 30744,
+        "candidates": 843,
+        "total": 32752
+      }
+    },
+    {
+      "extension_id": "aglfigeheodccgeodjbimolajpjfaoge",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension performs exactly what is described in its manifest and description. The code is clean and follows standard extension development patterns. It uses Chrome storage to save user settings, MutationObserver to handle ChatGPT's dynamic interface, and simple DOM manipulation to change background colors to black. There are no network calls to external domains, no data collection, and no obfuscated code. All flagged patterns are legitimate for a theme-based extension.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "A Chrome extension to toggle dark mode for ChatGPT.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatgpt.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE / CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store and sync the user's preference for dark mode (the 'darkMode' boolean) across the background script, popup, and content script."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in the content script to detect when new messages or UI elements are added to the ChatGPT DOM, ensuring that Amoled styles are applied to dynamically loaded content."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used in popup.js to identify the active ChatGPT tab and send a message to the content script when the user toggles the switch."
+        },
+        {
+          "pattern": "DOM",
+          "usage": "LEGITIMATE",
+          "justification": "Used strictly for querying elements and modifying their CSS styles to implement the 'Amoled' (pure black) theme."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3379,
+        "candidates": 603,
+        "total": 4778
+      }
+    },
+    {
+      "extension_id": "ckidgdoajhljibcnfnkgdhhieebafafj",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is a productivity tool associated with the 'SmartStudi' platform. Its core features—AI-powered responses (via GPT-4o) and an 'Auto Typer' for Google Docs—are implemented transparently. While it requests significant permissions (OAuth for Google Docs and profile info), these are necessary for its stated features (batch updating documents and user account sync). All network activity is directed to the developer's domain (smartstudi.com) or standard Google APIs. There is no evidence of hidden malicious behavior, silent data scraping, or credential harvesting.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Selected text, page screenshots, and Google OAuth tokens.",
+          "processing_method": "Data is sent to the developer's API for processing via GPT-4o or for authentication.",
+          "destination_domain": "smartstudi.com",
+          "code_evidence": "background.js: Line 165 (fetch to GPT-4o endpoint), welcome.js: Line 47 (auth endpoint)."
+        },
+        "dual_purpose": {
+          "stated_purpose": "UCG - productivity tool for AI interaction and Google Docs automation.",
+          "hidden_functionality": null,
+          "code_evidence": "The manifest and UI (welcome.js, content.js) clearly align with AI assistance and an 'Auto Typer' feature for Google Docs."
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "smartstudi.com",
+          "docs.googleapis.com",
+          "clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "docs.google.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used via captureVisibleTab to send current page screenshots to GPT-4o for analysis, triggered by specific user context menu actions."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "Endpoints on smartstudi.com are used for authentication and proxying AI requests, which is the core functionality of the tool."
+        },
+        {
+          "pattern": "KEYBOARD",
+          "usage": "LEGITIMATE",
+          "justification": "Used for standard form submission in the welcome/login page."
+        },
+        {
+          "pattern": "CHROME_STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store user session (email), preference settings, and application state (context menu visibility)."
+        }
+      ],
+      "token_usage": {
+        "prompt": 19322,
+        "candidates": 730,
+        "total": 21609
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 0,
+    "SUSPICIOUS": 0,
+    "SAFE": 5,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 0,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 5,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 1.0,
+    "true_positive_rate": 0.0,
+    "malicious_detection_rate": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 134323,
+    "candidate_tokens": 3769,
+    "total_tokens": 144890
+  }
+}

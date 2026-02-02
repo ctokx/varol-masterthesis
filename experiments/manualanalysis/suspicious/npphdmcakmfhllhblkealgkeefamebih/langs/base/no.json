@@ -1,0 +1,485 @@
+{
+    "you_need_to_approve_the_permissions_to_open_the_extension_in_the_side_panel_": {
+        "message": "Du må godkjenne tillatelsene for å åpne utvidelsen i sidepanelet."
+    },
+    "dropblock_head": {
+        "message": "dropBlock_head"
+    },
+    "open_the_extension_in_a_sidepanel": {
+        "message": "Åpne utvidelsen i et sidepanel"
+    },
+    "link_was_copied_": {
+        "message": "Lenken ble kopiert!"
+    },
+    "drag_and_drop_your_files_here": {
+        "message": "Dra og slipp filene dine her"
+    },
+    "only_text_content_will_be_processed__up_to_5_files__each_up_to_5mb_": {
+        "message": "Bare tekstinnhold vil bli behandlet. Opptil 5 filer, hver opptil 5MB."
+    },
+    "you_can_upload_a_maximum_of_5_files_per_dialog__please_upload_files_in_smaller_batches_": {
+        "message": "Du kan laste opp maksimalt 5 filer per dialog. Vennligst last opp filer i mindre batcher."
+    },
+    "invalid_file_format_or_file_size_exceeds_5_mb__please_select_smaller_files_": {
+        "message": "Ugyldig filformat eller filstørrelsen overstiger 5 MB. Vennligst velg mindre filer."
+    },
+    "permissions_are_missing__please_grant_the_extension_access_to_web_pages_": {
+        "message": "Tillatelser mangler. Vennligst gi utvidelsen tilgang til websider."
+    },
+    "error__please_try_again_later_": {
+        "message": "Feil, prøv igjen senere."
+    },
+    "summarization_does_not_work_on_system_pages__please_copy_the_page_content_into_the_chat_manually_": {
+        "message": "Oppsummering fungerer ikke på system sider. Vennligst kopier sidens innhold inn i chatten manuelt."
+    },
+    "delete": {
+        "message": "Slett"
+    },
+    "delete_chat_": {
+        "message": "Slette chat?"
+    },
+    "are_you_sure_you_want_to_delete_this_chat_": {
+        "message": "Er du sikker på at du vil slette denne chatten?"
+    },
+    "cancel": {
+        "message": "Avbryt"
+    },
+    "the_chat_was_deleted": {
+        "message": "Chatten ble slettet"
+    },
+    "`_text_`": {
+        "message": "ʼ+text+ʼ"
+    },
+    "`_lang___(text)_`": {
+        "message": "ʼ+Lang.__(text)+ʼ"
+    },
+    "${deletetext}": {
+        "message": "${deleteText}"
+    },
+    "`_lang___(_delete_chat__)_`": {
+        "message": "ʼ+Lang.__('Slett chat?')+ʼ"
+    },
+    "`_lang___(_are_you_sure_you_want_to_delete_this_chat__)_`": {
+        "message": "ʼ+Lang.__('Er du sikker på at du vil slette denne chatten?')+ʼ"
+    },
+    "`_lang___(_cancel_)_`": {
+        "message": "ʼ+Lang.__('Avbryt')+ʼ"
+    },
+    "`_lang___(_delete_)_`": {
+        "message": "ʼ+Lang.__('Slett')+ʼ"
+    },
+    "file": {
+        "message": "Fil"
+    },
+    "thinking": {
+        "message": "Tenker"
+    },
+    "copy_response": {
+        "message": "Kopier svar"
+    },
+    "good_response": {
+        "message": "Bra svar"
+    },
+    "bad_response": {
+        "message": "Dårlig svar"
+    },
+    "uploading___": {
+        "message": "Laster opp..."
+    },
+    "`_lang___(_thinking_)_`": {
+        "message": "ʼ+Lang.__('Tenker')+ʼ"
+    },
+    "feedback": {
+        "message": "Tilbakemelding"
+    },
+    "share": {
+        "message": "Del"
+    },
+    "rate_us": {
+        "message": "Vurder oss"
+    },
+    "💀": {
+        "message": "💀"
+    },
+    "😞": {
+        "message": "😞"
+    },
+    "😐": {
+        "message": "😐"
+    },
+    "🙂": {
+        "message": "🙂"
+    },
+    "😍": {
+        "message": "😍"
+    },
+    "grok_3_is_here_": {
+        "message": "Grok 3 er her."
+    },
+    "what_do_you_want_to_know_": {
+        "message": "Hva vil du vite?"
+    },
+    "how_can_grok_help_you_": {
+        "message": "Hvordan kan Grok hjelpe deg?"
+    },
+    "attach_file": {
+        "message": "Legg ved fil"
+    },
+    "select_a_model": {
+        "message": "Velg en modell"
+    },
+    "sent_message": {
+        "message": "Sendt melding"
+    },
+    "hey_": {
+        "message": "Hei,"
+    },
+    "welcome_": {
+        "message": "velkommen!"
+    },
+    "how_can_i_help_you_": {
+        "message": "Hvordan kan jeg hjelpe deg?"
+    },
+    "message_deepseek": {
+        "message": "Meldings DeepSeek"
+    },
+    "summarize_the_current_page": {
+        "message": "Oppsummer gjeldende side"
+    },
+    "upload_a_file": {
+        "message": "Last opp en fil"
+    },
+    "start_a_chat": {
+        "message": "Start en chat"
+    },
+    "set_personalization": {
+        "message": "Sett personalisering"
+    },
+    "new_chat": {
+        "message": "Ny chat"
+    },
+    "switch_to_light_mode": {
+        "message": "Bytt til lyst modus"
+    },
+    "switch_to_dark_mode": {
+        "message": "Bytt til mørkt modus"
+    },
+    "open_the_extension_in_a_separate_tab": {
+        "message": "Åpne utvidelsen i en egen fane"
+    },
+    "{{_item_}}": {
+        "message": "{{ item }}"
+    },
+    "start_now": {
+        "message": "Start nå"
+    },
+    "get_ideas": {
+        "message": "Få ideer"
+    },
+    "ask": {
+        "message": "Spør"
+    },
+    "code": {
+        "message": "Kode"
+    },
+    "translate": {
+        "message": "Oversett"
+    },
+    "cooking_tips": {
+        "message": "Matlagings tips"
+    },
+    "how_deepseek_ai_helps_you_": {
+        "message": "Hvordan hjelper DeepSeek AI deg?"
+    },
+    "✨_get_spot_on_answers_10x_faster": {
+        "message": "✨ Få presise svar 10 ganger raskere"
+    },
+    "no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Ingen Google, ingen tab-kaos, ingen tid bortkastet"
+    },
+    "📚_save_hours_on_studying": {
+        "message": "📚 Spar timer på studier"
+    },
+    "generate_essays__auto_complete_tests__and_summarize_any_page_in_minutes_": {
+        "message": "Generer essays, autofullfør tester, og oppsummer hvilken som helst side på minutter."
+    },
+    "🌍_real_time_translation_on_the_page": {
+        "message": "🌍 Sanntids oversettelse på siden"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments": {
+        "message": "Skriv som en innfødt, uten feil eller pinlige øyeblikk"
+    },
+    "💻_your_ai_copilot_for_coding": {
+        "message": "💻 Din AI-kopilot for koding"
+    },
+    "fix_bugs__decode_legacy_and_write_code_3x_faster__enjoy_your_work_and_earn_more_": {
+        "message": "Fiks feil, dekod legacy og skriv kode 3 ganger raskere. Nyt arbeidet ditt og tjen mer."
+    },
+    "where_do_we_start_": {
+        "message": "Hvor starter vi?"
+    },
+    "get_10_post_ideas_for_my_cooking_blog": {
+        "message": "Få 10 innleggideer til min matblogg"
+    },
+    "find_a_billion_dollar_no_code_startup_idea": {
+        "message": "Finn en milliard-dollar no-code oppstartsidé"
+    },
+    "give_me_fun_game_ideas_to_play_with_my_kids_at_home": {
+        "message": "Gi meg morsomme spillideer å leke med barna mine hjemme"
+    },
+    "write_3_viral_tiktok_post_ideas_about_personal_finance": {
+        "message": "Skriv 3 virale TikTok-ideer om personlig økonomi"
+    },
+    "recommend_5_books_that_will_change_the_way_i_think": {
+        "message": "Anbefal 5 bøker som vil endre måten jeg tenker på"
+    },
+    "what_daily_habits_can_boost_my_creativity_": {
+        "message": "Hvilke daglige vaner kan øke min kreativitet?"
+    },
+    "help_me_set_3_achievable_goals_for_the_next_30_days": {
+        "message": "Hjelp meg å sette 3 oppnåelige mål for de neste 30 dagene"
+    },
+    "how_can_i_make_my_facebook_profile_more_attractive_": {
+        "message": "Hvordan kan jeg gjøre Facebook-profilen min mer attraktiv?"
+    },
+    "generate_a_basic_react_component_for_a_to_do_list": {
+        "message": "Generer en enkel React-komponent for en oppgaveliste"
+    },
+    "can_you_explain_javascript_promises_in_a_simple_way_": {
+        "message": "Kan du forklare JavaScript-lover på en enkel måte?"
+    },
+    "how_do_i_build_a_rest_api_endpoint_using_fastapi_in_python_": {
+        "message": "Hvordan lager jeg en REST API-endepunkt med FastAPI i Python?"
+    },
+    "how_can_i_add_social_login_(google_facebook)_to_my_app_": {
+        "message": "Hvordan legger jeg til sosial innlogging (Google/Facebook) i appen min?"
+    },
+    "how_do_you_say_“love”_in_french_": {
+        "message": "Hvordan sier du “kjærlighet” på fransk?"
+    },
+    "how_do_you_say_“delicious_food”_in_italian_": {
+        "message": "Hvordan sier du “deilig mat” på italiensk?"
+    },
+    "what_s_the_korean_translation_of_“i_miss_you”_": {
+        "message": "Hva er den koreanske oversettelsen av “I miss you”?"
+    },
+    "what_s_the_arabic_word_for_“peace”_": {
+        "message": "Hva er det arabiske ordet for “fred”?"
+    },
+    "quick_breakfast_ideas_kids_will_actually_love": {
+        "message": "Raske frokostideer barna vil elske"
+    },
+    "what_are_5_no_sugar_snacks_i_can_make_at_home_": {
+        "message": "Hva er 5 sukkerfrie snacks jeg kan lage hjemme?"
+    },
+    "give_me_an_easy_3_ingredient_dessert_recipe": {
+        "message": "Gi meg en enkel dessertoppskrift med 3 ingredienser"
+    },
+    "easy_dessert_tips": {
+        "message": "Enkle desserttips"
+    },
+    "click": {
+        "message": "Klikk"
+    },
+    "add_deepseek_ai_to_the_toolbar_for_quick_access": {
+        "message": "Legg DeepSeek AI til verktøylinjen for rask tilgang"
+    },
+    "file_download_has_started": {
+        "message": "Nedlasting av fil har startet"
+    },
+    "to_get_this_file_again_": {
+        "message": "For å få denne filen igjen,"
+    },
+    "click_here": {
+        "message": "klikk her"
+    },
+    "show_downloaded_file": {
+        "message": "Vis nedlastet fil"
+    },
+    "files_on_the_computer_can_only_be_opened_in_the_google_chrome_extension": {
+        "message": "Filer på datamaskinen kan bare åpnes i Google Chrome-utvidelsen"
+    },
+    "enjoy_the_conversion_": {
+        "message": "Nyt konverteringen?"
+    },
+    "please_rate_your_experience_with_our_extension": {
+        "message": "Vennligst vurder din opplevelse med vår utvidelse"
+    },
+    "try_again": {
+        "message": "Prøv igjen"
+    },
+    "help_us_be_better": {
+        "message": "Hjelp oss å bli bedre"
+    },
+    "your_feedback_matters__what_can_we_improve_": {
+        "message": "Din tilbakemelding er viktig. Hva kan vi forbedre?"
+    },
+    "send": {
+        "message": "Send"
+    },
+    "write_your_feedback_here": {
+        "message": "Skriv din tilbakemelding her"
+    },
+    "support_us_in_10_seconds": {
+        "message": "Støtt oss på 10 sekunder"
+    },
+    "1__click": {
+        "message": "1. Klikk"
+    },
+    "_write_a_review_": {
+        "message": "\\\"Skriv en anmeldelse\\\""
+    },
+    "2__rate_and_post_your_feedback": {
+        "message": "2. Vurder og legg ut din tilbakemelding"
+    },
+    "thanks_for_helping_us_grow_": {
+        "message": "Takk for at du hjelper oss å vokse!"
+    },
+    "select_your_language": {
+        "message": "Velg ditt språk"
+    },
+    "type_to_filter_languages___": {
+        "message": "Skriv for å filtrere språk..."
+    },
+    "create_public_link": {
+        "message": "Opprett offentlig lenke"
+    },
+    "this_file_will_be_available_to_anyone__public_links_are_temporary_and_will_be_removed_after_24_hours_": {
+        "message": "Denne filen vil være tilgjengelig for alle. Offentlige lenker er midlertidige og vil bli fjernet etter 24 timer."
+    },
+    "create": {
+        "message": "Opprett"
+    },
+    "save_hours_on_studying": {
+        "message": "[textgradientEl]Spar timer[\/textgradientEl] på å studere"
+    },
+    "auto_complete_tests__generate_essays__and_summarize_any_page_in_minutes_": {
+        "message": "Autofullfør tester, generer essays og oppsummer hvilken som helst side på minutter."
+    },
+    "step": {
+        "message": "Steg"
+    },
+    "of": {
+        "message": "av"
+    },
+    "continue": {
+        "message": "Fortsett"
+    },
+    "use_ai_translation_magic": {
+        "message": "Bruk AI-oversettelses[textgradientEl]Magisk[\/textgradientEl]"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments__right_on_the_page_": {
+        "message": "Skriv som en innfødt, uten feil eller pinlige øyeblikk. Rett på siden."
+    },
+    "get_your_ai_copilot_for_coding": {
+        "message": "Få din [textgradientEl]AI-kopilot[\/textgradientEl] for koding"
+    },
+    "try_now": {
+        "message": "Prøv nå"
+    },
+    "did_this_tool_help_you_": {
+        "message": "Hjalp dette verktøyet deg?"
+    },
+    "share_it_with_friends_who_work_with_images_": {
+        "message": "Del det med venner som jobber med bilder."
+    },
+    "who_would_find_it_useful_": {
+        "message": "Hvem vil finne det nyttig?"
+    },
+    "copy_link": {
+        "message": "Kopier lenke"
+    },
+    "facebook": {
+        "message": "Facebook"
+    },
+    "x": {
+        "message": "X"
+    },
+    "telegram": {
+        "message": "Telegram"
+    },
+    "i_found_a_super_useful_chrome_extension__": {
+        "message": "Jeg fant en supernyttig Chrome-utvidelse —"
+    },
+    "it_can_save_any_website_as_a_pdf__you_should_try_it_out___it_s_great_": {
+        "message": "Den kan lagre hvilken som helst nettside som PDF. Du bør prøve den — den er flott!"
+    },
+    "hooray__greate_job_": {
+        "message": "Hurra, flott jobba!"
+    },
+    "please__can_you_rate_us_": {
+        "message": "Vennligst, kan du vurdere oss?"
+    },
+    "deepseek_ai_has_been_installed_": {
+        "message": "DeepSeek AI er installert!"
+    },
+    "get_answers_10x_faster___no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Få svar 10 ganger raskere — ingen Google, ingen tab-kaos, ingen tid bortkastet"
+    },
+    "open_deepseek_ai": {
+        "message": "Åpne DeepSeek AI"
+    },
+    "deepseek_app": {
+        "message": "DeepSeek App"
+    },
+    "love_deepseek_": {
+        "message": "Elsker DeepSeek?"
+    },
+    "could_you_please_rate_our_extension_": {
+        "message": "Kan du vennligst vurdere vår utvidelse?"
+    },
+    "share_this_extension_with_your_friends": {
+        "message": "Del denne utvidelsen med vennene dine"
+    },
+    "share_us_with_your_friends": {
+        "message": "Del oss med vennene dine"
+    },
+    "and_unlock_all_ai_assistant_features": {
+        "message": "Og lås opp alle AI-assistentfunksjoner"
+    },
+    "vk_com": {
+        "message": "Vk.com"
+    },
+    "reddit": {
+        "message": "Reddit"
+    },
+    "whatsapp": {
+        "message": "WhatsApp"
+    },
+    "weibo": {
+        "message": "Weibo"
+    },
+    "post_preview": {
+        "message": "Innleggsforhåndsvisning"
+    },
+    "hey__i_m_your_ai_assistant_": {
+        "message": "Hei, jeg er din AI-assistent!"
+    },
+    "what_can_i_help_with_": {
+        "message": "Hva kan jeg hjelpe med?"
+    },
+    "history": {
+        "message": "Historikk"
+    },
+    "settings": {
+        "message": "Innstillinger"
+    },
+    "subscription": {
+        "message": "Abonnement"
+    },
+    "add_personal_info_or_instructions_to_the_ai_assistant__this_will_help_improve_responses_for_you_": {
+        "message": "Legg til personlig info eller instruksjoner til AI-assistenten. Dette vil hjelpe med å forbedre svarene for deg."
+    },
+    "save": {
+        "message": "Lagre"
+    },
+    "and_you_ll_unlock_all_ai_assistant_features": {
+        "message": "Og du vil låse opp alle AI-assistentfunksjoner"
+    },
+    "e_g___always_reply_in_french": {
+        "message": "f.eks., svar alltid på fransk"
+    },
+    "_p_you_can_try_the_ai_assistant_to_play_a_role__e_g____p__ul__li_act_as_an_english_teacher_and_correct_my_mistakes__li__li_respond_like_a_professional_business_consultant__li___ul__p_or_input_your_data_for_the_ai_assistant_to_generate_responses__e_g____p__ul__li_23_y_o___58_kg__height_165_cm__female__li__li_programmer__php___laravel__js___react___li___ul_": {
+        "message": "<p>Du kan prøve AI-assistenten til å spille en rolle, f.eks.:<\/p><ul><li>Oppfør deg som en engelsklærer og rett feilene mine<\/li><li>Respondere som en profesjonell bedriftskonsulent<\/li><\/ul><p>Eller legg inn dataene dine for at AI-assistenten skal generere svar, f.eks.:<\/p><ul><li>23 år gammel, 58 kg, høyde 165 cm, kvinne<\/li><li>Programmerer. PHP – Laravel, JS – React.<\/li><\/ul>"
+    }
+}

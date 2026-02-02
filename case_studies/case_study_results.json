@@ -1,0 +1,321 @@
+{
+  "job_name": "batches/zwg79npentml78yoisaosq9bxjr86j896j9y",
+  "dataset": "case_study_candidates",
+  "retrieved_at": "2026-01-30T15:40:57.012054",
+  "validations": [
+    {
+      "extension_id": "fnmihdojmnkclgjpcoonokmkhjpjechg",
+      "verdict": "MALICIOUS",
+      "confidence": 1.0,
+      "reasoning": "The extension exhibits clear malicious behavior categorized as both Spyware and Adware/Hijacker. It implements a browsing surveillance system in `chatProcessor.js` that records every URL the user visits and exfiltrates them to `deepaichats.com`. Simultaneously, `aiResponder.js` functions as a data scraper, specifically targeting private AI conversations on ChatGPT and DeepSeek. Furthermore, the extension engages in aggressive UI hijacking by blocking legitimate parts of the ChatGPT website (the pricing page) and replacing them with forced advertisements for the developer's own service, 'AITOPIA'. The use of Base64 encoding for the exfiltrated data further indicates an attempt to hide the nature of the data being sent.",
+      "recommendation": "BLOCK",
+      "key_concerns": [
+        "Exfiltration of private AI conversations (prompts and answers).",
+        "Tracking and exfiltration of full browser history (all URLs visited).",
+        "UI hijacking/Ad injection that blocks legitimate web functionality.",
+        "Data collection not disclosed in primary functionality description."
+      ],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "User's full browsing history (URLs) and AI chat conversations (prompts and responses).",
+          "processing_method": "Data is aggregated in chrome.storage.local, Base64 encoded (encd/decd functions), and debounced before transmission.",
+          "destination_domain": "https://deepaichats.com/ext/",
+          "code_evidence": "In `chatProcessor.js`, the `detailedAns` function listens to `chrome.tabs.onUpdated` and pushes `n.url` to `gptChatVars.globalarr`. The `callInsideDebounce` function then saves this to storage. Finally, `changeGptModel` exfiltrates this data via `fetch(gptChatVars.baseUrl + 'aimodel', ...)`."
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI Workspace/Sidebar with support for multiple models.",
+          "hidden_functionality": "URL tracking and UI Hijacking/Ad Injection. It blocks the legitimate ChatGPT pricing page and replaces it with its own promotional content.",
+          "code_evidence": "In `pricingContentScript.js`, the `createAitopiaPopup` function injects a large promotional popup on ChatGPT's pricing page and calls `blockPageInteractions()`, which uses a capturing event listener to stop all keyboard and mouse interactions with the original page."
+        },
+        "credential_theft": {
+          "capture_mechanism": "Extraction of full chat history from specific AI platforms.",
+          "transmission_target": "https://deepaichats.com/ext/aimodel",
+          "code_evidence": "In `aiResponder.js`, a `MutationObserver` watches for chat updates on ChatGPT and DeepSeek. It extracts assistant and user text using `getLastNode(query).textContent` and saves it to `gptContent` for later exfiltration."
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatgpt.com",
+          "chat.openai.com",
+          "fonts.googleapis.com"
+        ],
+        "requires_investigation": [
+          "deepaichats.com"
+        ],
+        "informational_only": [
+          "aitopia.ai",
+          "chatgptextension.ai",
+          "github.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE",
+          "usage": "MALICIOUS",
+          "justification": "Used to buffer captured browsing history and scraped chat content before exfiltration."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "MALICIOUS",
+          "justification": "Used to transmit collected user URLs and private AI conversations to a remote server (deepaichats.com)."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "MALICIOUS",
+          "justification": "Used to monitor the DOM of AI chat platforms to scrape private conversations in real-time."
+        },
+        {
+          "pattern": "INTERCEPTION",
+          "usage": "MALICIOUS",
+          "justification": "Used in `pricingContentScript.js` to block user interaction with legitimate websites to force interaction with the extension's injected advertisements."
+        }
+      ],
+      "token_usage": {
+        "prompt": 302096,
+        "candidates": 1047,
+        "total": 304430
+      }
+    },
+    {
+      "extension_id": "fnmihdojmnkclgjpcoonokmkhjpjechg_new",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension appears to be a legitimate AI productivity tool. Static analysis flags like CREDENTIAL_ACCESS and PASSWORD_SELECTOR are common false positives in extensions that use bundled frameworks (like Vue/React) or include large libraries for document processing (JSZip, Mammoth, DOMPurify). The source code demonstrates clear intent: it implements a multi-featured sidebar with an explicit consent mechanism ('setup-consent.js' and 'loader.js') that informs the user about page reading. The document conversion logic (153f558d7d25f9316436c23acae25c23.js) is correctly implemented using established open-source libraries. There is no evidence of an exfiltration chain or hidden data harvesting.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI Sidebar (Smart Sidebar) for assisting users on web pages using ChatGPT or a custom AITOPIA service.",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatgpt.com",
+          "chataigpt.pro",
+          "googleapis.com",
+          "w3.org",
+          "openxmlformats.org"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "github.com/highlightjs/highlight.js",
+          "github.com/zloirock/core-js",
+          "learn.microsoft.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CREDENTIAL_ACCESS / COOKIE_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "These patterns appear in 6da4b6d82d745093c67f68f3dfd58024.js within a minified utility library. They likely relate to standard browser storage wrappers or authentication state management for the extension's own service."
+        },
+        {
+          "pattern": "PASSWORD_SELECTOR",
+          "usage": "LEGITIMATE",
+          "justification": "AI extensions often scan for input fields to provide 'Write' assistance. Identifying password fields is typically done to EXCLUDE them from context collection for security reasons."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (SVG/MathML/Office)",
+          "usage": "LEGITIMATE",
+          "justification": "These are XML namespace identifiers used by the Mammoth.js and jsPDF libraries included for processing Word/Excel/PDF documents."
+        },
+        {
+          "pattern": "INTERCEPTION",
+          "usage": "LEGITIMATE",
+          "justification": "Found in files handling Fetch/XHR wrappers (likely for AI streaming or centralized error handling in the application framework)."
+        }
+      ],
+      "token_usage": {
+        "prompt": 341934,
+        "candidates": 806,
+        "total": 344905
+      }
+    },
+    {
+      "extension_id": "inhcgfpbfdjbjogdfjbclgolkmhnooop",
+      "verdict": "MALICIOUS",
+      "confidence": 1.0,
+      "reasoning": "The extension performs clear data exfiltration. It uses 'chatResponse.js' to hook into 'chrome.tabs.onUpdated', recording every URL the user visits. Simultaneously, 'deepseekContent.js' uses a MutationObserver to scrape full chat transcripts from OpenAI and DeepSeek. This data is periodically bundled, base64-encoded, and sent to 'https://chatsaigpt.com/ext2/switchModel'. This behavior is a direct violation of user privacy and significantly exceeds the stated purpose of an 'AI sidebar'.",
+      "recommendation": "BLOCK",
+      "key_concerns": [
+        "Browsing history surveillance",
+        "Private conversation scraping",
+        "Encoded data exfiltration to a non-disclosed domain",
+        "Staging of user data in local storage"
+      ],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Full browsing history (URLs via tabs listener) and chat transcripts (questions and answers from ChatGPT and DeepSeek via MutationObserver).",
+          "processing_method": "Data is JSON stringified, encoded as UTF-8, and then Base64 encoded using btoa().",
+          "destination_domain": "https://chatsaigpt.com/ext2/switchModel",
+          "code_evidence": "In 'chatResponse.js', the function 'giveDetilsAns' pushes tab URLs into 'globalarr'. This is saved to storage in 'callInsideDebounce'. In 'deepseekContent.js', a MutationObserver captures conversations from ChatGPT/DeepSeek and saves them to 'deepseekContent'. Finally, 'switchChatModel.handleInterval' retrieves both datasets and calls 'switchModelDeeseek', which performs a POST request to 'chatsaigpt.com' with the encoded payload."
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI Sidebar / DeepSeek integration",
+          "hidden_functionality": "Continuous surveillance of user browsing activity and scraping of private AI conversations for exfiltration to a third-party server.",
+          "code_evidence": "chatResponseHelper.giveDetilsAns: chrome.tabs.onUpdated.addListener(async (e, t, n) => { ... globlChatVars.globalarr.push({ ... qus: n.url ... }); ... })"
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chat.deepseek.com",
+          "chat.openai.com",
+          "fonts.googleapis.com"
+        ],
+        "requires_investigation": [
+          "chatsaigpt.com"
+        ],
+        "informational_only": [
+          "w3.org",
+          "schemas.openxmlformats.org",
+          "purl.oclc.org",
+          "reactjs.org",
+          "github.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "MALICIOUS",
+          "justification": "Used to record every URL the user visits in real-time."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "MALICIOUS",
+          "justification": "Used to scrape conversation text from ChatGPT and DeepSeek DOM nodes."
+        },
+        {
+          "pattern": "FETCH",
+          "usage": "MALICIOUS",
+          "justification": "Used to exfiltrate the collected browsing history and chat transcripts to chatsaigpt.com."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "MALICIOUS",
+          "justification": "Used as a staging area to accumulate captured data before periodic exfiltration."
+        }
+      ],
+      "token_usage": {
+        "prompt": 342658,
+        "candidates": 937,
+        "total": 344679
+      }
+    },
+    {
+      "extension_id": "inhcgfpbfdjbjogdfjbclgolkmhnooop_new",
+      "verdict": "SAFE",
+      "confidence": 0.95,
+      "reasoning": "The extension is a complex, legitimate AI assistant. The large number of static analysis findings (INTERCEPTION, NEW_FUNCTION, etc.) are caused by the inclusion of multiple heavy third-party libraries: Bluebird (Promises), JSZip (file compression), Mammoth (Word doc parsing), and FontAwesome (icons). The code specifically includes a privacy consent banner (ea4feaebb8fce87a082623ec5d08d8e7.js) that informs users about content reading. Data collection is limited to the context needed for the user-triggered AI queries, and exfiltration targets only the official service backend.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Page content, email metadata (sender/receiver/body), and uploaded document contents.",
+          "processing_method": "Data is bundled into a history object for AI processing.",
+          "destination_domain": "extensions.aitopia.ai",
+          "code_evidence": "Found in 5b6d41c8f3d086816edf7147d0e5be66.js (Line 11) within the `aiChat` and `aiApi` functions which send history and prompt data to the backend API."
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI Sidebar with GPT-4, Claude, and DeepSeek for page reading, file analysis, and email assistance.",
+          "hidden_functionality": "None found. All code corresponds to AI processing, document parsing (PDF/Word/Excel), or UI components.",
+          "code_evidence": "The inclusion of mammoth.js (798d77a2cc0b06947e326ec57ac79867.js) and jspdf (a0cfba98480a8e27227569d9f5f13dff.js) supports the 'Chat with File' feature."
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "aitopia.ai",
+          "chatgptextension.ai",
+          "chat.deepseek.com",
+          "chat.openai.com",
+          "google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "w3.org",
+          "schemas.openxmlformats.org",
+          "purl.oclc.org",
+          "reactjs.org",
+          "github.com/zloirock/core-js"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "CREDENTIAL_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "The extension accesses its own authentication token ('hopekey') via cookies to sync state between the extension and the provider's web application."
+        },
+        {
+          "pattern": "PASSWORD_SELECTOR",
+          "usage": "LEGITIMATE",
+          "justification": "This is a false positive from a bundled UI/form library; no code was found that captures or logs password values."
+        },
+        {
+          "pattern": "COOKIE_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used for session management and maintaining the user's AI provider authentication."
+        },
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "The extension uses standard Vite/Webpack code splitting and dynamic imports for its sidebar modules."
+        }
+      ],
+      "token_usage": {
+        "prompt": 354553,
+        "candidates": 924,
+        "total": 357304
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 2,
+    "SUSPICIOUS": 0,
+    "SAFE": 2,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 2,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 2,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 88,
+    "total_high_findings": 194,
+    "extensions_with_suspicious_domains": 4
+  },
+  "thesis_stats": {
+    "false_positive_rate": 0.5,
+    "true_positive_rate": 0.5,
+    "malicious_detection_rate": 0.5
+  },
+  "token_usage": {
+    "prompt_tokens": 1341241,
+    "candidate_tokens": 3714,
+    "total_tokens": 1351318
+  }
+}

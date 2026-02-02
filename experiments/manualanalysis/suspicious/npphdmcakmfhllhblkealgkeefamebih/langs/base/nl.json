@@ -1,0 +1,485 @@
+{
+    "you_need_to_approve_the_permissions_to_open_the_extension_in_the_side_panel_": {
+        "message": "Je moet toestemming geven om de extensie in het zijpaneel te openen."
+    },
+    "dropblock_head": {
+        "message": "dropBlock_kop"
+    },
+    "open_the_extension_in_a_sidepanel": {
+        "message": "Open de extensie in een zijpaneel"
+    },
+    "link_was_copied_": {
+        "message": "Link is gekopieerd!"
+    },
+    "drag_and_drop_your_files_here": {
+        "message": "Sleep je bestanden hier naartoe"
+    },
+    "only_text_content_will_be_processed__up_to_5_files__each_up_to_5mb_": {
+        "message": "Alleen tekstinhoud wordt verwerkt. Tot 5 bestanden, elk tot 5MB."
+    },
+    "you_can_upload_a_maximum_of_5_files_per_dialog__please_upload_files_in_smaller_batches_": {
+        "message": "Je kunt maximaal 5 bestanden per dialoog uploaden. Upload alstublieft bestanden in kleinere batches."
+    },
+    "invalid_file_format_or_file_size_exceeds_5_mb__please_select_smaller_files_": {
+        "message": "Ongeldig bestandsformaat of bestandsgrootte overschrijdt 5 MB. Selecteer kleinere bestanden."
+    },
+    "permissions_are_missing__please_grant_the_extension_access_to_web_pages_": {
+        "message": "Toestemmingen ontbreken. Geef de extensie toegang tot webpagina's."
+    },
+    "error__please_try_again_later_": {
+        "message": "Fout, probeer het later opnieuw."
+    },
+    "summarization_does_not_work_on_system_pages__please_copy_the_page_content_into_the_chat_manually_": {
+        "message": "Samenvatten werkt niet op systeepagina's. Kopieer de paginacontent handmatig in de chat."
+    },
+    "delete": {
+        "message": "Verwijderen"
+    },
+    "delete_chat_": {
+        "message": "Chat verwijderen?"
+    },
+    "are_you_sure_you_want_to_delete_this_chat_": {
+        "message": "Weet je zeker dat je deze chat wilt verwijderen?"
+    },
+    "cancel": {
+        "message": "Annuleren"
+    },
+    "the_chat_was_deleted": {
+        "message": "De chat is verwijderd"
+    },
+    "`_text_`": {
+        "message": "ʼ+text+ʼ"
+    },
+    "`_lang___(text)_`": {
+        "message": "ʼ+Lang.__(text)+ʼ"
+    },
+    "${deletetext}": {
+        "message": "${deleteText}"
+    },
+    "`_lang___(_delete_chat__)_`": {
+        "message": "ʼ+Lang.__('Chat verwijderen?')+ʼ"
+    },
+    "`_lang___(_are_you_sure_you_want_to_delete_this_chat__)_`": {
+        "message": "ʼ+Lang.__('Weet je zeker dat je deze chat wilt verwijderen?')+ʼ"
+    },
+    "`_lang___(_cancel_)_`": {
+        "message": "ʼ+Lang.__('Annuleren')+ʼ"
+    },
+    "`_lang___(_delete_)_`": {
+        "message": "ʼ+Lang.__('Verwijderen')+ʼ"
+    },
+    "file": {
+        "message": "Bestand"
+    },
+    "thinking": {
+        "message": "Aan het nadenken"
+    },
+    "copy_response": {
+        "message": "Antwoord kopiëren"
+    },
+    "good_response": {
+        "message": "Goed antwoord"
+    },
+    "bad_response": {
+        "message": "Slecht antwoord"
+    },
+    "uploading___": {
+        "message": "Bezig met uploaden..."
+    },
+    "`_lang___(_thinking_)_`": {
+        "message": "ʼ+Lang.__('Aan het nadenken')+ʼ"
+    },
+    "feedback": {
+        "message": "Feedback"
+    },
+    "share": {
+        "message": "Delen"
+    },
+    "rate_us": {
+        "message": "Beoordeel ons"
+    },
+    "💀": {
+        "message": "💀"
+    },
+    "😞": {
+        "message": "😞"
+    },
+    "😐": {
+        "message": "😐"
+    },
+    "🙂": {
+        "message": "🙂"
+    },
+    "😍": {
+        "message": "😍"
+    },
+    "grok_3_is_here_": {
+        "message": "Grok 3 is hier."
+    },
+    "what_do_you_want_to_know_": {
+        "message": "Wat wil je weten?"
+    },
+    "how_can_grok_help_you_": {
+        "message": "Hoe kan Grok je helpen?"
+    },
+    "attach_file": {
+        "message": "Bestand bijvoegen"
+    },
+    "select_a_model": {
+        "message": "Selecteer een model"
+    },
+    "sent_message": {
+        "message": "Verzonden bericht"
+    },
+    "hey_": {
+        "message": "Hoi,"
+    },
+    "welcome_": {
+        "message": "welkom!"
+    },
+    "how_can_i_help_you_": {
+        "message": "Hoe kan ik je helpen?"
+    },
+    "message_deepseek": {
+        "message": "Bericht DeepSeek"
+    },
+    "summarize_the_current_page": {
+        "message": "Vat de huidige pagina samen"
+    },
+    "upload_a_file": {
+        "message": "Upload een bestand"
+    },
+    "start_a_chat": {
+        "message": "Begin een chat"
+    },
+    "set_personalization": {
+        "message": "Stel personalisatie in"
+    },
+    "new_chat": {
+        "message": "Nieuwe chat"
+    },
+    "switch_to_light_mode": {
+        "message": "Schakel over naar Lichtmodus"
+    },
+    "switch_to_dark_mode": {
+        "message": "Schakel over naar Donker modus"
+    },
+    "open_the_extension_in_a_separate_tab": {
+        "message": "Open de extensie in een nieuw tabblad"
+    },
+    "{{_item_}}": {
+        "message": "{{ item }}"
+    },
+    "start_now": {
+        "message": "Begin nu"
+    },
+    "get_ideas": {
+        "message": "Krijg ideeën"
+    },
+    "ask": {
+        "message": "Vraag"
+    },
+    "code": {
+        "message": "Code"
+    },
+    "translate": {
+        "message": "Vertaal"
+    },
+    "cooking_tips": {
+        "message": "Kooktips"
+    },
+    "how_deepseek_ai_helps_you_": {
+        "message": "Hoe helpt DeepSeek AI je?"
+    },
+    "✨_get_spot_on_answers_10x_faster": {
+        "message": "✨ Krijg trefzekere antwoorden 10x sneller"
+    },
+    "no_google__no_tab_chaos__no_time_wasted": {
+        "message": "geen Google, geen tab chaos, geen tijdverspilling"
+    },
+    "📚_save_hours_on_studying": {
+        "message": "📚 Bespaar uren met studeren"
+    },
+    "generate_essays__auto_complete_tests__and_summarize_any_page_in_minutes_": {
+        "message": "Genereer essays, vul toetsen automatisch in en vat elke pagina in minuten samen."
+    },
+    "🌍_real_time_translation_on_the_page": {
+        "message": "🌍 Vertaling in realtime op de pagina"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments": {
+        "message": "Schrijf als een native, zonder fouten of ongemakkelijke momenten. Recht op de pagina."
+    },
+    "💻_your_ai_copilot_for_coding": {
+        "message": "💻 Je AI Copiloot voor coderen"
+    },
+    "fix_bugs__decode_legacy_and_write_code_3x_faster__enjoy_your_work_and_earn_more_": {
+        "message": "Los bugs op, decodeer legacy en schrijf code 3x sneller. Geniet van je werk en verdien meer."
+    },
+    "where_do_we_start_": {
+        "message": "Waar beginnen we?"
+    },
+    "get_10_post_ideas_for_my_cooking_blog": {
+        "message": "Krijg 10 ideeën voor mijn kookblog"
+    },
+    "find_a_billion_dollar_no_code_startup_idea": {
+        "message": "Vind een miljard-dollar no-code startup-idee"
+    },
+    "give_me_fun_game_ideas_to_play_with_my_kids_at_home": {
+        "message": "Geef me leuke spelideeën om thuis met mijn kinderen te spelen"
+    },
+    "write_3_viral_tiktok_post_ideas_about_personal_finance": {
+        "message": "Schrijf 3 virale TikTok-ideeën over persoonlijke financiën"
+    },
+    "recommend_5_books_that_will_change_the_way_i_think": {
+        "message": "Aanbevelen van 5 boeken die mijn denkwijze zullen veranderen"
+    },
+    "what_daily_habits_can_boost_my_creativity_": {
+        "message": "Welke dagelijkse gewoonten kunnen mijn creativiteit vergroten?"
+    },
+    "help_me_set_3_achievable_goals_for_the_next_30_days": {
+        "message": "Help me bij het stellen van 3 haalbare doelen voor de komende 30 dagen"
+    },
+    "how_can_i_make_my_facebook_profile_more_attractive_": {
+        "message": "Hoe kan ik mijn Facebook-profiel aantrekkelijker maken?"
+    },
+    "generate_a_basic_react_component_for_a_to_do_list": {
+        "message": "Genereer een basis React-component voor een takenlijst"
+    },
+    "can_you_explain_javascript_promises_in_a_simple_way_": {
+        "message": "Kun je JavaScript-beloftes op een eenvoudige manier uitleggen?"
+    },
+    "how_do_i_build_a_rest_api_endpoint_using_fastapi_in_python_": {
+        "message": "Hoe bouw ik een REST API-endpoint met FastAPI in Python?"
+    },
+    "how_can_i_add_social_login_(google_facebook)_to_my_app_": {
+        "message": "Hoe voeg ik sociale login toe (Google/Facebook) aan mijn app?"
+    },
+    "how_do_you_say_“love”_in_french_": {
+        "message": "Hoe zeg je “liefde” in het Frans?"
+    },
+    "how_do_you_say_“delicious_food”_in_italian_": {
+        "message": "Hoe zeg je “heerlijk eten” in het Italiaans?"
+    },
+    "what_s_the_korean_translation_of_“i_miss_you”_": {
+        "message": "Wat is de Koreaanse vertaling van “Ik mis je”?"
+    },
+    "what_s_the_arabic_word_for_“peace”_": {
+        "message": "Wat is het Arabische woord voor “vrede”?"
+    },
+    "quick_breakfast_ideas_kids_will_actually_love": {
+        "message": "Snelle ontbijtips waar kinderen echt dol op zullen zijn"
+    },
+    "what_are_5_no_sugar_snacks_i_can_make_at_home_": {
+        "message": "Wat zijn 5 suikervrije snacks die ik thuis kan maken?"
+    },
+    "give_me_an_easy_3_ingredient_dessert_recipe": {
+        "message": "Geef me een eenvoudig dessertrecept met 3 ingrediënten"
+    },
+    "easy_dessert_tips": {
+        "message": "Eenvoudige desserttips"
+    },
+    "click": {
+        "message": "Klik"
+    },
+    "add_deepseek_ai_to_the_toolbar_for_quick_access": {
+        "message": "Voeg DeepSeek AI toe aan de werkbalk voor snelle toegang"
+    },
+    "file_download_has_started": {
+        "message": "Bestand downloaden is begonnen"
+    },
+    "to_get_this_file_again_": {
+        "message": "Om dit bestand opnieuw te krijgen,"
+    },
+    "click_here": {
+        "message": "klik hier"
+    },
+    "show_downloaded_file": {
+        "message": "Toon gedownload bestand"
+    },
+    "files_on_the_computer_can_only_be_opened_in_the_google_chrome_extension": {
+        "message": "Bestanden op de computer kunnen alleen worden geopend in de Google Chrome-extensie"
+    },
+    "enjoy_the_conversion_": {
+        "message": "Geniet van de conversie?"
+    },
+    "please_rate_your_experience_with_our_extension": {
+        "message": "Beoordeel je ervaring met onze extensie"
+    },
+    "try_again": {
+        "message": "Probeer het opnieuw"
+    },
+    "help_us_be_better": {
+        "message": "Help ons beter te worden"
+    },
+    "your_feedback_matters__what_can_we_improve_": {
+        "message": "Jouw feedback is belangrijk. Wat kunnen we verbeteren?"
+    },
+    "send": {
+        "message": "Verzenden"
+    },
+    "write_your_feedback_here": {
+        "message": "Schrijf hier je feedback"
+    },
+    "support_us_in_10_seconds": {
+        "message": "Steun ons in 10 seconden"
+    },
+    "1__click": {
+        "message": "1. Klik"
+    },
+    "_write_a_review_": {
+        "message": "\\\"Schrijf een recensie\\\""
+    },
+    "2__rate_and_post_your_feedback": {
+        "message": "2. Beoordeel en plaats je feedback"
+    },
+    "thanks_for_helping_us_grow_": {
+        "message": "Bedankt dat je ons helpt groeien!"
+    },
+    "select_your_language": {
+        "message": "Selecteer je taal"
+    },
+    "type_to_filter_languages___": {
+        "message": "Typ om talen te filteren..."
+    },
+    "create_public_link": {
+        "message": "Maak openbare link"
+    },
+    "this_file_will_be_available_to_anyone__public_links_are_temporary_and_will_be_removed_after_24_hours_": {
+        "message": "Dit bestand is voor iedereen beschikbaar. Openbare links zijn tijdelijk en worden na 24 uur verwijderd."
+    },
+    "create": {
+        "message": "Maak aan"
+    },
+    "save_hours_on_studying": {
+        "message": "[textgradientEl]Bespaar uren[\/textgradientEl] met studeren"
+    },
+    "auto_complete_tests__generate_essays__and_summarize_any_page_in_minutes_": {
+        "message": "Automatisch toetsen invullen, essays genereren en elke pagina in minuten samenvatten."
+    },
+    "step": {
+        "message": "Stap"
+    },
+    "of": {
+        "message": "van"
+    },
+    "continue": {
+        "message": "Ga verder"
+    },
+    "use_ai_translation_magic": {
+        "message": "Gebruik AI Vertaal [textgradientEl]Magie[\/textgradientEl]"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments__right_on_the_page_": {
+        "message": "Schrijf als een native, zonder fouten of ongemakkelijke momenten. Recht op de pagina."
+    },
+    "get_your_ai_copilot_for_coding": {
+        "message": "Krijg je [textgradientEl]AI Copiloot[\/textgradientEl] voor coderen"
+    },
+    "try_now": {
+        "message": "Probeer nu"
+    },
+    "did_this_tool_help_you_": {
+        "message": "Heeft deze tool je geholpen?"
+    },
+    "share_it_with_friends_who_work_with_images_": {
+        "message": "Deel het met vrienden die met afbeeldingen werken."
+    },
+    "who_would_find_it_useful_": {
+        "message": "Wie zou het nuttig vinden?"
+    },
+    "copy_link": {
+        "message": "Kopieer link"
+    },
+    "facebook": {
+        "message": "Facebook"
+    },
+    "x": {
+        "message": "X"
+    },
+    "telegram": {
+        "message": "Telegram"
+    },
+    "i_found_a_super_useful_chrome_extension__": {
+        "message": "Ik heb een superhandige Chrome-extensie gevonden —"
+    },
+    "it_can_save_any_website_as_a_pdf__you_should_try_it_out___it_s_great_": {
+        "message": "Het kan elke website opslaan als PDF. Je zou het moeten proberen — het is geweldig!"
+    },
+    "hooray__greate_job_": {
+        "message": "Hoera, goed gedaan!"
+    },
+    "please__can_you_rate_us_": {
+        "message": "Alsjeblieft, kun je ons beoordelen?"
+    },
+    "deepseek_ai_has_been_installed_": {
+        "message": "DeepSeek AI is geïnstalleerd!"
+    },
+    "get_answers_10x_faster___no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Krijg antwoorden 10x sneller — geen Google, geen tab chaos, geen tijdverspilling"
+    },
+    "open_deepseek_ai": {
+        "message": "Open DeepSeek AI"
+    },
+    "deepseek_app": {
+        "message": "DeepSeek App"
+    },
+    "love_deepseek_": {
+        "message": "Hou je van DeepSeek?"
+    },
+    "could_you_please_rate_our_extension_": {
+        "message": "Kun je onze extensie beoordelen?"
+    },
+    "share_this_extension_with_your_friends": {
+        "message": "Deel deze extensie met je vrienden"
+    },
+    "share_us_with_your_friends": {
+        "message": "Deel ons met je vrienden"
+    },
+    "and_unlock_all_ai_assistant_features": {
+        "message": "En ontgrendel alle functies van de AI-assistent"
+    },
+    "vk_com": {
+        "message": "Vk.com"
+    },
+    "reddit": {
+        "message": "Reddit"
+    },
+    "whatsapp": {
+        "message": "WhatsApp"
+    },
+    "weibo": {
+        "message": "Weibo"
+    },
+    "post_preview": {
+        "message": "Berichtvoorbeeld"
+    },
+    "hey__i_m_your_ai_assistant_": {
+        "message": "Hoi, ik ben je AI-assistent!"
+    },
+    "what_can_i_help_with_": {
+        "message": "Waarmee kan ik je helpen?"
+    },
+    "history": {
+        "message": "Geschiedenis"
+    },
+    "settings": {
+        "message": "Instellingen"
+    },
+    "subscription": {
+        "message": "Abonnement"
+    },
+    "add_personal_info_or_instructions_to_the_ai_assistant__this_will_help_improve_responses_for_you_": {
+        "message": "Voeg persoonlijke informatie of instructies toe aan de AI-assistent. Dit helpt om de antwoorden te verbeteren."
+    },
+    "save": {
+        "message": "Opslaan"
+    },
+    "and_you_ll_unlock_all_ai_assistant_features": {
+        "message": "En je ontgrendelt alle functies van de AI-assistent"
+    },
+    "e_g___always_reply_in_french": {
+        "message": "bijv. altijd in het Frans antwoorden"
+    },
+    "_p_you_can_try_the_ai_assistant_to_play_a_role__e_g____p__ul__li_act_as_an_english_teacher_and_correct_my_mistakes__li__li_respond_like_a_professional_business_consultant__li___ul__p_or_input_your_data_for_the_ai_assistant_to_generate_responses__e_g____p__ul__li_23_y_o___58_kg__height_165_cm__female__li__li_programmer__php___laravel__js___react___li___ul_": {
+        "message": "<p>Je kunt de AI-assistent proberen om een rol te spelen, bijvoorbeeld:</p><ul><li>Optreden als een leraar Engels en mijn fouten corrigeren</li><li>Reageer als een professionele zakelijke adviseur</li></ul><p>Of voer je gegevens in zodat de AI-assistent antwoorden kan genereren, bijvoorbeeld:</p><ul><li>23 jaar, 58 kg, lengte 165 cm, vrouw</li><li>Programmeur. PHP – Laravel, JS – React.</li></ul>"
+    }
+}

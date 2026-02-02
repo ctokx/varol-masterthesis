@@ -1,0 +1,74 @@
+{
+  "extension_id": "pkcoogcpeheamgkhfhelaifnpmehdgmp",
+  "extension_name": "ChatGPT for Google Chrome™",
+  "version": "0.1",
+  "user_count": 3000,
+  "dataset": "chatgpt",
+  "verdict": "MALICIOUS",
+  "confidence": 1.0,
+  "recommendation": "BLOCK",
+  "reasoning": "The extension is a classic example of dual-purpose malicious behavior. While it provides the advertised ChatGPT wrapper, its primary background activity is a 'Green Mode' feature that performs silent affiliate link injection. It requests broad 'host_permissions' for all URLs (*/*) and uses 'tabs' access to monitor the user's browsing behavior in real-time. When a user visits a site matched in its partner list, it silently opens a hidden tab to the developer's affiliate URL, waits 2 seconds (long enough for the merchant to set a tracking cookie), and then closes the tab. This monetizes the user's browsing without clear disclosure of the affiliate mechanism, effectively performing cookie stuffing.",
+  "full_validation": {
+    "extension_id": "pkcoogcpeheamgkhfhelaifnpmehdgmp",
+    "verdict": "MALICIOUS",
+    "confidence": 1.0,
+    "reasoning": "The extension is a classic example of dual-purpose malicious behavior. While it provides the advertised ChatGPT wrapper, its primary background activity is a 'Green Mode' feature that performs silent affiliate link injection. It requests broad 'host_permissions' for all URLs (*/*) and uses 'tabs' access to monitor the user's browsing behavior in real-time. When a user visits a site matched in its partner list, it silently opens a hidden tab to the developer's affiliate URL, waits 2 seconds (long enough for the merchant to set a tracking cookie), and then closes the tab. This monetizes the user's browsing without clear disclosure of the affiliate mechanism, effectively performing cookie stuffing.",
+    "recommendation": "BLOCK",
+    "key_concerns": [
+      "Silent background monitoring of all visited URLs.",
+      "Hidden affiliate link injection (cookie stuffing) via background tabs.",
+      "Monetization of user browsing history unrelated to the stated AI assistant purpose.",
+      "The 'Green Mode' framing is deceptive, as it masks a commercial tracking/monetization engine as an environmental or safety feature."
+    ],
+    "evidence": {
+      "exfiltration_chain": {
+        "data_collected": "User browsing history (URLs)",
+        "processing_method": "The background script monitors all tab updates via chrome.tabs.onUpdated. It extracts the hostname and compares it against a 'partners' map loaded from partners.json.",
+        "destination_domain": "Variable affiliate domains via affiliate_url",
+        "code_evidence": "t = async (t, n, r) => { if (await s(t) && 'complete' === n.status) { const n = o(r.url); if (await a(n)) { const o = e.get(n); o && o.affiliate_url && (i(o.affiliate_url, n), l(t)) } } }; chrome.tabs.onUpdated.addListener(t)"
+      },
+      "dual_purpose": {
+        "stated_purpose": "AI/ChatGPT assistant providing a keyboard-accessible popup window for chat.openai.com",
+        "hidden_functionality": "Affiliate link injection / Cookie stuffing. The extension monitors every website the user visits, checks if the site is a 'partner', and if so, silently opens an affiliate link in a hidden background tab for 2 seconds to set tracking cookies before closing it.",
+        "code_evidence": "function i(e, t) { chrome.storage.local.set({ [t]: Date.now() }); chrome.tabs.create({ url: e, active: !1 }, (e => { ... setTimeout((() => { chrome.tabs.get(o, (() => { ... chrome.tabs.remove(o) })) }), 2e3) })) }"
+      },
+      "credential_theft": {
+        "capture_mechanism": null,
+        "transmission_target": null,
+        "code_evidence": null
+      }
+    },
+    "domains": {
+      "legitimate": [
+        "chat.openai.com",
+        "clients2.google.com"
+      ],
+      "requires_investigation": [],
+      "informational_only": [
+        "scripts.green"
+      ]
+    },
+    "pattern_assessment": [
+      {
+        "pattern": "TABS_ACCESS",
+        "usage": "MALICIOUS",
+        "justification": "Used to monitor the URL of every tab the user visits (via chrome.tabs.onUpdated) to trigger affiliate link injection."
+      },
+      {
+        "pattern": "FETCH",
+        "usage": "SUSPICIOUS",
+        "justification": "Used to fetch a local 'partners.json' file which contains the list of target domains for affiliate injection."
+      },
+      {
+        "pattern": "INNERHTML",
+        "usage": "SAFE",
+        "justification": "Used for constructing UI elements for the 'Green Mode' consent popup and notifications."
+      }
+    ],
+    "token_usage": {
+      "prompt": 6544,
+      "candidates": 947,
+      "total": 8494
+    }
+  }
+}

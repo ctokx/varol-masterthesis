@@ -1,0 +1,62 @@
+{
+  "feedback": {
+    "message": "ติดต่อเรา"
+  },
+  "hello": {
+    "message": "สวัสดี!"
+  },
+  "ask_anything": {
+    "message": "ถามอะไรก็ได้"
+  },
+  "ask_about_this_page": {
+    "message": "ถามเกี่ยวกับหน้านี้"
+  },
+  "summarize_this_page": {
+    "message": "สรุปหน้านี้"
+  },
+  "add_photos_and_files": {
+    "message": "เพิ่มรูปภาพและไฟล์"
+  },
+  "create_image": {
+    "message": "สร้างรูปภาพ"
+  },
+  "web_search": {
+    "message": "ค้นหาเว็บ"
+  },
+  "teacher_mode": {
+    "message": "โหมดครู"
+  },
+  "voice_input": {
+    "message": "ป้อนด้วยเสียง"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "ผู้ช่วยรวดเร็วประจำวัน"
+  },
+  "model_deep_reasoning": {
+    "message": "โมเดลการใช้เหตุผลเชิงลึก"
+  },
+  "model_quick_multimodal": {
+    "message": "การตอบสนองแบบหลายรูปแบบที่รวดเร็ว"
+  },
+  "model_advanced_google_ai": {
+    "message": "AI ขั้นสูงจาก Google"
+  },
+  "model_complex_problem_solving": {
+    "message": "การแก้ปัญหาที่ซับซ้อน"
+  },
+  "model_powerful_opensource": {
+    "message": "โมเดลโอเพนซอร์สที่ทรงพลัง"
+  },
+  "model_reasoning_specialist": {
+    "message": "ผู้เชี่ยวชาญด้านการใช้เหตุผล"
+  },
+  "model_balanced_reliable": {
+    "message": "สมดุลและเชื่อถือได้"
+  },
+  "model_most_capable": {
+    "message": "Claude ที่มีความสามารถมากที่สุด"
+  },
+  "model_label_fastest": {
+    "message": "เร็วที่สุด"
+  }
+}

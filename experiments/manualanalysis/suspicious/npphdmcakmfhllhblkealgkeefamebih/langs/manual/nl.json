@@ -1,0 +1,65 @@
+{
+  "clean_all": {
+    "message": "Resetten"
+  },
+  "convert_to": {
+    "message": "Formaat"
+  },
+  "hello": {
+    "message": "Hallo!"
+  },
+  "ask_anything": {
+    "message": "Vraag alles"
+  },
+  "ask_about_this_page": {
+    "message": "Vraag over deze pagina"
+  },
+  "summarize_this_page": {
+    "message": "Vat deze pagina samen"
+  },
+  "add_photos_and_files": {
+    "message": "Foto's en bestanden toevoegen"
+  },
+  "create_image": {
+    "message": "Afbeelding maken"
+  },
+  "web_search": {
+    "message": "Zoeken op het web"
+  },
+  "teacher_mode": {
+    "message": "Leraar modus"
+  },
+  "voice_input": {
+    "message": "Spraakinvoer"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "Snelle dagelijkse assistent"
+  },
+  "model_deep_reasoning": {
+    "message": "Diep redeneermodel"
+  },
+  "model_quick_multimodal": {
+    "message": "Snelle multimodale antwoorden"
+  },
+  "model_advanced_google_ai": {
+    "message": "Geavanceerde Google AI"
+  },
+  "model_complex_problem_solving": {
+    "message": "Complexe probleemoplossing"
+  },
+  "model_powerful_opensource": {
+    "message": "Krachtig open-source model"
+  },
+  "model_reasoning_specialist": {
+    "message": "Redeneerspecialist"
+  },
+  "model_balanced_reliable": {
+    "message": "Evenwichtig en betrouwbaar"
+  },
+  "model_most_capable": {
+    "message": "Meest capabele Claude"
+  },
+  "model_label_fastest": {
+    "message": "Snelste"
+  }
+}

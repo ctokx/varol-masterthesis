@@ -1,0 +1,76 @@
+{
+  "extension_id": "niccnmfnkokileojoalgiinemlekmfoa",
+  "extension_name": "Claude 3.5 Sonnet",
+  "version": "Unknown",
+  "user_count": 1000,
+  "dataset": "claude",
+  "verdict": "SUSPICIOUS",
+  "confidence": 0.9,
+  "recommendation": "REVIEW",
+  "reasoning": "The extension is classified as SUSPICIOUS primarily due to trademark impersonation and the collection of browsing context. It claims to be an official 'Claude 3.5 Sonnet' extension (using Anthropic's branding) but is actually a wrapper for 'ext-access.pro'. It contains a significant amount of code for a third-party paywall system ('onlineapp.pro') which is not disclosed in its primary purpose. Most importantly, 'extension-bridge.js' allows the remote origin to request the user's current URL and page title, which is then exfiltrated to the developer's server. While not explicitly stealing credentials, the deceptive branding combined with context harvesting and a third-party billing engine are high-risk indicators of 'grayware' or a potentially unwanted application.",
+  "full_validation": {
+    "extension_id": "niccnmfnkokileojoalgiinemlekmfoa",
+    "verdict": "SUSPICIOUS",
+    "confidence": 0.9,
+    "reasoning": "The extension is classified as SUSPICIOUS primarily due to trademark impersonation and the collection of browsing context. It claims to be an official 'Claude 3.5 Sonnet' extension (using Anthropic's branding) but is actually a wrapper for 'ext-access.pro'. It contains a significant amount of code for a third-party paywall system ('onlineapp.pro') which is not disclosed in its primary purpose. Most importantly, 'extension-bridge.js' allows the remote origin to request the user's current URL and page title, which is then exfiltrated to the developer's server. While not explicitly stealing credentials, the deceptive branding combined with context harvesting and a third-party billing engine are high-risk indicators of 'grayware' or a potentially unwanted application.",
+    "recommendation": "REVIEW",
+    "key_concerns": [
+      "Impersonation of Claude 3.5 Sonnet (Anthropic branding).",
+      "Exfiltration of active tab URL and title to ext-access.pro.",
+      "Integration of a complex, third-party paywall system (onlineapp.pro) unrelated to the stated AI model.",
+      "Security risk: The extension-to-iframe bridge allows the remote server to read extension storage and browser metadata."
+    ],
+    "evidence": {
+      "exfiltration_chain": {
+        "data_collected": "Active tab URL and Title",
+        "processing_method": "Captured via background script and passed to a remote iframe through postMessage",
+        "destination_domain": "https://ext-access.pro",
+        "code_evidence": "chrome.runtime.sendMessage({action: 'getActiveTabInfo'}, function(response) { iframeElement.contentWindow.postMessage({ type: 'ACTIVE_TAB_INFO_RESPONSE', data: response, ... }, event.origin); });"
+      },
+      "dual_purpose": {
+        "stated_purpose": "Claude 3.5 Sonnet AI Assistant",
+        "hidden_functionality": "Impersonates a major AI brand (Anthropic's Claude) while acting as a wrapper for a third-party domain (ext-access.pro) with a separate paywall infrastructure (onlineapp.pro).",
+        "code_evidence": "window.paywall = { ... _createAndAppendIframe: function() { e.src = 'https://onlineapp.pro/paywall/'.concat(this.paywallId, '?v=2') } }"
+      },
+      "credential_theft": {
+        "capture_mechanism": null,
+        "transmission_target": null,
+        "code_evidence": null
+      }
+    },
+    "domains": {
+      "legitimate": [],
+      "requires_investigation": [
+        "https://ext-access.pro",
+        "https://onlineapp.pro",
+        "https://onlineapp.live",
+        "https://onlineapp.stream"
+      ],
+      "informational_only": [
+        "http://127.0.0.1:8000"
+      ]
+    },
+    "pattern_assessment": [
+      {
+        "pattern": "TABS_ACCESS",
+        "usage": "SUSPICIOUS",
+        "justification": "The extension captures the active tab's URL and title and sends it to the remote domain ext-access.pro. While common for AI context, doing so under the guise of an official 'Claude' extension (impersonation) is a privacy risk."
+      },
+      {
+        "pattern": "INNERHTML",
+        "usage": "LEGITIMATE",
+        "justification": "Used in action-buttons.js to dynamically render UI elements for the chat characters/prompts."
+      },
+      {
+        "pattern": "POST_MESSAGE",
+        "usage": "SUSPICIOUS",
+        "justification": "Creates a bridge that allows a remote website (ext-access.pro) to query extension storage and browser tab information, effectively bypassing some extension isolation boundaries."
+      }
+    ],
+    "token_usage": {
+      "prompt": 11827,
+      "candidates": 950,
+      "total": 16170
+    }
+  }
+}

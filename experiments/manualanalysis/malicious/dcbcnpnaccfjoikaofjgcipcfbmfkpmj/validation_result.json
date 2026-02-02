@@ -1,0 +1,71 @@
+{
+  "extension_id": "dcbcnpnaccfjoikaofjgcipcfbmfkpmj",
+  "verdict": "MALICIOUS",
+  "confidence": 1.0,
+  "reasoning": "The extension is a Trojanized variant of an AI assistant. While it contains functional code for translation and ChatGPT interaction, it includes a hardcoded Telegram Bot API credential. This token allows the extension to silently send data (stolen via the excessive Google Drive and Identity permissions) to the attacker's Telegram account. The presence of 'readaloud.app' code suggests the attacker repackaged a legitimate open-source extension and injected this malicious exfiltration logic into the large bundled files (options.js and popup.js).",
+  "recommendation": "BLOCK",
+  "key_concerns": [
+    "Hardcoded Telegram Bot token for silent data exfiltration.",
+    "Excessive permissions to read Google Drive files and user identity info.",
+    "Cookie access patterns targeted at stealing session credentials.",
+    "Unauthorized data transmission to ImgBB and Telegram."
+  ],
+  "evidence": {
+    "exfiltration_chain": {
+      "data_collected": "User profile information, Google Drive file metadata/content, and potential session data.",
+      "processing_method": "Data is retrieved via the Google Identity and Drive APIs and then transmitted using the Telegram Bot API.",
+      "destination_domain": "api.telegram.org",
+      "code_evidence": "options.js Line 56038: NETWORK_ENDPOINT → https://api.telegram.org/bot7174333740:AAEUreblNEkBT6Xr9YCCgg-Xgn6nFpLZm9I/sendM"
+    },
+    "dual_purpose": {
+      "stated_purpose": "AI/ChatGPT assistant for Google Chrome.",
+      "hidden_functionality": "Secret data exfiltration to a developer-controlled Telegram channel and image uploading to ImgBB.",
+      "code_evidence": "options.js Line 31699: NETWORK_ENDPOINT → https://api.imgbb.com/1/upload; Line 56038: Telegram Bot API exfiltration channel."
+    },
+    "credential_theft": {
+      "capture_mechanism": "Accesses user cookies and profile data via Google Identity scopes (oauth2 in manifest).",
+      "transmission_target": "api.telegram.org",
+      "code_evidence": "manifest.json: permissions including 'identity' and 'host_permissions' for all URLs; options.js Line 30027: COOKIE_ACCESS."
+    }
+  },
+  "domains": {
+    "legitimate": [
+      "api.openai.com",
+      "www.googleapis.com",
+      "translate.google.com"
+    ],
+    "requires_investigation": [
+      "api.telegram.org",
+      "api.imgbb.com"
+    ],
+    "informational_only": [
+      "readaloud.app",
+      "support.readaloud.app",
+      "assets.lsdsoftware.com",
+      "ko-fi.com",
+      "github.com"
+    ]
+  },
+  "pattern_assessment": [
+    {
+      "pattern": "NETWORK_ENDPOINT (Telegram)",
+      "usage": "MALICIOUS",
+      "justification": "The inclusion of a hardcoded Telegram Bot token (7174333740:AAEUreblNEkBT6Xr9YCCgg-Xgn6nFpLZm9I) is definitive proof of an unauthorized Command & Control (C2) or exfiltration channel."
+    },
+    {
+      "pattern": "COOKIE_ACCESS / CREDENTIAL_ACCESS",
+      "usage": "MALICIOUS",
+      "justification": "Used in conjunction with the Telegram exfiltration channel to steal session identifiers or user identity tokens."
+    },
+    {
+      "pattern": "oauth2 (Google Drive Scope)",
+      "usage": "SUSPICIOUS",
+      "justification": "Requesting full access to a user's Google Drive files is highly excessive for a ChatGPT assistant and enables large-scale data theft."
+    }
+  ],
+  "token_usage": {
+    "prompt": 133052,
+    "candidates": 961,
+    "total": 136171
+  }
+}

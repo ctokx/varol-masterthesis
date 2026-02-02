@@ -1,0 +1,67 @@
+{
+  "hello": {
+    "message": "Hei!"
+  },
+  "ask_anything": {
+    "message": "Kysy mitä tahansa"
+  },
+  "ask_about_this_page": {
+    "message": "Kysy tästä sivusta"
+  },
+  "summarize_this_page": {
+    "message": "Tiivistä tämä sivu"
+  },
+  "add_photos_and_files": {
+    "message": "Lisää kuvia ja tiedostoja"
+  },
+  "create_image": {
+    "message": "Luo kuva"
+  },
+  "web_search": {
+    "message": "Verkkohaku"
+  },
+  "teacher_mode": {
+    "message": "Opettajatila"
+  },
+  "voice_input": {
+    "message": "Äänisyöttö"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "Nopea päivittäinen avustaja"
+  },
+  "model_deep_reasoning": {
+    "message": "Syvä päättelymalli"
+  },
+  "model_quick_multimodal": {
+    "message": "Nopeat multimodaaliset vastaukset"
+  },
+  "model_advanced_google_ai": {
+    "message": "Edistynyt Google-tekoäly"
+  },
+  "model_complex_problem_solving": {
+    "message": "Monimutkainen ongelmanratkaisu"
+  },
+  "model_powerful_opensource": {
+    "message": "Tehokas avoimen lähdekoodin malli"
+  },
+  "model_reasoning_specialist": {
+    "message": "Päättelyasiantuntija"
+  },
+  "model_balanced_reliable": {
+    "message": "Tasapainoinen ja luotettava"
+  },
+  "model_most_capable": {
+    "message": "Kyvykkäin Claude"
+  },
+  "model_label_fastest": {
+    "message": "Nopein"
+  }
+}
+
+
+
+
+
+
+
+

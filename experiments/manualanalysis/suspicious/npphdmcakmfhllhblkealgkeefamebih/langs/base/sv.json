@@ -1,0 +1,485 @@
+{
+    "you_need_to_approve_the_permissions_to_open_the_extension_in_the_side_panel_": {
+        "message": "Du måste godkänna behörigheterna för att öppna tillägget i sidopanelen."
+    },
+    "dropblock_head": {
+        "message": "dropBlock_head"
+    },
+    "open_the_extension_in_a_sidepanel": {
+        "message": "Öppna tillägget i en sidopanel"
+    },
+    "link_was_copied_": {
+        "message": "Länken kopierades!"
+    },
+    "drag_and_drop_your_files_here": {
+        "message": "Dra och släpp dina filer här"
+    },
+    "only_text_content_will_be_processed__up_to_5_files__each_up_to_5mb_": {
+        "message": "Endast textinnehåll kommer att bearbetas. Upp till 5 filer, varje upp till 5 MB."
+    },
+    "you_can_upload_a_maximum_of_5_files_per_dialog__please_upload_files_in_smaller_batches_": {
+        "message": "Du kan ladda upp högst 5 filer per dialog. Vänligen ladda upp filer i mindre batchar."
+    },
+    "invalid_file_format_or_file_size_exceeds_5_mb__please_select_smaller_files_": {
+        "message": "Ogiltigt filformat eller filstorlek överstiger 5 MB. Vänligen välj mindre filer."
+    },
+    "permissions_are_missing__please_grant_the_extension_access_to_web_pages_": {
+        "message": "Behörigheter saknas. Vänligen ge tillägget tillgång till webbsidor."
+    },
+    "error__please_try_again_later_": {
+        "message": "Ett fel uppstod, vänligen försök igen senare."
+    },
+    "summarization_does_not_work_on_system_pages__please_copy_the_page_content_into_the_chat_manually_": {
+        "message": "Sammanfattning fungerar inte på system sidor. Vänligen kopiera sidans innehåll till chatten manuellt."
+    },
+    "delete": {
+        "message": "Radera"
+    },
+    "delete_chat_": {
+        "message": "Vill du radera chatten?"
+    },
+    "are_you_sure_you_want_to_delete_this_chat_": {
+        "message": "Är du säker på att du vill radera denna chatt?"
+    },
+    "cancel": {
+        "message": "Avbryt"
+    },
+    "the_chat_was_deleted": {
+        "message": "Chatten raderades"
+    },
+    "`_text_`": {
+        "message": "ʼ+text+ʼ"
+    },
+    "`_lang___(text)_`": {
+        "message": "ʼ+Lang.__(text)+ʼ"
+    },
+    "${deletetext}": {
+        "message": "${deleteText}"
+    },
+    "`_lang___(_delete_chat__)_`": {
+        "message": "ʼ+Lang.__('Vill du radera chatten?')+ʼ"
+    },
+    "`_lang___(_are_you_sure_you_want_to_delete_this_chat__)_`": {
+        "message": "ʼ+Lang.__('Är du säker på att du vill radera denna chatt?')+ʼ"
+    },
+    "`_lang___(_cancel_)_`": {
+        "message": "ʼ+Lang.__('Avbryt')+ʼ"
+    },
+    "`_lang___(_delete_)_`": {
+        "message": "ʼ+Lang.__('Radera')+ʼ"
+    },
+    "file": {
+        "message": "Fil"
+    },
+    "thinking": {
+        "message": "Tänker"
+    },
+    "copy_response": {
+        "message": "Kopiera svar"
+    },
+    "good_response": {
+        "message": "Bra svar"
+    },
+    "bad_response": {
+        "message": "Dåligt svar"
+    },
+    "uploading___": {
+        "message": "Laddar upp..."
+    },
+    "`_lang___(_thinking_)_`": {
+        "message": "ʼ+Lang.__('Tänker')+ʼ"
+    },
+    "feedback": {
+        "message": "Feedback"
+    },
+    "share": {
+        "message": "Dela"
+    },
+    "rate_us": {
+        "message": "Betygsätt oss"
+    },
+    "💀": {
+        "message": "💀"
+    },
+    "😞": {
+        "message": "😞"
+    },
+    "😐": {
+        "message": "😐"
+    },
+    "🙂": {
+        "message": "🙂"
+    },
+    "😍": {
+        "message": "😍"
+    },
+    "grok_3_is_here_": {
+        "message": "Grok 3 är här."
+    },
+    "what_do_you_want_to_know_": {
+        "message": "Vad vill du veta?"
+    },
+    "how_can_grok_help_you_": {
+        "message": "Hur kan Grok hjälpa dig?"
+    },
+    "attach_file": {
+        "message": "Bifoga fil"
+    },
+    "select_a_model": {
+        "message": "Välj en modell"
+    },
+    "sent_message": {
+        "message": "Skickat meddelande"
+    },
+    "hey_": {
+        "message": "Hej,"
+    },
+    "welcome_": {
+        "message": "välkommen!"
+    },
+    "how_can_i_help_you_": {
+        "message": "Hur kan jag hjälpa dig?"
+    },
+    "message_deepseek": {
+        "message": "Meddelande DeepSeek"
+    },
+    "summarize_the_current_page": {
+        "message": "Sammanfatta den aktuella sidan"
+    },
+    "upload_a_file": {
+        "message": "Ladda upp en fil"
+    },
+    "start_a_chat": {
+        "message": "Starta en chatt"
+    },
+    "set_personalization": {
+        "message": "Ställ in anpassning"
+    },
+    "new_chat": {
+        "message": "Ny chatt"
+    },
+    "switch_to_light_mode": {
+        "message": "Byt till Ljusläge"
+    },
+    "switch_to_dark_mode": {
+        "message": "Byt till Mörkläge"
+    },
+    "open_the_extension_in_a_separate_tab": {
+        "message": "Öppna tillägget i en separat flik"
+    },
+    "{{_item_}}": {
+        "message": "{{ item }}"
+    },
+    "start_now": {
+        "message": "Börja nu"
+    },
+    "get_ideas": {
+        "message": "Få idéer"
+    },
+    "ask": {
+        "message": "Fråga"
+    },
+    "code": {
+        "message": "Kod"
+    },
+    "translate": {
+        "message": "Översätt"
+    },
+    "cooking_tips": {
+        "message": "Matlagningstips"
+    },
+    "how_deepseek_ai_helps_you_": {
+        "message": "Hur hjälper DeepSeek AI dig?"
+    },
+    "✨_get_spot_on_answers_10x_faster": {
+        "message": "✨ Få träffsäkra svar 10x snabbare"
+    },
+    "no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Ingen Google, inget tabbråk, ingen tid förlorad"
+    },
+    "📚_save_hours_on_studying": {
+        "message": "📚 Spara timmar på studier"
+    },
+    "generate_essays__auto_complete_tests__and_summarize_any_page_in_minutes_": {
+        "message": "Generera uppsatser, fyll i prov automatiskt och sammanfatta vilken sida som helst på minuter."
+    },
+    "🌍_real_time_translation_on_the_page": {
+        "message": "🌍 Real-tids översättning på sidan"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments__right_on_the_page_": {
+        "message": "Skriv som en infödd, utan misstag eller pinsamma ögonblick. Direkt på sidan."
+    },
+    "get_your_ai_copilot_for_coding": {
+        "message": "Få din AI-kopilot för kodning"
+    },
+    "fix_bugs__decode_legacy_and_write_code_3x_faster__enjoy_your_work_and_earn_more_": {
+        "message": "Fixa buggar, dekoda arv och skriv kod 3x snabbare. Njut av ditt arbete och tjäna mer."
+    },
+    "where_do_we_start_": {
+        "message": "Var börjar vi?"
+    },
+    "get_10_post_ideas_for_my_cooking_blog": {
+        "message": "Få 10 inläggsidéer till min matlagningsblogg"
+    },
+    "find_a_billion_dollar_no_code_startup_idea": {
+        "message": "Hitta en miljarddollars no-code startup-idé"
+    },
+    "give_me_fun_game_ideas_to_play_with_my_kids_at_home": {
+        "message": "Ge mig roliga spelidéer att leka med mina barn hemma"
+    },
+    "write_3_viral_tiktok_post_ideas_about_personal_finance": {
+        "message": "Skriv 3 virala TikTok-idéer om personlig ekonomi"
+    },
+    "recommend_5_books_that_will_change_the_way_i_think": {
+        "message": "Rekommendera 5 böcker som kommer att förändra mitt sätt att tänka"
+    },
+    "what_daily_habits_can_boost_my_creativity_": {
+        "message": "Vilka dagliga vanor kan öka min kreativitet?"
+    },
+    "help_me_set_3_achievable_goals_for_the_next_30_days": {
+        "message": "Hjälp mig att sätta 3 uppnåeliga mål för de kommande 30 dagarna"
+    },
+    "how_can_i_make_my_facebook_profile_more_attractive_": {
+        "message": "Hur kan jag göra min Facebook-profil mer attraktiv?"
+    },
+    "generate_a_basic_react_component_for_a_to_do_list": {
+        "message": "Generera en grundläggande React-komponent för en att-göra-lista"
+    },
+    "can_you_explain_javascript_promises_in_a_simple_way_": {
+        "message": "Kan du förklara JavaScript-promiser på ett enkelt sätt?"
+    },
+    "how_do_i_build_a_rest_api_endpoint_using_fastapi_in_python_": {
+        "message": "Hur bygger jag ett REST API-endpoint med FastAPI i Python?"
+    },
+    "how_can_i_add_social_login_(google_facebook)_to_my_app_": {
+        "message": "Hur kan jag lägga till social inloggning (Google/Facebook) till min app?"
+    },
+    "how_do_you_say_“love”_in_french_": {
+        "message": "Hur säger man “love” på franska?"
+    },
+    "how_do_you_say_“delicious_food”_in_italian_": {
+        "message": "Hur säger man “delicious food” på italienska?"
+    },
+    "what_s_the_korean_translation_of_“i_miss_you”_": {
+        "message": "Vad är den koreanska översättningen av “I miss you”?"
+    },
+    "what_s_the_arabic_word_for_“peace”_": {
+        "message": "Vad är det arabiska ordet för “fred”?"
+    },
+    "quick_breakfast_ideas_kids_will_actually_love": {
+        "message": "Snabba frukostidéer som barnen verkligen kommer att älska"
+    },
+    "what_are_5_no_sugar_snacks_i_can_make_at_home_": {
+        "message": "Vad är 5 sockerfria snacks jag kan göra hemma?"
+    },
+    "give_me_an_easy_3_ingredient_dessert_recipe": {
+        "message": "Ge mig ett enkelt dessertrecept med 3 ingredienser"
+    },
+    "easy_dessert_tips": {
+        "message": "Enkla desserttips"
+    },
+    "click": {
+        "message": "Klicka"
+    },
+    "add_deepseek_ai_to_the_toolbar_for_quick_access": {
+        "message": "Lägg till DeepSeek AI i verktygsfältet för snabb åtkomst"
+    },
+    "file_download_has_started": {
+        "message": "Filnedladdningen har börjat"
+    },
+    "to_get_this_file_again_": {
+        "message": "För att få denna fil igen,"
+    },
+    "click_here": {
+        "message": "klicka här"
+    },
+    "show_downloaded_file": {
+        "message": "Visa nedladdad fil"
+    },
+    "files_on_the_computer_can_only_be_opened_in_the_google_chrome_extension": {
+        "message": "Filer på datorn kan endast öppnas i Google Chrome-tillägget"
+    },
+    "enjoy_the_conversion_": {
+        "message": "Njut av konverteringen?"
+    },
+    "please_rate_your_experience_with_our_extension": {
+        "message": "Vänligen betygsätt din upplevelse med vårt tillägg"
+    },
+    "try_again": {
+        "message": "Försök igen"
+    },
+    "help_us_be_better": {
+        "message": "Hjälp oss att bli bättre"
+    },
+    "your_feedback_matters__what_can_we_improve_": {
+        "message": "Din feedback är viktig. Vad kan vi förbättra?"
+    },
+    "send": {
+        "message": "Skicka"
+    },
+    "write_your_feedback_here": {
+        "message": "Skriv din feedback här"
+    },
+    "support_us_in_10_seconds": {
+        "message": "Stöd oss på 10 sekunder"
+    },
+    "1__click": {
+        "message": "1. Klicka"
+    },
+    "_write_a_review_": {
+        "message": "\\\"Skriv en recension\\\""
+    },
+    "2__rate_and_post_your_feedback": {
+        "message": "2. Betygsätt och posta din feedback"
+    },
+    "thanks_for_helping_us_grow_": {
+        "message": "Tack för att du hjälper oss att växa!"
+    },
+    "select_your_language": {
+        "message": "Välj ditt språk"
+    },
+    "type_to_filter_languages___": {
+        "message": "Skriv för att filtrera språk..."
+    },
+    "create_public_link": {
+        "message": "Skapa offentlig länk"
+    },
+    "this_file_will_be_available_to_anyone__public_links_are_temporary_and_will_be_removed_after_24_hours_": {
+        "message": "Denna fil kommer att vara tillgänglig för alla. Offentliga länkar är tillfälliga och tas bort efter 24 timmar."
+    },
+    "create": {
+        "message": "Skapa"
+    },
+    "save_hours_on_studying": {
+        "message": "[textgradientEl]Spara timmar[\/textgradientEl] på studier"
+    },
+    "auto_complete_tests__generate_essays__and_summarize_any_page_in_minutes_": {
+        "message": "Auto-komplettera prov, generera uppsatser och sammanfatta vilken sida som helst på minuter."
+    },
+    "step": {
+        "message": "Steg"
+    },
+    "of": {
+        "message": "av"
+    },
+    "continue": {
+        "message": "Fortsätt"
+    },
+    "use_ai_translation_magic": {
+        "message": "Använd AI-översättnings[textgradientEl]magik[\/textgradientEl]"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments__right_on_the_page_": {
+        "message": "Skriv som en infödd, utan misstag eller pinsamma ögonblick. Direkt på sidan."
+    },
+    "get_your_ai_copilot_for_coding": {
+        "message": "Få din [textgradientEl]AI-kopilot[\/textgradientEl] för kodning"
+    },
+    "try_now": {
+        "message": "Prova nu"
+    },
+    "did_this_tool_help_you_": {
+        "message": "Hjälpte detta verktyg dig?"
+    },
+    "share_it_with_friends_who_work_with_images_": {
+        "message": "Dela det med vänner som arbetar med bilder."
+    },
+    "who_would_find_it_useful_": {
+        "message": "Vem skulle tycka att det är användbart?"
+    },
+    "copy_link": {
+        "message": "Kopiera länk"
+    },
+    "facebook": {
+        "message": "Facebook"
+    },
+    "x": {
+        "message": "X"
+    },
+    "telegram": {
+        "message": "Telegram"
+    },
+    "i_found_a_super_useful_chrome_extension__": {
+        "message": "Jag hittade ett superanvändbart Chrome-tillägg —"
+    },
+    "it_can_save_any_website_as_a_pdf__you_should_try_it_out___it_s_great_": {
+        "message": "Det kan spara vilken webbplats som helst som PDF. Du borde prova det — det är fantastiskt!"
+    },
+    "hooray__greate_job_": {
+        "message": "Hurra, bra jobbat!"
+    },
+    "please__can_you_rate_us_": {
+        "message": "Vänligen, kan du betygsätta oss?"
+    },
+    "deepseek_ai_has_been_installed_": {
+        "message": "DeepSeek AI har installerats!"
+    },
+    "get_answers_10x_faster___no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Få svar 10x snabbare — ingen Google, inget tabbråk, ingen tid förlorad"
+    },
+    "open_deepseek_ai": {
+        "message": "Öppna DeepSeek AI"
+    },
+    "deepseek_app": {
+        "message": "DeepSeek App"
+    },
+    "love_deepseek_": {
+        "message": "Älskar DeepSeek?"
+    },
+    "could_you_please_rate_our_extension_": {
+        "message": "Skulle du kunna betygsätta vårt tillägg?"
+    },
+    "share_this_extension_with_your_friends": {
+        "message": "Dela detta tillägg med dina vänner"
+    },
+    "share_us_with_your_friends": {
+        "message": "Dela oss med dina vänner"
+    },
+    "and_unlock_all_ai_assistant_features": {
+        "message": "och lås upp alla AI-assistentfunktioner"
+    },
+    "vk_com": {
+        "message": "Vk.com"
+    },
+    "reddit": {
+        "message": "Reddit"
+    },
+    "whatsapp": {
+        "message": "WhatsApp"
+    },
+    "weibo": {
+        "message": "Weibo"
+    },
+    "post_preview": {
+        "message": "Inläggsgranskning"
+    },
+    "hey__i_m_your_ai_assistant_": {
+        "message": "Hej, jag är din AI-assistent!"
+    },
+    "what_can_i_help_with_": {
+        "message": "Vad kan jag hjälpa till med?"
+    },
+    "history": {
+        "message": "Historik"
+    },
+    "settings": {
+        "message": "Inställningar"
+    },
+    "subscription": {
+        "message": "Prenumeration"
+    },
+    "add_personal_info_or_instructions_to_the_ai_assistant__this_will_help_improve_responses_for_you_": {
+        "message": "Lägg till personlig information eller instruktioner till AI-assistenten. Detta hjälper till att förbättra svaren för dig."
+    },
+    "save": {
+        "message": "Spara"
+    },
+    "and_you_ll_unlock_all_ai_assistant_features": {
+        "message": "Och du låser upp alla AI-assistentfunktioner"
+    },
+    "e_g___always_reply_in_french": {
+        "message": "t.ex., svara alltid på franska"
+    },
+    "_p_you_can_try_the_ai_assistant_to_play_a_role__e_g____p__ul__li_act_as_an_english_teacher_and_correct_my_mistakes__li__li_respond_like_a_professional_business_consultant__li___ul__p_or_input_your_data_for_the_ai_assistant_to_generate_responses__e_g____p__ul__li_23_y_o___58_kg__height_165_cm__female__li__li_programmer__php___laravel__js___react___li___ul_": {
+        "message": "<p>Du kan prova AI-assistenten för att spela en roll, t.ex.:<\/p><ul><li>Agera som en engelsklärare och rätta mina misstag<\/li><li>Svara som en professionell affärskonsult<\/li><\/ul><p>Alternativt kan du mata in dina data för att AI-assistenten ska generera svar, t.ex.:<\/p><ul><li>23 år, 58 kg, 165 cm, kvinna<\/li><li>Programmerare. PHP – Laravel, JS – React.<\/li><\/ul>"
+    }
+}

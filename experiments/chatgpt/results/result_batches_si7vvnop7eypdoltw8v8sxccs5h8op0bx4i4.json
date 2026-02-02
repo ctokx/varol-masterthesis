@@ -1,0 +1,303 @@
+{
+  "job_name": "batches/si7vvnop7eypdoltw8v8sxccs5h8op0bx4i4",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:34.922250",
+  "validations": [
+    {
+      "extension_id": "inhcgfpbfdjbjogdfjbclgolkmhnooop",
+      "verdict": "ERROR",
+      "error": "details=None code=4 message='Deadline expired before operation could complete.'"
+    },
+    {
+      "extension_id": "kagjkiiecagemklhmhkabbalfpbianbe",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension aligns perfectly with its stated purpose. The suspicious patterns (Cookie Access, Network Interception) are functional requirements for 'Syncing to Notion' (which requires auth cookies in the absence of a full OAuth app flow for web clippers) and 'Exporting' (which requires intercepting/modifying chat API calls to get complete data). There is no evidence of data exfiltration to unauthorized third parties. Data sent to the developer's server (saveai.net) is strictly for the PDF generation feature triggered by the user.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": "Chat content (ChatGPT, Gemini, etc.) and Notion session cookies",
+          "processing_method": "Notion cookies are used to authenticate API requests directly to Notion. Chat content is sent to developer server for PDF generation.",
+          "destination_domain": "api-service.saveai.net (PDF generation), www.notion.so (Sync feature)",
+          "code_evidence": "background.js: Ht.fetch(...) calls K(e, ...) where e includes '/api/v1/make/pdf'.\npopup-Dcfl-PTk.js: ue.notionApiV3Request(...) uses cookies retrieved via nt.getAllCookies(Me)."
+        },
+        "dual_purpose": {
+          "stated_purpose": "Save ChatGPT, Gemini to PDF, Markdown, Sync to Notion",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": "chrome.cookies.getAll({url: 'https://www.notion.so'})",
+          "transmission_target": "Sent to 'https://www.notion.so/api/v3/' endpoints only.",
+          "code_evidence": "popup-Dcfl-PTk.js: static async notionApiV3Request(e,s={}){const o=await this.getNotionCookies()... return await ot.fetch(`${Hn}/${e}`,{headers:{Cookie:o}...})}"
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "www.saveai.net",
+          "api-service.saveai.net",
+          "www.google-analytics.com",
+          "www.notion.so",
+          "chat.openai.com",
+          "gemini.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "icnh83p4860q.feishu.cn",
+          "react.dev"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "COOKIE_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used to access 'notion_user_id' and session cookies to perform the 'Sync to Notion' functionality declared in the extension title. Cookies are sent only to Notion APIs, not exfiltrated to third parties."
+        },
+        {
+          "pattern": "INTERCEPTION",
+          "usage": "LEGITIMATE",
+          "justification": "The 'inject-web.js' script hooks XMLHttpRequest on Gemini to modify request parameters (rpcids/freq) likely to fetch more chat history items (limit 20 -> 100) for exporting purposes."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "Requests to 'api-service.saveai.net' are for the PDF generation feature. Requests to 'feishu.cn' are for a user feedback form link in the UI."
+        },
+        {
+          "pattern": "DYNAMIC_SCRIPT",
+          "usage": "LEGITIMATE",
+          "justification": "Part of the WXT extension framework boilerplate (`start.js`) to inject the content script."
+        }
+      ],
+      "token_usage": {
+        "prompt": 160791,
+        "candidates": 948,
+        "total": 164498
+      }
+    },
+    {
+      "extension_id": "cnhikhicflgjbfnllpmbbdpjcfmfnkii",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension contains minimal, clean code that performs exactly its stated purpose: injecting a button to toggle Right-to-Left (RTL) direction on the ChatGPT interface. The 'innerHTML' usage involves static strings (CSS and an SVG icon) and poses no security risk. There are no network requests, no data collection mechanisms, and no obfuscation. The MutationObserver is correctly used to handle the dynamic nature of the ChatGPT web application.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Add Right-to-Left (RTL) support to ChatGPT",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "www.w3.org",
+          "clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used only to set static CSS styles and inject a static SVG icon for the UI button. No user input is processed, eliminating XSS risk."
+        },
+        {
+          "pattern": "DOM",
+          "usage": "LEGITIMATE",
+          "justification": "Standard DOM manipulation methods (createElement, appendChild, querySelector) required to insert the extension's UI elements into the page."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Necessary for Single Page Applications (SPAs) like ChatGPT to detect when the interface loads/changes so the button can be re-injected."
+        }
+      ],
+      "token_usage": {
+        "prompt": 3020,
+        "candidates": 555,
+        "total": 4686
+      }
+    },
+    {
+      "extension_id": "mikcekmbahpbehdpakenaknkkedeonhf",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension functions exactly as described. The content script (script.js) includes Mozilla's Readability.js library to parse article text and injects a clean Shadow DOM UI. It communicates with the background worker to send this text to OpenAI for summarization. The static analysis flagged a large number of URLs in worker.js, but inspection reveals these are string literals referring to model documentation, GitHub repositories, and API endpoints found within a bundled AI library (likely `transformers.js` or a generic AI client SDK), rather than malicious network calls. There is no evidence of data exfiltration, hidden functionality, or credential theft.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Summarize articles using ChatGPT",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chat.openai.com",
+          "api.openai.com",
+          "clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "github.com",
+          "huggingface.co",
+          "cdn.britannica.com",
+          "fal.run",
+          "replicate.com",
+          "groq.com",
+          "api.fireworks.ai"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used in script.js to render the extension's UI (Shadow DOM) and display the summary result."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "The massive list of URLs in worker.js corresponds to documentation and model references inside a bundled AI library (likely transformers.js or similar), not active C2 connections."
+        },
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used in setting.js to store user preferences and the OpenAI API key locally."
+        },
+        {
+          "pattern": "POST_MESSAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used for communication between the content script (UI) and the background worker (API handler)."
+        }
+      ],
+      "token_usage": {
+        "prompt": 28219,
+        "candidates": 698,
+        "total": 30696
+      }
+    },
+    {
+      "extension_id": "cbapcdnkcgiajboppakkhjmdolbkinge",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a legitimate AI sidebar application built using the Svelte 5 framework. The 'malicious' patterns flagged by static analysis are exclusively false positives generated by the Svelte runtime library (error message URLs, mutation observers, proxies) and standard XML namespaces. \n\n1. The source code provided (`props-g5a29qn7.js`) is the Svelte 5 runtime, not malicious logic. \n2. The network endpoints flagged in the static analysis point to the extension's own first-party domain (`chatbotsplace.com`) for API interactions (prompts, conversations, auth), or to a known monetization provider (`chrome-stats.com`).\n3. The `manifest.json` correctly restricts host permissions to `chatbotsplace.com`, preventing the background script from exfiltrating data to arbitrary third-party domains.\n4. There is no evidence of hidden functionality, data harvesting, or credential theft.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI Sidebar assistant (ChatGPT, Claude & Gemini)",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatbotsplace.com",
+          "assets.chatbotsplace.com",
+          "chatbots.place",
+          "svelte.dev",
+          "w3.org",
+          "chrome-stats.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "play.google.com",
+          "microsoftedge.microsoft.com",
+          "chromewebstore.google.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT (svelte.dev)",
+          "usage": "LEGITIMATE",
+          "justification": "The static analysis flagged dozens of 'https://svelte.dev/e/...' URLs. These are standard error message links embedded in the Svelte 5 framework runtime (found in props-g5a29qn7.js) to help developers debug. They are not network requests."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (w3.org)",
+          "usage": "LEGITIMATE",
+          "justification": "References to 'http://www.w3.org/2000/svg' and 'http://www.w3.org/1999/xhtml' are standard XML namespace declarations required for DOM element creation, not network calls."
+        },
+        {
+          "pattern": "MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used by the Svelte framework (props-g5a29qn7.js) for reactive DOM updates and event delegation, which is standard behavior for modern UI libraries."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (chrome-stats.com)",
+          "usage": "LEGITIMATE",
+          "justification": "Static analysis of index.html indicates a connection to 'https://chrome-stats.com/apppass/mypass'. This corresponds to 'App Pass', a known legitimate monetization platform for extensions, aligning with the extension's premium features."
+        }
+      ],
+      "token_usage": {
+        "prompt": 30411,
+        "candidates": 889,
+        "total": 34398
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 0,
+    "SUSPICIOUS": 0,
+    "SAFE": 4,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 1
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 0,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 4,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 1.0,
+    "true_positive_rate": 0.0,
+    "malicious_detection_rate": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 222441,
+    "candidate_tokens": 3090,
+    "total_tokens": 234278
+  }
+}

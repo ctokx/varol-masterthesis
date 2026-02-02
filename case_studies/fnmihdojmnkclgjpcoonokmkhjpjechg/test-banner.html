@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test AITOPIA Banner</title>
+    <link rel="stylesheet" href="chatgptBanner.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .test-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 5px;
+        }
+        .test-button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-content">
+        <h1>AITOPIA Banner Test Page</h1>
+        <p>This page simulates the ChatGPT interface to test the AITOPIA banner functionality.</p>
+        
+        <button class="test-button" onclick="showBanner()">Show Banner</button>
+        <button class="test-button" onclick="hideBanner()">Hide Banner (Maybe Later)</button>
+        <button class="test-button" onclick="closeBanner()">Close Banner (X)</button>
+        <button class="test-button" onclick="resetBanner()">Reset Banner State</button>
+        <button class="test-button" onclick="debugBanner()">Debug Banner State</button>
+        <button class="test-button" onclick="simulateNewSession()">Simulate New Session</button>
+        
+        <h2>Test Content</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        
+        <h3>Features to Test:</h3>
+        <ul>
+            <li>Banner appears at the top of the page</li>
+            <li>Banner slides down with animation</li>
+            <li>Close button works</li>
+            <li>CTA button works (will show console message)</li>
+            <li>Dismiss button works</li>
+            <li>Banner auto-hides after 15 seconds if not interacted with</li>
+            <li>Banner doesn't show again after being dismissed</li>
+            <li>Page content is pushed down when banner is visible</li>
+            <li>Responsive design works on mobile</li>
+        </ul>
+    </div>
+
+    <script>
+        // Mock chrome.runtime for testing
+        window.chrome = {
+            runtime: {
+                sendMessage: function(message) {
+                    console.log('Mock chrome.runtime.sendMessage called with:', message);
+                    return Promise.resolve();
+                }
+            }
+        };
+
+        // Simplified banner functions for testing
+        let bannerShown = false;
+
+        // Session-based persistence functions (copied from main script)
+        function initializeSessionTracking() {
+            try {
+                const sessionData = localStorage.getItem('aitopia-session-data');
+                let data = sessionData ? JSON.parse(sessionData) : null;
+
+                if (!data || !sessionStorage.getItem('aitopia-session-initialized')) {
+                    const currentTime = Date.now();
+
+                    if (!data) {
+                        data = {
+                            sessionCount: 1,
+                            lastSessionTime: currentTime,
+                            closeDismissalTime: null,
+                            closeDismissalSessionCount: null
+                        };
+                    } else {
+                        data.sessionCount += 1;
+                        data.lastSessionTime = currentTime;
+                    }
+
+                    localStorage.setItem('aitopia-session-data', JSON.stringify(data));
+                    sessionStorage.setItem('aitopia-session-initialized', 'true');
+                }
+            } catch (error) {
+                console.log('Could not initialize session tracking:', error);
+            }
+        }
+
+        function isBannerCloseDismissed() {
+            try {
+                const sessionData = localStorage.getItem('aitopia-session-data');
+                if (!sessionData) return false;
+
+                const data = JSON.parse(sessionData);
+
+                if (!data.closeDismissalTime || !data.closeDismissalSessionCount) {
+                    return false;
+                }
+
+                const sessionsSinceClose = data.sessionCount - data.closeDismissalSessionCount;
+                return sessionsSinceClose < 2;
+            } catch (error) {
+                console.log('Error checking close dismissal state:', error);
+                return false;
+            }
+        }
+
+        function dismissBannerPermanently() {
+            try {
+                const sessionData = localStorage.getItem('aitopia-session-data');
+                const data = sessionData ? JSON.parse(sessionData) : {
+                    sessionCount: 1,
+                    lastSessionTime: Date.now(),
+                    closeDismissalTime: null,
+                    closeDismissalSessionCount: null
+                };
+
+                data.closeDismissalTime = Date.now();
+                data.closeDismissalSessionCount = data.sessionCount;
+
+                localStorage.setItem('aitopia-session-data', JSON.stringify(data));
+            } catch (error) {
+                console.log('Could not save permanent dismissal state:', error);
+            }
+        }
+
+        function showBanner() {
+            initializeSessionTracking();
+
+            if (document.getElementById('aitopia-banner')) {
+                return;
+            }
+
+            if (sessionStorage.getItem('aitopia-banner-dismissed') === 'true') {
+                console.log('Banner dismissed for this session');
+                return;
+            }
+
+            if (isBannerCloseDismissed()) {
+                console.log('Banner permanently dismissed for 2 sessions');
+                return;
+            }
+
+            bannerShown = true;
+
+            const banner = document.createElement('div');
+            banner.id = 'aitopia-banner';
+            banner.className = 'aitopia-banner-container';
+            
+            banner.innerHTML = `
+                <div class="aitopia-banner-content">
+                    <button class="aitopia-banner-close" onclick="closeBanner()">×</button>
+                    
+                    <div class="aitopia-banner-header">
+                        <div class="aitopia-banner-icon">🤖</div>
+                        <div class="aitopia-banner-text">
+                            <h3>You're using ChatGPT Standard</h3>
+                            <p>Switch to AITOPIA for access to <strong>ALL premium AI models</strong> including GPT-4, Claude, Gemini & more!</p>
+                        </div>
+                    </div>
+
+                    <div class="aitopia-banner-features">
+                        <div class="aitopia-feature-item">
+                            <span class="aitopia-feature-icon">⚡</span>
+                            <span>10+ Premium AI Models</span>
+                        </div>
+                        <div class="aitopia-feature-item">
+                            <span class="aitopia-feature-icon">💰</span>
+                            <span>Better Value than ChatGPT Plus</span>
+                        </div>
+                        <div class="aitopia-feature-item">
+                            <span class="aitopia-feature-icon">🚀</span>
+                            <span>Latest AI Technology</span>
+                        </div>
+                    </div>
+
+                    <div class="aitopia-banner-actions">
+                        <button class="aitopia-banner-cta" onclick="ctaClicked()">
+                            Try AITOPIA Now
+                        </button>
+                        <button class="aitopia-banner-dismiss" onclick="hideBanner()">
+                            Maybe Later
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(banner);
+            document.body.classList.add('aitopia-banner-page-offset');
+
+            setTimeout(() => {
+                banner.classList.add('aitopia-banner-visible');
+            }, 100);
+
+            // Auto-hide after 15 seconds
+            setTimeout(() => {
+                if (banner && banner.parentNode && !banner.classList.contains('aitopia-banner-interacted')) {
+                    hideBanner();
+                }
+            }, 15000);
+
+            // Mark as interacted on hover
+            banner.addEventListener('mouseenter', function() {
+                banner.classList.add('aitopia-banner-interacted');
+            });
+        }
+
+        function hideBanner() {
+            const banner = document.getElementById('aitopia-banner');
+            if (banner) {
+                banner.classList.remove('aitopia-banner-visible');
+                document.body.classList.remove('aitopia-banner-page-offset');
+                setTimeout(() => {
+                    if (banner.parentNode) {
+                        banner.parentNode.removeChild(banner);
+                    }
+                }, 300);
+            }
+            sessionStorage.setItem('aitopia-banner-dismissed', 'true');
+        }
+
+        function ctaClicked() {
+            console.log('CTA button clicked - would open AITOPIA');
+            alert('CTA clicked! In the real extension, this would open AITOPIA.');
+            hideBanner();
+        }
+
+        function closeBanner() {
+            dismissBannerPermanently();
+            const banner = document.getElementById('aitopia-banner');
+            if (banner) {
+                banner.classList.remove('aitopia-banner-visible');
+                document.body.classList.remove('aitopia-banner-page-offset');
+                setTimeout(() => {
+                    if (banner.parentNode) {
+                        banner.parentNode.removeChild(banner);
+                    }
+                }, 300);
+            }
+            console.log('Banner closed permanently for 2 sessions');
+        }
+
+        function resetBanner() {
+            localStorage.removeItem('aitopia-session-data');
+            sessionStorage.removeItem('aitopia-banner-dismissed');
+            sessionStorage.removeItem('aitopia-session-initialized');
+            bannerShown = false;
+            console.log('Banner state reset');
+        }
+
+        function debugBanner() {
+            try {
+                const sessionData = localStorage.getItem('aitopia-session-data');
+                const sessionDismissed = sessionStorage.getItem('aitopia-banner-dismissed');
+                const sessionInitialized = sessionStorage.getItem('aitopia-session-initialized');
+
+                console.log('AITOPIA Banner Debug Info:');
+                console.log('Session Data:', sessionData ? JSON.parse(sessionData) : 'None');
+                console.log('Session Dismissed:', sessionDismissed);
+                console.log('Session Initialized:', sessionInitialized);
+                console.log('Banner Shown:', bannerShown);
+                console.log('Close Dismissed:', isBannerCloseDismissed());
+
+                if (sessionData) {
+                    const data = JSON.parse(sessionData);
+                    if (data.closeDismissalSessionCount) {
+                        const sessionsSinceClose = data.sessionCount - data.closeDismissalSessionCount;
+                        console.log('Sessions since close dismissal:', sessionsSinceClose);
+                        console.log('Sessions remaining until banner can show:', Math.max(0, 2 - sessionsSinceClose));
+                    }
+                }
+            } catch (error) {
+                console.error('Error in debug function:', error);
+            }
+        }
+
+        function simulateNewSession() {
+            sessionStorage.removeItem('aitopia-session-initialized');
+            sessionStorage.removeItem('aitopia-banner-dismissed');
+            bannerShown = false;
+            console.log('New session simulated - session storage cleared');
+        }
+
+        // Test keyboard events
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && document.getElementById('aitopia-banner')) {
+                hideBanner();
+            }
+        });
+    </script>
+</body>
+</html>

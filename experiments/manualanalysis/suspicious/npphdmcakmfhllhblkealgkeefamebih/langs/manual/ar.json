@@ -1,0 +1,67 @@
+{
+  "hello": {
+    "message": "مرحبا!"
+  },
+  "ask_anything": {
+    "message": "اسأل أي شيء"
+  },
+  "ask_about_this_page": {
+    "message": "اسأل عن هذه الصفحة"
+  },
+  "summarize_this_page": {
+    "message": "تلخيص هذه الصفحة"
+  },
+  "add_photos_and_files": {
+    "message": "إضافة صور وملفات"
+  },
+  "create_image": {
+    "message": "إنشاء صورة"
+  },
+  "web_search": {
+    "message": "البحث في الويب"
+  },
+  "teacher_mode": {
+    "message": "وضع المعلم"
+  },
+  "voice_input": {
+    "message": "الإدخال الصوتي"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "مساعد سريع للاستخدام اليومي"
+  },
+  "model_deep_reasoning": {
+    "message": "نموذج التفكير العميق"
+  },
+  "model_quick_multimodal": {
+    "message": "استجابات متعددة الوسائط سريعة"
+  },
+  "model_advanced_google_ai": {
+    "message": "ذكاء اصطناعي متقدم من جوجل"
+  },
+  "model_complex_problem_solving": {
+    "message": "حل المشكلات المعقدة"
+  },
+  "model_powerful_opensource": {
+    "message": "نموذج مفتوح المصدر قوي"
+  },
+  "model_reasoning_specialist": {
+    "message": "متخصص في التفكير المنطقي"
+  },
+  "model_balanced_reliable": {
+    "message": "متوازن وموثوق"
+  },
+  "model_most_capable": {
+    "message": "أقوى Claude"
+  },
+  "model_label_fastest": {
+    "message": "الأسرع"
+  }
+}
+
+
+
+
+
+
+
+

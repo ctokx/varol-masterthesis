@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT برای Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "افزونه‌ای برای ایجاد یک میانبر برای ChatGPT رسمی در مرورگر Google Chrome"
+    },
+    "ext_command_description": {
+        "message": "میانبر برای باز کردن ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT در حالت Eco؟"
+    },
+    "request_perms_popup_description": {
+        "message": "با مرور وب به اهداف پایدار کمک کنید. این حالت مرور شما را قطع نمی‌کند."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "بیشتر بدانید"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "اجازه دادن"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "رد کردن"
+    },
+    "perms_granted_popup_title": {
+        "message": "تبریک!"
+    },
+    "perms_granted_popup_description": {
+        "message": "شما اکنون از تمام ویژگی‌های ما بهره‌مند خواهید شد!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "ادامه"
+    },
+    "perms_denied_popup_title": {
+        "message": "متاسفیم..."
+    },
+    "perms_denied_popup_description": {
+        "message": "شاید دفعه بعد."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "بستن این پیام"
+    },
+    "welcome_title": {
+        "message": "ChatGPT برای Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "افزونه با موفقیت نصب شد"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT برای Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "افزونه با موفقیت نصب شد"
+    },
+    "welcome_tip_title_granted": {
+        "message": "برای پین کردن افزونه خود مراحل زیر را دنبال کنید، سپس روی مرحله بعدی کلیک کنید"
+    },
+    "welcome_next_step": {
+        "message": "مرحله بعدی"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "برای دسترسی به تمام ویژگی‌های افزونه، حالت Eco را فعال کنید."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "برای ادامه روی اجازه دادن کلیک کنید"
+    },
+    "html_footer_terms_of_use": {
+        "message": "شرایط استفاده"
+    },
+    "html_footer_privacy_policy": {
+        "message": "سیاست حفظ حریم خصوصی"
+    },
+    "how_to_use_html_title": {
+        "message": "نحوه استفاده از افزونه"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "یا Ctrl + B را فشار دهید"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 حالت Eco"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "تبریک! این سایت شریک حالت Eco ما است."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "این چه معنایی دارد؟"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "با ادامه مرور، شما به سیاره 🌍 کمک می‌کنید، درختان می‌کارید و انتشار کربن را بدون هزینه جبران می‌کنید."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "با هر بازدید از یک شریک، یک تب جدید به طور مختصر باز می‌شود تا محاسبه جبران کربن انجام شود."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "به هر حال، بسیار از شما متشکریم که از این کار شگفت‌انگیز با ما حمایت می‌کنید! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "بیشتر بدانید"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "بستن"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "دیگر نشان نده"
+    }
+}

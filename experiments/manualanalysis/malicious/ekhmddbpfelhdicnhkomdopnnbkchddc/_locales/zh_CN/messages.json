@@ -1,0 +1,6 @@
+{
+  "extName": { "message": "AutoGemini - Gemini/Flow/AI Studio 批量自动化生成图片/视频（Nano Banana Pro/Veo 3.1）" },
+  "extDescription": {
+    "message": "Gemini/AIStudio/Flow 提效插件，批量自动并下载图片/视频，支持文生图/视频，图生图/视频（单张/多张混合）及提示词管理等"
+  }
+}

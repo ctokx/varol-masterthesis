@@ -1,0 +1,46 @@
+﻿============================================================
+VALIDATION RESULTS SUMMARY
+============================================================
+
+Total extensions validated: 111
+
+Distribution:
+  MALICIOUS: 6
+  SUSPICIOUS: 2
+  SAFE: 103
+
+============================================================
+NON-SAFE EXTENSIONS
+============================================================
+
+[MALICIOUS] Chat with all AI models (Gemini, Claude, DeepSeekà) & AI Agents | AITOPIA
+  ID: becfinhbfclcgokjlobojlnldbfillpf
+  Concerns: ['Undisclosed Amazon marketplace crawling/tracking functionality', "Presence of code for a completely different product ('CaptainA') within the bundle"]
+
+[MALICIOUS] ChatGPT for Zhihu
+  ID: ajnofpkfojgkfmcniokfhodfoedkameh
+  Concerns: ['Exfiltration of private chat content (Questions/Answers)', 'Undisclosed data logging to third-party cloud service']
+
+[SUSPICIOUS] AI Search Fan-out Tracker
+  ID: nflpppciongpooakaahfdjgioideblkd
+  Concerns: ['Exfiltration of original user chat prompts to an external server.', 'Use of session tokens to scrape conversation history.']
+
+[MALICIOUS] ChatGPT Extension
+  ID: dcbcnpnaccfjoikaofjgcipcfbmfkpmj
+  Concerns: ['Hardcoded Telegram Bot token for silent data exfiltration.', 'Excessive permissions to read Google Drive files and user identity info.']
+
+[MALICIOUS] TwitterGPT - Respond to tweets with ChatGPT
+  ID: nafdjcnfmdcdnebjhehhohfaaffdlkon
+  Concerns: ['Exfiltration of private OpenAI API keys to an unauthorized third-party domain.', 'The use of GET requests to transmit secrets, which exposes the keys in server logs and browser history.']
+
+[MALICIOUS] Flow: ChatGPT Sidebar
+  ID: ndmldohefgmnciihihioeeoiobchcmgi
+  Concerns: ['Undisclosed delayed ad-injection mechanism.', 'Use of time-delay (8 days) to evade initial security detection.']
+
+[MALICIOUS] ChatGPT for Google ChromeÖ
+  ID: pkcoogcpeheamgkhfhelaifnpmehdgmp
+  Concerns: ['Silent background monitoring of all visited URLs.', 'Hidden affiliate link injection (cookie stuffing) via background tabs.']
+
+[SUSPICIOUS] Chat GPT 5
+  ID: npphdmcakmfhllhblkealgkeefamebih
+  Concerns: ['Deceptive branding (Name-squatting on OpenAI/ChatGPT).', 'User tracking and geolocation exfiltration to hub.malson.eu.']

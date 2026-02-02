@@ -1,0 +1,323 @@
+{
+    "you_need_to_approve_the_permissions_to_open_the_extension_in_the_side_panel_": {
+        "message": "Anda perlu menyetujui izin untuk membuka ekstensi di panel samping."
+    },
+    "dropblock_head": {
+        "message": "dropBlock_head"
+    },
+    "open_the_extension_in_a_sidepanel": {
+        "message": "Buka ekstensi di panel samping"
+    },
+    "link_was_copied_": {
+        "message": "Tautan telah disalin!"
+    },
+    "drag_and_drop_your_files_here": {
+        "message": "Seret dan lepas file Anda di sini"
+    },
+    "only_text_content_will_be_processed__up_to_5_files__each_up_to_5mb_": {
+        "message": "Hanya konten teks yang akan diproses. Hingga 5 file, masing-masing hingga 5MB."
+    },
+    "you_can_upload_a_maximum_of_5_files_per_dialog__please_upload_files_in_smaller_batches_": {
+        "message": "Anda dapat mengunggah maksimal 5 file per dialog. Silakan unggah file dalam jumlah lebih kecil."
+    },
+    "invalid_file_format_or_file_size_exceeds_5_mb__please_select_smaller_files_": {
+        "message": "Format file tidak valid atau ukuran file melebihi 5 MB. Silakan pilih file yang lebih kecil."
+    },
+    "permissions_are_missing__please_grant_the_extension_access_to_web_pages_": {
+        "message": "Izin hilang. Silakan berikan akses ekstensi ke halaman web."
+    },
+    "error__please_try_again_later_": {
+        "message": "Terjadi kesalahan, silakan coba lagi nanti."
+    },
+    "summarization_does_not_work_on_system_pages__please_copy_the_page_content_into_the_chat_manually_": {
+        "message": "Ringkasan tidak berfungsi di halaman sistem. Silakan salin konten halaman ke dalam obrolan secara manual."
+    },
+    "delete": {
+        "message": "Hapus"
+    },
+    "delete_chat_": {
+        "message": "Hapus obrolan?"
+    },
+    "are_you_sure_you_want_to_delete_this_chat_": {
+        "message": "Anda yakin ingin menghapus obrolan ini?"
+    },
+    "cancel": {
+        "message": "Batal"
+    },
+    "the_chat_was_deleted": {
+        "message": "Obrolan telah dihapus"
+    },
+    "`_text_`": {
+        "message": "ʼ+text+ʼ"
+    },
+    "`_lang___(text)_`": {
+        "message": "ʼ+Lang.__(text)+ʼ"
+    },
+    "${deletetext}": {
+        "message": "${deleteText}"
+    },
+    "`_lang___(_delete_chat__)_`": {
+        "message": "ʼ+Lang.__('Hapus obrolan?')+ʼ"
+    },
+    "`_lang___(_are_you_sure_you_want_to_delete_this_chat__)_`": {
+        "message": "ʼ+Lang.__('Anda yakin ingin menghapus obrolan ini?')+ʼ"
+    },
+    "`_lang___(_cancel_)_`": {
+        "message": "ʼ+Lang.__('Batal')+ʼ"
+    },
+    "`_lang___(_delete_)_`": {
+        "message": "ʼ+Lang.__('Hapus')+ʼ"
+    },
+    "file": {
+        "message": "File"
+    },
+    "thinking": {
+        "message": "Berpikir"
+    },
+    "copy_response": {
+        "message": "Salin respons"
+    },
+    "good_response": {
+        "message": "Respons yang baik"
+    },
+    "bad_response": {
+        "message": "Respons yang buruk"
+    },
+    "uploading___": {
+        "message": "Mengunggah..."
+    },
+    "`_lang___(_thinking_)_`": {
+        "message": "ʼ+Lang.__('Berpikir')+ʼ"
+    },
+    "feedback": {
+        "message": "Umpan balik"
+    },
+    "share": {
+        "message": "Bagikan"
+    },
+    "rate_us": {
+        "message": "Berikan penilaian kami"
+    },
+    "💀": {
+        "message": "💀"
+    },
+    "😞": {
+        "message": "😞"
+    },
+    "😐": {
+        "message": "😐"
+    },
+    "🙂": {
+        "message": "🙂"
+    },
+    "😍": {
+        "message": "😍"
+    },
+    "grok_3_is_here_": {
+        "message": "Grok 3 hadir."
+    },
+    "what_do_you_want_to_know_": {
+        "message": "Apa yang ingin Anda ketahui?"
+    },
+    "how_can_grok_help_you_": {
+        "message": "Bagaimana Grok dapat membantu Anda?"
+    },
+    "attach_file": {
+        "message": "Lampirkan file"
+    },
+    "select_a_model": {
+        "message": "Pilih model"
+    },
+    "sent_message": {
+        "message": "Pesan terkirim"
+    },
+    "hey_": {
+        "message": "Hai,"
+    },
+    "welcome_": {
+        "message": "selamat datang!"
+    },
+    "how_can_i_help_you_": {
+        "message": "Bagaimana saya bisa membantu Anda?"
+    },
+    "message_deepseek": {
+        "message": "Pesan DeepSeek"
+    },
+    "summarize_the_current_page": {
+        "message": "Ringkas halaman saat ini"
+    },
+    "upload_a_file": {
+        "message": "Unggah file"
+    },
+    "start_a_chat": {
+        "message": "Mulai obrolan"
+    },
+    "set_personalization": {
+        "message": "Atur Personalisasi"
+    },
+    "new_chat": {
+        "message": "Obrolan baru"
+    },
+    "switch_to_light_mode": {
+        "message": "Beralih ke Mode Terang"
+    },
+    "switch_to_dark_mode": {
+        "message": "Beralih ke Mode Gelap"
+    },
+    "open_the_extension_in_a_separate_tab": {
+        "message": "Buka ekstensi di tab terpisah"
+    },
+    "{{_item_}}": {
+        "message": "{{ item }}"
+    },
+    "start_now": {
+        "message": "Mulai Sekarang"
+    },
+    "get_ideas": {
+        "message": "Dapatkan Ide"
+    },
+    "ask": {
+        "message": "Tanya"
+    },
+    "code": {
+        "message": "Kode"
+    },
+    "translate": {
+        "message": "Terjemahkan"
+    },
+    "cooking_tips": {
+        "message": "Tips Memasak"
+    },
+    "how_deepseek_ai_helps_you_": {
+        "message": "Bagaimana DeepSeek AI membantu Anda?"
+    },
+    "✨_get_spot_on_answers_10x_faster": {
+        "message": "✨ Dapatkan jawaban tepat 10x lebih cepat"
+    },
+    "no_google__no_tab_chaos__no_time_wasted": {
+        "message": "tanpa Google, tanpa kekacauan tab, tanpa waktu terbuang"
+    },
+    "📚_save_hours_on_studying": {
+        "message": "📚 Hemat jam belajar"
+    },
+    "generate_essays__auto_complete_tests__and_summarize_any_page_in_minutes_": {
+        "message": "Hasilkan esai, lengkapi tes otomatis, dan ringkas halaman apa pun dalam hitungan menit."
+    },
+    "🌍_real_time_translation_on_the_page": {
+        "message": "🌍 Terjemahan waktu nyata di halaman"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments__right_on_the_page_": {
+        "message": "Tulis seperti penutur asli, tanpa kesalahan atau momen canggung. Di halaman."
+    },
+    "get_your_ai_copilot_for_coding": {
+        "message": "Dapatkan [textgradientEl]AI Copilot[/textgradientEl] untuk pengkodean"
+    },
+    "try_now": {
+        "message": "Coba Sekarang"
+    },
+    "did_this_tool_help_you_": {
+        "message": "Apakah alat ini membantu Anda?"
+    },
+    "share_it_with_friends_who_work_with_images_": {
+        "message": "Bagikan kepada teman yang bekerja dengan gambar."
+    },
+    "who_would_find_it_useful_": {
+        "message": "Siapa yang akan merasa ini berguna?"
+    },
+    "copy_link": {
+        "message": "Salin tautan"
+    },
+    "facebook": {
+        "message": "Facebook"
+    },
+    "x": {
+        "message": "X"
+    },
+    "telegram": {
+        "message": "Telegram"
+    },
+    "i_found_a_super_useful_chrome_extension__": {
+        "message": "Saya menemukan ekstensi Chrome yang sangat berguna —"
+    },
+    "it_can_save_any_website_as_a_pdf__you_should_try_it_out___it_s_great_": {
+        "message": "Ini dapat menyimpan situs web apa pun sebagai PDF. Anda harus mencobanya — ini hebat!"
+    },
+    "hooray__greate_job_": {
+        "message": "Hore, pekerjaan bagus!"
+    },
+    "please__can_you_rate_us_": {
+        "message": "Tolong, bisakah Anda memberi penilaian kepada kami?"
+    },
+    "deepseek_ai_has_been_installed_": {
+        "message": "DeepSeek AI telah terpasang!"
+    },
+    "get_answers_10x_faster___no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Dapatkan jawaban 10x lebih cepat — tanpa Google, tanpa kekacauan tab, tanpa waktu terbuang"
+    },
+    "open_deepseek_ai": {
+        "message": "Buka DeepSeek AI"
+    },
+    "deepseek_app": {
+        "message": "Aplikasi DeepSeek"
+    },
+    "love_deepseek_": {
+        "message": "Suka DeepSeek?"
+    },
+    "could_you_please_rate_our_extension_": {
+        "message": "Bisakah Anda memberi penilaian ekstensi kami?"
+    },
+    "share_this_extension_with_your_friends": {
+        "message": "Bagikan ekstensi ini kepada teman-teman Anda"
+    },
+    "share_us_with_your_friends": {
+        "message": "Bagikan kami dengan teman-teman Anda"
+    },
+    "and_unlock_all_ai_assistant_features": {
+        "message": "Dan buka semua fitur Asisten AI"
+    },
+    "vk_com": {
+        "message": "Vk.com"
+    },
+    "reddit": {
+        "message": "Reddit"
+    },
+    "whatsapp": {
+        "message": "Whatsapp"
+    },
+    "weibo": {
+        "message": "Weibo"
+    },
+    "post_preview": {
+        "message": "Pratinjau Post"
+    },
+    "hey__i_m_your_ai_assistant_": {
+        "message": "Hai, saya Asisten AI Anda!"
+    },
+    "what_can_i_help_with_": {
+        "message": "Apa yang bisa saya bantu?"
+    },
+    "history": {
+        "message": "Riwayat"
+    },
+    "settings": {
+        "message": "Pengaturan"
+    },
+    "subscription": {
+        "message": "Langganan"
+    },
+    "add_personal_info_or_instructions_to_the_ai_assistant__this_will_help_improve_responses_for_you_": {
+        "message": "Tambahkan info pribadi atau instruksi ke Asisten AI. Ini akan membantu meningkatkan respons untuk Anda."
+    },
+    "save": {
+        "message": "Simpan"
+    },
+    "and_you_ll_unlock_all_ai_assistant_features": {
+        "message": "Dan Anda akan membuka semua fitur Asisten AI"
+    },
+    "e_g___always_reply_in_french": {
+        "message": "misalnya, selalu balas dalam bahasa Perancis"
+    },
+    "_p_you_can_try_the_ai_assistant_to_play_a_role__e_g____p__ul__li_act_as_an_english_teacher_and_correct_my_mistakes__li__li_respond_like_a_professional_business_consultant__li___ul__p_or_input_your_data_for_the_ai_assistant_to_generate_responses__e_g____p__ul__li_23_y_o___58_kg__height_165_cm__female__li__li_programmer__php___laravel__js___react___li___ul_": {
+        "message": "<p>Anda dapat mencoba Asisten AI untuk memainkan peran, misalnya:<\/p><ul><li>Bertindak sebagai guru bahasa Inggris dan koreksi kesalahan saya<\/li><li>Memberikan respons seperti konsultan bisnis profesional<\/li><\/ul><p>Atau masukkan data Anda agar Asisten AI dapat menghasilkan respons, misalnya:<\/p><ul><li>23 tahun, 58 kg, tinggi 165 cm, perempuan<\/li><li>Programmer. PHP – Laravel, JS – React.<\/li><\/ul>"
+    }
+}

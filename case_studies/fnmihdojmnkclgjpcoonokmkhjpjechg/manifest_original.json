@@ -1,0 +1,75 @@
+{
+  "update_url": "https://clients2.google.com/service/update2/crx",
+  "manifest_version": 3,
+  "name": "__MSG_extName__",
+  "version": "1.9.3",
+  "description": "__MSG_extShortDesc__",
+  "default_locale": "en",
+  "icons": {
+    "16": "images/16.png",
+    "19": "images/19.png",
+    "32": "images/32.png",
+    "38": "images/38.png",
+    "48": "images/48.png",
+    "64": "images/64.png",
+    "128": "images/128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "images/16.png",
+      "19": "images/19.png",
+      "32": "images/32.png",
+      "38": "images/38.png",
+      "48": "images/48.png",
+      "64": "images/64.png",
+      "128": "images/128.png"
+    },
+    "default_popup": "bluePopup.html",
+    "default_title": "__MSG_extName__"
+  },
+  "commands": {
+    "show-popup": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+P"
+      },
+      "description": "Show extension popup"
+    }
+  },
+  "background": {
+    "service_worker": "blueBackground.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "css": ["blueContentScript.css", "chatgptBanner.css"],
+      "js": ["blueContentScript.js", "chatgptBannerContentScript.js"],
+      "matches": ["https://chat.openai.com/*", "https://chatgpt.com/*"]
+    },
+    {
+      "css": ["pricingPopup.css"],
+      "js": ["pricingContentScript.js"],
+      "matches": ["https://chatgpt.com/*"]
+    },
+    {
+      "js": [
+        "gptprocessor/aiResponder.js"
+      ],
+      "matches": ["<all_urls>"],
+      "run_at": "document_end",
+      "css": [
+        "sidebarCloseButtonFix.css"
+      ]
+    }
+  ],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAi8Jy7ag87+FtAktyxbGJ4UrCL6OmwLbPbIG6lKPJcqm8Y3LfHL+CpzhDFpvRf/1mNwI+kf27cDg3e+mwSBGxjlA4vc4LV+TVM16oWKRBE9qfZvPRZkMrq4PCd95QsLSU8zLAxN2Vu/0vJCSMWuIZITP17oDByIeg/8AQUU0J/I/OGlC5805f88mhCAD9shwqZB1dm3g3Fp5ebGzLtB4ct6Umc3xobAXdwEwAjVSo9DVVN2XbdtmuuBoaBGZYDB3vxPyjYgDnt8FQDK03dKrjZDYoQhXgKbgbUaOxoHZrJ4lDjcYpU++yXNRfP4mIP3A5ghY+qv4y9WqvH7+dmtXH6wIDAQAB",
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "permissions": [
+    "storage",
+    "scripting",
+    "system.display",
+    "contextMenus",
+    "unlimitedStorage"
+  ]
+}

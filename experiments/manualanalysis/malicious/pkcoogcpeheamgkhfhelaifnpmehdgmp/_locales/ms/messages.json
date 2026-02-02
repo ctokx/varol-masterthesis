@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT untuk Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Sambungan untuk membuat pintasan untuk ChatGPT rasmi dalam pelayar Google Chrome"
+    },
+    "ext_command_description": {
+        "message": "Pintasan untuk membuka ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT dalam Mod Eco?"
+    },
+    "request_perms_popup_description": {
+        "message": "Bantu sebab-sebab yang lestari hanya dengan melayari web. Mod ini tidak akan mengganggu pelayaran anda."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Ketahui lebih lanjut"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Benarkan"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Tolak"
+    },
+    "perms_granted_popup_title": {
+        "message": "Tahniah!"
+    },
+    "perms_granted_popup_description": {
+        "message": "Anda kini akan mendapat manfaat daripada semua ciri kami!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Teruskan"
+    },
+    "perms_denied_popup_title": {
+        "message": "Itu sayang sekali..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Mungkin lain kali."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Tutup mesej ini"
+    },
+    "welcome_title": {
+        "message": "ChatGPT untuk Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Sambungan Dipasang dengan Berjaya"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT untuk Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Sambungan Dipasang dengan Berjaya"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Ikuti langkah di bawah untuk pin sambungan anda, kemudian klik Langkah Seterusnya"
+    },
+    "welcome_next_step": {
+        "message": "Langkah Seterusnya"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "Untuk mengakses semua ciri sambungan, aktifkan Mod Eco."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Klik Benarkan untuk teruskan"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Terma Penggunaan"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Dasar Privasi"
+    },
+    "how_to_use_html_title": {
+        "message": "Cara Menggunakan Sambungan"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Atau tekan Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Mod Eco"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Tahniah! Laman web ini adalah rakan kongsi mod eco kami."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "Apa maksudnya ini?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "Dengan terus melayari, anda akan membantu planet 🌍, menanam pokok dan mengimbangi pelepasan karbon tanpa kos."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "Dengan setiap lawatan ke rakan kongsi, tab baru akan dibuka sebentar untuk membolehkan pengiraan pengimbangan karbon."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "Terima kasih banyak kerana menyokong sebab yang menakjubkan ini bersama kami! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Ketahui lebih lanjut"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Tutup"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Jangan tunjukkan lagi"
+    }
+}

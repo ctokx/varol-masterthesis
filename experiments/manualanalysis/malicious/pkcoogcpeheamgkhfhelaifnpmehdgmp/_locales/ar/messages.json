@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT لمتصفح Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "ملحق لإنشاء اختصار لـ ChatGPT الرسمي في متصفح Google Chrome"
+    },
+    "ext_command_description": {
+        "message": "اختصار لفتح ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT في الوضع البيئي؟"
+    },
+    "request_perms_popup_description": {
+        "message": "ساعد في دعم القضايا البيئية فقط من خلال تصفح الويب. لن يتداخل هذا الوضع مع تصفحك."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "أعرف أكثر"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "السماح"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "رفض"
+    },
+    "perms_granted_popup_title": {
+        "message": "تهانينا!"
+    },
+    "perms_granted_popup_description": {
+        "message": "ستستفيد الآن من جميع ميزاتنا!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "استمر"
+    },
+    "perms_denied_popup_title": {
+        "message": "يا للأسف..."
+    },
+    "perms_denied_popup_description": {
+        "message": "ربما في المرة القادمة."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "أغلق هذه الرسالة"
+    },
+    "welcome_title": {
+        "message": "ChatGPT لمتصفح Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "تم تثبيت الملحق بنجاح"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT لمتصفح Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "تم تثبيت الملحق بنجاح"
+    },
+    "welcome_tip_title_granted": {
+        "message": "اتبع الخطوات أدناه لتثبيت الملحق، ثم اضغط على الخطوة التالية"
+    },
+    "welcome_next_step": {
+        "message": "الخطوة التالية"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "للوصول إلى جميع ميزات الملحق، قم بتنشيط الوضع البيئي."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "اضغط على السماح للمتابعة"
+    },
+    "html_footer_terms_of_use": {
+        "message": "شروط الاستخدام"
+    },
+    "html_footer_privacy_policy": {
+        "message": "سياسة الخصوصية"
+    },
+    "how_to_use_html_title": {
+        "message": "كيفية استخدام الملحق"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "أو اضغط على Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 الوضع البيئي"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "تهانينا! هذا الموقع هو شريك في وضعنا البيئي."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "ماذا يعني هذا؟"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "من خلال الاستمرار في التصفح، ستساعد الكوكب 🌍 من خلال زراعة الأشجار وتعويض انبعاثات الكربون دون تكلفة."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "مع كل زيارة لشريك، سيتم فتح علامة تبويب جديدة لفترة وجيزة للسماح بحساب تعويض الكربون."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "بالمناسبة، شكرًا جزيلاً لدعمك لهذه القضية الرائعة معنا! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "أعرف أكثر"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "أغلق"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "لا تظهر مرة أخرى"
+    }
+}

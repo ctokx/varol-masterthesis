@@ -1,0 +1,68 @@
+{
+  "feedback": {
+    "message": "Feedback"
+  },
+  "rate_us": {
+    "message": "Bewerten"
+  },
+  "clean_all": {
+    "message": "Leeren"
+  },
+  "hello": {
+    "message": "Hallo!"
+  },
+  "ask_anything": {
+    "message": "Frag alles"
+  },
+  "ask_about_this_page": {
+    "message": "Frage zu dieser Seite"
+  },
+  "summarize_this_page": {
+    "message": "Diese Seite zusammenfassen"
+  },
+  "add_photos_and_files": {
+    "message": "Fotos und Dateien hinzufügen"
+  },
+  "create_image": {
+    "message": "Bild erstellen"
+  },
+  "web_search": {
+    "message": "Websuche"
+  },
+  "teacher_mode": {
+    "message": "Lehrermodus"
+  },
+  "voice_input": {
+    "message": "Spracheingabe"
+  },
+  "model_fast_everyday_assistant": {
+    "message": "Schneller Alltagsassistent"
+  },
+  "model_deep_reasoning": {
+    "message": "Tiefes Denkvermögen"
+  },
+  "model_quick_multimodal": {
+    "message": "Schnelle multimodale Antworten"
+  },
+  "model_advanced_google_ai": {
+    "message": "Fortschrittliche Google-KI"
+  },
+  "model_complex_problem_solving": {
+    "message": "Komplexe Problemlösung"
+  },
+  "model_powerful_opensource": {
+    "message": "Leistungsstarkes Open-Source-Modell"
+  },
+  "model_reasoning_specialist": {
+    "message": "Spezialist für logisches Denken"
+  },
+  "model_balanced_reliable": {
+    "message": "Ausgewogen und zuverlässig"
+  },
+  "model_most_capable": {
+    "message": "Leistungsstärkster Claude"
+  },
+  "model_label_fastest": {
+    "message": "Schnellster"
+  }
+}

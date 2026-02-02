@@ -1,0 +1,372 @@
+{
+  "job_name": "batches/iwxpq7d1n6zif41cakgzv6zg78tto781smod",
+  "dataset": "candidates",
+  "retrieved_at": "2026-01-30T20:56:29.663889",
+  "validations": [
+    {
+      "extension_id": "dloobgjjpoohngalnjepgdggjeempdec",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension functions exactly as described. The content script scrapes the ChatGPT DOM, converts the HTML to Markdown using the 'turndown' library (included in the bundle), and allows the user to copy it or download it as a file. The download mechanism uses a local Blob URL, ensuring data stays on the client. The options and popup pages are built with React; the flagged network endpoints are standard static strings found in React production builds (XML namespaces and error decoder links). There is no code that transmits user data to an external server.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Exports ChatGPT chat history as Markdown text",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chatopenai.pro/chatgpt-to-markdown/",
+          "https://reactjs.org/docs/error-decoder.html",
+          "https://lwebapp.com/en/tools",
+          "http://www.w3.org/2000/svg",
+          "http://www.w3.org/1999/xhtml"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "https://reactjs.org/docs/error-decoder.html?invariant=",
+          "http://www.w3.org/1999/xlink",
+          "http://www.w3.org/XML/1998/namespace",
+          "http://www.w3.org/1998/Math/MathML"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT (https://chatopenai.pro...)",
+          "usage": "LEGITIMATE",
+          "justification": "Opens a welcome/help page upon installation (standard practice)."
+        },
+        {
+          "pattern": "BLOB_URL",
+          "usage": "LEGITIMATE",
+          "justification": "Used in contentScript to generate the downloadable Markdown file locally via `window.URL.createObjectURL(o)`."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used by the React framework (in options/popup) and the content script to inject the sidebar UI and render the markdown preview."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (reactjs.org, w3.org)",
+          "usage": "LEGITIMATE",
+          "justification": "These are static strings inside the React library bundle (error handling URLs and XML namespaces), not actual network requests."
+        }
+      ],
+      "token_usage": {
+        "prompt": 108562,
+        "candidates": 779,
+        "total": 110909
+      }
+    },
+    {
+      "extension_id": "bghdlfnkbghekhdadaokecnhkcodfcna",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension is a legitimate theming tool for ChatGPT. The source code is a standard Parcel bundle containing UI logic for a settings panel and a color picker. \n\n1. **Static Analysis Context**: The flagged 'Keyboard Listeners' are part of the color picker widget (allowing users to adjust colors with arrow keys) and form input handling (saving settings on Enter). They do not log keystrokes globally.\n2. **No Data Exfiltration**: There are no network requests (fetch/xhr) sending user data to external servers. The only external connections are for loading Google Fonts (CSS) and linking to the developer's GitHub/Ko-fi pages.\n3. **Code Integrity**: The code strictly performs DOM manipulation to apply CSS variables and classes based on user preferences stored in local storage. There is no obfuscated payload or hidden tracking functionality.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Redesign ChatGPT: custom colors, fonts & layouts",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chat.openai.com",
+          "https://chatgpt.com",
+          "https://github.com/itsmartashub/GPThemes",
+          "https://fonts.googleapis.com",
+          "https://fonts.gstatic.com",
+          "https://ko-fi.com/http417"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "KEYBOARD_LISTENER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in the included Color Picker library (module '1vupb' / class 'eH') to move color sliders with arrow keys, and in settings inputs to save changes on 'Enter'."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used to render the extension's own UI components (Floating Action Button, Settings Modal, Color Picker) into the page."
+        },
+        {
+          "pattern": "DOM",
+          "usage": "LEGITIMATE",
+          "justification": "Core functionality requires manipulating the DOM to inject themes, hide elements (header/footer), and adjust layout widths."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "References to GitHub are for changelogs and issues linked in the popup. References to Google Fonts are for dynamic font loading via <link> tags."
+        }
+      ],
+      "token_usage": {
+        "prompt": 64280,
+        "candidates": 771,
+        "total": 66311
+      }
+    },
+    {
+      "extension_id": "llojfncgbabajmdglnkbhmiebiinohek",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The analysis confirms this is a standard React-based application. The file 'client.5ef51922.js' contains the minified source code for React 18.2.0, React DOM, and the Scheduler. All flagged patterns (NETWORK, POST_MESSAGE, DOM manipulation) are internal mechanisms of the React library or standard XML namespaces. The background script 'index.js' performs standard extension duties: setting up the side panel, creating context menus, and handling install/uninstall events via the developer's domain (tapnetic.pro). There is no evidence of obfuscation, data exfiltration, or malicious logic in the provided files.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "AI/ChatGPT assistant sidebar",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chatgpt.tapnetic.pro",
+          "reactjs.org",
+          "w3.org",
+          "clients2.google.com"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "http://www.w3.org/1999/xlink",
+          "http://www.w3.org/XML/1998/namespace",
+          "http://www.w3.org/2000/svg",
+          "http://www.w3.org/1998/Math/MathML",
+          "http://www.w3.org/1999/xhtml"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "NETWORK_ENDPOINT (React URLs)",
+          "usage": "LEGITIMATE",
+          "justification": "The URL 'https://reactjs.org/docs/error-decoder.html' is part of the standard React library error handling logic found in 'client.5ef51922.js'."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT (W3C Namespaces)",
+          "usage": "LEGITIMATE",
+          "justification": "URLs like 'http://www.w3.org/2000/svg' are XML namespace identifiers required for creating SVG and MathML elements in React's DOM rendering logic."
+        },
+        {
+          "pattern": "NETWORK / POST_MESSAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Found in the 'scheduler' package bundled with React. It uses MessageChannel/postMessage for task scheduling (the event loop), not for network communication."
+        },
+        {
+          "pattern": "DOM / INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Used by React for DOM manipulation and initial hydration. The 'index.e83da286.js' file appears to contain CSS injection logic which also legitimately uses DOM APIs."
+        },
+        {
+          "pattern": "STORAGE / TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Used in 'index.js' (background script) to open the welcome page on install and manage side panel state, which aligns with the extension's stated functionality."
+        }
+      ],
+      "token_usage": {
+        "prompt": 121551,
+        "candidates": 897,
+        "total": 124612
+      }
+    },
+    {
+      "extension_id": "jlbpahgopcmomkgegpbmopfodolajhbl",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension behaves exactly as described: a wrapper for AI models (OpenAI and Llama-3 via HuggingFace) injected into browser pages. \n\n1. **Network Activity**: The code explicitly connects to `api-inference.huggingface.co` (using a hardcoded token `HF_TOKEN_REDACTED`) and `chat.openai.com`. There are no requests to unknown, tracking, or ad-network domains.\n\n2. **Session Handling**: The extension listens to `*.openai.com` requests to capture `public_key` (Arkose Labs/CAPTCHA data). This is a standard, albeit unofficial, technique for ChatGPT wrappers to ensure their requests pass bot detection. The captured data is saved to `chrome.storage.local` and not sent to any third-party server.\n\n3. **Code Structure**: The files `options.js` and `popup.js` contain standard UI library code (React/Preact, Geist UI, styled-jsx) with no obfuscation beyond standard minification. \n\n4. **Permissions**: The broad `<all_urls>` permission is justified by the requirement to inject the sidebar into a wide variety of search engines listed in the manifest.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "ChatGPT for Chrome - GPT Search",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": "webRequest listener on *.openai.com (Arkose/CAPTCHA tokens)",
+          "transmission_target": "chrome.storage.local (Internal use only)",
+          "code_evidence": "chrome.webRequest.onBeforeRequest.addListener((e => { ... chrome.storage.local.set({ appl1_sgpt_arkose_config: { ... } })"
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "chat.openai.com",
+          "huggingface.co",
+          "api-inference.huggingface.co",
+          "clients2.google.com",
+          "w3.org"
+        ],
+        "requires_investigation": [],
+        "informational_only": [
+          "github.com"
+        ]
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "EVAL",
+          "usage": "LEGITIMATE",
+          "justification": "Likely part of the webpack/polyfill bundle or devtool overhead in the skipped content.js file, common in React builds."
+        },
+        {
+          "pattern": "INTERCEPTION (webRequest)",
+          "usage": "LEGITIMATE",
+          "justification": "Used in serviceWorker.js to capture Arkose/CAPTCHA tokens from OpenAI to maintain the session for the extension's interface. Data is stored locally, not exfiltrated."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "All identified endpoints (OpenAI, HuggingFace) align strictly with the extension's stated functionality of providing AI responses."
+        },
+        {
+          "pattern": "INNERHTML",
+          "usage": "LEGITIMATE",
+          "justification": "Standard DOM manipulation used by the content script to inject the ChatGPT response sidebar into search engine pages."
+        }
+      ],
+      "token_usage": {
+        "prompt": 91809,
+        "candidates": 894,
+        "total": 94894
+      }
+    },
+    {
+      "extension_id": "ifofkleafhmamganjnoaaipdmffifcgc",
+      "verdict": "SAFE",
+      "confidence": 1.0,
+      "reasoning": "The extension's code aligns perfectly with its stated purpose. It captures user-selected text and uses standard Chrome APIs (runtime messages, storage) to transfer that text to a content script running on specific, hardcoded AI domains (ChatGPT, Gemini, Perplexity). The content script automatically fills the input field on those sites. There is no obfuscation, no analytics or tracking code, no connections to third-party servers, and no attempts to steal credentials.",
+      "recommendation": "ALLOW",
+      "key_concerns": [],
+      "evidence": {
+        "exfiltration_chain": {
+          "data_collected": null,
+          "processing_method": null,
+          "destination_domain": null,
+          "code_evidence": null
+        },
+        "dual_purpose": {
+          "stated_purpose": "Send selected text to ChatGPT, Gemini, or Perplexity",
+          "hidden_functionality": null,
+          "code_evidence": null
+        },
+        "credential_theft": {
+          "capture_mechanism": null,
+          "transmission_target": null,
+          "code_evidence": null
+        }
+      },
+      "domains": {
+        "legitimate": [
+          "https://chatgpt.com/",
+          "https://gemini.google.com/",
+          "https://www.perplexity.ai/",
+          "https://clients2.google.com/service/update2/crx"
+        ],
+        "requires_investigation": [],
+        "informational_only": []
+      },
+      "pattern_assessment": [
+        {
+          "pattern": "STORAGE",
+          "usage": "LEGITIMATE",
+          "justification": "Used to store user preferences (theme, auto-send settings) and to temporarily pass the selected text between the background script and the side panel/content script."
+        },
+        {
+          "pattern": "NETWORK_ENDPOINT",
+          "usage": "LEGITIMATE",
+          "justification": "URLs are strictly used to open the target AI services (ChatGPT, Gemini, Perplexity) in tabs, windows, or the side panel iframe."
+        },
+        {
+          "pattern": "DOM / MUTATION_OBSERVER",
+          "usage": "LEGITIMATE",
+          "justification": "Used in contentScript.js to detect when the target website's input field (e.g., #prompt-textarea) is loaded so the extension can insert the selected text."
+        },
+        {
+          "pattern": "TABS_ACCESS",
+          "usage": "LEGITIMATE",
+          "justification": "Necessary to create new tabs/windows and send messages to content scripts to trigger the text insertion."
+        }
+      ],
+      "token_usage": {
+        "prompt": 8665,
+        "candidates": 659,
+        "total": 11243
+      }
+    }
+  ],
+  "summary": {
+    "MALICIOUS": 0,
+    "SUSPICIOUS": 0,
+    "SAFE": 5,
+    "NEED_MORE_FILES": 0,
+    "ERROR": 0
+  },
+  "detailed_stats": {
+    "high_risk_validated_malicious": 0,
+    "high_risk_validated_suspicious": 0,
+    "high_risk_validated_safe": 5,
+    "need_more_files_extensions": []
+  },
+  "pre_validation_stats": {
+    "total_critical_findings": 172,
+    "total_high_findings": 1042,
+    "extensions_with_suspicious_domains": 96
+  },
+  "thesis_stats": {
+    "false_positive_rate": 1.0,
+    "true_positive_rate": 0.0,
+    "malicious_detection_rate": 0.0
+  },
+  "token_usage": {
+    "prompt_tokens": 394867,
+    "candidate_tokens": 4000,
+    "total_tokens": 407969
+  }
+}

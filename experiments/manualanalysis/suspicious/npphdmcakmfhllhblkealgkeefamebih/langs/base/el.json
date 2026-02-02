@@ -1,0 +1,323 @@
+{
+    "you_need_to_approve_the_permissions_to_open_the_extension_in_the_side_panel_": {
+        "message": "Πρέπει να εγκρίνετε τα δικαιώματα για να ανοίξετε την επέκταση στο πλαϊνό πάνελ."
+    },
+    "dropblock_head": {
+        "message": "dropBlock_head"
+    },
+    "open_the_extension_in_a_sidepanel": {
+        "message": "Άνοιγμα της επέκτασης σε πλαϊνό πάνελ"
+    },
+    "link_was_copied_": {
+        "message": "Ο σύνδεσμος αντιγράφηκε!"
+    },
+    "drag_and_drop_your_files_here": {
+        "message": "Σύρετε και αφήστε τα αρχεία σας εδώ"
+    },
+    "only_text_content_will_be_processed__up_to_5_files__each_up_to_5mb_": {
+        "message": "Θα επεξεργαστεί μόνο το περιεχόμενο κειμένου. Μέγιστο 5 αρχεία, κάθε ένα έως 5MB."
+    },
+    "you_can_upload_a_maximum_of_5_files_per_dialog__please_upload_files_in_smaller_batches_": {
+        "message": "Μπορείτε να ανεβάσετε έως 5 αρχεία ανά παράθυρο διαλόγου. Παρακαλώ ανεβάστε αρχεία σε μικρότερες παρτίδες."
+    },
+    "invalid_file_format_or_file_size_exceeds_5_mb__please_select_smaller_files_": {
+        "message": "Μη έγκυρη μορφή αρχείου ή το μέγεθος του αρχείου υπερβαίνει τα 5MB. Παρακαλώ επιλέξτε μικρότερα αρχεία."
+    },
+    "permissions_are_missing__please_grant_the_extension_access_to_web_pages_": {
+        "message": "Απουσιάζουν δικαιώματα. Παρακαλώ δώστε στην επέκταση πρόσβαση στις ιστοσελίδες."
+    },
+    "error__please_try_again_later_": {
+        "message": "Σφάλμα, παρακαλώ δοκιμάστε ξανά αργότερα."
+    },
+    "summarization_does_not_work_on_system_pages__please_copy_the_page_content_into_the_chat_manually_": {
+        "message": "Η σύνοψη δεν λειτουργεί στις συστημικές σελίδες. Παρακαλώ αντιγράψτε το περιεχόμενο της σελίδας χειροκίνητα στη συνομιλία."
+    },
+    "delete": {
+        "message": "Διαγραφή"
+    },
+    "delete_chat_": {
+        "message": "Να διαγράψω τη συζήτηση;"
+    },
+    "are_you_sure_you_want_to_delete_this_chat_": {
+        "message": "Είστε σίγουροι ότι θέλετε να διαγράψετε αυτή τη συζήτηση;"
+    },
+    "cancel": {
+        "message": "Ακύρωση"
+    },
+    "the_chat_was_deleted": {
+        "message": "Η συζήτηση διαγράφηκε"
+    },
+    "`_text_`": {
+        "message": "ʼ+text+ʼ"
+    },
+    "`_lang___(text)_`": {
+        "message": "ʼ+Lang.__(text)+ʼ"
+    },
+    "${deletetext}": {
+        "message": "${deleteText}"
+    },
+    "`_lang___(_delete_chat__)_`": {
+        "message": "ʼ+Lang.__('Delete chat?')+ʼ"
+    },
+    "`_lang___(_are_you_sure_you_want_to_delete_this_chat__)_`": {
+        "message": "ʼ+Lang.__('Are you sure you want to delete this chat?')+ʼ"
+    },
+    "`_lang___(_cancel_)_`": {
+        "message": "ʼ+Lang.__('Cancel')+ʼ"
+    },
+    "`_lang___(_delete_)_`": {
+        "message": "ʼ+Lang.__('Delete')+ʼ"
+    },
+    "file": {
+        "message": "Αρχείο"
+    },
+    "thinking": {
+        "message": "Σκέφτομαι"
+    },
+    "copy_response": {
+        "message": "Αντιγραφή απάντησης"
+    },
+    "good_response": {
+        "message": "Καλή απάντηση"
+    },
+    "bad_response": {
+        "message": "Κακή απάντηση"
+    },
+    "uploading___": {
+        "message": "Ανέβασμα..."
+    },
+    "`_lang___(_thinking_)_`": {
+        "message": "ʼ+Lang.__('Thinking')+ʼ"
+    },
+    "feedback": {
+        "message": "Ανατροφοδότηση"
+    },
+    "share": {
+        "message": "Μοιραστείτε"
+    },
+    "rate_us": {
+        "message": "Βαθμολογήστε μας"
+    },
+    "💀": {
+        "message": "💀"
+    },
+    "😞": {
+        "message": "😞"
+    },
+    "😐": {
+        "message": "😐"
+    },
+    "🙂": {
+        "message": "🙂"
+    },
+    "😍": {
+        "message": "😍"
+    },
+    "grok_3_is_here_": {
+        "message": "Ο Grok 3 είναι εδώ."
+    },
+    "what_do_you_want_to_know_": {
+        "message": "Τι θέλετε να μάθετε;"
+    },
+    "how_can_grok_help_you_": {
+        "message": "Πώς μπορεί ο Grok να σας βοηθήσει;"
+    },
+    "attach_file": {
+        "message": "Επισύναψη αρχείου"
+    },
+    "select_a_model": {
+        "message": "Επιλογή μοντέλου"
+    },
+    "sent_message": {
+        "message": "Απεσταλμένο μήνυμα"
+    },
+    "hey_": {
+        "message": "Γεια,"
+    },
+    "welcome_": {
+        "message": "καλωσήρθατε!"
+    },
+    "how_can_i_help_you_": {
+        "message": "Πώς μπορώ να σας βοηθήσω;"
+    },
+    "message_deepseek": {
+        "message": "Μήνυμα DeepSeek"
+    },
+    "summarize_the_current_page": {
+        "message": "Περίληψη της τρέχουσας σελίδας"
+    },
+    "upload_a_file": {
+        "message": "Ανέβασμα αρχείου"
+    },
+    "start_a_chat": {
+        "message": "Ξεκινήστε μια συζήτηση"
+    },
+    "set_personalization": {
+        "message": "Ορισμός προσωποποίησης"
+    },
+    "new_chat": {
+        "message": "Νέα συζήτηση"
+    },
+    "switch_to_light_mode": {
+        "message": "Εναλλαγή σε Φωτεινή λειτουργία"
+    },
+    "switch_to_dark_mode": {
+        "message": "Εναλλαγή σε Σκούρα λειτουργία"
+    },
+    "open_the_extension_in_a_separate_tab": {
+        "message": "Άνοιγμα της επέκτασης σε ξεχωριστό tab"
+    },
+    "{{_item_}}": {
+        "message": "{{ item }}"
+    },
+    "start_now": {
+        "message": "Ξεκινήστε τώρα"
+    },
+    "get_ideas": {
+        "message": "Λήψη ιδεών"
+    },
+    "ask": {
+        "message": "Ρωτήστε"
+    },
+    "code": {
+        "message": "Κώδικας"
+    },
+    "translate": {
+        "message": "Μετάφραση"
+    },
+    "cooking_tips": {
+        "message": "Συμβουλές μαγειρικής"
+    },
+    "how_deepseek_ai_helps_you_": {
+        "message": "Πώς σε βοηθάει το DeepSeek AI;"
+    },
+    "✨_get_spot_on_answers_10x_faster": {
+        "message": "✨ Λάβετε σωστές απαντήσεις 10 φορές πιο γρήγορα"
+    },
+    "no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Χωρίς Google, χωρίς χάος με καρτέλες, χωρίς χαμένο χρόνο"
+    },
+    "📚_save_hours_on_studying": {
+        "message": "📚 Εξοικονομήστε ώρες μελέτης"
+    },
+    "generate_essays__auto_complete_tests__and_summarize_any_page_in_minutes_": {
+        "message": "Δημιουργία δοκιμίων, αυτόματη συμπλήρωση εξετάσεων και περίληψη οποιασδήποτε σελίδας σε λεπτά."
+    },
+    "🌍_real_time_translation_on_the_page": {
+        "message": "🌍 Μεταφραση σε πραγματικό χρόνο στην σελίδα"
+    },
+    "write_like_a_native__with_no_mistakes_or_awkward_moments__right_on_the_page_": {
+        "message": "Γράψτε σαν ντόπιος, χωρίς λάθη ή άβολες στιγμές. Ακριβώς στη σελίδα."
+    },
+    "get_your_ai_copilot_for_coding": {
+        "message": "Λάβετε το AI Copilot σας για προγραμματισμό"
+    },
+    "try_now": {
+        "message": "Δοκιμάστε τώρα"
+    },
+    "did_this_tool_help_you_": {
+        "message": "Σας βοήθησε αυτό το εργαλείο;"
+    },
+    "share_it_with_friends_who_work_with_images_": {
+        "message": "Μοιραστείτε το με φίλους που εργάζονται με εικόνες."
+    },
+    "who_would_find_it_useful_": {
+        "message": "Ποιος θα το θεωρούσε χρήσιμο;"
+    },
+    "copy_link": {
+        "message": "Αντιγραφή συνδέσμου"
+    },
+    "facebook": {
+        "message": "Facebook"
+    },
+    "x": {
+        "message": "X"
+    },
+    "telegram": {
+        "message": "Telegram"
+    },
+    "i_found_a_super_useful_chrome_extension__": {
+        "message": "Βρήκα μια πολύ χρήσιμη επέκταση Chrome —"
+    },
+    "it_can_save_any_website_as_a_pdf__you_should_try_it_out___it_s_great_": {
+        "message": "Μπορεί να αποθηκεύσει οποιαδήποτε ιστοσελίδα ως PDF. Πρέπει να το δοκιμάσετε — είναι υπέροχο!"
+    },
+    "hooray__greate_job_": {
+        "message": "Υπέροχα, καλή δουλειά!"
+    },
+    "please__can_you_rate_us_": {
+        "message": "Παρακαλώ, μπορείτε να μας βαθμολογήσετε;"
+    },
+    "deepseek_ai_has_been_installed_": {
+        "message": "Το DeepSeek AI έχει εγκατασταθεί!"
+    },
+    "get_answers_10x_faster___no_google__no_tab_chaos__no_time_wasted": {
+        "message": "Λάβετε απαντήσεις 10 φορές πιο γρήγορα — χωρίς Google, χωρίς χάος με καρτέλες, χωρίς χαμένο χρόνο"
+    },
+    "open_deepseek_ai": {
+        "message": "Άνοιγμα DeepSeek AI"
+    },
+    "deepseek_app": {
+        "message": "Εφαρμογή DeepSeek"
+    },
+    "love_deepseek_": {
+        "message": "Αγαπάτε το DeepSeek;"
+    },
+    "could_you_please_rate_our_extension_": {
+        "message": "Μπορείτε παρακαλώ να βαθμολογήσετε την επέκτασή μας;"
+    },
+    "share_this_extension_with_your_friends": {
+        "message": "Μοιραστείτε αυτή την επέκταση με τους φίλους σας"
+    },
+    "share_us_with_your_friends": {
+        "message": "Μοιραστείτε μας με τους φίλους σας"
+    },
+    "and_unlock_all_ai_assistant_features": {
+        "message": "Και ξεκλειδώστε όλες τις λειτουργίες του AI βοηθού"
+    },
+    "vk_com": {
+        "message": "Vk.com"
+    },
+    "reddit": {
+        "message": "Reddit"
+    },
+    "whatsapp": {
+        "message": "WhatsApp"
+    },
+    "weibo": {
+        "message": "Weibo"
+    },
+    "post_preview": {
+        "message": "Προεπισκόπηση ανάρτησης"
+    },
+    "hey__i_m_your_ai_assistant_": {
+        "message": "Γεια, είμαι ο βοηθός AI σου!"
+    },
+    "what_can_i_help_with_": {
+        "message": "Τι μπορώ να βοηθήσω;"
+    },
+    "history": {
+        "message": "Ιστορικό"
+    },
+    "settings": {
+        "message": "Ρυθμίσεις"
+    },
+    "subscription": {
+        "message": "Συνδρομή"
+    },
+    "add_personal_info_or_instructions_to_the_ai_assistant__this_will_help_improve_responses_for_you_": {
+        "message": "Προσθέστε προσωπικές πληροφορίες ή οδηγίες στον βοηθό AI. Αυτό θα βοηθήσει στη βελτίωση των απαντήσεων για εσάς."
+    },
+    "save": {
+        "message": "Αποθήκευση"
+    },
+    "and_you_ll_unlock_all_ai_assistant_features": {
+        "message": "Και θα ξεκλειδώσετε όλες τις λειτουργίες του AI βοηθού"
+    },
+    "e_g___always_reply_in_french": {
+        "message": "π.χ., πάντα απαντάτε στα γαλλικά"
+    },
+    "_p_you_can_try_the_ai_assistant_to_play_a_role__e_g____p__ul__li_act_as_an_english_teacher_and_correct_my_mistakes__li__li_respond_like_a_professional_business_consultant__li___ul__p_or_input_your_data_for_the_ai_assistant_to_generate_responses__e_g____p__ul__li_23_y_o___58_kg__height_165_cm__female__li__li_programmer__php___laravel__js___react___li___ul_": {
+        "message": "<p>Μπορείτε να δοκιμάσετε τον βοηθό AI για να παίξετε έναν ρόλο, π.χ.:<\/p><ul><li>Ως καθηγητής Αγγλικών και να διορθώσετε τα λάθη μου<\/li><li>Να απαντάτε σαν επαγγελματίας σύμβουλος επιχειρήσεων<\/li><\/ul><p>Ή να εισάγετε τα δεδομένα σας για να παράγει απαντήσεις ο βοηθός AI, π.χ.:<\/p><ul><li>23 ετών, 58 κιλά, ύψος 165 εκ., γυναίκα<\/li><li>Προγραμματιστής. PHP – Laravel, JS – React.<\/li><\/ul>"
+    }
+}

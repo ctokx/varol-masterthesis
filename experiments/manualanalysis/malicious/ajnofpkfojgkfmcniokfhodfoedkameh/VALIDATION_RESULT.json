@@ -1,0 +1,78 @@
+{
+  "extension_id": "ajnofpkfojgkfmcniokfhodfoedkameh",
+  "extension_name": "ChatGPT for Zhihu",
+  "version": "1.2.10",
+  "user_count": 351,
+  "dataset": "chatgpt",
+  "verdict": "MALICIOUS",
+  "confidence": 1.0,
+  "recommendation": "BLOCK",
+  "reasoning": "The extension goes beyond its stated utility by silently logging user data. Specifically, in `chatgpt-script.js`, the code captures both the user's prompt (Question) and the AI's response. It transmits this data via `chrome.runtime.sendMessage` to `background.js`, which then uploads it to an Aliyun Log Store (`scrm-gpt-zhihu` project on `us-west-1.log.aliyuncs.com`). While analytics are common, logging full message content is a severe privacy violation. Additionally, the extension fetches remote configuration from `linkedradar.com` to inject advertisements ('drainage buttons') for unrelated products (LinkedRadar, TG Sender) into the OpenAI interface, which constitutes undisclosed dual-purpose behavior.",
+  "full_validation": {
+    "extension_id": "ajnofpkfojgkfmcniokfhodfoedkameh",
+    "verdict": "MALICIOUS",
+    "confidence": 1.0,
+    "reasoning": "The extension goes beyond its stated utility by silently logging user data. Specifically, in `chatgpt-script.js`, the code captures both the user's prompt (Question) and the AI's response. It transmits this data via `chrome.runtime.sendMessage` to `background.js`, which then uploads it to an Aliyun Log Store (`scrm-gpt-zhihu` project on `us-west-1.log.aliyuncs.com`). While analytics are common, logging full message content is a severe privacy violation. Additionally, the extension fetches remote configuration from `linkedradar.com` to inject advertisements ('drainage buttons') for unrelated products (LinkedRadar, TG Sender) into the OpenAI interface, which constitutes undisclosed dual-purpose behavior.",
+    "recommendation": "BLOCK",
+    "key_concerns": [
+      "Exfiltration of private chat content (Questions/Answers)",
+      "Undisclosed data logging to third-party cloud service",
+      "Ad injection into third-party websites"
+    ],
+    "evidence": {
+      "exfiltration_chain": {
+        "data_collected": "ChatGPT Questions (Prompts) and Answers (Responses)",
+        "processing_method": "Captured from DOM, bundled into JSON logs",
+        "destination_domain": "us-west-1.log.aliyuncs.com (Aliyun Log Service)",
+        "code_evidence": "chatgpt-script.js (Module 27fc): Object(l[\"f\"])(i[\"f\"].LOG_TYPE + \"0245\", \"\", { question: d, response: e }) -> background.js (Module 3929): fetch(\"https://\" + this.project + \".\" + this.host + ...)"
+      },
+      "dual_purpose": {
+        "stated_purpose": "Run ChatGPT on the current page (Zhihu)",
+        "hidden_functionality": "Ad Injection (Cross-promotion for LinkedRadar/Telegram tools) and Chat Logging",
+        "code_evidence": "chatgpt-script.js (Module 27fc): h(t, e) function injects 'zing-gpt-drainage-button' linked to chrome.google.com/webstore/detail/linkedradar..."
+      },
+      "credential_theft": {
+        "capture_mechanism": null,
+        "transmission_target": null,
+        "code_evidence": null
+      }
+    },
+    "domains": {
+      "legitimate": [
+        "zhihu.com",
+        "openai.com",
+        "gptplus.io"
+      ],
+      "requires_investigation": [
+        "us-west-1.log.aliyuncs.com",
+        "linkedradar.com"
+      ],
+      "informational_only": [
+        "github.com",
+        "w3.org"
+      ]
+    },
+    "pattern_assessment": [
+      {
+        "pattern": "NETWORK",
+        "usage": "MALICIOUS",
+        "justification": "Used to send full text of user chats to external logging server (Aliyun)."
+      },
+      {
+        "pattern": "DOM_MODIFICATION",
+        "usage": "SUSPICIOUS",
+        "justification": "Injects unadvertised promotional buttons (ads) into the ChatGPT interface."
+      },
+      {
+        "pattern": "MOUSE_EVENT_SIMULATION",
+        "usage": "SUSPICIOUS",
+        "justification": "Simulates complex mouse events (pointerover, mousedown, etc.) to evade bot detection on OpenAI, typical of automation/scraping tools."
+      }
+    ],
+    "token_usage": {
+      "prompt": 104347,
+      "candidates": 872,
+      "total": 109409
+    }
+  }
+}

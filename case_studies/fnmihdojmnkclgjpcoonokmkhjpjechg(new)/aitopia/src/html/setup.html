@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ChatGPT Extension</title>
+  <script type="module" crossorigin src="/aitopia/assets/5c6a20a9971e36de3456456a54645352.js"></script>
+  <link rel="stylesheet" crossorigin href="/aitopia/assets/4ef25b11a581f51bf711ede73b41efea.css" />
+  <link rel="stylesheet" crossorigin href="/aitopia/assets/2f13042365619d205c3c594ad87e62c4.css" />
+  <style>
+    /* Hide Sidebar elements on Setup Page */
+    #aifnmjmchg-sidebar,
+    #aifnmjmchg-sidebar-opener,
+    #aifnmjmchg-container {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body id="aifnmjmchg-setup" class="aifnmjmchg-body">
+  <!-- Consent panel -->
+  <div id="setup-consent-overlay" style="
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.8); z-index: 9999;
+        display: flex; align-items: center; justify-content: center;
+        opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+    ">
+    <div style="
+            background: white; padding: 40px; border-radius: 16px;
+            max-width: 500px; text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+        ">
+      <h1 style="margin-top: 0; color: #1a1a1a;">Welcome to Smart Sidebar (AITOPIA)</h1>
+      <p style="color: #4a5568; line-height: 1.6; margin: 24px 0;">
+        To provide AI assistance on webpages, this extension requires access to page text.
+        We operate under a strict <strong>Limited Use Policy</strong>:
+        <br><br>
+        • Data is processed only when you interact with the extension.<br>
+        • We do not sell your data.<br>
+        • We do not track your browsing history.
+      </p>
+      <div
+        style="background: #f7fafc; padding: 16px; border-radius: 8px; text-align: left; font-size: 13px; color: #718096; margin-bottom: 24px;">
+        By clicking "Accept & Enable", you acknowledge our <a href="https://chataigpt.pro/privacy/" target="_blank"
+          style="color: #667eea;">Privacy Policy</a> and consent to the extension accessing page content to provide AI
+        features.
+      </div>
+      <button id="setup-accept-btn" style="
+                background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                color: white; border: none; padding: 12px 32px;
+                font-size: 16px; font-weight: 600; border-radius: 8px;
+                cursor: pointer; transition: transform 0.1s;
+            ">Accept & Enable</button>
+      <div style="margin-top: 16px;">
+        <button id="setup-skip-btn" style="
+                    background: none; border: none; color: #718096;
+                    font-size: 14px; cursor: pointer; text-decoration: underline;
+                ">Skip for now</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="setup-consent.js"></script>
+  <link rel="stylesheet" href="/aitopia/assets/css/fonts.css" />
+</body>
+
+</html>

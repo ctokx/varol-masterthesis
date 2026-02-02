@@ -1,0 +1,113 @@
+{
+    "ext_name": {
+        "message": "ChatGPT for Google Chrome™"
+    },
+    "ext_name_generic": {
+        "message": "ChatGPT"
+    },
+    "ext_description": {
+        "message": "Extension to create a shortcut for the official ChatGPT in the Google Chrome browser"
+    },
+    "ext_command_description": {
+        "message": "Shortcut to open ChatGPT"
+    },
+    "request_perms_popup_title": {
+        "message": "ChatGPT in Eco Mode?"
+    },
+    "request_perms_popup_description": {
+        "message": "Help with sustainable causes just by browsing the web. This mode won't interrupt your browsing."
+    },
+    "request_perms_popup_learn_more": {
+        "message": "Learn more"
+    },
+    "request_perms_popup_allow_button": {
+        "message": "Allow"
+    },
+    "request_perms_popup_deny_button": {
+        "message": "Deny"
+    },
+    "perms_granted_popup_title": {
+        "message": "Congratulations!"
+    },
+    "perms_granted_popup_description": {
+        "message": "You will now benefit from all our features!"
+    },
+    "perms_granted_popup_close_button": {
+        "message": "Continue"
+    },
+    "perms_denied_popup_title": {
+        "message": "That's a pity..."
+    },
+    "perms_denied_popup_description": {
+        "message": "Maybe next time."
+    },
+    "perms_denied_popup_close_button": {
+        "message": "Close this message"
+    },
+    "welcome_title": {
+        "message": "ChatGPT for Chrome"
+    },
+    "welcome_sub_title": {
+        "message": "Extension Installed Successfully"
+    },
+    "welcome_footer_info": {
+        "message": ""
+    },
+    "welcome_title_granted": {
+        "message": "ChatGPT for Chrome"
+    },
+    "welcome_sub_title_granted": {
+        "message": "Extension Installed Successfully"
+    },
+    "welcome_tip_title_granted": {
+        "message": "Follow the steps below to pin your extension, then click Next Step"
+    },
+    "welcome_next_step": {
+        "message": "Next Step"
+    },
+    "activate_gm_html_tip_title": {
+        "message": "To access all the extension's features, activate Eco Mode."
+    },
+    "activate_gm_html_tip_cta": {
+        "message": "Click Allow to continue"
+    },
+    "html_footer_terms_of_use": {
+        "message": "Terms of Use"
+    },
+    "html_footer_privacy_policy": {
+        "message": "Privacy Policy"
+    },
+    "how_to_use_html_title": {
+        "message": "How to Use the Extension"
+    },
+    "how_to_use_html_alternative_way": {
+        "message": "Or press Ctrl + B"
+    },
+    "tab_opened_popup_title": {
+        "message": "🌳 Eco Mode"
+    },
+    "tab_opened_popup_subtitle": {
+        "message": "Congratulations! This site is a partner of our eco mode."
+    },
+    "tab_opened_popup_subtitle1": {
+        "message": "What does this mean?"
+    },
+    "tab_opened_popup_paragraph1": {
+        "message": "By continuing to browse, you will be helping the 🌍 planet, planting trees and offsetting carbon emissions at no cost."
+    },
+    "tab_opened_popup_paragraph2": {
+        "message": "With each visit to a partner, a new tab will briefly open to allow the calculation of carbon offset."
+    },
+    "tab_opened_popup_paragraph3": {
+        "message": "By the way, thank you so much for supporting this incredible cause with us! 🙏"
+    },
+    "tab_opened_popup_learn_more_button": {
+        "message": "Learn more"
+    },
+    "tab_opened_popup_close_button": {
+        "message": "Close"
+    },
+    "tab_opened_popup_close_forever_button": {
+        "message": "Don't show again"
+    }
+}

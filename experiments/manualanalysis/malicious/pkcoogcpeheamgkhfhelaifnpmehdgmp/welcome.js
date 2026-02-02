@@ -1,0 +1,1 @@
+function n(){const n=Date.now()+700;!function t(){confetti({particleCount:5,angle:60,spread:150,origin:{x:0}}),confetti({particleCount:5,angle:120,spread:150,origin:{x:1}}),Date.now()<n&&requestAnimationFrame(t)}()}document.addEventListener("DOMContentLoaded",(()=>{n()}));

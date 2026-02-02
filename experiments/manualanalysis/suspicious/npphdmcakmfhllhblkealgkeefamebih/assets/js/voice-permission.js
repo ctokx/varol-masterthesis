@@ -1,0 +1,1 @@
+!async function(){try{(await navigator.mediaDevices.getUserMedia({audio:!0})).getTracks().forEach((e=>e.stop())),chrome.runtime.sendMessage({action:"voicePermissionGranted"}),window.close()}catch(e){chrome.runtime.sendMessage({action:"voicePermissionDenied"}),window.close()}}();
