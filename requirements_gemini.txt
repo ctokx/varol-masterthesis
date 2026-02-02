@@ -1,0 +1,21 @@
+# Google Gemini API
+google-genai>=0.2.0
+
+# Web scraping
+playwright>=1.40.0
+
+# Data validation
+pydantic>=2.0.0
+
+# JavaScript beautification
+jsbeautifier>=1.14.0
+
+# Optional: For baseline comparison (install separately in baseline_venv)
+# torch
+# torchvision
+# sentence-transformers
+# open_clip_torch
+# imagehash
+# python-Levenshtein
+# pillow
+# numpy
